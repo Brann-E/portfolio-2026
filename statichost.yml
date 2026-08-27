@@ -1,0 +1,3 @@
+# Site statique en HTML pur : aucune étape de construction.
+# `public: .` publie la racine du dépôt telle quelle.
+public: .
