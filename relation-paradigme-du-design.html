@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<title>La relation, paradigme unificateur du design — Brann Etienne</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body class="has-site-nav"><nav class="site-nav" aria-label="Navigation principale">
+  <a class="site-brand" href="index.html"><img class="site-mark" src="logo-relations.svg" alt=""><span class="site-name">Brann Etienne <span class="site-role">- Designer relationnel</span></span></a>
+  <div class="site-links">
+    <a href="etudes de cas.html" data-section="cases">Cas</a>
+    <a href="reciprocites-v2.html" data-section="reciprocites">Réciprocités</a>
+    <a href="relation-paradigme-du-design.html" data-section="theorie" class="active">Théorie</a>
+    <a href="a-propos.html" data-section="apropos">À propos</a>
+    <a class="site-contact" href="mailto:brann.etienne@gmail.com">Contact</a>
+  </div>
+</nav>
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="veil" aria-hidden="true"></div>
+
+<div class="wrap">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="eyebrow">La théorie · 5 étapes</div>
+  <h1>La relation, paradigme <br><span class="spectrum-word">unificateur</span> du design.</h1>
+  <p class="lede">Cinq essais, au sens propre du mot&#8239;: des tentatives, des explorations.<br><br>Ils partent d'une pensée contre-intuitive — <em>s'occuper de la relation, c'est s'occuper de soi</em> —, traversent la généalogie des paradigmes du design, nomment un concept qui manquait, et montrent où tout cela s'incarne. Une manière de voir assumée, faite pour être éprouvée.<br><br>Cinq regards qui finissent par former un seul tissu.</p>
+</section>
+
+<!-- LA SÉRIE -->
+<section class="serie">
+  <div class="serie-head">
+    <div class="t">Le fil, du premier regard à la synthèse</div>
+    <div class="n">5 articles · ~48 min</div>
+  </div>
+
+  <div class="track" id="track">
+    <div class="rail"></div>
+    <div class="thread"></div>
+
+    <a class="station st1 rv" href="article_1_relation_paradigme_v2.html">
+      <div class="node"><div class="num">01</div><div class="dot"></div></div>
+      <div class="body">
+        <h3>S'occuper de la relation, c'est s'occuper de soi</h3>
+        <p class="idea">La généalogie des paradigmes du design — et ce qui manquait à chacun. Le design a conçu <em>pour</em> l'humain&#8239;; il est temps de concevoir <em>depuis</em> ce qui le constitue.</p>
+        <div class="foot"><span class="read">8 min</span><span class="go">Lire l'article →</span></div>
+      </div>
+    </a>
+
+    <a class="station st2 rv" href="article_2_trois_disciplines_v2.html">
+      <div class="node"><div class="num">02</div><div class="dot"></div></div>
+      <div class="body">
+        <h3>Ce que les trois disciplines font sans le dire</h3>
+        <p class="idea">Design transformatif, systémique, d'expérience — trois familles qui s'ignorent et partagent pourtant le même territoire&#8239;: la liminalité.</p>
+        <div class="foot"><span class="read">9 min</span><span class="go">Lire l'article →</span></div>
+      </div>
+    </a>
+
+    <a class="station st3 rv" href="article_3_metaliminalite_v2.html">
+      <div class="node"><div class="num">03</div><div class="dot"></div></div>
+      <div class="body">
+        <h3>La métaliminalité</h3>
+        <p class="idea">Le concept manquant — voir la géographie complète d'une transformation avant d'y entrer. Ce moment n'avait pas de nom.</p>
+        <div class="foot"><span class="read">10 min</span><span class="go">Lire l'article →</span></div>
+      </div>
+    </a>
+
+    <a class="station st4 rv" href="article_4_cercle_reciprocites_v2.html">
+      <div class="node"><div class="num">04</div><div class="dot"></div></div>
+      <div class="body">
+        <h3>Le Cercle des Réciprocités</h3>
+        <p class="idea">La théorie incarnée — de la personne au commun. Un processus linéaire produit un résultat&#8239;; un cercle produit une transformation.</p>
+        <div class="foot"><span class="read">11 min</span><span class="go">Lire l'article →</span></div>
+      </div>
+    </a>
+
+    <a class="station st5 rv" href="article_5_relation_paradigme_v2.html">
+      <div class="node"><div class="num">05</div><div class="dot"></div></div>
+      <div class="body">
+        <h3>La relation comme paradigme</h3>
+        <p class="idea">La synthèse unificatrice — et ce que ça change pour le design. Trois disciplines, un seul tissu fondamental&#8239;: celui qui constitue l'humain dans ce qu'il a de plus essentiel.</p>
+        <div class="foot"><span class="read">10 min</span><span class="go">Lire l'article →</span></div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- CLÔTURE -->
+<section class="tail">
+  <p>Cinq articles pour montrer que ce qui semblait être trois disciplines distinctes n'est qu'une seule question — et une seule réponse.</p>
+  <div class="back"><a href="reciprocites-v2.html">← Revenir aux Réciprocités</a></div>
+</section>
+</div>
+
+<script>
+// trace le fil quand la piste entre dans le champ
+const track=document.getElementById('track');
+const drawIO=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){track.classList.add('drawn');drawIO.unobserve(e.target)}})
+},{threshold:.15});
+drawIO.observe(track);
+
+// reveal des stations
+const io=new IntersectionObserver(es=>{
+  es.forEach((e)=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+},{threshold:.2});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i*90)+'ms';io.observe(el)});
+</script>
+<script src="background.js"></script>
+<script src="figure-zoom.js"></script>
+<footer class="ft">
+  <div class="ft-inner">
+
+    <div class="ft-top">
+
+      <div class="ft-sign">
+        <div class="ft-mark">
+          <img src="logo-relations.svg" alt="" aria-hidden="true">
+          <div>
+            <div class="ft-name">Brann Etienne</div>
+            <div class="ft-role">Designer relationnel &amp; syst&eacute;mique</div>
+          </div>
+        </div>
+        <p class="ft-claim">&Agrave; toutes les &eacute;chelles, tout tient par <em>le m&ecirc;me fil</em>.</p>
+        <div class="ft-place">Lyon &middot; en remote et sur site</div>
+      </div>
+
+      <nav class="ft-cols" aria-label="Plan du site">
+
+        <div class="ft-col ft-cases">
+          <div class="ft-h">Les cas</div>
+          <ul>
+            <li style="--d:var(--c1)"><a href="cas-axa.html">Healthanea <span class="ft-tag">Sant&eacute;</span></a></li>
+            <li style="--d:var(--c2)"><a href="cas-shift-prime.html">SHIFT Prime <span class="ft-tag">Industrie</span></a></li>
+            <li style="--d:var(--c4)"><a href="cas-bi-solution.html">B.I Solution <span class="ft-tag">Data</span></a></li>
+            <li style="--d:var(--c3)"><a href="cas-proshop.html">Proshop &amp; Beyond <span class="ft-tag">Commerce</span></a></li>
+            <li style="--d:var(--c5)"><span class="ft-soon">TiBillet <span class="ft-tag">Bient&ocirc;t</span></span></li>
+          </ul>
+          <a class="ft-more" href="etudes de cas.html">Tous les cas <span aria-hidden="true">&rarr;</span></a>
+        </div>
+
+        <div class="ft-col">
+          <div class="ft-h">La th&eacute;orie</div>
+          <ul class="ft-num">
+            <li><a href="article_1_relation_paradigme_v2.html"><b>01</b> S'occuper de la relation</a></li>
+            <li><a href="article_2_trois_disciplines_v2.html"><b>02</b> Les trois disciplines</a></li>
+            <li><a href="article_3_metaliminalite_v2.html"><b>03</b> La m&eacute;taliminalit&eacute;</a></li>
+            <li><a href="article_4_cercle_reciprocites_v2.html"><b>04</b> Le Cercle des R&eacute;ciprocit&eacute;s</a></li>
+            <li><a href="article_5_relation_paradigme_v2.html"><b>05</b> La relation comme paradigme</a></li>
+          </ul>
+          <a class="ft-more" href="relation-paradigme-du-design.html">La s&eacute;rie compl&egrave;te <span aria-hidden="true">&rarr;</span></a>
+        </div>
+
+        <div class="ft-col">
+          <div class="ft-h">Ailleurs</div>
+          <ul>
+            <li><a href="reciprocites-v2.html">R&eacute;ciprocit&eacute;s</a></li>
+            <li><a href="a-propos.html">&Agrave; propos</a></li>
+            <li><a href="https://www.linkedin.com/in/brann-etienne/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://medium.com/@brann.etienne" target="_blank" rel="noopener">Medium</a></li>
+          </ul>
+          <a class="ft-more ft-mail" href="mailto:brann.etienne@gmail.com">brann.etienne@gmail.com</a>
+        </div>
+
+      </nav>
+    </div>
+
+    <div class="ft-bottom">
+      <span>&copy; 2026 Brann Etienne</span>
+      <span class="ft-spectrum" aria-hidden="true"><i style="background:var(--c1)"></i><i style="background:var(--c2)"></i><i style="background:var(--c3)"></i><i style="background:var(--c5)"></i><i style="background:var(--c4)"></i></span>
+      <a class="ft-up" href="#top">Retour en haut <span aria-hidden="true">&uarr;</span></a>
+    </div>
+
+  </div>
+</footer>
+</body>
+</html>

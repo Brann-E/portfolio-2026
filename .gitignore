@@ -1,0 +1,8 @@
+# Réglages personnels de l'éditeur
+.idea/
+
+# Environnement Python local
+.venv/
+
+# Sauvegarde avant déduplication du CSS
+styles-original.css

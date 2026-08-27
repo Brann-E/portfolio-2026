@@ -1,0 +1,15 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Portfolio",
+      "autoPort": true,
+      "runtimeExecutable": ".venv/Scripts/python.exe",
+      "runtimeArgs": [
+        "-c",
+        "import os,http.server;p=int(os.environ.get('PORT','8777'));http.server.ThreadingHTTPServer(('127.0.0.1',p),http.server.SimpleHTTPRequestHandler).serve_forever()"
+      ],
+      "port": 8777
+    }
+  ]
+}

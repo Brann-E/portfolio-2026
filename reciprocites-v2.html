@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<title>Réciprocités — Brann Etienne</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body class="has-site-nav"><nav class="site-nav" aria-label="Navigation principale">
+  <a class="site-brand" href="index.html"><img class="site-mark" src="logo-relations.svg" alt=""><span class="site-name">Brann Etienne <span class="site-role">- Designer relationnel</span></span></a>
+  <div class="site-links">
+    <a href="etudes de cas.html" data-section="cases">Cas</a>
+    <a href="reciprocites-v2.html" data-section="reciprocites" class="active">Réciprocités</a>
+    <a href="relation-paradigme-du-design.html" data-section="theorie">Théorie</a>
+    <a href="a-propos.html" data-section="apropos">À propos</a>
+    <a class="site-contact" href="mailto:brann.etienne@gmail.com">Contact</a>
+  </div>
+</nav>
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="veil" aria-hidden="true"></div>
+
+<div class="wrap">
+
+<!-- I. RECONNAÎTRE -->
+ <section class="hero">
+  <div class="eyebrow">La recherche · Une praxis</div>
+  <h1>Ce qui use une relation est <span class="spectrum-word">rarement ce qu'on regarde.</span></h1>
+  <p class="lede">On a appris aux gens à se coordonner — pas à se rencontrer. À produire des dispositifs — pas à concevoir des relations. À mesurer des résultats — pas à prendre soin de ce qui les rend possibles.</p>
+  <p class="lede">Ce n'est pas une fatalité. C'est un mécanisme, et un mécanisme, ça se répare.</p>
+</section>
+
+<section class="spiral">
+  <div class="root rv">
+    <div class="eyebrow">La cause racine</div>
+    <h3>Un lien rompu entre le geste et sa valeur</h3>
+    <p>Depuis la révolution industrielle, les systèmes de travail ont découpé l'humain en unités fonctionnelles. On ne demande plus qui tu es, on demande ce que tu produis. Ta valeur est mesurable, ton humanité ne l'est pas — donc elle disparaît du système.</p>
+    <p>On a construit des systèmes extraordinaires pour travailler ensemble. Des outils, des méthodes, des réunions, des chartes, des contrats, des indicateurs d'impact, et tant d'autres. Et pourtant. La confiance se dissipe. Les partenariats s'épuisent. Le travail s'accumule sans être reconnu. On se coordonne mais on ne se rencontre plus. On livre mais on ne se comprend plus.</p>
+    <p class="et-pourtant">Et pourtant, chacun sait que ce n'est pas comme ça qu'il veut travailler.</p>
+  </div>
+
+  <div class="etages rv">
+    <div class="eyebrow">Les trois échelles de l'usure…</div>
+  </div>
+
+  <div class="levels rv">
+    <div class="lvl">
+      <div class="n">01</div>
+      <h4>La personne s'efface</h4>
+      <p>Invisibilité. Incapacité à montrer qui on est, ce qu'on vaut, ce qui nous pèse.</p>
+    </div>
+    <div class="lvl">
+      <div class="n">02</div>
+      <h4>Le collectif se dégrade</h4>
+      <p>Méfiance, déséquilibres, malentendus, pouvoir qu'on n'ose pas nommer.</p>
+    </div>
+    <div class="lvl">
+      <div class="n">03</div>
+      <h4>Les structures s'épuisent</h4>
+      <p>Coopérations sans cadre, surcharge, engagements-pièges, mémoire perdue.</p>
+    </div>
+  </div>
+
+  <p class="loop rv">Et la boucle se referme&#8239;: <b>l'écosystème épuisé renforce le paradigme</b> — qui rétrécit encore les personnes, qui abîment encore les collectifs. Une spirale descendante qui se nourrit d'elle-même.</p>
+</section>
+
+<!-- II. LES 18 LIEUX -->
+<section class="lieux">
+  <div class="sec-head">
+    <div class="eyebrow">…et les lieux à soigner dans chacune</div>
+    <h2>Le vertige vient de leur nombre, <em>pas de leur difficulté.</em></h2>
+    <p>Ils s'entremêlent, et chacun semble appeler sa propre réponse. C'est cette impression d'enchevêtrement qui décourage — on ne sait par où commencer, alors on ne commence pas. Pourtant, chacun de ces lieux appelle un geste de soin. Et aucun n'est une procédure&#8239;: ce sont des gestes que n'importe qui peut tenir dès demain.</p>
+  </div>
+
+  <div class="explore">
+    <div>
+      <div class="group">
+        <div class="gt">La cause racine</div>
+        <div class="list" id="g0"></div>
+      </div>
+      <div class="group">
+        <div class="gt">La personne s'efface</div>
+        <div class="list" id="g1"></div>
+      </div>
+      <div class="group">
+        <div class="gt">Le collectif se dégrade</div>
+        <div class="list" id="g2"></div>
+      </div>
+      <div class="group">
+        <div class="gt">Les structures s'épuisent</div>
+        <div class="list" id="g3"></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="card" id="card">
+        <p class="idle">Sélectionnez un lieu pour voir <b>ce que ça produit, ce que ça fait aux personnes</b> — et le geste qui le soigne.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- III. LE DÉPLACEMENT -->
+<section class="deplacement">
+  <div class="sec-head">
+    <div class="eyebrow">La révélation</div>
+    <h2>Dix-huit gestes de soin, <em>un seul mouvement.</em></h2>
+    <p>Regardez les dix-huit gestes. Aucun ne demande un outil. Tous demandent la même chose&#8239;: voir ce qui est là, et le nommer.</p>
+  </div>
+
+  <div class="geste rv">
+    <div class="eyebrow">La praxis des Réciprocités</div>
+    <p>Devenir attentif et sensible à ce qui circule ou doit circuler en nous et autour de nous.</p>
+    <p class="def">Une praxis est une manière d'envisager le monde et d'agir dessus. Pas une méthode qu'on applique&#8239;: une façon d'être qu'on tient. Elle s'injecte dans les gestes ordinaires — la façon d'ouvrir une réunion, de nommer un désaccord, de reconnaître ce que quelqu'un apporte. Rien ne change dans le programme&#8239;; tout change dans ce qui s'y passe.</p>
+  </div>
+
+  <div class="principes rv">
+    <div class="eyebrow">Les quatre principes de la praxis</div>
+    <h3>Ce qu'on fait passer avant</h3>
+    <p>On valorise ce qui est nommé en premier — sans nier la valeur de ce qui vient après.</p>
+  </div>
+
+  <div class="vgrid rv">
+    <div class="v"><div class="n">I</div><h4><span>La personne</span> avant le rôle</h4><p>Pas les fonctions et les titres — ce qu'on est et ce qu'on apporte vraiment.</p></div>
+    <div class="v"><div class="n">II</div><h4><span>La relation</span> avant les outils</h4><p>Pas les process et les contrats — la confiance construite, nommée, entretenue.</p></div>
+    <div class="v"><div class="n">III</div><h4><span>L'émergence</span> avant la prescription</h4><p>Pas les méthodes imposées — les formes qui naissent du terrain.</p></div>
+    <div class="v"><div class="n">IV</div><h4><span>La durée</span> avant l'intensité</h4><p>Pas les coups d'éclat — les coopérations qui tiennent dans le temps.</p></div>
+  </div>
+</section>
+
+<!-- IV. LA PRAXIS -->
+<section class="praxis">
+  <div class="sec-head">
+    <div class="eyebrow">Faire vivre la praxis dans la complexité</div>
+    <h2>Un geste ne laisse pas de trace. <em>Il faut des espaces pour le faire exister et perdurer.</em></h2>
+    <p>Un geste se tient dans l'instant. Mais dès qu'une situation implique plusieurs personnes, s'étale dans le temps ou dépasse ce qu'une conversation peut porter, il faut autre chose&#8239;: de quoi garder trace, rendre visible, partager, discuter. C'est ce que la méthode apporte — non pas des étapes à suivre, mais un terreau où la praxis peut prendre.</p>
+  </div>
+
+  <p class="lead-method rv">La méthode produit aujourd'hui un objet&#8239;: la <strong>convention de réciprocité</strong>. Elle n'est ni la finalité ni le passage obligé — c'est le premier support qu'on a su construire pour qu'une réciprocité laisse une trace.</p>
+
+  <!-- LES RÔLES -->
+  <div class="roles rv">
+    <div class="eyebrow">Les différents rôles</div>
+    <div class="rgrid">
+      <div class="role">
+        <div class="rn">Le relieur</div>
+        <p>Gardien du processus. Il ne porte aucun projet et ne décide rien à la place des autres&#8239;: il crée les conditions pour que ce qui existe déjà puisse se voir, se dire et se tenir.</p>
+      </div>
+      <div class="role">
+        <div class="rn">Le récipreneur</div>
+        <p>Celui qui prend l'initiative. Il s'empare d'une réciprocité, réunit les personnes concernées, porte l'intention de départ — sans être garant du processus.</p>
+      </div>
+      <div class="role">
+        <div class="rn">Le réciprenant</div>
+        <p>Celui qui entre dans la réciprocité. Il apporte ce qu'il a, reçoit ce qui circule, et s'engage avec les autres.</p>
+      </div>
+    </div>
+    <p class="rnote">Ces rôles ne sont pas des statuts. Un réciprenant peut devenir récipreneur ailleurs&#8239;; un récipreneur peut apprendre à relier. C'est un parcours, pas une hiérarchie.</p>
+  </div>
+
+  <!-- AVANT DE S'ENGAGER : JAUGER -->
+  <div class="prelim rv">
+    <div class="eyebrow">Avant de s'engager · le relieur accompagne le récipreneur</div>
+    <h3>Dimensionner</h3>
+    <p class="plead">Toute cette étape se mène à deux&#8239;: le récipreneur, qui porte l'intention, et le relieur, qui tient le processus. Les réciprenants n'entrent qu'après. La praxis commence ici — pas en promettant une transformation, mais en regardant honnêtement ce qui est faisable, et à quelle hauteur. Trois questions&#8239;: <strong>ce qu'on veut accomplir</strong>, <strong>ce que ça pèse</strong>, <strong>ce qu'on peut porter</strong>. Tant qu'on n'y a pas répondu, on ne s'engage pas.</p>
+
+
+    <div class="poutil">
+      <div>
+        <div class="sl">Outil</div>
+        <div class="sv">Arpentage des Réciprocités</div>
+      </div>
+      <div>
+        <div class="sl">Ce qui apparaît</div>
+        <div class="sv q">La forme de réciprocité qu'on peut réellement engager — et à quelle hauteur</div>
+      </div>
+    </div>
+
+    <div class="obj">
+      <div class="olab">Avoir conscience de ce qu'une réciprocité peut accomplir, du plus accessible au plus exigeant</div>
+      <div class="lvwrap">
+        <div class="lvaxis"><span class="t">Facile</span><span class="line"></span><span class="t">Complexe</span></div>
+        <div class="lvls">
+
+        <div class="lvline n1">
+          <div class="ob"><h5>Instaurer la confiance</h5><p>Développer un climat sûr pour collaborer efficacement, réduire les malentendus et faciliter les échanges futurs.</p></div>
+          <div class="ob"><h5>Reconnaître l'engagement</h5><p>Motiver les acteurs et légitimer leur contribution en donnant visibilité et crédit à leurs efforts.</p></div>
+          <div class="ob"><h5>Tisser des liens</h5><p>Renforcer les réseaux, la solidarité et la coopération sur le long terme.</p></div>
+        </div>
+
+        <div class="lvline n2">
+          <div class="ob"><h5>Échanger ressources et compétences</h5><p>Optimiser l'utilisation des savoir-faire, outils, temps ou réseaux disponibles pour créer de la valeur collective.</p></div>
+          <div class="ob"><h5>Mutualiser les savoirs</h5><p>Capitaliser sur les expériences passées et faciliter l'apprentissage collectif.</p></div>
+          <div class="ob"><h5>Coopérer vers un but commun</h5><p>Assurer que tous les acteurs travaillent dans la même direction pour maximiser l'impact et l'efficacité du projet.</p></div>
+        </div>
+
+        <div class="lvline n3">
+          <div class="ob"><h5>Honorer un engagement</h5><p>S'assurer que les engagements formels ou informels sont respectés et que la coopération est légitime.</p></div>
+          <div class="ob"><h5>Sécuriser le projet</h5><p>Partager responsabilités et informations pour diminuer les incertitudes et protéger les parties prenantes.</p></div>
+        </div>
+
+        <div class="lvline n4">
+          <div class="ob"><h5>Inclure et faire participer</h5><p>Impliquer activement toutes les parties concernées, renforcer le sentiment d'appartenance et diversifier les perspectives.</p></div>
+          <div class="ob"><h5>Faire émerger des projets collectifs</h5><p>Favoriser l'émergence d'idées nouvelles et d'initiatives que personne ne pourrait réaliser seul.</p></div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="peser">
+      <div class="olab">Questionner le dimensionnement à partir de deux axes</div>
+      <p class="pintro">Deux questions suffisent à situer un projet&#8239;: de quels moyens dispose-t-on, et à quel degré de complexité a-t-on affaire. Le croisement des deux ne dit pas si un projet est bon — il dit à quelle hauteur il peut se tenir aujourd'hui.</p>
+
+      <div class="pcols">
+        <div class="pside left">
+          <div class="ph">Capacité <span>— ce qui vient de nous</span></div>
+          <ul>
+            <li>Le temps qu'on peut réellement y consacrer</li>
+            <li>La légitimité reconnue au porteur</li>
+            <li>Les compétences clés déjà là</li>
+            <li>La capacité à piloter et à trancher</li>
+            <li>Les ressources qu'on peut mobiliser</li>
+            <li>La résilience face à l'imprévu</li>
+            <li>La continuité au-delà des personnes</li>
+          </ul>
+        </div>
+
+        <div class="pvs">×</div>
+
+        <div class="pside right">
+          <div class="ph">Complexité <span>— ce qui vient de la situation</span></div>
+          <ul>
+            <li>Le nombre d'acteurs à embarquer</li>
+            <li>La distance entre leurs mondes</li>
+            <li>L'écart entre leurs intérêts</li>
+            <li>L'enchevêtrement des échanges</li>
+            <li>Le poids des enjeux juridiques ou politiques</li>
+            <li>L'étendue de l'horizon temporel</li>
+            <li>La difficulté à faire marche arrière</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pres">
+        <div class="olab">Ce que révèle la lecture des deux axes, pour s'engager à la bonne hauteur</div>
+        <div class="posits">
+          <div class="pos p2"><span>Exister simplement</span><p>Quand la complexité est faible et qu'on a de quoi la porter largement. Rien à alourdir&#8239;: on avance à vue, on récolte vite, on garde le geste léger.</p></div>
+          <div class="pos p3"><span>Phaser</span><p>Quand la complexité monte mais que la capacité suit à peu près. On n'engage pas tout d'un coup&#8239;: on découpe en jalons, on teste, on ajuste à chaque boucle avant d'aller plus loin.</p></div>
+          <div class="pos p4"><span>Structurer</span><p>Quand la complexité est réelle et qu'on a les moyens d'y répondre. Le moment de poser le cadre&#8239;: rôles clairs, responsabilités nommées, temporalités et repères fiables pour que ça tienne.</p></div>
+          <div class="pos p5"><span>Architecturer</span><p>Quand la complexité est forte et la capacité solide. On ne pilote plus un projet mais un système&#8239;: conventions multiples, engagements distribués, un pilotage explicite qui coordonne l'ensemble.</p></div>
+          <div class="pos p1"><span>Recadrer</span><p>Quand la complexité dépasse ce qu'on peut porter aujourd'hui. Ce n'est pas un échec&#8239;: c'est le signal qu'il faut réduire le périmètre, reporter, ou renforcer la capacité avant de relancer.</p></div>
+        </div>
+        <p class="onote">Aucune de ces positions n'est meilleure qu'une autre. Elles disent seulement à quelle hauteur un projet peut se tenir <em>aujourd'hui</em> — et un projet change de position à mesure que la capacité se construit.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- LES CINQ ÉTAPES -->
+  <div class="etapes-head rv">
+    <div class="eyebrow">Puis, avec les réciprenants</div>
+    <h3>Cinq étapes, cinq gestes, cinq supports.</h3>
+    <p>Rien n'oblige à toutes les parcourir. Chacune existe pour elle-même, et vaut par ce qu'elle fait apparaître.</p>
+  </div>
+
+  <div class="frise rv">
+
+    <div class="rc-step st1">
+      <div class="sn">01</div>
+      <div class="sc">
+        <h4>Comprendre</h4>
+        <div class="verbs"><span>Écouter</span><span>Observer</span><span>Investiguer</span></div>
+        <p class="sq">Qui veut agir, et à partir de quelles motivations&#8239;?</p>
+        <p class="st">Donner forme à l'écosystème humain et stratégique&#8239;: identifier les acteurs en présence, leurs intentions explicites ou implicites, leurs besoins, leurs apports, ainsi que les alliances existantes et les tensions latentes.</p>
+      </div>
+      <div class="sr">
+        <div class="sl">Outil</div><div class="sv">Fiche In Situ</div>
+        <div class="sl">Ce qui apparaît</div><div class="sv q">Ce que chacun apporte, et ce qui le fragilise</div>
+      </div>
+    </div>
+
+    <div class="rc-step st2">
+      <div class="sn">02</div>
+      <div class="sc">
+        <h4>Préparer</h4>
+        <div class="verbs"><span>Cadrer</span><span>Imaginer</span><span>Documenter</span></div>
+        <p class="sq">Comment explorer les possibles d'une réciprocité optimale&#8239;?</p>
+        <p class="st">Mettre en ordre les informations recueillies pour clarifier les enjeux, révéler les points de vigilance, tracer les chemins possibles et définir des priorités partagées avant toute mise en action.</p>
+      </div>
+      <div class="sr">
+        <div class="sl">Outil</div><div class="sv">Carte des Possibles</div>
+        <div class="sl">Ce qui apparaît</div><div class="sv q">Les premières intuitions de réciprocité</div>
+      </div>
+    </div>
+
+    <div class="rc-step st3">
+      <div class="sn">03</div>
+      <div class="sc">
+        <h4>Construire</h4>
+        <div class="verbs"><span>Aligner</span><span>Négocier</span><span>Tester</span></div>
+        <p class="sq">Comment connecter les réciprenants et passer à l'action&#8239;?</p>
+        <p class="st">Faire émerger un projet concret et des premières actions communes, afin de transformer l'intention en mouvement collectif et de produire une première clarté relationnelle par l'action.</p>
+      </div>
+      <div class="sr">
+        <div class="sl">Outil</div><div class="sv">Canevas Forum</div>
+        <div class="sl">Ce qui apparaît</div><div class="sv q">L'ébauche de réciprocité — un socle commun, pas encore un engagement</div>
+      </div>
+    </div>
+
+    <div class="rc-step st4">
+      <div class="sn">04</div>
+      <div class="sc">
+        <h4>Rédiger</h4>
+        <div class="verbs"><span>Clarifier</span><span>Formaliser</span><span>Sécuriser</span></div>
+        <p class="sq">Comment traduire la confiance en principes clairs et sécurisants&#8239;?</p>
+        <p class="st">Transformer les échanges vécus en accords écrits&#8239;: formaliser les engagements, les flux de réciprocité, les rôles et les règles communes qui structurent la relation sans la figer.</p>
+      </div>
+      <div class="sr">
+        <div class="sl">Outil</div><div class="sv">Gabarit de Convention</div>
+        <div class="sl">Ce qui apparaît</div><div class="sv q">La convention de réciprocité</div>
+      </div>
+    </div>
+
+    <div class="rc-step st5">
+      <div class="sn">05</div>
+      <div class="sc">
+        <h4>Faire vivre</h4>
+        <div class="verbs"><span>Transmettre</span><span>Nourrir</span><span>Perpétuer</span></div>
+        <p class="sq">Comment maintenir le lien et l'engagement dans le temps&#8239;?</p>
+        <p class="st">Suivre l'état réel de la relation par une lecture régulière — onze états, de l'éclaircie à l'orage — pour repérer ce qui se tend avant la rupture, et revenir corriger ce qui a bougé.</p>
+      </div>
+      <div class="sr">
+        <div class="sl">Outil</div><div class="sv">SuiVIE des Réciprocités</div>
+        <div class="sl">Ce qui apparaît</div><div class="sv q">Les signaux faibles, avant qu'ils ne deviennent des ruptures</div>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="ouverture rv">La convention est le premier objet issu de la praxis. D'autres viendront, pour d'autres besoins — transmettre la mémoire d'une relation, nommer ce qui déséquilibre, accompagner une sortie. Ce sera peut-être avec vous qu'ils émergeront. Qui sait&#8239;?</p>
+
+</section>
+
+<!-- VI. TRAVAILLER ENSEMBLE -->
+<section class="travail">
+  <div class="sec-head">
+    <div class="eyebrow">Travailler ensemble</div>
+    <h2>Là où j'interviens.</h2>
+    <p>J'interviens comme relieur. Je ne porte pas les projets et je ne décide à la place de personne — je crée les conditions pour que des acteurs parviennent à coopérer, et à tenir dans la durée. Mais je ne me contente pas d'un diagnostic à distance ou d'un atelier qui s'oublie après quelques jours. Je conçois, je fabrique, je produis les objets pour construire des réciprocités. Là où d'autres poseraient un contrat — un lien qui oblige, avec sa dette et sa sanction —, je construis une convention&#8239;: un accord qu'on se choisit et qu'on tient, parce que chacun y retrouve une part de lui.</p>
+  </div>
+
+  <div class="secteurs rv">
+    <div class="s"><div class="n">01</div><h4>Coopération sur les territoires</h4><p>Créer les conditions pour qu'un dispositif circule au-delà des déjà-convaincus. Collectivités, agences de développement, projets territoriaux.</p></div>
+    <div class="s"><div class="n">02</div><h4>Structuration de collectifs</h4><p>Formaliser les engagements mutuels, clarifier rôles et contributions, prévenir l'épuisement. Associations, coopératives, réseaux.</p></div>
+    <div class="s"><div class="n">03</div><h4>Formation à la praxis</h4><p>Transmission de la posture et des outils, pour les praticiens, facilitateurs et chargés de mission.</p></div>
+    <div class="s"><div class="n">04</div><h4>Diplomatie en milieux tendus</h4><p>Utiliser la réciprocité là où le conflit s'est installé — médiations sensibles, tensions entre communautés.</p></div>
+  </div>
+</section>
+
+<section class="clos">
+  <blockquote>La bienveillance ne se construit pas.<br><span class="spectrum-word">La réciprocité, si.</span></blockquote>
+  <p class="after">C'est la différence entre une posture et un mécanisme. Entre une intention et une infrastructure. Beaucoup d'approches parlent aujourd'hui de relation et de coopération — mais la plupart traitent la relation comme une valeur, quelque chose qu'on encourage et qu'on célèbre. Je la traite comme une matière&#8239;: quelque chose qu'on conçoit, qu'on nomme, qu'on partage, qu'on transmet.</p>
+  <p class="after">Et la différence, on la voit après. Quand l'enthousiasme retombe. Quand les premières personnes s'en vont. Quand la rupture arrive.</p>
+</section>
+
+<!-- V. LA THÉORIE -->
+<section class="theorie">
+  <div class="sec-head">
+    <div class="eyebrow">D'où ça vient</div>
+    <h2>La relation, paradigme unificateur du design.</h2>
+    <p>Une série en cinq temps. Elle part d'une phrase contre-intuitive, traverse la généalogie des paradigmes du design, nomme un concept qui manquait, et montre où tout cela s'incarne.</p>
+  </div>
+
+  <a class="cta-serie rv" href="relation-paradigme-du-design.html">
+    <span>Aller plus loin</span>
+    <span class="arw">→</span>
+  </a>
+</section>
+</div>
+
+<script>
+const LIEUX=[
+{g:0,n:1,t:"Le paradigme de l'accomplisseur de tâches",s:"Le système a réduit l'humain à ce qu'il produit. Derrière chaque rôle, une personne a disparu.",b:"Les gens jouent un rôle plutôt que d'être présents. La coopération devient de la coordination — on s'organise sans se rencontrer. Les émotions, les doutes, les intuitions sont bannis du travail collectif. Reste une fatigue sourde, le sentiment de n'être jamais vraiment là.",p:"La personne avant le rôle — on s'engage avec qui on est, pas avec ce qu'on produit.",u:"Nommer ce qu'on apporte au-delà de sa fonction."},
+{g:1,n:2,t:"Les relations désincarnées par les outils",s:"Les outils censés faciliter la relation l'ont remplacée.",b:"Les réunions sont devenues des comptes-rendus, les accords des contrats, les échanges des tickets. On ne se parle plus, on se coordonne. On ne se fait plus confiance, on se contractualise. Reste un sentiment de solitude au milieu de l'activité collective.",p:"Revenir au contact direct — avant tout outil, la relation.",u:"Une conversation sans ordre du jour ni compte-rendu prévu. Juste pour voir."},
+{g:1,n:3,t:"La difficulté à montrer qui on est",s:"On se présente par son rôle. Ce qu'on est vraiment reste invisible.",b:"Se montrer tel qu'on est — avec ses forces réelles, ses doutes, ses motivations — est perçu comme un risque. Alors on joue un personnage, et on perd le contact avec ce qui nous rend réellement précieux dans une coopération.",p:"Créer les conditions pour qu'on puisse se montrer — sans risque, sans jugement.",u:"Poser la question qui dépasse le rôle : « qu'est-ce que vous apportez que personne d'autre ne pourrait apporter ? »"},
+{g:1,n:4,t:"La difficulté à montrer sa valeur",s:"On contribue sans savoir si ça compte.",b:"Les contributions formelles sont visibles — livrables, présences, heures. Mais ce qui fait la différence — les intuitions, les connexions, le soin, la mémoire, l'énergie relationnelle — reste invisible. Alors les personnes cessent d'apporter ce qui n'est pas reconnu.",p:"Rendre visible ce qu'on apporte — pas seulement ce qu'on produit.",u:"Nommer trois contributions qu'on n'a jamais eu l'occasion de dire."},
+{g:1,n:5,t:"La difficulté à montrer ses faiblesses",s:"On fait comme si tout allait. Et la coopération avance en portant des charges invisibles.",b:"Montrer ses faiblesses est perçu — à tort — comme un aveu d'incompétence. Alors on compense, on fait semblant, on s'épuise à maintenir une image de maîtrise. Les vraies difficultés ne sont pas partagées, et s'accumulent jusqu'à la rupture.",p:"Créer un espace où les faiblesses sont des ressources, pas des risques.",u:"Demander « qu'est-ce qui vous coûte vraiment ? » — et attendre la réponse vraie."},
+{g:1,n:6,t:"La légitimité à agir non reconnue",s:"On sait qu'on peut apporter quelque chose. Mais on ne se sent pas autorisé.",b:"Alors on attend — ou on part. L'énergie disponible ne trouve pas d'endroit où se poser, et le collectif se prive de ce que personne ne lui a explicitement demandé.",p:"Reconnaître explicitement la légitimité de chacun à contribuer, depuis qui il est.",u:"Écrire noir sur blanc ce que chacun est légitime à apporter et à décider."},
+{g:1,n:7,t:"L'invisibilisation de la contribution",s:"Ce qu'on fait en dehors des livrables formels disparaît.",b:"La contribution informelle est souvent la plus précieuse — et la moins vue. Un sentiment d'injustice s'installe, rarement nommé, et la motivation se tourne vers ce qui est visible plutôt que vers ce qui est utile.",p:"Rendre visible ce qui est informel — non pour le formaliser à l'excès, mais pour le reconnaître.",u:"Nommer trois choses qu'on fait et qui n'apparaissent dans aucune description de rôle."},
+{g:2,n:8,t:"La crise de la confiance",s:"On vérifie, on se protège, on anticipe le pire. La méfiance devient le réflexe.",b:"On ne sait plus à qui se fier. Chaque engagement non tenu, jamais discuté, ajoute une couche de prudence. L'énergie passe dans la protection plutôt que dans le travail commun.",p:"Reconstruire la confiance par des actes cohérents, pas par des déclarations d'intention.",u:"Nommer les engagements non tenus — explicitement, sans accuser — pour en comprendre les causes."},
+{g:2,n:9,t:"Le sentiment d'être seul à porter",s:"On porte plus que sa part. Personne ne le dit — jusqu'à ce que ça explose.",b:"On voit les autres faire moins, on compense, on s'épuise. Et comme la charge n'est visible nulle part, elle ne peut ni être partagée ni même reconnue.",p:"Rendre visible la charge — pour qu'elle puisse être partagée ou reconnue.",u:"Nommer ce que chacun porte, explicitement, devant les autres."},
+{g:2,n:10,t:"Le déséquilibre des efforts",s:"Certains donnent plus que d'autres. C'est visible — mais personne ne le dit.",b:"Le déséquilibre s'installe dans le silence, et devient une évidence tacite que plus personne n'ose rouvrir. Il finit par déterminer qui reste et qui s'en va.",p:"Nommer le déséquilibre — pas pour accuser, mais pour rétablir la symétrie.",u:"Écrire ce que chacun s'engage à apporter : en temps, en énergie, en ressources."},
+{g:2,n:11,t:"Les interprétations divergentes",s:"On a dit oui à la même chose. Mais on n'a pas compris la même chose.",b:"Et on ne le découvre que trop tard — quand les effets sont déjà là. Chacun a raison depuis sa lecture, personne n'a menti, et pourtant l'engagement ne recouvrait pas la même réalité.",p:"Expliciter ce qu'on a compris — avant que les divergences produisent leurs effets.",u:"Pour chaque engagement, écrire ce que chaque partie comprend concrètement : action, résultat, temporalité."},
+{g:2,n:12,t:"Les rôles et responsabilités flous",s:"On ne sait pas vraiment qui fait quoi. Ni qui décide.",b:"Ça crée des zones mortes dans la coopération : des sujets que tout le monde croit couverts par quelqu'un d'autre, et une énergie considérable dépensée à naviguer le flou.",p:"Clarifier — pas pour figer, mais pour libérer l'énergie qui s'épuise dans le flou.",u:"Poser la question « qui fait quoi, qui décide quoi, qui est responsable de quoi ? » — et écrire les réponses."},
+{g:2,n:13,t:"Les asymétries de pouvoir non nommées",s:"Les rapports de force existent. Tout le monde le sait. Personne n'en parle.",b:"Ils structurent tout en silence : ce qui se dit, ce qui se tait, ce qui se décide. Ne pas les nommer ne les fait pas disparaître — ça les rend seulement impossibles à travailler.",p:"Nommer les rapports de force — pour qu'ils soient pris en compte, pas ignorés.",u:"Demander ouvertement : quels sont les déséquilibres de pouvoir ici, et comment on les compense ?"},
+{g:3,n:14,t:"La coopération qui s'épuise faute de cadre",s:"On coopère dans le flou. Sans règles, sans espace pour renégocier.",b:"L'absence de cadre passe pour de la liberté, jusqu'au moment où chacun découvre que rien ne protège personne. Et ça finit par s'effondrer, souvent sur un incident mineur.",p:"Construire un cadre minimal — pas pour rigidifier, mais pour libérer l'énergie.",u:"Formuler ensemble les règles minimales, avant que les premières tensions arrivent."},
+{g:3,n:15,t:"La surcharge mentale et cognitive",s:"On porte trop. Et on ne le dit pas — parce qu'on ne sait pas comment.",b:"Trop de projets, trop de responsabilités, trop d'incertitudes. La surcharge n'a aucun endroit où se déclarer, donc elle se manifeste autrement : irritabilité, retrait, désengagement soudain.",p:"Rendre la surcharge visible — pour qu'elle puisse être partagée ou allégée.",u:"Demander « où en êtes-vous, vraiment ? » — et créer l'espace pour que la réponse soit honnête."},
+{g:3,n:16,t:"L'engagement perçu comme un piège",s:"On s'est engagé. Et maintenant on ne peut plus partir sans briser quelque chose.",b:"On reste par fidélité. Mais la fidélité s'épuise, et le départ finit par se faire dans la rupture plutôt que dans la conversation.",p:"Prévoir dès le début comment on sort — pour que l'engagement soit libre.",u:"Écrire dans quelles conditions et de quelle manière on peut réviser ou quitter cet engagement."},
+{g:3,n:17,t:"La perte de mémoire relationnelle",s:"Ce qui a été construit ensemble disparaît avec les personnes.",b:"Les nouveaux arrivent sans savoir ce qui précède : les tensions déjà traversées, les accords tacites, les raisons derrière les règles. Et tout recommence à zéro.",p:"Faire de la relation un objet transmissible.",u:"Documenter l'histoire vivante de la relation, pour que quelqu'un qui arrive comprenne ce qui a été construit avant lui."},
+{g:3,n:18,t:"Les contraintes externes qui désengagent",s:"Les contextes changent. Et souvent personne ne le dit — jusqu'à ce que ce soit trop tard.",b:"Budgets réduits, priorités déplacées, arbitrages subis. Faute d'un endroit pour en parler, le désengagement se fait en silence et passe pour de la mauvaise volonté.",p:"Anticiper l'imprévu sans le nier — la flexibilité est une forme de respect.",u:"Convenir dès le départ : si les conditions changent, voici comment on en parle."}
+];
+
+const COLORS=['var(--c4)','var(--c1)','var(--c2)','var(--c3)'];
+LIEUX.forEach((l,i)=>{
+  const b=document.createElement('button');
+  b.className='item';b.type='button';
+  b.innerHTML=`<span class="no">${String(l.n).padStart(2,'0')}</span><span>${l.t}</span>`;
+  b.addEventListener('click',()=>show(i,b));
+  document.getElementById('g'+l.g).appendChild(b);
+});
+
+const card=document.getElementById('card');
+function show(i,btn){
+  document.querySelectorAll('.item').forEach(x=>x.classList.remove('active'));
+  btn.classList.add('active');
+  const l=LIEUX[i];
+  card.style.setProperty('--pc',COLORS[l.g]);
+  card.innerHTML=`
+    <div class="kicker">Lieu ${String(l.n).padStart(2,'0')}</div>
+    <h3>${l.t}</h3>
+    <p class="sum">${l.s}</p>
+    <p class="body">${l.b}</p>
+    <div class="out">
+      <div class="lb">Le geste de soin</div>
+      <p class="porte">${l.p}</p>
+      <div class="lb">Le premier pas</div>
+      <p class="seuil">${l.u}</p>
+    </div>`;
+}
+
+const io=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+},{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+<script src="background.js"></script>
+<script src="figure-zoom.js"></script>
+<footer class="ft">
+  <div class="ft-inner">
+
+    <div class="ft-top">
+
+      <div class="ft-sign">
+        <div class="ft-mark">
+          <img src="logo-relations.svg" alt="" aria-hidden="true">
+          <div>
+            <div class="ft-name">Brann Etienne</div>
+            <div class="ft-role">Designer relationnel &amp; syst&eacute;mique</div>
+          </div>
+        </div>
+        <p class="ft-claim">&Agrave; toutes les &eacute;chelles, tout tient par <em>le m&ecirc;me fil</em>.</p>
+        <div class="ft-place">Lyon &middot; en remote et sur site</div>
+      </div>
+
+      <nav class="ft-cols" aria-label="Plan du site">
+
+        <div class="ft-col ft-cases">
+          <div class="ft-h">Les cas</div>
+          <ul>
+            <li style="--d:var(--c1)"><a href="cas-axa.html">Healthanea <span class="ft-tag">Sant&eacute;</span></a></li>
+            <li style="--d:var(--c2)"><a href="cas-shift-prime.html">SHIFT Prime <span class="ft-tag">Industrie</span></a></li>
+            <li style="--d:var(--c4)"><a href="cas-bi-solution.html">B.I Solution <span class="ft-tag">Data</span></a></li>
+            <li style="--d:var(--c3)"><a href="cas-proshop.html">Proshop &amp; Beyond <span class="ft-tag">Commerce</span></a></li>
+            <li style="--d:var(--c5)"><span class="ft-soon">TiBillet <span class="ft-tag">Bient&ocirc;t</span></span></li>
+          </ul>
+          <a class="ft-more" href="etudes de cas.html">Tous les cas <span aria-hidden="true">&rarr;</span></a>
+        </div>
+
+        <div class="ft-col">
+          <div class="ft-h">La th&eacute;orie</div>
+          <ul class="ft-num">
+            <li><a href="article_1_relation_paradigme_v2.html"><b>01</b> S'occuper de la relation</a></li>
+            <li><a href="article_2_trois_disciplines_v2.html"><b>02</b> Les trois disciplines</a></li>
+            <li><a href="article_3_metaliminalite_v2.html"><b>03</b> La m&eacute;taliminalit&eacute;</a></li>
+            <li><a href="article_4_cercle_reciprocites_v2.html"><b>04</b> Le Cercle des R&eacute;ciprocit&eacute;s</a></li>
+            <li><a href="article_5_relation_paradigme_v2.html"><b>05</b> La relation comme paradigme</a></li>
+          </ul>
+          <a class="ft-more" href="relation-paradigme-du-design.html">La s&eacute;rie compl&egrave;te <span aria-hidden="true">&rarr;</span></a>
+        </div>
+
+        <div class="ft-col">
+          <div class="ft-h">Ailleurs</div>
+          <ul>
+            <li><a href="reciprocites-v2.html">R&eacute;ciprocit&eacute;s</a></li>
+            <li><a href="a-propos.html">&Agrave; propos</a></li>
+            <li><a href="https://www.linkedin.com/in/brann-etienne/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://medium.com/@brann.etienne" target="_blank" rel="noopener">Medium</a></li>
+          </ul>
+          <a class="ft-more ft-mail" href="mailto:brann.etienne@gmail.com">brann.etienne@gmail.com</a>
+        </div>
+
+      </nav>
+    </div>
+
+    <div class="ft-bottom">
+      <span>&copy; 2026 Brann Etienne</span>
+      <span class="ft-spectrum" aria-hidden="true"><i style="background:var(--c1)"></i><i style="background:var(--c2)"></i><i style="background:var(--c3)"></i><i style="background:var(--c5)"></i><i style="background:var(--c4)"></i></span>
+      <a class="ft-up" href="#top">Retour en haut <span aria-hidden="true">&uarr;</span></a>
+    </div>
+
+  </div>
+</footer>
+</body>
+</html>
