@@ -5119,7 +5119,8 @@ body {
     sans-serif;
   letter-spacing: 0.05em;
   text-decoration: none;
-  transition: color 0.3s ease;
+  /* survol : la couleur doit répondre tout de suite */
+  transition: color 0.12s ease-in;
 }
 .site-nav .site-links a::after {
   content: "";
@@ -5131,7 +5132,7 @@ body {
   background: currentColor;
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.3s ease;
+  transition: transform 0.16s ease-in;
 }
 .site-nav .site-links a:hover,
 .site-nav .site-links a.active {
@@ -5584,4 +5585,512 @@ footer a {
   .figure {
     transition: none;
   }
+}
+
+/* ============ MENU HAMBURGER (mobile) ============ */
+.nav-toggle {
+  display: none;
+  position: relative;
+  width: 44px;
+  height: 44px;
+  margin-right: -10px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--paper);
+  cursor: pointer;
+  flex: none;
+}
+.nav-toggle:focus-visible {
+  outline: 2px solid var(--c1);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+/* les trois barres : une réelle, deux en pseudo-éléments */
+.nav-bars,
+.nav-bars::before,
+.nav-bars::after {
+  position: absolute;
+  left: 50%;
+  width: 22px;
+  height: 1.5px;
+  margin-left: -11px;
+  background: currentColor;
+  border-radius: 2px;
+  transition:
+    transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1),
+    opacity 0.2s ease;
+}
+.nav-bars {
+  top: 50%;
+  margin-top: -0.75px;
+}
+.nav-bars::before,
+.nav-bars::after {
+  content: "";
+  left: 0;
+  margin-left: 0;
+}
+.nav-bars::before {
+  top: -7px;
+}
+.nav-bars::after {
+  top: 7px;
+}
+/* état ouvert : la barre du milieu disparaît, les deux autres se croisent */
+.site-nav.nav-open .nav-bars {
+  background: transparent;
+}
+.site-nav.nav-open .nav-bars::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+.site-nav.nav-open .nav-bars::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+@media (max-width: 760px) {
+  .nav-toggle {
+    display: block;
+  }
+  /* l'identité complète reste visible dans l'en-tête */
+  .site-nav .site-role {
+    display: inline;
+  }
+  /* un backdrop-filter sur la barre en ferait le bloc conteneur des
+     éléments position:fixed qu'elle contient — le menu plein écran
+     resterait alors enfermé dans la hauteur de la barre. */
+  .site-nav {
+    backdrop-filter: none;
+    background: var(--ink);
+  }
+
+  /* le menu couvre toute la page : on est obligé de choisir */
+  /* le menu est un enfant de .site-nav : son z-index le place dans la pile
+     de la barre. Il doit rester SOUS le logo et le bouton, sinon il les couvre. */
+  .site-nav .site-brand,
+  .site-nav .nav-toggle {
+    position: relative;
+    z-index: 2;
+  }
+  .site-nav .site-links {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(4px, 1.6vh, 16px);
+    padding: 92px 24px 56px;
+    /* fond à 90 % : on devine la page derrière sans qu'elle gêne la lecture */
+    background: color-mix(in srgb, var(--ink) 90%, transparent);
+    /* le panneau descend depuis le haut, comme s'il sortait du bouton */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100%);
+    /* cette transition-ci gouverne la FERMETURE */
+    transition:
+      opacity 0.5s ease,
+      transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 0.6s;
+  }
+  .site-nav.nav-open .site-links {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    /* et celle-ci l'OUVERTURE */
+    transition:
+      opacity 0.55s ease,
+      transform 0.72s cubic-bezier(0.2, 0.7, 0.2, 1),
+      visibility 0.72s;
+  }
+
+  /* les entrées arrivent en cascade derrière le panneau */
+  .site-nav .site-links a {
+    opacity: 0;
+    transform: translateY(-18px);
+    /* fermeture : douce, en légère cascade inverse */
+    transition:
+      opacity 0.4s ease,
+      transform 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+      color 0.12s ease-in;
+  }
+  .site-nav .site-links a:nth-child(1) {
+    transition-delay: 0.16s, 0.16s, 0s;
+  }
+  .site-nav .site-links a:nth-child(2) {
+    transition-delay: 0.12s, 0.12s, 0s;
+  }
+  .site-nav .site-links a:nth-child(3) {
+    transition-delay: 0.08s, 0.08s, 0s;
+  }
+  .site-nav .site-links a:nth-child(4) {
+    transition-delay: 0.04s, 0.04s, 0s;
+  }
+  .site-nav .site-links a:nth-child(5) {
+    transition-delay: 0s, 0s, 0s;
+  }
+  .site-nav.nav-open .site-links a {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity 0.5s ease,
+      transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1),
+      color 0.12s ease-in;
+  }
+  .site-nav.nav-open .site-links a:nth-child(1) {
+    transition-delay: 0.22s, 0.22s, 0s;
+  }
+  .site-nav.nav-open .site-links a:nth-child(2) {
+    transition-delay: 0.31s, 0.31s, 0s;
+  }
+  .site-nav.nav-open .site-links a:nth-child(3) {
+    transition-delay: 0.4s, 0.4s, 0s;
+  }
+  .site-nav.nav-open .site-links a:nth-child(4) {
+    transition-delay: 0.49s, 0.49s, 0s;
+  }
+  .site-nav.nav-open .site-links a:nth-child(5) {
+    transition-delay: 0.58s, 0.58s, 0s;
+  }
+
+  /* grands, centrés, largement cliquables */
+  .site-nav .site-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 460px;
+    min-height: 64px;
+    padding: 0;
+    font-family: "Instrument Serif", serif;
+    font-size: clamp(30px, 8.5vw, 42px);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: 0;
+    color: var(--paper);
+  }
+  .site-nav .site-links a.active {
+    color: var(--c1);
+  }
+  .site-nav .site-links a.site-contact {
+    color: var(--c2);
+  }
+  /* le soulignement animé n'a pas de sens ici */
+  .site-nav .site-links a::after {
+    display: none;
+  }
+
+  /* pas de défilement de la page derrière le menu ouvert */
+  body.nav-locked {
+    overflow: hidden;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav-bars,
+  .nav-bars::before,
+  .nav-bars::after,
+  .site-nav .site-links,
+  .site-nav .site-links a {
+    transition: none;
+    transition-delay: 0s;
+  }
+  /* pas de glissement ni de cascade : apparition simple */
+  .site-nav .site-links,
+  .site-nav .site-links a {
+    transform: none;
+  }
+}
+
+/* ============ LOGOS CLIENTS ============ */
+.client img {
+  /* deux plafonds : la largeur borne les logos allongés,
+     la hauteur borne les carrés — l'ensemble reste optiquement équilibré */
+  max-width: 64%;
+  max-height: 42%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.72;
+  filter: grayscale(1);
+  transition:
+    opacity 0.35s ease,
+    filter 0.35s ease;
+}
+.client:hover img {
+  opacity: 1;
+  filter: none;
+}
+/* logos livrés sur fond noir plein : `screen` rend le noir invisible
+   sur --ink, sans toucher au tracé blanc */
+.client-noir img {
+  mix-blend-mode: screen;
+}
+/* le CNRS est carré : sans plafond de hauteur plus généreux il paraîtrait minuscule */
+.client img[src*="cnrs"] {
+  max-height: 58%;
+  max-width: 42%;
+}
+@media (max-width: 620px) {
+  .clients-grid {
+    grid-template-columns: repeat(auto-fill, minmax(118px, 1fr));
+  }
+  .client img {
+    max-width: 70%;
+    max-height: 46%;
+  }
+}
+
+/* les filets étaient dessinés par le fond de la grille traversant un gap de 1px :
+   une rangée incomplète laissait alors voir un bloc vide. Chaque cellule porte
+   maintenant ses propres bordures — l'espace restant est invisible. */
+.clients-grid {
+  gap: 0;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--faint);
+  border-left: 1px solid var(--faint);
+}
+.client {
+  border-right: 1px solid var(--faint);
+  border-bottom: 1px solid var(--faint);
+}
+
+/* nombre de colonnes figé par palier : `auto-fill` laissait la grille tomber
+   sur des répartitions bâtardes (4+4+1) selon la largeur de fenêtre. */
+.clients-grid {
+  grid-template-columns: repeat(5, 1fr);
+}
+.client img {
+  max-width: 72%;
+  max-height: 52%;
+}
+.client img[src*="cnrs"] {
+  max-height: 68%;
+  max-width: 48%;
+}
+@media (max-width: 980px) {
+  .clients-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 620px) {
+  .clients-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .client img {
+    max-width: 74%;
+    max-height: 50%;
+  }
+}
+
+/* Nespresso : le mot-clé n'occupe qu'une petite part de la toile, le reste
+   est du noir neutralisé par `screen`. Il lui faut donc une image bien plus
+   grande pour un tracé visible équivalent aux autres. */
+.client img[src*="nespresso"] {
+  max-width: 93%;
+  max-height: 93%;
+}
+
+/* Nexans : tracé plus dense que les autres, réduit de 15 % pour l'équilibre optique */
+.client img[src*="nexans"] {
+  max-width: 61%;
+  max-height: 44%;
+}
+
+
+
+
+/* ============ À PROPOS — la lettre ============ */
+/* Gabarit repris de .prelim (page Réciprocités) : halo doux, titre retenu,
+   texte au fil. Classe propre — même forme, autre intention. */
+.lettre-zone {
+  /* pas de hero ici, mais on garde exactement la respiration des autres pages
+     sous la nav : mesuré à 138 px d'écart entre le bas de la barre et l'œilleton */
+  padding-top: calc(clamp(80px, 16vh, 180px) - 18px);
+  /* premiere section de la page : pas de filet superieur sous la nav */
+  border-top: 0;
+}
+/* l œilleton s aligne sur le bord gauche de la carte, pas sur la gouttière de page */
+/* aligné sur les œilletons des autres sections (« Où je me tiens »),
+   c'est-à-dire au bord gauche de la page */
+.lettre-zone > .eyebrow {
+  margin: 0 0 32px;
+}
+.lettre {
+  /* la carte prend toute la largeur de page, comme les autres sections.
+     Le texte, lui, garde exactement sa mesure et sa position : le surplus
+     devient de la marge à droite. Cest leffet recherché. */
+  max-width: none;
+  background: #10141a;
+  border: 1px solid #2b313b;
+  border-radius: 3px;
+  padding: clamp(26px, 3.6vw, 52px);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 0 40px -6px rgba(255, 255, 255, 0.09),
+    0 0 110px -20px rgba(255, 255, 255, 0.07);
+}
+/* même échelle que le h3 de .prelim : on ne crie pas sur cette page */
+.lettre h1 {
+  font-size: clamp(28px, 3.6vw, 46px);
+  /* auto sur les côtés : le titre s'aligne sur le bloc de texte centré.
+     Le raccourci « margin: 0 0 26px » remettait les côtés à zéro. */
+  margin: 0 auto 26px;
+  max-width: 696px;
+}
+.llead {
+  font-size: 15.5px;
+  color: var(--muted);
+  line-height: 1.85;
+}
+.llead + .llead {
+  margin-top: clamp(20px, 3vh, 30px);
+}
+.llead strong {
+  color: var(--paper);
+  font-weight: 400;
+}
+
+
+
+
+/* ============ À PROPOS — la clôture ============ */
+/* La page s'ouvre et se referme sur la même carte : le halo fait la parenthèse. */
+.lettre-zone-fin {
+  padding-top: 0;
+}
+.lettre-fin h2 {
+  font-size: clamp(26px, 3.2vw, 40px);
+  line-height: 1.2;
+  margin-bottom: 24px;
+  /* même mesure que le reste : un bloc plus étroit serait centré à part,
+     et son bord gauche ne tomberait plus sur celui du texte */
+  max-width: 696px;
+}
+.fin-emo {
+  display: inline-block;
+  font-size: 0.8em;
+  margin-left: 4px;
+  filter: drop-shadow(0 0 16px color-mix(in srgb, var(--c5) 55%, transparent));
+}
+.lettre-fin .llead {
+  margin-bottom: clamp(30px, 4.5vh, 44px);
+}
+/* les liens : un seul appel principal, les autres en retrait */
+.fin-liens {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 22px;
+}
+.fin-liens a {
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: var(--muted);
+  border-bottom: 0;
+  transition: color 0.25s ease-in;
+}
+.fin-liens a:hover {
+  color: var(--paper);
+}
+.fin-liens .fin-primaire {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  border: 1px solid var(--c1);
+  border-radius: 3px;
+  color: var(--c1);
+  transition:
+    gap 0.35s ease,
+    background 0.3s ease,
+    color 0.25s ease-in;
+}
+.fin-liens .fin-primaire:hover {
+  gap: 15px;
+  background: color-mix(in srgb, var(--c1) 12%, transparent);
+  color: var(--paper);
+}
+/* la signature : la lettre est signée */
+.fin-signature {
+  margin-top: clamp(32px, 5vh, 48px);
+  padding-top: clamp(20px, 3vh, 26px);
+  border-top: 1px solid var(--faint);
+  font-family: "Instrument Serif", serif;
+  font-style: italic;
+  font-size: clamp(20px, 2.2vw, 26px);
+  color: #5c636e;
+}
+
+/* ============ À PROPOS — comment je travaille ============ */
+/* De vrais paragraphes qui s'enchaînent : pas de colonnes, pas de cartes.
+   L'émoji est en marge, le texte coule. */
+.trav {
+  max-width: 68ch;
+}
+.trav-para {
+  position: relative;
+  padding-left: clamp(38px, 4.5vw, 52px);
+  font-size: clamp(15px, 1.65vw, 17px);
+  line-height: 1.85;
+  color: var(--muted);
+}
+.trav-para + .trav-para {
+  margin-top: clamp(26px, 4vh, 40px);
+  padding-top: clamp(26px, 4vh, 40px);
+  border-top: 1px solid var(--faint);
+}
+.trav-emo {
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  font-size: 21px;
+  line-height: 1;
+  filter: drop-shadow(0 0 14px color-mix(in srgb, var(--sc) 45%, transparent));
+}
+.trav-para + .trav-para .trav-emo {
+  top: calc(clamp(26px, 4vh, 40px) + 0.15em);
+}
+/* l'amorce porte la couleur du propos */
+.trav-para strong {
+  color: var(--sc);
+  font-weight: 400;
+}
+/* les outils cités : présents, sans faire liste */
+.trav-para em {
+  font-style: normal;
+  color: #c9ced6;
+}
+
+/* la carte est pleine largeur, mais son contenu reste à la mesure d'origine
+   (800 px de carte moins 2 × 52 px de retrait) : rien ne bouge à gauche. */
+.lettre > * {
+  max-width: 696px;
+  /* centré dans la carte pleine largeur : marges égales à gauche et à droite,
+     sans toucher aux marges verticales */
+  margin-inline: auto;
+}
+
+/* ============ TITRES : GLYPHES NON ROGNÉS ============ */
+/* Avec background-clip:text le dégradé n'est peint que dans la boîte de
+   l'élément. En italique, ascendantes et descendantes débordent de cette
+   boîte et se retrouvent sans peinture — donc invisibles.
+   On agrandit la zone peinte sans déplacer la mise en page. */
+.spectrum-word,
+.ft-claim em {
+  padding-block: 0.16em;
+  margin-block: -0.16em;
+}
+/* line-height 1.1 est trop serré pour l'italique d'Instrument Serif :
+   suffisant pour la peinture, mais les glyphes sortent encore du flux.
+   On desserre juste ce qu'il faut sur les titres qui portent de l'italique. */
+h1 em,
+h2 em,
+h3 em,
+h1 .spectrum-word,
+h2 .spectrum-word {
+  line-height: 1.22;
 }
