@@ -63,3 +63,39 @@
     init();
   }
 })();
+
+/* ------------------------------------------------------------------
+   Effet holographique — reprise exacte du bouton « Et si…? ».
+   Point clé : l'écoute se fait sur un GRAND conteneur (ici la page),
+   pas sur l'élément lui-même. La position du pointeur est normalisée
+   sur ce conteneur, puis écrite dans --px / --py de chaque élément.
+   C'est ce qui fait que le fond bouge quand on déplace la souris
+   n'importe où, et pas seulement en survolant le bouton.
+   Contrairement à la référence, on ne pilote PAS --tiltx / --tilty :
+   aucune inclinaison.
+   ------------------------------------------------------------------ */
+(function () {
+  const hotes = [...document.querySelectorAll('.holo')]
+    .map(function (h) { return h.parentElement; })
+    .filter(Boolean);
+  if (!hotes.length) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  let px = '50%', py = '50%', enAttente = false;
+
+  function appliquer() {
+    enAttente = false;
+    for (const h of hotes) {
+      h.style.setProperty('--px', px);
+      h.style.setProperty('--py', py);
+    }
+  }
+
+  addEventListener('pointermove', function (e) {
+    const nx = Math.max(0, Math.min(1, e.clientX / innerWidth));
+    const ny = Math.max(0, Math.min(1, e.clientY / innerHeight));
+    px = (nx * 100).toFixed(1) + '%';
+    py = (ny * 100).toFixed(1) + '%';
+    if (!enAttente) { enAttente = true; requestAnimationFrame(appliquer); }
+  }, { passive: true });
+})();

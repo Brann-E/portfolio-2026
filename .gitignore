@@ -6,3 +6,6 @@
 
 # Sauvegarde avant déduplication du CSS
 styles-original.css
+
+# Backups automatiques
+*.bak

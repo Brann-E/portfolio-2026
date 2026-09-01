@@ -2211,137 +2211,6 @@ header .sub {
   opacity: 0;
 }
 
-.pl-line2-wrap {
-  flex: 1;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: clamp(20px, 3.6vmin, 40px);
-}
-.pl-line2 {
-  font-family: "Instrument Serif", serif;
-  font-style: italic;
-  font-size: clamp(1.9rem, 5.4vmin, 3.3rem);
-  line-height: 1.12;
-  letter-spacing: -0.02em;
-  max-width: 28ch;
-  color: #2b2440;
-  text-shadow: 0 1px 12px rgba(255, 255, 255, 0.5);
-  opacity: 0;
-  transform: translateY(20px);
-}
-.pl-scene.revealed .pl-line2 {
-  animation: pl-l2in 0.9s cubic-bezier(0.2, 0.9, 0.3, 1.05) 0.2s forwards;
-}
-@keyframes pl-l2in {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-.pl-burst {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 60px;
-  height: 60px;
-  transform: translate(-50%, -50%) scale(0);
-  z-index: 9;
-  pointer-events: none;
-  border-radius: 50%;
-  background: conic-gradient(
-    from 0deg,
-    var(--c1),
-    var(--c2),
-    var(--c3),
-    var(--c5),
-    var(--c4),
-    var(--c1)
-  );
-  filter: blur(30px);
-  opacity: 0;
-}
-.pl-scene.flashing .pl-burst {
-  animation: pl-burst 1.6s cubic-bezier(0.15, 0.7, 0.25, 1) forwards;
-}
-.pl-scene.flashing .pl-burst2 {
-  animation: pl-burst2 1.6s cubic-bezier(0.15, 0.7, 0.25, 1) 0.18s forwards;
-}
-@keyframes pl-burst {
-  0% {
-    transform: translate(-50%, -50%) scale(0.3);
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.9;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(22);
-    opacity: 0;
-  }
-}
-@keyframes pl-burst2 {
-  0% {
-    transform: translate(-50%, -50%) scale(0.2);
-    opacity: 0.85;
-  }
-  55% {
-    opacity: 0.55;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(17);
-    opacity: 0;
-  }
-}
-.pl-flash {
-  position: absolute;
-  inset: 0;
-  z-index: 10;
-  pointer-events: none;
-  opacity: 0;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle at 50% 52%,
-    #fff,
-    rgba(255, 255, 255, 0.5) 25%,
-    transparent 60%
-  );
-}
-.pl-scene.flashing .pl-flash {
-  animation: pl-flash 0.7s ease-out;
-}
-@keyframes pl-flash {
-  0% {
-    opacity: 0;
-  }
-  18% {
-    opacity: 0.55;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-.stage {
-  position: relative;
-  width: 100vw;
-  left: 50%;
-  transform: translateX(-50%);
-  overflow: hidden;
-  --sc: #28e6ff;
-  background: #ff0000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 190px;
-  text-align: center;
-  padding: 100px 40px 50px;
-}
 
 /* FOND : glisse et change selon le volet */
 .bg {
@@ -2467,9 +2336,7 @@ header .sub {
   --py: 50%;
   --tiltx: 0;
   --tilty: 0;
-  background: rgba(255, 255, 255, 0.18);
-  -webkit-backdrop-filter: blur(6px) saturate(158%);
-  backdrop-filter: blur(6px) saturate(158%);
+  background: var(--paper);
   border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: 999px;
   box-shadow:
@@ -3284,9 +3151,7 @@ footer {
   --py: 50%;
   --tiltx: 0;
   --tilty: 0;
-  background: rgba(255, 255, 255, 0.18);
-  -webkit-backdrop-filter: blur(6px) saturate(158%);
-  backdrop-filter: blur(6px) saturate(158%);
+  background: var(--paper);
   border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: 999px;
   box-shadow:
@@ -5142,20 +5007,22 @@ body {
 .site-nav .site-links a.active::after {
   transform: scaleX(1);
 }
-.site-nav .site-links a:nth-child(1):hover,
-.site-nav .site-links a:nth-child(1).active {
+/* couleur de survol ancrée sur data-section, non plus sur la position :
+   la nav peut gagner ou perdre des entrées sans décaler les couleurs */
+.site-nav .site-links a[data-section="cases"]:hover,
+.site-nav .site-links a[data-section="cases"].active {
   color: var(--c1);
 }
-.site-nav .site-links a:nth-child(2):hover,
-.site-nav .site-links a:nth-child(2).active {
+.site-nav .site-links a[data-section="reciprocites"]:hover,
+.site-nav .site-links a[data-section="reciprocites"].active {
   color: var(--c4);
 }
-.site-nav .site-links a:nth-child(3):hover,
-.site-nav .site-links a:nth-child(3).active {
+.site-nav .site-links a[data-section="theorie"]:hover,
+.site-nav .site-links a[data-section="theorie"].active {
   color: var(--c3);
 }
-.site-nav .site-links a:nth-child(4):hover,
-.site-nav .site-links a:nth-child(4).active {
+.site-nav .site-links a[data-section="apropos"]:hover,
+.site-nav .site-links a[data-section="apropos"].active {
   color: var(--c5);
 }
 .site-nav .site-links a.site-contact {
@@ -6093,4 +5960,748 @@ h3 em,
 h1 .spectrum-word,
 h2 .spectrum-word {
   line-height: 1.22;
+}
+
+/* ==========================================================================
+   Série « Regarder autrement » — 5 articles + 2 pages d'entrée
+   Tout ce qui suit est ADDITIF : aucune de ces classes n'existait avant.
+   Le gros du gabarit d'article est réutilisé tel quel (.hero, .article,
+   .chapeau, .section-title, .pull-quote, .paradigms, .definition,
+   .condition, .conclusion, .serie-nav) — voir les anciens articles.
+   ========================================================================== */
+
+/* accent par article : le site code déjà la série en c1→c5 (.serie-articles) */
+.art-1 { --accent: var(--c1); }
+.art-2 { --accent: var(--c2); }
+.art-3 { --accent: var(--c3); }
+.art-4 { --accent: var(--c4); }
+.art-5 { --accent: var(--c5); }
+
+/* l'assertion isolée : sérif, couleur d'accent, sans filet (≠ .pull-quote) */
+.claim {
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(24px, 3.7vw, 32px);
+  line-height: 1.24;
+  color: var(--accent);
+  margin: clamp(30px, 5vh, 44px) 0;
+}
+
+/* bibliographie de fin d'article */
+.biblio {
+  border-top: 1px solid var(--faint);
+  margin-top: clamp(48px, 8vh, 64px);
+  padding-top: 40px;
+}
+.biblio h2 { font-size: 24px; margin: 0 0 6px; }
+.biblio .biblio-intro { font-size: 15px; color: #9aa2ac; margin-bottom: 30px; }
+.biblio h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 30px 0 4px;
+}
+.biblio ul { list-style: none; padding: 0; margin: 0; }
+.biblio li {
+  padding: 15px 0;
+  border-bottom: 1px solid var(--faint);
+  font-size: 15px;
+  line-height: 1.5;
+  color: #c3c9d0;
+}
+.biblio li .a { color: #fff; font-weight: 500; }
+.biblio li .ti { font-style: italic; color: #e3e6e9; }
+.biblio li .pub { color: #9aa2ac; }
+.biblio li .note { display: block; margin-top: 5px; font-size: 14px; color: #8b929c; }
+
+/* la pastille de navigation */
+/* pastille : voir le bloc holographique en fin de fichier */
+
+/* --- « Regarder autrement » : les trois portes ------------------------- */
+.portes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding-block: 20px clamp(70px, 12vh, 110px);
+}
+a.porte,
+.porte {
+  border-radius: 16px;
+  padding: 36px 30px;
+  min-height: 440px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--ink);
+  position: relative;
+  overflow: hidden;
+  background: var(--pc);
+}
+.porte:hover,
+.porte:focus-visible { outline: none; }
+.porte-idx {
+  color: var(--ink);
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 500;
+  opacity: 0.65;
+}
+.porte h2 {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-size: clamp(30px, 4vw, 40px);
+  line-height: 1.12;
+  margin: 16px 0 14px;
+  color: var(--ink);
+}
+.porte-desc {
+  font-size: 16px;
+  line-height: 1.55;
+  color: rgba(11, 13, 16, 0.82);
+}
+.porte-foot { margin-top: auto; padding-top: 26px; }
+.porte-meta {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: rgba(11, 13, 16, 0.7);
+  margin-bottom: 14px;
+}
+.porte-go {
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid rgba(11, 13, 16, 0.35);
+  border-radius: 999px;
+  padding: 11px 20px;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+.porte:hover .porte-go {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+.porte-seuil  { --pc: var(--c1); }
+.porte-source { --pc: var(--c2); }
+.porte-geste  { --pc: var(--c3); }
+
+.ra-intro { padding-block: clamp(60px, 10vh, 90px) 40px; }
+.ra-intro h1 { max-width: 12ch; }
+.ra-charniere {
+  font-size: clamp(19px, 2.2vw, 22px);
+  line-height: 1.5;
+  color: #e3e6e9;
+  margin-top: 30px;
+  max-width: 620px;
+}
+.ra-promesse { font-size: 17px; color: var(--muted); margin-top: 18px; max-width: 600px; }
+
+@media (max-width: 820px) {
+  .portes { grid-template-columns: 1fr; }
+  .porte { min-height: 0; }
+}
+
+/* --- table de correspondances (article 02) ---------------------------- */
+.corresp { border-top: 1px solid var(--faint); margin: clamp(30px, 5vh, 40px) 0; }
+.corresp-row {
+  display: grid;
+  grid-template-columns: 1fr 30px 1fr;
+  gap: 18px;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--faint);
+}
+.corresp-a b,
+.corresp-b b {
+  display: block;
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-size: 19px;
+  color: var(--paper);
+}
+.corresp-b b { color: var(--accent); }
+.corresp-a span,
+.corresp-b span { font-size: 13.5px; color: var(--muted); }
+.corresp-eq {
+  text-align: center;
+  color: var(--muted);
+  font-family: "Instrument Serif", serif;
+  font-size: 20px;
+}
+@media (max-width: 600px) {
+  .corresp-row { grid-template-columns: 1fr; gap: 5px; }
+  .corresp-eq { display: none; }
+}
+
+/* definition sur deux paragraphes (article 03) */
+.definition-text + .definition-text { margin-top: 12px; }
+
+/* --- incise en marge (articles 02 et 04) ------------------------------- */
+.aside {
+  border-left: 2px solid var(--faint);
+  padding-left: 22px;
+  margin: clamp(30px, 5vh, 40px) 0;
+  font-size: 16px;
+  color: #c3c9d0;
+}
+.aside strong { color: #fff; font-weight: 500; }
+
+/* --- le cercle vertueux (article 05) ----------------------------------- */
+.cercle {
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  padding: 34px 30px;
+  margin: clamp(36px, 6vh, 46px) 0;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 5%, transparent), transparent);
+  text-align: center;
+  color: var(--accent);
+}
+.cercle-lab {
+  display: block;
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+.cercle svg { max-width: 340px; width: 100%; height: auto; margin: 0 auto; display: block; }
+.cercle-node { fill: var(--ink); }
+.cercle-lbl { fill: var(--paper); }
+.cercle-ring {
+  margin-top: 8px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #c3c9d0;
+}
+.cercle-ring b { color: var(--accent); font-weight: 500; }
+
+/* --- l'envoi final de la série (article 05) ---------------------------- */
+.envoi { border-top: 1px solid var(--faint); padding: 56px 0; text-align: center; }
+.envoi p {
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(22px, 3.4vw, 28px);
+  line-height: 1.3;
+  color: #e3e6e9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- La pratique ------------------------------------------------------- */
+.pratique { --accent: var(--c3); }
+
+/* le cadre d'orientation */
+.cadre {
+  border: 1px solid var(--faint);
+  border-radius: 10px;
+  padding: clamp(24px, 3.4vw, 38px);
+  margin: clamp(34px, 5vh, 46px) 0;
+  color: var(--accent);
+}
+.cadre-tag {
+  display: block;
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+.cadre h3 {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-size: clamp(21px, 2.6vw, 26px);
+  line-height: 1.2;
+  color: var(--paper);
+  margin: 0 0 10px;
+}
+.cadre > p { color: var(--muted); font-size: 15.5px; margin: 0 0 22px; }
+.cadre svg { width: 100%; max-width: 620px; height: auto; margin: 0 auto; display: block; }
+.cadre-node { fill: var(--ink); }
+.cadre-nom { fill: var(--paper); }
+.cadre-sous { fill: var(--muted); }
+.cadre-cap {
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+  margin: 14px 0 0;
+}
+
+/* liste « libellé + explication » — sert au cadre ET aux traces */
+.paire { margin-top: clamp(24px, 4vh, 34px); }
+.paire-row {
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  gap: 22px;
+  padding: 18px 0;
+  border-top: 1px solid var(--faint);
+}
+.paire-nom {
+  font-family: "Instrument Serif", serif;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--paper);
+}
+.paire-nom span {
+  display: block;
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 5px;
+}
+.paire-row p { margin: 0; font-size: 15.5px; color: #c3c9d0; }
+@media (max-width: 640px) {
+  .paire-row { grid-template-columns: 1fr; gap: 8px; }
+}
+
+/* la porte vers une autre entrée */
+.porte-lat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 26px;
+  flex-wrap: wrap;
+  border: 1px solid var(--faint);
+  border-radius: 10px;
+  padding: clamp(24px, 3vw, 34px);
+  margin: clamp(30px, 5vh, 44px) 0;
+}
+.porte-lat-l {
+  display: block;
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.porte-lat h4 {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-size: 26px;
+  color: var(--paper);
+  margin: 0 0 8px;
+}
+.porte-lat p { margin: 0; font-size: 15.5px; color: var(--muted); max-width: 60ch; }
+
+/* rangée de liens d'action */
+.actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: clamp(24px, 4vh, 34px); }
+.actions .cta-serie { margin-top: 0; }
+
+/* ==========================================================================
+   Effets holographiques — même recette que le bouton « Et si…? »
+   (grain.png à 600 % piloté par --px/--py), sans les inclinaisons.
+   ========================================================================== */
+
+/* --- la pastille de navigation ---------------------------------------- */
+.site-nav .site-links a.site-pill {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  --px: 50%;
+  --py: 50%;
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-weight: 500;
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  transition: box-shadow 0.28s ease, transform 0.16s ease;
+}
+.site-nav .site-links a.site-pill::after { display: none; }
+.holo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  /* la couleur vient de grain.png lui-meme : c est un foil pastel iride.
+     Aucun degrade ajoute — exactement la source du bouton #syc-btn. */
+  background-image: url("grain.png");
+  background-size: 600% 600%;
+  background-position: var(--px) var(--py);
+  /* meme saturation que le backdrop-filter de la reference */
+  filter: saturate(158%);
+  /* multiply au lieu de screen : la reference est posee sur un disque
+     colore, nous sur du blanc — screen y serait invisible */
+  mix-blend-mode: multiply;
+  opacity: 0.62;
+  transition: opacity 0.28s ease, background-position 0.25s ease;
+}
+/* ====================== PASTILLE ISOLEE ==============================
+   Le calque holographique de la pastille de nav ne depend PLUS de la
+   regle generique .holo : toutes ses proprietes sont declarees ici.
+   Toucher .holo (cartes, ou tout autre composant) ne peut plus
+   l affecter. NE RIEN MODIFIER ICI sans demande explicite de Brann.
+   Etat fige : grain.png 600% . multiply . 0.62 . saturate(158%)
+   ==================================================================== */
+.site-nav .site-links a.site-pill .holo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("grain.png");
+  background-size: 600% 600%;
+  background-position: var(--px) var(--py);
+  background-blend-mode: normal;
+  filter: saturate(158%);
+  mix-blend-mode: multiply;
+  opacity: 0.62;
+  transition: opacity 0.28s ease, background-position 0.25s ease;
+}
+.site-pill .holo-label { position: relative; z-index: 2; }
+.site-nav .site-links a.site-pill:hover,
+.site-nav .site-links a.site-pill:focus-visible {
+  color: var(--ink);
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.34),
+    0 0 24px -6px var(--c1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+.site-nav .site-links a.site-pill:hover .holo,
+.site-nav .site-links a.site-pill:focus-visible .holo { opacity: 1; }
+.site-nav .site-links a.site-pill:active { transform: translateY(1px) scale(0.985); }
+
+/* séparateur de nav + entrée « Explorations » */
+.site-nav .site-links .site-sep {
+  color: var(--faint);
+  font-size: 13px;
+  user-select: none;
+}
+.site-nav .site-links a[data-section="explorations"]:hover,
+.site-nav .site-links a[data-section="explorations"].active { color: var(--c4); }
+
+/* --- les trois portes : verre depoli ------------------------------------
+   Reprise du fond de #syc-btn : rgba blanc + backdrop-filter blur/saturate,
+   grain en screen. Textes en noir. Aucune elevation au survol.
+   NE PAS mutualiser ces regles avec celles de la pastille de nav. */
+a.porte,
+.porte {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  --px: 50%;
+  --py: 50%;
+  background: var(--paper);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: var(--ink);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+.porte > *:not(.holo) { position: relative; z-index: 2; }
+.porte .holo {
+  mix-blend-mode: multiply;
+  filter: saturate(158%);
+  opacity: 0.62;
+}
+.porte:hover .holo,
+.porte:focus-visible .holo { opacity: 0.85; }
+.porte:hover,
+.porte:focus-visible {
+  background: var(--paper);
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.34),
+    0 0 32px -10px var(--pc),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+.porte:active { background: var(--paper); }
+
+/* tous les textes de la carte en noir */
+.porte h2,
+.porte-idx,
+.porte-desc,
+.porte-meta,
+.porte-go { color: var(--ink); }
+.porte-idx { opacity: 1; }
+.porte-desc { color: rgba(11, 13, 16, 0.82); }
+.porte-meta { color: rgba(11, 13, 16, 0.7); }
+.porte-go { border-color: rgba(11, 13, 16, 0.35); }
+.porte:hover .porte-go {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+.porte-seuil  { --pc: var(--c1); }
+.porte-source { --pc: var(--c2); }
+.porte-geste  { --pc: var(--c3); }
+
+.ra-intro { padding-block: clamp(60px, 10vh, 90px) 40px; }
+.ra-intro h1 { max-width: 12ch; }
+.ra-charniere {
+  font-size: clamp(19px, 2.2vw, 22px);
+  line-height: 1.5;
+  color: #e3e6e9;
+  margin-top: 30px;
+  max-width: 620px;
+}
+.ra-promesse { font-size: 17px; color: var(--muted); margin-top: 18px; max-width: 600px; }
+
+@media (max-width: 820px) {
+  .portes { grid-template-columns: 1fr; }
+  .porte { min-height: 0; }
+}
+
+/* --- landing : pont + constat + scene refondue ----------------------- */
+
+/* le pont : dans le .wrap parent, aligne a gauche comme le hero */
+.pont {
+  padding: clamp(60px, 12vh, 130px) 0 clamp(40px, 8vh, 80px);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 5vh, 46px);
+  align-items: flex-start;
+}
+.pont-h1 {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  line-height: 1.05;
+  color: var(--paper);
+  margin: 0;
+}
+.pont-signature {
+  display: grid;
+  grid-template-columns: clamp(130px, 18vw, 210px) 1fr;
+  gap: clamp(24px, 4vw, 40px);
+  align-items: center;
+}
+.pont-portrait {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid var(--faint);
+  background: #10141a;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 0 60px -8px rgba(255, 255, 255, 0.18);
+}
+.pont-portrait img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.05);
+}
+.pont-ph {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(24px, 3vw, 32px);
+  color: #7a8290;
+}
+.pont-ident { text-align: left; }
+
+@media (max-width: 640px) {
+  .pont-signature { grid-template-columns: 90px 1fr; }
+}
+
+/* --- constat : sortir du full-bleed, rentrer dans .wrap avec radius --- */
+.sy-constat-section {
+  padding: clamp(20px, 4vh, 40px) 0 clamp(30px, 6vh, 60px);
+}
+.sy-stage {
+  position: relative;
+  width: 100%;
+  left: auto;
+  transform: none;
+  overflow: hidden;
+  border-radius: 16px;
+  --sc: #28e6ff;
+  background: #c9b8f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(48px, 8vh, 100px);
+  text-align: center;
+  padding: clamp(40px, 6vh, 60px) clamp(20px, 3vw, 40px) clamp(30px, 5vh, 50px);
+}
+.sy-constat-row {
+  gap: clamp(8px, 1.4vw, 16px);
+}
+.sy-nav-arrow {
+  padding: 0 2px;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+}
+
+/* --- scene : cercle central, CTA en dessous --- */
+
+/* le pl-line2 devient "Je vous invite a", centre, sous le logo */
+.pl-line2-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+/* le bouton final : meme police, meme taille, italique, centre */
+a.pl-cta {
+  display: inline-block;
+  padding: 12px 34px;
+  background: var(--ink);
+  color: var(--paper);
+  border: 1px solid var(--paper);
+  border-radius: 999px;
+  font-family: "Instrument Serif", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.9rem, 5.4vmin, 3.3rem);
+  line-height: 1.12;
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s, background 0.25s ease, color 0.25s ease;
+}
+a.pl-cta,
+.pl-scene.revealed a.pl-cta {
+  opacity: 1;
+  transform: translateY(0);
+}
+a.pl-cta:hover, a.pl-cta:focus-visible {
+  background: var(--paper);
+  color: var(--ink);
+  outline: none;
+}
+
+/* --- landing / scene : "Et ensuite...?" dans le disque, "Je vous invite a" + bouton apparaissent en dessous ---
+   Structure : pl-etincelle en haut du pl-content, logo au milieu, pl-invite en bas.
+   Au repos : etincelle en blanc, invite cachee.
+   Apres clic (pl-scene.revealed) : le fond du disque passe en spectre colore,
+   l etincelle passe en noir pour rester lisible, l invite apparait sous le logo. */
+
+.pl-content {
+  gap: clamp(18px, 2.6vh, 32px);
+}
+
+.pl-etincelle {
+  font-family: "Instrument Serif", serif;
+  font-style: italic;
+  font-size: clamp(2.4rem, 4.4vw, 3.4rem);
+  line-height: 1;
+  color: #fff;
+  text-shadow:
+    0 0 30px rgba(255, 255, 255, 0.35),
+    0 0 60px rgba(255, 255, 255, 0.15);
+  transition: color 0.6s ease, text-shadow 0.6s ease;
+}
+.pl-etincelle i { font-style: italic; opacity: 0.85; }
+
+.pl-invite {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(12px, 1.8vh, 20px);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.5s ease 0.25s, transform 0.5s ease 0.25s;
+  pointer-events: none;
+}
+.pl-invite .pl-line2 {
+  font-family: "Instrument Serif", serif;
+  font-style: italic;
+  font-size: clamp(2.4rem, 4.4vw, 3.4rem);
+  line-height: 1;
+  color: var(--ink);
+  text-shadow: none;
+  animation: none;
+  opacity: 1;
+  transform: none;
+  margin: 0;
+  max-width: none;
+  letter-spacing: 0;
+}
+a.pl-cta {
+  display: inline-block;
+  padding: 10px 30px;
+  background: var(--ink);
+  color: var(--paper);
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  font-family: "Instrument Serif", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(2.4rem, 4.4vw, 3.4rem);
+  line-height: 1;
+  text-decoration: none;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+a.pl-cta:hover, a.pl-cta:focus-visible {
+  background: transparent;
+  color: var(--ink);
+  outline: none;
+}
+
+/* revele */
+.pl-scene.revealed .pl-etincelle {
+  color: var(--ink);
+  text-shadow: 0 1px 12px rgba(255, 255, 255, 0.35);
+}
+.pl-scene.revealed .pl-invite {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* landing : pas de trait sous le hero avant le pont */
+header.hero { border-bottom: none; }
+
+/* --- articles : hero centre dans la meme colonne que .article + fond adouci --- */
+body.has-site-nav[class*="art-"] .hero {
+  max-width: 720px;
+  margin: 0 auto;
+  padding-inline: 24px;
+}
+body.has-site-nav[class*="art-"] .hero-title {
+  max-width: none;
+}
+body.has-site-nav[class*="art-"] .hero-bg {
+  /* on remonte la luminance du hero article — moins etouffe */
+  background:
+    radial-gradient(ellipse 70% 90% at 50% 15%,
+      color-mix(in srgb, var(--accent) 22%, transparent) 0%,
+      transparent 60%),
+    radial-gradient(ellipse 40% 60% at 90% 95%,
+      rgba(255, 255, 255, 0.05) 0%, transparent 55%);
+}
+
+/* --- landing : ecart hero-pont resserre --- */
+.pont {
+  padding-top: clamp(24px, 4vh, 50px);
+}
+
+/* --- landing / scene : ajustements v3 ---
+   Marges autour du logo augmentees, tailles de texte homogenes plus petites,
+   logo plus petit et bien centre, disque un cran plus compact. */
+.pl-disc {
+  width: clamp(380px, 78vmin, 720px);
+}
+.pl-content {
+  gap: clamp(36px, 5.5vh, 64px);
+}
+.pl-logo {
+  width: clamp(64px, 8vmin, 96px);
+  height: auto;
+  margin: 0 auto;
+}
+.pl-logo img { width: 100%; height: auto; }
+.pl-etincelle span,
+.pl-invite .pl-line2,
+a.pl-cta {
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+}
+a.pl-cta {
+  padding: 8px 24px;
 }
