@@ -6606,17 +6606,20 @@ a.pl-cta:hover, a.pl-cta:focus-visible {
 header.hero { border-bottom: none; }
 
 /* --- articles : hero centre dans la meme colonne que .article + fond adouci --- */
-body.has-site-nav[class*="art-"] .hero {
+body.has-site-nav[class*="art-"] .hero,
+body.has-site-nav.pratique .hero {
   max-width: 800px;
   margin: 0 auto;
   padding-inline: 24px;
   min-height: 0;
   display: block;
 }
-body.has-site-nav[class*="art-"] .hero-title {
+body.has-site-nav[class*="art-"] .hero-title,
+body.has-site-nav.pratique .hero-title {
   max-width: none;
 }
-body.has-site-nav[class*="art-"] .hero-bg {
+body.has-site-nav[class*="art-"] .hero-bg,
+body.has-site-nav.pratique .hero-bg {
   /* on remonte la luminance du hero article — moins etouffe */
   background:
     radial-gradient(ellipse 70% 90% at 50% 15%,
@@ -6941,3 +6944,7 @@ a.expl-card:hover .expl-more {
   color: rgba(11, 13, 16, 0.3);
   border-color: rgba(11, 13, 16, 0.14);
 }
+
+/* veil retire sur les pages de lecture — il assombrit le corps de texte */
+body.has-site-nav[class*="art-"] .veil,
+body.has-site-nav.pratique .veil { display: none; }
