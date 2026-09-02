@@ -592,24 +592,24 @@ h4 {
 }
 
 .article {
-  max-width: 720px;
+  max-width: 800px;
   margin: 0 auto;
-  padding: clamp(70px, 12vh, 110px) 24px clamp(90px, 14vh, 120px);
+  padding: clamp(28px, 4vh, 48px) 24px clamp(90px, 14vh, 120px);
 }
 .chapeau {
   font-family: "Instrument Serif", serif;
   font-size: clamp(1.3rem, 2.2vw, 1.55rem);
   font-style: italic;
-  color: #c9ced6;
+  color: #e3e6e9;
   line-height: 1.55;
-  margin-bottom: clamp(44px, 7vh, 56px);
-  padding-bottom: clamp(44px, 7vh, 56px);
+  margin-bottom: clamp(26px, 4vh, 36px);
+  padding-bottom: clamp(26px, 4vh, 36px);
   border-bottom: 1px solid var(--faint);
 }
 .article p {
-  font-size: 1.06rem;
+  font-size: 1.08rem;
   line-height: 1.85;
-  color: var(--muted);
+  color: #c9ced6;
   margin-bottom: 28px;
 }
 .article p strong {
@@ -4663,7 +4663,7 @@ h3 {
 
 /* hero */
 .hero {
-  padding: clamp(80px, 16vh, 180px) 0 clamp(50px, 9vh, 100px);
+  padding: clamp(40px, 7vh, 70px) 0 clamp(24px, 4vh, 40px);
   position: relative;
 }
 .hero .eyebrow {
@@ -6378,7 +6378,7 @@ a.porte,
   user-select: none;
 }
 .site-nav .site-links a[data-section="explorations"]:hover,
-.site-nav .site-links a[data-section="explorations"].active { color: var(--c4); }
+.site-nav .site-links a[data-section="explorations"].active { color: var(--c2); }
 
 /* --- les trois portes : verre depoli ------------------------------------
    Reprise du fond de #syc-btn : rgba blanc + backdrop-filter blur/saturate,
@@ -6456,7 +6456,7 @@ a.porte,
 
 /* --- constat : sortir du full-bleed, rentrer dans .wrap avec radius --- */
 .sy-constat-section {
-  padding: clamp(20px, 4vh, 40px) 0 clamp(30px, 6vh, 60px);
+  padding: 0 0 clamp(40px, 7vh, 70px);
 }
 .sy-stage {
   position: relative;
@@ -6464,7 +6464,7 @@ a.porte,
   left: auto;
   transform: none;
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: 0 0 16px 16px;
   --sc: #28e6ff;
   background: #c9b8f0;
   display: flex;
@@ -6606,9 +6606,11 @@ header.hero { border-bottom: none; }
 
 /* --- articles : hero centre dans la meme colonne que .article + fond adouci --- */
 body.has-site-nav[class*="art-"] .hero {
-  max-width: 720px;
+  max-width: 800px;
   margin: 0 auto;
   padding-inline: 24px;
+  min-height: 0;
+  display: block;
 }
 body.has-site-nav[class*="art-"] .hero-title {
   max-width: none;
@@ -6650,7 +6652,7 @@ a.pl-cta {
 
 /* --- landing : pont en grille 2x2 --- */
 .pont {
-  padding: clamp(20px, 3vh, 40px) 0 clamp(40px, 7vh, 70px);
+  padding: clamp(40px, 7vh, 70px) 0 0;
 }
 .pont-grille {
   display: grid;
@@ -6743,3 +6745,7 @@ a.pl-cta {
   .pont-portrait { height: auto; width: clamp(90px, 22vw, 130px); }
   .pont-cell--sig { flex-direction: row; }
 }
+
+/* --- pont : coins hauts arrondis pour matcher le radius du constat --- */
+.pont-ligne--haut .pont-cell:first-child { border-top-left-radius: 16px; }
+.pont-ligne--haut .pont-cell:last-child { border-top-right-radius: 16px; }
