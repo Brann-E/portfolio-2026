@@ -1772,7 +1772,7 @@ header .sub {
 
 .hero {
     z-index: 2;
-  min-height: 92vh;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -3176,8 +3176,9 @@ footer {
   background-image: url("grain.png");
   background-size: 600% 600%;
   background-position: var(--px) var(--py);
-  opacity: 0.62;
-  mix-blend-mode: screen;
+  filter: saturate(158%);
+    opacity: 0.62;
+    mix-blend-mode: multiply;
   transition: background-position 0.25s ease;
 }
 .sy-btn-label {
@@ -6749,3 +6750,194 @@ a.pl-cta {
 /* --- pont : coins hauts arrondis pour matcher le radius du constat --- */
 .pont-ligne--haut .pont-cell:first-child { border-top-left-radius: 16px; }
 .pont-ligne--haut .pont-cell:last-child { border-top-right-radius: 16px; }
+
+/* ============================================================
+   EXPLORATION — ligne de filtres + grille de projets
+   Source: explorations.html
+   ============================================================ */
+.expl-filters {
+  padding: clamp(10px, 2vh, 20px) 0 clamp(30px, 5vh, 50px);
+  border-top: 1px solid var(--faint);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.expl-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.expl-filter {
+  appearance: none;
+  border: 1px solid var(--faint);
+  background: rgba(16, 20, 26, 0.5);
+  color: var(--muted);
+  font: 400 12px/1.2 "Inter", sans-serif;
+  letter-spacing: 0.03em;
+  padding: 9px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    border-color 0.35s ease,
+    color 0.35s ease,
+    background 0.35s ease;
+}
+.expl-filter:hover {
+  color: var(--paper);
+  border-color: var(--muted);
+}
+.expl-filter[data-filter="all"] {
+  color: var(--paper);
+  font-weight: 500;
+}
+.expl-filter.is-active {
+  color: var(--ink);
+  background: var(--paper);
+  border-color: var(--paper);
+}
+
+/* la grille : trois rectangles par ligne */
+.expl-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: clamp(10px, 2vh, 20px) 0 clamp(60px, 9vh, 110px);
+}
+@media (max-width: 900px) {
+  .expl-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 560px) {
+  .expl-grid {
+    grid-template-columns: 1fr;
+  }
+  .expl-filter {
+    font-size: 11px;
+    padding: 8px 13px;
+  }
+}
+
+/* essai : carte claire, texte noir, qui s'eclaircit au survol
+   (au lieu du fond sombre / texte clair) */
+.expl-card {
+  display: block;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
+  padding: 24px 24px 26px;
+  background: rgba(242, 242, 240, 0.5);
+  color: var(--ink);
+  text-decoration: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  transition:
+    background 0.5s ease,
+    box-shadow 0.5s ease;
+}
+/* foil holographique, comme les portes de regarder-autrement : grain.png
+   pense pour du multiply sur un fond clair, donc plus de delavage ici.
+   Chaque carte derive de maniere autonome (duree/decalage propres a
+   elle) au lieu de suivre la meme position de souris que les autres :
+   c'est ce qui les decouple les unes des autres. */
+@keyframes expl-holo-drift {
+  0%   { background-position: 15% 25%; }
+  25%  { background-position: 85% 15%; }
+  50%  { background-position: 70% 85%; }
+  75%  { background-position: 25% 75%; }
+  100% { background-position: 15% 25%; }
+}
+.expl-card .holo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("grain.png");
+  background-size: 600% 600%;
+  filter: saturate(158%);
+  mix-blend-mode: multiply;
+  opacity: 0.45;
+  animation: expl-holo-drift 16s ease-in-out infinite;
+  transition: opacity 0.4s ease;
+}
+.expl-grid .expl-card:nth-child(1) .holo { animation-duration: 16s; animation-delay: 0s; }
+.expl-grid .expl-card:nth-child(2) .holo { animation-duration: 19s; animation-delay: -4s; }
+.expl-grid .expl-card:nth-child(3) .holo { animation-duration: 13s; animation-delay: -8s; }
+.expl-grid .expl-card:nth-child(4) .holo { animation-duration: 21s; animation-delay: -2s; }
+.expl-grid .expl-card:nth-child(5) .holo { animation-duration: 15s; animation-delay: -10s; }
+a.expl-card:hover .holo {
+  opacity: 0.7;
+}
+.expl-card > *:not(.holo) {
+  position: relative;
+  z-index: 1;
+}
+a.expl-card:hover {
+  background: rgba(242, 242, 240, 1);
+  box-shadow:
+    0 16px 34px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+.expl-card.is-hidden {
+  display: none;
+}
+.expl-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 16px;
+}
+.expl-tags span {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(11, 13, 16, 0.62);
+  border: 1px solid rgba(11, 13, 16, 0.22);
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+.expl-card h3 {
+  font-family: "Instrument Serif", serif;
+  font-size: 1.3rem;
+  color: var(--ink);
+  margin-bottom: 8px;
+  line-height: 1.15;
+}
+a.expl-card:hover h3 {
+  color: var(--ink);
+}
+.expl-card p {
+  font-size: 13px;
+  color: rgba(11, 13, 16, 0.72);
+  line-height: 1.6;
+}
+.expl-more {
+  margin-top: 16px;
+  font-size: 12px;
+  color: var(--ink);
+  opacity: 0;
+  transform: translateX(-6px);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+a.expl-card:hover .expl-more {
+  opacity: 1;
+  transform: none;
+}
+
+/* carte a venir : meme convention que .case.soon */
+.expl-card.expl-soon {
+  cursor: default;
+}
+.expl-card.expl-soon h3 {
+  color: rgba(11, 13, 16, 0.4);
+}
+.expl-card.expl-soon p {
+  color: rgba(11, 13, 16, 0.35);
+}
+.expl-card.expl-soon .expl-tags span {
+  color: rgba(11, 13, 16, 0.3);
+  border-color: rgba(11, 13, 16, 0.14);
+}

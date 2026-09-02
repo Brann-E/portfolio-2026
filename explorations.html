@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<title>Exploration — Brann Etienne</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body class="has-site-nav"><nav class="site-nav" aria-label="Navigation principale">
+  <a class="site-brand" href="index.html"><img class="site-mark" src="logo-relations.svg" alt=""><span class="site-name">Brann Etienne <span class="site-role">- Designer relationnel</span></span></a>
+  <div class="site-links">
+    <a class="site-pill" href="regarder-autrement.html" data-section="regarder"><span class="holo" aria-hidden="true"></span><span class="holo-label">Regarder autrement</span></a>
+    <a href="etudes-de-cas.html" data-section="cases">&Eacute;tudes de cas</a>
+    <a href="explorations.html" data-section="explorations" class="active">Explorations</a>
+    <a href="a-propos.html" data-section="apropos">&Agrave; propos</a>
+    <a class="site-contact" href="mailto:brann.etienne@gmail.com">Contact</a>
+  </div>
+</nav>
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="veil" aria-hidden="true"></div>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div class="eyebrow">Explorations · projets divers</div>
+    <h1>Des projets qui me suivent,<br> une porte entrouverte <br>sur <span class="spectrum-word"> mes univers.</span></h1>
+    <p class="lede">Missions marquantes ou explorations plus personnelles, ce sont ceux qui m'ont façonné et que je continue de porter. Un peu plus de moi à voir, pour qui veut regarder au-delà des cas.</p>
+  </section>
+
+  <section class="expl-filters" aria-label="Filtrer par discipline ou domaine">
+    <div class="expl-filter-row">
+      <button class="expl-filter is-active" data-filter="all" type="button">Tous</button>
+      <button class="expl-filter" data-filter="produit" type="button">Product - UX/UI</button>
+      <button class="expl-filter" data-filter="service" type="button">Design de service</button>
+      <button class="expl-filter" data-filter="recherche" type="button">Recherche</button>
+      <button class="expl-filter" data-filter="systemique" type="button">Design syst&eacute;mique</button>
+      <button class="expl-filter" data-filter="facilitation" type="button">Facilitation</button>
+      <button class="expl-filter" data-filter="business" type="button">Impact Business</button>
+      <button class="expl-filter" data-filter="identite" type="button">Identit&eacute; &amp; marque</button>
+
+    </div>
+  </section>
+
+  <section class="expl-grid" id="explGrid">
+
+    <a class="expl-card rv" href="reciprocites-v2.html" data-tags="systemique facilitation recherche economie" style="--accent:var(--c4)">
+      <span class="holo" aria-hidden="true"></span>
+      <h3>R&eacute;ciprocit&eacute;s</h3>
+      <p>La praxis et la m&eacute;thode que je d&eacute;veloppe pour concevoir la relation comme une mati&egrave;re &mdash; jusqu'&agrave; la convention de r&eacute;ciprocit&eacute;.</p>
+      <div class="expl-tags">
+        <span>Design syst&eacute;mique</span>
+        <span>Facilitation</span>
+        <span>Recherche</span>
+        <span>&Eacute;conomie &amp; valeur</span>
+      </div>
+      <div class="expl-more">Voir <span aria-hidden="true">&rarr;</span></div>
+    </a>
+
+    <div class="expl-card expl-soon rv" data-tags="service culture">
+      <span class="holo" aria-hidden="true"></span>
+      <h3>&Agrave; venir</h3>
+      <p>Un nouveau projet est en cours de mise en forme.</p>
+      <div class="expl-tags">
+        <span>Design de service</span>
+        <span>Culture &amp; spectacle vivant</span>
+      </div>
+    </div>
+
+    <div class="expl-card expl-soon rv" data-tags="produit numerique">
+      <span class="holo" aria-hidden="true"></span>
+      <h3>&Agrave; venir</h3>
+      <p>Un nouveau projet est en cours de mise en forme.</p>
+      <div class="expl-tags">
+        <span>Design produit (UX/UI)</span>
+        <span>Num&eacute;rique / plateforme</span>
+      </div>
+    </div>
+
+    <div class="expl-card expl-soon rv" data-tags="interface coop">
+      <span class="holo" aria-hidden="true"></span>
+      <h3>&Agrave; venir</h3>
+      <p>Un nouveau projet est en cours de mise en forme.</p>
+      <div class="expl-tags">
+        <span>Design d'interface / appli</span>
+        <span>Coop&eacute;ratif / open source</span>
+      </div>
+    </div>
+
+    <div class="expl-card expl-soon rv" data-tags="identite communs">
+      <span class="holo" aria-hidden="true"></span>
+      <h3>&Agrave; venir</h3>
+      <p>Un nouveau projet est en cours de mise en forme.</p>
+      <div class="expl-tags">
+        <span>Identit&eacute; &amp; marque</span>
+        <span>Communs</span>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<footer class="ft">
+  <div class="ft-inner">
+
+    <div class="ft-top">
+
+      <div class="ft-sign">
+        <div class="ft-mark">
+          <img src="logo-relations.svg" alt="" aria-hidden="true">
+          <div>
+            <div class="ft-name">Brann Etienne</div>
+            <div class="ft-role">Designer relationnel &amp; syst&eacute;mique</div>
+          </div>
+        </div>
+        <p class="ft-claim">&Agrave; toutes les &eacute;chelles, tout tient par <em>le m&ecirc;me fil</em>.</p>
+        <div class="ft-place">Lyon &middot; en remote et sur site</div>
+      </div>
+
+      <nav class="ft-cols" aria-label="Plan du site">
+
+        <div class="ft-col ft-cases">
+          <div class="ft-h">Les cas</div>
+          <ul>
+            <li style="--d:var(--c1)"><a href="cas-axa.html">Healthanea <span class="ft-tag">Sant&eacute;</span></a></li>
+            <li style="--d:var(--c2)"><a href="cas-shift-prime.html">SHIFT Prime <span class="ft-tag">Industrie</span></a></li>
+            <li style="--d:var(--c4)"><a href="cas-bi-solution.html">B.I Solution <span class="ft-tag">Data</span></a></li>
+            <li style="--d:var(--c3)"><a href="cas-proshop.html">Proshop &amp; Beyond <span class="ft-tag">Commerce</span></a></li>
+            <li style="--d:var(--c5)"><span class="ft-soon">TiBillet <span class="ft-tag">Bient&ocirc;t</span></span></li>
+          </ul>
+          <a class="ft-more" href="etudes-de-cas.html">Tous les cas <span aria-hidden="true">&rarr;</span></a>
+        </div>
+
+        <div class="ft-col">
+          <div class="ft-h">La s&eacute;rie</div>
+          <ul class="ft-num">
+            <li><a href="rien-ne-tient-tout-seul.html"><b>01</b> Rien ne tient tout seul</a></li>
+            <li><a href="les-relations-ne-se-voient-que-dun-certain-endroit.html"><b>02</b> Les relations ne se voient pas</a></li>
+            <li><a href="la-metaliminalite.html"><b>03</b> La m&eacute;taliminalit&eacute;</a></li>
+            <li><a href="le-lien-importe-plus-que-le-bien.html"><b>04</b> Le lien importe plus que le bien</a></li>
+            <li><a href="ce-qui-ne-circule-plus-casse.html"><b>05</b> Ce qui ne circule plus casse</a></li>
+          </ul>
+          <a class="ft-more" href="relation-paradigme-du-design.html">La s&eacute;rie compl&egrave;te <span aria-hidden="true">&rarr;</span></a>
+        </div>
+
+        <div class="ft-col">
+          <div class="ft-h">Ailleurs</div>
+          <ul>
+            <li><a href="regarder-autrement.html">Regarder autrement</a></li>
+            <li><a href="la-pratique.html">La pratique</a></li>
+            <li><a href="reciprocites-v2.html">R&eacute;ciprocit&eacute;s</a></li>
+            <li><a href="a-propos.html">&Agrave; propos</a></li>
+            <li><a href="https://www.linkedin.com/in/brann-etienne/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://medium.com/@brann.etienne" target="_blank" rel="noopener">Medium</a></li>
+          </ul>
+          <a class="ft-more ft-mail" href="mailto:brann.etienne@gmail.com">brann.etienne@gmail.com</a>
+        </div>
+
+      </nav>
+    </div>
+
+    <div class="ft-bottom">
+      <span>&copy; 2026 Brann Etienne</span>
+      <span class="ft-spectrum" aria-hidden="true"><i style="background:var(--c1)"></i><i style="background:var(--c2)"></i><i style="background:var(--c3)"></i><i style="background:var(--c5)"></i><i style="background:var(--c4)"></i></span>
+      <a class="ft-up" href="#top">Retour en haut <span aria-hidden="true">&uarr;</span></a>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+(function(){
+  const filters = [...document.querySelectorAll('.expl-filter')];
+  const allBtn = document.querySelector('.expl-filter[data-filter="all"]');
+  const cards = [...document.querySelectorAll('.expl-card')];
+  const active = new Set();
+
+  function apply(){
+    allBtn.classList.toggle('is-active', active.size === 0);
+    filters.forEach(f => { if (f !== allBtn) f.classList.toggle('is-active', active.has(f.dataset.filter)); });
+    cards.forEach(c => {
+      const tags = (c.dataset.tags || '').split(' ');
+      const show = active.size === 0 || tags.some(t => active.has(t));
+      c.classList.toggle('is-hidden', !show);
+    });
+  }
+
+  filters.forEach(f => {
+    f.addEventListener('click', () => {
+      if (f.dataset.filter === 'all') { active.clear(); }
+      else if (active.has(f.dataset.filter)) { active.delete(f.dataset.filter); }
+      else { active.add(f.dataset.filter); }
+      apply();
+    });
+  });
+})();
+
+const io = new IntersectionObserver(es => {
+  es.forEach((e, i) => {
+    if (e.isIntersecting) {
+      e.target.style.transitionDelay = (i * 60) + 'ms';
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  })
+}, { threshold: .15 });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
+<script src="background.js"></script>
+<script src="figure-zoom.js"></script>
+<script src="site-nav.js"></script>
+</body>
+</html>
