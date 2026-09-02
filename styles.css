@@ -6454,60 +6454,6 @@ a.porte,
 
 /* --- landing : pont + constat + scene refondue ----------------------- */
 
-/* le pont : dans le .wrap parent, aligne a gauche comme le hero */
-.pont {
-  padding: clamp(60px, 12vh, 130px) 0 clamp(40px, 8vh, 80px);
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  gap: clamp(28px, 5vh, 46px);
-  align-items: flex-start;
-}
-.pont-h1 {
-  font-family: "Instrument Serif", serif;
-  font-weight: 400;
-  font-style: italic;
-  font-size: clamp(2.4rem, 6vw, 4.2rem);
-  line-height: 1.05;
-  color: var(--paper);
-  margin: 0;
-}
-.pont-signature {
-  display: grid;
-  grid-template-columns: clamp(130px, 18vw, 210px) 1fr;
-  gap: clamp(24px, 4vw, 40px);
-  align-items: center;
-}
-.pont-portrait {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 1px solid var(--faint);
-  background: #10141a;
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.06),
-    0 0 60px -8px rgba(255, 255, 255, 0.18);
-}
-.pont-portrait img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  filter: grayscale(1) contrast(1.05);
-}
-.pont-ph {
-  position: absolute; inset: 0;
-  display: flex; align-items: center; justify-content: center;
-  font-family: "Instrument Serif", serif;
-  font-size: clamp(24px, 3vw, 32px);
-  color: #7a8290;
-}
-.pont-ident { text-align: left; }
-
-@media (max-width: 640px) {
-  .pont-signature { grid-template-columns: 90px 1fr; }
-}
-
 /* --- constat : sortir du full-bleed, rentrer dans .wrap avec radius --- */
 .sy-constat-section {
   padding: clamp(20px, 4vh, 40px) 0 clamp(30px, 6vh, 60px);
@@ -6677,10 +6623,6 @@ body.has-site-nav[class*="art-"] .hero-bg {
       rgba(255, 255, 255, 0.05) 0%, transparent 55%);
 }
 
-/* --- landing : ecart hero-pont resserre --- */
-.pont {
-  padding-top: clamp(24px, 4vh, 50px);
-}
 
 /* --- landing / scene : ajustements v3 ---
    Marges autour du logo augmentees, tailles de texte homogenes plus petites,
@@ -6704,4 +6646,100 @@ a.pl-cta {
 }
 a.pl-cta {
   padding: 8px 24px;
+}
+
+/* --- landing : pont en grille 2x2 --- */
+.pont {
+  padding: clamp(20px, 3vh, 40px) 0 clamp(40px, 7vh, 70px);
+}
+.pont-grille {
+  display: grid;
+  grid-template-rows: auto auto;
+}
+.pont-ligne {
+  display: grid;
+}
+.pont-ligne--haut {
+  /* le portrait doit avoir la meme hauteur que la cellule titre, donc
+     colonnes egales : le carre du portrait = hauteur de A */
+  grid-template-columns: 1fr 1fr;
+}
+.pont-ligne--bas {
+  /* la fleche est reduite au strict minimum confortable,
+     le texte prend tout le reste pour tenir sur 2 lignes */
+  grid-template-columns: minmax(180px, 22%) 1fr;
+}
+.pont-cell {
+  padding: clamp(30px, 5vh, 56px) clamp(22px, 3vw, 36px);
+  border: 1px solid var(--faint);
+  /* eviter les doubles bordures entre cellules adjacentes */
+  margin: -1px 0 0 -1px;
+  display: flex;
+  align-items: center;
+}
+.pont-cell--titre {
+  align-items: flex-start;
+}
+.pont-h1 {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  line-height: 1.05;
+  color: var(--paper);
+  margin: 0;
+}
+
+/* la cellule signature : portrait + identite alignes horizontalement */
+.pont-cell--sig {
+  gap: clamp(20px, 3vw, 36px);
+}
+/* le portrait remplit la hauteur de la cellule (donc = hauteur du bloc "titre" a cote) */
+.pont-portrait {
+  position: relative;
+  height: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid var(--faint);
+  background: #10141a;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 0 60px -8px rgba(255, 255, 255, 0.18);
+  flex: none;
+}
+.pont-portrait img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.05);
+}
+.pont-ph {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(24px, 3vw, 34px);
+  color: #7a8290;
+}
+.pont-ident { text-align: left; }
+
+/* la cellule fleche */
+.pont-cell--fleche {
+  align-items: center;
+  justify-content: center;
+  min-height: clamp(160px, 22vh, 260px);
+}
+.pont-fleche {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: clamp(3rem, 7vw, 5rem);
+  color: var(--paper);
+  line-height: 1;
+  opacity: 0.85;
+}
+
+@media (max-width: 720px) {
+  .pont-grille { grid-template-columns: 1fr; }
+  .pont-cell { margin: -1px 0 0 0; }
+  .pont-portrait { height: auto; width: clamp(90px, 22vw, 130px); }
+  .pont-cell--sig { flex-direction: row; }
 }

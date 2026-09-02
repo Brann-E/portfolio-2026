@@ -54,20 +54,33 @@
 
   </header>
 
-  <!-- pont : de la lecture des geographies au bloc constat -->
+  <!-- pont : grille 2x2, cellules a liseré fin qui se touchent -->
   <section class="pont">
-    <h1 class="pont-h1">C'est &agrave; ces endroits<br>que j'interviens.</h1>
-    <div class="pont-signature">
-      <div class="pont-portrait">
-        <img src="portrait.jpg" alt="Brann Etienne" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="pont-ph" style="display:none">Brann</div>
+    <div class="pont-grille">
+      <div class="pont-ligne pont-ligne--haut">
+        <div class="pont-cell pont-cell--titre">
+          <h1 class="pont-h1">C’est &agrave; ces endroits<br>que j’interviens</h1>
+        </div>
+        <div class="pont-cell pont-cell--sig">
+          <div class="pont-portrait">
+            <img src="portrait.jpg" alt="Brann Etienne" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="pont-ph" style="display:none">Brann</div>
+          </div>
+          <div class="pont-ident">
+            <div class="ft-name">Brann Etienne</div>
+            <div class="ft-role">Designer relationnel &amp; syst&eacute;mique</div>
+          </div>
+        </div>
       </div>
-      <div class="pont-ident">
-        <div class="ft-name">Brann Etienne</div>
-        <div class="ft-role">Designer relationnel &amp; syst&eacute;mique</div>
+      <div class="pont-ligne pont-ligne--bas">
+        <div class="pont-cell pont-cell--fleche" aria-hidden="true">
+          <span class="pont-fleche">&darr;</span>
+        </div>
+        <div class="pont-cell pont-cell--titre">
+          <h1 class="pont-h1">Sur des situations qui peuvent<br>vous &ecirc;tre famili&egrave;res.</h1>
+        </div>
       </div>
     </div>
-    <h1 class="pont-h1">Sur des situations qui peuvent<br>vous &ecirc;tre famili&egrave;res.<br>↓</h1>
   </section>
 
   <section class="sy-constat-section">
