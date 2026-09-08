@@ -1771,8 +1771,8 @@ header .sub {
 }
 
 .hero {
-    z-index: 2;
-  min-height: 70vh;
+  z-index: 2;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -4940,8 +4940,7 @@ body {
   object-fit: contain;
   flex: none;
   filter: drop-shadow(0 0 3px rgba(40, 230, 255, 0.16));
-  animation: logo-breathe 5s ease-in-out infinite;
-}
+  }
 .site-nav .site-brand:hover .site-mark {
   filter: drop-shadow(0 0 5px rgba(40, 230, 255, 0.3))
     drop-shadow(0 0 9px rgba(249, 104, 167, 0.16));
@@ -4968,7 +4967,7 @@ body {
 }
 .site-nav .site-role {
   font-family: "Inter", sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--muted);
 }
 .site-nav .site-links {
@@ -6948,3 +6947,43 @@ a.expl-card:hover .expl-more {
 /* veil retire sur les pages de lecture — il assombrit le corps de texte */
 body.has-site-nav[class*="art-"] .veil,
 body.has-site-nav.pratique .veil { display: none; }
+
+/* pastille : balayage arc-en-ciel periodique — inspire de .sy-rainbow du bloc constat.
+   Demarre a 2s, se rejoue toutes les 8s (cycle 1s de balayage + 7s d attente). */
+.site-nav .site-links a.site-pill .pill-rainbow {
+  content: "";
+  position: absolute;
+  top: -20%;
+  bottom: -20%;
+  left: -45%;
+  width: 40%;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    100deg,
+    transparent,
+    var(--c1) 14%,
+    var(--c2) 34%,
+    var(--c3) 52%,
+    var(--c5) 70%,
+    var(--c4) 88%,
+    transparent
+  );
+  filter: blur(6px);
+  transform: skewX(-14deg);
+  opacity: 0;
+  mix-blend-mode: screen;
+
+  animation: pill-sweep 8s cubic-bezier(0.6, 0, 0.2, 1) 2s infinite;
+}
+@keyframes pill-sweep {
+  0%    { left: -60%; opacity: 0; }
+  1.5%  { opacity: 1; }
+  11%   { opacity: 1; }
+  12.5% { left: 130%; opacity: 0; }
+  100%  { left: 130%; opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-nav .site-links a.site-pill .pill-rainbow { animation: none; }
+}
+
