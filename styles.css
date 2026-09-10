@@ -596,18 +596,9 @@ h4 {
   margin: 0 auto;
   padding: clamp(28px, 4vh, 48px) 24px clamp(90px, 14vh, 120px);
 }
-.chapeau {
-  font-family: "Instrument Serif", serif;
-  font-size: clamp(1.3rem, 2.2vw, 1.55rem);
-  font-style: italic;
-  color: #e3e6e9;
-  line-height: 1.55;
-  margin-bottom: clamp(26px, 4vh, 36px);
-  padding-bottom: clamp(26px, 4vh, 36px);
-  border-bottom: 1px solid var(--faint);
-}
+
 .article p {
-  font-size: 1.08rem;
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
   line-height: 1.85;
   color: #c9ced6;
   margin-bottom: 28px;
@@ -645,6 +636,18 @@ h4 {
   margin-top: 14px;
   font-style: normal;
 }
+
+.chapeau {
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(1.2rem, 2.0vw, 1.4rem);
+  font-style: italic;
+  color: #e3e6e9;
+  line-height: 1.55;
+  margin-bottom: clamp(26px, 4vh, 36px);
+  padding-bottom: clamp(26px, 4vh, 36px);
+  border-bottom: 1px solid var(--faint);
+}
+
 .sep {
   display: flex;
   align-items: center;
@@ -724,18 +727,17 @@ h4 {
   --sc: var(--c5);
 }
 a.serie-article:hover {
-  padding-left: 12px;
   background: linear-gradient(
     90deg,
-    color-mix(in srgb, var(--sc) 8%, transparent),
-    transparent 90%
+    color-mix(in srgb, var(--sc) 9%, transparent),
+    transparent 88%
   );
 }
 a.serie-article:hover .serie-num {
   color: var(--sc);
 }
 a.serie-article:hover .serie-article-title {
-  color: #fff;
+  color: var(--paper);
 }
 .serie-article.current {
   background: linear-gradient(
@@ -760,9 +762,7 @@ a.serie-article:hover .serie-article-title {
   border-bottom: 1px solid var(--faint);
   text-decoration: none;
   color: inherit;
-  transition:
-    padding-left 0.35s ease,
-    background 0.35s ease;
+  transition: background 0.35s ease;
 }
 .serie-article:last-child {
   border-bottom: none;
@@ -1724,6 +1724,7 @@ header .sub {
   height: 100%;
   z-index: 0;
   display: block;
+  pointer-events: none;
 }
 .veil {
   position: fixed;
