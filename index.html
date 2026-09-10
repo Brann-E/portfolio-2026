@@ -124,23 +124,23 @@ const stage=document.getElementById('syc-stage'), bg=document.getElementById('sy
       titre:"Rien ne manquait, et pourtant",
       constat:"« On a bien posé le diagnostic, bien exécuté. On a réglé ce qu'on avait identifié et ça n'a pas suffi. »",
       hypo:"Et si le problème ne se trouvait pas dans les choses elles-mêmes, mais dans ce qui les relie ?" },
-    { meta:false, sc:"#28E6FF",
+    { meta:false, sc:"#28E6FF", sc2:"#9F6EFF",
       titre:"L'adoption qui ne vient pas",
       constat:"« On a livré exactement ce qui était demandé, et pourtant, trois mois plus tard, les usages n'ont pas suivi. »",
       hypo:"Et si tenir dans la durée ne dépendait pas de ce qu'on donne à chacun, mais de ce qui se tisse entre eux ?" },
-    { meta:false, sc:"#F968A7",
+    { meta:false, sc:"#F968A7", sc2:"#FFEA4D",
       titre:"Des chiffres qui ne se parlent pas",
       constat:"« On mesure tout, chaque service suit ses propres chiffres. Et à force, chacun optimise les siens sans être assuré qu'on aille dans la même direction. »",
       hypo:"Et si une donnée ne prenait sens que reliée — à une décision, à une question, aux autres chiffres — et jamais seule ?" },
-    { meta:false, sc:"#9F6EFF",
+    { meta:false, sc:"#9F6EFF", sc2:"#F968A7",
       titre:"Tout le monde est d'accord, et rien n'avance",
       constat:"« On est tous d'accord en réunion, chacun repart aligné. Mais dans les faits, les décisions s'éloignent peu à peu les unes des autres. »",
       hypo:"Et si chacun avait raison depuis sa place, sans s'apercevoir qu'il ne perçoit qu'une partie d'un tout plus vaste ?" },
-    { meta:false, sc:"#2FFFB4",
+    { meta:false, sc:"#2FFFB4", sc2:"#28E6FF",
       titre:"Plus efficace, mais moins performant",
       constat:"« On a optimisé, automatisé, retiré ce qui semblait ralentir. Sur le papier c'était mieux — dans les faits, les clients sont partis. »",
       hypo:"Et si un outil permettait de trouver l'équilibre entre l'efficacité des actions et les relations qu'il permet de créer et d'entretenir ?" },
-    { meta:false, sc:"#FFEA4D",
+    { meta:false, sc:"#FFEA4D", sc2:"#2FFFB4",
       titre:"Chaque logique tient, l'ensemble non",
       constat:"« Chaque partie fonctionne selon sa propre logique, et chacune a ses raisons. Mais dès qu'il faut les faire cohabiter, aucune solution ne semble pouvoir tenir les deux. »",
       hypo:"Et si ce qui les relie n'était pas un compromis entre les deux, mais un plan plus large où chaque vision trouve sa place ?" }
@@ -161,7 +161,7 @@ const stage=document.getElementById('syc-stage'), bg=document.getElementById('sy
   function paint(v){
     titreEl.textContent=v.titre; constatEl.textContent=v.constat; hypoEl.textContent=v.hypo;
     if(v.meta){ stage.classList.add('sy-is-meta'); bg.className='sy-bg'; }
-    else{ stage.classList.remove('sy-is-meta'); bg.className='sy-bg sy-solid'; stage.style.setProperty('--sc',v.sc); }
+    else{ stage.classList.remove('sy-is-meta'); bg.className='sy-bg sy-solid'; stage.style.setProperty('--sc',v.sc); stage.style.setProperty('--sc-b',v.sc2); }
     sticker.style.setProperty('--blob', blobs[idx % blobs.length]);
   }
   function setDots(){ [...dotsWrap.children].forEach((d,i)=>d.classList.toggle('active',i===idx)); }
@@ -189,7 +189,12 @@ const stage=document.getElementById('syc-stage'), bg=document.getElementById('sy
         bg.style.transition='transform .38s ease, opacity .38s ease';
         slider.style.transform='translateX(0)'; slider.style.opacity='1';
         bg.style.transform='translateX(0)'; bg.style.opacity='1';
-        setTimeout(()=>{animating=false;},380);
+        setTimeout(()=>{
+      animating=false;
+      slider.style.transition='none'; bg.style.transition='none';
+      slider.style.transform=''; slider.style.opacity='';
+      bg.style.transform=''; bg.style.opacity='';
+    },380);
       }));
     },380);
   }
@@ -488,16 +493,24 @@ const scene=document.getElementById('scene'),logo=document.getElementById('logo'
     for(let i=0;i<N;i++){
       const px=(i/(N-1))*W;
       if(px>lastX) break;
-      const py=baseY+y[i]+bg(i);
+      const py=baseY+y[i]+bg(i)+ent(i,ts);
       if(!started){x.moveTo(px,py);started=true;}
-      else{const ppx=((i-1)/(N-1))*W, ppy=baseY+y[i-1]+bg(i-1);x.quadraticCurveTo(ppx,ppy,(px+ppx)/2,(py+ppy)/2);}
+      else{const ppx=((i-1)/(N-1))*W, ppy=baseY+y[i-1]+bg(i-1)+ent(i-1,ts);x.quadraticCurveTo(ppx,ppy,(px+ppx)/2,(py+ppy)/2);}
     }
     x.strokeStyle=grad(off);
     x.lineWidth=2;x.lineCap='round';x.lineJoin='round';
     x.stroke();
     requestAnimationFrame(loop);
   }
-  requestAnimationFrame(loop);
+  const ENTRANCE_MS=1600;
+  function ent(i,ts){
+    if(t0===null) return 0;
+    const e=(ts-t0)/ENTRANCE_MS;
+    if(e>=1) return 0;
+    const u=i/(N-1);
+    return Math.sin(u*Math.PI*3 - e*Math.PI*4)*(H*0.16)*Math.sin(e*Math.PI)*Math.sin(u*Math.PI);
+  }
+  setTimeout(()=>requestAnimationFrame(loop), 2000);
 })();
 </script>
 <script>

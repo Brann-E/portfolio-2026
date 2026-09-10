@@ -2969,6 +2969,7 @@ footer {
   transform: translateX(-50%);
   overflow: hidden;
   --sc: #28e6ff;
+  --sc-b: #9f6eff;
   background: #c9b8f0;
   display: flex;
   flex-direction: column;
@@ -2990,8 +2991,8 @@ footer {
 .sy-bg.sy-solid {
   background: linear-gradient(
     135deg,
-    color-mix(in srgb, var(--sc) 70%, transparent),
-    color-mix(in srgb, var(--sc) 40%, transparent)
+    color-mix(in srgb, var(--sc) 55%, white),
+    color-mix(in srgb, var(--sc-b) 40%, white)
   );
 }
 .sy-bg .sy-spectre {
@@ -3024,7 +3025,13 @@ footer {
   }
 }
 .sy-stage:not(.sy-is-meta) .sy-bg .sy-spectre {
-  display: none;
+  display: block;
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    var(--sc), var(--sc-b), var(--sc), var(--sc-b), var(--sc)
+  );
+  opacity: 0.8;
+  filter: blur(70px);
 }
 .sy-stage.sy-is-meta .sy-bg {
   background: transparent;
