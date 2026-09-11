@@ -159,32 +159,30 @@ function mur(i){cs=i;piMax=0;const s=S[i];const el=document.getElementById('s-mu
  document.getElementById('m-title').textContent=s.title;
  document.getElementById('m-scene').innerHTML=s.scene;
  document.getElementById('m-q').textContent=s.q;
+ document.getElementById('m-stack').innerHTML='';
  const o=document.getElementById('m-opts');o.innerHTML='';
- const verdict=document.getElementById('m-verdict'); if(verdict){verdict.hidden=true;verdict.innerHTML='';}
  const mnext=document.getElementById('m-next'); if(mnext) mnext.hidden=true;
  ansSeen=new Set();
  if(s.answers){
-  s.answers.forEach((a,k)=>{const b=document.createElement('button');b.className='pi-opt';b.type='button';b.textContent=a.label;
+  o.className='pi-rows';
+  s.answers.forEach((a,k)=>{const b=document.createElement('button');b.className='pi-ans-row';b.type='button';b.dataset.k=k;b.textContent=a.label;
    b.onclick=()=>answer(k);o.appendChild(b);});
  }else{
+  o.className='pi-opts';
   s.opts.forEach(x=>{const b=document.createElement('button');b.className='pi-opt';b.type='button';b.textContent=x;
    b.onclick=()=>turn();o.appendChild(b);});
  }
  go('s-mur');}
 function answer(k){const s=S[cs],a=s.answers[k];
+ if(ansSeen.has(k)) return;
  ansSeen.add(k);
  const alreadyGood=!!choseGood[cs];
- document.querySelectorAll('#m-opts .pi-opt').forEach((b,j)=>{
-  b.classList.toggle('pi-chosen',j===k);
-  if(ansSeen.has(j)) b.classList.add('pi-seen');
- });
- const cue=a.good
-  ? '<span class="pi-verdict-cue">Et maintenant, regardez ce qui se cache derrière les autres réponses.</span>'
-  : (alreadyGood ? '' : '<span class="pi-verdict-cue">Essayez encore.</span>');
- const v=document.getElementById('m-verdict');
- v.className='pi-verdict '+(a.good?'pi-good':'pi-miss');
- v.innerHTML=a.reply+cue;
- v.hidden=false;
+ const row=document.querySelector('#m-opts .pi-ans-row[data-k="'+k+'"]'); if(row) row.remove();
+ const cue=a.good?'Et maintenant, regardez ce qui se cache derrière les autres réponses.':(alreadyGood?'':'Essayez encore.');
+ const block=document.createElement('div');
+ block.className='pi-ans-block '+(a.good?'pi-good':'pi-miss');
+ block.innerHTML='<span class="pi-ans-label">'+a.label+'</span><div class="pi-ans-reply">'+a.reply+'</div>'+(cue?'<span class="pi-ans-cue">'+cue+'</span>':'');
+ document.getElementById('m-stack').appendChild(block);
  if(a.good){ choseGood[cs]=true; document.getElementById('m-next').hidden=false; }}
 function turn(){const s=S[cs];const el=document.getElementById('s-turn');
  el.style.setProperty('--ac',s.c);
