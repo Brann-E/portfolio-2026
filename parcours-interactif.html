@@ -54,6 +54,8 @@
   <div class="pi-scene" id="m-scene"></div>
   <div class="pi-q" id="m-q"></div>
   <div class="pi-opts" id="m-opts"></div>
+  <div class="pi-verdict" id="m-verdict" hidden></div>
+  <button class="pi-btn" id="m-next" type="button" hidden onclick="turn()">Voir la suite</button>
 </section>
 
 <section class="pi-screen pi-wrap" id="s-turn">
@@ -61,7 +63,7 @@
   <h2 id="t-title"></h2>
   <div class="pi-turn" id="t-body"></div>
   <div id="t-gate"></div>
-  <button class="pi-btn" onclick="toPlaces()">Regarder d'ailleurs</button>
+  <button class="pi-btn" id="t-next" onclick="toPlaces()">Regarder d'ailleurs</button>
 </section>
 
 <section class="pi-screen pi-wrap" id="s-places">

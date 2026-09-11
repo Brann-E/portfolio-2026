@@ -9,9 +9,25 @@ const S=[
  title:"Quatre personnes répondent à soixante-dix pour cent des questions.",
  scene:`<p>Une plateforme utilisée par des organisateurs d'événements. Les plus anciens ont ouvert un forum d'entraide : ils répondent aux nouveaux, écrivent des tutoriels, dépannent le samedi soir.</p>
  <p>Quatre d'entre eux traitent soixante-dix pour cent des questions. Le coût de support de l'entreprise est parmi les plus bas du secteur, et l'équipe en est fière.</p>`,
- q:"Cette situation, comment la qualifieriez-vous ?",
+ q:"Une question pour vous : ce forum, qu'est-ce qui le fait vraiment tenir ?",
  opts:["solide","exemplaire","à formaliser","à valoriser"],
- turnTitle:"Six mois plus tard.",
+ answers:[
+  {label:"Un bon produit ?",
+   reply:`Non — pas tout à fait. Le produit, l'entreprise le regarde déjà. Ce qui fait tenir ce forum n'est pas dedans. Les mois vont le montrer.`},
+  {label:"Une communauté qui s'auto-gère ?",
+   reply:`Presque. Mais une communauté ne s'auto-gère jamais toute seule : quelques-uns portent le reste, en silence. Les mois vont le montrer.`},
+  {label:"Une économie de support ?",
+   reply:`C'est exactement ce que voit l'entreprise — et c'est le piège. Une économie, on s'en félicite ; une dépendance, on la répare. Les mois vont le montrer.`},
+  {label:"La générosité de quelques-uns ?", good:true,
+   reply:`Oui. L'entreprise voit un coût qui baisse ; vous, vous avez vu des gens qui donnent. C'est précisément ce qui ne figure sur aucun tableau — et c'est le plus difficile à remarquer.`}
+ ],
+ turnTitle:"Les mois passent.",
+ hit:"Une dépendance qu'on ne compte pas ressemble exactement à une économie.",
+ timeline:[
+  {t:"1 mois", body:`<p>L'un des quatre se fait un peu plus rare. Le forum tourne, les indicateurs restent au vert. Personne ne le remarque.</p>`},
+  {t:"3 mois", body:`<p>Ils sont deux à avoir cessé. Les réponses tardent, quelques nouveaux se plaignent — on met ça sur le compte d'un pic d'activité.</p>`},
+  {t:"6 mois", body:`<p>Trois des quatre ont arrêté, sans un mot. Le coût de support triple. Et personne ne sait pourquoi : ces quatre-là n'apparaissaient dans aucun tableau de bord, aucun contrat, aucune ligne de budget.</p>`}
+ ],
  turn:`<p>Trois des quatre ont cessé de répondre. Pas de départ, pas de plainte, pas de message — ils ont simplement arrêté. Le coût de support triple en un trimestre.</p>
  <p>Dans l'entreprise, personne ne sait pourquoi, et personne ne peut savoir : ces quatre personnes n'apparaissaient dans aucun tableau de bord, aucun contrat, aucune ligne de budget.</p>
  <p>Le chiffre était là depuis le début. Vous l'avez lu comme une performance.</p>
@@ -94,6 +110,8 @@ const S=[
 const GATE_PLACES={q:"Ce que vous venez de faire porte un nom.",min:"10 min",href:"article-03.html"};
 
 const done=[false,false,false]; const seen=[new Set(),new Set(),new Set()];
+const choseGood=[null,null,null]; // mémorise si la réponse lucide a été choisie (pour rappel au « Fond »)
+let ansSeen=new Set(); // réponses déjà explorées sur le mur courant
 let cs=0, placesGateShown=false;
 
 /* Liens « pour aller plus loin » désactivés pour l'instant. */
@@ -142,14 +160,57 @@ function mur(i){cs=i;piMax=0;const s=S[i];const el=document.getElementById('s-mu
  document.getElementById('m-scene').innerHTML=s.scene;
  document.getElementById('m-q').textContent=s.q;
  const o=document.getElementById('m-opts');o.innerHTML='';
- s.opts.forEach(x=>{const b=document.createElement('button');b.className='pi-opt';b.textContent=x;
-  b.onclick=()=>turn();o.appendChild(b);});
+ const verdict=document.getElementById('m-verdict'); if(verdict){verdict.hidden=true;verdict.innerHTML='';}
+ const mnext=document.getElementById('m-next'); if(mnext) mnext.hidden=true;
+ ansSeen=new Set();
+ if(s.answers){
+  s.answers.forEach((a,k)=>{const b=document.createElement('button');b.className='pi-opt';b.type='button';b.textContent=a.label;
+   b.onclick=()=>answer(k);o.appendChild(b);});
+ }else{
+  s.opts.forEach(x=>{const b=document.createElement('button');b.className='pi-opt';b.type='button';b.textContent=x;
+   b.onclick=()=>turn();o.appendChild(b);});
+ }
  go('s-mur');}
+function answer(k){const s=S[cs],a=s.answers[k];
+ ansSeen.add(k);
+ const alreadyGood=!!choseGood[cs];
+ document.querySelectorAll('#m-opts .pi-opt').forEach((b,j)=>{
+  b.classList.toggle('pi-chosen',j===k);
+  if(ansSeen.has(j)) b.classList.add('pi-seen');
+ });
+ const cue=a.good
+  ? '<span class="pi-verdict-cue">Et maintenant, regardez ce qui se cache derrière les autres réponses.</span>'
+  : (alreadyGood ? '' : '<span class="pi-verdict-cue">Essayez encore.</span>');
+ const v=document.getElementById('m-verdict');
+ v.className='pi-verdict '+(a.good?'pi-good':'pi-miss');
+ v.innerHTML=a.reply+cue;
+ v.hidden=false;
+ if(a.good){ choseGood[cs]=true; document.getElementById('m-next').hidden=false; }}
 function turn(){const s=S[cs];const el=document.getElementById('s-turn');
  el.style.setProperty('--ac',s.c);
- document.getElementById('t-kick').innerHTML='<b>'+s.lieu+'</b> · le retournement';
+ document.getElementById('t-kick').innerHTML='<b>'+s.lieu+'</b> · plus tard';
  document.getElementById('t-title').textContent=s.turnTitle;
- document.getElementById('t-body').innerHTML=s.turn;
+ const body=document.getElementById('t-body');
+ const nextBtn=document.getElementById('t-next');
+ if(s.timeline){
+  body.innerHTML='<div class="pi-timeline">'+s.timeline.map((tl,i)=>
+    '<button class="pi-tl-node" type="button" data-i="'+i+'"><span class="pi-tl-dot"></span><span class="pi-tl-label">'+tl.t+'</span><span class="pi-tl-cue">cliquer</span><span class="pi-tl-body">'+tl.body+'</span></button>'
+  ).join('')+'</div><div class="pi-turn-hit" id="t-hit" hidden><span class="pi-hit">'+s.hit+'</span></div>';
+  nextBtn.hidden=true;
+  const opened=new Set();
+  body.querySelectorAll('.pi-tl-node').forEach(node=>{
+   node.onclick=()=>{
+    node.classList.toggle('pi-open');
+    if(node.classList.contains('pi-open')) opened.add(node.dataset.i);
+    if(opened.size===s.timeline.length && nextBtn.hidden){
+     setTimeout(()=>{ const h=document.getElementById('t-hit'); if(h) h.hidden=false; nextBtn.hidden=false; },1600);
+    }
+   };
+  });
+ }else{
+  body.innerHTML=s.turn;
+  nextBtn.hidden=false;
+ }
  document.getElementById('t-gate').innerHTML=gateHTML(s.gateTurn);
  go('s-turn');}
 function toPlaces(){const s=S[cs];const el=document.getElementById('s-places');
