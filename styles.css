@@ -7237,20 +7237,26 @@ body.has-site-nav.pratique .veil { display: none; }
 @media (max-width:680px){ .pi-timeline{ grid-template-columns:1fr; } .pi-timeline::before{ display:none; } }
 
 /* Réponses graduées (situation 1) : choix engagé + verdict en place */
-.pi-stack:not(:empty){ margin-top:26px; }
-.pi-ans-block{ border-left:2px solid var(--faint); padding-left:20px; margin-bottom:22px; animation:pi-fade .4s ease; }
+.pi-answers{ display:block; margin-top:24px; }
+.pi-ans-block{ border:1px solid var(--faint); border-radius:10px; margin-bottom:12px; overflow:hidden;
+  background:linear-gradient(180deg,rgba(255,255,255,.015),transparent); transition:border-color .3s,background .3s; }
 .pi-ans-block:last-child{ margin-bottom:0; }
-.pi-ans-block.pi-good{ border-left-color:var(--ac); }
-.pi-ans-block.pi-miss{ border-left-color:color-mix(in srgb,var(--ac) 38%,var(--faint)); }
-.pi-ans-label{ display:block; font-family:"Instrument Serif",Georgia,serif; font-size:20px; line-height:1.2; margin-bottom:8px; }
+.pi-ans-head{ display:flex; align-items:center; justify-content:space-between; gap:14px; width:100%;
+  text-align:left; background:none; border:none; cursor:pointer; color:var(--paper); font-family:inherit; padding:16px 20px; transition:color .3s; }
+.pi-ans-head:hover,.pi-ans-head:focus-visible{ color:var(--ac); outline:none; }
+.pi-ans-label{ font-family:"Instrument Serif",Georgia,serif; font-size:19px; line-height:1.25; }
+.pi-ans-plus{ flex:0 0 auto; color:var(--muted); font-size:18px; line-height:1; transition:color .3s; }
+.pi-ans-plus::before{ content:"+"; }
+.pi-ans-block.pi-open .pi-ans-plus::before{ content:"\2013"; }
+.pi-ans-head:hover .pi-ans-plus,.pi-ans-head:focus-visible .pi-ans-plus{ color:var(--ac); }
+.pi-ans-body{ padding:0 20px 18px; }
+.pi-ans-block.pi-open .pi-ans-body{ animation:pi-fade .35s ease; }
+.pi-ans-reply{ font-size:14.5px; line-height:1.62; color:#c9ced4; max-width:64ch; }
+.pi-ans-cue{ display:block; margin-top:10px; font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); }
+.pi-ans-cue:empty{ display:none; }
+.pi-ans-block.pi-good{ border-color:color-mix(in srgb,var(--ac) 45%,var(--faint)); background:linear-gradient(180deg,color-mix(in srgb,var(--ac) 7%,transparent),transparent); }
 .pi-ans-block.pi-good .pi-ans-label{ color:var(--ac); }
-.pi-ans-reply{ font-size:15px; line-height:1.62; color:#c9ced4; max-width:64ch; }
-.pi-ans-cue{ display:block; margin-top:10px; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); }
 .pi-ans-block.pi-good .pi-ans-cue{ color:var(--ac); }
-.pi-rows{ display:block; margin-top:8px; }
-.pi-rows .pi-ans-row{ display:block; width:100%; text-align:left; background:none; border:none; border-bottom:1px solid var(--faint); color:var(--paper); cursor:pointer; font-family:"Instrument Serif",Georgia,serif; font-size:20px; line-height:1.3; padding:16px 4px; transition:color .3s,padding-left .3s; }
-.pi-rows .pi-ans-row:first-child{ border-top:1px solid var(--faint); }
-.pi-rows .pi-ans-row:hover,.pi-rows .pi-ans-row:focus-visible{ color:var(--ac); padding-left:10px; outline:none; }
 
 .pi-sy p{ font-size:19px; color:#e3e6e9; }
 .pi-sy .pi-big{ font-family:"Instrument Serif",Georgia,serif; font-size:clamp(23px,3.6vw,31px);

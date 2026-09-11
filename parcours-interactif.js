@@ -54,8 +54,18 @@ const S=[
  title:"L'atelier ne remonte jamais les erreurs de plans.",
  scene:`<p>Dans une PME industrielle, les plans arrivent à l'atelier avec des erreurs — des cotes qui ne tombent pas, des pièces qui ne s'assemblent pas dans l'ordre prévu.</p>
  <p>L'atelier corrige et n'en parle pas. Ils appellent ça « rattraper ». Les délais sont tenus depuis deux ans, et la direction industrielle est satisfaite.</p>`,
- q:"Pourquoi l'atelier ne remonte-t-il pas ?",
+ q:"Une question pour vous : pourquoi l'atelier ne remonte-t-il jamais ces erreurs ?",
  opts:["pas le temps","ça ne servirait à rien","ils ne veulent pas dénoncer","ce n'est pas leur rôle"],
+ answers:[
+  {label:"Ils n'ont pas le temps",
+   reply:`Plausible — mais c'est une raison qui est chez eux. Et si le problème n'était pas de leur côté ?`},
+  {label:"Ce n'est pas leur rôle",
+   reply:`Peut-être. Encore une explication du côté des gens : leur poste, leur périmètre. Ce n'est sans doute pas là que ça se joue.`},
+  {label:"Ça ne servirait à rien",
+   reply:`Vous supposez leur résignation. C'est toujours une lecture de leur état d'esprit — pas de ce qui, autour d'eux, ne fonctionne pas.`},
+  {label:"Et s'ils remontaient, sans que ça n'arrive nulle part ?", good:true,
+   reply:`Oui. Vous n'avez pas cherché la faute chez eux — vous avez senti qu'il manque peut-être un endroit où ce qu'ils disent puisse arriver. C'est exactement là qu'il faut regarder.`}
+ ],
  turnTitle:"Ils remontent.",
  turn:`<p>Quarante-trois fois en deux ans. Écrit, daté, précis — dans le champ commentaire du logiciel de production.</p>
  <p>Le bureau d'études n'ouvre jamais ce champ. Ce n'est pas son outil, et aucune notification n'a jamais été branchée dessus.</p>
@@ -82,8 +92,18 @@ const S=[
  title:"Elle répond par phrases courtes.",
  scene:`<p>Sixième rendez-vous d'accompagnement depuis janvier. Sixième interlocuteur.</p>
  <p>En face, une femme qui ne développe pas, ne donne aucun détail, regarde la porte. Le professionnel a quarante minutes et un dossier de deux pages. À la fin, il note : peu coopérante.</p>`,
- q:"Que se passe-t-il, chez cette personne ?",
+ q:"Une question pour vous : que se passe-t-il chez cette personne ?",
  opts:["elle est découragée","elle est méfiante","elle protège quelque chose","elle a renoncé"],
+ answers:[
+  {label:"Elle est méfiante",
+   reply:`Une lecture de son caractère. Et si ce que vous prenez pour de la méfiance ne venait pas d'elle ?`},
+  {label:"Elle est découragée",
+   reply:`Peut-être. Mais encore une fois, vous décrivez son état intérieur. Le sujet est peut-être ailleurs qu'en elle.`},
+  {label:"Elle protège quelque chose",
+   reply:`Vous cherchez toujours en elle — une intention, une défense. Et si ça se jouait avant elle ?`},
+  {label:"Elle a peut-être déjà tout dit — ailleurs", good:true,
+   reply:`Oui. Vous n'avez pas cherché qui elle est — vous avez entendu qu'elle a peut-être déjà donné, avant vous, sans que rien ne reste. C'est exactement ce que son dossier va montrer.`}
+ ],
  turnTitle:"Ouvrez les cinq comptes rendus précédents.",
  turn:`<p>Janvier, premier rendez-vous : trois pages. Elle raconte tout, dans le détail, avec les dates.</p>
  <p>Février : deux pages. Mars : une. Mai : deux paragraphes. Aujourd'hui : six lignes.</p>
@@ -159,31 +179,32 @@ function mur(i){cs=i;piMax=0;const s=S[i];const el=document.getElementById('s-mu
  document.getElementById('m-title').textContent=s.title;
  document.getElementById('m-scene').innerHTML=s.scene;
  document.getElementById('m-q').textContent=s.q;
- document.getElementById('m-stack').innerHTML='';
  const o=document.getElementById('m-opts');o.innerHTML='';
  const mnext=document.getElementById('m-next'); if(mnext) mnext.hidden=true;
  ansSeen=new Set();
  if(s.answers){
-  o.className='pi-rows';
-  s.answers.forEach((a,k)=>{const b=document.createElement('button');b.className='pi-ans-row';b.type='button';b.dataset.k=k;b.textContent=a.label;
-   b.onclick=()=>answer(k);o.appendChild(b);});
+  o.className='pi-answers';
+  s.answers.forEach((a,k)=>{const block=document.createElement('div');block.className='pi-ans-block';block.dataset.k=k;
+   block.innerHTML='<button class="pi-ans-head" type="button"><span class="pi-ans-label">'+a.label+'</span><span class="pi-ans-plus" aria-hidden="true"></span></button>'
+    +'<div class="pi-ans-body" hidden><div class="pi-ans-reply">'+a.reply+'</div><span class="pi-ans-cue"></span></div>';
+   block.querySelector('.pi-ans-head').onclick=()=>toggleAnswer(k,block,a);
+   o.appendChild(block);});
  }else{
   o.className='pi-opts';
   s.opts.forEach(x=>{const b=document.createElement('button');b.className='pi-opt';b.type='button';b.textContent=x;
    b.onclick=()=>turn();o.appendChild(b);});
  }
  go('s-mur');}
-function answer(k){const s=S[cs],a=s.answers[k];
- if(ansSeen.has(k)) return;
+function toggleAnswer(k,block,a){
+ const open=block.classList.toggle('pi-open');
+ block.querySelector('.pi-ans-body').hidden=!open;
+ if(!open) return;
  ansSeen.add(k);
- const alreadyGood=!!choseGood[cs];
- const row=document.querySelector('#m-opts .pi-ans-row[data-k="'+k+'"]'); if(row) row.remove();
- const cue=a.good?'Et maintenant, regardez ce qui se cache derrière les autres réponses.':(alreadyGood?'':'Essayez encore.');
- const block=document.createElement('div');
- block.className='pi-ans-block '+(a.good?'pi-good':'pi-miss');
- block.innerHTML='<span class="pi-ans-label">'+a.label+'</span><div class="pi-ans-reply">'+a.reply+'</div>'+(cue?'<span class="pi-ans-cue">'+cue+'</span>':'');
- document.getElementById('m-stack').appendChild(block);
- if(a.good){ choseGood[cs]=true; document.getElementById('m-next').hidden=false; }}
+ block.classList.remove('pi-good','pi-miss');
+ block.classList.add(a.good?'pi-good':'pi-miss');
+ const cueEl=block.querySelector('.pi-ans-cue');
+ if(a.good){ cueEl.textContent='Et maintenant, regardez ce qui se cache derrière les autres réponses.'; choseGood[cs]=true; document.getElementById('m-next').hidden=false; }
+ else{ cueEl.textContent=choseGood[cs]?'':'Essayez encore.'; }}
 function turn(){const s=S[cs];const el=document.getElementById('s-turn');
  el.style.setProperty('--ac',s.c);
  document.getElementById('t-kick').innerHTML='<b>'+s.lieu+'</b> · plus tard';
