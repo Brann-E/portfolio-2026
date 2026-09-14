@@ -2963,6 +2963,45 @@ em.grad {
   color: var(--paper);
 }
 
+/* Contact — page dédiée */
+.contact--page {
+  border-top: 0;
+  min-height: calc(100vh - 74px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(70px, 12vh, 150px) 0 clamp(60px, 10vh, 120px);
+}
+.contact--page .eyebrow {
+  margin-bottom: 26px;
+}
+.contact--page h2 {
+  max-width: 26ch;
+  margin-bottom: clamp(18px, 2.6vh, 26px);
+}
+.contact-lead {
+  color: var(--muted);
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  line-height: 1.6;
+  max-width: 48ch;
+  margin: 0 0 clamp(34px, 5vh, 48px);
+}
+.contact-mail {
+  margin-top: clamp(30px, 5vh, 46px);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+.contact--page .contact-mail a {
+  color: var(--paper);
+  text-decoration: none;
+  border-bottom: 1px solid var(--faint);
+  transition: border-color 0.4s;
+}
+.contact--page .contact-mail a:hover {
+  border-color: var(--c5);
+}
+
 footer {
   position: relative;
   z-index: 2;
@@ -4717,6 +4756,39 @@ h3 {
   color: var(--muted);
 }
 
+/* article 06 mis en avant juste après le héros (page série) — gabarit .prelim */
+.prelim--solo {
+  margin-top: clamp(30px, 5vh, 52px);
+}
+.prelim--solo .eyebrow {
+  color: var(--c1);
+  margin-bottom: 14px;
+}
+.prelim--solo h3 {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  color: var(--paper);
+}
+.prelim-go {
+  display: inline-block;
+  margin-top: clamp(20px, 3vh, 28px);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c1);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--c1) 40%, transparent);
+  padding-bottom: 3px;
+  transition: border-color 0.3s;
+}
+.prelim-go:hover {
+  border-color: var(--c1);
+}
+/* pas de filet sous le héros quand le bloc 06 le suit (page série) */
+.hero:has(+ .prelim--solo) {
+  border-bottom: none;
+}
+
 /* la piste : rail vertical + fil coloré qui se trace */
 .track {
   position: relative;
@@ -4978,20 +5050,7 @@ body {
 .site-nav .site-links a.active::after {
   transform: scaleX(1);
 }
-/* couleur de survol ancrée sur data-section, non plus sur la position :
-   la nav peut gagner ou perdre des entrées sans décaler les couleurs */
-.site-nav .site-links a[data-section="cases"].active {
-  color: var(--c1);
-}
-.site-nav .site-links a[data-section="reciprocites"].active {
-  color: var(--c4);
-}
-.site-nav .site-links a[data-section="theorie"].active {
-  color: var(--c3);
-}
-.site-nav .site-links a[data-section="apropos"].active {
-  color: var(--c5);
-}
+/* item actif : blanc, comme le survol et Contact (pas de couleur par section) */
 .site-nav .site-links a.site-contact {
   color: var(--paper);
 }
@@ -5943,6 +6002,7 @@ h2 .spectrum-word {
 .art-3 { --accent: var(--c3); }
 .art-4 { --accent: var(--c4); }
 .art-5 { --accent: var(--c5); }
+.art-6 { --accent: var(--c1); }
 
 /* l'assertion isolée : sérif, couleur d'accent, sans filet (≠ .pull-quote) */
 .claim {
@@ -6120,6 +6180,60 @@ a.porte,
   color: #c3c9d0;
 }
 .aside strong { color: #fff; font-weight: 500; }
+
+/* --- comparaison en deux colonnes (article 06) ------------------------- */
+.split {
+  border-top: 1px solid var(--faint);
+  margin: clamp(36px, 6vh, 48px) 0 0;
+}
+.split .row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(20px, 3vw, 32px);
+  padding: clamp(20px, 3vh, 26px) 0;
+  border-bottom: 1px solid var(--faint);
+}
+.split .h {
+  font-family: "Instrument Serif", serif;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+.split .l .h { color: var(--muted); }
+.split .r .h { color: var(--accent); }
+.split p { font-size: 0.95rem; line-height: 1.6; color: #c3c9d0; margin: 0; }
+@media (max-width: 600px) {
+  .split .row { grid-template-columns: 1fr; gap: 10px; }
+}
+
+/* --- les trois terrains (article 06) ----------------------------------- */
+.terrains {
+  border-top: 1px solid var(--faint);
+  margin: clamp(28px, 4vh, 36px) 0 0;
+}
+.terrain {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: clamp(16px, 2.4vw, 24px);
+  padding: clamp(20px, 3vh, 26px) 0;
+  border-bottom: 1px solid var(--faint);
+}
+.terrain .n {
+  font-family: "Instrument Serif", serif;
+  font-size: 1.4rem;
+  color: var(--accent);
+  line-height: 1;
+}
+.terrain h4 {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-size: 1.15rem;
+  color: var(--paper);
+  margin-bottom: 8px;
+}
+.terrain p { font-size: 0.95rem; line-height: 1.6; color: #c3c9d0; margin: 0; }
+@media (max-width: 600px) {
+  .terrain { grid-template-columns: 1fr; gap: 6px; }
+}
 
 /* --- le cercle vertueux (article 05) ----------------------------------- */
 .cercle {
@@ -6344,7 +6458,6 @@ a.porte,
   font-size: 13px;
   user-select: none;
 }
-.site-nav .site-links a[data-section="explorations"].active { color: var(--c2); }
 
 /* --- les trois portes : verre depoli ------------------------------------
    Reprise du fond de #syc-btn : rgba blanc + backdrop-filter blur/saturate,
