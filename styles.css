@@ -1045,7 +1045,7 @@ h3,
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 16vh 0 10vh;
+  padding: 16vh 0 0;
 }
 .s1 h1 {
   font-size: clamp(30px, 4vw, 54px);
@@ -1108,7 +1108,16 @@ h3,
 
 /* ============ STRATE 2 — LE RÉSUMÉ ============ */
 .s2 {
-  padding: clamp(70px, 11vh, 130px) 0 clamp(30px, 5vh, 60px);
+  padding: clamp(50px, 11vh, 100px) 0 clamp(15px, 5vh, 45px);
+}
+
+.s2 .eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--paper);
+  font-weight: 500;
+  margin-bottom: 24px;
 }
 .summary {
   border-top: 1px solid var(--faint);
@@ -1208,9 +1217,14 @@ h3,
   font-size: 11.5px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  
 }
-.toc a {
-  color: var(--muted);
+.toc a,
+.toc a:link,
+.toc a:visited {
+  /* :link/:visited pour battre le a:link global (cyan) qui a la même
+     spécificité que .toc a et gagnait par ordre de cascade */
+  color: var(--paper);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -1223,6 +1237,11 @@ h3,
   border-radius: 50%;
   background: var(--faint);
   flex: none;
+  /* neutralise la règle générique .dot (frise) qui déteint ici :
+     le margin auto désalignait les points, la bordure/ombre masquait leur couleur */
+  margin: 0;
+  border: 0;
+  box-shadow: none;
   transition:
     background 0.35s ease,
     transform 0.35s ease;
@@ -1234,24 +1253,62 @@ h3,
 .toc a.active .dot {
   transform: scale(1.7);
 }
+/* survol ou actif : le texte ET la pastille prennent la couleur de la section */
+.toc a:nth-of-type(1):hover,
+.toc a:nth-of-type(1).active {
+  color: var(--shift);
+}
+.toc a:nth-of-type(2):hover,
+.toc a:nth-of-type(2).active {
+  color: var(--world);
+}
+.toc a:nth-of-type(3):hover,
+.toc a:nth-of-type(3).active {
+  color: var(--c-green);
+}
+.toc a:nth-of-type(4):hover,
+.toc a:nth-of-type(4).active {
+  color: var(--c-pink);
+}
+.toc a:nth-of-type(5):hover,
+.toc a:nth-of-type(5).active {
+  color: var(--shift);
+}
+.toc a:nth-of-type(6):hover,
+.toc a:nth-of-type(6).active {
+  color: var(--lesson);
+}
+.toc a:nth-of-type(7):hover,
+.toc a:nth-of-type(7).active {
+  color: var(--lesson);
+}
+.toc a:nth-of-type(1):hover .dot,
 .toc a:nth-of-type(1).active .dot {
   background: var(--shift);
 }
+.toc a:nth-of-type(2):hover .dot,
 .toc a:nth-of-type(2).active .dot {
   background: var(--world);
 }
+.toc a:nth-of-type(3):hover .dot,
 .toc a:nth-of-type(3).active .dot {
   background: var(--c-green);
 }
+.toc a:nth-of-type(4):hover .dot,
 .toc a:nth-of-type(4).active .dot {
   background: var(--c-pink);
 }
+.toc a:nth-of-type(5):hover .dot,
 .toc a:nth-of-type(5).active .dot {
   background: var(--shift);
 }
+.toc a:nth-of-type(6):hover .dot,
 .toc a:nth-of-type(6).active .dot {
-  background: var(--c-pink);
+  background: var(--lesson);
 }
+.toc a:nth-of-type(7):hover .dot,
+
+
 .toc a:nth-of-type(7).active .dot {
   background: var(--lesson);
 }
@@ -1300,7 +1357,9 @@ h3,
 .chapter p {
   max-width: 66ch;
 }
-.chapter p + p {
+.chapter p + p:not(.pull) {
+  /* :not(.pull) évacue le pull-quote de cette règle : sinon son margin-top
+     (44px) était écrasé par ces 20px quand il suit un paragraphe */
   margin-top: 20px;
 }
 .chapter .quiet {
@@ -1330,13 +1389,14 @@ h3,
 }
 .figure {
   margin: 44px 0 16px;
-  background: #fff;
+  //**background: #fff;**//
   padding: clamp(14px, 2.4vw, 32px);
 }
 .figure img {
-  width: 100%;
+  width: auto;
   height: auto;
   display: block;
+  margin: 0 auto;
 }
 .figcap {
   font-size: 12.5px;
@@ -1436,15 +1496,14 @@ h3,
 .nodes {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1px;
-  background: var(--faint);
-  border: 1px solid var(--faint);
   margin-top: 36px;
+  gap: 8px;
 }
 .node {
   background: var(--ink);
   padding: clamp(22px, 2.6vw, 30px);
   min-height: 250px;
+  border: 1px solid var(--faint);
 }
 .node .n {
   font-family: "Instrument Serif", serif;
@@ -1535,6 +1594,60 @@ h3,
 }
 .ancrage-body p + p {
   margin-top: 22px;
+}
+
+/* section « un livre qui a nourri ce regard » (fin d'un cas) */
+.livre {
+  border-top: 1px solid var(--faint);
+  padding: clamp(52px, 9vh, 96px) 0 clamp(20px, 4vh, 40px);
+}
+.livre-inner {
+  display: flex;
+  gap: clamp(26px, 4vw, 48px);
+  align-items: flex-start;
+  max-width: 720px;
+}
+.livre-cover {
+  flex: none;
+  width: clamp(112px, 16vw, 150px);
+  height: auto;
+  border-radius: 3px;
+  box-shadow: 0 20px 44px -18px rgba(0, 0, 0, 0.6);
+}
+.livre-title {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.1;
+  color: var(--paper);
+  margin: 4px 0 16px;
+}
+.livre-title span {
+  display: block;
+  margin-top: 8px;
+  font-family: "Inter", sans-serif;
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.livre-body p {
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  line-height: 1.7;
+  color: #c9ced6;
+  max-width: 48ch;
+}
+.livre-body p + p {
+  margin-top: 16px;
+}
+@media (max-width: 620px) {
+  .livre-inner {
+    flex-direction: column;
+    gap: 22px;
+  }
+  .livre-cover {
+    width: 122px;
+  }
 }
 
 footer {
@@ -5961,28 +6074,68 @@ footer a {
   outline: 2px solid var(--accent);
   outline-offset: 6px;
 }
-.figure {
-  /* propriétés détaillées : le raccourci `margin` empêche l'animation de démarrer */
-  transition:
-    margin-left 0.45s cubic-bezier(0.2, 0.7, 0.2, 1),
-    margin-right 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+
+/* lightbox : image agrandie, centrée sur fond noir, à sa définition réelle */
+.fig-lb {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  display: grid;
+  place-items: center;
+  padding: clamp(18px, 4vw, 56px);
 }
-.figure.is-zoomed {
-  position: relative;
-  z-index: 3;
-  box-shadow: 0 24px 60px -18px rgba(0, 0, 0, 0.55);
+.fig-lb[hidden] {
+  display: none !important;
 }
-.figure.is-zoomed .fig-btn {
+.fig-lb-backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  padding: 0;
   cursor: zoom-out;
+  background: rgba(4, 4, 6, 0.9);
+  backdrop-filter: blur(4px);
+  animation: donFade 0.35s ease;
 }
-@media (max-width: 900px) {
-  .fig-btn {
-    cursor: default;
+.fig-lb-img {
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+  max-height: 84vh;
+  width: auto;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 30px 80px -20px #000;
+  animation: donPop 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.fig-lb-close {
+  position: fixed;
+  left: 50%;
+  bottom: clamp(16px, 4vh, 34px);
+  transform: translateX(-50%);
+  z-index: 2;
+  background: color-mix(in srgb, var(--ink) 72%, transparent);
+  backdrop-filter: blur(4px);
+}
+.fig-lb-close:active {
+  transform: translateX(-50%) scale(0.88);
+}
+.fig-lb-close.is-pressed {
+  animation: figPress 0.2s ease;
+}
+@keyframes figPress {
+  40% {
+    transform: translateX(-50%) scale(0.82);
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .figure {
-    transition: none;
+  .fig-lb-backdrop,
+  .fig-lb-img,
+  .fig-lb-close.is-pressed {
+    animation: none;
   }
 }
 

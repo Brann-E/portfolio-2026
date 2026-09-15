@@ -1,72 +1,104 @@
-/* Agrandissement des figures au clic.
-   Aucune modification du HTML n'est nécessaire : le script enveloppe lui-même
-   chaque <img> contenue dans un .figure par un <button>, et calcule au clic
-   la largeur réellement disponible dans le conteneur de la page. */
+/* Agrandissement des figures : au clic, l'image s'ouvre dans une lightbox
+   centrée sur fond noir, à sa définition réelle (jamais étirée). Clic à côté,
+   Échap, ou le bouton rond en bas ferment. Le HTML n'a pas besoin d'être
+   modifié : le script enveloppe chaque <img> d'un .figure dans un bouton. */
 (function () {
-  var SEUIL = 900; // sous cette largeur l'image occupe déjà toute la place
-  var ouvert = null;
+  "use strict";
 
-  function conteneur(fig) {
-    return fig.closest('.wrap') || fig.closest('main') || document.body;
+  var reduce =
+    window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var overlay, imgEl, closeBtn, opener;
+
+  function build() {
+    overlay = document.createElement("div");
+    overlay.className = "fig-lb";
+    overlay.hidden = true;
+
+    var backdrop = document.createElement("button");
+    backdrop.type = "button";
+    backdrop.className = "fig-lb-backdrop";
+    backdrop.setAttribute("aria-label", "Fermer");
+
+    imgEl = document.createElement("img");
+    imgEl.className = "fig-lb-img";
+    imgEl.alt = "";
+
+    closeBtn = document.createElement("button");
+    closeBtn.type = "button";
+    closeBtn.className = "don-close-btn fig-lb-close";
+    closeBtn.setAttribute("aria-label", "Fermer");
+    closeBtn.innerHTML =
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7 L17 17 M17 7 L7 17"/></svg>';
+
+    overlay.appendChild(backdrop);
+    overlay.appendChild(imgEl);
+    overlay.appendChild(closeBtn);
+    document.body.appendChild(overlay);
+
+    backdrop.addEventListener("click", close);
+    closeBtn.addEventListener("click", pressClose);
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") close();
+    });
   }
 
-  function ouvrir(fig, btn) {
-    var cible = conteneur(fig);
-    var rc = cible.getBoundingClientRect();
-    var cs = getComputedStyle(cible);
-    // bord intérieur du conteneur (on reste dans ses marges de page)
-    var gauche = rc.left + parseFloat(cs.paddingLeft);
-    var droite = rc.right - parseFloat(cs.paddingRight);
-    var rf = fig.getBoundingClientRect();
-
-    fig.style.marginLeft = Math.min(0, gauche - rf.left) + 'px';
-    fig.style.marginRight = Math.min(0, rf.right - droite) + 'px';
-    fig.classList.add('is-zoomed');
-    btn.setAttribute('aria-expanded', 'true');
-    btn.setAttribute('aria-label', "Réduire l'image");
-    ouvert = { fig: fig, btn: btn };
+  function open(img, from) {
+    if (!overlay) build();
+    opener = from || null;
+    imgEl.src = img.currentSrc || img.src;
+    var ss = img.getAttribute("srcset");
+    if (ss) imgEl.setAttribute("srcset", ss);
+    else imgEl.removeAttribute("srcset");
+    var sz = img.getAttribute("sizes");
+    if (sz) imgEl.setAttribute("sizes", sz);
+    else imgEl.removeAttribute("sizes");
+    imgEl.alt = img.alt || "";
+    overlay.hidden = false;
+    document.body.style.overflow = "hidden";
+    closeBtn.focus();
   }
 
-  function fermer() {
-    if (!ouvert) return;
-    ouvert.fig.style.marginLeft = '';
-    ouvert.fig.style.marginRight = '';
-    ouvert.fig.classList.remove('is-zoomed');
-    ouvert.btn.setAttribute('aria-expanded', 'false');
-    ouvert.btn.setAttribute('aria-label', "Agrandir l'image");
-    ouvert = null;
+  function close() {
+    if (!overlay || overlay.hidden) return;
+    overlay.hidden = true;
+    document.body.style.overflow = "";
+    if (opener && opener.focus) opener.focus();
+  }
+
+  function pressClose() {
+    if (reduce) {
+      close();
+      return;
+    }
+    closeBtn.classList.remove("is-pressed");
+    void closeBtn.offsetWidth;
+    closeBtn.classList.add("is-pressed");
+    setTimeout(function () {
+      closeBtn.classList.remove("is-pressed");
+      close();
+    }, 150);
   }
 
   function init() {
-    var imgs = document.querySelectorAll('.figure > img');
+    var imgs = document.querySelectorAll(".figure > img");
     if (!imgs.length) return;
-
     Array.prototype.forEach.call(imgs, function (img) {
-      var btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'fig-btn';
-      btn.setAttribute('aria-label', "Agrandir l'image");
-      btn.setAttribute('aria-expanded', 'false');
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "fig-btn";
+      btn.setAttribute("aria-label", "Agrandir l'image");
       img.parentNode.insertBefore(btn, img);
       btn.appendChild(img);
-
-      btn.addEventListener('click', function () {
-        var fig = btn.closest('.figure');
-        if (ouvert && ouvert.fig === fig) { fermer(); return; }
-        fermer();
-        if (window.innerWidth < SEUIL) return;
-        ouvrir(fig, btn);
+      btn.addEventListener("click", function () {
+        open(img, btn);
       });
     });
-
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') fermer();
-    });
-    window.addEventListener('resize', fermer);
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
   } else {
     init();
   }
