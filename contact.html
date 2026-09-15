@@ -7,7 +7,7 @@
 <title>Contact — Brann Etienne</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="icon" href="assets/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="assets/logo_256.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -40,19 +40,21 @@
 <div class="wrap">
   <section class="contact contact--don">
     <div class="eyebrow">Contact</div>
-    <h2 class="don-title">Avant de me laisser quelque chose de vous,<br><em>laissez-moi vous donner quelque chose.</em></h2>
-    <p class="contact-lead don-sub">Retournez une carte. Autant que vous voulez. Rien &agrave; rendre.</p>
+    <h2 class="don-title">Avant de me laisser quelque chose de vous,<br><em>laissez-moi vous donner quelque chose de moi.</em></h2>
+    <p class="contact-lead don-sub">Chaque carte porte une idée qui m'a semblé trop belle pour la garder : sur le don, le lien, ce qui circule entre les gens. Tirez-en autant que vous voulez. C'est cadeau 🎁</p>
 
     <div class="don-grid" id="don-grid" role="group" aria-label="Cartes de dons &agrave; retourner"></div>
     <button class="don-reshuffle" type="button" id="don-reshuffle">&#8635;&#8239;&nbsp;Nouvelle donne</button>
 
     <div class="don-give" id="don-give">
       <p class="don-note" id="don-note" hidden></p>
-      <form class="don-form" id="don-form">
+      <form class="don-form" id="don-form" action="https://formspree.io/f/xzezpppj" method="POST">
         <input class="don-field" type="text" name="nom" placeholder="Votre nom" autocomplete="name">
         <input class="don-field" type="email" name="email" placeholder="Votre email" autocomplete="email">
         <textarea class="don-field" name="message" placeholder="Ce que vous aimeriez me dire&hellip;"></textarea>
+        <input type="hidden" name="_subject" value="Un contre-don &mdash; via le portfolio">
         <button class="don-submit" type="submit">Ouvrir quelque chose</button>
+        <p class="don-status" id="don-status" role="status" aria-live="polite" hidden></p>
       </form>
       <p class="contact-mail">Ou directement&#8239;: <a href="mailto:brann.etienne@gmail.com">brann.etienne@gmail.com</a> &middot; Lyon, en remote et sur site</p>
     </div>

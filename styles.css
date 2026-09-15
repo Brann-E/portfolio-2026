@@ -3055,6 +3055,17 @@ em.grad {
 }
 .don-cell {
   perspective: 1000px;
+  will-change: transform;
+  animation: donBreath var(--bd, 7s) ease-in-out var(--bdelay, 0s) infinite;
+}
+@keyframes donBreath {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -6px, 0);
+  }
 }
 .don-flip {
   position: relative;
@@ -3344,7 +3355,7 @@ em.grad {
 /* le contre-don, facultatif */
 .don-give {
   max-width: 500px;
-  margin: clamp(56px, 10vh, 100px) auto 0;
+  margin: clamp(22px, 4vh, 40px) auto 0;
   text-align: center;
 }
 .don-form {
@@ -3371,20 +3382,31 @@ em.grad {
   border-color: var(--c1);
 }
 textarea.don-field {
-  min-height: 120px;
+  min-height: 240px;
   resize: vertical;
 }
 .don-submit {
   width: 100%;
   margin-top: 6px;
   font-size: 15px;
+  font-weight: 600;
   letter-spacing: 0.02em;
   color: var(--ink);
-  background: var(--c1);
-  border: 1px solid var(--c1);
+  background: linear-gradient(
+    115deg,
+    var(--c1),
+    var(--c2),
+    var(--c3),
+    var(--c4),
+    var(--c5),
+    var(--c1)
+  );
+  background-size: 300% 100%;
+  border: 0;
   border-radius: 999px;
   padding: 15px 30px;
   cursor: pointer;
+  animation: donHolo 8s linear infinite;
   transition: filter 0.3s, transform 0.2s;
 }
 .don-submit:hover {
@@ -3392,6 +3414,19 @@ textarea.don-field {
 }
 .don-submit:active {
   transform: translateY(1px);
+}
+.don-submit:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+.don-status {
+  margin: 4px 0 0;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--c3);
+}
+.don-status.is-error {
+  color: var(--c4);
 }
 .don-give .contact-mail {
   margin-top: clamp(26px, 4vh, 36px);
@@ -3422,6 +3457,8 @@ textarea.don-field {
   .don-flip-inner,
   .don-flip.is-waving,
   .don-flip-inner.is-dealing,
+  .don-cell,
+  .don-submit,
   .don-close-btn,
   .don-close-btn.is-pressed {
     animation: none;

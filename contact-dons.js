@@ -161,8 +161,39 @@
     }
   ];
 
-  var SEAL =
-    '<svg viewBox="0 0 48 48" fill="none" stroke="url(#donGrad)" stroke-width="1.6" stroke-linecap="round"><circle cx="24" cy="24" r="15"/><circle cx="24" cy="24" r="8"/><circle cx="24" cy="24" r="2.2" fill="url(#donGrad)" stroke="none"/></svg>';
+  // familles → dos de carte (cf. spec) : anthropologie 1-7, auteurs 8-12, questions 13-14
+  var FAMILLES = [
+    "anthropologie", "anthropologie", "anthropologie", "anthropologie",
+    "anthropologie", "anthropologie", "anthropologie",
+    "auteurs", "auteurs", "auteurs", "auteurs", "auteurs",
+    "questions", "questions"
+  ];
+  FAMILLES.forEach(function (f, i) {
+    if (dons[i]) dons[i].famille = f;
+  });
+
+  // symbole du dos, propre à chaque famille (trait fin holographique, statique)
+  var svgOpen =
+    '<svg viewBox="0 0 48 48" fill="none" stroke="url(#donGrad)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">';
+  var BACKS = {
+    // l'origine qui rayonne : cercles concentriques
+    anthropologie:
+      svgOpen +
+      '<circle cx="24" cy="24" r="15"/><circle cx="24" cy="24" r="8"/><circle cx="24" cy="24" r="2.2" fill="url(#donGrad)" stroke="none"/></svg>',
+    // la pensée bâtie : polygone régulier tracé au complet (arêtes)
+    auteurs:
+      svgOpen +
+      '<path d="M24 9 L37 16.5 L37 31.5 L24 39 L11 31.5 L11 16.5 Z"/></svg>',
+    // la pensée en construction : les sommets du même polygone, sans arêtes
+    concepts:
+      '<svg viewBox="0 0 48 48" fill="url(#donGrad)" stroke="none">' +
+      '<circle cx="24" cy="9" r="1.9"/><circle cx="37" cy="16.5" r="1.9"/><circle cx="37" cy="31.5" r="1.9"/><circle cx="24" cy="39" r="1.9"/><circle cx="11" cy="31.5" r="1.9"/><circle cx="11" cy="16.5" r="1.9"/></svg>',
+    // l'adresse ouverte : un simple demi-arc
+    questions: svgOpen + '<path d="M9 25 A15 15 0 0 1 39 25"/></svg>'
+  };
+  function backFor(d) {
+    return BACKS[d && d.famille] || BACKS.anthropologie;
+  }
   var N = 6; // cartes affichées (sur 14 dons) — « une nouvelle donne » redistribue
   var reduce =
     window.matchMedia &&
@@ -204,10 +235,13 @@
     for (var i = 0; i < N; i++) {
       var cell = document.createElement("div");
       cell.className = "don-cell";
+      // respiration propre à chaque carte : durée et phase désynchronisées
+      cell.style.setProperty("--bd", (6 + Math.random() * 3.5).toFixed(2) + "s");
+      cell.style.setProperty("--bdelay", (-Math.random() * 9).toFixed(2) + "s");
       cell.innerHTML =
         '<div class="don-flip" role="button" tabindex="0" aria-label="Retourner la carte">' +
         '<div class="don-flip-inner">' +
-        '<div class="don-face don-face--back don-holo"><span class="don-seal">' + SEAL + "</span></div>" +
+        '<div class="don-face don-face--back don-holo"><span class="don-seal"></span></div>' +
         '<div class="don-face don-face--front don-holo">' +
         '<div class="don-fglyph" aria-hidden="true"></div>' +
         '<div class="don-fnom"></div>' +
@@ -218,6 +252,7 @@
       var rec = {
         flip: cell.querySelector(".don-flip"),
         inner: cell.querySelector(".don-flip-inner"),
+        seal: cell.querySelector(".don-seal"),
         glyph: cell.querySelector(".don-fglyph"),
         nom: cell.querySelector(".don-fnom"),
         lecon: cell.querySelector(".don-flecon"),
@@ -254,10 +289,10 @@
     }
   }
 
-  function revealNote() {
+function revealNote() {
     if (!note || !note.hidden) return;
     note.innerHTML =
-      "Vous avez ouvert quelque chose, <b>créé un lien</b>. Si vous voulez le prolonger, c'est juste ici.";
+      "<b></b>";
     note.hidden = false;
     // laisse le navigateur enregistrer l'état avant de déclencher la transition
     requestAnimationFrame(function () {
@@ -271,6 +306,7 @@
       var d = dons[order[i]];
       var rec = cells[i];
       rec.don = d;
+      rec.seal.innerHTML = backFor(d);
       rec.glyph.innerHTML = d.svg;
       rec.nom.textContent = d.nom;
       rec.lecon.textContent = d.lecon;
@@ -384,22 +420,77 @@
   buildGrid();
   deal();
 
-  /* --- le contre-don : compose un email (site statique, pas de backend) - */
+  /* --- le contre-don : envoi via Formspree (sans quitter la page) -------
+     Tant que l'identifiant n'est pas renseigné dans l'attribut action du
+     formulaire (VOTRE_ID), on retombe proprement sur le client mail. */
   var form = document.getElementById("don-form");
+  var status = document.getElementById("don-status");
+
+  function setStatus(msg, isErr) {
+    if (!status) return;
+    if (!msg) {
+      status.hidden = true;
+      status.textContent = "";
+      return;
+    }
+    status.textContent = msg;
+    status.classList.toggle("is-error", !!isErr);
+    status.hidden = false;
+  }
+
+  function mailtoFallback() {
+    var nom = (form.nom.value || "").trim();
+    var email = (form.email.value || "").trim();
+    var msg = (form.message.value || "").trim();
+    var sujet = "Un contre-don" + (nom ? " — " + nom : "");
+    var corps =
+      (msg || "") + "\n\n— " + (nom || "") + (email ? " (" + email + ")" : "");
+    window.location.href =
+      "mailto:brann.etienne@gmail.com?subject=" +
+      encodeURIComponent(sujet) +
+      "&body=" +
+      encodeURIComponent(corps);
+  }
+
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      var nom = (form.nom.value || "").trim();
-      var email = (form.email.value || "").trim();
-      var msg = (form.message.value || "").trim();
-      var sujet = "Un contre-don" + (nom ? " — " + nom : "");
-      var corps =
-        (msg || "") + "\n\n— " + (nom || "") + (email ? " (" + email + ")" : "");
-      window.location.href =
-        "mailto:brann.etienne@gmail.com?subject=" +
-        encodeURIComponent(sujet) +
-        "&body=" +
-        encodeURIComponent(corps);
+      var endpoint = form.getAttribute("action") || "";
+      if (!endpoint || endpoint.indexOf("VOTRE_ID") !== -1) {
+        mailtoFallback(); // Formspree pas encore configuré
+        return;
+      }
+      var btn = form.querySelector(".don-submit");
+      var label = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = "Envoi…";
+      setStatus("", false);
+      fetch(endpoint, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(form)
+      })
+        .then(function (r) {
+          if (r.ok) {
+            form.reset();
+            setStatus(
+              "Merci — votre message est parti. Je vous réponds vite.",
+              false
+            );
+          } else {
+            throw new Error("send failed");
+          }
+        })
+        .catch(function () {
+          setStatus(
+            "L'envoi a échoué. Écrivez-moi directement à brann.etienne@gmail.com.",
+            true
+          );
+        })
+        .then(function () {
+          btn.disabled = false;
+          btn.textContent = label;
+        });
     });
   }
 })();
