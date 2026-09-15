@@ -461,9 +461,10 @@ function revealNote() {
         return;
       }
       var btn = form.querySelector(".don-submit");
-      var label = btn.textContent;
+      var labelEl = btn.querySelector(".don-submit-t") || btn;
+      var label = labelEl.textContent;
       btn.disabled = true;
-      btn.textContent = "Envoi…";
+      labelEl.textContent = "Envoi…";
       setStatus("", false);
       fetch(endpoint, {
         method: "POST",
@@ -489,7 +490,7 @@ function revealNote() {
         })
         .then(function () {
           btn.disabled = false;
-          btn.textContent = label;
+          labelEl.textContent = label;
         });
     });
   }
