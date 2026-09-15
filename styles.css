@@ -1391,12 +1391,23 @@ h3,
   margin: 44px 0 16px;
   //**background: #fff;**//
   padding: clamp(14px, 2.4vw, 32px);
+  max-width: 100%;
+  border-radius: 8px;
 }
+
+.figure .icp {
+  max-width: 80%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
 .figure img {
-  width: auto;
+  max-width: 100%;
   height: auto;
   display: block;
   margin: 0 auto;
+  border-radius: 4px;
 }
 .figcap {
   font-size: 12.5px;
