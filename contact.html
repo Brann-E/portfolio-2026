@@ -25,22 +25,59 @@
 <canvas id="bg" aria-hidden="true"></canvas>
 <div class="veil" aria-hidden="true"></div>
 
+<!-- dégradé irisé partagé (bordures + glyphes des dons) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <linearGradient id="donGrad" x1="0" y1="0" x2="1" y2="1" spreadMethod="reflect">
+    <stop offset="0" style="stop-color:var(--c1)"/>
+    <stop offset="0.25" style="stop-color:var(--c2)"/>
+    <stop offset="0.5" style="stop-color:var(--c3)"/>
+    <stop offset="0.75" style="stop-color:var(--c4)"/>
+    <stop offset="1" style="stop-color:var(--c5)"/>
+    <animateTransform attributeName="gradientTransform" type="rotate" from="0 0.5 0.5" to="360 0.5 0.5" dur="14s" repeatCount="indefinite"/>
+  </linearGradient>
+</defs></svg>
+
 <div class="wrap">
-  <section class="contact contact--page">
+  <section class="contact contact--don">
     <div class="eyebrow">Contact</div>
-    <h2>Une intuition, un projet en germe,<br>un n&oelig;ud &agrave; <em>d&eacute;m&ecirc;ler&#8239;?</em></h2>
-    <p class="contact-lead">On prend le temps d'en parler. Le premier &eacute;change ne co&ucirc;te rien &mdash; sinon un peu d'attention.</p>
-    <div class="links">
-      <a class="primary" href="https://cal.com/brann-etienne/30min" target="_blank" rel="noopener">R&eacute;server un &eacute;change</a>
-      <a href="mailto:brann.etienne@gmail.com">Email</a>
-      <a href="https://www.linkedin.com/in/brann-etienne/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://medium.com/@brann.etienne" target="_blank" rel="noopener">Medium</a>
+    <h2 class="don-title">Avant de me laisser quelque chose de vous,<br><em>laissez-moi vous donner quelque chose.</em></h2>
+    <p class="contact-lead don-sub">Retournez une carte. Autant que vous voulez. Rien &agrave; rendre.</p>
+
+    <div class="don-grid" id="don-grid" role="group" aria-label="Cartes de dons &agrave; retourner"></div>
+    <button class="don-reshuffle" type="button" id="don-reshuffle">&#8635;&#8239;&nbsp;Nouvelle donne</button>
+
+    <div class="don-give" id="don-give">
+      <p class="don-note" id="don-note" hidden></p>
+      <form class="don-form" id="don-form">
+        <input class="don-field" type="text" name="nom" placeholder="Votre nom" autocomplete="name">
+        <input class="don-field" type="email" name="email" placeholder="Votre email" autocomplete="email">
+        <textarea class="don-field" name="message" placeholder="Ce que vous aimeriez me dire&hellip;"></textarea>
+        <button class="don-submit" type="submit">Ouvrir quelque chose</button>
+      </form>
+      <p class="contact-mail">Ou directement&#8239;: <a href="mailto:brann.etienne@gmail.com">brann.etienne@gmail.com</a> &middot; Lyon, en remote et sur site</p>
     </div>
-    <p class="contact-mail"><a href="mailto:brann.etienne@gmail.com">brann.etienne@gmail.com</a> &middot; Lyon, en remote et sur site</p>
   </section>
 </div>
 
+<div class="don-modal" id="don-modal" hidden>
+  <button class="don-backdrop" id="don-backdrop" type="button" aria-label="Fermer"></button>
+  <div class="don-card don-holo" role="dialog" aria-modal="true" aria-labelledby="don-nom">
+    <div class="don-glyph" id="don-glyph" aria-hidden="true"></div>
+    <div class="don-origine" id="don-origine"></div>
+    <h3 class="don-nom" id="don-nom"></h3>
+    <p class="don-savoir" id="don-savoir"></p>
+    <p class="don-lecon" id="don-lecon"></p>
+    <a class="don-lien" id="don-lien" target="_blank" rel="noopener" hidden>Creuser sur Wikip&eacute;dia &rarr;</a>
+    <div class="don-actions">
+      <button class="don-close-btn" type="button" id="don-close" aria-label="Fermer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7 L17 17 M17 7 L7 17"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
 <script src="background.js"></script>
+<script src="contact-dons.js"></script>
 <script src="site-nav.js"></script>
 
 <footer class="ft">
@@ -91,7 +128,7 @@
           <ul>
             <li><a href="regarder-autrement.html">Regarder autrement</a></li>
             <li><a href="la-pratique.html">La pratique</a></li>
-            <li><a href="reciprocites-v2.html">R&eacute;ciprocit&eacute;s</a></li>
+            <li><a href="reciprocites.html">R&eacute;ciprocit&eacute;s</a></li>
             <li><a href="a-propos.html">&Agrave; propos</a></li>
             <li><a href="https://www.linkedin.com/in/brann-etienne/" target="_blank" rel="noopener">LinkedIn</a></li>
             <li><a href="https://medium.com/@brann.etienne" target="_blank" rel="noopener">Medium</a></li>
