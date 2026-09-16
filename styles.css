@@ -7602,6 +7602,7 @@ a.pl-cta {
   transition:
     background 0.5s ease,
     box-shadow 0.5s ease;
+  min-right
 }
 /* foil holographique, comme les portes de regarder-autrement : grain.png
    pense pour du multiply sur un fond clair, donc plus de delavage ici.
@@ -7628,6 +7629,10 @@ a.pl-cta {
   animation: expl-holo-drift 16s ease-in-out infinite;
   transition: opacity 0.4s ease;
 }
+.expl-card.rv.in {
+  min-height: 304px; /* example value, adjust as needed */
+}
+
 .expl-grid .expl-card:nth-child(1) .holo { animation-duration: 16s; animation-delay: 0s; }
 .expl-grid .expl-card:nth-child(2) .holo { animation-duration: 19s; animation-delay: -4s; }
 .expl-grid .expl-card:nth-child(3) .holo { animation-duration: 13s; animation-delay: -8s; }
@@ -7661,6 +7666,9 @@ a.expl-card:hover {
   flex-wrap: wrap;
   gap: 6px;
   margin-top: 16px;
+  position: fixed;
+  bottom: 0;
+
 }
 .expl-tags span {
   font-size: 10px;
@@ -7670,6 +7678,7 @@ a.expl-card:hover {
   border: 1px solid rgba(11, 13, 16, 0.22);
   border-radius: 999px;
   padding: 4px 10px;
+
 }
 .expl-card h3 {
   font-family: "Instrument Serif", serif;

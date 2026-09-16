@@ -455,6 +455,24 @@ function revealNote() {
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+
+      // validation : rien ne part si nom / email / message manquent ou si
+      // l'email est mal formé (espaces seuls compris → on trim)
+      var nomV = (form.nom.value || "").trim();
+      var emailV = (form.email.value || "").trim();
+      var msgV = (form.message.value || "").trim();
+      form.nom.value = nomV;
+      form.email.value = emailV;
+      form.message.value = msgV;
+      if (!nomV || !emailV || !msgV || !form.checkValidity()) {
+        if (typeof form.reportValidity === "function") form.reportValidity();
+        setStatus(
+          "Merci de renseigner votre nom, un email valide et un message.",
+          true
+        );
+        return;
+      }
+
       var endpoint = form.getAttribute("action") || "";
       if (!endpoint || endpoint.indexOf("VOTRE_ID") !== -1) {
         mailtoFallback(); // Formspree pas encore configuré
