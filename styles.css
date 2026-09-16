@@ -614,6 +614,11 @@ h4 {
   margin-top: clamp(56px, 9vh, 76px);
   margin-bottom: 26px;
 }
+.section-title em {
+  font-style: italic;
+  color: var(--c3);
+}
+
 .pull-quote {
   margin: clamp(44px, 7vh, 56px) 0;
   padding-left: 28px;
@@ -3584,6 +3589,7 @@ textarea.don-field {
   font-size: 13.5px;
   line-height: 1.5;
   color: var(--c3);
+  text-align: center;
 }
 .don-status.is-error {
   color: var(--c4);
@@ -3959,6 +3965,51 @@ footer {
 }
 
 /* Source: reciprocites.html */
+/* héros spécifique à la page recherche (reciprocites) : pas de plein écran
+   ni de filet, il se cale sur son contenu avec un bas d'air mesuré, l'erratum
+   remonte juste après. Classe dédiée = aucune autre page touchée. */
+.hero.hero--recherche {
+  border-bottom: none;
+  min-height: auto;
+  padding-bottom: clamp(70px, 9vh, 100px);
+}
+/* bloc erratum (note de recherche en haut de page) */
+.erratum {
+  max-width: 760px;
+  margin: clamp(16px, 2.4vh, 28px) 0 clamp(30px, 3vh, 40px);
+  padding: clamp(20px, 3vw, 30px) clamp(40px, 3.7vw, 50px);
+  border: 1px solid var(--faint);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+}
+.erratum-tag {
+  display: inline-block;
+  margin-bottom: 14px;
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c1);
+  border: 1px solid color-mix(in srgb, var(--c1) 40%, transparent);
+  border-radius: 999px;
+  padding: 4px 12px;
+}
+.erratum p {
+  margin: 0;
+  max-width: 68ch;
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  line-height: 1.7;
+  color: #c3c9d0;
+}
+/* temps de lecture, juste avant le séparateur qui ouvre le contenu */
+.erratum-meta {
+  margin: 0 0 clamp(26px, 4vh, 40px);
+  padding-bottom: clamp(22px, 3.5vh, 32px);
+  border-bottom: 1px solid var(--faint);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -4256,7 +4307,7 @@ footer {
   font-weight: 500;
   margin-bottom: 9px;
 }
-.card .out .porte {
+.card .out .rc-geste {
   font-size: 15px;
   color: var(--paper);
   line-height: 1.6;
@@ -4683,7 +4734,7 @@ footer {
   margin-bottom: 8px;
 }
 .pside .ph span {
-  font-size: 13px;
+  font-size: 24px;
   color: var(--muted);
   font-style: italic;
 }
@@ -4788,7 +4839,6 @@ footer {
 }
 .poutil .sv.q {
   font-family: "Instrument Serif", serif;
-  font-style: italic;
   color: var(--c1);
   font-size: 16px;
 }
@@ -4954,27 +5004,17 @@ footer {
   margin-top: clamp(30px, 5vh, 50px);
   padding: 18px 30px;
   border: 1px solid var(--faint);
+  background: transparent;
   text-decoration: none;
-  color: var(--paper);
   font-size: 15px;
   letter-spacing: 0.02em;
-  transition:
-    border-color 0.4s ease,
-    gap 0.4s ease,
-    color 0.4s ease;
 }
-.cta-serie .arw {
-  color: var(--c1);
-  transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
-}
-.cta-serie:hover {
-  border-color: var(--c1);
+.cta-serie:hover,
+.cta-serie:focus-visible {
   gap: 22px;
-  color: #fff;
+  outline: none;
 }
-.cta-serie:hover .arw {
-  transform: translateX(4px);
-}
+
 .art {
   display: grid;
   grid-template-columns: 56px 1fr;
@@ -5121,23 +5161,47 @@ footer {
   margin-top: 20px;
 }
 
-a:link {
-  color: var(--c1);
-  text-decoration: none;
-  transition: color 0.4s ease;
-}
-
-a:hover {
-  color: var(--c5);
-}
-
+/* liens par défaut : une seule couleur, soulignés discrètement (fini le
+   jeu de couleurs). Les composants (nav, footer, cartes, boutons…) gardent
+   leur propre style via text-decoration:none. */
+a:link,
 a:visited {
-  color: var(--c2);
-  text-decoration: none;
+  color: var(--c1);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  text-decoration-color: color-mix(in srgb, var(--c1) 45%, transparent);
+  transition: text-decoration-color 0.3s ease, color 0.3s ease;
 }
 
+a:hover,
 a:active {
+  color: var(--c1);
+  text-decoration-color: var(--c1);
+}
+/* cta-serie : texte blanc, cyan au survol en douceur (bat le a:link global) */
+a.cta-serie {
+  color: var(--paper);
+  transition: color 0.45s ease, border-color 0.45s ease, gap 0.4s ease-in-out;
+}
+a.cta-serie:hover,
+a.cta-serie:focus-visible {
+  color: var(--c1);
+}
+/* sur la page pratique, les cta-serie passent en vert au survol (texte + cadre) */
+.pratique a.cta-serie:hover,
+.pratique a.cta-serie:focus-visible {
   color: var(--c3);
+  border-color: var(--c3);
+}
+/* liens "composants" (nav, cartes, boutons, footer, CTA) : jamais soulignés.
+   Préfixe a. pour égaler la spécificité de a:link et gagner par l'ordre. */
+a.site-brand, a.site-pill, a.site-contact,
+a.proof-link, a.row, a.case, a.expl-card, a.cta-serie, a.fin-primaire, a.fin-secondaire,
+a.prelim-go, a.porte, a.porte-seuil, a.porte-geste, a.porte-source,
+a.station, a.serie-article, a.don-lien, a.don-more,
+a.pi-exit, a.pi-back,
+a.ft-more, a.ft-mail, a.ft-up {
   text-decoration: none;
 }
 
@@ -5744,17 +5808,34 @@ body.has-site-nav {
   --sc: var(--c5);
 }
 
-/* reveal au scroll */
-.rv {
+/* reveal au scroll — global.
+   L'état caché n'est appliqué QUE si le JS tourne (html.js-rv, posé par reveal.js).
+   Sans JS, ou si reveal.js échoue, tout reste visible : aucun bloc ne peut disparaître. */
+.js-rv .rv {
   opacity: 0;
   transform: translateY(16px);
   transition:
     opacity 0.8s ease,
     transform 0.8s ease;
+  will-change: opacity, transform;
 }
-.rv.in {
+.js-rv .rv.in {
   opacity: 1;
   transform: none;
+}
+/* accessibilité : pas d'animation si l'utilisateur la refuse */
+@media (prefers-reduced-motion: reduce) {
+  .js-rv .rv {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+/* anti-flash : le conteneur est masqué le temps que reveal.js marque les blocs,
+   puis relâché (classe retirée). Failsafe JS de 1,2 s si le setup échoue. */
+.js-rv-hold .wrap,
+.js-rv-hold .article {
+  visibility: hidden;
 }
 
 /* clôture */
@@ -8011,10 +8092,12 @@ body.has-site-nav.pratique .veil { display: none; }
 .pi-card-name{ font-family:"Instrument Serif",Georgia,serif; font-size:23px; line-height:1.15; color:var(--paper); margin-top:auto; transition:color .35s; }
 .pi-card:hover .pi-card-name,.pi-card:focus-visible .pi-card-name,.pi-card.pi-done .pi-card-name{ color:var(--cc); }
 .pi-card-tag{ font-size:13.5px; color:var(--muted); margin-top:-4px; }
-.pi-card--meta{ opacity:.78; }
-.pi-card--meta:hover,.pi-card--meta:focus-visible{ opacity:1; }
 .pi-card--meta .pi-card-name{ font-style:italic; color:#8f97a3; }
-.pi-card--meta:hover .pi-card-name,.pi-card--meta:focus-visible .pi-card-name{ color:var(--cc); }
+/* carte meta désactivée : inactive, non cliquable, sans survol */
+.pi-card:disabled{ opacity:.4; cursor:default; border-color:var(--faint); }
+.pi-card:disabled:hover,.pi-card:disabled:focus-visible{ opacity:.4; border-color:var(--faint); transform:none; }
+.pi-card:disabled::after,.pi-card:disabled:hover::after,.pi-card:disabled:focus-visible::after{ opacity:0; }
+.pi-card:disabled .pi-card-name,.pi-card:disabled:hover .pi-card-name{ color:#8f97a3; }
 @media (max-width:680px){ .pi-cards{ grid-template-columns:1fr; } }
 
 /* Étape « Ailleurs » : les 3 places sur une même page, situation dévoilée au clic */

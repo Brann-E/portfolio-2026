@@ -167,7 +167,7 @@ function go(id){document.querySelectorAll('.pi-screen').forEach(s=>s.classList.r
 function home(){
  document.querySelectorAll('#home .pi-card').forEach(card=>{
   const sit=card.dataset.sit;
-  if(sit==='meta'){ card.onclick=()=>go('s-synth'); return; }
+  if(sit==='meta'){ card.onclick=null; card.disabled=true; return; }
   const i=+sit;
   card.classList.toggle('pi-done',done[i]);
   card.onclick=()=>mur(i);
