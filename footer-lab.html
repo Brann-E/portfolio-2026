@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<title>Footer lab &mdash; fils anim&eacute;s</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  body{ background:var(--ink,#0b0d10); margin:0; min-height:100vh; }
+  .lab-note{ max-width:1320px; margin:0 auto; padding:40px clamp(24px,6vw,72px) 0;
+    color:var(--muted,#7a8290); font-family:"Inter",system-ui,sans-serif; font-size:13.5px; line-height:1.6; }
+  .lab-note b{ color:#c9ced4; font-weight:500; }
+
+  /* La bande de fils : l'espace agrandi entre les colonnes et le separateur du bas. */
+  .ft-fils{ position:relative; width:100%; height:var(--fils-h,150px);
+    margin:var(--fils-mt,30px) 0 var(--fils-mb,6px); }
+  .ft-fils svg{ position:absolute; inset:0; width:100%; height:100%; overflow:visible; display:block; }
+  @media (prefers-reduced-motion: reduce){ .ft-fils{ height:110px; } }
+</style>
+</head>
+
+<body id="top">
+
+<div class="lab-note">
+  <b>Bac-&agrave;-sable footer.</b> Les fils vivent dans la bande entre &laquo;&#8239;La s&eacute;rie compl&egrave;te&#8239;&raquo; et le s&eacute;parateur du bas. R&eacute;glages en haut du script&#8239;: nombre de fils, &eacute;paisseur, amplitude, vitesse, hauteur de bande.
+</div>
+
+<footer class="ft">
+  <div class="ft-inner">
+
+    <div class="ft-top">
+
+      <div class="ft-sign">
+        <div class="ft-mark">
+          <img src="assets/logo_256.png" alt="" aria-hidden="true">
+          <div>
+            <div class="ft-name">Brann Etienne</div>
+            <div class="ft-role">Designer relationnel</div>
+            <div class="ft-role3">Concepteur de dispositifs num&eacute;riques, organisationnels et m&eacute;thodologiques</div>
+          </div>
+        </div>
+        <p class="ft-claim">&Agrave; toutes les &eacute;chelles, tout tient par <em>le m&ecirc;me fil</em>.</p>
+        <div class="ft-place">Lyon &middot; en remote et sur site</div>
+      </div>
+
+      <nav class="ft-cols" aria-label="Plan du site">
+
+        <div class="ft-col ft-cases">
+          <div class="ft-h">Les cas</div>
+          <ul>
+            <li style="--d:var(--c1)"><a href="cas-axa.html">Healthanea <span class="ft-tag">Sant&eacute;</span></a></li>
+            <li style="--d:var(--c2)"><a href="cas-shift-prime.html">SHIFT Prime <span class="ft-tag">Industrie</span></a></li>
+            <li style="--d:var(--c4)"><a href="cas-bi-solution.html">B.I Solution <span class="ft-tag">Data</span></a></li>
+            <li style="--d:var(--c3)"><a href="cas-proshop.html">Proshop &amp; Beyond <span class="ft-tag">Commerce</span></a></li>
+            <li style="--d:var(--c5)"><span class="ft-soon">TiBillet <span class="ft-tag">Bient&ocirc;t</span></span></li>
+          </ul>
+          <a class="ft-more" href="etudes-de-cas.html">Tous les cas <span aria-hidden="true">&rarr;</span></a>
+        </div>
+
+        <div class="ft-col">
+          <div class="ft-h">La s&eacute;rie</div>
+          <ul class="ft-num">
+            <li style="--d:var(--c1)"><a href="rien-ne-tient-tout-seul.html"><b>01</b> Rien ne tient tout seul</a></li>
+            <li style="--d:var(--c2)"><a href="les-relations-ne-se-voient-que-dun-certain-endroit.html"><b>02</b> Les relations ne se voient pas</a></li>
+            <li style="--d:var(--c3)"><a href="la-metaliminalite.html"><b>03</b> La m&eacute;taliminalit&eacute;</a></li>
+            <li style="--d:var(--c4)"><a href="le-lien-importe-plus-que-le-bien.html"><b>04</b> Le lien importe plus que le bien</a></li>
+            <li style="--d:var(--c5)"><a href="ce-qui-ne-circule-plus-casse.html"><b>05</b> Ce qui ne circule plus casse</a></li>
+            <li style="--d:var(--c1)"><a href="ce-qui-fait-circuler.html"><b>06</b> Ce qui fait circuler</a></li>
+          </ul>
+          <a class="ft-more" href="circulation-paradigme-du-design.html">La s&eacute;rie compl&egrave;te <span aria-hidden="true">&rarr;</span></a>
+        </div>
+
+        <div class="ft-col">
+          <div class="ft-h">Ailleurs</div>
+          <ul>
+            <li><a href="parcours-interactif.html">Le parcours</a></li>
+            <li><a href="la-pratique.html">La pratique</a></li>
+            <li><a href="circulation-paradigme-du-design.html">La th&eacute;orie</a></li>
+            <li><a href="explorations.html">Explorations</a></li>
+            <li><a href="a-propos.html">&Agrave; propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <a class="ft-more ft-mail" href="mailto:brann.etienne@gmail.com">brann.etienne@gmail.com</a>
+        </div>
+
+      </nav>
+    </div>
+
+    <!-- ===== LA BANDE DE FILS ANIM&Eacute;S ===== -->
+    <div class="ft-fils" aria-hidden="true">
+      <svg viewBox="0 0 1000 150" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="ft-grad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="600" y2="0" spreadMethod="repeat">
+            <stop offset="0"   stop-color="#28e6ff"/>
+            <stop offset="0.2" stop-color="#9f6eff"/>
+            <stop offset="0.4" stop-color="#2fffb4"/>
+            <stop offset="0.6" stop-color="#ffea4d"/>
+            <stop offset="0.8" stop-color="#f968a7"/>
+            <stop offset="1"   stop-color="#28e6ff"/>
+            <animateTransform attributeName="gradientTransform" type="translate" from="0 0" to="600 0" dur="11s" repeatCount="indefinite"/>
+          </linearGradient>
+        </defs>
+        <g id="fils"></g>
+      </svg>
+    </div>
+    <!-- ===== fin bande ===== -->
+
+    <div class="ft-bottom">
+      <span>&copy; 2026 Brann Etienne</span>
+      <span class="ft-spectrum" aria-hidden="true"><i style="background:var(--c1)"></i><i style="background:var(--c2)"></i><i style="background:var(--c3)"></i><i style="background:var(--c5)"></i><i style="background:var(--c4)"></i></span>
+      <a class="ft-up" href="#top">Retour en haut <span aria-hidden="true">&uarr;</span></a>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+/* ---- Fils anim&eacute;s : r&eacute;glages ---- */
+var FILS = {
+  count: 9,        // nombre de fils au total (pas tous visibles en meme temps)
+  thickness: 2,    // meme epaisseur pour tous (px, non-scaling)
+  ampMin: 5, ampMax: 15,          // amplitude d'ondulation
+  speedMin: 0.12, speedMax: 0.4,  // vitesse de derive de la phase
+  driftMin: 4, driftMax: 11,      // derive verticale (montee/descente lente)
+  opacityMin: 0.5, opacityMax: 0.9,
+  // cycle de vie (secondes) : apparait / reste / disparait / pause, puis renait ailleurs
+  fadeMin: 1.0, fadeMax: 2.2,     // duree des fondus (entree et sortie)
+  holdMin: 2.0, holdMax: 5.5,     // duree de pleine presence
+  deadMin: 0.6, deadMax: 3.5      // pause invisible avant de renaitre
+};
+
+(function(){
+  var NS = "http://www.w3.org/2000/svg";
+  var TWO_PI = Math.PI * 2;
+  var g = document.getElementById("fils");
+  if (!g) return;
+  var W = 1000, H = 150, STEP = 18;
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function rnd(a,b){ return a + Math.random()*(b-a); }
+  function smooth(x){ return x<=0 ? 0 : x>=1 ? 1 : x*x*(3-2*x); }
+
+  // (re)naissance d'un fil : nouvelle passe aleatoire + nouveau cycle de vie
+  function spawn(th, now){
+    th.baseY = rnd(22, H-22);
+    th.amp = rnd(FILS.ampMin, FILS.ampMax);
+    th.f1 = rnd(1.1, 2.6);
+    th.f2 = rnd(2.8, 5.4);
+    th.phase = rnd(0, TWO_PI);
+    th.speed = rnd(FILS.speedMin, FILS.speedMax) * (Math.random()<0.5 ? -1 : 1);
+    th.driftAmp = rnd(FILS.driftMin, FILS.driftMax);
+    th.driftF = rnd(0.08, 0.3);
+    th.driftPhase = rnd(0, TWO_PI);
+    th.peak = rnd(FILS.opacityMin, FILS.opacityMax);
+    th.fadeIn = rnd(FILS.fadeMin, FILS.fadeMax);
+    th.fadeOut = rnd(FILS.fadeMin, FILS.fadeMax);
+    th.hold = rnd(FILS.holdMin, FILS.holdMax);
+    th.dead = rnd(FILS.deadMin, FILS.deadMax);
+    th.born = now;
+  }
+
+  var threads = [];
+  for (var i=0; i<FILS.count; i++){
+    var p = document.createElementNS(NS,"path");
+    p.setAttribute("fill","none");
+    p.setAttribute("stroke","url(#ft-grad)");
+    p.setAttribute("stroke-width", FILS.thickness);
+    p.setAttribute("stroke-linecap","round");
+    p.setAttribute("stroke-linejoin","round");
+    p.setAttribute("vector-effect","non-scaling-stroke");
+    p.setAttribute("opacity", "0");
+    g.appendChild(p);
+    var th = { el: p };
+    spawn(th, 0);
+    // decale chaque fil a un point aleatoire de son cycle -> pas de synchro
+    th.born = -rnd(0, th.fadeIn + th.hold + th.fadeOut + th.dead);
+    threads.push(th);
+  }
+
+  function opacityFor(th, age){
+    var vis = th.fadeIn + th.hold + th.fadeOut;
+    if (age >= vis) return 0;                                   // pause invisible
+    if (age < th.fadeIn) return th.peak * smooth(age / th.fadeIn);
+    if (age < th.fadeIn + th.hold) return th.peak;              // pleine presence
+    return th.peak * smooth((vis - age) / th.fadeOut);          // sortie
+  }
+
+  function draw(t){
+    for (var i=0; i<threads.length; i++){
+      var th = threads[i];
+      var age = t - th.born;
+      var cycle = th.fadeIn + th.hold + th.fadeOut + th.dead;
+      if (age >= cycle){ spawn(th, t); age = 0; }              // renaissance
+      var op = opacityFor(th, age);
+      th.el.setAttribute("opacity", op.toFixed(3));
+      if (op <= 0.001){ continue; }                            // rien a tracer
+      var by = th.baseY + th.driftAmp * Math.sin(t*th.driftF + th.driftPhase);
+      var d = "";
+      for (var x=0; x<=W; x+=STEP){
+        var u = x/W;
+        var y = by
+              + th.amp * Math.sin(u*TWO_PI*th.f1 + th.phase)
+              + th.amp*0.4 * Math.sin(u*TWO_PI*th.f2 + th.phase*1.6);
+        d += (x===0 ? "M" : "L") + x.toFixed(1) + " " + y.toFixed(1) + " ";
+      }
+      th.el.setAttribute("d", d);
+    }
+  }
+
+  if (reduce){
+    // sans animation : quelques fils fixes, visibles
+    for (var j=0; j<threads.length; j++){ threads[j].born = 0; threads[j].fadeIn=0.001; threads[j].hold=1e9; }
+    draw(0);
+    return;
+  }
+
+  var start = null;
+  function frame(ts){
+    if (start === null) start = ts;
+    var t = (ts - start) / 1000;
+    for (var i=0; i<threads.length; i++){ threads[i].phase += threads[i].speed * 0.016; }
+    draw(t);
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+
+</body>
+</html>
