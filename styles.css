@@ -8002,6 +8002,7 @@ body.has-site-nav.pratique .veil { display: none; }
 .pi-page h1{ font-size:clamp(31px,5.2vw,48px); }
 .pi-page h1 em{ font-style:italic; color:#8f97a3; display:block; margin-top:4px; }
 .pi-page h2{ font-size:clamp(24px,3.9vw,34px); }
+.pi-page h2 em{ font-style:italic; color:#8f97a3; }
 .pi-page p{ margin:0 0 1.05em; }
 .pi-page p:last-child{ margin-bottom:0; }
 .pi-page strong{ font-weight:500; color:#fff; }
@@ -8033,9 +8034,17 @@ body.has-site-nav.pratique .veil { display: none; }
 .pi-kicker b{ color:var(--ac); font-weight:400; }
 .pi-muted{ color:var(--muted); font-size:15px; margin-top:14px; }
 .pi-lead{ font-size:19px; color:#d6d9dd; margin-top:24px; }
+.pi-note{ margin-top:22px; max-width:62ch; font-size:14.5px; line-height:1.6; color:var(--muted);
+  border-left:2px solid color-mix(in srgb,var(--ac) 40%,var(--faint)); padding-left:18px; }
+.pi-note b{ color:#c9ced4; font-weight:500; }
 
-.pi-screen{ display:none; min-height:100svh; flex-direction:column; justify-content:center; padding:76px 0 66px; }
-.pi-screen.pi-on{ display:flex; }
+/* ancrage haut : le contenu part d'une position stable et grandit vers le bas
+   (la page scrolle), plus de recentrage vertical qui fait « sauter » l'écran. */
+.pi-screen{ display:none; min-height:100svh; flex-direction:column; justify-content:flex-start; padding:clamp(94px,13vh,150px) 0 96px; }
+/* transition entre écrans : même grammaire que les révélations du site (.rv) —
+   fondu + léger glissement depuis le bas, easing « ease ». */
+.pi-screen.pi-on{ display:flex; animation:pi-screen-in .6s ease both; }
+@keyframes pi-screen-in{ from{ opacity:0; transform:translateY(14px); } to{ opacity:1; transform:none; } }
 
 .pi-btn{ display:inline-flex; align-items:center; gap:10px; background:none; border:1px solid var(--faint);
   color:var(--paper); font:400 12.5px/1 Inter,sans-serif; letter-spacing:.14em; text-transform:uppercase;
@@ -8064,13 +8073,36 @@ body.has-site-nav.pratique .veil { display: none; }
 .pi-it .pi-nm{ font-family:"Instrument Serif",Georgia,serif; font-size:22px; line-height:1.2; display:block; }
 .pi-it .pi-rl{ font-size:13.5px; color:var(--muted); display:block; margin-top:3px; }
 
-.pi-appears{ border:1px solid var(--faint); border-radius:6px; padding:29px 27px; margin-top:30px;
-  background:linear-gradient(180deg,rgba(255,255,255,.03),transparent); }
-.pi-appears .pi-lab{ font-size:10.5px; letter-spacing:.22em; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:12px; }
-.pi-appears p{ font-family:"Instrument Serif",Georgia,serif; font-size:clamp(21px,3.2vw,27px); line-height:1.28; color:var(--ac); }
+.pi-appears{ border:1px solid color-mix(in srgb,var(--ac) 42%,var(--faint)); border-radius:16px;
+  padding:clamp(38px,5.5vw,58px) clamp(28px,4.5vw,48px); margin-top:44px; text-align:center;
+  background:linear-gradient(180deg,color-mix(in srgb,var(--ac) 9%,transparent),transparent);
+  box-shadow:0 30px 70px -46px color-mix(in srgb,var(--ac) 75%,transparent); }
+.pi-appears .pi-lab{ font-size:10.5px; letter-spacing:.24em; text-transform:uppercase; color:var(--ac); display:block; margin-bottom:18px; }
+.pi-appears p{ font-family:"Instrument Serif",Georgia,serif; font-size:clamp(25px,4vw,34px); line-height:1.24; color:var(--ac); max-width:24ch; margin:0 auto; }
+.pi-appears .pi-app-more, .pi-appears .pi-app-more p{ max-width:52ch; margin:20px auto 0; padding-top:20px; text-align:center;
+  font-family:"Inter",sans-serif; font-size:15px; font-style:normal; line-height:1.7; color:#c3c9d0;
+  border-top:1px solid color-mix(in srgb,var(--ac) 24%,var(--faint)); }
+.pi-appears .pi-app-more p{ margin:0; padding-top:0; border-top:none; max-width:none; }
+.pi-app-more[hidden]{ display:none; }
 
 .pi-fix{ border-left:2px solid var(--faint); padding-left:22px; margin-top:28px; color:#c9ced4; font-size:16px; }
 .pi-fix b{ color:#fff; font-weight:500; }
+.pi-piste{ font-size:15.5px; line-height:1.72; color:#c3c9d0; margin-top:clamp(34px,5vh,54px); max-width:62ch;
+  border-left:2px solid color-mix(in srgb,var(--ac) 55%,var(--faint)); padding:4px 0 4px 22px; }
+.pi-piste b{ color:#fff; font-weight:500; }
+.pi-elsewhere{ font-family:"Instrument Serif",Georgia,serif; font-size:clamp(19px,2.6vw,24px); color:#d6d9dd;
+  margin-top:58px; padding-top:36px; border-top:1px solid var(--faint); }
+/* « La piste » : composition ENTIÈREMENT centrée, autour du cercle — même alignement
+   du haut (titre + lead) jusqu'en bas (accompagnement, « ailleurs », bouton), avec un
+   séparateur court et centré au lieu de l'ancien trait pleine largeur. */
+#s-piste .pi-kicker, #s-piste h2, #s-piste .pi-lead{ text-align:center; }
+#s-piste .pi-lead{ max-width:62ch; margin-left:auto; margin-right:auto; }
+#s-piste #pt-cercle{ margin-top:clamp(20px,3vh,32px); }
+#s-piste #pt-body.pi-piste{ margin:clamp(34px,5vh,54px) auto 0; max-width:60ch; text-align:center; border-left:none; padding:0; }
+#s-piste #pt-body.pi-piste::after{ content:""; display:block; width:44px; height:1px; margin:clamp(30px,4vh,42px) auto 0;
+  background:color-mix(in srgb,var(--ac) 45%,var(--faint)); }
+#s-piste #pt-elsewhere{ max-width:48ch; margin:clamp(28px,4vh,38px) auto 0; padding-top:0; border-top:none; text-align:center; }
+#s-piste #pt-next{ align-self:center; margin-top:26px; }
 
 .pi-defs{ position:absolute; width:0; height:0; }
 .pi-cards{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:36px; }
@@ -8100,52 +8132,137 @@ body.has-site-nav.pratique .veil { display: none; }
 .pi-card:disabled .pi-card-name,.pi-card:disabled:hover .pi-card-name{ color:#8f97a3; }
 @media (max-width:680px){ .pi-cards{ grid-template-columns:1fr; } }
 
-/* Étape « Ailleurs » : les 3 places sur une même page, situation dévoilée au clic */
-.pi-profiles{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:28px; align-items:start; }
-.pi-profile{ --cc:var(--c1); border:1px solid var(--faint); border-radius:12px; overflow:hidden;
-  background:linear-gradient(180deg,rgba(255,255,255,.02),transparent); transition:border-color .3s; }
-.pi-profile.pi-open{ border-color:color-mix(in srgb,var(--cc) 45%,var(--faint)); }
-.pi-profile-head{ display:block; width:100%; text-align:left; background:none; border:none; cursor:pointer;
-  padding:20px 18px; color:var(--paper); font-family:inherit; transition:background .3s; }
-.pi-profile-head:hover,.pi-profile-head:focus-visible{ background:color-mix(in srgb,var(--cc) 9%,transparent); outline:none; }
-.pi-profile-nm{ font-family:"Instrument Serif",Georgia,serif; font-size:20px; line-height:1.2; display:block; }
-.pi-profile-rl{ font-size:12.5px; color:var(--muted); display:block; margin-top:5px; }
-.pi-profile-cue{ display:inline-flex; align-items:center; gap:6px; margin-top:16px; font-size:10.5px;
-  letter-spacing:.14em; text-transform:uppercase; color:var(--cc); }
-.pi-profile-cue::after{ content:"\2193"; }
-.pi-profile.pi-open .pi-profile-cue{ display:none; }
-.pi-profile-body{ display:none; padding:0 18px 20px; }
-.pi-profile.pi-open .pi-profile-body{ display:block; animation:pi-fade .35s ease; }
-.pi-profile-body .pi-profile-title{ font-family:"Instrument Serif",Georgia,serif; font-size:16px; color:var(--cc);
-  display:block; margin:0 0 10px; line-height:1.28; padding-top:16px; border-top:1px solid color-mix(in srgb,var(--cc) 22%,var(--faint)); }
-.pi-profile-body p{ font-size:14px; line-height:1.6; color:#c9ced4; margin-bottom:.7em; }
 @keyframes pi-fade{ from{opacity:0; transform:translateY(-4px);} to{opacity:1; transform:none;} }
-@media (max-width:680px){ .pi-profiles{ grid-template-columns:1fr; } }
+/* « Les places » (et « La piste ») — la scène cercle (façon Cercle vertueux, sombre).
+   Produit au centre ; autour, trois cartes-rôles (icône + nom + « Découvrir ») qu'on
+   ouvre ; puis les arcs à flèches (sens horaire) + encadrés entre paires. .pi-cscene
+   (surtout PAS .pi-scene, déjà pris par le mur). */
+.pi-cercle{ margin-top:14px; }
+.pi-cscene{ position:relative; width:100%; max-width:660px; margin:8px auto 0; aspect-ratio:1/1; }
+.pi-cscene-svg{ position:absolute; inset:0; width:100%; height:100%; overflow:visible; }
+.pi-cscene-ring{ fill:none; stroke:var(--faint); stroke-width:1.2; stroke-dasharray:5 9; opacity:.4; }
+.pi-dot{ opacity:0; animation:pi-op .5s ease forwards; }
+.pi-dot:nth-of-type(2){ animation-delay:.15s; } .pi-dot:nth-of-type(3){ animation-delay:.3s; } .pi-dot:nth-of-type(4){ animation-delay:.45s; }
+.pi-arrhead{ fill:color-mix(in srgb,var(--paper) 40%,var(--faint)); }
+.pi-links{ opacity:0; }
+.pi-link{ fill:none; stroke:color-mix(in srgb,var(--paper) 38%,var(--faint)); stroke-width:2.4; stroke-linecap:round;
+  stroke-dasharray:560; stroke-dashoffset:560; }
+.pi-cscene.pi-linked .pi-links{ opacity:1; }
+.pi-cscene.pi-linked .pi-link{ animation:pi-draw2 1s cubic-bezier(.4,0,.2,1) forwards; }
+.pi-cscene.pi-linked .pi-link:nth-of-type(2){ animation-delay:.3s; }
+.pi-cscene.pi-linked .pi-link:nth-of-type(3){ animation-delay:.6s; }
+@keyframes pi-draw2{ to{ stroke-dashoffset:0; } }
+@keyframes pi-op{ from{ opacity:0; } to{ opacity:1; } }
+/* « La piste » : cercle réparé — arcs vifs, rôles en mini */
+.pi-cscene.pi-alive .pi-link{ stroke:color-mix(in srgb,var(--paper) 60%,var(--faint)); stroke-width:2.7; }
+.pi-cscene.pi-alive .pi-arrhead{ fill:color-mix(in srgb,var(--paper) 62%,var(--faint)); }
+.pi-role--mini{ width:22%; }
+.pi-role--mini .pi-role-head{ padding:9px 12px; }
+.pi-role--mini .pi-role-nm{ font-size:clamp(15px,1.8vw,18px); }
+.pi-role-mininote{ margin:0; padding:9px 12px 11px; font-size:12.5px; line-height:1.5; color:#c3c9d0; }
+/* le produit, au centre */
+.pi-produit{ position:absolute; left:50%; top:50.6%; transform:translate(-50%,-50%); width:20%; aspect-ratio:1; border-radius:50%;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:3px; z-index:2;
+  border:1px solid color-mix(in srgb,var(--paper) 30%,var(--faint));
+  background:radial-gradient(circle at 50% 36%, color-mix(in srgb,var(--paper) 9%,var(--ink)), var(--ink) 78%);
+  opacity:0; animation:pi-scalein .6s cubic-bezier(.34,1.56,.64,1) forwards .5s; }
+@keyframes pi-scalein{ from{ opacity:0; transform:translate(-50%,-50%) scale(.6); } to{ opacity:1; transform:translate(-50%,-50%) scale(1); } }
+.pi-produit-nm{ font-family:"Instrument Serif",Georgia,serif; font-size:clamp(15px,2vw,18px); line-height:1.05; color:var(--paper); }
+.pi-produit-sub{ font-size:8px; letter-spacing:.13em; text-transform:uppercase; color:var(--muted); }
+/* les rôles : cartes encadrées, en-tête coloré à icône + nom, révélation dedans */
+.pi-role{ position:absolute; width:27%; --cc:var(--ac); z-index:3; overflow:hidden; border-radius:14px;
+  border:1px solid color-mix(in srgb,var(--cc) 48%,var(--faint)); background:color-mix(in srgb,var(--paper) 6%,var(--ink));
+  box-shadow:0 18px 44px -30px rgba(0,0,0,.7); opacity:0; animation:pi-op .55s ease forwards;
+  transition:border-color .3s, transform .3s, box-shadow .3s; }
+.pi-role--a{ top:0; left:50%; transform:translateX(-50%); animation-delay:.2s; }
+.pi-role--b{ top:56%; left:0; animation-delay:.45s; }
+.pi-role--c{ top:56%; right:0; animation-delay:.7s; }
+.pi-role:not(.pi-open):hover, .pi-role:not(.pi-open):focus-within{ border-color:var(--cc);
+  box-shadow:0 22px 50px -26px color-mix(in srgb,var(--cc) 65%,transparent); }
+.pi-role--a:not(.pi-open):hover{ transform:translateX(-50%) translateY(-2px); }
+.pi-role--b:not(.pi-open):hover, .pi-role--c:not(.pi-open):hover{ transform:translateY(-2px); }
+.pi-role-btn{ display:block; width:100%; text-align:left; cursor:pointer; font-family:inherit; color:var(--paper); background:none; border:none; padding:0; }
+.pi-role.pi-open .pi-role-btn{ cursor:default; }
+.pi-role-head{ display:flex; align-items:center; gap:9px; padding:11px 13px;
+  background:color-mix(in srgb,var(--cc) 20%,transparent); border-bottom:1px solid color-mix(in srgb,var(--cc) 30%,var(--faint)); }
+.pi-role-ic{ flex:0 0 auto; width:22px; height:22px; color:var(--cc); display:grid; place-items:center; }
+.pi-role-ic svg{ width:21px; height:21px; }
+.pi-role-nm{ font-family:"Instrument Serif",Georgia,serif; font-size:clamp(16px,2vw,20px); line-height:1.08; color:var(--paper); }
+.pi-role-invite{ display:block; padding:9px 13px; font-size:9.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:color-mix(in srgb,var(--cc) 70%,var(--paper)); }
+.pi-role-invite::after{ content:" \2193"; }
+.pi-role.pi-open .pi-role-invite{ display:none; }
+.pi-role-reveal{ display:none; }
+.pi-role.pi-open .pi-role-reveal{ display:block; padding:12px 14px 14px; animation:pi-fade .45s ease; }
+.pi-role-reveal p{ font-size:12.5px; line-height:1.62; color:#e3e6e9; margin:0; }
+/* encadrés ENTRE les paires : vraies cartes contrastées */
+.pi-bet{ position:absolute; width:25%; z-index:2; opacity:0; border-radius:11px; padding:12px 13px;
+  border:1px solid color-mix(in srgb,var(--paper) 20%,var(--faint)); background:color-mix(in srgb,var(--paper) 5%,var(--ink));
+  box-shadow:0 16px 38px -28px rgba(0,0,0,.7); }
+.pi-cscene.pi-linked .pi-bet{ animation:pi-rise .6s cubic-bezier(.22,.61,.36,1) forwards; }
+.pi-bet--r{ top:21%; right:-2%; animation-delay:.5s; }
+.pi-bet--b{ bottom:0; left:50%; transform:translateX(-50%); animation-delay:.85s; }
+.pi-bet--l{ top:21%; left:-2%; animation-delay:1.2s; }
+.pi-cscene.pi-linked .pi-bet--b{ animation-name:pi-rise-cx; }
+@keyframes pi-rise-cx{ from{ opacity:0; transform:translate(-50%,14px); } to{ opacity:1; transform:translate(-50%,0); } }
+.pi-bet-label{ display:block; font-size:9px; letter-spacing:.1em; text-transform:uppercase; color:color-mix(in srgb,var(--paper) 55%,var(--muted)); margin-bottom:6px; }
+.pi-bet p{ font-family:"Instrument Serif",Georgia,serif; font-style:italic; font-size:15px; line-height:1.5; color:#e6e9ed; margin:0; }
+.pi-cercle-hint{ max-width:52ch; margin:8px auto 0; text-align:center; color:var(--muted); font-size:15px; line-height:1.6; }
+.pi-cercle-see{ display:flex; width:fit-content; margin:22px auto 0; }
+.pi-cercle-see:not([hidden]){ animation:pi-rise .6s cubic-bezier(.22,.61,.36,1) both; }
+#s-places > #p-next{ align-self:center; }
+@media (max-width:640px){
+  .pi-cscene{ aspect-ratio:auto; max-width:440px; display:flex; flex-direction:column; gap:14px; }
+  .pi-cscene-svg{ display:none; }
+  .pi-produit{ position:static; transform:none; width:auto; aspect-ratio:auto; border-radius:0; border:none;
+    background:none; box-shadow:none; flex-direction:row; align-items:baseline; justify-content:flex-start; gap:8px;
+    padding:0 0 10px; border-bottom:1px solid var(--faint); opacity:1; animation:none; }
+  .pi-produit-nm{ font-size:19px; } .pi-produit-sub{ display:inline; }
+  .pi-role, .pi-role--a, .pi-role--b, .pi-role--c{ position:static; inset:auto; width:100%; transform:none; }
+  .pi-bet, .pi-bet--r, .pi-bet--b, .pi-bet--l{ position:static; inset:auto; width:100%; transform:none; }
+  .pi-cscene.pi-linked .pi-bet, .pi-cscene.pi-linked .pi-bet--b{ animation:pi-op .5s ease forwards; }
+}
 
-/* Étape « Plus tard » (situation 1) : frise chronologique 1 / 3 / 6 mois */
-.pi-timeline{ position:relative; display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:34px; }
-.pi-timeline::before{ content:""; position:absolute; top:10px; left:16.66%; right:16.66%; height:2px;
-  background:linear-gradient(90deg,var(--faint),color-mix(in srgb,var(--ac) 45%,var(--faint)),var(--faint)); }
-.pi-tl-node{ position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; text-align:center;
-  background:none; border:none; cursor:pointer; color:var(--paper); font-family:inherit; padding:0; }
-.pi-tl-dot{ width:22px; height:22px; border-radius:50%; border:2px solid var(--faint); background:var(--ink); transition:border-color .3s,background .3s; }
-.pi-tl-node:hover .pi-tl-dot,.pi-tl-node:focus-visible .pi-tl-dot{ border-color:var(--ac); outline:none; }
-.pi-tl-node.pi-open .pi-tl-dot{ border-color:var(--ac); background:color-mix(in srgb,var(--ac) 30%,var(--ink)); }
-.pi-tl-label{ margin-top:14px; font-family:"Instrument Serif",Georgia,serif; font-size:21px; line-height:1.1; }
-.pi-tl-cue{ margin-top:7px; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--ac); }
-.pi-tl-node.pi-open .pi-tl-cue{ display:none; }
-.pi-tl-body{ display:none; margin-top:14px; text-align:left; align-self:stretch; font-size:14px; line-height:1.6; color:#c9ced4; }
-.pi-tl-node.pi-open .pi-tl-body{ display:block; animation:pi-fade .35s ease; }
-.pi-turn-hit:not([hidden]){ display:block; animation:pi-fade .5s ease; }
-@media (max-width:680px){ .pi-timeline{ grid-template-columns:1fr; } .pi-timeline::before{ display:none; } }
+/* Étape « Plus tard » : frise VERTICALE, les mois se dévoilent l'un après l'autre ;
+   le rail s'illumine (fluo) à chaque pas. Tout aligné à gauche. */
+.pi-timeline{ position:relative; margin-top:40px; }
+.pi-tl-node{ position:relative; padding:0 0 48px 46px; animation:pi-rise .55s cubic-bezier(.22,.61,.36,1) both; }
+.pi-tl-node:last-child{ padding-bottom:0; }
+.pi-tl-node.pi-pending{ display:none; }
+.pi-tl-node::before{ content:""; position:absolute; left:13px; top:4px; bottom:0; width:2px; background:var(--faint); }
+.pi-tl-node.pi-open::before{ transform-origin:top; animation:pi-draw .6s ease both;
+  background:linear-gradient(180deg,var(--ac),color-mix(in srgb,var(--ac) 35%,var(--faint)));
+  box-shadow:0 0 14px color-mix(in srgb,var(--ac) 55%,transparent); }
+@keyframes pi-draw{ from{ transform:scaleY(0); } to{ transform:scaleY(1); } }
+@keyframes pi-rise{ from{ opacity:0; transform:translateY(14px); } to{ opacity:1; transform:none; } }
+.pi-tl-head{ display:flex; align-items:center; gap:14px; width:100%; text-align:left; background:none; border:none;
+  cursor:pointer; color:var(--paper); font-family:inherit; padding:0; }
+.pi-tl-dot{ position:absolute; left:4px; top:5px; width:20px; height:20px; border-radius:50%; z-index:1;
+  border:2px solid var(--faint); background:var(--ink); transition:border-color .35s, background .35s, box-shadow .35s; }
+.pi-tl-head:hover .pi-tl-dot,.pi-tl-head:focus-visible .pi-tl-dot{ border-color:var(--ac); outline:none; }
+.pi-tl-node.pi-open .pi-tl-dot{ border-color:var(--ac); background:var(--ac);
+  box-shadow:0 0 0 5px color-mix(in srgb,var(--ac) 15%,transparent), 0 0 18px color-mix(in srgb,var(--ac) 60%,transparent); }
+.pi-tl-label{ font-family:"Instrument Serif",Georgia,serif; font-size:clamp(22px,3vw,28px); line-height:1.08; transition:color .3s; }
+.pi-tl-head:hover .pi-tl-label,.pi-tl-node.pi-open .pi-tl-label{ color:var(--ac); }
+.pi-tl-body{ display:none; margin-top:12px; font-size:15px; line-height:1.64; color:#c9ced4; max-width:58ch; }
+.pi-tl-node.pi-open .pi-tl-body{ display:block; animation:pi-fade .4s ease; }
+/* phrase-choc + boutons */
+.pi-turn-hit{ text-align:left; margin-top:44px; }
+.pi-turn-hit:not([hidden]){ display:block; animation:pi-rise .85s cubic-bezier(.22,.61,.36,1) both; }
+.pi-turn-hit .pi-hit{ text-align:left; max-width:34ch; margin:0; }
+#s-turn > #t-next{ align-self:flex-start; margin-top:30px; }
+#s-turn > #t-next:not([hidden]){ animation:pi-rise .7s cubic-bezier(.22,.61,.36,1) both; animation-delay:.1s; }
+#s-end > #e-next{ align-self:center; margin-top:36px; }
+.pi-tl-reveal{ margin-top:34px; }
+.pi-tl-reveal:not([hidden]){ display:inline-flex; animation:pi-rise .6s cubic-bezier(.22,.61,.36,1) both; }
 
 /* Réponses graduées (situation 1) : choix engagé + verdict en place */
 .pi-answers{ display:block; margin-top:24px; }
 .pi-ans-block{ border:1px solid var(--faint); border-radius:10px; margin-bottom:12px; overflow:hidden;
   background:linear-gradient(180deg,rgba(255,255,255,.015),transparent); transition:border-color .3s,background .3s; }
 .pi-ans-block:last-child{ margin-bottom:0; }
-.pi-ans-head{ display:flex; align-items:center; justify-content:space-between; gap:14px; width:100%;
-  text-align:left; background:none; border:none; cursor:pointer; color:var(--paper); font-family:inherit; padding:16px 20px; transition:color .3s; }
+.pi-ans-head{ display:flex; align-items:center; justify-content:space-between; gap:14px; width:100%; min-height:64px;
+  text-align:left; background:none; border:none; cursor:pointer; color:var(--paper); font-family:inherit; padding:16px 22px; transition:color .3s; }
 .pi-ans-head:hover,.pi-ans-head:focus-visible{ color:var(--ac); outline:none; }
 .pi-ans-label{ font-family:"Instrument Serif",Georgia,serif; font-size:19px; line-height:1.25; }
 .pi-ans-plus{ flex:0 0 auto; color:var(--muted); font-size:18px; line-height:1; transition:color .3s; }
@@ -8170,4 +8287,4 @@ body.has-site-nav.pratique .veil { display: none; }
 
 .pi-footer{ max-width:660px; margin:0 auto; padding:38px 28px 66px; border-top:1px solid var(--faint); font-size:13.5px; color:var(--muted); }
 
-@media (prefers-reduced-motion:reduce){ .pi-page *{ transition:none!important; } }
+@media (prefers-reduced-motion:reduce){ .pi-page *{ transition:none!important; animation:none!important; } }

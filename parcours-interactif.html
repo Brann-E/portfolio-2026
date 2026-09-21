@@ -26,6 +26,7 @@
   <h1>Ce qui &eacute;tait d&eacute;j&agrave; dans le cadre. <em>Trois situations ordinaires.</em></h1>
   <p class="pi-lead">Trois scénarios, où l'on vous demandera ce que vous voyez.</p>
   <p class="pi-muted">Il n'y a aucune bonne r&eacute;ponse, il ne s'agit pas d'un test et rien n'est enregistr&eacute;.</p>
+  <p class="pi-note">Ces trois situations sont des <b>arch&eacute;types</b>, volontairement &eacute;pur&eacute;s. La r&eacute;alit&eacute; est toujours plus emm&ecirc;l&eacute;e&#8239;: ce sont des st&eacute;r&eacute;otypes, faits pour commencer &agrave; sentir ce que je veux dire par &laquo;&#8239;regarder autrement&#8239;&raquo;.</p>
   <svg class="pi-defs" aria-hidden="true"><defs><linearGradient id="pi-foil" x1="-40" y1="0" x2="80" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0.00000" stop-color="#28E6FF"/><stop offset="0.06667" stop-color="#9F6EFF"/><stop offset="0.13333" stop-color="#2FFFB4"/><stop offset="0.20000" stop-color="#FFEA4D"/><stop offset="0.26667" stop-color="#F968A7"/><stop offset="0.33333" stop-color="#28E6FF"/><stop offset="0.33333" stop-color="#28E6FF"/><stop offset="0.40000" stop-color="#9F6EFF"/><stop offset="0.46667" stop-color="#2FFFB4"/><stop offset="0.53333" stop-color="#FFEA4D"/><stop offset="0.60000" stop-color="#F968A7"/><stop offset="0.66667" stop-color="#28E6FF"/><stop offset="0.66667" stop-color="#28E6FF"/><stop offset="0.73333" stop-color="#9F6EFF"/><stop offset="0.80000" stop-color="#2FFFB4"/><stop offset="0.86667" stop-color="#FFEA4D"/><stop offset="0.93333" stop-color="#F968A7"/><stop offset="1.00000" stop-color="#28E6FF"/><animateTransform attributeName="gradientTransform" type="translate" from="0 0" to="-40 0" dur="6s" repeatCount="indefinite"/></linearGradient></defs></svg>
   <div class="pi-cards" id="home">
     <button class="pi-card" type="button" data-sit="0">
@@ -54,7 +55,7 @@
   <div class="pi-scene" id="m-scene"></div>
   <div class="pi-q" id="m-q"></div>
   <div id="m-opts"></div>
-  <button class="pi-btn" id="m-next" type="button" hidden onclick="turn()">Voir la suite</button>
+  <button class="pi-btn" id="m-next" type="button" hidden onclick="turn()">Voir plus tard</button>
 </section>
 
 <section class="pi-screen pi-wrap" id="s-turn">
@@ -67,8 +68,8 @@
 
 <section class="pi-screen pi-wrap" id="s-places">
   <span class="pi-kicker" id="p-kick"></span>
-  <h2>Maintenant, choisissez d'o&ugrave; vous regardez.</h2>
-  <p class="pi-muted">Trois places. Toutes vraies, aucune compl&egrave;te.</p>
+  <h2>Regardez ce que chacun voit.</h2>
+  <p class="pi-muted">Trois places dans un m&ecirc;me syst&egrave;me &mdash; et, entre elles, plus rien qui circule.</p>
   <div class="pi-profiles" id="places"></div>
   <div id="p-gate"></div>
   <button class="pi-btn" onclick="toEnd()" id="p-next" hidden>Ce qui appara&icirc;t</button>
@@ -83,10 +84,20 @@
 
 <section class="pi-screen pi-wrap" id="s-end">
   <span class="pi-kicker" id="e-kick"></span>
-  <div class="pi-appears"><span class="pi-lab">Ce qui appara&icirc;t</span><p id="e-app"></p></div>
+  <div class="pi-appears"><span class="pi-lab">Ce qui appara&icirc;t</span><p id="e-app"></p><p class="pi-app-more" id="e-more" hidden></p></div>
   <div id="e-gate"></div>
-  <div class="pi-fix" id="e-fix"></div>
   <button class="pi-btn" id="e-next"></button>
+</section>
+
+<section class="pi-screen pi-wrap" id="s-piste">
+  <span class="pi-kicker" id="pt-kick"></span>
+  <h2>Une piste. <em>Pas une solution.</em></h2>
+  <p class="pi-lead">R&eacute;pare le seul endroit qui manquait, celui o&ugrave; ce qui circule peut enfin arriver &agrave; quelqu'un. Voici ce qui se remet &agrave; passer entre eux.</p>
+  <div id="pt-cercle"></div>
+  <div class="pi-piste" id="pt-body"></div>
+  <div id="pt-gate"></div>
+  <p class="pi-elsewhere" id="pt-elsewhere" hidden>La m&ecirc;me chose se produit ailleurs.</p>
+  <button class="pi-btn" id="pt-next"></button>
 </section>
 
 <section class="pi-screen pi-wrap pi-sy" id="s-synth">
