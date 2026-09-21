@@ -6083,8 +6083,11 @@ footer a {
   flex: none;
   transition: color 0.3s ease;
 }
+.ft-num a:hover {
+  color: var(--d);
+}
 .ft-num a:hover b {
-  color: var(--c1);
+  color: var(--d);
 }
 
 /* liens de bas de colonne — scopés dans .ft-col pour battre `.ft-col a` */
@@ -8030,10 +8033,14 @@ body.has-site-nav.pratique .veil { display: none; }
 @media (max-width:640px){ .pi-step .lb{ display:none; } }
 
 .pi-wrap{ max-width:800px; margin:0 auto; padding:0 28px; }
+/* L'accueil respire plus large que les écrans de lecture (qui, eux, restent en
+   colonne resserrée pour le confort de lecture). */
+#s-home.pi-wrap{ max-width:1200px; padding-left:clamp(24px,4vw,44px); padding-right:clamp(24px,4vw,44px); }
+#s-home .pi-lead{ max-width:66ch; }
 .pi-kicker{ font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:20px; }
 .pi-kicker b{ color:var(--ac); font-weight:400; }
 .pi-muted{ color:var(--muted); font-size:15px; margin-top:14px; }
-.pi-lead{ font-size:19px; color:#d6d9dd; margin-top:24px; }
+.pi-lead{ font-size:17px; color:#d6d9dd; margin-top:24px; }
 .pi-note{ margin-top:22px; max-width:62ch; font-size:14.5px; line-height:1.6; color:var(--muted);
   border-left:2px solid color-mix(in srgb,var(--ac) 40%,var(--faint)); padding-left:18px; }
 .pi-note b{ color:#c9ced4; font-weight:500; }
@@ -8108,11 +8115,11 @@ body.has-site-nav.pratique .veil { display: none; }
 #s-piste #pt-next{ align-self:center; margin-top:26px; }
 
 .pi-defs{ position:absolute; width:0; height:0; }
-.pi-cards{ display:flex; flex-direction:column; align-items:flex-start; gap:16px; margin-top:36px; }
+.pi-cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:48px; }
 .pi-card{ position:relative; display:flex; flex-direction:column; align-items:flex-start; text-align:left;
-  width:100%; max-width:440px;
+  width:100%;
   background:linear-gradient(180deg,rgba(255,255,255,.025),transparent);
-  border:1px solid var(--faint); border-radius:14px; padding:22px 24px;
+  border:1px solid var(--faint); border-radius:16px; padding:30px 30px 34px;
   color:var(--paper); cursor:pointer; font-family:inherit;
   transition:border-color .35s,transform .35s,box-shadow .35s; --cc:var(--c1); }
 .pi-cards .pi-card:nth-child(1){ --cc:var(--c1); }
@@ -8124,18 +8131,20 @@ body.has-site-nav.pratique .veil { display: none; }
 .pi-card:hover,.pi-card:focus-visible,.pi-card.pi-done{ border-color:color-mix(in srgb,var(--cc) 55%,var(--faint));
   transform:translateY(-3px); box-shadow:0 20px 44px -22px color-mix(in srgb,var(--cc) 75%,transparent); outline:none; }
 .pi-card:hover::after,.pi-card:focus-visible::after,.pi-card.pi-done::after{ opacity:1; }
-.pi-ic{ width:38px; height:38px; margin-bottom:14px; }
-.pi-card-name{ font-family:"Instrument Serif",Georgia,serif; font-size:22px; line-height:1.15; color:var(--paper); margin:0; transition:color .35s; }
+.pi-ic{ display:block; width:clamp(112px,12vw,150px); height:auto; margin:10px auto 32px;
+  transition:transform .35s; }
+.pi-card:hover .pi-ic,.pi-card:focus-visible .pi-ic,.pi-card.pi-done .pi-ic{ transform:scale(1.05); }
+.pi-card-name{ font-family:"Instrument Serif",Georgia,serif; font-size:25px; line-height:1.14; color:var(--paper); margin:0; transition:color .35s; }
 .pi-card:hover .pi-card-name,.pi-card:focus-visible .pi-card-name,.pi-card.pi-done .pi-card-name{ color:var(--cc); }
-.pi-card-tag{ font-size:13.5px; color:var(--muted); margin:3px 0 0; }
-.pi-card-sum{ font-size:14px; line-height:1.55; color:#c3c9d0; margin:12px 0 0; }
+.pi-card-tag{ font-size:14px; color:var(--muted); margin:5px 0 0; }
+.pi-card-sum{ font-size:14.5px; line-height:1.62; color:#c3c9d0; margin:18px 0 0; }
 .pi-card--meta .pi-card-name{ font-style:italic; color:#8f97a3; }
 /* carte meta désactivée : inactive, non cliquable, sans survol */
 .pi-card:disabled{ opacity:.4; cursor:default; border-color:var(--faint); }
 .pi-card:disabled:hover,.pi-card:disabled:focus-visible{ opacity:.4; border-color:var(--faint); transform:none; }
 .pi-card:disabled::after,.pi-card:disabled:hover::after,.pi-card:disabled:focus-visible::after{ opacity:0; }
 .pi-card:disabled .pi-card-name,.pi-card:disabled:hover .pi-card-name{ color:#8f97a3; }
-@media (max-width:680px){ .pi-cards{ grid-template-columns:1fr; } }
+@media (max-width:860px){ .pi-cards{ grid-template-columns:1fr; gap:18px; } }
 /* « Aller plus loin » : apparaît sur l'accueil une fois les trois parcours faits */
 .pi-further{ margin-top:clamp(40px,7vh,72px); padding-top:clamp(30px,4vh,44px); border-top:1px solid var(--faint);
   animation:pi-rise .7s ease both; }

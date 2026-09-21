@@ -14,6 +14,22 @@
    - NON INVASIF : ne touche jamais un élément qui contient un sommaire sticky
      (.toc) — un transform casserait le position:sticky. Idem pour [data-no-rv].
 ------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------
+   Footer partagé — source unique : footer.js.
+   Chaque page ne contient qu'un <div id="site-footer"></div> ; on charge
+   footer.js (par balise script, PAS par fetch), qui le remplace. Comme c'est
+   un script et non un fetch d'un .html, ça fonctionne dans TOUS les contextes :
+   en ligne (Statichost), Live Server, et même en ouvrant le .html en local
+   (file://). Pour changer le footer partout, il suffit d'éditer footer.js.
+------------------------------------------------------------------ */
+(function () {
+  "use strict";
+  var s = document.createElement("script");
+  s.src = "footer.js";
+  (document.head || document.documentElement).appendChild(s);
+})();
+
 (function () {
   "use strict";
 
