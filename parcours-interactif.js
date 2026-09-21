@@ -7,6 +7,7 @@ const S=[
 {c:"var(--c1)",lieu:"Entre un produit et ses usagers",
  tag:"une plateforme et ceux qui la font tourner",
  factLine:"Ça circule encore. Mais au bout, il n'y a personne.",
+ center:{nm:"Le produit",sub:"ce qui les relie"},
  title:"Quatre personnes répondent à soixante-dix pour cent des questions.",
  scene:`<p>L'entreprise vend une plateforme de billetterie à des organisateurs d'événements - festivals, salons, petites salles de concert. L'outil est puissant, donc un peu technique : il faut du temps pour l'apprivoiser.</p>
  <p>Officiellement, il y a un support. Officieusement, ce sont les organisateurs eux-mêmes qui s'entraident. Une poignée de vétérans a ouvert un forum : ils accueillent les nouveaux, écrivent les tutoriels qui manquent, et dépannent le samedi soir quand une billetterie plante à deux heures de l'ouverture des portes.</p>
@@ -36,7 +37,7 @@ const S=[
  <span class="pi-hit">Une dépendance qu'on ne compte pas ressemble exactement à une économie.</span>`,
  v:[{c:"var(--c1)",nm:"Sonia",rl:"une des quatre · elle a arrêté en mars",
    sh:"Sonia",
-   pnote:"[À compléter : ce qui change pour Sonia quand la circulation reprend.]",
+   pnote:"Nommée chaque mois, elle existe quelque part. Ce qu'elle donne a enfin une adresse — et un fil se tend vers elle.",
    read:`<p>J'ai donné trois ans - du temps, des réponses, les samedis soir - sans que ça porte un nom. Le jour où je me suis tue, aucun fil ne s'est tendu vers moi.</p>`,
    title:"Elle a arrêté un mardi.",
    body:`<p>Un salarié de la plateforme est passé sur le forum et a corrigé publiquement une de ses réponses. Sur le fond il avait raison. Elle n'a rien dit.</p>
@@ -44,14 +45,14 @@ const S=[
    <p>Elle donnait depuis trois ans quelque chose qui n'avait jamais eu de nom.</p>`},
   {c:"var(--c2)",nm:"Le responsable produit",rl:"ses indicateurs sont bons",
    sh:"Le responsable",
-   pnote:"[À compléter : ce qui change pour le responsable produit.]",
+   pnote:"Un endroit, dans ses outils, où « quatre bénévoles nous tiennent » peut enfin s'inscrire. Il voit des gens, plus seulement une courbe.",
    read:`<p>Je vois des courbes, pas des gens. Nulle part, dans mes outils, un endroit où « quatre bénévoles nous tiennent » pourrait s'inscrire - alors ça n'arrive pas jusqu'à moi.</p>`,
    title:"Il regarde une courbe de coût.",
    body:`<p>Elle est excellente et il en est légitimement fier. Il n'existe, dans aucun de ses outils, de champ où pourrait s'inscrire « quatre personnes que nous ne payons pas tiennent notre support ».</p>
    <p>Le trimestre suivant, quand la courbe s'inverse, il cherchera l'explication là où il a des données : dans le produit.</p>`},
   {c:"var(--c4)",nm:"Un nouvel organisateur",rl:"il vient d'arriver",
    sh:"Le nouveau",
-   pnote:"[À compléter : ce qui change pour le nouvel arrivant.]",
+   pnote:"Au bout de sa question, quelqu'un. Il n'arrive plus six mois trop tard&#8239;: ce qui circule finit par l'atteindre.",
    read:`<p>J'ai posé une question, un soir, et j'ai attendu. Au bout, personne. J'en ai conclu, faute de mieux, que le produit était mal accompagné.</p>`,
    title:"Il pose une question. Rien ne vient.",
    body:`<p>Il attend deux jours, relance, puis se débrouille seul. Il en conclut, raisonnablement, que ce produit est mal accompagné.</p>
@@ -69,13 +70,28 @@ const S=[
  app:"Ce qui tenait ce produit n'était pas dans le produit - et n'était nulle part ailleurs non plus.",
  appMore:`Le forum tenait sur quatre personnes que rien ne nommait : ni contrat, ni budget, ni ligne dans un tableau de bord. Quand elles se sont tues, l'entreprise a cherché la panne dans le produit — le seul endroit qu'elle savait regarder. Ce qui circulait vraiment, lui, n'avait aucune adresse où être vu.`,
  gateEnd:{q:"Sonia n'a pas claqué la porte. Elle a cessé.",min:"10 min",href:"article-05.html"},
- fix:`<b>Imaginons.</b> Un message par mois - écrit par une personne, pas par un outil - qui dirait ce qui a été corrigé le mois passé, et grâce à qui, nommément. Aucune fonctionnalité, aucun budget, aucune réorganisation : juste un endroit où ce qui circulait déjà finirait par arriver à quelqu'un. Est-ce que deux des trois reviendraient&#8239;? Peut-être. Ce n'est pas la réponse, c'est le genre de fil que je tirerais en premier.`},
+ pisteLead:`On rebranche le seul fil qui manquait&#8239;: ce que les quatre bénévoles donnaient trouve enfin une adresse. Voici ce qui se remet à circuler entre eux — Sonia qu'on nomme, le nouveau à qui l'on répond, le responsable qui voit enfin des gens.`,
+ fixLead:"Imaginons.",
+ fix:`Un message par mois - écrit par une personne, pas par un outil - qui dirait ce qui a été corrigé le mois passé, et grâce à qui, nommément. Aucune fonctionnalité, aucun budget, aucune réorganisation : juste un endroit où ce qui circulait déjà finirait par arriver à quelqu'un. Est-ce que deux des trois reviendraient&#8239;? Peut-être. Ce n'est pas la réponse, c'est le genre de fil que je tirerais en premier.`},
 
 {c:"var(--c3)",lieu:"Au sein d'une équipe et ses métiers",
  tag:"un atelier et un bureau d'études",
+ center:{nm:"La production",sub:"ce qui devrait les relier"},
+ between:[
+  {label:"le chef d'atelier ↔ le logiciel", text:"Il y dépose quarante-trois remontées, datées, précises. Elles y restent&#8239;: personne, de l'autre côté, n'est branché sur ce champ."},
+  {label:"le logiciel ↔ le bureau d'études", text:"Le logiciel a tout gardé, horodaté. Mais rien n'a jamais prévu que le bureau d'études vienne l'ouvrir."},
+  {label:"le bureau d'études ↔ l'atelier", text:"L'atelier corrige en silence&#8239;; le bureau croit ses plans parfaits. Entre les deux, aucun fil ne relie ce qui cloche à qui dessine."}
+ ],
+ betweenAfter:[
+  {label:"le chef d'atelier → le logiciel", text:"Ce qu'il dépose ne dort plus dans le champ&#8239;: c'est relu, de l'autre côté, par quelqu'un."},
+  {label:"le logiciel → le bureau d'études", text:"Le bureau vient lire ce que le champ contient. L'absence de retour n'était pas une preuve — juste un canal resté fermé."},
+  {label:"le bureau d'études → l'atelier", text:"L'erreur remonte enfin à qui dessine. On la répare une fois, en amont, au lieu de quarante-trois fois à la main."}
+ ],
+ appMore:`Quarante-trois remontées, écrites, datées, précises — dans un champ que personne, à l'autre bout, n'était chargé d'ouvrir. L'atelier a fini par écrire pour l'archive, et le bureau d'études a pris le silence pour la preuve que sa méthode tenait. Ce qui circulait n'a jamais manqué de clarté&#8239;: il lui manquait un destinataire.`,
  title:"L'atelier ne remonte jamais les erreurs de plans.",
- scene:`<p>Dans une PME industrielle, les plans arrivent à l'atelier avec des erreurs - des cotes qui ne tombent pas, des pièces qui ne s'assemblent pas dans l'ordre prévu.</p>
- <p>L'atelier corrige et n'en parle pas. Ils appellent ça « rattraper ». Les délais sont tenus depuis deux ans, et la direction industrielle est satisfaite.</p>`,
+ scene:`<p>Une PME industrielle conçoit et fabrique des machines spéciales — des équipements sur mesure, un par client, jamais tout à fait les mêmes. Les plans naissent au bureau d'études, puis descendent à l'atelier, où on les transforme en acier.</p>
+ <p>Presque chaque dossier arrive avec ses défauts&#8239;: une cote qui ne tombe pas juste, un perçage posé sur une soudure, deux pièces pensées pour s'emboîter et qui refusent. L'atelier ne s'en émeut plus. On reprend, on recale, on ajuste à la main — ils appellent ça « rattraper », et c'est presque un point d'honneur&#8239;: le client attend, la machine sortira à l'heure.</p>
+ <p>Et ça marche. Les délais sont tenus depuis deux ans, la direction industrielle est satisfaite, et au bureau d'études, l'ingénieur qui signe les plans n'a jamais entendu dire que quoi que ce soit clochait.</p>`,
  q:"Une question pour vous : pourquoi l'atelier ne remonte-t-il jamais ces erreurs ?",
  opts:["pas le temps","ça ne servirait à rien","ils ne veulent pas dénoncer","ce n'est pas leur rôle"],
  answers:[
@@ -88,32 +104,55 @@ const S=[
   {label:"Et s'ils remontaient, sans que ça n'arrive nulle part ?", good:true,
    reply:`Oui. Vous n'avez pas cherché la faute chez eux, vous avez senti qu'il manque peut-être un endroit où ce qu'ils disent puisse arriver. C'est exactement là qu'il faut regarder.`}
  ],
- turnTitle:"Ils remontent.",
- turn:`<p>Quarante-trois fois en deux ans. Écrit, daté, précis, dans le champ commentaire du logiciel de production.</p>
- <p>Le bureau d'études n'ouvre jamais ce champ. Ce n'est pas son outil, et aucune notification n'a jamais été branchée dessus.</p>
- <p>Vous venez de chercher une explication du côté des gens : le temps, la loyauté, le rôle. Toutes plausibles. Aucune n'était le sujet.</p>
- <span class="pi-hit">Ce n'est pas qu'ils ne parlent pas. C'est qu'il n'existe aucun endroit où ce qu'ils disent puisse arriver.</span>`,
+ turnTitle:"Le compteur monte.",
+ hit:"Ce n'est pas qu'ils ne parlent pas. C'est qu'il n'existe aucun endroit où ce qu'ils disent puisse arriver.",
+ timeline:[
+  {t:"Six mois — onze remontées", body:`<p>Le chef d'atelier vérifie encore si quelqu'un les a lues. Les délais sont tenus, la direction industrielle est satisfaite. Personne n'ouvre le champ.</p>`},
+  {t:"Un an — vingt-quatre remontées", body:`<p>Il a cessé de vérifier&#8239;; il continue d'écrire, par acquit de conscience. En face, le bureau d'études forme les nouveaux à sa méthode&#8239;: aucun retour négatif, donc elle est bonne.</p>`},
+  {t:"Deux ans — quarante-trois remontées", body:`<p>Quarante-trois commentaires datés, horodatés, jamais perdus — jamais lus. Les délais tiennent toujours&#8239;: l'atelier « rattrape ». Tout le monde est satisfait.</p>`}
+ ],
  v:[{c:"var(--c3)",nm:"Le chef d'atelier",rl:"quarante-trois commentaires",
+   pnote:"Ce qu'il écrit arrive à quelqu'un. Il n'écrit plus pour l'archive, mais pour être lu — et il l'est.",
+   read:`<p>J'ai écrit quarante-trois fois ce qui coince. Personne n'a jamais répondu, alors j'ai cessé de vérifier — mais je continue d'écrire, pour que ce soit quelque part.</p>`,
    title:"Il continue à écrire.",
    body:`<p>Les six premiers mois, il vérifiait si quelqu'un avait lu. Ensuite il a cessé de vérifier, et il a continué d'écrire, par acquit de conscience, pour que ce soit quelque part.</p>
    <p>Si on lui demandait aujourd'hui pourquoi il ne remonte pas, il répondrait sans doute : « à quoi bon ». Et on l'inscrirait comme un problème d'état d'esprit.</p>`},
   {c:"var(--c2)",nm:"L'ingénieur du bureau d'études",rl:"il n'a jamais reçu une remontée",
+   pnote:"Il reçoit enfin ce qui cloche. Le silence n'était pas la qualité de sa méthode, c'était son étanchéité.",
+   read:`<p>Quatre ans sans un seul retour négatif sur mes plans. J'en conclus qu'ils sont bons, et je l'enseigne aux nouveaux. Le silence, pour moi, c'est la preuve.</p>`,
    title:"Il forme les nouveaux à sa méthode.",
    body:`<p>En quatre ans, aucun retour négatif sur ses plans. Il en tire la conclusion qui s'impose : sa méthode est bonne. Il l'enseigne aux arrivants.</p>
    <p>L'absence de signal est devenue, pour lui, une preuve de qualité. Elle est en réalité une preuve d'étanchéité.</p>`},
   {c:"var(--c5)",nm:"Le logiciel",rl:"personne ne le regarde en face",
+   pnote:"Le champ est relié. Ce qu'il gardait sans lecteur trouve un œil de l'autre côté.",
+   read:`<p>J'ai tout gardé&#8239;: quarante-trois commentaires, datés, intacts. Simplement, personne n'a jamais prévu qu'un autre que leur auteur vienne les lire.</p>`,
    title:"Le champ existe. Le lien, non.",
    body:`<p>Quarante-trois commentaires enregistrés, horodatés, jamais perdus. Le système a tout gardé.</p>
    <p>Il n'a simplement jamais été prévu que ce champ soit lu par quelqu'un d'autre que celui qui l'écrit. Rien n'est cassé, rien n'a été relié.</p>`}],
  app:"L'information circulait depuis deux ans. Il n'y avait aucune oreille au bout.",
- fix:`<b>Ce qui a suffi.</b> Un quart d'heure hebdomadaire où chaque métier nomme ce que le travail de l'autre lui a coûté cette semaine. Ni outil, ni compte rendu, ni budget. Le rattrapage a coûté l'équivalent d'un poste et demi sur les deux années précédentes. La personne qui a installé ce quart d'heure est partie depuis dix-huit mois : il a lieu toujours.`,
+ pisteLead:`On relie enfin le champ à une oreille&#8239;: ce que l'atelier écrit depuis deux ans arrive jusqu'au bureau d'études. Voici ce qui se remet à circuler entre eux — l'erreur qui remonte, la méthode qui se corrige, celui qui écrit enfin lu.`,
+ fixLead:"Ce qui a suffi.",
+ fix:`Un quart d'heure hebdomadaire où chaque métier nomme ce que le travail de l'autre lui a coûté cette semaine. Ni outil, ni compte rendu, ni budget. Le rattrapage a coûté l'équivalent d'un poste et demi sur les deux années précédentes. La personne qui a installé ce quart d'heure est partie depuis dix-huit mois : il a lieu toujours.`,
  gateFix:{q:"Un quart d'heure par semaine. Pourquoi ça tient.",min:"11 min",href:"article-04.html"}},
 
 {c:"var(--c4)",lieu:"Autour d'un parcours et ses moments",
  tag:"six rendez-vous depuis janvier",
+ center:{nm:"L'accompagnement",sub:"ce qui devrait les relier"},
+ between:[
+  {label:"elle ↔ le tableau de bord", text:"Tous ses voyants sont au vert. Nulle part une case pour dire qu'elle a déjà donné, cinq fois, ce qu'on lui redemande."},
+  {label:"le tableau de bord ↔ le professionnel", text:"Il enregistre un entretien de plus, « peu coopérante » en marge. Jamais ce qui s'est usé entre le premier rendez-vous et le sixième."},
+  {label:"le professionnel ↔ elle", text:"Elle a déjà tout dit, ailleurs, avant lui. Il la découvre à zéro&#8239;: rien de ce qu'elle a donné n'arrive jusqu'à lui."}
+ ],
+ betweenAfter:[
+  {label:"elle → le tableau de bord", text:"Ce qu'elle a déjà donné cesse d'être invisible&#8239;: il en reste une trace, d'un rendez-vous au suivant."},
+  {label:"le tableau de bord → le professionnel", text:"Ce qui compte n'est plus le nombre d'entretiens, mais ce qui se transmet vraiment de l'un à l'autre."},
+  {label:"le professionnel → elle", text:"La demi-page arrive avant elle. Il sait déjà ce qu'elle a dit — elle n'a pas à tout recommencer."}
+ ],
+ appMore:`À chaque rendez-vous elle redit ce qu'elle a déjà dit, et chaque fois ça retombe dans le même trou&#8239;: rien ne passe d'un interlocuteur au suivant. Ce qu'on a fini par prendre pour de la fermeture n'était que la fatigue de donner à vide. Ce qui circulait — son histoire, ses demandes — n'avait aucun endroit où être repris.`,
  title:"Elle répond par phrases courtes.",
- scene:`<p>Sixième rendez-vous d'accompagnement depuis janvier. Sixième interlocuteur.</p>
- <p>En face, une femme qui ne développe pas, ne donne aucun détail, regarde la porte. Le professionnel a quarante minutes et un dossier de deux pages. À la fin, il note : peu coopérante.</p>`,
+ scene:`<p>C'est un rendez-vous d'accompagnement comme il s'en tient des centaines. Le sixième depuis janvier, dans le même dossier — et, à chaque fois, un interlocuteur différent&#8239;: mutation, planning, congés, personne n'y peut rien.</p>
+ <p>En face du professionnel, une femme d'une quarantaine d'années. Elle répond, mais court&#8239;: oui, non, ça va. Elle ne développe pas, ne donne aucun détail, regarde la porte plus souvent que lui. Elle a gardé son manteau, posé sur ses genoux.</p>
+ <p>Lui a quarante minutes, un dossier de deux pages et six autres rendez-vous derrière celui-là. Il fait ce qu'il peut, honnêtement, avec ce qu'il a sous les yeux. À la fin, dans la case prévue, il écrit ce qu'il a vu&#8239;: peu coopérante.</p>`,
  q:"Une question pour vous : que se passe-t-il chez cette personne ?",
  opts:["elle est découragée","elle est méfiante","elle protège quelque chose","elle a renoncé"],
  answers:[
@@ -126,27 +165,38 @@ const S=[
   {label:"Elle a peut-être déjà tout dit, ailleurs", good:true,
    reply:`Oui. Vous n'avez pas cherché qui elle est - vous avez entendu qu'elle a peut-être déjà donné, avant vous, sans que rien ne reste. C'est exactement ce que son dossier va montrer.`}
  ],
- turnTitle:"Ouvrez les cinq comptes rendus précédents.",
- turn:`<p>Janvier, premier rendez-vous : trois pages. Elle raconte tout, dans le détail, avec les dates.</p>
- <p>Février : deux pages. Mars : une. Mai : deux paragraphes. Aujourd'hui : six lignes.</p>
- <p>Vous venez de chercher ce qui se passe <strong>chez elle</strong>. Les quatre réponses parlaient de son caractère. La courbe était dans le dossier depuis le début.</p>
- <span class="pi-hit">Ce que vous preniez pour sa personnalité est la trace de son parcours.</span>`,
+ turnTitle:"Les mois passent.",
+ hit:"Ce que vous preniez pour sa personnalité est la trace de son parcours.",
+ timeline:[
+  {t:"Janvier", body:`<p>Premier rendez-vous. Trois pages&#8239;: elle raconte tout, les dates, les détails, l'ordre des choses. On la note investie.</p>`},
+  {t:"Février", body:`<p>Deux pages. Elle donne encore, un peu moins. Rien qui alerte&#8239;: un dossier qui se met en place.</p>`},
+  {t:"Mars", body:`<p>Une page. Les réponses se resserrent. On y lit une situation qui se stabilise.</p>`},
+  {t:"Mai", body:`<p>Deux paragraphes. Presque plus de détails. En marge, pour la première fois, un mot&#8239;: « distante ».</p>`}
+ ],
  gateTurn:{q:"Ce qu'elle vous a laissé prendre pour son caractère.",min:"8 min",href:"article-01.html"},
  v:[{c:"var(--c4)",nm:"Elle",rl:"sixième fois depuis janvier",
+   pnote:"Elle n'a pas à tout reprendre. Pour la première fois, ce qu'elle a donné l'attend déjà de l'autre côté.",
+   read:`<p>La première fois, j'ai tout raconté, et ça a servi. À la quatrième, j'avais compris que rien ne passait d'un rendez-vous à l'autre. J'ai cessé de donner ce qui ne reste pas.</p>`,
    title:"Elle a appris que ça ne restait pas.",
    body:`<p>La première fois, tout dire a été dur et ça a servi : quelqu'un l'a écoutée.</p>
    <p>À la quatrième, elle a compris que rien ne passait d'un rendez-vous à l'autre - que ce qu'elle donnait tombait chaque fois dans un trou.</p>
    <p>Elle n'a pas cessé de donner. Elle a cessé de donner ce qui ne restait pas.</p>`},
   {c:"var(--c2)",nm:"Le professionnel d'aujourd'hui",rl:"il la voit pour la première fois",
+   pnote:"Il ouvre la demi-page avant elle. Il ne la découvre plus à zéro&#8239;: il continue une histoire au lieu d'en rouvrir une.",
+   read:`<p>Quarante minutes, deux pages de dossier, une personne qui se ferme. Je note ce que je vois, honnêtement — et c'est cette note-là qui va rester.</p>`,
    title:"Il note ce qu'il observe.",
    body:`<p>Quarante minutes, deux pages de dossier, une personne qui se ferme. Il consigne honnêtement, avec les mots dont il dispose.</p>
    <p>Cette note suivra le dossier. C'est la seule chose de cette matinée qui va rester - et elle décrit un effet en le nommant comme une cause.</p>`},
   {c:"var(--c5)",nm:"Le tableau de bord",rl:"tous les voyants sont au vert",
+   pnote:"Ce qui se transmet cesse d'être invisible. Le lien d'un rendez-vous au suivant a enfin une trace.",
+   read:`<p>Six entretiens réalisés, tous mes voyants au vert. Aucune case pour ce qui s'est usé entre le premier et le sixième. Donc, pour moi, ça n'a pas eu lieu.</p>`,
    title:"Six entretiens réalisés.",
    body:`<p>Taux de contact excellent. Délai moyen entre deux rendez-vous : conforme. Aucune de ces lignes n'est fausse.</p>
    <p>Il n'existe nulle part de case pour ce qui s'est usé entre le premier rendez-vous et le sixième. Donc, pour l'organisation, cela n'a pas eu lieu.</p>`}],
  app:"Ce qu'elle a donné six fois n'est allé nulle part. Chaque fois, elle a repayé le prix d'entrée d'une relation qui recommence.",
- fix:`<b>Ce qui a suffi.</b> Une demi-page transmise d'un rendez-vous au suivant : ce qu'elle a déjà dit, et ce qu'elle a déjà demandé. Pas de logiciel, pas de projet, pas de réunion supplémentaire. Au rendez-vous suivant, on ne lui a pas demandé de recommencer.`}
+ pisteLead:`On glisse une demi-page d'un rendez-vous au suivant&#8239;: ce qu'elle a déjà donné cesse de se perdre. Voici ce qui se remet à circuler entre eux — son histoire qui la précède, le professionnel qui la continue, le suivi qui garde une trace.`,
+ fixLead:"Ce qui a suffi.",
+ fix:`Une demi-page transmise d'un rendez-vous au suivant : ce qu'elle a déjà dit, et ce qu'elle a déjà demandé. Pas de logiciel, pas de projet, pas de réunion supplémentaire. Au rendez-vous suivant, on ne lui a pas demandé de recommencer.`}
 ];
 
 const GATE_PLACES={q:"Ce que vous venez de faire porte un nom.",min:"10 min",href:"article-03.html"};
@@ -188,12 +238,13 @@ function go(id){document.querySelectorAll('.pi-screen').forEach(s=>s.classList.r
  document.getElementById(id).classList.add('pi-on');updateChrome(id);window.scrollTo(0,0);if(id==='s-home')home();}
 function home(){
  document.querySelectorAll('#home .pi-card').forEach(card=>{
-  const sit=card.dataset.sit;
-  if(sit==='meta'){ card.onclick=null; card.disabled=true; return; }
-  const i=+sit;
+  const i=+card.dataset.sit;
   card.classList.toggle('pi-done',done[i]);
   card.onclick=()=>mur(i);
  });
+ // « aller plus loin » : seulement une fois les trois parcours traversés
+ const further=document.getElementById('pi-further');
+ if(further) further.hidden=!(done[0]&&done[1]&&done[2]);
 }
 function mur(i){cs=i;piMax=0;const s=S[i];const el=document.getElementById('s-mur');
  el.style.setProperty('--ac',s.c);
@@ -285,7 +336,7 @@ function toPlaces(){const s=S[cs];const el=document.getElementById('s-places');
  const betCls=['pi-bet--r','pi-bet--b','pi-bet--l'];
  const bet=(s.between||[]).map((bb,i)=>'<div class="pi-bet '+betCls[i]+'"><span class="pi-bet-label">'+bb.label+'</span><p>'+bb.text+'</p></div>').join('');
  p.innerHTML='<div class="pi-cscene">'+svg
-   +'<span class="pi-produit"><span class="pi-produit-nm">Le produit</span><span class="pi-produit-sub">ce qui les relie</span></span>'
+   +'<span class="pi-produit"><span class="pi-produit-nm">'+((s.center&&s.center.nm)||'Le produit')+'</span><span class="pi-produit-sub">'+((s.center&&s.center.sub)||'ce qui les relie')+'</span></span>'
    +roles+bet+'</div>'
    +'<p class="pi-cercle-hint" id="pi-cercle-hint">Autour du produit, trois rôles. Ouvrez-les pour découvrir ce que chacun vit.</p>'
    +'<button class="pi-btn pi-cercle-see" id="pi-cercle-see" type="button" hidden>Voir ce qui les relie</button>';
@@ -321,6 +372,7 @@ function toEnd(){const s=S[cs];const el=document.getElementById('s-end');
 function toPiste(){const s=S[cs];const el=document.getElementById('s-piste');
  el.style.setProperty('--ac',s.c);
  document.getElementById('pt-kick').innerHTML='<b>'+s.lieu+'</b> · la piste';
+ document.getElementById('pt-lead').innerHTML=s.pisteLead||'';
  // le cercle RÉPARÉ : mêmes acteurs, mais la valeur se remet à circuler entre eux
  const cont=document.getElementById('pt-cercle');
  const arcs=['M 472 187 A 248 248 0 0 1 632 522','M 618 538 A 248 248 0 0 1 202 538','M 188 522 A 248 248 0 0 1 348 187'];
@@ -331,13 +383,13 @@ function toPiste(){const s=S[cs];const el=document.getElementById('s-piste');
    +'</svg>';
  const ic='<span class="pi-role-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="8.5" r="3.3"/><path d="M5.5 19c0-3.7 2.9-6.2 6.5-6.2s6.5 2.5 6.5 6.2"/></svg></span>';
  const roleCls=['pi-role--a','pi-role--b','pi-role--c'];
- const roles=s.v.map((v,k)=>'<div class="pi-role pi-role--mini '+roleCls[k]+'" style="--cc:'+v.c+'"><div class="pi-role-head">'+ic+'<span class="pi-role-nm">'+v.nm+'</span></div>'+(v.pnote?'<p class="pi-role-mininote">'+v.pnote+'</p>':'')+'</div>').join('');
+ const roles=s.v.map((v,k)=>'<div class="pi-role pi-role--mini '+roleCls[k]+'" style="--cc:'+v.c+'"><div class="pi-role-head">'+ic+'<span class="pi-role-nm">'+v.nm+'</span></div>'+'<p class="pi-role-mininote">'+(v.pnote||'[À compléter : ce qui change pour '+v.nm.toLowerCase()+'.]')+'</p></div>').join('');
  const bet=(s.betweenAfter||s.between||[]).map((bb,i)=>'<div class="pi-bet '+['pi-bet--r','pi-bet--b','pi-bet--l'][i]+'"><span class="pi-bet-label">'+bb.label+'</span><p>'+bb.text+'</p></div>').join('');
  cont.className='pi-cscene pi-alive';
- cont.innerHTML=svg+'<span class="pi-produit"><span class="pi-produit-nm">Le produit</span><span class="pi-produit-sub">ce qui les relie</span></span>'+roles+bet;
+ cont.innerHTML=svg+'<span class="pi-produit"><span class="pi-produit-nm">'+((s.center&&s.center.nm)||'Le produit')+'</span><span class="pi-produit-sub">'+((s.center&&s.center.sub)||'ce qui les relie')+'</span></span>'+roles+bet;
  requestAnimationFrame(()=>requestAnimationFrame(()=>cont.classList.add('pi-linked')));
  // le texte de piste, en accompagnement dessous
- document.getElementById('pt-body').innerHTML=s.fix;
+ document.getElementById('pt-body').innerHTML='<h3 class="pi-piste-title">'+(s.fixLead||'Ce qui a suffi')+'</h3>'+s.fix;
  document.getElementById('pt-gate').innerHTML=gateHTML(s.gateFix);
  const n=done.filter(Boolean).length;
  const elsewhere=document.getElementById('pt-elsewhere');
