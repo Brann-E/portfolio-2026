@@ -3298,21 +3298,39 @@ em.grad {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.don-more {
-  margin-top: 8px;
-  font-size: 12.5px;
-  letter-spacing: 0.01em;
-  color: var(--c1);
-  background: none;
-  border: 0;
-  border-bottom: 1px solid color-mix(in srgb, var(--c1) 40%, transparent);
-  padding: 3px 0;
+.don-plus {
+  margin-top: 54px;
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  /* déjà cerclé de bleu, le « + » en bleu, au repos */
+  border: 1px solid color-mix(in srgb, var(--muted) 55%, var(--faint));
+  background: color-mix(in srgb, var(--muted) 7%, transparent);
+  color: var(--muted);
   cursor: pointer;
+  transition: background 0.3s, border-color 0.3s, transform 0.12s;
 }
-.don-more:hover,
-.don-more:focus-visible {
-  border-color: var(--c1);
+.don-plus svg {
+  width: 18px;
+  height: 18px;
+}
+.don-plus svg path {
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+}
+/* survol : un peu plus de bleu dans le noir, sans jamais saturer */
+.don-plus:hover,
+.don-plus:focus-visible {
+  color: var(--paper);
+  border-color: var(--paper);
+  background: color-mix(in srgb, var(--paper) 18%, transparent);
   outline: none;
+}
+.don-plus:active {
+  transform: scale(0.9);
 }
 .don-reshuffle {
   display: block;
@@ -3461,9 +3479,9 @@ em.grad {
 }
 .don-close-btn:hover,
 .don-close-btn:focus-visible {
-  border-color: var(--c1);
+  border-color: var(--paper);
   color: var(--paper);
-  background: color-mix(in srgb, var(--c1) 10%, transparent);
+  background: color-mix(in srgb, var(--paper) 10%, transparent);
   outline: none;
 }
 .don-close-btn:active {
@@ -6587,7 +6605,9 @@ footer a {
   background: #10141a;
   border: 1px solid #2b313b;
   border-radius: 3px;
-  padding: clamp(26px, 3.6vw, 52px);
+  /* min abaissé pour le mobile : la carte se cumule déjà aux 24px du .wrap,
+     26px de padding interne resserraient trop la colonne de lecture. */
+  padding: clamp(20px, 3.6vw, 52px);
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.06),
     0 0 40px -6px rgba(255, 255, 255, 0.09),
@@ -8107,7 +8127,7 @@ body.has-site-nav.pratique .veil { display: none; }
 .pi-appears .pi-lab{ font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:var(--ac); display:block; margin-bottom:18px; }
 .pi-appears p{ font-family:"Instrument Serif",Georgia,serif; font-size:clamp(25px,3.8vw,32px); line-height:1.24; color:var(--ac); max-width:24ch; margin:0 auto; }
 .pi-appears .pi-app-more, .pi-appears .pi-app-more p{ max-width:52ch; margin:20px auto 0; padding-top:20px; text-align:center;
-  font-family:"Inter",sans-serif; font-size:17px; font-style:normal; line-height:1.7; color:var(--muted);
+  font-family:"Inter",sans-serif; font-size:17px; font-style:normal; line-height:1.7; color:var(--paper);
   border-top:1px solid color-mix(in srgb,var(--ac) 24%,var(--faint)); }
 .pi-appears .pi-app-more p{ margin:0; padding-top:0; border-top:none; max-width:none; }
 .pi-app-more[hidden]{ display:none; }
@@ -8139,14 +8159,16 @@ body.has-site-nav.pratique .veil { display: none; }
 .pi-card{ position:relative; display:flex; flex-direction:column; align-items:flex-start; text-align:left;
   width:100%;
   background:linear-gradient(180deg,rgba(255,255,255,.025),transparent);
-  border:1px solid var(--faint); border-radius:16px; padding:30px 30px 34px;
+  border:1px solid color-mix(in srgb,var(--cc) 20%,var(--faint)); border-radius:16px; padding:30px 30px 34px;
   color:var(--paper); cursor:pointer; font-family:inherit;
+  /* halo léger : un souffle de la couleur du cas, au repos. */
+  box-shadow:0 8px 40px -24px color-mix(in srgb,var(--cc) 55%,transparent);
   transition:border-color .35s,transform .35s,box-shadow .35s; --cc:var(--c1); }
 .pi-cards .pi-card:nth-child(1){ --cc:var(--c1); }
 .pi-cards .pi-card:nth-child(2){ --cc:var(--c3); }
 .pi-cards .pi-card:nth-child(3){ --cc:var(--c4); }
 .pi-cards .pi-card:nth-child(4){ --cc:var(--c2); }
-.pi-card::after{ content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none; opacity:0;
+.pi-card::after{ content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none; opacity:.5;
   transition:opacity .4s; background:radial-gradient(130% 110% at 18% 0%, color-mix(in srgb,var(--cc) 18%,transparent), transparent 62%); }
 .pi-card:hover,.pi-card:focus-visible,.pi-card.pi-done{ border-color:color-mix(in srgb,var(--cc) 55%,var(--faint));
   transform:translateY(-3px); box-shadow:0 20px 44px -22px color-mix(in srgb,var(--cc) 75%,transparent); outline:none; }
@@ -8154,10 +8176,10 @@ body.has-site-nav.pratique .veil { display: none; }
 .pi-ic{ display:block; width:clamp(112px,12vw,150px); height:auto; margin:10px auto 32px;
   transition:transform .35s; }
 .pi-card:hover .pi-ic,.pi-card:focus-visible .pi-ic,.pi-card.pi-done .pi-ic{ transform:scale(1.05); }
-.pi-card-name{ font-family:"Instrument Serif",Georgia,serif; font-size:25px; line-height:1.14; color:var(--paper); margin:0; transition:color .35s; }
+.pi-card-name{ font-family:"Instrument Serif",Georgia,serif; font-size:27px; line-height:1.14; color:var(--paper); margin:0; transition:color .35s; }
 .pi-card:hover .pi-card-name,.pi-card:focus-visible .pi-card-name,.pi-card.pi-done .pi-card-name{ color:var(--cc); }
-.pi-card-tag{ font-size:14px; color:var(--muted); margin:5px 0 0; }
-.pi-card-sum{ font-size:14.5px; line-height:1.62; color:#c3c9d0; margin:18px 0 0; }
+.pi-card-tag{ font-size:15px; color:var(--muted); margin:5px 0 0; }
+.pi-card-sum{ font-size:16px; line-height:1.62; color:#c3c9d0; margin:18px 0 0; }
 .pi-card--meta .pi-card-name{ font-style:italic; color:#8f97a3; }
 /* carte meta désactivée : inactive, non cliquable, sans survol */
 .pi-card:disabled{ opacity:.4; cursor:default; border-color:var(--faint); }

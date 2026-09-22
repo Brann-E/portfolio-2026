@@ -246,7 +246,7 @@
         '<div class="don-fglyph" aria-hidden="true"></div>' +
         '<div class="don-fnom"></div>' +
         '<div class="don-flecon"></div>' +
-        '<button class="don-more" type="button" tabindex="-1">En savoir plus →</button>' +
+        '<button class="don-plus" type="button" tabindex="-1" aria-label="En savoir plus"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7 V17 M7 12 H17"/></svg></button>' +
         "</div></div></div>";
       grid.appendChild(cell);
       var rec = {
@@ -256,7 +256,7 @@
         glyph: cell.querySelector(".don-fglyph"),
         nom: cell.querySelector(".don-fnom"),
         lecon: cell.querySelector(".don-flecon"),
-        more: cell.querySelector(".don-more"),
+        more: cell.querySelector(".don-plus"),
         don: null
       };
       cells.push(rec);
