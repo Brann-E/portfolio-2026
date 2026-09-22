@@ -6891,7 +6891,7 @@ a.porte,
 .ra-intro { padding-block: clamp(60px, 10vh, 90px) 40px; }
 .ra-intro h1 { max-width: 12ch; }
 .ra-charniere {
-  font-size: clamp(19px, 2.2vw, 22px);
+  font-size: 19px;
   line-height: 1.5;
   color: #e3e6e9;
   margin-top: 30px;
@@ -7286,7 +7286,7 @@ a.porte,
 .ra-intro { padding-block: clamp(60px, 10vh, 90px) 40px; }
 .ra-intro h1 { max-width: 12ch; }
 .ra-charniere {
-  font-size: clamp(19px, 2.2vw, 22px);
+  font-size: 19px;
   line-height: 1.5;
   color: #e3e6e9;
   margin-top: 30px;
@@ -8057,7 +8057,7 @@ body.has-site-nav.pratique .veil { display: none; }
    colonne resserrée pour le confort de lecture). */
 #s-home.pi-wrap{ max-width:1200px; padding-left:clamp(24px,4vw,44px); padding-right:clamp(24px,4vw,44px); }
 #s-home .pi-lead{ max-width:66ch; }
-.pi-kicker{ font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:20px; }
+.pi-kicker{ font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:20px; }
 .pi-kicker b{ color:var(--ac); font-weight:400; }
 .pi-muted{ color:var(--muted); font-size:15px; margin-top:14px; }
 .pi-lead{ font-size:17px; color:#d6d9dd; margin-top:24px; }
@@ -8078,7 +8078,7 @@ body.has-site-nav.pratique .veil { display: none; }
   padding:15px 24px; border-radius:999px; cursor:pointer; transition:.3s; margin-top:32px; align-self:flex-start; }
 .pi-btn:hover,.pi-btn:focus-visible{ border-color:var(--ac); color:var(--ac); outline:none; }
 
-.pi-scene{ font-size:16px; color:var(--paper); border-left:2px solid var(--ac); padding-left:23px; margin-top:24px; }
+.pi-scene{ font-size:17px; color:var(--paper); border-left:2px solid var(--ac); padding-left:23px; margin-top:24px; }
 .pi-scene p{ margin-bottom:.8em; }
 .pi-q{ font-family:"Instrument Serif",Georgia,serif; font-size:clamp(20px,2.7vw,24px); line-height:1.3; margin:34px 0 20px; color:var(--paper); }
 .pi-opts{ display:flex; flex-wrap:wrap; gap:9px; }
@@ -8086,7 +8086,7 @@ body.has-site-nav.pratique .veil { display: none; }
   padding:12px 20px; font:300 15px/1 Inter,sans-serif; cursor:pointer; transition:.25s; }
 .pi-opt:hover,.pi-opt:focus-visible{ border-color:var(--ac); color:var(--ac); outline:none; }
 
-.pi-turn{ font-size:16px; color:var(--paper); margin-top:24px; }
+.pi-turn{ font-size:17px; color:var(--paper); margin-top:24px; }
 .pi-turn .pi-hit{ font-family:"Instrument Serif",Georgia,serif; font-size:clamp(23px,3.3vw,28px);
   line-height:1.25; color:var(--ac); margin-top:26px; display:block; }
 
@@ -8104,10 +8104,10 @@ body.has-site-nav.pratique .veil { display: none; }
   padding:clamp(38px,5.5vw,58px) clamp(28px,4.5vw,48px); margin-top:44px; text-align:center;
   background:linear-gradient(180deg,color-mix(in srgb,var(--ac) 9%,transparent),transparent);
   box-shadow:0 30px 70px -46px color-mix(in srgb,var(--ac) 75%,transparent); }
-.pi-appears .pi-lab{ font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:var(--ac); display:block; margin-bottom:18px; }
+.pi-appears .pi-lab{ font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:var(--ac); display:block; margin-bottom:18px; }
 .pi-appears p{ font-family:"Instrument Serif",Georgia,serif; font-size:clamp(25px,3.8vw,32px); line-height:1.24; color:var(--ac); max-width:24ch; margin:0 auto; }
 .pi-appears .pi-app-more, .pi-appears .pi-app-more p{ max-width:52ch; margin:20px auto 0; padding-top:20px; text-align:center;
-  font-family:"Inter",sans-serif; font-size:16px; font-style:normal; line-height:1.7; color:var(--muted);
+  font-family:"Inter",sans-serif; font-size:17px; font-style:normal; line-height:1.7; color:var(--muted);
   border-top:1px solid color-mix(in srgb,var(--ac) 24%,var(--faint)); }
 .pi-appears .pi-app-more p{ margin:0; padding-top:0; border-top:none; max-width:none; }
 .pi-app-more[hidden]{ display:none; }
@@ -8295,7 +8295,7 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
   box-shadow:0 0 0 5px color-mix(in srgb,var(--ac) 15%,transparent), 0 0 18px color-mix(in srgb,var(--ac) 60%,transparent); }
 .pi-tl-label{ font-family:"Instrument Serif",Georgia,serif; font-size:clamp(20px,2.7vw,24px); line-height:1.08; color:var(--paper); transition:color .3s; }
 .pi-tl-head:hover .pi-tl-label,.pi-tl-node.pi-open .pi-tl-label{ color:var(--ac); }
-.pi-tl-body{ display:none; margin-top:12px; font-size:16px; line-height:1.64; color:var(--paper); max-width:58ch; }
+.pi-tl-body{ display:none; margin-top:12px; font-size:17px; line-height:1.64; color:var(--paper); max-width:58ch; }
 .pi-tl-node.pi-open .pi-tl-body{ display:block; animation:pi-fade .4s ease; }
 /* phrase-choc + boutons */
 .pi-turn-hit{ text-align:left; margin-top:44px; }
@@ -8322,12 +8322,15 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 .pi-ans-head:hover .pi-ans-plus,.pi-ans-head:focus-visible .pi-ans-plus{ color:var(--ac); }
 .pi-ans-body{ padding:0 20px 18px; }
 .pi-ans-block.pi-open .pi-ans-body{ animation:pi-fade .35s ease; }
-.pi-ans-reply{ font-size:16px; line-height:1.62; color:var(--muted); max-width:64ch; }
-.pi-ans-cue{ display:block; margin-top:10px; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); }
+.pi-ans-reply{ font-size:17px; line-height:1.62; color:var(--muted); max-width:64ch; }
+.pi-ans-cue{ display:block; margin-top:10px; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); }
 .pi-ans-cue:empty{ display:none; }
 .pi-ans-block.pi-good{ border-color:color-mix(in srgb,var(--ac) 45%,var(--faint)); background:linear-gradient(180deg,color-mix(in srgb,var(--ac) 7%,transparent),transparent); }
 .pi-ans-block.pi-good .pi-ans-label{ color:var(--ac); }
 .pi-ans-block.pi-good .pi-ans-cue{ color:var(--ac); }
+/* la reponse lucide est le paiement de l'ecran : en clair (--paper),
+   pas en muted comme les « presque ». */
+.pi-ans-block.pi-good .pi-ans-reply{ color:var(--paper); }
 
 .pi-sy p{ font-size:19px; color:#e3e6e9; }
 .pi-sy .pi-big{ font-family:"Instrument Serif",Georgia,serif; font-size:clamp(23px,3.6vw,31px);
