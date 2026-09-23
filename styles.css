@@ -5562,6 +5562,12 @@ h3 {
     clamp(18px, 4vw, 42px) - clamp(26px, 4.5vw, 48px) / 2 + 1px
   );
   width: clamp(26px, 4.5vw, 48px);
+  /* neutralise la collision avec le .node « carte » (min-height:250px + bordure
+     + fond + padding) qui glissait un vilain cadre autour du numéro. */
+  background: none;
+  border: none;
+  padding: 0;
+  min-height: 0;
 }
 .dot {
   position: relative;
@@ -6928,7 +6934,7 @@ a.porte,
 .corresp { border-top: 1px solid var(--faint); margin: clamp(30px, 5vh, 40px) 0; }
 .corresp-row {
   display: grid;
-  grid-template-columns: 1fr 30px 1fr;
+  grid-template-columns: 1fr 96px 1fr;
   gap: 18px;
   align-items: center;
   padding: 16px 0;
@@ -6949,7 +6955,9 @@ a.porte,
   text-align: center;
   color: var(--muted);
   font-family: "Instrument Serif", serif;
-  font-size: 20px;
+  font-style: italic;
+  font-size: 13.5px;
+  line-height: 1.2;
 }
 @media (max-width: 600px) {
   .corresp-row { grid-template-columns: 1fr; gap: 5px; }
@@ -8033,6 +8041,18 @@ body.has-site-nav.pratique .veil { display: none; }
   30%,100%{ left:120%; opacity:0; }
 }
 .pls-pill-label{ position:relative; z-index:2; }
+
+/* Mobile : la révélation « Je vous invite à [Regarder autrement] » tenait sur
+   UNE ligne trop large (nowrap, gros serif) → coupée par overflow:hidden du
+   bouton, les bords disparaissaient. On la laisse se replier sur deux lignes
+   et on réduit la taille pour qu'elle tienne dans le bouton. */
+@media (max-width: 600px){
+  .pls-btn{ padding:clamp(30px,5vh,52px) 20px; }
+  .pls-ask{ font-size:clamp(1.55rem,7vw,2.2rem); }
+  .pls-reveal{ flex-wrap:wrap; gap:10px; }
+  .pls-invite,
+  .pls-pill{ font-size:clamp(1.4rem,6vw,1.95rem); }
+}
 
 /* =====================================================================
    PARCOURS INTERACTIF — « Éprouver / Faire l'expérience »

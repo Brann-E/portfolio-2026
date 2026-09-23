@@ -45,12 +45,12 @@
         <div class="ft-col">
           <div class="ft-h">La s&eacute;rie</div>
           <ul class="ft-num">
-            <li style="--d:var(--c1)"><a href="rien-ne-tient-tout-seul.html"><b>01</b> Rien ne tient tout seul</a></li>
-            <li style="--d:var(--c2)"><a href="les-relations-ne-se-voient-que-dun-certain-endroit.html"><b>02</b> Les relations ne se voient pas</a></li>
-            <li style="--d:var(--c3)"><a href="la-metaliminalite.html"><b>03</b> La m&eacute;taliminalit&eacute;</a></li>
-            <li style="--d:var(--c4)"><a href="le-lien-importe-plus-que-le-bien.html"><b>04</b> Le lien importe plus que le bien</a></li>
-            <li style="--d:var(--c5)"><a href="ce-qui-ne-circule-plus-casse.html"><b>05</b> Ce qui ne circule plus casse</a></li>
-            <li style="--d:var(--c1)"><a href="ce-qui-fait-circuler.html"><b>06</b> Ce qui fait circuler</a></li>
+            <li style="--d:var(--c1)"><a href="01-rien-ne-tient-tout-seul.html"><b>01</b> Rien ne tient tout seul</a></li>
+            <li style="--d:var(--c2)"><a href="02-les-relations-ne-se-voient-que-dun-certain-endroit.html"><b>02</b> Les relations ne se voient pas</a></li>
+            <li style="--d:var(--c3)"><a href="03-la-metaliminalite.html"><b>03</b> La m&eacute;taliminalit&eacute;</a></li>
+            <li style="--d:var(--c4)"><a href="04-le-lien-importe-plus-que-le-bien.html"><b>04</b> Le lien importe plus que le bien</a></li>
+            <li style="--d:var(--c5)"><a href="05-ce-qui-ne-circule-plus-casse.html"><b>05</b> Ce qui ne circule plus casse</a></li>
+            <li style="--d:var(--c1)"><a href="06-ce-qui-fait-circuler.html"><b>06</b> Ce qui fait circuler</a></li>
           </ul>
           <a class="ft-more" href="circulation-paradigme-du-design.html">La s&eacute;rie compl&egrave;te <span aria-hidden="true">&rarr;</span></a>
         </div>
