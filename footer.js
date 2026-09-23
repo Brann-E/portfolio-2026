@@ -1,9 +1,9 @@
 /* ------------------------------------------------------------------
-   Footer partagé — SOURCE UNIQUE du footer, pour toutes les pages.
+   Footer partagé - SOURCE UNIQUE du footer, pour toutes les pages.
    Pour modifier le footer partout : éditer le HTML ci-dessous (entre backticks).
 
    Livré par SCRIPT (et non par fetch d'un .html) : fonctionne dans TOUS les
-   contextes — site en ligne (Statichost), Live Server, et même en ouvrant le
+   contextes - site en ligne (Statichost), Live Server, et même en ouvrant le
    .html en local (file://). Chaque page ne contient qu'un
    <div id="site-footer"></div> que ce script remplace.
 ------------------------------------------------------------------ */

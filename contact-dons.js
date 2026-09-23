@@ -1,4 +1,4 @@
-/* Contact — la machine à dons.
+/* Contact - la machine à dons.
    La page donne d'abord, sans condition : on tire des cartes à l'infini.
    Le contre-don (le formulaire) reste facultatif, plus bas. */
 (function () {
@@ -13,7 +13,7 @@
       origine: "Côte nord-ouest de l'Amérique",
       nom: "Le potlatch",
       savoir:
-        "Chez ces peuples, on assoit son rang non en accumulant, mais en donnant — parfois en détruisant publiquement plus de biens que ses rivaux. Le prestige va au plus généreux, pas au plus riche.",
+        "Chez ces peuples, on assoit son rang non en accumulant, mais en donnant - parfois en détruisant publiquement plus de biens que ses rivaux. Le prestige va au plus généreux, pas au plus riche.",
       lecon: "Le don est une puissance, pas une perte.",
       lien: "https://fr.wikipedia.org/wiki/Potlatch",
       svg: G + '<path d="M6 20 q6 -8 12 0 t12 0 t12 0"/><path d="M6 30 q6 -8 12 0 t12 0 t12 0"/></svg>'
@@ -44,7 +44,7 @@
       origine: "Melpa, Papouasie–Nouvelle-Guinée",
       nom: "Le moka",
       savoir:
-        "On y gagne en importance non par ce qu'on possède, mais par ce qu'on distribue. Offrir plus qu'on ne peut recevoir en retour place l'autre en dette — et fait de soi un « grand homme ».",
+        "On y gagne en importance non par ce qu'on possède, mais par ce qu'on distribue. Offrir plus qu'on ne peut recevoir en retour place l'autre en dette - et fait de soi un « grand homme ».",
       lecon: "Le prestige se mesure à ce qu'on a donné, jamais à ce qu'on garde.",
       lien: "https://fr.wikipedia.org/wiki/Moka_(anthropologie)",
       svg: G + '<path d="M24 38 V12"/><path d="M15 21 L24 11 L33 21"/></svg>'
@@ -53,7 +53,7 @@
       origine: "Monde indien",
       nom: "Le dāna",
       savoir:
-        "Le don rituel désintéressé, sans attente de retour, est tenu pour une élévation de celui qui donne. Donner purifie et libère — c'est un acte spirituel autant que social.",
+        "Le don rituel désintéressé, sans attente de retour, est tenu pour une élévation de celui qui donne. Donner purifie et libère - c'est un acte spirituel autant que social.",
       lecon: "Donner sans attendre n'est pas s'appauvrir : c'est s'élever.",
       lien: "https://fr.wikipedia.org/wiki/D%C4%81na",
       svg:
@@ -86,7 +86,7 @@
       origine: "Alain Caillé & le MAUSS",
       nom: "L'endettement mutuel positif",
       savoir:
-        "Le contre-don n'égale jamais le don — il diffère toujours, par le moment, la nature ou la valeur. Cette dette jamais tout à fait soldée est précisément ce qui donne envie de se revoir.",
+        "Le contre-don n'égale jamais le don - il diffère toujours, par le moment, la nature ou la valeur. Cette dette jamais tout à fait soldée est précisément ce qui donne envie de se revoir.",
       lecon: "Une relation qu'on solde est une relation qui se termine.",
       lien: "https://fr.wikipedia.org/wiki/Mouvement_anti-utilitariste_dans_les_sciences_sociales",
       svg:
@@ -97,7 +97,7 @@
       origine: "Marcel Mauss, Essai sur le don (1925)",
       nom: "Le lien avant le bien",
       savoir:
-        "Dans le don, ce qui compte n'est jamais l'objet transmis — c'est la relation qu'il ouvre, entretient ou répare. On croit échanger des choses ; on échange des liens.",
+        "Dans le don, ce qui compte n'est jamais l'objet transmis - c'est la relation qu'il ouvre, entretient ou répare. On croit échanger des choses ; on échange des liens.",
       lecon: "Ce n'est jamais le bien qui compte. C'est le lien qu'il noue.",
       lien: "https://fr.wikipedia.org/wiki/Essai_sur_le_don",
       svg:
@@ -108,7 +108,7 @@
       origine: "Alain Caillé",
       nom: "L'inconditionnalité conditionnelle",
       savoir:
-        "Tout lien vivant commence par un pari sans garantie — on donne d'abord, on fait confiance avant preuve. Mais ce pari ne tient dans la durée que s'il est, parfois, honoré en retour. On s'ouvre sans condition ; on se protège avec quelques-unes.",
+        "Tout lien vivant commence par un pari sans garantie - on donne d'abord, on fait confiance avant preuve. Mais ce pari ne tient dans la durée que s'il est, parfois, honoré en retour. On s'ouvre sans condition ; on se protège avec quelques-unes.",
       lecon: "On donne d'abord sans condition. On dure à quelques conditions.",
       lien: "https://fr.wikipedia.org/wiki/Alain_Caill%C3%A9",
       svg:
@@ -130,7 +130,7 @@
       origine: "Michael Chwe, théorie des jeux",
       nom: "Le savoir commun",
       savoir:
-        "Il ne suffit pas que chacun sache. Il faut que chacun sache que les autres savent — et le sache en cascade. C'est cette connaissance partagée, et non l'information seule, qui rend un groupe capable d'agir ensemble.",
+        "Il ne suffit pas que chacun sache. Il faut que chacun sache que les autres savent - et le sache en cascade. C'est cette connaissance partagée, et non l'information seule, qui rend un groupe capable d'agir ensemble.",
       lecon: "Un groupe n'agit pas quand chacun sait. Il agit quand chacun sait que les autres savent.",
       lien: "https://fr.wikipedia.org/wiki/Connaissance_commune_(logique)",
       svg:
@@ -141,7 +141,7 @@
       origine: "Une question",
       nom: "À vous, maintenant",
       savoir:
-        "Dans votre organisation, qui donne quelque chose que personne ne compte — et que se passerait-il le jour où il s'arrête ?",
+        "Dans votre organisation, qui donne quelque chose que personne ne compte - et que se passerait-il le jour où il s'arrête ?",
       lecon: "Ce qui n'est pas compté est souvent ce qui tient tout.",
       lien: "",
       svg:
@@ -152,7 +152,7 @@
       origine: "Une question",
       nom: "À vous, encore",
       savoir:
-        "Quand une information ne remonte jamais, cherchez l'oreille qui manque — pas le messager qui se tait.",
+        "Quand une information ne remonte jamais, cherchez l'oreille qui manque - pas le messager qui se tait.",
       lecon: "Le silence est rarement un défaut des gens. C'est un défaut de canal.",
       lien: "",
       svg:
@@ -194,7 +194,7 @@
   function backFor(d) {
     return BACKS[d && d.famille] || BACKS.anthropologie;
   }
-  var N = 6; // cartes affichées (sur 14 dons) — « une nouvelle donne » redistribue
+  var N = 6; // cartes affichées (sur 14 dons) - « une nouvelle donne » redistribue
   var reduce =
     window.matchMedia &&
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -442,9 +442,9 @@ function revealNote() {
     var nom = (form.nom.value || "").trim();
     var email = (form.email.value || "").trim();
     var msg = (form.message.value || "").trim();
-    var sujet = "Un contre-don" + (nom ? " — " + nom : "");
+    var sujet = "Un contre-don" + (nom ? " - " + nom : "");
     var corps =
-      (msg || "") + "\n\n— " + (nom || "") + (email ? " (" + email + ")" : "");
+      (msg || "") + "\n\n- " + (nom || "") + (email ? " (" + email + ")" : "");
     window.location.href =
       "mailto:brann.etienne@gmail.com?subject=" +
       encodeURIComponent(sujet) +
@@ -493,7 +493,7 @@ function revealNote() {
           if (r.ok) {
             form.reset();
             setStatus(
-              "Merci — votre message est parti. Je vous réponds vite.",
+              "Merci - votre message est parti. Je vous réponds vite.",
               false
             );
           } else {
