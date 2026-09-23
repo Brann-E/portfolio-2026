@@ -7,6 +7,7 @@
   --ink: #0b0d10;
   --paper: #f2f2f0;
   --muted: #7a8290;
+  --muted2: #b6bcc6;
   --faint: #242932;
 
   --c1: #28e6ff;
@@ -78,14 +79,14 @@
 }
 .paradigm-name {
   font-family: "Instrument Serif", serif;
-  font-size: 19px;
+  font-size: 24px;
   font-weight: 400;
   color: var(--paper);
   margin-bottom: 8px;
 }
 .paradigm-def {
-  font-size: 15px;
-  color: var(--muted);
+  font-size: 17px;
+  color: var(--muted2);
   line-height: 1.65;
 }
 .paradigm-last {
@@ -307,8 +308,8 @@
   line-height: 1.15;
 }
 .definition-text {
-  font-size: 15px;
-  color: #b4bac4;
+  font-size: 17px;
+  color: var(--muted2);
   line-height: 1.75;
 }
 
@@ -347,8 +348,8 @@
 .condition-body {
   grid-column: 2;
   margin-top: 8px;
-  font-size: 15px;
-  color: var(--muted);
+  font-size: 17px;
+  color: var(--muted2);
   line-height: 1.65;
 }
 
@@ -5506,10 +5507,11 @@ h3 {
   position: relative;
   display: grid;
   gap: 0;
+  --rail: clamp(6px, 1.6vw, 14px);
 }
 .rail {
   position: absolute;
-  left: clamp(18px, 4vw, 42px);
+  left: var(--rail);
   top: 0;
   bottom: 0;
   width: 2px;
@@ -5518,7 +5520,7 @@ h3 {
 }
 .thread {
   position: absolute;
-  left: clamp(18px, 4vw, 42px);
+  left: var(--rail);
   top: 0;
   width: 2px;
   height: 100%;
@@ -5557,11 +5559,9 @@ h3 {
 }
 .station .node {
   position: relative;
-  justify-self: start;
-  margin-left: calc(
-    clamp(18px, 4vw, 42px) - clamp(26px, 4.5vw, 48px) / 2 + 1px
-  );
-  width: clamp(26px, 4.5vw, 48px);
+  justify-self: stretch;
+  margin-left: 0;
+  width: auto;
   /* neutralise la collision avec le .node « carte » (min-height:250px + bordure
      + fond + padding) qui glissait un vilain cadre autour du numéro. */
   background: none;
@@ -5570,14 +5570,17 @@ h3 {
   min-height: 0;
 }
 .dot {
-  position: relative;
+  position: absolute;
   z-index: 3;
+  left: var(--rail);
+  top: clamp(11px, 2vw, 21px);
+  transform: translateX(-50%);
   width: 14px;
   height: 14px;
   border-radius: 50%;
   background: var(--ink);
   border: 2px solid var(--sc);
-  margin: 6px auto 0;
+  margin: 0;
   box-shadow: 0 0 0 5px var(--ink);
   transition:
     background 0.45s ease,
@@ -5586,7 +5589,7 @@ h3 {
 }
 .station:hover .dot {
   background: var(--sc);
-  transform: scale(1.25);
+  transform: translateX(-50%) scale(1.25);
   box-shadow:
     0 0 0 5px var(--ink),
     0 0 22px -2px var(--sc);
@@ -5596,8 +5599,9 @@ h3 {
   font-size: clamp(2.2rem, 5vw, 3.6rem);
   color: var(--sc);
   line-height: 1;
-  text-align: center;
-  margin-top: 14px;
+  text-align: left;
+  margin-top: 0;
+  margin-left: clamp(24px, 4vw, 40px);
   opacity: 1;
   transition: opacity 0.45s ease;
 }
@@ -5620,8 +5624,8 @@ h3 {
   color: #fff;
 }
 .body .idea {
-  font-size: clamp(14px, 1.4vw, 15.5px);
-  color: var(--muted);
+  font-size: 17px;
+  color: var(--muted2);
   line-height: 1.7;
   max-width: 60ch;
   margin-bottom: 18px;
@@ -5916,9 +5920,8 @@ footer a {
     grid-template-columns: clamp(44px, 12vw, 60px) 1fr;
     gap: 16px;
   }
-  .rail,
-  .thread {
-    left: 22px;
+  .track {
+    --rail: 11px;
   }
 }
 
@@ -6972,8 +6975,8 @@ a.porte,
   border-left: 2px solid var(--faint);
   padding-left: 22px;
   margin: clamp(30px, 5vh, 40px) 0;
-  font-size: 15px;
-  color: #c3c9d0;
+  font-size: 17px;
+  color: var(--muted2);
 }
 .aside strong { color: #fff; font-weight: 500; }
 
@@ -6996,7 +6999,7 @@ a.porte,
 }
 .split .l .h { color: var(--muted); }
 .split .r .h { color: var(--accent); }
-.split p { font-size: 15px; line-height: 1.6; color: #c3c9d0; margin: 0; }
+.split p { font-size: 17px; line-height: 1.6; color: var(--muted2); margin: 0; }
 @media (max-width: 600px) {
   .split .row { grid-template-columns: 1fr; gap: 10px; }
 }
@@ -7026,7 +7029,7 @@ a.porte,
   color: var(--paper);
   margin-bottom: 8px;
 }
-.terrain p { font-size: 15px; line-height: 1.6; color: #c3c9d0; margin: 0; }
+.terrain p { font-size: 17px; line-height: 1.6; color: var(--muted2); margin: 0; }
 @media (max-width: 600px) {
   .terrain { grid-template-columns: 1fr; gap: 6px; }
 }
