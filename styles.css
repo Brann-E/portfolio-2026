@@ -70,7 +70,7 @@
   background: #12161d;
 }
 .paradigm-era {
-  font-size: 10.5px;
+  font-size: 12px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--muted);
@@ -78,13 +78,13 @@
 }
 .paradigm-name {
   font-family: "Instrument Serif", serif;
-  font-size: 1.2rem;
+  font-size: 19px;
   font-weight: 400;
   color: var(--paper);
   margin-bottom: 8px;
 }
 .paradigm-def {
-  font-size: 0.9rem;
+  font-size: 15px;
   color: var(--muted);
   line-height: 1.65;
 }
@@ -307,7 +307,7 @@
   line-height: 1.15;
 }
 .definition-text {
-  font-size: 0.95rem;
+  font-size: 15px;
   color: #b4bac4;
   line-height: 1.75;
 }
@@ -332,7 +332,7 @@
 .condition-num {
   grid-row: span 2;
   font-family: "Instrument Serif", serif;
-  font-size: 1.6rem;
+  font-size: clamp(22px, 3vw, 26px);
   color: var(--accent);
   line-height: 1;
   opacity: 0.6;
@@ -340,14 +340,14 @@
 .condition-title {
   grid-column: 2;
   font-family: "Instrument Serif", serif;
-  font-size: 1.15rem;
+  font-size: 19px;
   font-weight: 400;
   color: var(--paper);
 }
 .condition-body {
   grid-column: 2;
   margin-top: 8px;
-  font-size: 0.86rem;
+  font-size: 15px;
   color: var(--muted);
   line-height: 1.65;
 }
@@ -516,7 +516,7 @@ h4 {
     );
 }
 .hero-series {
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--muted);
@@ -557,7 +557,7 @@ h4 {
   flex-wrap: wrap;
 }
 .hero-meta-item {
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
@@ -598,7 +598,7 @@ h4 {
 }
 
 .article p {
-  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  font-size: 17px;
   line-height: 1.85;
   color: #c9ced6;
   margin-bottom: 28px;
@@ -608,7 +608,7 @@ h4 {
   font-weight: 400;
 }
 .section-title {
-  font-size: clamp(1.7rem, 3vw, 2.1rem);
+  font-size: clamp(25px, 3.8vw, 32px);
   color: var(--paper);
   line-height: 1.2;
   margin-top: clamp(56px, 9vh, 76px);
@@ -626,7 +626,7 @@ h4 {
 }
 .pull-quote p {
   font-family: "Instrument Serif", serif;
-  font-size: clamp(1.35rem, 2.6vw, 1.6rem);
+  font-size: clamp(20px, 2.7vw, 24px);
   font-style: italic;
   color: var(--paper);
   line-height: 1.45;
@@ -634,7 +634,7 @@ h4 {
 }
 .pull-quote cite {
   display: block;
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted);
@@ -644,7 +644,7 @@ h4 {
 
 .chapeau {
   font-family: "Instrument Serif", serif;
-  font-size: clamp(1.2rem, 2.0vw, 1.4rem);
+  font-size: clamp(20px, 2.7vw, 24px);
   font-style: italic;
   color: #e3e6e9;
   line-height: 1.55;
@@ -705,7 +705,7 @@ h4 {
   border-top: 1px solid var(--faint);
 }
 .serie-nav-label {
-  font-size: 10.5px;
+  font-size: 12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--muted);
@@ -788,7 +788,7 @@ a.serie-article:hover .serie-article-title {
   transition: color 0.35s ease;
 }
 .serie-article-sub {
-  font-size: 0.8rem;
+  font-size: 13px;
   color: var(--muted);
   font-style: italic;
   line-height: 1.4;
@@ -6801,7 +6801,7 @@ h2 .spectrum-word {
 /* l'assertion isolée : sérif, couleur d'accent, sans filet (≠ .pull-quote) */
 .claim {
   font-family: "Instrument Serif", serif;
-  font-size: clamp(24px, 3.7vw, 32px);
+  font-size: clamp(23px, 3.3vw, 28px);
   line-height: 1.24;
   color: var(--accent);
   margin: clamp(30px, 5vh, 44px) 0;
@@ -6817,7 +6817,7 @@ h2 .spectrum-word {
 .biblio .biblio-intro { font-size: 15px; color: #9aa2ac; margin-bottom: 30px; }
 .biblio h3 {
   font-family: "Inter", sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 400;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -6835,7 +6835,7 @@ h2 .spectrum-word {
 .biblio li .a { color: #fff; font-weight: 500; }
 .biblio li .ti { font-style: italic; color: #e3e6e9; }
 .biblio li .pub { color: #9aa2ac; }
-.biblio li .note { display: block; margin-top: 5px; font-size: 14px; color: #8b929c; }
+.biblio li .note { display: block; margin-top: 5px; font-size: 13px; color: #8b929c; }
 
 /* la pastille de navigation */
 /* pastille : voir le bloc holographique en fin de fichier */
@@ -6950,13 +6950,13 @@ a.porte,
 }
 .corresp-b b { color: var(--accent); }
 .corresp-a span,
-.corresp-b span { font-size: 13.5px; color: var(--muted); }
+.corresp-b span { font-size: 13px; color: var(--muted); }
 .corresp-eq {
   text-align: center;
   color: var(--muted);
   font-family: "Instrument Serif", serif;
   font-style: italic;
-  font-size: 13.5px;
+  font-size: 13px;
   line-height: 1.2;
 }
 @media (max-width: 600px) {
@@ -6972,7 +6972,7 @@ a.porte,
   border-left: 2px solid var(--faint);
   padding-left: 22px;
   margin: clamp(30px, 5vh, 40px) 0;
-  font-size: 16px;
+  font-size: 15px;
   color: #c3c9d0;
 }
 .aside strong { color: #fff; font-weight: 500; }
@@ -6991,12 +6991,12 @@ a.porte,
 }
 .split .h {
   font-family: "Instrument Serif", serif;
-  font-size: 1.2rem;
+  font-size: 19px;
   margin-bottom: 8px;
 }
 .split .l .h { color: var(--muted); }
 .split .r .h { color: var(--accent); }
-.split p { font-size: 0.95rem; line-height: 1.6; color: #c3c9d0; margin: 0; }
+.split p { font-size: 15px; line-height: 1.6; color: #c3c9d0; margin: 0; }
 @media (max-width: 600px) {
   .split .row { grid-template-columns: 1fr; gap: 10px; }
 }
@@ -7015,18 +7015,18 @@ a.porte,
 }
 .terrain .n {
   font-family: "Instrument Serif", serif;
-  font-size: 1.4rem;
+  font-size: clamp(22px, 3vw, 26px);
   color: var(--accent);
   line-height: 1;
 }
 .terrain h4 {
   font-family: "Instrument Serif", serif;
   font-weight: 400;
-  font-size: 1.15rem;
+  font-size: 19px;
   color: var(--paper);
   margin-bottom: 8px;
 }
-.terrain p { font-size: 0.95rem; line-height: 1.6; color: #c3c9d0; margin: 0; }
+.terrain p { font-size: 15px; line-height: 1.6; color: #c3c9d0; margin: 0; }
 @media (max-width: 600px) {
   .terrain { grid-template-columns: 1fr; gap: 6px; }
 }
