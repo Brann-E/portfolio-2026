@@ -732,6 +732,9 @@ h4 {
 .serie-articles > *:nth-child(5) {
   --sc: var(--c5);
 }
+.serie-articles > *:nth-child(6) {
+  --sc: var(--c1);
+}
 a.serie-article:hover {
   background: linear-gradient(
     90deg,
@@ -793,6 +796,44 @@ a.serie-article:hover .serie-article-title {
   color: var(--muted);
   font-style: italic;
   line-height: 1.4;
+}
+
+/* lien vers le texte suivant, juste avant la nav de serie */
+.serie-next {
+  display: block;
+  margin-top: clamp(56px, 9vh, 76px);
+  padding: clamp(20px, 3vh, 28px) clamp(18px, 2.4vw, 28px);
+  border: 1px solid var(--faint);
+  text-decoration: none;
+  transition: border-color 0.35s ease, background 0.35s ease;
+}
+.serie-next:hover {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--faint));
+  background: color-mix(in srgb, var(--accent) 7%, transparent);
+}
+.serie-next-k {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.serie-next-t {
+  display: block;
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(20px, 2.7vw, 24px);
+  color: var(--paper);
+  line-height: 1.25;
+}
+.serie-next-arrow {
+  color: var(--accent);
+  margin-left: 8px;
+  display: inline-block;
+  transition: transform 0.35s ease;
+}
+.serie-next:hover .serie-next-arrow {
+  transform: translateX(6px);
 }
 
 /* Synthèse — progression des articles */

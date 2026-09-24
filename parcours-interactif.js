@@ -71,7 +71,7 @@ const S=[
  ],
  app:"Ce qui tenait ce produit n'était pas dans le produit - et n'était nulle part ailleurs non plus.",
  appMore:`Le forum tenait sur 4 personnes que rien ne nommait : ni contrat, ni budget, ni ligne dans un tableau de bord. Quand elles se sont tues, l'entreprise a cherché la panne dans le produit, le seul endroit qu'elle savait regarder. Ce qui circulait vraiment, lui, n'avait aucune adresse où être vu.`,
- gateEnd:{q:"Sonia n'a pas claqué la porte. Elle a cessé.",min:"10 min",href:"article-05.html"},
+ gateEnd:{q:"Sonia n'a pas claqué la porte. Elle a cessé.",min:"10 min",href:"05-ce-qui-ne-circule-plus-casse.html"},
  pisteLead:`On rebranche le seul fil qui manquait&#8239;: ce que les 4 bénévoles donnaient trouve enfin une adresse. Voici ce qui se remet à circuler entre eux : Sonia qu'on nomme, le nouveau à qui l'on répond, le responsable qui voit enfin des gens.`,
  fixLead:"Imaginons.",
  fix:`Un message par mois - écrit par une personne, pas par un outil - qui dirait ce qui a été corrigé le mois passé, et grâce à qui, nommément. Aucune fonctionnalité, aucun budget, aucune réorganisation : juste un endroit où ce qui circulait déjà finirait par arriver à quelqu'un. Est-ce que 2 des 3 reviendraient&#8239;? Peut-être. Ce n'est pas la réponse, c'est le genre de fil que je tirerais en premier.`},
@@ -135,7 +135,7 @@ const S=[
  pisteLead:`On relie enfin le champ à une oreille&#8239;: ce que l'atelier écrit depuis 2 ans arrive jusqu'au bureau d'études. Voici ce qui se remet à circuler entre eux : l'erreur qui remonte, la méthode qui se corrige, celui qui écrit enfin lu.`,
  fixLead:"Ce qui a suffi.",
  fix:`Un quart d'heure hebdomadaire où chaque métier nomme ce que le travail de l'autre lui a coûté cette semaine. Ni outil, ni compte rendu, ni budget. Le rattrapage a coûté l'équivalent d'un poste et demi sur les 2 années précédentes. La personne qui a installé ce quart d'heure est partie depuis 18 mois : Ce point a lieu toujours lieu.`,
- gateFix:{q:"Un quart d'heure par semaine. Pourquoi ça tient.",min:"11 min",href:"article-04.html"}},
+ gateFix:{q:"Un quart d'heure par semaine. Pourquoi ça tient.",min:"11 min",href:"04-le-lien-importe-plus-que-le-bien.html"}},
 
 {c:"var(--c4)",lieu:"Autour d'un parcours et ses moments",
  tag:"6 rendez-vous depuis janvier",
@@ -175,7 +175,7 @@ const S=[
   {t:"Mars", body:`<p>Une page. Les réponses se resserrent. On y lit une situation qui se stabilise.</p>`},
   {t:"Mai", body:`<p> 2 paragraphes. Presque plus de détails. En marge, pour la première fois, un mot&#8239;: « distante ».</p>`}
  ],
- gateTurn:{q:"Ce qu'elle vous a laissé prendre pour son caractère.",min:"8 min",href:"article-01.html"},
+ gateTurn:{q:"Ce qu'elle vous a laissé prendre pour son caractère.",min:"8 min",href:"01-rien-ne-tient-tout-seul.html"},
  v:[{c:"var(--c4)",nm:"Elle",rl:"sixième fois depuis janvier",
    pnote:"Elle n'a pas à tout reprendre. Pour la première fois, ce qu'elle a donné l'attend déjà de l'autre côté.",
    read:`<p>"La première fois, j'ai tout raconté, et ça a servi. À la quatrième, j'avais compris que rien ne passait d'un rendez-vous à l'autre. J'ai cessé de donner ce qui ne reste pas."</p>`,
@@ -201,7 +201,7 @@ const S=[
  fix:`Une demi-page transmise d'un rendez-vous au suivant : ce qu'elle a déjà dit, et ce qu'elle a déjà demandé. Pas de logiciel, pas de projet, pas de réunion supplémentaire. Au rendez-vous suivant, on ne lui a pas demandé de recommencer.`}
 ];
 
-const GATE_PLACES={q:"Ce que vous venez de faire porte un nom.",min:"10 min",href:"article-03.html"};
+const GATE_PLACES={q:"Ce que vous venez de faire porte un nom.",min:"10 min",href:"03-la-metaliminalite.html"};
 
 const done=[false,false,false]; const seen=[new Set(),new Set(),new Set()];
 const choseGood=[null,null,null]; // mémorise si la réponse lucide a été choisie (pour rappel au « Fond »)
