@@ -53,12 +53,14 @@
 
 <!-- ═══════════ STRATE 2 - LE RÉSUMÉ ═══════════ -->
 <section class="s2">
-  <div class="eyebrow">Sommaire · </div>
+  <div class="eyebrow">Sommaire</div>
+  <div class="trajet"><b>Trajet</b> : parcours → personne → écosystème → (écosystème) → organisation → outil</div>
   <div class="summary">
     <a class="row" href="#c1">
       <div class="num">01</div>
       <div class="txt">
         <div class="t">Un parcours de soin à clarifier</div>
+        <span class="tfrise" data-on="2"></span>
         <div class="d">AXA GO lance Healthanea pour aider les malades chroniques à naviguer des parcours fragmentés. On me demande de fluidifier le service, sans aucun accès aux patients.</div>
       </div>
     </a>
@@ -67,6 +69,7 @@
       <div class="num">02</div>
       <div class="txt">
         <div class="t">La recherche déplace le regard : ce n'est pas le service, c'est l'isolement</div>
+        <span class="tfrise" data-on="0,2" data-arrow="2-0"></span>
         <div class="d">Faute de terrain, je construis un repository de recherches. Ce qui apparaît ? Les patients chroniques ne décrochent pas de leur traitement par manque d'outil, mais parce qu'ils sont seuls à le porter.</div>
       </div>
     </a>
@@ -75,7 +78,8 @@
       <div class="num">03</div>
       <div class="txt">
         <div class="t">Une carte d'écosystème pour rendre le tissu visible</div>
-        <div class="d">Je cartographie tous les acteurs et les trois flux qui circulent entre eux - argent, biens, données - pour voir où le courant passe et où il casse.</div>
+        <span class="tfrise" data-on="0,4" data-arrow="0-4"></span>
+        <div class="d">Je cartographie tous les acteurs et les trois flux qui circulent entre eux, argent, biens, données, pour voir où le courant passe et où il casse.</div>
       </div>
     </a>
 
@@ -83,7 +87,8 @@
       <div class="num">04</div>
       <div class="txt">
         <div class="t">Un champ de possibles s'ouvre là où il n'y avait qu'une impasse</div>
-        <div class="d">Relation laboratoires - médecins à reconnecter, effet réseau comme levier thérapeutique, spécialistes du bien-être à intégrer, médecin repositionné en coordinateur. Aucune de ces pistes n'était visible ou même envisageable avant le déplacement.</div>
+        <span class="tfrise" data-on="4"></span>
+        <div class="d">Relation laboratoires et médecins à reconnecter, effet réseau comme levier thérapeutique, spécialistes du bien-être à intégrer, médecin repositionné en coordinateur. Aucune de ces pistes n'était visible ou même envisageable avant le déplacement.</div>
       </div>
     </a>
 
@@ -91,6 +96,7 @@
       <div class="num">05</div>
       <div class="txt">
         <div class="t">La conversation change : on ne parle plus de fonctionnalités, mais de relations</div>
+        <span class="tfrise" data-on="3,4" data-arrow="4-3"></span>
         <div class="d">Stratégie, design et exécution s'alignent sur une même vue. Le projet cesse d'être « créer un produit » pour devenir concevoir un service qui trouve sa place dans l'écosystème. L'application devient le lieu de rencontre des besoins de tous.</div>
       </div>
     </a>
@@ -99,6 +105,7 @@
       <div class="num">06</div>
       <div class="txt">
         <div class="t">Une habitude ne se crée pas dans un produit, mais dans ce qu'on relie autour du patient</div>
+        <span class="tfrise" data-on="1,3" data-arrow="3-1"></span>
         <div class="d">La complexité n'est pas un obstacle à contourner, c'est la matière même de travail. Je ne l'aplatis pas, je la tiens entière,  et c'est là que se trouve le lien que personne ne regardait.</div>
       </div>
     </a>
@@ -234,6 +241,7 @@ secs.forEach(s=>s&&io.observe(s));
 <script src="background.js"></script>
 <script src="figure-zoom.js"></script>
 <script src="site-nav.js"></script>
+<script src="terrains.js"></script>
 <div id="site-footer"></div>
 </body>
 </html>

@@ -52,12 +52,14 @@
 
 <!-- ═══════════ STRATE 2 ═══════════ -->
 <section class="s2">
-  <div class="eyebrow">Sommaire · </div>
+  <div class="eyebrow">Sommaire</div>
+  <div class="trajet"><b>Trajet</b> : outil → personne → organisation → écosystème → (organisation) → (outil + personne)</div>
   <div class="summary">
     <a class="row" href="#c1">
       <div class="num">01</div>
       <div class="txt">
         <div class="t">Une plateforme e-commerce qui pèse 2,5% des ventes</div>
+        <span class="tfrise" data-on="1"></span>
         <div class="d">Une tentative précédente a échoué. Le parcours est illisible, le catalogue truffé d'erreurs, les paniers s'abandonnent. Face à des concurrents européens où l'on commande en trois clics, il faut refondre, vite !</div>
       </div>
     </a>
@@ -66,6 +68,7 @@
       <div class="num">02</div>
       <div class="txt">
         <div class="t">Les clients ne voulaient pas se passer des commerciaux, ils voulaient choisir quand les solliciter</div>
+        <span class="tfrise" data-on="0,1" data-arrow="1-0"></span>
         <div class="d">Plus de trente entretiens dans toute la chaîne. Ce qui apparaît : la relation commerciale est le principal actif de l'entreprise, pas son frein. Les clients veulent de l'autonomie là où le commercial n'apporte rien, et le garder partout ailleurs.</div>
       </div>
     </a>
@@ -74,6 +77,7 @@
       <div class="num">03</div>
       <div class="txt">
         <div class="t">Un modèle cross-canal : une seule plateforme, plusieurs porteurs de la commande</div>
+        <span class="tfrise" data-on="0,3" data-arrow="0-3"></span>
         <div class="d">Le client, le commercial itinérant et le vendeur en magasin passent commande au même endroit. L'outil cesse de remplacer la relation pour devenir son support.</div>
       </div>
     </a>
@@ -82,7 +86,8 @@
       <div class="num">04</div>
       <div class="txt">
         <div class="t">Ce que le modèle ouvre : règles, interconnexions, B2B</div>
-        <div class="d">Une fois la vente pensée en cross-canal, tout un chantier devient formulable - règles commerciales explicites, interconnexion CRM / ERP / WMS / TMS / CPQ, commandes en volume, autonomie client sans perte de relation.</div>
+        <span class="tfrise" data-on="3,4" data-arrow="3-4"></span>
+        <div class="d">Une fois la vente pensée en cross-canal, tout un chantier devient formulable, règles commerciales explicites, interconnexion CRM / ERP / WMS / TMS / CPQ, commandes en volume, autonomie client sans perte de relation.</div>
       </div>
     </a>
 
@@ -90,6 +95,7 @@
       <div class="num">05</div>
       <div class="txt">
         <div class="t">Le raisonnement était juste. L'alignement n'a pas suivi.</div>
+        <span class="tfrise" data-on="3"></span>
         <div class="d">Le choix de la solution technique n'a pas trouvé d'accord entre les décideurs. Le projet a d'abord glissé vers un portail de services, puis s'est arrêté. Les livrables, eux, ont posé les fondations d'un modèle de vente qui restait valable.</div>
       </div>
     </a>
@@ -98,6 +104,7 @@
       <div class="num">06</div>
       <div class="txt">
         <div class="t">Deux leçons : une sur le produit, une sur la décision</div>
+        <span class="tfrise" data-on="0,1"></span>
         <div class="d">Un outil ne remplace pas une relation, il lui donne les moyens d'exister. Et un raisonnement juste ne suffit pas : encore faut-il que ceux qui décident puissent voir ce qu'il rend possible.</div>
       </div>
     </a>
@@ -277,6 +284,7 @@ secs.forEach(s=>s&&io.observe(s));
 <script src="background.js"></script>
 <script src="figure-zoom.js"></script>
 <script src="site-nav.js"></script>
+<script src="terrains.js"></script>
 <div id="site-footer"></div>
 </body>
 </html>
