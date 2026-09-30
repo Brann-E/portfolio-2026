@@ -4616,7 +4616,7 @@ footer {
 }
 .plead {
   font-size: 15.5px;
-  color: var(--muted);
+  color: var(--paper);
   line-height: 1.85;
   max-width: 70ch;
 }
@@ -5539,9 +5539,22 @@ h3 {
 .prelim-go:hover {
   border-color: var(--c1);
 }
-/* pas de filet sous le héros quand le bloc 06 le suit (page série) */
-.hero:has(+ .prelim--solo) {
+/* pas de filet sous le héros quand le bloc 06 (ou son accroche) le suit (page série) */
+.hero:has(+ .prelim--solo),
+.hero:has(+ .solo-cue) {
   border-bottom: none;
+}
+
+/* accroche « si vous ne deviez en lire qu'un » au-dessus du bloc 06, alignee sur son texte interieur */
+.solo-cue {
+  margin: clamp(30px, 5vh, 52px) 0 16px;
+  font-size: clamp(22px, 2.8vw, 28px);
+  color: var(--paper);
+  letter-spacing: 0.01em;
+  font-family: "Instrument Serif", serif;
+}
+.solo-cue + .prelim--solo {
+  margin-top: 0;
 }
 
 /* la piste : rail vertical + fil coloré qui se trace */
