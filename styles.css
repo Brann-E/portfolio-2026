@@ -6698,6 +6698,35 @@ footer a {
   font-weight: 400;
 }
 
+/* en-tete « auteur » de la page À propos : portrait a gauche, titre a droite,
+   aligne sur la colonne de texte (fini le rond centre au-dessus d'un texte a gauche) */
+.lettre-head {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 3vw, 34px);
+  margin-bottom: clamp(26px, 4.5vh, 38px);
+}
+.lettre-head h1 {
+  margin: 0;
+  max-width: none;
+}
+.portrait-me {
+  flex: none;
+  width: clamp(120px, 20vw, 168px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 20%;
+  border: 1px solid var(--faint);
+  filter: saturate(0.9) contrast(1.03);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 0 60px -8px rgba(255, 255, 255, 0.18);
+}
+@media (max-width: 560px) {
+  .lettre-head { flex-direction: column; align-items: flex-start; gap: 18px; }
+}
+
 
 
 
@@ -7650,7 +7679,8 @@ a.pl-cta {
 /* le portrait remplit la hauteur de la cellule (donc = hauteur du bloc "titre" a cote) */
 .pont-portrait {
   position: relative;
-  height: 100%;
+  height: auto;
+  width: clamp(144px, 12vw, 160px);
   aspect-ratio: 1;
   border-radius: 50%;
   overflow: hidden;
@@ -7662,9 +7692,10 @@ a.pl-cta {
   flex: none;
 }
 .pont-portrait img {
+  position: absolute; inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
-  filter: grayscale(1) contrast(1.05);
+  filter: saturate(0.9) contrast(1.03);
 }
 .pont-ph {
   position: absolute; inset: 0;
