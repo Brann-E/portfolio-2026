@@ -5482,6 +5482,34 @@ h3 {
   color: var(--paper);
 }
 
+/* les cinq terrains du design : nom (--paper) + definition courte (--muted),
+   alignes en deux colonnes, un terrain par ligne, fins filets entre */
+.tdef {
+  max-width: 660px;
+  margin: 0 0 clamp(20px, 3vh, 30px);
+  border-top: 1px solid var(--faint);
+}
+.tdef-row {
+  display: flex;
+  gap: clamp(10px, 1.4vw, 14px);
+  padding: clamp(13px, 2.2vh, 18px) 0;
+  border-bottom: 1px solid var(--faint);
+  font-size: clamp(16px, 1.7vw, 18px);
+  line-height: 1.5;
+}
+/* filet d'entree (border-top du bloc) conserve, filet de sortie retire */
+.tdef-row:last-child { border-bottom: none; }
+.tdef-name {
+  flex: none;
+  width: clamp(130px, 15vw, 150px);
+  color: var(--paper);
+  font-weight: 500;
+}
+.tdef-txt { color: var(--muted); }
+@media (max-width: 480px) {
+  .tdef-name { width: 92px; }
+}
+
 /* série — le fil */
 .serie {
   /* fusion des deux anciennes règles ; border-top retirée (le héros porte déjà son filet) */
