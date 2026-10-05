@@ -33,37 +33,37 @@
         <div class="ft-col ft-cases">
           <div class="ft-h">Les cas</div>
           <ul>
-            <li style="--d:var(--c1)"><a href="cas-axa.html">Healthanea <span class="ft-tag">Sant&eacute;</span></a></li>
-            <li style="--d:var(--c2)"><a href="cas-shift-prime.html">SHIFT Prime <span class="ft-tag">Industrie</span></a></li>
-            <li style="--d:var(--c4)"><a href="cas-bi-solution.html">B.I Solution <span class="ft-tag">Data</span></a></li>
-            <li style="--d:var(--c3)"><a href="cas-proshop.html">Proshop &amp; Beyond <span class="ft-tag">Commerce</span></a></li>
+            <li style="--d:var(--c1)"><a href="/cas-axa">Healthanea <span class="ft-tag">Sant&eacute;</span></a></li>
+            <li style="--d:var(--c2)"><a href="/cas-shift-prime">SHIFT Prime <span class="ft-tag">Industrie</span></a></li>
+            <li style="--d:var(--c4)"><a href="/cas-bi-solution">B.I Solution <span class="ft-tag">Data</span></a></li>
+            <li style="--d:var(--c3)"><a href="/cas-proshop">Proshop &amp; Beyond <span class="ft-tag">Commerce</span></a></li>
             <li style="--d:var(--c5)"><span class="ft-soon">TiBillet <span class="ft-tag">Bient&ocirc;t</span></span></li>
           </ul>
-          <a class="ft-more" href="etudes-de-cas.html">Tous les cas <span aria-hidden="true">&rarr;</span></a>
+          <a class="ft-more" href="/etudes-de-cas">Tous les cas <span aria-hidden="true">&rarr;</span></a>
         </div>
 
         <div class="ft-col">
           <div class="ft-h">La s&eacute;rie</div>
           <ul class="ft-num">
-            <li style="--d:var(--c1)"><a href="01-rien-ne-tient-tout-seul.html"><b>01</b> Rien ne tient tout seul</a></li>
-            <li style="--d:var(--c2)"><a href="02-les-relations-ne-se-voient-que-dun-certain-endroit.html"><b>02</b> Les relations ne se voient pas</a></li>
-            <li style="--d:var(--c3)"><a href="03-la-metaliminalite.html"><b>03</b> La m&eacute;taliminalit&eacute;</a></li>
-            <li style="--d:var(--c4)"><a href="04-le-lien-importe-plus-que-le-bien.html"><b>04</b> Le lien importe plus que le bien</a></li>
-            <li style="--d:var(--c5)"><a href="05-ce-qui-ne-circule-plus-casse.html"><b>05</b> Ce qui ne circule plus casse</a></li>
-            <li style="--d:var(--c1)"><a href="06-ce-qui-fait-circuler.html"><b>06</b> Ce qui fait circuler</a></li>
+            <li style="--d:var(--c1)"><a href="/01-rien-ne-tient-tout-seul"><b>01</b> Rien ne tient tout seul</a></li>
+            <li style="--d:var(--c2)"><a href="/02-les-relations-ne-se-voient-que-dun-certain-endroit"><b>02</b> Les relations ne se voient pas</a></li>
+            <li style="--d:var(--c3)"><a href="/03-la-metaliminalite"><b>03</b> La m&eacute;taliminalit&eacute;</a></li>
+            <li style="--d:var(--c4)"><a href="/04-le-lien-importe-plus-que-le-bien"><b>04</b> Le lien importe plus que le bien</a></li>
+            <li style="--d:var(--c5)"><a href="/05-ce-qui-ne-circule-plus-casse"><b>05</b> Ce qui ne circule plus casse</a></li>
+            <li style="--d:var(--c1)"><a href="/06-ce-qui-fait-circuler"><b>06</b> Ce qui fait circuler</a></li>
           </ul>
-          <a class="ft-more" href="circulation-paradigme-du-design.html">La s&eacute;rie compl&egrave;te <span aria-hidden="true">&rarr;</span></a>
+          <a class="ft-more" href="/circulation-paradigme-du-design">La s&eacute;rie compl&egrave;te <span aria-hidden="true">&rarr;</span></a>
         </div>
 
         <div class="ft-col">
           <div class="ft-h">Ailleurs</div>
           <ul>
-            <li><a href="parcours-interactif.html">Le parcours</a></li>
-            <li><a href="la-pratique.html">La pratique</a></li>
-            <li><a href="circulation-paradigme-du-design.html">La th&eacute;orie</a></li>
-            <li><a href="explorations.html">Explorations</a></li>
-            <li><a href="a-propos.html">&Agrave; propos</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="/parcours-interactif">Le parcours</a></li>
+            <li><a href="/la-pratique">La pratique</a></li>
+            <li><a href="/circulation-paradigme-du-design">La th&eacute;orie</a></li>
+            <li><a href="/explorations">Explorations</a></li>
+            <li><a href="/a-propos">&Agrave; propos</a></li>
+            <li><a href="/contact">Contact</a></li>
           </ul>
           <a class="ft-more ft-mail" href="mailto:brann.etienne@gmail.com">brann.etienne@gmail.com</a>
         </div>
