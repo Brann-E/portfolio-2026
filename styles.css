@@ -3857,7 +3857,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 120px;
+  gap: 36px;
 }
 
 .sy-btn {
@@ -3908,7 +3908,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 70px;
+  gap: 28px;
 }
 .sy-nav-dots {
   position: relative;
@@ -7479,7 +7479,7 @@ a.porte,
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: clamp(48px, 8vh, 100px);
+  gap: clamp(20px, 3vh, 36px);
   text-align: center;
   padding: clamp(40px, 6vh, 60px) clamp(20px, 3vw, 40px) clamp(30px, 5vh, 50px);
 }
@@ -7495,8 +7495,8 @@ a.porte,
    70px sont pensés pour le plein ecran, pas pour un telephone) et laisser le
    constat grandir au lieu d'etre bloque a 4 lignes (sinon un texte long deborde). */
 @media (max-width: 600px) {
-  .sy-slider { gap: clamp(34px, 7vh, 72px); }
-  .sy-btn-group { gap: clamp(28px, 5vh, 44px); }
+  .sy-slider { gap: clamp(18px, 3.5vh, 36px); }
+  .sy-btn-group { gap: clamp(14px, 2.5vh, 22px); }
   .sy-constat { height: auto; min-height: calc(1.3em * 4); }
   /* la bulle d'hypothese a besoin de plus de largeur sur telephone. Avec
      width:auto (defaut), le conteneur flex + texte qui s'enroule s'effondre en
@@ -8569,7 +8569,7 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 .final h2 { max-width: none; }
 
 /* ===== Slider : frise des cinq terrains (départ allumé, arrivée en fantôme) ===== */
-.sy-head { display: flex; flex-direction: column; align-items: center; gap: clamp(20px, 3.5vh, 32px); width: 100%; }
+.sy-head { display: flex; flex-direction: column; align-items: center; gap: clamp(14px, 2.5vh, 22px); width: 100%; }
 .sy-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .sy-frise {
   --ease: cubic-bezier(.6, 0, .2, 1);
@@ -8582,7 +8582,7 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 /* pastille opaque, fond noir : le fil ne la traverse pas, l'icône prend la couleur du terrain */
 .sy-pastille { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--ink); color: var(--t); }
 .sy-pastille svg { width: 22px; height: 22px; opacity: .3; transition: opacity .5s; }
-.sy-nom { color: var(--ink); font-size: var(--fs-sm); letter-spacing: .02em; opacity: 0; transition: opacity .5s; }
+.sy-nom { color: var(--ink); font-size: var(--fs-sm); font-weight: 600; letter-spacing: .02em; opacity: 0; transition: opacity .5s; }
 .sy-node.on .sy-pastille svg, .sy-frise-meta .sy-pastille svg { opacity: 1; }
 .sy-node.on .sy-nom, .sy-frise-meta .sy-nom { opacity: 1; }
 /* arrivée en fantôme : l'icône respire, le nom reste caché jusqu'au clic */
