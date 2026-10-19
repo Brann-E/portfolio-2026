@@ -566,7 +566,7 @@ h4 {
   color: var(--accent);
 }
 .hero-sub {
-  font-size: var(--fs-md);
+  font-size: var(--fs-xl);
   color: var(--muted2);
   line-height: 1.7;
   max-width: 52ch;
@@ -2727,7 +2727,7 @@ header .sub {
 }
 .hz-legend {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: clamp(20px, 3.5vw, 48px);
   margin-top: -8px;
 }
@@ -2743,6 +2743,7 @@ header .sub {
   width: 30px;
   height: 30px;
   flex: none;
+  stroke: var(--t);
 }
 .hz .st {
   font-size: var(--fs-md);
@@ -2754,9 +2755,14 @@ header .sub {
   margin-top: 3px;
   padding-left: 42px;
 }
+@media (max-width: 900px) {
+  .hz-legend {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 @media (max-width: 620px) {
   .hz-legend {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 18px;
   }
 }
@@ -8532,24 +8538,11 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 }
 
 
-/* ===== Home : les cinq terrains reliés par le fil ===== */
-.fil { list-style: none; display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px;
-  position: relative; padding: 0; margin: clamp(8px,2vh,16px) 0 0; }
-.fil li:not(:last-child)::after { content: ""; position: absolute; top: 9px; left: 10px; width: calc(100% + 24px); height: 2px;
-  background: linear-gradient(90deg in oklch, var(--t), var(--t-next, var(--t))); }
-.fil li { position: relative; padding-top: 32px; display: grid; gap: 8px; align-content: start; }
-.fil li::before { content: ""; position: absolute; top: 0; left: 0; width: 20px; height: 20px;
-  border-radius: 50%; background: var(--t); box-shadow: 0 0 18px var(--t); }
-.fil li strong { color: var(--paper); font-weight: 500; font-size: var(--fs-md); }
-.fil li span { color: var(--muted); font-size: var(--fs-base); line-height: 1.45; }
+/* ===== Home : les cinq terrains sur l'onde (.hzone / .hz-legend) ===== */
+.band .hzone { margin: clamp(8px, 2vh, 16px) 0 0; }
+.wrap > .hero.hero--home { min-height: 0; padding-top: clamp(80px, 14vh, 150px); padding-bottom: clamp(16px, 3vh, 32px); }
+.band .chute { font-family: var(--ff-serif); font-style: italic; font-size: var(--fs-title-s); line-height: 1.25; color: var(--paper); max-width: 32ch; }
 .fil-chute { margin-top: clamp(30px, 5vh, 48px); color: var(--muted2); font-size: var(--fs-md); }
-@media (max-width: 760px) {
-  .fil { grid-template-columns: 1fr; gap: 22px; }
-  .fil li:not(:last-child)::after { top: 12px; left: 9px; width: 2px; height: calc(100% + 22px);
-    background: linear-gradient(180deg in oklch, var(--t), var(--t-next, var(--t))); }
-  .fil li { padding: 0 0 0 36px; }
-  .fil li::before { top: 2px; }
-}
 
 /* ===== Slider constat : deux couleurs animables + lecture sous le constat ===== */
 @property --sc   { syntax: '<color>'; inherits: true; initial-value: #28e6ff; }
@@ -8575,3 +8568,7 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 .demarche .etape strong { font-family: var(--ff-serif); font-weight: 400; font-size: var(--fs-xl); color: var(--paper); }
 .demarche .etape span { color: var(--muted); font-size: var(--fs-base); line-height: 1.5; }
 @media (max-width: 760px) { .demarche { grid-template-columns: 1fr; gap: 22px; } }
+
+/* ===== Home : final, lien secondaire souligné ===== */
+.final .fin-liens a:not(.fin-primaire) { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.final .fin-liens a:not(.fin-primaire):hover { text-decoration-thickness: 2px; }

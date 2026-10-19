@@ -128,37 +128,60 @@
 
 <div class="wrap">
 
-  <header class="hero">
+  <header class="hero hero--home">
     <h1>À toutes les échelles,<br>tout tient par <em>le même fil</em>&#8239;:<br><em>les relations</em> qu'on construit.</h1>
-    <p class="hero-sub">Designer relationnel. Je suis ce qui circule entre les gens, d'un terrain à l'autre, jusqu'à l'endroit où le problème se trouve vraiment.</p>
+    <p class="hero-sub">Designer relationnel, je suis ce qui circule entre les gens, d'un terrain à l'autre, jusqu'à l'endroit où le problème se trouve vraiment.</p>
     <div class="fin-liens" style="margin:0 0 clamp(30px,5vh,48px)">
       <a class="fin-primaire" href="/etudes-de-cas">Voir les cas</a>
       <a href="/regarder-autrement">Regarder autrement</a>
     </div>
+  </header>
+
+  <section class="band">
+    <h2>Chaque terrain a sa discipline.<br><em>Ce qui circule ne s'arrête à aucune frontière.</em></h2>
     <div class="hzone">
       <div class="wave-wrap">
         <canvas class="wave" id="wave"></canvas>
       </div>
+      <div class="hz-legend">
+        <div class="hz" style="--t: var(--t-personne)">
+          <div class="hz-head"><svg class="hz-ic" viewBox="0 0 40 40" fill="none" stroke-width="1.5" aria-hidden="true"><g stroke="var(--t)"><circle cx="20" cy="20" r="8"/><circle cx="20" cy="20" r="1.6" fill="var(--t)"/></g></svg><span class="st">La personne</span></div>
+          <div class="ss">User Research</div>
+        </div>
+        <div class="hz" style="--t: var(--t-outil)">
+          <div class="hz-head"><svg class="hz-ic" viewBox="0 0 40 40" fill="none" stroke-width="1.5" aria-hidden="true"><g stroke="var(--t)"><circle cx="11" cy="20" r="3.4"/><circle cx="29" cy="20" r="3.4"/><path d="M14.4 20h11.2"/></g></svg><span class="st">L'outil</span></div>
+          <div class="ss">Product &amp; UX Design</div>
+        </div>
+        <div class="hz" style="--t: var(--t-parcours)">
+          <div class="hz-head"><svg class="hz-ic" viewBox="0 0 40 40" fill="none" stroke-width="1.5" aria-hidden="true"><g stroke="var(--t)"><circle cx="9" cy="28" r="2.6"/><circle cx="20" cy="14" r="2.6"/><circle cx="31" cy="24" r="2.6"/><path d="M10.6 25.8 18.6 16M21.6 15.8 29.4 22.2"/></g></svg><span class="st">Le parcours</span></div>
+          <div class="ss">Service Design</div>
+        </div>
+        <div class="hz" style="--t: var(--t-organisation)">
+          <div class="hz-head"><svg class="hz-ic" viewBox="0 0 40 40" fill="none" stroke-width="1.5" aria-hidden="true"><g stroke="var(--t)"><circle cx="20" cy="12" r="3.4"/><circle cx="11" cy="26" r="3.4"/><circle cx="29" cy="26" r="3.4"/><path d="M20 15.4 13 23M27 23l-7-7.6M14.4 26h11.2"/></g></svg><span class="st">L'organisation</span></div>
+          <div class="ss">Facilitation</div>
+        </div>
+        <div class="hz" style="--t: var(--t-ecosysteme)">
+          <div class="hz-head"><svg class="hz-ic" viewBox="0 0 40 40" fill="none" stroke-width="1.5" aria-hidden="true"><g stroke="var(--t)"><circle cx="16" cy="15" r="6"/><circle cx="25" cy="17" r="6"/><circle cx="20" cy="25" r="6"/></g></svg><span class="st">L'écosystème</span></div>
+          <div class="ss">Design systémique</div>
+        </div>
+      </div>
     </div>
-  </header>
-
-  <!-- pont : grille 2x2, cellules a liseré fin qui se touchent -->
-  <section class="band">
-    <h2>Produire un outil ne coûte presque plus rien.<br><em>Se tromper de problème n'a jamais coûté aussi cher.</em></h2>
-    <p class="intro">L'IA exécute le problème tel qu'on le lui donne. Si c'est le mauvais, elle l'automatise, et l'installe dans ce que les gens vivront chaque jour.</p>
-    <p class="intro" style="color:var(--paper)">Un problème se pose sur un terrain. Il se résout souvent sur un autre.</p>
   </section>
 
   <section class="band">
-    <h2>Chaque terrain a sa discipline.<br><em>Ce qui circule ne s'arrête à aucune frontière.</em></h2>
-    <p class="fil-chute" style="margin:0 0 clamp(28px,4.5vh,44px)">Je pars du terrain où l'on m'appelle, et je suis le fil.</p>
-    <ol class="fil">
-      <li style="--t: var(--t-personne); --t-next: var(--t-outil)"><strong>La personne</strong><span>Ce qu'elle apporte, ce qu'elle attend, ce qu'elle tait.</span></li>
-      <li style="--t: var(--t-outil); --t-next: var(--t-parcours)"><strong>L'outil</strong><span>Ce qu'il laisse passer, ce qu'il chiffre, ce qu'il rend visible.</span></li>
-      <li style="--t: var(--t-parcours); --t-next: var(--t-organisation)"><strong>Le parcours</strong><span>Ce qui se transmet, ou se perd, d'une étape à l'autre.</span></li>
-      <li style="--t: var(--t-organisation); --t-next: var(--t-ecosysteme)"><strong>L'organisation</strong><span>Ce que chaque métier sait et qui n'arrive jamais aux autres.</span></li>
-      <li style="--t: var(--t-ecosysteme)"><strong>L'écosystème</strong><span>Ce que chacun donne, reçoit, et à quelles conditions.</span></li>
-    </ol>
+    <h2>Produire un outil ne coûte presque plus rien.<br><em>Se tromper de problème n'a jamais coûté aussi cher.</em></h2>
+    <p class="intro">L'IA exécute le problème tel qu'on le lui donne. S'il est mal posé, elle ne le résout pas : elle l'automatise. Et le malentendu s'installe dans ce que les gens vivent chaque jour : des outils boudés, des équipes qui se contournent, des clients qui partent.</p>
+    <p class="chute">Un problème se pose sur un terrain. Il se résout souvent sur un autre.</p>
+  </section>
+
+  <section class="band">
+    <h2>On commence<br><em>là où vous m'appelez.</em></h2>
+    <div class="demarche">
+      <div class="etape"><strong>Révéler</strong><span>Avant de toucher à quoi que ce soit, je regarde ce qui circule entre les gens, depuis la place de chacun.</span></div>
+      <div class="etape"><strong>Réagencer</strong><span>Je change ce qui bloque là où ça se joue, même si ce n'est pas là où l'on m'a appelé.</span></div>
+      <div class="etape"><strong>Rendre capable</strong><span>Vos équipes repartent avec de quoi faire vivre ça sans moi.</span></div>
+    </div>
+    <p class="fil-chute">Je commence sur le terrain d'entrée. Je ne vais ailleurs que si le fil m'y emmène, et je vous dis pourquoi. Et si l'enquête montre qu'il n'y a rien à faire, je vous le dis aussi.</p>
   </section>
 
   <section class="pont">
@@ -357,16 +380,6 @@ const stage=document.getElementById('syc-stage'), bg=document.getElementById('sy
     <a class="proof-link" href="/etudes-de-cas">Voir les cas en détail &rarr;</a>
   </section>
 
-  <section class="band">
-    <h2>On commence<br><em>là où vous m'appelez.</em></h2>
-    <div class="demarche">
-      <div class="etape"><strong>Révéler</strong><span>ce qui circule, ce qui bloque, ce qui est capté, depuis chaque place.</span></div>
-      <div class="etape"><strong>Réagencer</strong><span>le support qui fait circuler, sur le terrain où il doit agir.</span></div>
-      <div class="etape"><strong>Rendre capable</strong><span>pour que vos équipes fassent vivre ça sans moi.</span></div>
-    </div>
-    <p class="fil-chute">Je livre sur le terrain d'entrée. Je ne vais ailleurs que si le fil m'y emmène, et je vous dis pourquoi. Et si l'enquête montre qu'il n'y a rien à faire, je vous le dis aussi.</p>
-  </section>
-
 <section class="band">
       <div class="eyebrow">Ils m'ont fait confiance</div>
       <h2>J'ai construit à partir de<br><em>leur complexité.</em></h2>
@@ -387,11 +400,11 @@ const stage=document.getElementById('syc-stage'), bg=document.getElementById('sy
   
 
 
-  <section class="band">
+  <section class="band final">
     <h2>Un outil qui ne prend pas.<br>Une équipe qui ne s'aligne pas.<br><em>Un parcours qui casse.</em></h2>
     <p class="intro">Commençons par l'endroit où ça se voit.</p>
     <div class="fin-liens" style="margin-top:clamp(24px,4vh,36px)">
-      <a class="fin-primaire" href="/contact">Par où commencer&#8239;?</a>
+      <a class="fin-primaire" href="/contact">On en discute&#8239;?</a>
       <a href="/regarder-autrement">Pour ceux qui veulent d'abord comprendre d'où je regarde &middot; Regarder autrement</a>
     </div>
   </section>
@@ -432,16 +445,15 @@ const stage=document.getElementById('syc-stage'), bg=document.getElementById('sy
     }
   });
 
-  const STOPS=[[40,230,255],[159,110,255],[47,255,180],[249,104,167],[255,234,77]];
-  function lerp(a,b,f){return [a[0]+(b[0]-a[0])*f,a[1]+(b[1]-a[1])*f,a[2]+(b[2]-a[2])*f];}
-  function colAt(u){const n=STOPS.length,p=(((u%1)+1)%1)*n,i=Math.floor(p),f=p-i;const c=lerp(STOPS[i%n],STOPS[(i+1)%n],f);return 'rgb('+(c[0]|0)+','+(c[1]|0)+','+(c[2]|0)+')';}
-  function grad(off){const g=x.createLinearGradient(0,0,W,0);for(let s=0;s<=12;s++){g.addColorStop(s/12,colAt(s/12+off));}return g;}
+  /* un terrain par cinquième de l'onde : personne, outil, parcours, organisation, écosystème */
+  const TERRAINS=['#F968A7','#28E6FF','#9F6EFF','#FFEA4D','#2FFFB4'];
+  function grad(){const g=x.createLinearGradient(0,0,W,0);TERRAINS.forEach((c,i)=>g.addColorStop((i+0.5)/TERRAINS.length,c));return g;}
 
-  let off=0,frame=0,resNext=0;
+  let frame=0,resNext=0;
   function loop(ts){
     if(t0===null)t0=ts;
     const prog=Math.min(1,(ts-t0)/DRAW_MS);   // tracé 0->1 en 0.8s
-    off+=0.0016; frame++;
+    frame++;
 
     if(touched){
       // résidu entretenu : de minuscules impulsions permanentes, une fois touchée
@@ -481,7 +493,7 @@ const stage=document.getElementById('syc-stage'), bg=document.getElementById('sy
       if(!started){x.moveTo(px,py);started=true;}
       else{const ppx=((i-1)/(N-1))*W, ppy=baseY+y[i-1]+bg(i-1)+ent(i-1,ts);x.quadraticCurveTo(ppx,ppy,(px+ppx)/2,(py+ppy)/2);}
     }
-    x.strokeStyle=grad(off);
+    x.strokeStyle=grad();
     x.lineWidth=2;x.lineCap='round';x.lineJoin='round';
     x.stroke();
     requestAnimationFrame(loop);
@@ -494,7 +506,8 @@ const stage=document.getElementById('syc-stage'), bg=document.getElementById('sy
     const u=i/(N-1);
     return Math.sin(u*Math.PI*3 - e*Math.PI*4)*(H*0.16)*Math.sin(e*Math.PI)*Math.sin(u*Math.PI);
   }
-  setTimeout(()=>requestAnimationFrame(loop), 2000);
+  /* l'onde se tire quand elle entre à l'écran */
+  new IntersectionObserver((es,ob)=>{if(es[0].isIntersecting){ob.disconnect();setTimeout(()=>requestAnimationFrame(loop),300);}},{threshold:.4}).observe(cv);
 })();
 </script>
 <script>
