@@ -2796,7 +2796,7 @@ section {
   margin: 0 0 clamp(30px, 5vh, 48px);
 }
 .band .intro {
-  font-size: var(--fs-md);
+  font-size: var(--fs-lg);
   color: var(--muted2);
   line-height: 1.8;
   max-width: 60ch;
@@ -6833,13 +6833,7 @@ footer a {
     inset 0 1px 0 color-mix(in srgb, var(--paper) 70%, transparent);
   transition: box-shadow 0.28s ease, transform 0.16s ease;
 }
-.fin-liens .holo-label { position: relative; z-index: 2; }
-.fin-liens a.fin-primaire::after {
-  content: "→" / "";
-  position: relative;
-  z-index: 2;
-  transition: transform 0.35s ease;
-}
+
 .fin-liens a.fin-primaire:hover,
 .fin-liens a.fin-primaire:focus-visible {
   color: var(--ink);
@@ -7403,7 +7397,8 @@ a.porte,
   /* la couleur vient de grain.png lui-meme : c est un foil pastel iride.
      Aucun degrade ajoute — exactement la source du bouton #syc-btn. */
   background-image: url("grain.png");
-  background-size: 600% 600%;
+  background-size: 
+  600% 600%;
   background-position: var(--px) var(--py);
   /* meme saturation que le backdrop-filter de la reference */
   filter: saturate(158%);
