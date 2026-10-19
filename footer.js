@@ -33,7 +33,7 @@
         <div class="ft-col ft-cases">
           <div class="ft-h">Les cas</div>
           <ul>
-            <li style="--d:var(--c1)"><a href="/cas-axa">Healthanea <span class="ft-tag">Sant&eacute;</span></a></li>
+            <li style="--d:var(--c1)"><a href="/cas-healthanea">Healthanea <span class="ft-tag">Sant&eacute;</span></a></li>
             <li style="--d:var(--c2)"><a href="/cas-shift-prime">SHIFT Prime <span class="ft-tag">Industrie</span></a></li>
             <li style="--d:var(--c4)"><a href="/cas-bi-solution">B.I Solution <span class="ft-tag">Data</span></a></li>
             <li style="--d:var(--c3)"><a href="/cas-proshop">Proshop &amp; Beyond <span class="ft-tag">Commerce</span></a></li>

@@ -983,7 +983,7 @@ a.serie-article:hover .serie-article-title {
   color: var(--muted);
 }
 
-/* Source: cas-axa.html */
+/* Source: cas-healthanea.html */
 /* ============ STRATE 1 — SURFACE ============ */
 /* ============ STRATE 2 — LE RÉSUMÉ ============ */
 /* ============ STRATE 3 — LE DÉTAIL ============ */
@@ -8541,8 +8541,8 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 /* ===== Home : les cinq terrains sur l'onde (.hzone / .hz-legend) ===== */
 .band .hzone { margin: clamp(8px, 2vh, 16px) 0 0; }
 .wrap > .hero.hero--home { min-height: 0; padding-top: clamp(80px, 14vh, 150px); padding-bottom: clamp(16px, 3vh, 32px); }
+.band .hzone + .chute { margin-top: clamp(36px, 6vh, 56px); }
 .band .chute { font-family: var(--ff-serif); font-style: italic; font-size: var(--fs-title-s); line-height: 1.25; color: var(--paper); max-width: 32ch; }
-.fil-chute { margin-top: clamp(30px, 5vh, 48px); color: var(--muted2); font-size: var(--fs-md); }
 
 /* ===== Slider constat : deux couleurs animables + lecture sous le constat ===== */
 @property --sc   { syntax: '<color>'; inherits: true; initial-value: #28e6ff; }
@@ -8562,13 +8562,8 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 .proof a.cell:hover { background: color-mix(in srgb, var(--t) 9%, var(--ink)); }
 .proof-cas { margin-top: 14px; font-size: var(--fs-sm); letter-spacing: .03em; color: var(--t); }
 
-/* ===== Home section 7 : la demarche en trois temps ===== */
-.demarche { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(22px, 3vw, 40px); margin-top: clamp(16px, 3vh, 28px); }
-.demarche .etape { display: grid; gap: 8px; align-content: start; padding-top: 20px; border-top: 2px solid var(--faint); }
-.demarche .etape strong { font-family: var(--ff-serif); font-weight: 400; font-size: var(--fs-xl); color: var(--paper); }
-.demarche .etape span { color: var(--muted); font-size: var(--fs-base); line-height: 1.5; }
-@media (max-width: 760px) { .demarche { grid-template-columns: 1fr; gap: 22px; } }
 
 /* ===== Home : final, lien secondaire souligné ===== */
 .final .fin-liens a:not(.fin-primaire) { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
 .final .fin-liens a:not(.fin-primaire):hover { text-decoration-thickness: 2px; }
+.final h2 { max-width: none; }
