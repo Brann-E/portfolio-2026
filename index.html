@@ -387,37 +387,14 @@ const stage=document.getElementById('syc-stage'), bg=document.getElementById('sy
   
 
 
-    <section class="pls-scene" id="plScene">
-      <button class="pls-btn" id="plsBtn" type="button" aria-label="Mais par où commencer ?">
-        <span class="pls-lights" aria-hidden="true"></span>
-        <span class="pls-sweep" aria-hidden="true"></span>
-        <span class="pls-stack">
-          <span class="pls-ask">Mais par o&ugrave; commencer&#8239;?</span>
-          <span class="pls-reveal">
-            <span class="pls-invite">Je vous invite &agrave;</span>
-            <span class="pls-pill">
-              <span class="pls-pill-holo" aria-hidden="true"></span>
-              <span class="pls-pill-sweep" aria-hidden="true"></span>
-              <span class="pls-pill-label">Regarder autrement</span>
-            </span>
-          </span>
-        </span>
-      </button>
-    </section>
-
-<script>
-(function(){
-  const btn=document.getElementById('plsBtn');
-  if(!btn) return;
-  btn.addEventListener('click',function(){
-    if(btn.classList.contains('is-on')){
-      window.location.href='regarder-autrement.html';
-    } else {
-      btn.classList.add('is-on');
-    }
-  });
-})();
-</script>
+  <section class="band">
+    <h2>Un outil qui ne prend pas.<br>Une équipe qui ne s'aligne pas.<br><em>Un parcours qui casse.</em></h2>
+    <p class="intro">Commençons par l'endroit où ça se voit.</p>
+    <div class="fin-liens" style="margin-top:clamp(24px,4vh,36px)">
+      <a class="fin-primaire" href="/contact">Par où commencer&#8239;?</a>
+      <a href="/regarder-autrement">Pour ceux qui veulent d'abord comprendre d'où je regarde &middot; Regarder autrement</a>
+    </div>
+  </section>
 
 
 </div><!-- /.wrap -->
