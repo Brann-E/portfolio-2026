@@ -5330,7 +5330,7 @@ h3 {
   line-height: 1.1;
 }
 .wrap {
-  max-width: 1240px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 clamp(24px, 6vw, 90px);
 }
@@ -7402,6 +7402,9 @@ a.porte,
    l affecter. NE RIEN MODIFIER ICI sans demande explicite de Brann.
    Etat fige : grain.png 600% . multiply . 0.62 . saturate(158%)
    ==================================================================== */
+.holo-label { 
+  font-weight: 600;
+}
 .site-nav .site-links a.site-pill .holo {
   position: absolute;
   inset: 0;
@@ -7822,16 +7825,31 @@ a.pl-cta {
   .pont-ligne--bas { grid-template-columns: 1fr; }
   .pont-cell { margin: -1px 0 0 0; min-width: 0; }
   .pont-h1 { min-width: 0; overflow-wrap: break-word; }
-  .pont-cell--fleche { min-height: 0; padding-top: clamp(20px,4vh,32px); padding-bottom: 0; }
+  .pont-cell--fleche { min-height: 0; }
   .pont-portrait { height: auto; width: clamp(90px, 22vw, 130px); }
   .pont-cell--sig { flex-direction: row; }
 }
 
 /* --- pont : coins hauts et bas arrondis, bloc autonome comme le constat --- */
-.pont-ligne--haut .pont-cell:first-child { border-top-left-radius: 16px; }
-.pont-ligne--haut .pont-cell:last-child { border-top-right-radius: 16px; }
-.pont-ligne--bas .pont-cell:first-child { border-bottom-left-radius: 16px; }
-.pont-ligne--bas .pont-cell:last-child { border-bottom-right-radius: 16px; }
+@media (min-width: 721px) {
+  .pont-ligne--haut .pont-cell:first-child { border-top-left-radius: 16px; }
+  .pont-ligne--haut .pont-cell:last-child { border-top-right-radius: 16px; }
+  .pont-ligne--bas .pont-cell:first-child { border-bottom-left-radius: 16px; }
+  .pont-ligne--bas .pont-cell:last-child { border-bottom-right-radius: 16px; }
+}
+/* mobile : une seule pile, dans l'ordre de lecture (titre, suite de la phrase,
+   signature, flèche vers la suite) ; les rangées disparaissent (display: contents)
+   pour pouvoir réordonner les cellules, et les coins arrondis suivent l'ordre
+   visuel : haut de la première cellule, bas de la dernière. */
+@media (max-width: 720px) {
+  .pont-grille { display: flex; flex-direction: column; }
+  .pont-ligne { display: contents; }
+  .pont-ligne--haut .pont-cell--titre { order: 1; border-radius: 16px 16px 0 0; }
+  .pont-ligne--bas .pont-cell--titre { order: 2; }
+  .pont-cell--sig { order: 3; }
+  .pont-cell--fleche { order: 4; border-radius: 0 0 16px 16px; padding-top: clamp(14px, 3vh, 22px); padding-bottom: clamp(14px, 3vh, 22px); }
+  .pont-ligne--bas .pont-h1 br { display: none; }
+}
 
 /* ============================================================
    EXPLORATION — ligne de filtres + grille de projets
