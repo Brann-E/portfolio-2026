@@ -7740,56 +7740,15 @@ a.pl-cta {
   padding: 8px 24px;
 }
 
-/* --- landing : pont en grille 2x2 --- */
-.pont {
-  padding: clamp(40px, 7vh, 70px) 0 clamp(40px, 7vh, 70px);
-}
-.pont-grille {
-  display: grid;
-  grid-template-rows: auto auto;
-}
-.pont-ligne {
-  display: grid;
-}
-.pont-ligne--haut {
-  /* le portrait doit avoir la meme hauteur que la cellule titre, donc
-     colonnes egales : le carre du portrait = hauteur de A */
-  grid-template-columns: 1fr 1fr;
-}
-.pont-ligne--bas {
-  /* la fleche est reduite au strict minimum confortable,
-     le texte prend tout le reste pour tenir sur 2 lignes */
-  grid-template-columns: minmax(180px, 22%) 1fr;
-}
-.pont-cell {
-  padding: clamp(30px, 5vh, 56px) clamp(22px, 3vw, 36px);
-  border: 1px solid var(--faint);
-  /* eviter les doubles bordures entre cellules adjacentes */
-  margin: -1px 0 0 -1px;
+/* --- héros : bloc signature (portrait + identité) --- */
+.hero-sig {
   display: flex;
   align-items: center;
-}
-.pont-cell--titre {
-  align-items: flex-start;
-}
-.pont-h1 {
-  font-family: var(--ff-serif);
-  font-weight: 400;
-  font-style: italic;
-  font-size: var(--fs-title-xl);
-  line-height: 1.05;
-  color: var(--paper);
-  margin: 0;
-}
-
-/* la cellule signature : portrait + identite alignes horizontalement */
-.pont-cell--sig {
   gap: clamp(20px, 3vw, 36px);
+  margin: clamp(8px, 2vh, 16px) 0 clamp(24px, 4vh, 36px);
 }
-/* le portrait remplit la hauteur de la cellule (donc = hauteur du bloc "titre" a cote) */
-.pont-portrait {
+.sig-portrait {
   position: relative;
-  height: auto;
   width: clamp(144px, 12vw, 160px);
   aspect-ratio: 1;
   border-radius: 50%;
@@ -7801,67 +7760,23 @@ a.pl-cta {
     0 0 60px -8px rgba(255, 255, 255, 0.18);
   flex: none;
 }
-.pont-portrait img {
+.sig-portrait img {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
   filter: saturate(0.9) contrast(1.03);
 }
-.pont-ph {
+.sig-ph {
   position: absolute; inset: 0;
   display: flex; align-items: center; justify-content: center;
   font-family: var(--ff-serif);
   font-size: var(--fs-title-s);
   color: var(--muted);
 }
-.pont-ident { text-align: left; }
-
-/* la cellule fleche */
-.pont-cell--fleche {
-  align-items: center;
-  justify-content: center;
-  min-height: clamp(160px, 22vh, 260px);
-}
-.pont-fleche {
-  font-family: var(--ff-sans);
-  font-weight: 300;
-  font-size: var(--fs-display);
-  color: var(--paper);
-  line-height: 1;
-  opacity: 0.85;
-}
-
+.sig-ident { text-align: left; min-width: 0; }
+.hero-sig .ft-name { font-size: var(--fs-2xl); }
 @media (max-width: 720px) {
-  /* les colonnes sont portees par les lignes, pas par .pont-grille :
-     c'est bien --haut et --bas qu'il faut replier en une seule colonne. */
-  .pont-ligne--haut,
-  .pont-ligne--bas { grid-template-columns: 1fr; }
-  .pont-cell { margin: -1px 0 0 0; min-width: 0; }
-  .pont-h1 { min-width: 0; overflow-wrap: break-word; }
-  .pont-cell--fleche { min-height: 0; }
-  .pont-portrait { height: auto; width: clamp(90px, 22vw, 130px); }
-  .pont-cell--sig { flex-direction: row; }
-}
-
-/* --- pont : coins hauts et bas arrondis, bloc autonome comme le constat --- */
-@media (min-width: 721px) {
-  .pont-ligne--haut .pont-cell:first-child { border-top-left-radius: 16px; }
-  .pont-ligne--haut .pont-cell:last-child { border-top-right-radius: 16px; }
-  .pont-ligne--bas .pont-cell:first-child { border-bottom-left-radius: 16px; }
-  .pont-ligne--bas .pont-cell:last-child { border-bottom-right-radius: 16px; }
-}
-/* mobile : une seule pile, dans l'ordre de lecture (titre, signature, suite de la phrase,
-   signature, flèche vers la suite) ; les rangées disparaissent (display: contents)
-   pour pouvoir réordonner les cellules, et les coins arrondis suivent l'ordre
-   visuel : haut de la première cellule, bas de la dernière. */
-@media (max-width: 720px) {
-  .pont-grille { display: flex; flex-direction: column; }
-  .pont-ligne { display: contents; }
-  .pont-ligne--haut .pont-cell--titre { order: 1; border-radius: 16px 16px 0 0; }
-  .pont-ligne--bas .pont-cell--titre { order: 3; }
-  .pont-cell--sig { order: 2; }
-  .pont-cell--fleche { order: 4; border-radius: 0 0 16px 16px; padding-top: clamp(14px, 3vh, 22px); padding-bottom: clamp(14px, 3vh, 22px); }
-  .pont-ligne--bas .pont-h1 br { display: none; }
+  .sig-portrait { width: clamp(90px, 24vw, 120px); }
 }
 
 /* ============================================================
@@ -8619,7 +8534,10 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 
 /* ===== Home : les cinq terrains sur l'onde (.hzone / .hz-legend) ===== */
 .band .hzone { margin: clamp(8px, 2vh, 16px) 0 0; }
-.wrap > .hero.hero--home { min-height: 0; padding-top: clamp(80px, 14vh, 150px); padding-bottom: clamp(16px, 3vh, 32px); }
+.wrap > .hero.hero--home { 
+  min-height: 0; 
+  padding-top: clamp(180px, 26vh, 260px); 
+  padding-bottom: clamp(60px, 10vh, 120px); }
 .band .hzone + .chute { margin-top: clamp(36px, 6vh, 56px); }
 .band .chute { font-family: var(--ff-serif); font-style: italic; font-size: var(--fs-title-s); line-height: 1.25; color: var(--paper); max-width: 32ch; }
 
@@ -8686,4 +8604,14 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 @media (prefers-reduced-motion: reduce) {
   .sy-node.dest .sy-pastille svg { animation: none; }
   .sy-stage.sy-revealed .sy-trace, .sy-stage.sy-revealed .sy-node.dest .sy-pastille svg, .sy-stage.sy-revealed .sy-node.dest .sy-nom, .sy-stage.sy-revealed .sy-frise-meta .sy-pastille svg, .sy-stage.sy-revealed .sy-frise-meta .sy-nom { transition-duration: 0s; transition-delay: 0s; }
+}
+
+/* ===== Slider : ligne d'introduction au-dessus de la carte ===== */
+.sy-intro {
+  font-family: var(--ff-serif);
+  font-style: italic;
+  font-size: var(--fs-xl);
+  line-height: 1.3;
+  color: var(--muted2);
+  margin: 0 0 clamp(16px, 3vh, 28px);
 }
