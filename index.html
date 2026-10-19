@@ -203,7 +203,10 @@
     <div class="sy-bg sy-solid" id="syc-bg"><span class="sy-spectre"></span></div>
 
     <div class="sy-slider" id="syc-slider">
-      <div class="sy-titre" id="syc-titre"></div>
+      <div class="sy-head">
+        <ol class="sy-frise" id="syc-frise" aria-hidden="true"></ol>
+        <div class="sy-titre" id="syc-titre"></div>
+      </div>
       <div class="sy-constat-row">
         <button class="sy-nav-arrow sy-prev" id="syc-navPrev" aria-label="Précédent">‹</button>
         <div class="sy-constat" id="syc-constat"></div>
@@ -218,8 +221,9 @@
     <div class="sy-btn-group">
       <button class="sy-btn" id="syc-btn" aria-controls="syc-sticker" aria-expanded="false">
         <span class="sy-btn-holo"></span>
-        <span class="sy-btn-label" id="syc-btnLabel">Regarder autrement</span>
+        <span class="sy-btn-label" id="syc-btnLabel">Suivre le fil</span>
       </button>
+      <span class="sy-sr" id="syc-sr" aria-live="polite"></span>
       <div class="sy-nav-dots" id="syc-navDots"></div>
     </div>
   </div>
@@ -237,7 +241,8 @@ const stage=document.getElementById('syc-stage'), bg=document.getElementById('sy
     organisation:{ nom: 'Organisation',c: '#FFEA4D' },
     ecosysteme:  { nom: 'Écosystème',  c: '#2FFFB4' },
   };
-  const LABEL = 'Regarder autrement';
+  const LABEL = 'Suivre le fil';
+  const LABEL_BACK = 'Revenir';
 
   const volets = [
     { meta: true, trajet: 'Tous les terrains',
@@ -267,6 +272,44 @@ const stage=document.getElementById('syc-stage'), bg=document.getElementById('sy
   ];
 
   const trajet = (v) => v.meta ? v.trajet : `${T[v.from].nom} → ${T[v.to].nom}`;
+  const srEl=document.getElementById('syc-sr');
+
+  // couleur de départ éclaircie : l'état A n'est jamais monochrome
+  function lighter(hex){
+    const n=parseInt(hex.slice(1),16); let r=(n>>16)/255,g=(n>>8&255)/255,b=(n&255)/255;
+    const mx=Math.max(r,g,b),mn=Math.min(r,g,b); let h=0,s=0,l=(mx+mn)/2;
+    if(mx!==mn){const d=mx-mn; s=l>.5?d/(2-mx-mn):d/(mx+mn);
+      h=mx===r?(g-b)/d+(g<b?6:0):mx===g?(b-r)/d+2:(r-g)/d+4; h/=6;}
+    l=Math.min(.9,l+.12);
+    const q=l<.5?l*(1+s):l+s-l*s,p=2*l-q;
+    const f=t=>{t=(t+1)%1;return t<1/6?p+(q-p)*6*t:t<1/2?q:t<2/3?p+(q-p)*(2/3-t)*6:p;};
+    const x=v=>Math.round(f(v)*255).toString(16).padStart(2,'0');
+    return '#'+x(h+1/3)+x(h)+x(h-1/3);
+  }
+
+  // frise des cinq terrains : départ allumé, arrivée en fantôme, révélée au clic
+  const ORDRE=['personne','outil','parcours','organisation','ecosysteme'];
+  const ICONES={
+    personne:'<circle cx="20" cy="20" r="8"/><circle cx="20" cy="20" r="1.6" fill="currentColor"/>',
+    outil:'<circle cx="11" cy="20" r="3.4"/><circle cx="29" cy="20" r="3.4"/><path d="M14.4 20h11.2"/>',
+    parcours:'<circle cx="9" cy="28" r="2.6"/><circle cx="20" cy="14" r="2.6"/><circle cx="31" cy="24" r="2.6"/><path d="M10.6 25.8 18.6 16M21.6 15.8 29.4 22.2"/>',
+    organisation:'<circle cx="20" cy="12" r="3.4"/><circle cx="11" cy="26" r="3.4"/><circle cx="29" cy="26" r="3.4"/><path d="M20 15.4 13 23M27 23l-7-7.6M14.4 26h11.2"/>',
+    ecosysteme:'<circle cx="16" cy="15" r="6"/><circle cx="25" cy="17" r="6"/><circle cx="20" cy="25" r="6"/>'
+  };
+  const frise=document.getElementById('syc-frise');
+  frise.innerHTML=ORDRE.map(k=>`<li class="sy-node" style="--t: var(--t-${k})"><span class="sy-pastille"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8">${ICONES[k]}</svg></span><span class="sy-nom">${T[k].nom}</span></li>`).join('')+'<li class="sy-trace"></li><li class="sy-voyageur"></li>';
+  const noeuds=[...frise.querySelectorAll('.sy-node')];
+  function paintFrise(v){
+    frise.classList.toggle('sy-frise-meta',!!v.meta);
+    noeuds.forEach((n,i)=>{ const k=ORDRE[i];
+      n.classList.toggle('on',!!v.meta||k===v.from);
+      n.classList.toggle('dest',!v.meta&&k===v.to); });
+    if(v.meta) return;
+    const a=ORDRE.indexOf(v.from), b=ORDRE.indexOf(v.to);
+    frise.style.setProperty('--a',a); frise.style.setProperty('--b',b);
+    frise.style.setProperty('--lo',Math.min(a,b)); frise.style.setProperty('--span',Math.abs(b-a));
+    frise.style.setProperty('--origin',b>a?'left':'right');
+  }
 
   let idx=0, frozen=false, on=false, animating=false;
 
@@ -283,7 +326,8 @@ const stage=document.getElementById('syc-stage'), bg=document.getElementById('sy
   function paint(v){
     titreEl.textContent=v.titre; constatEl.textContent=v.constat; hypoEl.textContent=v.hypo;
     if(v.meta){ stage.classList.add('sy-is-meta'); bg.className='sy-bg'; }
-    else{ stage.classList.remove('sy-is-meta'); bg.className='sy-bg sy-solid'; stage.style.setProperty('--sc',T[v.from].c); stage.style.setProperty('--sc-b',T[v.from].c); }
+    else{ stage.classList.remove('sy-is-meta'); bg.className='sy-bg sy-solid'; stage.style.setProperty('--sc',T[v.from].c); stage.style.setProperty('--sc-b',lighter(T[v.from].c)); }
+    paintFrise(v); srEl.textContent='';
     sticker.style.setProperty('--blob', blobs[idx % blobs.length]);
   }
   function setDots(){ [...dotsWrap.children].forEach((d,i)=>d.classList.toggle('active',i===idx)); }
@@ -331,8 +375,8 @@ const stage=document.getElementById('syc-stage'), bg=document.getElementById('sy
     const v=volets[idx];
     if(on){ frozen=true; if(!v.meta) stage.style.setProperty('--sc-b',T[v.to].c);
       stage.classList.remove('sy-revealed');void stage.offsetWidth;stage.classList.add('sy-revealed');
-      btnLabel.textContent=trajet(v); btn.setAttribute('aria-expanded','true'); }
-    else{ frozen=false; if(!v.meta) stage.style.setProperty('--sc-b',T[v.from].c);
+      btnLabel.textContent=LABEL_BACK; srEl.textContent=trajet(v); btn.setAttribute('aria-expanded','true'); }
+    else{ frozen=false; if(!v.meta) stage.style.setProperty('--sc-b',lighter(T[v.from].c)); srEl.textContent='';
       stage.classList.remove('sy-revealed'); btnLabel.textContent=LABEL; btn.setAttribute('aria-expanded','false'); }
   });
 
