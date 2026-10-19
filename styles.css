@@ -7837,7 +7837,7 @@ a.pl-cta {
   .pont-ligne--bas .pont-cell:first-child { border-bottom-left-radius: 16px; }
   .pont-ligne--bas .pont-cell:last-child { border-bottom-right-radius: 16px; }
 }
-/* mobile : une seule pile, dans l'ordre de lecture (titre, suite de la phrase,
+/* mobile : une seule pile, dans l'ordre de lecture (titre, signature, suite de la phrase,
    signature, flèche vers la suite) ; les rangées disparaissent (display: contents)
    pour pouvoir réordonner les cellules, et les coins arrondis suivent l'ordre
    visuel : haut de la première cellule, bas de la dernière. */
@@ -7845,8 +7845,8 @@ a.pl-cta {
   .pont-grille { display: flex; flex-direction: column; }
   .pont-ligne { display: contents; }
   .pont-ligne--haut .pont-cell--titre { order: 1; border-radius: 16px 16px 0 0; }
-  .pont-ligne--bas .pont-cell--titre { order: 2; }
-  .pont-cell--sig { order: 3; }
+  .pont-ligne--bas .pont-cell--titre { order: 3; }
+  .pont-cell--sig { order: 2; }
   .pont-cell--fleche { order: 4; border-radius: 0 0 16px 16px; padding-top: clamp(14px, 3vh, 22px); padding-bottom: clamp(14px, 3vh, 22px); }
   .pont-ligne--bas .pont-h1 br { display: none; }
 }
