@@ -24,6 +24,13 @@
   --c-pink: var(--c4);
   --lesson: var(--c5);
 
+  /* terrains (home) : alias des couleurs de marque */
+  --t-personne:     var(--c4);
+  --t-outil:        var(--c1);
+  --t-parcours:     var(--c2);
+  --t-organisation: var(--c5);
+  --t-ecosysteme:   var(--c3);
+
   /* accents globaux, redéfinis localement par les composants */
   --accent: var(--c5);
   --sc: var(--c1);
@@ -40,6 +47,7 @@
   --fs-title-s: clamp(1.45rem, 2.6vw, 2.1rem);
   --fs-title-m: clamp(1.7rem, 3.6vw, 2.9rem);
   --fs-title-l: clamp(2rem, 4.6vw, 3.4rem);
+  --fs-title-xl: clamp(2rem, 5.1vw, 4.4rem);
   --fs-display: clamp(2rem, 6.2vw, 5.4rem);
 }
 
@@ -7709,7 +7717,7 @@ a.pl-cta {
   font-family: var(--ff-serif);
   font-weight: 400;
   font-style: italic;
-  font-size: var(--fs-display);
+  font-size: var(--fs-title-xl);
   line-height: 1.05;
   color: var(--paper);
   margin: 0;
