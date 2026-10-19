@@ -8573,19 +8573,19 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 .sy-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .sy-frise {
   --ease: cubic-bezier(.6, 0, .2, 1);
-  --r: 18px; /* rayon d'une pastille : le fil s'arrête à son bord */
+  --r: 22px; /* rayon d'une pastille : le fil s'arrête à son bord */
   list-style: none; margin: 0; padding: 0; position: relative;
   display: grid; grid-template-columns: repeat(5, 1fr);
-  width: min(100%, 520px); color: var(--ink);
+  width: min(60%, 600px); /* même largeur que la bulle de lecture (.sy-sticker) */ color: var(--ink);
 }
-.sy-frise::before { content: ""; position: absolute; top: 17px; left: 10%; right: 10%; height: 2px; background: color-mix(in srgb, var(--ink) 16%, transparent);
+.sy-frise::before { content: ""; position: absolute; top: 21px; left: 10%; right: 10%; height: 2px; background: color-mix(in srgb, var(--ink) 16%, transparent);
   -webkit-mask: linear-gradient(90deg, transparent var(--r), #000 var(--r), #000 calc(100% - var(--r)), transparent calc(100% - var(--r))) 0 0 / 25% 100% repeat-x;
   mask: linear-gradient(90deg, transparent var(--r), #000 var(--r), #000 calc(100% - var(--r)), transparent calc(100% - var(--r))) 0 0 / 25% 100% repeat-x; }
 .sy-node { display: grid; justify-items: center; gap: 8px; position: relative; z-index: 1; color: var(--ink); }
 /* pastille opaque, fond noir : le fil ne la traverse pas, l'icône prend la couleur du terrain */
-.sy-pastille { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--ink); color: var(--t); transition: opacity .6s; }
-.sy-pastille svg { width: 22px; height: 22px; opacity: .3; transition: opacity .5s; }
-.sy-nom { color: var(--ink); font-size: var(--fs-sm); font-weight: 600; letter-spacing: .02em; opacity: 0; transition: opacity .5s; }
+.sy-pastille { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--ink); color: var(--t); transition: opacity .6s; }
+.sy-pastille svg { width: 30px; height: 30px; opacity: .3; transition: opacity .5s; }
+.sy-nom { color: var(--ink); font-size: var(--fs-base); letter-spacing: .02em; opacity: 0; transition: opacity .5s; }
 .sy-node.on .sy-pastille svg { opacity: 1; }
 .sy-node.on .sy-nom { opacity: 1; }
 /* arrivée en fantôme : l'icône respire, le nom reste caché jusqu'au clic */
@@ -8595,16 +8595,18 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 .sy-stage.sy-revealed .sy-frise:not(.sy-frise-meta) .sy-node:not(.on):not(.dest) .sy-pastille { opacity: .16; }
 /* le fil parcouru, du départ vers l'arrivée */
 .sy-trace {
-  position: absolute; top: 17px; height: 2px; background: var(--ink); z-index: 2;
+  position: absolute; top: 21px; height: 2px; background: var(--ink); z-index: 2;
   left: calc((var(--lo, 0) + .5) * 20% + var(--r)); width: calc(var(--span, 0) * 20% - 2 * var(--r));
   clip-path: var(--hide, inset(0 100% 0 0)); transition: clip-path .4s;
 }
 .sy-stage.sy-revealed .sy-trace { clip-path: inset(0 0 0 0); transition: clip-path 1.4s var(--ease); }
 .sy-stage.sy-revealed .sy-node.dest .sy-pastille svg { animation: none; opacity: 1; transition-delay: var(--d, 1.1s); }
 .sy-stage.sy-revealed .sy-node.dest .sy-nom { opacity: 1; transition-delay: var(--d, 1.1s); }
+/* volet 1 : les pastilles passent devant le trait (il ne cache pas les icônes) */
+.sy-frise-meta .sy-trace { z-index: 0; left: calc((var(--lo, 0) + .5) * 20%); width: calc(var(--span, 0) * 20%); }
 /* volet 1 : tout est éteint, le témoin part de Personne et allume chaque terrain, nom compris */
 .sy-stage.sy-revealed .sy-frise-meta .sy-pastille svg, .sy-stage.sy-revealed .sy-frise-meta .sy-nom { opacity: 1; transition-delay: var(--d, 0s); }
-@media (max-width: 600px) { .sy-frise { --r: 16px; } .sy-pastille { width: 32px; height: 32px; } .sy-frise::before, .sy-trace { top: 15px; } }
+@media (max-width: 600px) { .sy-frise { --r: 20px; width: 100%; } .sy-pastille { width: 40px; height: 40px; } .sy-pastille svg { width: 28px; height: 28px; } .sy-frise::before, .sy-trace { top: 19px; } .sy-nom { font-size: var(--fs-xs); letter-spacing: 0; } }
 @media (prefers-reduced-motion: reduce) {
   .sy-node.dest .sy-pastille svg { animation: none; }
   .sy-stage.sy-revealed .sy-trace, .sy-stage.sy-revealed .sy-node.dest .sy-pastille svg, .sy-stage.sy-revealed .sy-node.dest .sy-nom, .sy-stage.sy-revealed .sy-frise-meta .sy-pastille svg, .sy-stage.sy-revealed .sy-frise-meta .sy-nom { transition-duration: 0s; transition-delay: 0s; }
