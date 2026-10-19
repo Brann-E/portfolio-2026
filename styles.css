@@ -8580,7 +8580,7 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 .sy-frise::before { content: ""; position: absolute; top: 17px; left: 10%; right: 10%; height: 2px; background: color-mix(in srgb, var(--ink) 16%, transparent); }
 .sy-node { display: grid; justify-items: center; gap: 8px; position: relative; z-index: 1; color: var(--ink); }
 /* pastille opaque, fond noir : le fil ne la traverse pas, l'icône prend la couleur du terrain */
-.sy-pastille { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--ink); color: var(--t); }
+.sy-pastille { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--ink); color: var(--t); transition: opacity .6s; }
 .sy-pastille svg { width: 22px; height: 22px; opacity: .3; transition: opacity .5s; }
 .sy-nom { color: var(--ink); font-size: var(--fs-sm); font-weight: 600; letter-spacing: .02em; opacity: 0; transition: opacity .5s; }
 .sy-node.on .sy-pastille svg, .sy-frise-meta .sy-pastille svg { opacity: 1; }
@@ -8588,6 +8588,8 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 /* arrivée en fantôme : l'icône respire, le nom reste caché jusqu'au clic */
 .sy-node.dest .sy-pastille svg { animation: sy-respire 2.6s ease-in-out infinite; }
 @keyframes sy-respire { 50% { opacity: .75; } }
+/* après le clic : les trois terrains hors trajet s'effacent au niveau du fil (16 %) */
+.sy-stage.sy-revealed .sy-node:not(.on):not(.dest) .sy-pastille { opacity: .16; }
 /* le fil parcouru et le point qui voyage, du départ vers l'arrivée */
 .sy-trace {
   position: absolute; top: 17px; height: 2px; background: var(--ink);
