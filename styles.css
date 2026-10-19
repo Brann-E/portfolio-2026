@@ -6853,17 +6853,34 @@ footer a {
 .fin-liens a.fin-primaire:hover::after,
 .fin-liens a.fin-primaire:focus-visible::after { transform: translateX(5px); }
 .fin-liens a.fin-primaire:active { transform: translateY(1px) scale(0.985); }
-/* secondaire : texte clair, soulignement aux cinq couleurs qui s'épaissit au survol */
+/* secondaire : texte clair, soulignement en foil holographique (grain.png, comme la pastille de nav) qui s'épaissit au survol */
 .fin-liens a:not(.fin-primaire) {
+  position: relative;
   color: var(--paper);
   padding-bottom: 4px;
-  background: linear-gradient(90deg in oklch, var(--t-personne), var(--t-outil), var(--t-parcours), var(--t-organisation), var(--t-ecosysteme)) left bottom / 100% 1px no-repeat;
-  transition: background-size 0.3s ease, color 0.25s ease;
+  transition: color 0.25s ease;
+}
+.fin-liens a:not(.fin-primaire)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: url("grain.png") 50% 87% / 740px 740px;
+  filter: saturate(220%);
+  transform-origin: bottom;
+  transform: scaleY(0.5);
+  transition: transform 0.3s ease, background-position 0.8s ease;
 }
 .fin-liens a:not(.fin-primaire):hover,
 .fin-liens a:not(.fin-primaire):focus-visible {
   color: var(--paper);
-  background-size: 100% 3px;
+}
+.fin-liens a:not(.fin-primaire):hover::after,
+.fin-liens a:not(.fin-primaire):focus-visible::after {
+  transform: scaleY(1.5);
+  background-position: 10% 89%;
 }
 /* héros : le secondaire est une pastille en contour, qui se remplit au survol */
 .hero .fin-liens a:not(.fin-primaire) {
@@ -6878,6 +6895,7 @@ footer a {
   border-color: var(--paper);
   background: color-mix(in srgb, var(--paper) 12%, transparent);
 }
+.hero .fin-liens a:not(.fin-primaire)::after { display: none; }
 .fin-liens a:focus-visible { outline: 2px solid var(--paper); outline-offset: 4px; }
 @media (prefers-reduced-motion: reduce) {
   .fin-liens a, .fin-liens a::after { transition: none; }
