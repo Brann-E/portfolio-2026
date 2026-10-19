@@ -8541,3 +8541,23 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 @media (max-width: 460px) {
   .tfrise .tf-labels { font-size: var(--fs-sm); gap: 5px; }
 }
+
+
+/* ===== Home : les cinq terrains reliés par le fil ===== */
+.fil { list-style: none; display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px;
+  position: relative; padding: 0; margin: clamp(8px,2vh,16px) 0 0; }
+.fil::before { content: ""; position: absolute; top: 9px; left: 10%; right: 10%; height: 2px;
+  background: linear-gradient(90deg in oklch, var(--t-personne), var(--t-outil), var(--t-parcours), var(--t-organisation), var(--t-ecosysteme)); }
+.fil li { position: relative; padding-top: 32px; display: grid; gap: 8px; align-content: start; }
+.fil li::before { content: ""; position: absolute; top: 0; left: 0; width: 20px; height: 20px;
+  border-radius: 50%; background: var(--t); box-shadow: 0 0 18px var(--t); }
+.fil li strong { color: var(--paper); font-weight: 500; font-size: var(--fs-md); }
+.fil li span { color: var(--muted); font-size: var(--fs-base); line-height: 1.45; }
+.fil-chute { margin-top: clamp(30px, 5vh, 48px); color: var(--muted2); font-size: var(--fs-md); }
+@media (max-width: 760px) {
+  .fil { grid-template-columns: 1fr; gap: 22px; }
+  .fil::before { top: 10px; bottom: 10px; left: 9px; right: auto; width: 2px; height: auto;
+    background: linear-gradient(180deg in oklch, var(--t-personne), var(--t-outil), var(--t-parcours), var(--t-organisation), var(--t-ecosysteme)); }
+  .fil li { padding: 0 0 0 36px; }
+  .fil li::before { top: 2px; }
+}
