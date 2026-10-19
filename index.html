@@ -200,17 +200,17 @@
         <button class="sy-nav-arrow sy-prev" id="syc-navPrev" aria-label="Précédent">‹</button>
         <div class="sy-constat" id="syc-constat"></div>
         <button class="sy-nav-arrow sy-next" id="syc-navNext" aria-label="Suivant">›</button>
-        <div class="sy-sticker">
+        <div class="sy-sticker" id="syc-sticker">
           <span class="sy-rainbow"></span>
-          <span class="sy-hypo" id="syc-hypo"></span>
+          <span class="sy-hypo" id="syc-hypo" aria-live="polite"></span>
         </div>
       </div>
     </div>
 
     <div class="sy-btn-group">
-      <button class="sy-btn" id="syc-btn">
+      <button class="sy-btn" id="syc-btn" aria-controls="syc-sticker" aria-expanded="false">
         <span class="sy-btn-holo"></span>
-        <span class="sy-btn-label" id="syc-btnLabel">Et si…?</span>
+        <span class="sy-btn-label" id="syc-btnLabel">Regarder autrement</span>
       </button>
       <div class="sy-nav-dots" id="syc-navDots"></div>
     </div>
@@ -222,32 +222,43 @@ const stage=document.getElementById('syc-stage'), bg=document.getElementById('sy
   const btn=document.getElementById('syc-btn'), btnLabel=document.getElementById('syc-btnLabel');
   const sticker=document.querySelector('.sy-sticker'), dotsWrap=document.getElementById('syc-navDots');
 
-  const volets=[
-    { meta:true, sc:null,
-      titre:"Rien ne manquait, et pourtant",
-      constat:"« On a bien posé le diagnostic, bien exécuté. On a réglé ce qu'on avait identifié et ça n'a pas suffi. »",
-      hypo:"Et si le problème ne se trouvait pas dans les choses elles-mêmes, mais dans ce qui les relie ?" },
-    { meta:false, sc:"#28E6FF", sc2:"#9F6EFF",
-      titre:"L'adoption qui ne vient pas",
-      constat:"« On a livré exactement ce qui était demandé, et pourtant, trois mois plus tard, les usages n'ont pas suivi. »",
-      hypo:"Et si tenir dans la durée ne dépendait pas de ce qu'on donne à chacun, mais de ce qui se tisse entre eux ?" },
-    { meta:false, sc:"#F968A7", sc2:"#FFEA4D",
-      titre:"Des chiffres qui ne se parlent pas",
-      constat:"« On mesure tout, chaque service suit ses propres chiffres. Et à force, chacun optimise les siens sans être assuré qu'on aille dans la même direction. »",
-      hypo:"Et si une donnée ne prenait sens que reliée - à une décision, à une question, aux autres chiffres - et jamais seule ?" },
-    { meta:false, sc:"#9F6EFF", sc2:"#F968A7",
-      titre:"Tout le monde est d'accord, et rien n'avance",
-      constat:"« On est tous d'accord en réunion, chacun repart aligné. Mais dans les faits, les décisions s'éloignent peu à peu les unes des autres. »",
-      hypo:"Et si chacun avait raison depuis sa place, sans s'apercevoir qu'il ne perçoit qu'une partie d'un tout plus vaste ?" },
-    { meta:false, sc:"#2FFFB4", sc2:"#28E6FF",
-      titre:"Plus efficace, mais moins performant",
-      constat:"« On a optimisé, automatisé, retiré ce qui semblait ralentir. Sur le papier c'était mieux - dans les faits, les clients sont partis. »",
-      hypo:"Et si un outil permettait de trouver l'équilibre entre l'efficacité des actions et les relations qu'il permet de créer et d'entretenir ?" },
-    { meta:false, sc:"#FFEA4D", sc2:"#2FFFB4",
-      titre:"Chaque logique tient, l'ensemble non",
-      constat:"« Chaque partie fonctionne selon sa propre logique, et chacune a ses raisons. Mais dès qu'il faut les faire cohabiter, aucune solution ne semble pouvoir tenir les deux. »",
-      hypo:"Et si ce qui les relie n'était pas un compromis entre les deux, mais un plan plus large où chaque vision trouve sa place ?" }
+  const T = {
+    personne:    { nom: 'Personne',    c: '#F968A7' },
+    outil:       { nom: 'Outil',       c: '#28E6FF' },
+    parcours:    { nom: 'Parcours',    c: '#9F6EFF' },
+    organisation:{ nom: 'Organisation',c: '#FFEA4D' },
+    ecosysteme:  { nom: 'Écosystème',  c: '#2FFFB4' },
+  };
+  const LABEL = 'Regarder autrement';
+
+  const volets = [
+    { meta: true, trajet: 'Tous les terrains',
+      titre: "Rien ne manquait, et pourtant",
+      constat: "« On a bien posé le diagnostic, bien exécuté. On a réglé ce qu'on avait identifié et ça n'a pas suffi. »",
+      hypo: "Le problème ne se trouvait pas dans les choses elles-mêmes, mais dans ce qui les relie." },
+    { meta: false, from: 'outil', to: 'organisation',
+      titre: "L'adoption qui ne vient pas",
+      constat: "« On a livré exactement ce qui était demandé, et pourtant, trois mois plus tard, les usages n'ont pas suivi. »",
+      hypo: "Un outil ne tient pas dans la durée par ce qu'il donne à chacun, mais par ce qui se tisse entre ceux qui l'utilisent." },
+    { meta: false, from: 'organisation', to: 'outil',
+      titre: "Des chiffres qui ne se parlent pas",
+      constat: "« On mesure tout, chaque service suit ses propres chiffres. Et à force, chacun optimise les siens sans être assuré qu'on aille dans la même direction. »",
+      hypo: "Une donnée ne prend sens que reliée : à une décision, à une question, aux autres chiffres. Jamais seule." },
+    { meta: false, from: 'personne', to: 'organisation',
+      titre: "Tout le monde est d'accord, et rien n'avance",
+      constat: "« On est tous d'accord en réunion, chacun repart aligné. Mais dans les faits, les décisions s'éloignent peu à peu les unes des autres. »",
+      hypo: "Chacun a raison depuis sa place, sans voir qu'il ne perçoit qu'une partie d'un tout plus vaste." },
+    { meta: false, from: 'parcours', to: 'personne',
+      titre: "Plus efficace, mais moins performant",
+      constat: "« On a optimisé, automatisé, retiré ce qui semblait ralentir. Sur le papier c'était mieux, dans les faits, les clients sont partis. »",
+      hypo: "Ce qui semblait ralentir, c'était souvent la relation. Tout l'enjeu est l'équilibre entre l'efficacité des actions et les relations qu'elles créent et entretiennent." },
+    { meta: false, from: 'organisation', to: 'ecosysteme',
+      titre: "Chaque logique tient, l'ensemble non",
+      constat: "« Chaque partie fonctionne selon sa propre logique, et chacune a ses raisons. Mais dès qu'il faut les faire cohabiter, aucune solution ne semble pouvoir tenir les deux. »",
+      hypo: "Ce qui les relie n'est pas un compromis entre les deux, mais un plan plus large où chaque vision trouve sa place." },
   ];
+
+  const trajet = (v) => v.meta ? v.trajet : `${T[v.from].nom} → ${T[v.to].nom}`;
 
   let idx=0, frozen=false, on=false, animating=false;
 
@@ -264,11 +275,11 @@ const stage=document.getElementById('syc-stage'), bg=document.getElementById('sy
   function paint(v){
     titreEl.textContent=v.titre; constatEl.textContent=v.constat; hypoEl.textContent=v.hypo;
     if(v.meta){ stage.classList.add('sy-is-meta'); bg.className='sy-bg'; }
-    else{ stage.classList.remove('sy-is-meta'); bg.className='sy-bg sy-solid'; stage.style.setProperty('--sc',v.sc); stage.style.setProperty('--sc-b',v.sc2); }
+    else{ stage.classList.remove('sy-is-meta'); bg.className='sy-bg sy-solid'; stage.style.setProperty('--sc',T[v.from].c); stage.style.setProperty('--sc-b',T[v.from].c); }
     sticker.style.setProperty('--blob', blobs[idx % blobs.length]);
   }
   function setDots(){ [...dotsWrap.children].forEach((d,i)=>d.classList.toggle('active',i===idx)); }
-  function render(){ on=false;frozen=false;stage.classList.remove('sy-revealed');btnLabel.textContent="Et si…?";paint(volets[idx]);setDots(); }
+  function render(){ on=false;frozen=false;stage.classList.remove('sy-revealed');btnLabel.textContent=LABEL;btn.setAttribute('aria-expanded','false');paint(volets[idx]);setDots(); }
 
   function slide(dir, target){
     if(animating) return;
@@ -276,7 +287,7 @@ const stage=document.getElementById('syc-stage'), bg=document.getElementById('sy
     if(next===idx) return;
     if(dir===0) dir = next>idx ? 1 : -1;
     animating=true;
-    on=false;frozen=false;stage.classList.remove('sy-revealed');btnLabel.textContent="Et si…?";
+    on=false;frozen=false;stage.classList.remove('sy-revealed');btnLabel.textContent=LABEL;btn.setAttribute('aria-expanded','false');
     const D=70;
     slider.style.transition='transform .38s ease, opacity .38s ease';
     bg.style.transition='transform .38s ease, opacity .38s ease';
@@ -309,8 +320,12 @@ const stage=document.getElementById('syc-stage'), bg=document.getElementById('sy
 
   btn.addEventListener('click',()=>{
     on=!on;
-    if(on){ frozen=true;stage.classList.remove('sy-revealed');void stage.offsetWidth;stage.classList.add('sy-revealed');btnLabel.textContent="←"; }
-    else{ frozen=false;stage.classList.remove('sy-revealed');btnLabel.textContent="Et si… ?"; }
+    const v=volets[idx];
+    if(on){ frozen=true; if(!v.meta) stage.style.setProperty('--sc-b',T[v.to].c);
+      stage.classList.remove('sy-revealed');void stage.offsetWidth;stage.classList.add('sy-revealed');
+      btnLabel.textContent=trajet(v); btn.setAttribute('aria-expanded','true'); }
+    else{ frozen=false; if(!v.meta) stage.style.setProperty('--sc-b',T[v.from].c);
+      stage.classList.remove('sy-revealed'); btnLabel.textContent=LABEL; btn.setAttribute('aria-expanded','false'); }
   });
 
   stage.addEventListener('pointermove',(e)=>{

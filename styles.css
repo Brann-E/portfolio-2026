@@ -8561,3 +8561,26 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
   .fil li { padding: 0 0 0 36px; }
   .fil li::before { top: 2px; }
 }
+
+/* ===== Slider constat : deux couleurs animables + lecture sous le constat ===== */
+@property --sc   { syntax: '<color>'; inherits: true; initial-value: #28e6ff; }
+@property --sc-b { syntax: '<color>'; inherits: true; initial-value: #9f6eff; }
+.sy-stage { transition: --sc-b 1.4s cubic-bezier(.6, 0, .2, 1); }
+.sy-stage:not(.sy-is-meta) .sy-rainbow {
+  background: linear-gradient(100deg, transparent, var(--sc) 30%, var(--sc-b) 70%, transparent);
+}
+.sy-constat-row { flex-wrap: wrap; justify-content: center; }
+.sy-constat-row .sy-constat { flex: 1 1 0; min-width: 0; transition: opacity .6s; }
+.sy-stage.sy-revealed .sy-sticker {
+  position: relative !important; left: auto !important; top: auto !important; transform: none !important;
+  flex-basis: 100%; max-width: 100%; max-height: none !important; height: auto !important; overflow: visible !important;
+  margin-top: 18px; padding: clamp(18px, 3vw, 30px) clamp(22px, 3vw, 34px) !important;
+  background: rgba(255, 255, 255, .45) !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+.sy-stage.sy-revealed .sy-constat { opacity: .7; }
+@media (prefers-reduced-motion: reduce) {
+  .sy-stage { transition: none; }
+  .sy-bg .sy-spectre { animation: none; }
+  .sy-stage.sy-revealed .sy-rainbow { animation: none; }
+}
