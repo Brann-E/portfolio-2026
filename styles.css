@@ -2999,18 +2999,7 @@ em.grad {
 }
 .proof .k em {
   font-style: italic;
-}
-.proof .cell:nth-child(1) .k em {
-  color: var(--c3);
-}
-.proof .cell:nth-child(2) .k em {
-  color: var(--c2);
-}
-.proof .cell:nth-child(3) .k em {
-  color: var(--c4);
-}
-.proof .cell:nth-child(4) .k em {
-  color: var(--c5);
+  color: var(--t, var(--c3));
 }
 .proof .d {
   font-size: var(--fs-sm);
@@ -8584,3 +8573,15 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
   .sy-bg .sy-spectre { animation: none; }
   .sy-stage.sy-revealed .sy-rainbow { animation: none; }
 }
+
+/* ===== Home section 6 : effets cliquables vers leur cas ===== */
+.proof a.cell { text-decoration: none; color: inherit; display: block; transition: background .3s ease; }
+.proof a.cell:hover { background: color-mix(in srgb, var(--t) 9%, var(--ink)); }
+.proof-cas { margin-top: 14px; font-size: var(--fs-sm); letter-spacing: .03em; color: var(--t); }
+
+/* ===== Home section 7 : la demarche en trois temps ===== */
+.demarche { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(22px, 3vw, 40px); margin-top: clamp(16px, 3vh, 28px); }
+.demarche .etape { display: grid; gap: 8px; align-content: start; padding-top: 20px; border-top: 2px solid var(--faint); }
+.demarche .etape strong { font-family: var(--ff-serif); font-weight: 400; font-size: var(--fs-xl); color: var(--paper); }
+.demarche .etape span { color: var(--muted); font-size: var(--fs-base); line-height: 1.5; }
+@media (max-width: 760px) { .demarche { grid-template-columns: 1fr; gap: 22px; } }
