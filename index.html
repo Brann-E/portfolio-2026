@@ -298,7 +298,7 @@ const stage=document.getElementById('syc-stage'), bg=document.getElementById('sy
     ecosysteme:'<circle cx="16" cy="15" r="6"/><circle cx="25" cy="17" r="6"/><circle cx="20" cy="25" r="6"/>'
   };
   const frise=document.getElementById('syc-frise');
-  frise.innerHTML=ORDRE.map(k=>`<li class="sy-node" style="--t: var(--t-${k}); --i: ${ORDRE.indexOf(k)}"><span class="sy-pastille"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8">${ICONES[k]}</svg></span><span class="sy-nom">${T[k].nom}</span></li>`).join('')+'<li class="sy-trace"></li><li class="sy-voyageur"></li>';
+  frise.innerHTML=ORDRE.map(k=>`<li class="sy-node" style="--t: var(--t-${k}); --i: ${ORDRE.indexOf(k)}"><span class="sy-pastille"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8">${ICONES[k]}</svg></span><span class="sy-nom">${T[k].nom}</span></li>`).join('')+'<li class="sy-trace"></li>';
   const noeuds=[...frise.querySelectorAll('.sy-node')];
   function paintFrise(v){
     frise.classList.toggle('sy-frise-meta',!!v.meta);
@@ -308,7 +308,7 @@ const stage=document.getElementById('syc-stage'), bg=document.getElementById('sy
     noeuds.forEach((n,i)=>{ const k=ORDRE[i];
       n.classList.toggle('on',!v.meta&&k===v.from);
       n.classList.toggle('dest',dests.includes(k));
-      // la pastille s'allume quand le point voyageur y arrive
+      // la pastille s'allume quand le trait l'atteint
       n.style.setProperty('--d',(Math.abs(i-a)/span*1.2).toFixed(2)+'s'); });
     frise.style.setProperty('--a',a); frise.style.setProperty('--b',b);
     frise.style.setProperty('--lo',lo); frise.style.setProperty('--span',span);
