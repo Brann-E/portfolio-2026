@@ -5457,7 +5457,7 @@ h3 {
   letter-spacing: -0.02em;
   line-height: 1.04;
   max-width: 16ch;
-  margin-bottom: clamp(28px, 4.5vh, 44px);
+  margin-bottom: clamp(120px, 16vh, 180px);
 }
 /* le mot qui se compose depuis les 5 couleurs */
 .spectrum-word {
@@ -6094,10 +6094,18 @@ footer a {
   letter-spacing: 0.02em;
 }
 .ft-role3 {
-  font-size: var(--fs-sm);
+  font-size: var(--fs-m);
   font-weight: 200;
-  color: var(--muted);
+  color: var(--muted2);
   letter-spacing: 0.02em;
+}
+
+.ft-role4 {
+  font-size: var(--fs-xl);
+  font-weight: 200;
+  color: var(--paper);
+  letter-spacing: 0.02em;
+  font-family:var(--ff-serif)
 }
 
 .ft-claim {
@@ -7749,7 +7757,7 @@ a.pl-cta {
 }
 .sig-portrait {
   position: relative;
-  width: clamp(144px, 12vw, 160px);
+  width: clamp(168px, 15vw, 200px);
   aspect-ratio: 1;
   border-radius: 50%;
   overflow: hidden;
@@ -8609,9 +8617,10 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 /* ===== Slider : ligne d'introduction au-dessus de la carte ===== */
 .sy-intro {
   font-family: var(--ff-serif);
-  font-style: italic;
   font-size: var(--fs-xl);
   line-height: 1.3;
   color: var(--muted2);
   margin: 0 0 clamp(16px, 3vh, 28px);
 }
+
+
