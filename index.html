@@ -264,7 +264,7 @@ const stage=document.getElementById('syc-stage'), bg=document.getElementById('sy
     { meta: false, from: 'parcours', to: 'personne',
       titre: "Plus efficace, mais moins performant",
       constat: "« On a optimisé, automatisé, retiré ce qui semblait ralentir. Sur le papier c'était mieux, dans les faits, les clients sont partis. »",
-      hypo: "Ce qui semblait ralentir, c'était souvent la relation. Tout l'enjeu est l'équilibre entre l'efficacité des actions et les relations qu'elles créent et entretiennent." },
+      hypo: "Ce qui semblait ralentir, c'était souvent la relation. Tout l'enjeu est l'équilibre entre l'efficacité des actions et les relations." },
     { meta: false, from: 'organisation', to: 'ecosysteme',
       titre: "Chaque logique tient, l'ensemble non",
       constat: "« Chaque partie fonctionne selon sa propre logique, et chacune a ses raisons. Mais dès qu'il faut les faire cohabiter, aucune solution ne semble pouvoir tenir les deux. »",
@@ -308,7 +308,7 @@ const stage=document.getElementById('syc-stage'), bg=document.getElementById('sy
     const a=ORDRE.indexOf(v.from), b=ORDRE.indexOf(v.to);
     frise.style.setProperty('--a',a); frise.style.setProperty('--b',b);
     frise.style.setProperty('--lo',Math.min(a,b)); frise.style.setProperty('--span',Math.abs(b-a));
-    frise.style.setProperty('--origin',b>a?'left':'right');
+    frise.style.setProperty('--hide',b>a?'inset(0 100% 0 0)':'inset(0 0 0 100%)');
   }
 
   let idx=0, frozen=false, on=false, animating=false;
@@ -406,7 +406,6 @@ const stage=document.getElementById('syc-stage'), bg=document.getElementById('sy
       <a class="cell rv" href="/cas-bi-solution" style="--t: var(--t-organisation)"><div class="k"><em>Des décisions</em> éclairées</div><div class="d">Des données qui servent enfin à décider.</div><div class="proof-cas">B.I Solution &rarr;</div></a>
       <a class="cell rv" href="/cas-proshop" style="--t: var(--t-ecosysteme)"><div class="k"><em>Des systèmes</em> relancés</div><div class="d">Un modèle de vente qui tient la relation au lieu de la couper.</div><div class="proof-cas">Proshop &rarr;</div></a>
     </div>
-    <a class="proof-link" href="/etudes-de-cas">Voir les cas en détail &rarr;</a>
   </section>
 
 <section class="band">
