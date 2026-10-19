@@ -6798,41 +6798,73 @@ footer a {
 .lettre-fin .llead {
   margin-bottom: clamp(30px, 4.5vh, 44px);
 }
-/* les liens : un seul appel principal, les autres en retrait */
+/* les deux appels les plus importants du site : un bouton plein, un lien souligné.
+   Sélecteurs en .fin-liens a... pour passer devant a:link / a:hover globaux. */
 .fin-liens {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 12px 22px;
+  gap: 18px 34px;
 }
 .fin-liens a {
-  font-size: var(--fs-base);
-  letter-spacing: 0.02em;
+  font-size: var(--fs-md);
+  letter-spacing: 0.01em;
   text-decoration: none;
-  color: var(--muted);
-  border-bottom: 0;
-  transition: color 0.25s ease-in;
+  transition: color 0.25s ease;
 }
-.fin-liens a:hover {
-  color: var(--paper);
-}
-.fin-liens .fin-primaire {
+/* principal : plein cyan, texte noir ; au survol le dégradé des cinq terrains se lève dessous */
+.fin-liens a.fin-primaire {
+  position: relative;
+  isolation: isolate;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 14px 26px;
-  border: 1px solid var(--c1);
+  gap: 12px;
+  padding: 16px 30px;
   border-radius: 3px;
-  color: var(--c1);
-  transition:
-    gap 0.35s ease,
-    background 0.3s ease,
-    color 0.25s ease-in;
+  background: var(--c1);
+  color: var(--ink);
+  font-weight: 500;
+  overflow: hidden;
+  transition: box-shadow 0.4s ease, transform 0.3s ease;
 }
-.fin-liens .fin-primaire:hover {
-  gap: 15px;
-  background: color-mix(in srgb, var(--c1) 12%, transparent);
+.fin-liens a.fin-primaire::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(100deg in oklch, var(--t-personne), var(--t-outil), var(--t-parcours), var(--t-organisation), var(--t-ecosysteme));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.fin-liens a.fin-primaire::after {
+  content: "→" / "";
+  transition: transform 0.35s ease;
+}
+.fin-liens a.fin-primaire:hover,
+.fin-liens a.fin-primaire:focus-visible {
+  color: var(--ink);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--c1) 35%, transparent);
+}
+.fin-liens a.fin-primaire:hover::before,
+.fin-liens a.fin-primaire:focus-visible::before { opacity: 1; }
+.fin-liens a.fin-primaire:hover::after,
+.fin-liens a.fin-primaire:focus-visible::after { transform: translateX(5px); }
+/* secondaire : texte clair, soulignement aux cinq couleurs qui s'épaissit au survol */
+.fin-liens a:not(.fin-primaire) {
   color: var(--paper);
+  padding-bottom: 4px;
+  background: linear-gradient(90deg in oklch, var(--t-personne), var(--t-outil), var(--t-parcours), var(--t-organisation), var(--t-ecosysteme)) left bottom / 100% 1px no-repeat;
+  transition: background-size 0.3s ease, color 0.25s ease;
+}
+.fin-liens a:not(.fin-primaire):hover,
+.fin-liens a:not(.fin-primaire):focus-visible {
+  color: var(--paper);
+  background-size: 100% 3px;
+}
+.fin-liens a:focus-visible { outline: 2px solid var(--paper); outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  .fin-liens a, .fin-liens a::before, .fin-liens a::after { transition: none; }
 }
 /* la signature : la lettre est signée */
 .fin-signature {
@@ -8563,9 +8595,6 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 .proof-cas { margin-top: 14px; font-size: var(--fs-sm); letter-spacing: .03em; color: var(--t); }
 
 
-/* ===== Home : final, lien secondaire souligné ===== */
-.final .fin-liens a:not(.fin-primaire) { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
-.final .fin-liens a:not(.fin-primaire):hover { text-decoration-thickness: 2px; }
 .final h2 { max-width: none; }
 
 /* ===== Slider : frise des cinq terrains (départ allumé, arrivée en fantôme) ===== */
