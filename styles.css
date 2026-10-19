@@ -3948,8 +3948,8 @@ footer {
   --spx: 50%;
   --spy: 50%;
   transform: translate(-50%, -50%) scale(0.6);
-  width: auto;
-  max-width: min(92%, 780px);
+  width: min(94%, 940px);
+  max-width: min(96%, 980px);
   height: auto;
   border-radius: 8px;
   display: flex;
@@ -4032,7 +4032,7 @@ footer {
   color: var(--ink);
   position: relative;
   z-index: 3;
-  max-width: 640px;
+  max-width: 880px;
   opacity: 0;
   transition: opacity 0.2s ease;
   text-shadow: 0 1px 10px rgba(255, 255, 255, 0.6);
@@ -8595,11 +8595,9 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 .sy-stage.sy-revealed .sy-node:not(.on):not(.dest) .sy-pastille { opacity: .16; }
 /* le fil parcouru et le point qui voyage, du départ vers l'arrivée */
 .sy-trace {
-  position: absolute; top: 17px; height: 2px; background: var(--ink);
-  left: calc((var(--lo, 0) + .5) * 20%); width: calc(var(--span, 0) * 20%);
+  position: absolute; top: 17px; height: 2px; background: var(--ink); z-index: 2;
+  left: calc((var(--lo, 0) + .5) * 20% + var(--r)); width: calc(var(--span, 0) * 20% - 2 * var(--r));
   clip-path: var(--hide, inset(0 100% 0 0)); transition: clip-path .4s;
-  -webkit-mask: linear-gradient(90deg, transparent var(--r), #000 var(--r), #000 calc(100% - var(--r)), transparent calc(100% - var(--r))) 0 0 / calc(100% / var(--span, 1)) 100% repeat-x;
-  mask: linear-gradient(90deg, transparent var(--r), #000 var(--r), #000 calc(100% - var(--r)), transparent calc(100% - var(--r))) 0 0 / calc(100% / var(--span, 1)) 100% repeat-x;
 }
 .sy-voyageur {
   position: absolute; top: 11px; width: 14px; height: 14px; margin-left: -7px; border-radius: 50%;
