@@ -249,7 +249,7 @@ const stage=document.getElementById('syc-stage'), bg=document.getElementById('sy
       titre: "Rien ne manquait, et pourtant",
       constat: "« On a bien posé le diagnostic, bien exécuté. On a réglé ce qu'on avait identifié et ça n'a pas suffi. »",
       hypo: "Le problème ne se trouvait pas dans les choses elles-mêmes, mais dans ce qui les relie." },
-    { meta: false, from: 'outil', to: 'organisation',
+    { meta: false, from: 'outil', to: ['organisation','ecosysteme'],
       titre: "L'adoption qui ne vient pas",
       constat: "« On a livré exactement ce qui était demandé, et pourtant, trois mois plus tard, les usages n'ont pas suivi. »",
       hypo: "Un outil ne tient pas dans la durée par ce qu'il donne à chacun, mais par ce qui se tisse entre ceux qui l'utilisent." },
@@ -271,7 +271,8 @@ const stage=document.getElementById('syc-stage'), bg=document.getElementById('sy
       hypo: "Ce qui les relie n'est pas un compromis entre les deux, mais un plan plus large où chaque vision trouve sa place." },
   ];
 
-  const trajet = (v) => v.meta ? v.trajet : `${T[v.from].nom} → ${T[v.to].nom}`;
+  const tos = (v) => [].concat(v.to);
+  const trajet = (v) => v.meta ? v.trajet : [v.from,...tos(v)].map(k=>T[k].nom).join(' → ');
   const srEl=document.getElementById('syc-sr');
 
   // couleur de départ éclaircie : l'état A n'est jamais monochrome
@@ -297,18 +298,21 @@ const stage=document.getElementById('syc-stage'), bg=document.getElementById('sy
     ecosysteme:'<circle cx="16" cy="15" r="6"/><circle cx="25" cy="17" r="6"/><circle cx="20" cy="25" r="6"/>'
   };
   const frise=document.getElementById('syc-frise');
-  frise.innerHTML=ORDRE.map(k=>`<li class="sy-node" style="--t: var(--t-${k})"><span class="sy-pastille"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8">${ICONES[k]}</svg></span><span class="sy-nom">${T[k].nom}</span></li>`).join('')+'<li class="sy-trace"></li><li class="sy-voyageur"></li>';
+  frise.innerHTML=ORDRE.map(k=>`<li class="sy-node" style="--t: var(--t-${k}); --i: ${ORDRE.indexOf(k)}"><span class="sy-pastille"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8">${ICONES[k]}</svg></span><span class="sy-nom">${T[k].nom}</span></li>`).join('')+'<li class="sy-trace"></li><li class="sy-voyageur"></li>';
   const noeuds=[...frise.querySelectorAll('.sy-node')];
   function paintFrise(v){
     frise.classList.toggle('sy-frise-meta',!!v.meta);
+    const dests=v.meta?[]:tos(v), a=v.meta?0:ORDRE.indexOf(v.from);
+    const b=v.meta?ORDRE.length-1:Math.max(...dests.map(k=>ORDRE.indexOf(k)));
+    const lo=Math.min(a,b), span=Math.abs(b-a);
     noeuds.forEach((n,i)=>{ const k=ORDRE[i];
-      n.classList.toggle('on',!!v.meta||k===v.from);
-      n.classList.toggle('dest',!v.meta&&k===v.to); });
-    if(v.meta) return;
-    const a=ORDRE.indexOf(v.from), b=ORDRE.indexOf(v.to);
+      n.classList.toggle('on',!v.meta&&k===v.from);
+      n.classList.toggle('dest',dests.includes(k));
+      // la pastille s'allume quand le point voyageur y arrive
+      n.style.setProperty('--d',(Math.abs(i-a)/span*1.2).toFixed(2)+'s'); });
     frise.style.setProperty('--a',a); frise.style.setProperty('--b',b);
-    frise.style.setProperty('--lo',Math.min(a,b)); frise.style.setProperty('--span',Math.abs(b-a));
-    frise.style.setProperty('--hide',b>a?'inset(0 100% 0 0)':'inset(0 0 0 100%)');
+    frise.style.setProperty('--lo',lo); frise.style.setProperty('--span',span);
+    frise.style.setProperty('--hide',b>=a?'inset(0 100% 0 0)':'inset(0 0 0 100%)');
   }
 
   let idx=0, frozen=false, on=false, animating=false;
@@ -373,7 +377,7 @@ const stage=document.getElementById('syc-stage'), bg=document.getElementById('sy
   btn.addEventListener('click',()=>{
     on=!on;
     const v=volets[idx];
-    if(on){ frozen=true; if(!v.meta) stage.style.setProperty('--sc-b',T[v.to].c);
+    if(on){ frozen=true; if(!v.meta) stage.style.setProperty('--sc-b',T[tos(v)[0]].c);
       stage.classList.remove('sy-revealed');void stage.offsetWidth;stage.classList.add('sy-revealed');
       btnLabel.textContent=LABEL_BACK; srEl.textContent=trajet(v); btn.setAttribute('aria-expanded','true'); }
     else{ frozen=false; if(!v.meta) stage.style.setProperty('--sc-b',lighter(T[v.from].c)); srEl.textContent='';
