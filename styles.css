@@ -8535,8 +8535,8 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 /* ===== Home : les cinq terrains reliés par le fil ===== */
 .fil { list-style: none; display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px;
   position: relative; padding: 0; margin: clamp(8px,2vh,16px) 0 0; }
-.fil::before { content: ""; position: absolute; top: 9px; left: 10%; right: 10%; height: 2px;
-  background: linear-gradient(90deg in oklch, var(--t-personne), var(--t-outil), var(--t-parcours), var(--t-organisation), var(--t-ecosysteme)); }
+.fil li:not(:last-child)::after { content: ""; position: absolute; top: 9px; left: 10px; width: calc(100% + 24px); height: 2px;
+  background: linear-gradient(90deg in oklch, var(--t), var(--t-next, var(--t))); }
 .fil li { position: relative; padding-top: 32px; display: grid; gap: 8px; align-content: start; }
 .fil li::before { content: ""; position: absolute; top: 0; left: 0; width: 20px; height: 20px;
   border-radius: 50%; background: var(--t); box-shadow: 0 0 18px var(--t); }
@@ -8545,8 +8545,8 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 .fil-chute { margin-top: clamp(30px, 5vh, 48px); color: var(--muted2); font-size: var(--fs-md); }
 @media (max-width: 760px) {
   .fil { grid-template-columns: 1fr; gap: 22px; }
-  .fil::before { top: 10px; bottom: 10px; left: 9px; right: auto; width: 2px; height: auto;
-    background: linear-gradient(180deg in oklch, var(--t-personne), var(--t-outil), var(--t-parcours), var(--t-organisation), var(--t-ecosysteme)); }
+  .fil li:not(:last-child)::after { top: 12px; left: 9px; width: 2px; height: calc(100% + 22px);
+    background: linear-gradient(180deg in oklch, var(--t), var(--t-next, var(--t))); }
   .fil li { padding: 0 0 0 36px; }
   .fil li::before { top: 2px; }
 }
@@ -8558,16 +8558,6 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 .sy-stage:not(.sy-is-meta) .sy-rainbow {
   background: linear-gradient(100deg, transparent, var(--sc) 30%, var(--sc-b) 70%, transparent);
 }
-.sy-constat-row { flex-wrap: wrap; justify-content: center; }
-.sy-constat-row .sy-constat { flex: 1 1 0; min-width: 0; transition: opacity .6s; }
-.sy-stage.sy-revealed .sy-sticker {
-  position: relative !important; left: auto !important; top: auto !important; transform: none !important;
-  flex-basis: 100%; max-width: 100%; max-height: none !important; height: auto !important; overflow: visible !important;
-  margin-top: 18px; padding: clamp(18px, 3vw, 30px) clamp(22px, 3vw, 34px) !important;
-  background: rgba(255, 255, 255, .45) !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important;
-  box-shadow: none !important;
-}
-.sy-stage.sy-revealed .sy-constat { opacity: .7; }
 @media (prefers-reduced-motion: reduce) {
   .sy-stage { transition: none; }
   .sy-bg .sy-spectre { animation: none; }

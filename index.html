@@ -151,14 +151,14 @@
 
   <section class="band">
     <h2>Chaque terrain a sa discipline.<br><em>Ce qui circule ne s'arrête à aucune frontière.</em></h2>
+    <p class="fil-chute" style="margin:0 0 clamp(28px,4.5vh,44px)">Je pars du terrain où l'on m'appelle, et je suis le fil.</p>
     <ol class="fil">
-      <li style="--t: var(--t-personne)"><strong>La personne</strong><span>Ce qu'elle apporte, ce qu'elle attend, ce qu'elle tait.</span></li>
-      <li style="--t: var(--t-outil)"><strong>L'outil</strong><span>Ce qu'il laisse passer, ce qu'il chiffre, ce qu'il rend visible.</span></li>
-      <li style="--t: var(--t-parcours)"><strong>Le parcours</strong><span>Ce qui se transmet, ou se perd, d'une étape à l'autre.</span></li>
-      <li style="--t: var(--t-organisation)"><strong>L'organisation</strong><span>Ce que chaque métier sait et qui n'arrive jamais aux autres.</span></li>
+      <li style="--t: var(--t-personne); --t-next: var(--t-outil)"><strong>La personne</strong><span>Ce qu'elle apporte, ce qu'elle attend, ce qu'elle tait.</span></li>
+      <li style="--t: var(--t-outil); --t-next: var(--t-parcours)"><strong>L'outil</strong><span>Ce qu'il laisse passer, ce qu'il chiffre, ce qu'il rend visible.</span></li>
+      <li style="--t: var(--t-parcours); --t-next: var(--t-organisation)"><strong>Le parcours</strong><span>Ce qui se transmet, ou se perd, d'une étape à l'autre.</span></li>
+      <li style="--t: var(--t-organisation); --t-next: var(--t-ecosysteme)"><strong>L'organisation</strong><span>Ce que chaque métier sait et qui n'arrive jamais aux autres.</span></li>
       <li style="--t: var(--t-ecosysteme)"><strong>L'écosystème</strong><span>Ce que chacun donne, reçoit, et à quelles conditions.</span></li>
     </ol>
-    <p class="fil-chute">Je pars du terrain où l'on m'appelle, et je suis le fil.</p>
   </section>
 
   <section class="pont">
