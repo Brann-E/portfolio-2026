@@ -573,7 +573,7 @@ h4 {
   color: var(--accent);
 }
 .hero-sub {
-  font-size: var(--fs-xl);
+  font-size: var(--fs-lg);
   color: var(--muted2);
   line-height: 1.7;
   max-width: 52ch;
@@ -6298,7 +6298,6 @@ footer a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-top: 6px;
   padding: 10px 20px;
   border: 1px solid color-mix(in srgb, var(--paper) 60%, transparent);
   border-radius: 999px;
@@ -6330,7 +6329,7 @@ footer a {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
+  gap: 14px;
   margin-top: 14px;
 }
 .ft-social a {
