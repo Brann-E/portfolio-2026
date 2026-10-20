@@ -6121,6 +6121,19 @@ footer a {
   animation: hue 11s linear infinite;
 }
 
+/* footer : nom et rôle sur une même ligne, séparés par un point médian */
+.ft-ligne {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: .5em;
+}
+.ft-ligne .ft-role2::before {
+  content: "·";
+  margin-right: .5em;
+  opacity: .5;
+}
+
 .ft-role3 {
   font-size: var(--fs-sm);
   font-weight: 200;

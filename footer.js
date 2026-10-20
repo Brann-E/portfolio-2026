@@ -19,8 +19,10 @@
         <div class="ft-mark">
           <img src="assets/logo_256.png" alt="" aria-hidden="true">
           <div>
-            <div class="ft-name">Brann Etienne</div>
-            <div class="ft-role2"><em>Designer relationnel</em></div>
+            <div class="ft-ligne">
+              <div class="ft-name">Brann Etienne</div>
+              <div class="ft-role2"><em>Designer relationnel</em></div>
+            </div>
             <div class="ft-role3">Concepteur de dispositifs relationnels&nbsp;: outils, parcours et fa&ccedil;ons de travailler ensemble</div>
           </div>
         </div>
