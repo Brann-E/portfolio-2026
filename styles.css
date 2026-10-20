@@ -6325,20 +6325,26 @@ footer a {
 .ft-col a.ft-pill:active { transform: translateY(1px) scale(0.985); }
 .ft-pill .holo-label { position: relative; z-index: 2; }
 
-/* réseaux : liens soulignés en foil holographique, sous le lieu */
+/* réseaux : un logo et un nom par ligne, sous le lieu ; le nom est souligné en foil holographique */
 .ft-social {
   display: flex;
-  gap: 22px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
   margin-top: 14px;
 }
 .ft-social a {
-  position: relative;
-  padding-bottom: 4px;
-  font-size: var(--fs-base);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--fs-md);
+  line-height: 1.5;
   color: var(--paper);
   text-decoration: none;
 }
-.ft-social a::after {
+.ft-logo { width: 20px; height: 20px; flex: none; fill: currentColor; }
+.ft-social-txt { position: relative; padding-bottom: 3px; }
+.ft-social-txt::after {
   content: "";
   position: absolute;
   left: 0;
@@ -6351,8 +6357,8 @@ footer a {
   transform: scaleY(0.5);
   transition: transform 0.3s ease, background-position 0.8s ease;
 }
-.ft-social a:hover::after,
-.ft-social a:focus-visible::after {
+.ft-social a:hover .ft-social-txt::after,
+.ft-social a:focus-visible .ft-social-txt::after {
   transform: scaleY(1.5);
   background-position: 10% 89%;
 }
