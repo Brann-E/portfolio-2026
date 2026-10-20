@@ -49,6 +49,13 @@
   --fs-title-l: clamp(2rem, 4.6vw, 3.4rem);
   --fs-title-xl: clamp(2rem, 5.1vw, 4.4rem);
   --fs-display: clamp(2rem, 6.2vw, 5.4rem);
+  /* bloc signature : héros (sig-) et footer (ft-) */
+  --fs-sig-name: var(--fs-2xl);
+  --fs-sig-role: clamp(1.25rem, 1.05rem + .6vw, 1.5rem);
+  --fs-sig-desc: 1rem;
+  --fs-sig-claim: var(--fs-xl);
+  --fs-ft-name: 1.25rem;
+  --fs-ft-role: clamp(1.05rem, .9rem + .5vw, 1.25rem);
 }
 
 /* Source: article_1_relation_paradigme_v2.html */
@@ -6077,7 +6084,7 @@ footer a {
 }
 .ft-name {
   font-family: var(--ff-serif);
-  font-size: 1.5rem;
+  font-size: var(--fs-ft-name);
   color: var(--paper);
   line-height: 1.15;
 }
@@ -6091,7 +6098,7 @@ footer a {
   font-family: "Instrument Serif", Georgia, serif;
   font-style: italic;
   font-weight: 400;
-  font-size: clamp(1.25rem, 1.05rem + .6vw, 1.5rem);
+  font-size: var(--fs-ft-role);
   line-height: 1.1;
 }
 
@@ -7805,7 +7812,7 @@ a.pl-cta {
 /* textes du bloc signature du héros : classes propres, indépendantes du footer (.ft-*) */
 .sig-name {
   font-family: var(--ff-serif);
-  font-size: var(--fs-2xl);
+  font-size: var(--fs-sig-name);
   color: var(--paper);
   line-height: 1.15;
 }
@@ -7813,7 +7820,7 @@ a.pl-cta {
   font-family: var(--ff-serif);
   font-style: italic;
   font-weight: 400;
-  font-size: clamp(1.25rem, 1.05rem + .6vw, 1.5rem);
+  font-size: var(--fs-sig-role);
   line-height: 1.1;
 }
 .sig-role em {
@@ -7827,14 +7834,14 @@ a.pl-cta {
   animation: hue 11s linear infinite;
 }
 .sig-desc {
-  font-size: 1rem;
+  font-size: var(--fs-sig-desc);
   font-weight: 200;
   color: var(--muted2);
   letter-spacing: 0.02em;
 }
 .sig-claim {
   font-family: var(--ff-serif);
-  font-size: var(--fs-xl);
+  font-size: var(--fs-sig-claim);
   font-style: italic;
   font-weight: 200;
   color: var(--paper);
