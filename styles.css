@@ -7591,8 +7591,10 @@ a.porte,
    70px sont pensés pour le plein ecran, pas pour un telephone) et laisser le
    constat grandir au lieu d'etre bloque a 4 lignes (sinon un texte long deborde). */
 @media (max-width: 600px) {
-  .sy-slider { gap: clamp(18px, 3.5vh, 36px); }
-  .sy-btn-group { gap: clamp(14px, 2.5vh, 22px); }
+  /* carte plus compacte en haut et en bas, plus d'air entre les éléments, marges latérales réduites */
+  .sy-stage { padding: clamp(22px, 3.5vh, 30px) 12px clamp(18px, 3vh, 26px); gap: clamp(28px, 4.5vh, 40px); }
+  .sy-slider { gap: clamp(28px, 5vh, 44px); }
+  .sy-btn-group { gap: clamp(22px, 3.5vh, 30px); }
   .sy-constat { height: auto; min-height: calc(1.3em * 4); font-size: clamp(1.2rem, 5.2vw, 1.9rem); }
   .sy-titre { font-size: clamp(1.45rem, 6.2vw, 2.2rem); line-height: 1.25; }
   .sy-btn { font-size: clamp(1.3rem, 5.6vw, 1.9rem); padding: 12px 30px; min-width: 0; }
@@ -8653,7 +8655,7 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 .sy-frise-meta .sy-trace { z-index: 0; left: calc((var(--lo, 0) + .5) * 20%); width: calc(var(--span, 0) * 20%); }
 /* volet 1 : tout est éteint, le témoin part de Personne et allume chaque terrain, nom compris */
 .sy-stage.sy-revealed .sy-frise-meta .sy-pastille svg, .sy-stage.sy-revealed .sy-frise-meta .sy-nom { opacity: 1; transition-delay: var(--d, 0s); }
-@media (max-width: 600px) { .sy-frise { --r: 20px; width: calc(100% + 24px); margin-inline: -12px; } .sy-pastille { width: 40px; height: 40px; } .sy-pastille svg { width: 28px; height: 28px; } .sy-frise::before, .sy-trace { top: 19px; } .sy-nom { font-size: min(calc(var(--fs-xs) - 1px), 2.7vw); letter-spacing: 0; white-space: nowrap; } }
+@media (max-width: 600px) { .sy-frise { --r: 20px; width: calc(100% + 16px); margin-inline: -8px; } .sy-head { gap: 24px; } .sy-pastille { width: 40px; height: 40px; } .sy-pastille svg { width: 28px; height: 28px; } .sy-frise::before, .sy-trace { top: 19px; } .sy-nom { font-size: min(calc(var(--fs-xs) - 1px), 2.7vw); letter-spacing: 0; white-space: nowrap; } }
 @media (prefers-reduced-motion: reduce) {
   .sy-node.dest .sy-pastille svg { animation: none; }
   .sy-stage.sy-revealed .sy-trace, .sy-stage.sy-revealed .sy-node.dest .sy-pastille svg, .sy-stage.sy-revealed .sy-node.dest .sy-nom, .sy-stage.sy-revealed .sy-frise-meta .sy-pastille svg, .sy-stage.sy-revealed .sy-frise-meta .sy-nom { transition-duration: 0s; transition-delay: 0s; }
