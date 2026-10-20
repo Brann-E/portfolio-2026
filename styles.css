@@ -6288,6 +6288,75 @@ footer a {
   gap: 8px;
 }
 
+/* contact : pastille holographique (même recette que .fin-primaire) */
+.ft-col a.ft-pill {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  --px: 50%;
+  --py: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6px;
+  padding: 10px 20px;
+  border: 1px solid color-mix(in srgb, var(--paper) 60%, transparent);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow:
+    0 6px 18px color-mix(in srgb, var(--ink) 25%, transparent),
+    inset 0 1px 0 color-mix(in srgb, var(--paper) 70%, transparent);
+  transition: box-shadow 0.28s ease, transform 0.16s ease;
+}
+.ft-col a.ft-pill:hover,
+.ft-col a.ft-pill:focus-visible {
+  color: var(--ink);
+  box-shadow:
+    0 10px 28px color-mix(in srgb, var(--ink) 34%, transparent),
+    0 0 24px -6px var(--c1),
+    inset 0 1px 0 color-mix(in srgb, var(--paper) 85%, transparent);
+}
+.ft-col a.ft-pill:hover .holo,
+.ft-col a.ft-pill:focus-visible .holo { opacity: 1; }
+.ft-col a.ft-pill:active { transform: translateY(1px) scale(0.985); }
+.ft-pill .holo-label { position: relative; z-index: 2; }
+
+/* réseaux : liens soulignés en foil holographique, sous le lieu */
+.ft-social {
+  display: flex;
+  gap: 22px;
+  margin-top: 14px;
+}
+.ft-social a {
+  position: relative;
+  padding-bottom: 4px;
+  font-size: var(--fs-base);
+  color: var(--paper);
+  text-decoration: none;
+}
+.ft-social a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: url("grain.png") 50% 87% / 740px 740px;
+  filter: saturate(220%);
+  transform-origin: bottom;
+  transform: scaleY(0.5);
+  transition: transform 0.3s ease, background-position 0.8s ease;
+}
+.ft-social a:hover::after,
+.ft-social a:focus-visible::after {
+  transform: scaleY(1.5);
+  background-position: 10% 89%;
+}
+
 /* — bandeau bas — */
 .ft-bottom {
   margin-top: clamp(40px, 6vh, 64px);

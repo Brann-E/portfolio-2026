@@ -27,6 +27,10 @@
           </div>
         </div>
         <div class="ft-place"><svg class="ft-pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg><span class="ft-ville">Lyon</span><span>&middot; en remote et sur site</span></div>
+        <div class="ft-social">
+          <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="#" target="_blank" rel="noopener">Medium</a>
+        </div>
       </div>
 
       <nav class="ft-cols" aria-label="Plan du site">
@@ -66,7 +70,7 @@
             <li><a href="/a-propos">&Agrave; propos</a></li>
             <li><a href="/contact">Contact</a></li>
           </ul>
-          <a class="ft-more ft-mail" href="mailto:brann.etienne@gmail.com">brann.etienne@gmail.com</a>
+          <a class="ft-pill" href="mailto:brann.etienne@gmail.com"><span class="holo"></span><span class="holo-label">brann.etienne@gmail.com</span></a>
         </div>
 
       </nav>
