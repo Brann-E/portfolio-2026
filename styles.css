@@ -6115,21 +6115,10 @@ footer a {
 }
 
 .ft-role3 {
-  font-size: var(--fs-m);
+  font-size: var(--fs-sm);
   font-weight: 200;
   color: var(--muted2);
   letter-spacing: 0.02em;
-}
-
-.ft-role4 {
-  font-size: var(--fs-xl);
-  font-style: italic;
-  font-weight: 200;
-  color: var(--paper);
-  letter-spacing: 0.02em;
-  font-family:var(--ff-serif);
-  line-height: 1.35;
-  margin-top: clamp(8px, 1vw, 20px);
 }
 
 .ft-claim {
@@ -7813,7 +7802,46 @@ a.pl-cta {
   text-align: left; 
   min-width: 0;
   max-width: 390px; }
-.hero-sig .ft-name { font-size: var(--fs-2xl); }
+/* textes du bloc signature du héros : classes propres, indépendantes du footer (.ft-*) */
+.sig-name {
+  font-family: var(--ff-serif);
+  font-size: var(--fs-2xl);
+  color: var(--paper);
+  line-height: 1.15;
+}
+.sig-role {
+  font-family: var(--ff-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.25rem, 1.05rem + .6vw, 1.5rem);
+  line-height: 1.1;
+}
+.sig-role em {
+  font-style: italic;
+  background: linear-gradient(90deg, var(--c2), var(--c1), var(--c3), var(--c5), var(--c4), var(--c2));
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: hue 11s linear infinite;
+}
+.sig-desc {
+  font-size: 1rem;
+  font-weight: 200;
+  color: var(--muted2);
+  letter-spacing: 0.02em;
+}
+.sig-claim {
+  font-family: var(--ff-serif);
+  font-size: var(--fs-xl);
+  font-style: italic;
+  font-weight: 200;
+  color: var(--paper);
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin-top: clamp(8px, 1vw, 20px);
+}
 @media (max-width: 720px) {
   /* mobile : le portrait passe au-dessus du texte, aligné à gauche, et reste assez grand */
   .hero-sig { flex-direction: column; align-items: flex-start; gap: 20px; }
@@ -7828,7 +7856,7 @@ a.pl-cta {
 }
 
 /* le point médian entre les deux, ajouté en CSS */
-.ident-ligne .ft-role2::before {
+.ident-ligne .sig-role::before {
   content: "·";
   margin-right: .5em;
   opacity: .5;
