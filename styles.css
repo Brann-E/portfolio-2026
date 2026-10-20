@@ -6088,11 +6088,32 @@ footer a {
   letter-spacing: 0.02em;
 }
 .ft-role2 {
-  font-size: var(--fs-base);
+  font-family: "Instrument Serif", Georgia, serif;
+  font-style: italic;
   font-weight: 400;
-  color: var(--c1);
-  letter-spacing: 0.02em;
+  font-size: clamp(1.25rem, 1.05rem + .6vw, 1.5rem);
+  line-height: 1.1;
 }
+
+.ft-role2 em{
+  font-style: italic;
+  background: linear-gradient(
+    90deg,
+    var(--c2),
+    var(--c1),
+    var(--c3),
+    var(--c5),
+    var(--c4),
+    var(--c2)
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: hue 11s linear infinite;
+}
+
 .ft-role3 {
   font-size: var(--fs-m);
   font-weight: 200;
@@ -6102,10 +6123,13 @@ footer a {
 
 .ft-role4 {
   font-size: var(--fs-xl);
+  font-style: italic;
   font-weight: 200;
   color: var(--paper);
   letter-spacing: 0.02em;
-  font-family:var(--ff-serif)
+  font-family:var(--ff-serif);
+  line-height: 1.35;
+  margin-top: clamp(8px, 1vw, 20px);
 }
 
 .ft-claim {
@@ -7784,7 +7808,23 @@ a.pl-cta {
 .sig-ident { text-align: left; min-width: 0; }
 .hero-sig .ft-name { font-size: var(--fs-2xl); }
 @media (max-width: 720px) {
-  .sig-portrait { width: clamp(90px, 24vw, 120px); }
+  /* mobile : le portrait passe au-dessus du texte, aligné à gauche, et reste assez grand */
+  .hero-sig { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .sig-portrait { width: clamp(140px, 42vw, 176px); }
+}
+
+.ident-ligne {
+  display: flex;
+  align-items: baseline;   /* aligne les deux textes sur leur ligne de base */
+  flex-wrap: wrap;         /* passe à la ligne proprement sur mobile si ça ne tient pas */
+  gap: .5em;
+}
+
+/* le point médian entre les deux, ajouté en CSS */
+.ident-ligne .ft-role2::before {
+  content: "·";
+  margin-right: .5em;
+  opacity: .5;
 }
 
 /* ============================================================
@@ -8244,7 +8284,7 @@ body.has-site-nav.pratique .veil { display: none; }
 
 /* ancrage haut : le contenu part d'une position stable et grandit vers le bas
    (la page scrolle), plus de recentrage vertical qui fait « sauter » l'écran. */
-.pi-screen{ display:none; min-height:100svh; flex-direction:column; justify-content:flex-start; padding:clamp(94px,13vh,150px) 0 96px; }
+.pi-screen{ display:none; min-height:100svh; flex-direction:column; justify-content:flex-start; padding-top:clamp(94px,13vh,150px); padding-bottom:96px; } /* haut/bas séparés : le padding latéral de .pi-wrap ne doit pas être écrasé */
 /* transition entre écrans : même grammaire que les révélations du site (.rv) —
    fondu + léger glissement depuis le bas, easing « ease ». */
 .pi-screen.pi-on{ display:flex; animation:pi-screen-in .6s ease both; }
@@ -8544,7 +8584,7 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 .band .hzone { margin: clamp(8px, 2vh, 16px) 0 0; }
 .wrap > .hero.hero--home { 
   min-height: 0; 
-  padding-top: clamp(180px, 26vh, 260px); 
+  padding-top: clamp(90px, 15vh, 180px); 
   padding-bottom: clamp(60px, 10vh, 120px); }
 .band .hzone + .chute { margin-top: clamp(36px, 6vh, 56px); }
 .band .chute { font-family: var(--ff-serif); font-style: italic; font-size: var(--fs-title-s); line-height: 1.25; color: var(--paper); max-width: 32ch; }
