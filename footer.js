@@ -26,8 +26,7 @@
             <div class="ft-role3">Concepteur de dispositifs relationnels&nbsp;: outils, parcours et fa&ccedil;ons de travailler ensemble</div>
           </div>
         </div>
-        <p class="ft-claim">&Agrave; toutes les &eacute;chelles, tout tient par <em>le m&ecirc;me fil</em>.</p>
-        <div class="ft-place">Lyon &middot; en remote et sur site</div>
+        <div class="ft-place"><svg class="ft-pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg><span class="ft-ville">Lyon</span><span>&middot; en remote et sur site</span></div>
       </div>
 
       <nav class="ft-cols" aria-label="Plan du site">
