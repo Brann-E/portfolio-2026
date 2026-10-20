@@ -21,7 +21,7 @@
           <div>
             <div class="ft-name">Brann Etienne</div>
             <div class="ft-role">Designer relationnel</div>
-            <div class="ft-role3">Concepteur de dispositifs num&eacute;riques, organisationnels et m&eacute;thodologiques</div>
+            <div class="ft-role3">Concepteur de dispositifs relationnels&nbsp;: outils, parcours et fa&ccedil;ons de travailler ensemble</div>
           </div>
         </div>
         <p class="ft-claim">&Agrave; toutes les &eacute;chelles, tout tient par <em>le m&ecirc;me fil</em>.</p>
