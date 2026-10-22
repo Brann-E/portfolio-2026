@@ -6683,8 +6683,31 @@ footer a {
   .site-nav .site-links a.active {
     color: var(--c1);
   }
+  /* Contact : blanc comme les autres entrées (il était violet par erreur) */
   .site-nav .site-links a.site-contact {
-    color: var(--c2);
+    color: var(--paper);
+  }
+  /* la pastille « Regarder autrement » suit la largeur de l'écran, mais plafonnée */
+  .site-nav .site-links a.site-pill {
+    width: 100%;
+    max-width: 280px;
+  }
+  /* appui : un glow tant que le doigt est posé ; l'action part au relâchement (clic natif) */
+  .site-nav .site-links a {
+    -webkit-tap-highlight-color: transparent;
+  }
+  .site-nav .site-links a:active {
+    color: var(--paper);
+    text-shadow:
+      0 0 14px color-mix(in srgb, var(--c1) 90%, transparent),
+      0 0 32px color-mix(in srgb, var(--c1) 55%, transparent);
+  }
+  .site-nav .site-links a.site-pill:active {
+    text-shadow: none;
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--c1) 70%, transparent),
+      0 0 26px 2px color-mix(in srgb, var(--c1) 70%, transparent),
+      0 0 54px 8px color-mix(in srgb, var(--c1) 35%, transparent);
   }
   /* le soulignement animé n'a pas de sens ici */
   .site-nav .site-links a::after {
