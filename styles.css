@@ -8827,7 +8827,8 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 }
 
 .proto-enter {
-  padding: 10px 18px;
+  display: none; /* ordinateur : le téléphone est déjà affiché en grand, pas besoin de plein écran */
+  padding: 12px 22px;
   font: inherit;
   font-size: var(--fs-sm);
   color: var(--paper);
@@ -8927,6 +8928,23 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 /* Le menu du site est dans une autre couche que le cadre : on le masque pendant l'immersion. */
 .proto-lock .site-nav {
   display: none;
+}
+
+/* Téléphone / tablette : on n'affiche pas un téléphone dans un téléphone. Un bouton ouvre l'appli, seule, en plein écran. */
+@media (max-width: 820px), (pointer: coarse) {
+  .proto-enter {
+    display: inline-block;
+  }
+
+  .proto-stage {
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+  }
+
+  .proto-frame.is-immersive {
+    visibility: visible;
+  }
 }
 
 .proto-note {
