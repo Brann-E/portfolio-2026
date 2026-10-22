@@ -50,9 +50,14 @@
     <p class="lede">Une exploration personnelle : l'application d'un festival d'arts de la rue, du Figma au prototype cliquable. Programmation, planning, favoris, carte interactive et itin&eacute;raire &agrave; pied. Essayez-la ci-dessous, comme sur un t&eacute;l&eacute;phone.</p>
   </section>
 
-  <section class="proto" aria-label="Prototype de l'application Chalon dans la rue">
-    <div class="proto-frame">
-      <iframe class="proto-screen" src="/prototypes/chalon-dans-la-rue/" title="Prototype cliquable de l'application Chalon dans la rue" loading="lazy"></iframe>
+  <section class="proto" data-no-rv aria-label="Prototype de l'application Chalon dans la rue">
+    <button class="proto-enter" type="button" id="protoEnter">Immersion t&eacute;l&eacute;phone</button>
+    <div class="proto-stage" data-no-rv>
+      <div class="proto-frame" id="protoFrame">
+        <iframe class="proto-screen" src="/prototypes/chalon-dans-la-rue/" title="Prototype cliquable de l'application Chalon dans la rue" loading="lazy"></iframe>
+        <button class="proto-exit" type="button" id="protoExit" aria-label="Quitter l'immersion">&times;</button>
+        <p class="proto-hint" aria-hidden="true">&Eacute;chap pour quitter</p>
+      </div>
     </div>
     <p class="proto-note">
       Donn&eacute;es du programme public du festival. Prototype HTML/CSS/JS, sans serveur.
@@ -66,6 +71,31 @@
 <div id="site-footer"></div>
 
 <script>
+(function(){
+  /* Immersion : le même cadre passe en plein écran (sans recharger l'appli, elle garde son état). Sortie : croix, Échap, ou retour du navigateur. */
+  const frame = document.getElementById("protoFrame");
+  const enter = document.getElementById("protoEnter");
+  const exit = document.getElementById("protoExit");
+  const screen = frame.querySelector("iframe");
+  let open = false;
+
+  function set(on, fromHistory){
+    if (on === open) return;
+    open = on;
+    frame.classList.toggle("is-immersive", on);
+    document.documentElement.classList.toggle("proto-lock", on);
+    if (on) { history.pushState({ immersive: true }, ""); exit.focus(); }
+    else { if (!fromHistory && history.state && history.state.immersive) history.back(); enter.focus(); }
+  }
+  const onKey = e => { if (e.key === "Escape") set(false); };
+
+  enter.addEventListener("click", () => set(true));
+  exit.addEventListener("click", () => set(false));
+  document.addEventListener("keydown", onKey);
+  screen.addEventListener("load", () => { try { screen.contentWindow.addEventListener("keydown", onKey); } catch (_) {} });
+  window.addEventListener("popstate", () => set(false, true));
+})();
+
 const io = new IntersectionObserver(es => {
   es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
 }, { threshold: .15 });

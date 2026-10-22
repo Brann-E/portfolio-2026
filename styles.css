@@ -8826,6 +8826,109 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
   background: var(--faint);
 }
 
+.proto-enter {
+  padding: 10px 18px;
+  font: inherit;
+  font-size: var(--fs-sm);
+  color: var(--paper);
+  background: transparent;
+  border: 1px solid var(--muted);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.proto-enter:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--paper);
+}
+
+/* Réserve la place du téléphone pendant qu'il est en plein écran, pour que la page ne saute pas. */
+.proto-stage {
+  width: min(414px, 100%);
+  height: calc(min(896px, 85dvh) + 22px);
+}
+
+.proto-exit,
+.proto-hint {
+  display: none;
+}
+
+.proto-frame.is-immersive {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: grid;
+  place-items: center;
+  width: auto;
+  padding: 0;
+  background: var(--ink);
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.proto-frame.is-immersive .proto-screen {
+  width: min(414px, 100vw);
+  height: min(896px, 100dvh);
+  border-radius: 0;
+}
+
+@media (min-width: 431px) {
+  .proto-frame.is-immersive .proto-screen {
+    border-radius: 40px;
+  }
+}
+
+.proto-frame.is-immersive .proto-exit {
+  position: absolute;
+  top: max(12px, env(safe-area-inset-top));
+  right: 12px;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  font-size: 26px;
+  line-height: 1;
+  color: var(--paper);
+  background: rgba(11, 13, 16, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.proto-frame.is-immersive .proto-exit:hover {
+  background: rgba(11, 13, 16, 0.9);
+  border-color: var(--paper);
+}
+
+.proto-frame.is-immersive .proto-hint {
+  position: absolute;
+  bottom: 14px;
+  left: 0;
+  right: 0;
+  display: block;
+  margin: 0;
+  font-size: var(--fs-xs);
+  text-align: center;
+  color: var(--muted);
+}
+
+/* Sur un vrai téléphone, l'appli prend tout l'écran : pas de place pour le conseil clavier. */
+@media (max-width: 430px) {
+  .proto-frame.is-immersive .proto-hint { display: none; }
+}
+
+.proto-lock {
+  overflow: hidden;
+}
+
+/* Le menu du site est dans une autre couche que le cadre : on le masque pendant l'immersion. */
+.proto-lock .site-nav {
+  display: none;
+}
+
 .proto-note {
   max-width: 52ch;
   font-size: var(--fs-sm);
