@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<script src="reveal.js"></script>
+<title>Chalon dans la rue - Brann Etienne</title>
+<meta name="description" content="Prototype cliquable de l'application du festival Chalon dans la rue : programmation, planning, favoris, carte interactive et itinéraire à pied.">
+<link rel="canonical" href="https://brannetienne.com/chalon-dans-la-rue">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Brann Etienne">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Chalon dans la rue - Brann Etienne">
+<meta property="og:description" content="Prototype cliquable de l'application du festival Chalon dans la rue : programmation, planning, favoris, carte interactive et itinéraire à pied.">
+<meta property="og:url" content="https://brannetienne.com/chalon-dans-la-rue">
+<meta property="og:image" content="https://brannetienne.com/assets/og-card.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Chalon dans la rue - Brann Etienne">
+<meta name="twitter:description" content="Prototype cliquable de l'application du festival Chalon dans la rue : programmation, planning, favoris, carte interactive et itinéraire à pied.">
+<meta name="twitter:image" content="https://brannetienne.com/assets/og-card.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+</head>
+<body class="has-site-nav"><nav class="site-nav" aria-label="Navigation principale">
+  <a class="site-brand" href="/"><img class="site-mark" src="assets/logo_256.png" alt=""><span class="site-name">Brann Etienne <span class="site-role">- Designer relationnel</span></span></a>
+  <div class="site-links">
+    <a class="site-pill" href="/regarder-autrement" data-section="regarder"><span class="pill-rainbow" aria-hidden="true"></span><span class="holo" aria-hidden="true"></span><span class="holo-label">Regarder autrement</span></a>
+    <a href="/etudes-de-cas" data-section="cases">&Eacute;tudes de cas</a>
+    <a href="/explorations" data-section="explorations" class="active">Explorations</a>
+    <a href="/a-propos" data-section="apropos">&Agrave; propos</a>
+    <a class="site-contact" href="/contact">Contact</a>
+  </div>
+</nav>
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="veil" aria-hidden="true"></div>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div class="eyebrow">Explorations · Product - UX/UI · Identit&eacute; &amp; marque</div>
+    <h1>Chalon dans <span class="spectrum-word">la rue.</span></h1>
+    <p class="lede">Une exploration personnelle : l'application d'un festival d'arts de la rue, du Figma au prototype cliquable. Programmation, planning, favoris, carte interactive et itin&eacute;raire &agrave; pied. Essayez-la ci-dessous, comme sur un t&eacute;l&eacute;phone.</p>
+  </section>
+
+  <section class="proto" aria-label="Prototype de l'application Chalon dans la rue">
+    <div class="proto-frame">
+      <iframe class="proto-screen" src="/prototypes/chalon-dans-la-rue/" title="Prototype cliquable de l'application Chalon dans la rue" loading="lazy"></iframe>
+    </div>
+    <p class="proto-note">
+      Donn&eacute;es du programme public du festival. Prototype HTML/CSS/JS, sans serveur.
+      <a href="/prototypes/chalon-dans-la-rue/">Ouvrir en plein &eacute;cran</a> ·
+      <a href="https://github.com/Brann-E/chalon-dans-la-rue" rel="noopener">Voir le code</a>
+    </p>
+  </section>
+
+</main>
+
+<div id="site-footer"></div>
+
+<script>
+const io = new IntersectionObserver(es => {
+  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: .15 });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
+<script src="background.js"></script>
+<script src="figure-zoom.js"></script>
+<script src="site-nav.js"></script>
+</body>
+</html>

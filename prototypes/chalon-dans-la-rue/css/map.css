@@ -1,0 +1,268 @@
+/* Écran Carte : fond interactif MapLibre, recherche, bouton filtre, repères. */
+
+.screen--map {
+  background: var(--map-background);
+}
+
+/* Spécificité renforcée : maplibre-gl.css impose « position: relative » à ce conteneur. */
+.screen--map .map-canvas {
+  position: absolute;
+  inset: 0;
+}
+
+/* ---- Barre de recherche ---------------------------------------------------- */
+.map-search {
+  position: absolute;
+  z-index: 2;
+  top: var(--map-search-top);
+  inset-inline: var(--map-search-inset);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--map-search-gap);
+  height: var(--map-search-height);
+  padding: var(--map-search-padding-y) var(--map-search-padding-x);
+  background: var(--color-white);
+  border-radius: var(--radius-pill);
+  box-shadow: inset 0 0 0 var(--map-search-border) var(--color-sky);
+}
+
+.map-search__input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font: inherit;
+  font-size: var(--text-search);
+  line-height: var(--leading-search);
+  color: var(--color-ink);
+}
+
+.map-search__input::placeholder {
+  color: var(--color-ink);
+  opacity: 1;
+}
+
+.map-search__icon {
+  flex: none;
+  width: var(--map-search-icon);
+  height: var(--map-search-icon);
+}
+
+.map-suggestions {
+  position: absolute;
+  z-index: 3;
+  top: calc(var(--map-search-top) + var(--map-search-height) + var(--suggestions-gap));
+  inset-inline: var(--map-search-inset);
+  max-height: var(--suggestions-max-height);
+  overflow-y: auto;
+  list-style: none;
+  background: var(--color-white);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-card);
+}
+
+.map-suggestions__item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  text-align: left;
+  font-size: var(--text-sm);
+  line-height: var(--leading-sm);
+  color: var(--color-ink);
+}
+
+.map-suggestions__item:hover,
+.map-suggestions__item:focus-visible {
+  background: var(--color-sky);
+}
+
+.map-suggestions__sub {
+  font-size: var(--text-xs);
+  line-height: var(--leading-xs);
+  color: var(--color-ink);
+  opacity: 0.7;
+}
+
+/* ---- Bouton filtre ----------------------------------------------------------- */
+.map-filter {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: var(--filter-button-bottom);
+  display: grid;
+  place-items: center;
+  width: var(--filter-button-size);
+  height: var(--filter-button-size);
+  transform: translateX(-50%);
+  background: var(--color-surface);
+  border-radius: 50%;
+  box-shadow: var(--shadow-float);
+}
+
+.map-filter img {
+  width: var(--filter-button-icon);
+  height: var(--filter-button-icon);
+}
+
+/* ---- Bandeau d'itinéraire : durée, distance, destination, et croix pour effacer le tracé ------- */
+.route-banner {
+  position: absolute;
+  z-index: 2;
+  inset: var(--bell-floating-top) calc(var(--map-search-inset) + var(--touch-target) + var(--space-2)) auto var(--map-search-inset);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  min-height: var(--touch-target);
+  padding: var(--space-1) var(--space-1) var(--space-1) var(--space-3);
+  background: var(--color-yellow);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-float);
+}
+
+.route-banner[hidden] {
+  display: none;
+}
+
+.route-banner__text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.route-banner__time {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-sm);
+  color: var(--color-black);
+}
+
+.route-banner__dest {
+  overflow: hidden;
+  font-size: var(--text-xs);
+  line-height: var(--leading-xs);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--color-black);
+}
+
+.route-banner__close {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: var(--touch-target);
+  height: var(--touch-target);
+}
+
+.route-banner__close img {
+  width: var(--filters-close-size);
+  height: var(--filters-close-size);
+}
+
+/* ---- Repères ------------------------------------------------------------------ */
+/* Spécificité renforcée : les repères définissent leur propre « display ». */
+:is(.map-pin, .map-service, .map-user).is-hidden {
+  display: none;
+}
+
+.map-pin {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: var(--pin-size);
+  height: var(--pin-size);
+  background: var(--color-cta);
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 var(--pin-border) var(--color-surface);
+  font-size: var(--pin-text);
+  font-weight: var(--weight-bold);
+  line-height: var(--pin-leading);
+  color: var(--color-on-color);
+}
+
+.map-pin[data-kind="festival"] { background: var(--color-pin-festival); }
+.map-pin[data-kind="convivialite"] { background: var(--color-pin-convivialite); }
+
+.map-pin.is-focus {
+  animation: pin-pulse var(--pulse-duration) ease-out 2;
+}
+
+/* Au clic : le liseré jaune s'élargit en une onde qui s'efface (seulement de l'ombre : le repère ne bouge pas). */
+.map-pin.is-ping {
+  animation: pin-ping var(--pin-ping-duration) ease-out;
+}
+
+@keyframes pin-ping {
+  from { box-shadow: inset 0 0 0 var(--pin-border) var(--color-surface), 0 0 0 var(--pin-hover-ring) var(--color-yellow), 0 0 0 0 var(--color-yellow); }
+  to { box-shadow: inset 0 0 0 var(--pin-border) var(--color-surface), 0 0 0 var(--pin-hover-ring) var(--color-yellow), 0 0 0 var(--pin-ping-spread) transparent; }
+}
+
+@keyframes pin-pulse {
+  from { box-shadow: inset 0 0 0 var(--pin-border) var(--color-surface), 0 0 0 0 var(--color-cta); }
+  to { box-shadow: inset 0 0 0 var(--pin-border) var(--color-surface), 0 0 0 var(--space-4) transparent; }
+}
+
+.map-service {
+  display: grid;
+  place-items: center;
+  width: var(--service-size);
+  height: var(--service-size);
+  background: var(--color-pin-service);
+  border-radius: 50%;
+  font-size: var(--service-text);
+  font-weight: var(--weight-bold);
+  line-height: 1;
+  color: var(--color-on-color);
+}
+
+.map-service[data-type="water"] { background: var(--color-pin-water); }
+.map-service[data-type="restauration"] { background: var(--color-cat-deambulation); }
+.map-service[data-type="buvette"] { background: var(--color-cat-danse); }
+.map-service[data-type="parking"],
+.map-service[data-type="parking-pmr"] { background: var(--color-pin-parking); }
+
+.map-service__glyph {
+  width: var(--service-glyph);
+  height: var(--service-glyph);
+}
+
+/* Médaillon « accessible » : même couleur que son repère, liseré blanc. */
+.map-service__badge {
+  position: absolute;
+  right: var(--service-badge-offset);
+  bottom: var(--service-badge-offset);
+  display: grid;
+  place-items: center;
+  width: var(--service-badge);
+  height: var(--service-badge);
+  background: inherit;
+  border: var(--service-badge-border) solid var(--color-surface);
+  border-radius: 50%;
+}
+
+.map-service__badge img {
+  width: 100%;
+  height: 100%;
+}
+
+.map-user {
+  width: var(--user-marker-size);
+  height: var(--user-marker-size);
+}
+
+.map-user img {
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- Attribution (obligatoire) : discrète, au-dessus de la barre du bas ------- */
+.screen--map .maplibregl-ctrl-bottom-left {
+  bottom: var(--attribution-bottom);
+}
+
+.screen--map .maplibregl-ctrl-attrib {
+  font-family: var(--font-sans);
+}

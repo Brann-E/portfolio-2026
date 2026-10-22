@@ -1,0 +1,286 @@
+/* Couche de panneaux (fiche d'un lieu, fiche spectacle, feuilles de filtres) et ses transitions. */
+
+.overlay-layer {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-overlay);
+  pointer-events: none;
+}
+
+.overlay-panel {
+  position: absolute;
+  inset: 0;
+  pointer-events: auto;
+  opacity: 0;
+  transition: opacity var(--duration-move) var(--ease-move), transform var(--duration-move) var(--ease-move);
+}
+
+.overlay-panel--slide-up { transform: translateY(var(--overlay-travel)); }
+.overlay-panel--slide-left { transform: translateX(var(--overlay-travel)); }
+
+.overlay-panel.is-open {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---- Fiche d'un lieu ---------------------------------------------------------- */
+.venue {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-overlay);
+}
+
+.venue__header {
+  position: relative;
+  flex: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: var(--venue-header-gap);
+  height: var(--venue-header-height);
+  padding: var(--venue-header-padding-top) var(--space-3) var(--venue-header-padding-bottom);
+  background: var(--color-yellow);
+  box-shadow: var(--shadow-panel-header);
+}
+
+.venue__title {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  line-height: var(--venue-title-leading);
+  color: var(--color-black);
+}
+
+.badge--large {
+  width: var(--badge-large);
+  height: var(--badge-large);
+  font-size: var(--badge-large-text);
+  line-height: var(--leading-tight);
+}
+
+.venue__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--venue-body-top) var(--content-inset) var(--clearance-lists);
+  scrollbar-width: none;
+}
+
+.venue__body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Carte spectacle de la fiche lieu : sans lieu ni programmation, interlignes de 4 px, 8 px en bas. */
+.show-card--venue {
+  padding-bottom: var(--space-2);
+}
+
+.show-card--venue .show-card__info {
+  gap: var(--venue-card-gap);
+}
+
+.show-card--venue .show-card__genre {
+  height: auto;
+}
+
+.venue__empty {
+  padding: var(--space-8) var(--space-4);
+  text-align: center;
+  color: var(--color-ink);
+}
+
+/* ---- Actualités ------------------------------------------------------------------ */
+.filters__body.news__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-block: var(--space-3) var(--clearance-lists);
+}
+
+.news-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-3);
+  background: var(--color-surface);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-chip);
+  cursor: pointer;
+}
+
+.news-card__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1-5);
+  padding-right: var(--space-5); /* laisse la place de la pastille « non lue » */
+  font-size: var(--text-xs);
+  line-height: var(--leading-xs);
+  color: var(--color-black);
+}
+
+.news-card__dot {
+  flex: none;
+  width: var(--news-dot-size);
+  height: var(--news-dot-size);
+  background: var(--dot);
+  border-radius: 50%;
+}
+
+.news-card__kind {
+  font-weight: var(--weight-semibold);
+}
+
+.news-card__title {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-sm);
+  color: var(--color-black);
+}
+
+.news-card__text {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-sm);
+  color: var(--color-ink);
+}
+
+.news-card .button-outline {
+  align-self: flex-start;
+  margin-top: var(--space-1);
+}
+
+/* Pastille rose : actualité non lue */
+.news-card__unread {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  width: var(--news-dot-size);
+  height: var(--news-dot-size);
+  background: var(--color-brand);
+  border-radius: 50%;
+}
+
+.news-card[data-read="true"] .news-card__unread {
+  display: none;
+}
+
+/* ---- Confirmation brève (« Ajouté aux favoris · Annuler ») ------------------------- */
+.toast-layer {
+  position: absolute;
+  inset: auto var(--content-inset) var(--toast-bottom);
+  z-index: calc(var(--z-overlay) + 1);
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  max-width: 100%;
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-yellow);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-floating);
+  opacity: 0;
+  translate: 0 var(--space-3);
+  transition: opacity var(--duration-move) var(--ease-move), translate var(--duration-move) var(--ease-move);
+  pointer-events: auto;
+}
+
+.toast.is-visible {
+  opacity: 1;
+  translate: 0 0;
+}
+
+.toast__text {
+  min-width: 0;
+  font-size: var(--text-sm);
+  line-height: var(--leading-sm);
+  color: var(--color-black);
+}
+
+.toast__action {
+  flex: none;
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-sm);
+  color: var(--color-black);
+  text-decoration: underline;
+}
+
+/* ---- Feuille « Changer le créneau » -------------------------------------------------- */
+.slot-picker {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: var(--color-scrim);
+}
+
+.slot-picker__sheet {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  max-height: var(--sheet-max-height);
+  padding: var(--space-3) var(--content-inset) var(--space-8);
+  overflow-y: auto;
+  background: var(--color-sky);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.slot-picker__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.slot-picker__title {
+  font-size: var(--text-md);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-link);
+  color: var(--color-black);
+}
+
+.slot-picker__close {
+  display: grid;
+  place-items: center;
+  width: var(--touch-target);
+  height: var(--touch-target);
+}
+
+.slot-picker__close img {
+  width: var(--filters-close-size);
+  height: var(--filters-close-size);
+}
+
+.slot-picker__show {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-sm);
+  color: var(--color-ink);
+}
+
+.list-row[aria-pressed="true"] {
+  box-shadow: inset 0 0 0 var(--avatar-ring) var(--color-brand);
+}
+
+/* Bouton rond de fermeture : même aspect que le bouton des filtres de la carte (cercle blanc, croix noire). */
+.round-close {
+  position: absolute;
+  left: 50%;
+  bottom: var(--round-close-bottom);
+  display: grid;
+  place-items: center;
+  width: var(--filter-button-size);
+  height: var(--filter-button-size);
+  transform: translateX(-50%);
+  background: var(--color-surface);
+  border-radius: 50%;
+  box-shadow: var(--shadow-float);
+}
+
+.round-close img {
+  width: var(--round-close-icon);
+  height: var(--round-close-icon);
+}

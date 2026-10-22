@@ -1,0 +1,424 @@
+/* ==========================================================================
+   Design tokens — Chalon dans la rue
+   Source de vérité : fichier Figma « Chalon dans la rue » (page App).
+   Toute valeur de design (couleur, espacement, rayon, typographie) vit ici ;
+   les autres feuilles de style ne contiennent aucune valeur en dur.
+   ========================================================================== */
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url("../assets/fonts/inter-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url("../assets/fonts/inter-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Remplace « Larken DEMO » (police des titres d'états vides), non disponible. */
+@font-face {
+  font-family: "DM Serif Display";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/dm-serif-display-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "DM Serif Display";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/dm-serif-display-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  /* ---- Couleurs de base ------------------------------------------------ */
+  --color-ink: #2a292b;            /* texte courant */
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-on-color: var(--color-black); /* texte posé sur un aplat de couleur (bannières, pastilles, boutons) */
+  --color-surface: #fbfbfb;        /* blanc cassé : cartes, boutons, texte sur aplat */
+  --color-sky: #c7f3fe;            /* fond des écrans */
+  --color-yellow: #ffff99;         /* en-têtes, barre du bas, bannières */
+  --color-brand: #f4a1a0; /* éclairci, était #ed6361 */          /* pastilles, boutons principaux */
+  --color-like: #eb3530;           /* cœur et épingle actifs */
+  --color-rose: #ffeeee;           /* cartes de représentation */
+  --color-line: rgb(0 0 0 / 10%);  /* filets de séparation */
+  --color-line-strong: rgb(0 0 0 / 30%);
+  --color-active-tab: rgb(244 161 160 / 80%); /* éclairci, était rgb(237 99 97 / 80%) */
+
+  --color-line-medium: rgb(0 0 0 / 20%);
+
+  /* ---- Catégories (pastilles de « Filtres », accent des cartes spectacle) -- */
+  --color-cat-musical: #9da6fc; /* éclairci, était #5b6bfa */
+  --color-cat-clown: #ff8f8f; /* éclairci, était #ff4444 */
+  --color-cat-danse: #efc4e2; /* éclairci, était #e59cce */
+  --color-cat-enfants: #94dffe; /* éclairci, était #4cc9fe */
+  --color-cat-performance: #c7a4fd; /* éclairci, était #a267fc */
+  --color-cat-marionnette: #7ab7ab; /* éclairci, était #0d7c66 */
+  --color-cat-cirque: #98dbbe; /* éclairci, était #54c392 */
+  --color-cat-deambulation: #fcd78c; /* éclairci, était #fabc3f */
+  --color-cat-rue: #ffc566; /* éclairci, était #ff9f00 */
+  --color-cat-cabaret: #ff72be; /* éclairci, était #ff1493 */
+  --color-cat-concert: #a9b3bc; /* éclairci, était #708090 */
+  --color-cat-lieux-festival: #aa96c3; /* éclairci, était #654092 */
+  --color-cat-lieux-convivialite: #66cad3; /* éclairci, était #00a7b6 */
+
+  /* ---- Typographie ----------------------------------------------------- */
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "DM Serif Display", "Larken", Georgia, serif;
+
+  --text-2xs: 10px;
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-md: 16px;
+  --text-lg: 17px;
+  --text-xl: 18px;
+  --text-2xl: 20px;
+  --text-display: 36px;
+
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-black: 900;
+
+  /* Figma arrondit les hauteurs de ligne à l'entier : 12 px → 15 px, 14 px → 17 px. */
+  --leading-xs: 15px;
+  --leading-sm: 17px;
+  --leading-tight: 16px;
+
+  /* ---- Espacements ----------------------------------------------------- */
+  --space-0-5: 2px;
+  --space-1: 4px;
+  --space-1-5: 6px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-4-5: 19px;
+  --space-5: 20px;
+  --space-8: 32px;
+
+  /* ---- Rayons ---------------------------------------------------------- */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* ---- Ombres ---------------------------------------------------------- */
+  --shadow-floating: 0 4px 4px rgb(0 0 0 / 30%), 0 8px 12px 6px rgb(0 0 0 / 15%);
+  --shadow-card: 0 2px 6px 2px rgb(0 0 0 / 15%), 0 1px 2px rgb(0 0 0 / 30%);
+  --shadow-chip: 0 1px 3px 1px rgb(0 0 0 / 15%), 0 1px 2px rgb(0 0 0 / 30%);
+
+  /* ---- Gabarit de l'écran (maquette 414 × 896) ------------------------- */
+  --screen-width: 414px;
+  --screen-height: 896px;
+  --screen-radius: var(--radius-lg);
+  --statusbar-height: 30px;
+  --header-height: 83px;
+  --content-inset: var(--space-3);
+  --content-width: 390px;
+  --clearance-tabbar: 112px;       /* marge basse du contenu défilant sous la barre */
+  --header-title-top: 48px;        /* titre agrandi (20 px) : centré dans la bande jaune sous la barre d'état */
+  --header-title-leading: 24px;
+  --header-title-offset: 3px;      /* décale le centre du titre de 1,5 px, comme dans Figma */
+  --header-line-top: 82.5px;
+  --color-stage: #1c1c1e;          /* fond autour de l'appli sur ordinateur */
+
+  /* ---- Écran Menu ------------------------------------------------------ */
+  --menu-row-height: 32px;
+  --menu-setting-height: 36px;
+  --menu-setting-height-last: 23px;
+  --menu-setting-indent: 53px;
+  --menu-setting-line-top: 35.5px;
+  --menu-chevron-size: 12px;
+  --menu-chevron-top: 2.5px;
+  --menu-legal-spacing: 0.4px;
+  --hairline: 1px;
+  --hairline-half: -0.5px;
+
+  /* ---- Carte spectacle ------------------------------------------------- */
+  --card-width: 390px;
+  --card-gap: 12px;
+  --card-banner-height: 46px;
+  --card-photo-height: 113px;
+  --card-padding-bottom: 16px;
+  --card-inset: 8px;
+  --heart-size: 30px;
+  --meta-icon-size: 16px;
+  --pill-padding-y: 4px;
+  --rep-width: 220px;             /* 166 px dans la maquette : élargi pour loger les trois pastilles */
+  --rep-height: 150px;
+  --rep-action-disc: 44px;
+  --rep-action-icon: 22px;
+  --rep-top-height: 30px;
+  --rep-spot-height: 20px;
+  --rep-button-height: 34px;      /* était 19 px dans la maquette : trop étroit */
+  --badge-size: 20px;
+  --hairline-thin: 0.5px;
+  --clearance-cards: 134px;
+
+  --underline-thickness: 2px;      /* soulignement coloré de la catégorie */
+  --underline-offset: 2px;
+
+  /* ---- Actualités : cloche, pastille de non-lus, cartes ------------------- */
+  --bell-icon-size: 28px;
+  --bell-badge-size: 18px;
+  --bell-floating-top: 111px;      /* sous la barre de recherche de la carte (54 + 45 + 12) */
+  --news-dot-size: 10px;
+
+  /* ---- Accessibilité : zone de toucher minimale, états désactivés -------- */
+  --touch-target: 44px;
+  --opacity-disabled: 0.4;
+  --color-scrim: rgb(0 0 0 / 40%);
+  --sheet-max-height: 70%;
+
+  /* ---- Sous-pages du Menu ---------------------------------------------- */
+  --setting-row-height: 40px;
+  --avatar-size: 72px;
+  --avatar-ring: 3px;
+
+  /* ---- États vides (Favoris, Planning) --------------------------------- */
+  --color-cta: #f3a2a0; /* éclairci, était #eb6460 */
+  --color-border-soft: #f5f5f5;
+  /* Ombres des boutons des pages vides : adoucies (la maquette les avait plus marquées). */
+  --shadow-cta: 0 1px 2px rgb(0 0 0 / 20%), 0 2px 5px 1px rgb(0 0 0 / 10%);
+  --shadow-demo: 0 1px 2px rgb(0 0 0 / 20%), 0 3px 6px 1px rgb(0 0 0 / 10%);
+  --space-6: 24px;
+  --empty-padding-top: 120px;
+  --empty-title-height: 48px;
+  --empty-title-leading: 47.7px;
+  --empty-lead-width: 306px;
+  --empty-lead-leading: 22px;
+  --empty-art-size: 128px;
+  --empty-hint-width: 284px;
+  --empty-hint-leading: 19px;
+  /* Planning : confirmé sur l'export 2× de la maquette (texte sur 2 lignes, boîte de 49 px). */
+  --empty-hint-height-short: 49px;
+  --empty-hint-width-wide: 358px;
+  --cta-width: 213px;
+  --cta-height: 40px;
+  --cta-icon-large: 23px;
+  --cta-icon-small: 16px;
+  --highlight-width: 168.1px;
+  --highlight-width-narrow: 119.5px;
+  --highlight-height: 40px;
+  --highlight-rotation: -6.09deg;
+  --highlight-offset-y: -1.8px;
+  --demo-right: 11.5px;
+  --demo-bottom: 111px;
+  --demo-height: 33px;
+  --demo-width: 112.5px;
+  --cards-top-space-lists: 12px;
+  --clearance-lists: 144px;
+
+  /* ---- Carte : couleurs du fond de plan (mesurées sur la maquette) ------- */
+  --map-background: #c6d2d8;
+  --map-road: #fcfcfc;
+  --map-water: #a7def9; /* éclairci, était #78ccf6 */
+  --map-park: #c5dc83; /* éclairci, était #96c01e */
+  --map-institution: #e4e4a8;
+  --map-grey: #e4e4e4;
+  --map-rail: #b4bec4;
+  --map-label: #4a4f55;
+  --map-label-halo: #ffffff;
+  --map-water-label: #2f86b8;
+
+  /* ---- Carte : repères, recherche et bouton filtre ---------------------- */
+  --pin-size: 22px;
+  --pin-border: 1px;
+  --pin-hover-ring: 3px;
+  --route-dot-size: 10px;           /* tracé de l'itinéraire : une suite de vrais ronds, jaune et bleu en alternance, cernés de noir */
+  --route-dot-outline: 2px;
+  --route-dot-spacing: 20px;        /* écart centre à centre, constant à l'écran quel que soit le zoom */
+  --route-estimated-opacity: .6;    /* tracé estimé (service indisponible) : plus discret */
+  --pin-ping-spread: 18px;          /* l'onde jaune qui part du repère au clic */
+  --pin-ping-duration: 600ms;
+  --pin-text: 12px;
+  --pin-leading: 14px;
+  --color-pin-festival: #aa96c3; /* éclairci, était #654092 */
+  --color-pin-convivialite: #66cad3; /* éclairci, était #00a7b6 */
+  --color-pin-service: #73afc5; /* éclairci, était #006e95 */
+  --color-pin-water: #83c2e1; /* éclairci, était #3099cd */
+  --color-pin-parking: #90d7f1; /* éclairci, était #46bde7 */
+  --service-size: 20px;
+  --service-text: 9px;
+  --service-glyph: 14px;
+  --service-badge: 12px;
+  --service-badge-border: 1.5px;
+  --service-badge-offset: -4px;
+  --pulse-duration: 1.2s;
+  --suggestions-gap: 8px;
+  --suggestions-max-height: 280px;
+  --user-marker-size: 32px;
+  --map-search-top: 54px;
+  --map-search-inset: 18px;
+  --map-search-height: 45px;
+  --map-search-padding-y: 8px;
+  --map-search-padding-x: 16px;
+  --map-search-gap: 28px;
+  --map-search-border: 5px;
+  --map-search-icon: 24px;
+  --text-search: 16px;
+  --leading-search: 19px;
+  --filter-button-size: 54px;
+  --filter-button-icon: 24px;
+  --filter-button-bottom: 122px;
+  --shadow-float: 0 4px 4px rgb(0 0 0 / 25%);
+  --attribution-bottom: 104px;
+
+  /* ---- Panneaux (fiche d'un lieu, fiche spectacle, filtres) ------------- */
+  --overlay-travel: 100%;
+  /* « Détail pastille » : mesuré dans Figma (nœud 58:244). */
+  --color-overlay: rgb(251 251 251 / 75%);
+  --venue-header-height: 102px;
+  --venue-header-padding-top: 8px;
+  --venue-header-padding-bottom: 20px;
+  --venue-header-gap: 10px;
+  --venue-title-leading: 22px;
+  --venue-body-top: 11px;
+  --shadow-panel-header: 0 2px 3px rgb(0 0 0 / 15%), 0 1px 1px rgb(0 0 0 / 30%);
+  --badge-large: 24px;
+  --badge-large-text: 14px;
+  --venue-card-gap: 4px;
+  --round-close-bottom: 20px;
+  --round-close-icon: 32px;
+  /* Feuilles de filtres : valeurs encore estimées sur capture, à confirmer dans Figma. */
+
+  /* ---- Feuille « Filtres » (mesurée sur l'export 2× : sections, écarts, interrupteur) -- */
+  --filters-header-height: 109px;
+  --filters-bar-height: 50px;
+  --filters-close-size: 22px;
+  --filters-divider-x: 65px;
+  --filters-title-x: 80px;
+  --filters-footer-height: 99px;
+  --filters-cta-width: 300px;
+  --filters-section-pad-top: 11px;
+  --filters-section-pad-bottom: 10px;
+  --filters-title-gap: 10px;
+  --filters-gap-days: 5px;
+  --filters-gap-categories: 7px;
+  --filters-gap-zones: 5px;
+  /* Boutons radio (Programmation : Tous / IN / OFF) */
+  --radio-size: 24px;
+  --radio-dot: 10px;
+  --radio-border: 2px;
+  /* Curseur d'horaire : ligne épaisse de 10 px, poignées de 26 px centrées sur la ligne. */
+  --range-height: 36px;
+  --range-track: 10px;
+  --range-thumb: 26px;
+  --range-thumb-border: 2px;
+  --switch-width: 44px;
+  --switch-height: 24px;
+  --switch-knob: 20px;
+  --color-switch-off: #e2e8f0;
+  --color-switch-on: var(--color-cat-cirque);
+  --chip-dot: 15px;
+
+  /* ---- Feuille « Filtres carte » (mesurée sur l'export 2× de la maquette) -- */
+  --mapfilters-top: 164px;
+  --mapfilters-inset: 12.5px;      /* carte de 389 px centrée dans l'écran de 414 px */
+  --mapfilters-heading-height: 58.5px;
+  --mapfilters-row-pitch: 38px;
+  --mapfilters-confirm-gap: 17px;
+  --mapfilters-checkbox: 24px;
+  --mapfilters-icon: 22px;
+  --mapfilters-clown: 32px;
+  --mapfilters-label-gap: 12px;
+  --mapfilters-pad: 12.5px;
+  --color-checkbox-on: #ffff99;
+  --color-heading-line: #e6e68a;
+
+  /* ---- Fiche spectacle ------------------------------------------------- */
+  --carousel-height: 276px;
+  --carousel-nav-size: 36px;
+  --rep-width-wide: 220px;
+  --rep-top-height-compact: 20px;
+  --pin-size-compact: 20px;
+
+  /* ---- Planning : sélecteur de date et créneau ------------------------- */
+  --daybar-padding-top: 8px;
+  --daybar-label-leading: 19px;
+  --daybar-chips-height: 40px;
+  --change-slot-height: 15px;
+
+  /* ---- Découvrir : barre de recherche et pastilles --------------------- */
+  --filterbar-gap: 12px;
+  --search-height: 24px;
+  --chip-height: 34px;
+  --chip-padding: 8px;
+  --filters-link-height: 19px;
+  --text-link: 16px;
+  --leading-link: 19px;
+  --cards-top-space: 11px;
+
+  /* ---- Barre d'état ---------------------------------------------------- */
+  --statusbar-time-left: 15px;
+  --statusbar-time-width: 65px;
+  --statusbar-notch-width: 215px;
+  --statusbar-notch-radius: 20px;
+  --statusbar-icons-right: 14px;
+  --statusbar-icons-top: 16px;
+  --statusbar-icons-gap: 5px;
+  --statusbar-time-top: 11px;
+  --statusbar-time-height: 18px;
+  --statusbar-signal-width: 16px;
+  --statusbar-signal-height: 12.2px;
+  --statusbar-wifi-height: 12.3px;
+  --statusbar-battery-width: 24px;
+  --statusbar-battery-height: 13px;
+
+  /* ---- Barre du bas ---------------------------------------------------- */
+  /* Icônes agrandies (38 px au lieu de 32) et toutes carrées : les images sont carrées, des largeurs
+     différentes (ex. 36,4 × 32 pour le cœur) les étiraient. Barre portée de 66 à 72 px de haut. */
+  --tabbar-height: 72px;
+  --tabbar-inset: var(--space-3);
+  --tabbar-bottom: 34px;
+  --tabbar-active-size: 88px;      /* 86 px dans la maquette : 2 px de plus pour couvrir les coins de la barre (Planning, Menu) */
+  --tabbar-icon-size: 38px;
+  /* Centre de chaque onglet, mesuré dans la maquette (barre de 390 px) et exprimé en proportion de la barre,
+     pour que les onglets restent bien répartis quand l'écran est plus étroit. */
+  --tabbar-center-planning: 8.077%;    /* 31,5 / 390 */
+  --tabbar-center-favoris: 29.103%;    /* 113,5 / 390 */
+  --tabbar-center-carte: 50.128%;      /* 195,5 / 390 */
+  --tabbar-center-decouvrir: 71.154%;  /* 277,5 / 390 */
+  --tabbar-center-menu: 92.308%;       /* 360 / 390 */
+  --tabbar-item-top: 8px;
+
+  /* ---- Mouvement ------------------------------------------------------- */
+  --duration-move: 300ms;
+  --duration-fast: 150ms;          /* survol, appui, focus */
+  --ease-move: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);   /* léger rebond : cœur, épingle */
+  --press-scale: 0.96;             /* un bouton enfoncé rétrécit légèrement */
+  --hover-scale-icon: 1.1;
+  --hover-scale-round: 1.06;
+  --focus-ring: 2px;
+  --color-hover-tint: color-mix(in srgb, var(--color-yellow) 45%, var(--color-surface));
+  --color-cta-hover: color-mix(in srgb, var(--color-yellow) 45%, var(--color-white));          /* bouton jaune, plus pâle */
+  --color-filters-cta-hover: color-mix(in srgb, var(--color-cta) 60%, var(--color-white));    /* bouton « Afficher N résultats », plus pâle */
+  --loader-size: 40px;
+  --loader-thickness: 4px;
+  --toast-bottom: 120px;            /* au-dessus de la barre du bas */
+
+  /* ---- Couches --------------------------------------------------------- */
+  --z-screen: 1;
+  --z-tabbar: 20;
+  --z-backdrop: 30;
+  --z-sheet: 31;
+  --z-overlay: 32;
+  --z-statusbar: 40;
+}

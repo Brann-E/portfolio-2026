@@ -1,0 +1,27 @@
+{
+  "name": "Chalon dans la rue",
+  "city": "Chalon-sur-Saône",
+  "center": {
+    "lat": 46.7806,
+    "lng": 4.8528
+  },
+  "today": "23/07",
+  "days": [
+    {
+      "id": "23/07",
+      "label": "jeu. 23/07"
+    },
+    {
+      "id": "24/07",
+      "label": "ven. 24/07"
+    },
+    {
+      "id": "25/07",
+      "label": "sam. 25/07"
+    },
+    {
+      "id": "26/07",
+      "label": "dim. 26/07"
+    }
+  ]
+}

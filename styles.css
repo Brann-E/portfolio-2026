@@ -8798,3 +8798,43 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 }
 
 
+
+/* ---- Prototype embarqué (Chalon dans la rue) : téléphone 414 x 896 dans une page ---- */
+.proto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: clamp(24px, 6vh, 56px) 0 clamp(48px, 10vh, 96px);
+}
+
+.proto-frame {
+  width: min(414px, 100%);
+  padding: 10px;
+  background: var(--surface);
+  border: 1px solid var(--faint);
+  border-radius: 44px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+.proto-screen {
+  display: block;
+  width: 100%;
+  height: min(896px, 85dvh);
+  border: 0;
+  border-radius: 34px;
+  background: var(--faint);
+}
+
+.proto-note {
+  max-width: 52ch;
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+  text-align: center;
+  color: var(--muted);
+}
+
+.proto-note a {
+  color: var(--paper);
+  text-underline-offset: 3px;
+}

@@ -1,0 +1,403 @@
+/* Carte spectacle et cartes de représentation — mesures Figma (composant « Découvrir »). */
+
+/* Couleur d'accent d'une carte = couleur de sa catégorie (mêmes teintes que les pastilles de « Filtres »). */
+[data-accent="musical"] { --accent: var(--color-cat-musical); }
+[data-accent="clown"] { --accent: var(--color-cat-clown); }
+[data-accent="danse"] { --accent: var(--color-cat-danse); }
+[data-accent="enfants"] { --accent: var(--color-cat-enfants); }
+[data-accent="performance"] { --accent: var(--color-cat-performance); }
+[data-accent="marionnette"] { --accent: var(--color-cat-marionnette); }
+[data-accent="cirque"] { --accent: var(--color-cat-cirque); }
+[data-accent="deambulation"] { --accent: var(--color-cat-deambulation); }
+[data-accent="rue"] { --accent: var(--color-cat-rue); }
+[data-accent="cabaret"] { --accent: var(--color-cat-cabaret); }
+[data-accent="concert"] { --accent: var(--color-cat-concert); }
+
+.show-card {
+  width: 100%;
+  max-width: var(--card-width); /* 390 px au plus, moins si l'écran est plus étroit */
+  padding-bottom: var(--card-padding-bottom);
+  overflow: hidden;
+  background: var(--color-white);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-card);
+}
+
+.show-card__main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* ---- Bannière + photo ---------------------------------------------------- */
+.show-card__banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--card-banner-height);
+  padding: var(--card-inset);
+  background: var(--accent);
+}
+
+.show-card__title {
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-black);
+  line-height: 24.2px;
+  color: var(--color-on-color);
+  text-align: left;
+  /* Un titre trop long reste sur une ligne, comme la bannière de la maquette. */
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.like {
+  position: relative;
+  flex: none;
+  width: var(--heart-size);
+  height: var(--heart-size);
+}
+
+.like img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Cœur vide blanc peu lisible sur une bannière claire : un liseré sombre le détache sans le remplir
+   (un cœur noir plein se confondrait avec un cœur « aimé »). */
+.show-card__banner .like[aria-pressed="false"] img {
+  filter: drop-shadow(0 0 0.5px var(--color-ink)) drop-shadow(0 0 0.5px var(--color-ink));
+}
+
+/* Rebond de l'icône quand on aime ou qu'on épingle (la classe est posée au clic, puis retirée). */
+@keyframes icon-pop {
+  0% { scale: 1; }
+  40% { scale: 1.4; }
+  100% { scale: 1; }
+}
+
+.like.is-pop img,
+.pin.is-pop img {
+  animation: icon-pop var(--duration-move) var(--ease-spring);
+}
+
+/* Zone de toucher de 44 px autour des petites icônes, sans changer leur dessin. */
+.like::after,
+.pin::after,
+.chip::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: max(100%, var(--touch-target));
+  height: var(--touch-target);
+  transform: translate(-50%, -50%);
+}
+
+/* Photo recadrée comme dans Figma (transformation « stretch ») ou en « cover ». */
+.photo {
+  position: relative;
+  height: var(--card-photo-height);
+  overflow: hidden;
+}
+
+.photo__img {
+  position: absolute;
+  left: calc(var(--crop-x) / var(--crop-w) * -100%);
+  top: calc(var(--crop-y) / var(--crop-h) * -100%);
+  width: calc(100% / var(--crop-w));
+  height: calc(100% / var(--crop-h));
+  max-width: none;
+}
+
+.photo__img--cover {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---- Informations -------------------------------------------------------- */
+.show-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.show-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: 0 var(--card-inset);
+}
+
+.show-card__company {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-sm);
+  color: var(--color-ink);
+}
+
+.show-card__meta,
+.show-card__genre {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  height: var(--meta-icon-size);
+}
+
+.meta-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-0-5);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-xs);
+  color: var(--color-black);
+  white-space: nowrap;
+}
+
+.meta-item img {
+  flex: none;
+  width: var(--meta-icon-size);
+  height: var(--meta-icon-size);
+}
+
+.meta-item--place {
+  min-width: 0;
+  color: var(--color-ink);
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.meta-item--place span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.meta-item--programme {
+  color: var(--color-ink);
+}
+
+.show-card__category {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-xs);
+  font-style: italic;
+  /* Texte noir ; la couleur de la catégorie passe dans le soulignement. */
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: var(--underline-thickness);
+  text-underline-offset: var(--underline-offset);
+  color: var(--color-black);
+}
+
+.show-card__summary {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-xs);
+  color: var(--color-ink);
+}
+
+.pill {
+  align-self: flex-start;
+  padding: var(--pill-padding-y) var(--space-2);
+  background: var(--accent);
+  border-radius: var(--radius-md);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-xs);
+  color: var(--color-on-color);
+}
+
+/* ---- Représentations ----------------------------------------------------- */
+.reps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.reps__title {
+  padding: 0 var(--card-inset);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-xs);
+  color: var(--color-ink);
+}
+
+.reps__row {
+  display: flex;
+  gap: var(--space-2);
+  padding: 0 0 0 var(--card-inset);
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scroll-padding-inline: var(--card-inset);
+  scrollbar-width: none;
+  cursor: grab;
+}
+
+.reps__row > .rep {
+  scroll-snap-align: start;
+}
+
+/* Pendant un glissé à la souris : pas d'aimantation, curseur « attrapé », pas de texte sélectionné. */
+:is(.reps__row, .carousel__track).is-dragging {
+  scroll-snap-type: none;
+  cursor: grabbing;
+  user-select: none;
+}
+
+.reps__row::-webkit-scrollbar {
+  display: none;
+}
+
+.rep {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  width: var(--rep-width);
+  min-height: var(--rep-height);
+  padding: var(--space-2);
+  background: var(--color-rose);
+  border-radius: var(--radius-xs);
+}
+
+.rep__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--rep-top-height);
+}
+
+.rep__date {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-xs);
+  color: var(--color-ink);
+}
+
+.pin {
+  position: relative;
+  flex: none;
+  width: var(--heart-size);
+  height: var(--heart-size);
+}
+
+.pin img {
+  width: 100%;
+  height: 100%;
+}
+
+.rep__spot {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: var(--rep-spot-height);
+  min-width: 0;
+}
+
+.badge {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: var(--badge-size);
+  height: var(--badge-size);
+  background: var(--color-brand);
+  border-radius: 50%;
+  font-size: var(--text-2xs);
+  font-weight: var(--weight-bold);
+  line-height: 12.1px;
+  color: var(--color-on-color);
+}
+
+.rep__venue {
+  min-width: 0;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-xs);
+  color: var(--color-ink);
+}
+
+/* Trois pastilles rondes jaunes (Carte, Itinéraire, Partager) : l'icône dans le rond, un seul mot dessous. Le rond s'enfonce à l'appui, comme un bouton. */
+.rep__actions {
+  display: flex;
+  justify-content: space-between;
+  padding-top: var(--space-1);
+}
+
+.rep-action {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  min-height: var(--touch-target);
+  color: var(--color-ink);
+}
+
+.rep-action__disc {
+  display: grid;
+  place-items: center;
+  width: var(--rep-action-disc);
+  height: var(--rep-action-disc);
+  background: var(--color-yellow);
+  border-radius: 50%;
+  box-shadow: var(--shadow-float);
+  transition: scale var(--duration-fast) var(--ease-move), box-shadow var(--duration-fast) var(--ease-move);
+}
+
+.rep-action:active .rep-action__disc {
+  scale: var(--press-scale);
+  box-shadow: none;
+}
+
+.rep-action__disc img {
+  width: var(--rep-action-icon);
+  height: var(--rep-action-icon);
+}
+
+.rep-action__label {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-xs);
+  white-space: nowrap;
+}
+
+/* Favoris : un seul bloc de représentation, aligné comme la rangée de la carte spectacle. */
+.reps__single {
+  padding: 0 var(--card-inset);
+}
+
+.button-outline {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: var(--rep-button-height);
+  padding: var(--space-0-5) var(--space-3);
+  background: var(--color-white);
+  border: var(--hairline) solid var(--color-ink);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-sm);
+  color: var(--color-ink);
+}
+
+.button-outline::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: var(--touch-target);
+  transform: translateY(-50%);
+}

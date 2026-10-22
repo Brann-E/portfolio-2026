@@ -1,0 +1,214 @@
+/* Coque de l'appli : barre d'état et barre du bas (mesures Figma, composant « Menu »). */
+
+/* ---- Barre d'état -------------------------------------------------------- */
+.statusbar {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: var(--z-statusbar);
+  height: var(--statusbar-height);
+  pointer-events: none;
+}
+
+.statusbar__time {
+  position: absolute;
+  top: var(--statusbar-time-top);
+  left: var(--statusbar-time-left);
+  width: var(--statusbar-time-width);
+  height: var(--statusbar-time-height);
+  display: grid;
+  place-items: center;
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  line-height: 22px;
+  color: var(--color-black);
+}
+
+.statusbar__notch {
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  width: var(--statusbar-notch-width);
+  height: var(--statusbar-height);
+  transform: translateX(-50%);
+  background: var(--color-ink);
+  border-radius: 0 0 var(--statusbar-notch-radius) var(--statusbar-notch-radius);
+}
+
+.statusbar__icons {
+  position: absolute;
+  top: var(--statusbar-icons-top);
+  right: var(--statusbar-icons-right);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--statusbar-icons-gap);
+}
+
+.statusbar__signal {
+  width: var(--statusbar-signal-width);
+  height: var(--statusbar-signal-height);
+}
+
+.statusbar__wifi {
+  width: var(--statusbar-signal-width);
+  height: var(--statusbar-wifi-height);
+}
+
+.statusbar__battery {
+  width: var(--statusbar-battery-width);
+  height: var(--statusbar-battery-height);
+}
+
+/* ---- Cloche des actualités (en haut à droite) -------------------------------- */
+.bell {
+  position: absolute;
+  z-index: 1;
+  top: calc(var(--header-title-top) - (var(--touch-target) - var(--header-title-leading)) / 2);
+  right: var(--space-1);
+  display: grid;
+  place-items: center;
+  width: var(--touch-target);
+  height: var(--touch-target);
+}
+
+.bell img {
+  width: var(--bell-icon-size);
+  height: var(--bell-icon-size);
+}
+
+/* Sur la carte (pas d'en-tête) : rond blanc sous la recherche, comme le bouton des filtres. */
+.bell--floating {
+  top: var(--bell-floating-top);
+  right: var(--map-search-inset);
+  background: var(--color-surface);
+  border-radius: 50%;
+  box-shadow: var(--shadow-float);
+}
+
+/* Nombre d'actualités non lues */
+.bell__badge {
+  position: absolute;
+  top: var(--space-0-5);
+  right: var(--space-0-5);
+  min-width: var(--bell-badge-size);
+  height: var(--bell-badge-size);
+  padding-inline: var(--space-1);
+  background: var(--color-brand);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 0 0 var(--space-0-5) var(--color-yellow);
+  font-size: var(--text-2xs);
+  font-weight: var(--weight-bold);
+  line-height: var(--bell-badge-size);
+  text-align: center;
+  color: var(--color-on-color);
+}
+
+.bell--floating .bell__badge {
+  box-shadow: 0 0 0 var(--space-0-5) var(--color-surface);
+}
+
+.bell__badge[hidden] {
+  display: none;
+}
+
+/* ---- Indicateur de chargement : affiché si un écran met du temps à venir ------- */
+.loader {
+  position: absolute;
+  inset: 0;
+  z-index: calc(var(--z-screen) + 1); /* au-dessus des écrans, sous la barre du bas */
+  display: grid;
+  place-items: center;
+  background: color-mix(in srgb, var(--color-sky) 70%, transparent);
+}
+
+.loader[hidden] {
+  display: none;
+}
+
+.loader__spinner {
+  width: var(--loader-size);
+  height: var(--loader-size);
+  border: var(--loader-thickness) solid var(--color-line-medium);
+  border-top-color: var(--color-ink);
+  border-radius: 50%;
+  animation: loader-spin 800ms linear infinite;
+}
+
+@keyframes loader-spin {
+  to { rotate: 360deg; }
+}
+
+.device.reduce-motion .loader__spinner {
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loader__spinner { animation: none; }
+}
+
+/* ---- Barre du bas -------------------------------------------------------- */
+.tabbar {
+  position: absolute;
+  inset: auto var(--tabbar-inset) var(--tabbar-bottom);
+  z-index: var(--z-tabbar);
+  height: var(--tabbar-height);
+  background: var(--color-yellow);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-floating);
+}
+
+.tabbar[data-active="planning"] { --active-center: var(--tabbar-center-planning); }
+.tabbar[data-active="favoris"] { --active-center: var(--tabbar-center-favoris); }
+.tabbar[data-active="carte"] { --active-center: var(--tabbar-center-carte); }
+.tabbar[data-active="decouvrir"] { --active-center: var(--tabbar-center-decouvrir); }
+.tabbar[data-active="menu"] { --active-center: var(--tabbar-center-menu); }
+
+/* La pastille active (86 px) est écrêtée par la barre. */
+.tabbar__clip {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  pointer-events: none;
+}
+
+.tabbar__active {
+  position: absolute;
+  top: calc((var(--tabbar-height) - var(--tabbar-active-size)) / 2);
+  left: calc(var(--active-center) - var(--tabbar-active-size) / 2);
+  width: var(--tabbar-active-size);
+  height: var(--tabbar-active-size);
+  background: var(--color-active-tab);
+  border-radius: 50%;
+  transition: left var(--duration-move) var(--ease-move);
+}
+
+.tabbar__item {
+  position: absolute;
+  top: var(--tabbar-item-top);
+  left: var(--center);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-0-5);
+  transform: translateX(-50%);
+}
+
+.tabbar__item[data-tab="planning"] { --center: var(--tabbar-center-planning); }
+.tabbar__item[data-tab="favoris"] { --center: var(--tabbar-center-favoris); }
+.tabbar__item[data-tab="carte"] { --center: var(--tabbar-center-carte); }
+.tabbar__item[data-tab="decouvrir"] { --center: var(--tabbar-center-decouvrir); }
+.tabbar__item[data-tab="menu"] { --center: var(--tabbar-center-menu); }
+
+.tabbar__icon {
+  width: var(--tabbar-icon-size);
+  height: var(--tabbar-icon-size);
+}
+
+.tabbar__label {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-sm);
+  color: var(--color-black);
+  text-align: center;
+  white-space: nowrap;
+}
