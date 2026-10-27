@@ -174,18 +174,18 @@
 }
 .discipline-name {
   font-family: var(--ff-serif);
-  font-size: 1.15rem;
+  font-size: var(--fs-lg);
   font-weight: 400;
   color: var(--paper);
   line-height: 1.2;
 }
 .discipline-what {
-  font-size: 0.82rem;
+  font-size: var(--fs-sm);
   color: var(--muted);
   line-height: 1.6;
 }
 .discipline-hidden {
-  font-size: 0.78rem;
+  font-size: var(--fs-sm);
   font-style: italic;
   color: var(--muted);
   line-height: 1.55;
@@ -221,7 +221,7 @@
   line-height: 1.2;
 }
 .liminal-box-def {
-  font-size: 0.92rem;
+  font-size: var(--fs-base);
   color: var(--muted2);
   line-height: 1.7;
   max-width: 460px;
@@ -245,7 +245,7 @@
   background: var(--ink);
 }
 .liminal-phase-name {
-  font-size: 0.75rem;
+  font-size: var(--fs-sm);
   font-weight: 400;
   color: var(--paper);
   margin-bottom: 5px;
@@ -253,7 +253,7 @@
   font-family: var(--ff-serif);
 }
 .liminal-phase-def {
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   color: var(--muted);
   line-height: 1.5;
 }
@@ -283,7 +283,7 @@
   }
 }
 .correspondance-left {
-  font-size: 0.84rem;
+  font-size: var(--fs-sm);
   color: var(--muted);
   line-height: 1.5;
   text-align: right;
@@ -302,10 +302,10 @@
 .correspondance-arrow {
   text-align: center;
   color: var(--accent);
-  font-size: 0.9rem;
+  font-size: var(--fs-base);
 }
 .correspondance-right {
-  font-size: 0.84rem;
+  font-size: var(--fs-sm);
   color: var(--muted);
   line-height: 1.5;
 }
@@ -410,14 +410,14 @@
 .adossement-name,
 .maieuticien-title {
   font-family: var(--ff-serif);
-  font-size: 1.3rem;
+  font-size: var(--fs-xl);
   font-weight: 400;
   color: var(--accent);
   margin-bottom: 14px;
   line-height: 1.25;
 }
 .maieuticien-body {
-  font-size: 0.92rem;
+  font-size: var(--fs-base);
   color: var(--muted);
   line-height: 1.75;
 }
@@ -443,7 +443,7 @@
 }
 .phase-num {
   font-family: var(--ff-serif);
-  font-size: 1.8rem;
+  font-size: var(--fs-title-s);
   color: var(--pc);
   line-height: 1;
   opacity: 0.6;
@@ -457,20 +457,20 @@
 }
 .phase-name {
   font-family: var(--ff-serif);
-  font-size: 1.35rem;
+  font-size: var(--fs-xl);
   font-weight: 400;
   color: var(--paper);
   margin-bottom: 12px;
   line-height: 1.2;
 }
 .phase-desc {
-  font-size: 0.88rem;
+  font-size: var(--fs-base);
   color: var(--muted);
   line-height: 1.7;
   margin-bottom: 14px;
 }
 .phase-seuil {
-  font-size: 0.82rem;
+  font-size: var(--fs-sm);
   font-style: italic;
   color: var(--pc);
   line-height: 1.5;
@@ -518,7 +518,7 @@
   line-height: 1.2;
 }
 .commun-body {
-  font-size: 0.92rem;
+  font-size: var(--fs-base);
   color: var(--muted2);
   line-height: 1.75;
 }
@@ -814,14 +814,14 @@ a.serie-article:hover .serie-article-title {
 }
 .serie-num {
   font-family: var(--ff-serif);
-  font-size: 1rem;
+  font-size: var(--fs-md);
   color: var(--muted);
   flex-shrink: 0;
   width: 22px;
   transition: color 0.35s ease;
 }
 .serie-article-title {
-  font-size: 0.92rem;
+  font-size: var(--fs-base);
   font-weight: 400;
   color: var(--muted2);
   margin-bottom: 3px;
@@ -897,7 +897,7 @@ a.serie-article:hover .serie-article-title {
   }
 }
 .synthese-left {
-  font-size: 0.84rem;
+  font-size: var(--fs-sm);
   color: var(--muted);
   line-height: 1.5;
   text-align: right;
@@ -910,10 +910,10 @@ a.serie-article:hover .serie-article-title {
 .synthese-arrow {
   text-align: center;
   color: var(--accent);
-  font-size: 0.9rem;
+  font-size: var(--fs-base);
 }
 .synthese-right {
-  font-size: 0.84rem;
+  font-size: var(--fs-sm);
   color: var(--paper);
   line-height: 1.5;
 }
@@ -944,20 +944,20 @@ a.serie-article:hover .serie-article-title {
 }
 .change-icon {
   font-family: var(--ff-serif);
-  font-size: 1.6rem;
+  font-size: var(--fs-2xl);
   color: var(--accent);
   line-height: 1;
   opacity: 0.6;
 }
 .change-title {
   font-family: var(--ff-serif);
-  font-size: 1.15rem;
+  font-size: var(--fs-lg);
   font-weight: 400;
   color: var(--paper);
   margin-bottom: 8px;
 }
 .change-body {
-  font-size: 0.86rem;
+  font-size: var(--fs-sm);
   color: var(--muted);
   line-height: 1.65;
 }
@@ -983,7 +983,7 @@ a.serie-article:hover .serie-article-title {
   margin-bottom: 20px;
 }
 .coda-body {
-  font-size: 0.95rem;
+  font-size: var(--fs-base);
   color: var(--muted2);
   line-height: 1.75;
   max-width: 52ch;
@@ -2108,7 +2108,7 @@ header .sub {
 }
 .skill .sk-name {
   font-family: var(--ff-serif);
-  font-size: 1.12rem;
+  font-size: var(--fs-md);
   color: var(--paper);
   line-height: 1.15;
   margin-bottom: 7px;
@@ -2157,7 +2157,7 @@ header .sub {
 .pl-lead {
   font-family: var(--ff-serif);
   font-style: italic;
-  font-size: 2.2rem;
+  font-size: var(--fs-title-m);
   color: var(--paper);
   text-shadow:
     0 0 30px rgba(255, 255, 255, 0.35),
@@ -2523,7 +2523,7 @@ header .sub {
   z-index: 1;
   font-family: var(--ff-serif);
   font-style: italic;
-  font-size: 2.2rem;
+  font-size: var(--fs-title-m);
   color: var(--ink);
 }
 .constat-row {
@@ -2540,7 +2540,7 @@ header .sub {
 .constat {
   position: relative;
   font-family: var(--ff-serif);
-  font-size: 1.9rem;
+  font-size: var(--fs-title-s);
   line-height: 1.3;
   max-width: 34ch;
   margin: 0 auto;
@@ -2599,7 +2599,7 @@ header .sub {
   color: var(--ink);
   font-family: var(--ff-serif);
   font-style: italic;
-  font-size: 1.9rem;
+  font-size: var(--fs-title-s);
   padding: 14px 46px;
   min-width: 230px;
   cursor: pointer;
@@ -2756,7 +2756,7 @@ header .sub {
 }
 .hypo {
   font-family: var(--ff-serif);
-  font-size: 1.9rem;
+  font-size: var(--fs-title-s);
   line-height: 1.3;
   color: var(--ink);
   position: relative;
@@ -2860,7 +2860,7 @@ section {
     max-width: 720px;
   }
   .band .txt p {
-    font-size: 1.125rem;
+    font-size: var(--fs-md);
     line-height: 1.85;
     color: var(--muted2);
     margin-bottom: 18px;
@@ -3868,7 +3868,7 @@ footer {
   z-index: 1;
   font-family: var(--ff-serif);
   font-style: italic;
-  font-size: 2.2rem;
+  font-size: var(--fs-title-m);
   color: var(--ink);
 }
 .sy-constat-row {
@@ -3885,7 +3885,7 @@ footer {
 .sy-constat {
   position: relative;
   font-family: var(--ff-serif);
-  font-size: 1.9rem;
+  font-size: var(--fs-title-s);
   line-height: 1.3;
   max-width: 34ch;
   margin: 0 auto;
@@ -3943,7 +3943,7 @@ footer {
   color: var(--ink);
   font-family: var(--ff-serif);
   font-style: italic;
-  font-size: 1.9rem;
+  font-size: var(--fs-title-s);
   padding: 14px 46px;
   min-width: 230px;
   cursor: pointer;
@@ -4093,7 +4093,7 @@ footer {
 
 .sy-hypo {
   font-family: var(--ff-serif);
-  font-size: 1.9rem;
+  font-size: var(--fs-title-s);
   line-height: 1.3;
   color: var(--ink);
   position: relative;
@@ -7802,7 +7802,7 @@ a.porte,
      colonne etroite : on impose donc une largeur EXPLICITE, et on reduit le
      padding lateral. */
   .sy-sticker { width: 94%; max-width: 94%; padding: clamp(18px, 4vw, 26px) clamp(18px, 4vw, 24px); }
-  .sy-hypo { max-width: 100%; font-size: 1.4rem; }
+  .sy-hypo { max-width: 100%; font-size: var(--fs-xl); }
 }
 
 /* --- scene : cercle central, CTA en dessous --- */
@@ -8250,7 +8250,7 @@ a.expl-card:hover {
 }
 .expl-card h3 {
   font-family: var(--ff-serif);
-  font-size: 1.3rem;
+  font-size: var(--fs-xl);
   color: var(--ink);
   margin-bottom: 8px;
   line-height: 1.15;
