@@ -21,9 +21,8 @@
           <div>
             <div class="ft-ligne">
               <div class="ft-name">Brann Etienne</div>
-              <div class="ft-role2"><em>Designer relationnel</em></div>
+              <div class="ft-role2"><em>Product designer</em></div>
             </div>
-            <div class="ft-role3">Concepteur de dispositifs relationnels&nbsp;: outils, parcours et fa&ccedil;ons de travailler ensemble</div>
           </div>
         </div>
         <div class="ft-place"><svg class="ft-pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg><span class="ft-ville">Lyon</span><span>&middot; en remote et sur site</span></div>
@@ -36,39 +35,12 @@
 
       <nav class="ft-cols" aria-label="Plan du site">
 
-        <div class="ft-col ft-cases">
-          <div class="ft-h">Les cas</div>
-          <ul>
-            <li style="--d:var(--c1)"><a href="/cas-healthanea">Healthanea <span class="ft-tag">Sant&eacute;</span></a></li>
-            <li style="--d:var(--c2)"><a href="/cas-shift-prime">SHIFT Prime <span class="ft-tag">Industrie</span></a></li>
-            <li style="--d:var(--c4)"><a href="/cas-bi-solution">B.I Solution <span class="ft-tag">Data</span></a></li>
-            <li style="--d:var(--c3)"><a href="/cas-proshop">Proshop &amp; Beyond <span class="ft-tag">Commerce</span></a></li>
-            <li style="--d:var(--c5)"><span class="ft-soon">TiBillet <span class="ft-tag">Bient&ocirc;t</span></span></li>
-          </ul>
-          <a class="ft-more" href="/etudes-de-cas">Tous les cas <span aria-hidden="true">&rarr;</span></a>
-        </div>
-
         <div class="ft-col">
-          <div class="ft-h">La s&eacute;rie</div>
-          <ul class="ft-num">
-            <li style="--d:var(--c1)"><a href="/01-rien-ne-tient-tout-seul"><b>01</b> Rien ne tient tout seul</a></li>
-            <li style="--d:var(--c2)"><a href="/02-les-relations-ne-se-voient-que-dun-certain-endroit"><b>02</b> Les relations ne se voient pas</a></li>
-            <li style="--d:var(--c3)"><a href="/03-la-metaliminalite"><b>03</b> La m&eacute;taliminalit&eacute;</a></li>
-            <li style="--d:var(--c4)"><a href="/04-le-lien-importe-plus-que-le-bien"><b>04</b> Le lien importe plus que le bien</a></li>
-            <li style="--d:var(--c5)"><a href="/05-ce-qui-ne-circule-plus-casse"><b>05</b> Ce qui ne circule plus casse</a></li>
-            <li style="--d:var(--c1)"><a href="/06-ce-qui-fait-circuler"><b>06</b> Ce qui fait circuler</a></li>
-          </ul>
-          <a class="ft-more" href="/circulation-paradigme-du-design">La s&eacute;rie compl&egrave;te <span aria-hidden="true">&rarr;</span></a>
-        </div>
-
-        <div class="ft-col">
-          <div class="ft-h">Ailleurs</div>
+          <div class="ft-h">Pour aller plus loin</div>
           <ul>
-            <li><a href="/parcours-interactif">Le parcours</a></li>
-            <li><a href="/la-pratique">La pratique</a></li>
-            <li><a href="/circulation-paradigme-du-design">La th&eacute;orie</a></li>
-            <li><a href="/explorations">Explorations</a></li>
-            <li><a href="/a-propos">&Agrave; propos</a></li>
+            <li><a href="/parcours-interactif">Regarder autrement</a></li>
+            <li><a href="/circulation-paradigme-du-design">La circulation, paradigme du design</a></li>
+            <li><a href="/reciprocites">Les R&eacute;ciprocit&eacute;s</a></li>
           </ul>
           <a class="ft-pill" href="/contact"><span class="holo"></span><span class="holo-label">Contact</span></a>
         </div>

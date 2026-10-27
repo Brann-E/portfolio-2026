@@ -8722,6 +8722,9 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 .pi-offer{ border-left:2px solid var(--c1); padding-left:22px; margin-top:34px; font-size: var(--fs-md); color:var(--paper); }
 .pi-contact{ margin-top:34px; font-size: var(--fs-md); }
 .pi-contact a{ color:var(--c1); text-decoration:none; border-bottom:1px solid rgba(40,230,255,.35); }
+.pi-contact{ display:flex; flex-wrap:wrap; gap:12px; }
+.pi-contact a.pi-btn{ margin-top:0; color:var(--paper); border-bottom:1px solid var(--faint); }
+.pi-contact a.pi-btn:hover,.pi-contact a.pi-btn:focus-visible{ color:var(--ac); border-color:var(--ac); }
 
 .pi-footer{ max-width:660px; margin:0 auto; padding:38px 28px 66px; border-top:1px solid var(--faint); font-size: var(--fs-sm); color:var(--muted); }
 
@@ -8771,6 +8774,32 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 .proof a.cell { text-decoration: none; color: inherit; display: block; transition: background .3s ease; }
 .proof a.cell:hover { background: color-mix(in srgb, var(--t) 9%, var(--ink)); }
 .proof-cas { margin-top: 14px; font-size: var(--fs-sm); letter-spacing: .03em; color: var(--t); }
+
+/* ===== Home v3 : héros avec texte, carte de cas en trois lignes ===== */
+.hero--home h1,
+.hero--cas h1 { margin-bottom: clamp(20px, 3vh, 32px); }
+.hero--home .lede { margin-bottom: clamp(24px, 4vh, 36px); }
+.wrap > .hero.hero--cas {
+  min-height: 0;
+  padding-top: clamp(90px, 15vh, 180px);
+  padding-bottom: clamp(48px, 8vh, 96px);
+  border-bottom: 0;
+}
+/* Réciprocités : intertitres qui remplacent d'anciens eyebrows */
+.etages h3,
+.roles > h3 {
+  font-size: var(--fs-title-s);
+  font-weight: 400;
+  margin: 0 0 clamp(16px, 2.4vh, 24px);
+}
+
+.case .prod {
+  font-family: var(--ff-serif);
+  font-size: var(--fs-md);
+  line-height: 1.5;
+  color: var(--muted2);
+  max-width: 46ch;
+}
 
 
 .final h2 { max-width: none; }

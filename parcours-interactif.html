@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="styles.css">
-<title>Faire l'exp&eacute;rience - Brann Etienne</title>
+<title>Regarder autrement - Brann Etienne</title>
+<meta name="description" content="Trois situations ordinaires, vues depuis chaque place. Un parcours interactif de quinze minutes pour voir ce qui circule entre les gens.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -17,16 +18,15 @@
 <body class="pi-page">
 
 <header class="pi-top">
-  <a class="pi-exit" id="pi-exit" href="/regarder-autrement">&larr; Retour</a>
+  <a class="pi-exit" id="pi-exit" href="/">&larr; Retour</a>
   <button class="pi-back" id="pi-back" type="button" hidden onclick="go('s-home')">&larr; Les situations</button>
   <ol class="pi-steps" id="pi-steps" hidden></ol>
 </header>
 
 <section class="pi-screen pi-on pi-wrap" id="s-home">
-  <span class="pi-kicker">Parcours interactif</span>
   <h1>Une situation, <em>Plusieurs regards.</em></h1>
   <p class="pi-lead">3 situations ordinaires. Vous allez les traverser par les yeux de ceux qui les vivent&#8239;: chacun sa place, chacun sa part de v&eacute;rit&eacute;. C'est l&agrave;, tr&egrave;s concr&egrave;tement, que l'on commence à regarder autrement.</p>
-  <p class="pi-note">Ces 3 situations sont des <b>arch&eacute;types</b>, volontairement &eacute;pur&eacute;s, la r&eacute;alit&eacute; est toujours plus emm&ecirc;l&eacute;e&#8239;. Ici, on a retiré le décor pour ne garder que le geste.</p>
+  <p class="pi-note">Ces 3 situations sont des <b>arch&eacute;types</b>, volontairement &eacute;pur&eacute;s, la r&eacute;alit&eacute; est toujours plus emm&ecirc;l&eacute;e. Ici, on a retiré le décor pour ne garder que le geste.</p>
   <svg class="pi-defs" aria-hidden="true"><defs><linearGradient id="pi-foil" x1="-40" y1="0" x2="80" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0.00000" stop-color="#28E6FF"/><stop offset="0.06667" stop-color="#9F6EFF"/><stop offset="0.13333" stop-color="#2FFFB4"/><stop offset="0.20000" stop-color="#FFEA4D"/><stop offset="0.26667" stop-color="#F968A7"/><stop offset="0.33333" stop-color="#28E6FF"/><stop offset="0.33333" stop-color="#28E6FF"/><stop offset="0.40000" stop-color="#9F6EFF"/><stop offset="0.46667" stop-color="#2FFFB4"/><stop offset="0.53333" stop-color="#FFEA4D"/><stop offset="0.60000" stop-color="#F968A7"/><stop offset="0.66667" stop-color="#28E6FF"/><stop offset="0.66667" stop-color="#28E6FF"/><stop offset="0.73333" stop-color="#9F6EFF"/><stop offset="0.80000" stop-color="#2FFFB4"/><stop offset="0.86667" stop-color="#FFEA4D"/><stop offset="0.93333" stop-color="#F968A7"/><stop offset="1.00000" stop-color="#28E6FF"/><animateTransform attributeName="gradientTransform" type="translate" from="0 0" to="-40 0" dur="6s" repeatCount="indefinite"/></linearGradient></defs></svg>
   <div class="pi-cards" id="home">
     <button class="pi-card" type="button" data-sit="0">
@@ -49,7 +49,7 @@
   <div class="pi-further" id="pi-further" hidden>
     <p class="pi-further-lead">Vous avez travers&eacute; les 3&#8239;: c'&eacute;tait chaque fois la m&ecirc;me m&eacute;canique. Pour aller plus loin&#8239;:</p>
     <div class="pi-further-links">
-      <a class="pi-further-link" href="/la-pratique"><span class="pi-further-k">La pratique</span><span class="pi-further-d">comment j'interviens, concr&egrave;tement</span></a>
+      <a class="pi-further-link" href="/comment-je-travaille"><span class="pi-further-k">Comment je travaille</span><span class="pi-further-d">comment j'interviens, concr&egrave;tement</span></a>
       <a class="pi-further-link" href="/circulation-paradigme-du-design"><span class="pi-further-k">La th&eacute;orie</span><span class="pi-further-d">ce qui fait tenir, en 6 essais</span></a>
     </div>
   </div>
@@ -90,7 +90,7 @@
 
 <section class="pi-screen pi-wrap" id="s-end">
   <span class="pi-kicker" id="e-kick"></span>
-  <div class="pi-appears"><span class="pi-lab">Ce qui appara&icirc;t</span><p id="e-app"></p><p class="pi-app-more" id="e-more" hidden></p></div>
+  <div class="pi-appears"><p id="e-app"></p><p class="pi-app-more" id="e-more" hidden></p></div>
   <div id="e-gate"></div>
   <button class="pi-btn" id="e-next"></button>
 </section>
@@ -107,21 +107,22 @@
 </section>
 
 <section class="pi-screen pi-wrap pi-sy" id="s-synth">
-  <span class="pi-kicker">Les 3</span>
   <h1>3 fois la m&ecirc;me chose. <em>Un seul m&eacute;canisme.</em></h1>
   <p class="pi-lead">4 personnes donnent quelque chose qui n'a jamais eu de nom. <br>43 remont&eacute;es &eacute;crites sans personne au bout. <br>Une femme qui donne 6 fois sans que rien ne soit repris.</p>
   <p>&Agrave; chaque fois, quelque chose circulait. &Agrave; chaque fois, personne ne le recevait.</p>
-  <p>Et &agrave; chaque fois, ce qui a suffi &eacute;tait minuscule&nbsp;: un message mensuel, un quart d'heure, une demi-page. Aucun outil, aucun budget, aucune r&eacute;organisation.</p>
+  <p>Et &agrave; chaque fois, ce qui a suffi &eacute;tait minuscule&nbsp;: un message mensuel, un quart d'heure, une demi-page.</p>
   <div class="pi-big">Ce qui manquait n'&eacute;tait jamais la bonne volont&eacute;. C'&eacute;tait un endroit o&ugrave; ce qui circule puisse arriver.</div>
   <div class="pi-offer">
-    <p>Je fais 3 choses. Je rends visible ce qui circule d&eacute;j&agrave; chez vous et que personne ne compte. Je r&eacute;pare l'endroit o&ugrave; &ccedil;a n'arrive pas. Et je laisse derri&egrave;re moi un dispositif que vous tenez sans moi.</p>
-    <p>&Ccedil;a commence toujours pareil&nbsp;: on fait tourner une fois l'instrument, et on regarde ce qu'il montre.</p>
+    <p>C'est ce que je fais dans les produits que je conçois. Je rends visible ce qui circule déjà, je répare l'endroit où ça n'arrive pas, et je conçois l'outil qui le fait tenir.</p>
   </div>
-  <div class="pi-contact">&Eacute;crivez-moi&nbsp;: <a href="mailto:brann.etienne@gmail.com">brann.etienne@gmail.com</a></div>
+  <div class="pi-contact">
+    <a class="pi-btn" href="/etudes-de-cas">Voir les études de cas</a>
+    <a class="pi-btn" href="/contact">Écrivez-moi</a>
+  </div>
   <button class="pi-btn" onclick="go('s-home')">Revoir les situations</button>
 </section>
 
-<footer class="pi-footer">3 situations ordinaires - Brann Etienne, designer relationnel, à Lyon.</footer>
+<footer class="pi-footer">3 situations ordinaires &middot; Brann Etienne, product designer, à Lyon.</footer>
 
 <script src="parcours-interactif.js"></script>
 </body>
