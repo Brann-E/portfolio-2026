@@ -11,6 +11,11 @@
   --faint: #242932;
   --surface: #10141a;
 
+  /* gris éclaircis de l'en-tête et du héros d'accueil : +8 points de luminosité */
+  --text-intro: hsl(217 12% 83%); /* paragraphe d'introduction du héros, était --muted2 (75 %) */
+  --nav-link: hsl(218 13% 70%); /* liens secondaires de la navigation, était --muted (62 %) */
+  --nav-role: hsl(218 13% 72%); /* métier dans la navigation, était --muted (62 %) */
+
   --c1: #28e6ff;
   --c2: #9f6eff;
   --c3: #2fffb4;
@@ -5868,7 +5873,7 @@ body {
 .site-nav .site-role {
   font-family: var(--ff-sans);
   font-size: var(--fs-base);
-  color: var(--muted);
+  color: var(--nav-role);
 }
 .site-nav .site-links {
   display: flex;
@@ -5878,7 +5883,7 @@ body {
 .site-nav .site-links a {
   position: relative;
   padding: 5px 0;
-  color: var(--muted);
+  color: var(--nav-link);
   font:
     400 12px/1.2 "Inter",
     sans-serif;
@@ -7989,6 +7994,22 @@ a.pl-cta {
   color: var(--muted2);
   letter-spacing: 0.02em;
 }
+/* héros : l'expérience, plus appuyée, puis le lieu, décalé d'une marche plus bas */
+.sig-exp {
+  font-size: var(--fs-sig-desc);
+  font-weight: 400;
+  color: var(--muted2);
+  letter-spacing: 0.02em;
+  margin-top: clamp(8px, 1vw, 14px);
+}
+.sig-lieu {
+  font-size: var(--fs-sig-desc);
+  font-weight: 200;
+  color: var(--muted2);
+  letter-spacing: 0.02em;
+  margin-top: clamp(12px, 1.5vw, 20px);
+  padding-left: clamp(14px, 2vw, 28px);
+}
 .sig-claim {
   font-family: var(--ff-serif);
   font-size: var(--fs-sig-claim);
@@ -8805,7 +8826,10 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 /* ===== Home v3 : héros avec texte, carte de cas en trois lignes ===== */
 .hero--home h1,
 .hero--cas h1 { margin-bottom: clamp(20px, 3vh, 32px); }
-.hero--home .lede { margin-bottom: clamp(24px, 4vh, 36px); }
+.hero--home .lede {
+  margin-bottom: clamp(24px, 4vh, 36px);
+  color: var(--text-intro);
+}
 .wrap > .hero.hero--cas {
   min-height: 0;
   padding-top: clamp(90px, 15vh, 180px);
