@@ -132,22 +132,25 @@
         <p class="quiet">Le résultat est sans appel : malgré des investissements substantiels et une tentative de refonte déjà avortée, la plateforme ne représente que 2,5% des ventes. Les paniers s'abandonnent, les clients ne reviennent pas, et les équipes support absorbent en tickets ce que l'outil ne sait pas faire.</p>
         <p class="brief">Refaire le Proshop. Simplifier le parcours d'achat.<br>Voilà ce qu'on me demandait de regarder.</p>
         <p class="quiet">L'urgence est réelle : partout en Europe, des concurrents proposent des parcours où l'on commande en trois clics. Posé ainsi, c'est un problème de e-commerce classique : un tunnel à fluidifier, un catalogue à assainir, une interface à refaire.</p>
+        <p class="quiet">La réponse était déjà écrite dans la commande&#8239;: désintermédier la vente, avant même d'avoir regardé qui vendait à qui. C'est le piège de la solution prématurée, une réponse arrêtée avant que la question soit posée.</p>
       </article>
 
       <article class="chapter" id="c2">
         <h3>02 &middot; Ce qu'on prenait pour un frein était le principal actif</h3>
         <p>J'ai eu un accès rare : toute la chaîne commerciale disponible pour la recherche - service achats, commerciaux itinérants, administration des ventes, vendeurs en magasin, logistique, finance, marketing, support - et des clients correspondant au profil cible (ICP : Ideal Customer Profile). Plus de trente entretiens, en interne comme au dehors.</p>
         <div class="figure">
-          <img class="icp" src="assets/icp.png" alt="Carte d'écosystème Proshop : flux d'argent, de biens et de données entre clients, commerciaux, vendeurs en magasin, logistique et support.">        
+          <img class="icp" src="assets/icp.png" alt="Exemple de profil de client cible (ICP) : une PME de 150 000 à 400 000 € par an, qui réalise 10 à 30 installations par an, une petite structure avec un responsable commercial et un responsable technique, en forte croissance, qui effectue au moins 60 % de ses achats chez nous.">        
         </div>
         <p class="figcap">Exemples de ICP, pour identifier les clients à prioriser dans notre recherche.</p>
         <p>Le diagnostic attendu s'est confirmé sans surprise : quarante pour cent des paniers abandonnés à cause d'un tunnel de commande trop complexe, des stocks inexacts, des descriptions produits incomplètes, des équipes qui perdent leurs journées à réparer ce que l'outil ne fait pas. Des redondances partout, des processus en boucle, une frustration installée des deux côtés.</p>
         <p>Mais c'est en écoutant les clients que le regard s'est déplacé. Ce qu'ils décrivaient n'était pas le désir de se passer des commerciaux. C'était l'inverse : la relation avec les équipes de vente était ce qu'ils valorisaient le plus dans cette entreprise : la connaissance produit, le conseil sur un chantier, le dépannage. Ce qu'ils voulaient, c'était pouvoir agir seuls <em>là où le commercial n'apportait rien</em> : une commande de réassort, un article déjà connu, une urgence de fin de journée.</p>
         <p class="pull">Ils ne demandaient pas moins de relation.<br>Ils demandaient de choisir quand elle sert le plus.</p>
         <p>Le brief supposait qu'une bonne plateforme désintermédie la vente, que le progrès consiste à retirer l'humain du parcours. La recherche disait le contraire : dans ce marché, l'humain <em>était</em> l'avantage concurrentiel. Le problème n'était pas qu'il y ait des commerciaux dans le circuit ; c'était que rien ne les outillait, et que le client n'avait aucune autonomie quand il en voulait.</p>
-              <h4>Ce qui circulait</h4>
+        <h4>Ce qui circulait</h4>
         <ul>
-          <li>Chez MyLight150, la confiance entre un commercial et ses clients.</li>
+          <li>La confiance et le conseil, entre chaque client et son commercial&#8239;: c'est ce que la désintermédiation allait couper.</li>
+          <li>La connaissance produit et le dépannage, qui ne passaient que par les équipes de vente.</li>
+          <li>Une charge, celle du support, qui absorbait en tickets ce que l'outil ne savait pas faire.</li>
         </ul>
       </article>
 
@@ -156,16 +159,55 @@
         <p>De ce déplacement découle le modèle qui a structuré tout le projet : une plateforme unique où toutes les commandes sont passées, mais portées par des acteurs différents : le client lui-même, le commercial itinérant, le vendeur en magasin.</p>
         <p>Le renversement est simple à énoncer et change tout. On ne construit plus un canal de vente qui concurrence les commerciaux ; on construit l'outil commun sur lequel ils s'appuient tous. Le client gagne son autonomie sans perdre son interlocuteur. Le commercial cesse de saisir des bons de commande pour redevenir conseil. Et l'entreprise récupère une vue unique sur ce qui se vend, quel que soit le chemin emprunté.</p>
         <p class="pull">L'outil ne remplace pas la relation.<br>Il en devient le support.</p>
-        <p>Ce modèle mental a servi de test pour chaque arbitrage suivant : une fonctionnalité qui affaiblissait la relation commerciale était écartée, même si elle simplifiait le parcours. Une fonctionnalité qui donnait de l'autonomie sans couper le lien était prioritaire.</p>
+        <div class="figure">
+          <svg viewBox="0 0 360 440" role="img" aria-label="Schéma du modèle cross-canal : au centre, le Proshop, plateforme unique ; autour, trois porteurs de la commande qui y passent commande, le client en autonomie pour le réassort, l'article connu et l'urgence, le commercial itinérant pour le conseil, le chantier et le dépannage, et le vendeur en magasin ; un trait pointillé relie le client et le commercial, la relation conservée ; en sortie, une vue unique sur ce qui se vend, quel que soit le chemin.">
+            <defs>
+              <marker id="proshop-fleche" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+                <path d="M0 0 L8 4 L0 8 z" fill="var(--muted)"/>
+              </marker>
+            </defs>
+
+            <path d="M62 52 C62 22 180 22 180 52" fill="none" stroke="var(--c3)" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <text x="121" y="14" text-anchor="middle" font-size="11" fill="var(--c3)">la relation, conservée</text>
+
+            <rect x="8" y="52" width="108" height="120" rx="8" fill="var(--surface)" stroke="var(--muted)"/>
+            <text text-anchor="middle" font-size="12" font-weight="500" fill="var(--paper)"><tspan x="62" y="78">Le client,</tspan><tspan x="62" y="94">en autonomie</tspan></text>
+            <text text-anchor="middle" font-size="10.5" fill="var(--muted2)"><tspan x="62" y="118">réassort,</tspan><tspan x="62" y="133">article connu,</tspan><tspan x="62" y="148">urgence</tspan></text>
+
+            <rect x="126" y="52" width="108" height="120" rx="8" fill="var(--surface)" stroke="var(--muted)"/>
+            <text text-anchor="middle" font-size="12" font-weight="500" fill="var(--paper)"><tspan x="180" y="78">Le commercial</tspan><tspan x="180" y="94">itinérant</tspan></text>
+            <text text-anchor="middle" font-size="10.5" fill="var(--muted2)"><tspan x="180" y="118">conseil,</tspan><tspan x="180" y="133">chantier,</tspan><tspan x="180" y="148">dépannage</tspan></text>
+
+            <rect x="244" y="52" width="108" height="120" rx="8" fill="var(--surface)" stroke="var(--muted)"/>
+            <text text-anchor="middle" font-size="12" font-weight="500" fill="var(--paper)"><tspan x="298" y="78">Le vendeur</tspan><tspan x="298" y="94">en magasin</tspan></text>
+
+            <path d="M62 172 L90 246" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#proshop-fleche)"/>
+            <path d="M180 172 L180 246" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#proshop-fleche)"/>
+            <path d="M298 172 L270 246" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#proshop-fleche)"/>
+            <text x="68" y="212" text-anchor="middle" font-size="10" fill="var(--muted)">passe commande</text>
+            <text x="180" y="204" text-anchor="middle" font-size="10" fill="var(--muted)">passe commande</text>
+            <text x="292" y="212" text-anchor="middle" font-size="10" fill="var(--muted)">passe commande</text>
+
+            <rect x="40" y="250" width="280" height="64" rx="10" fill="var(--paper)"/>
+            <text text-anchor="middle" font-size="13" font-weight="500" fill="var(--ink)"><tspan x="180" y="277">Le Proshop,</tspan><tspan x="180" y="296">plateforme unique</tspan></text>
+
+            <path d="M180 314 L180 366" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#proshop-fleche)"/>
+            <rect x="20" y="370" width="320" height="56" rx="8" fill="none" stroke="var(--muted)" stroke-dasharray="2 3"/>
+            <text text-anchor="middle" font-size="12" fill="var(--paper)"><tspan x="180" y="394">Une vue unique sur ce qui se vend,</tspan><tspan x="180" y="411">quel que soit le chemin</tspan></text>
+          </svg>
+        </div>
+        <p class="figcap">Le modèle cross-canal&#8239;: une seule plateforme, trois porteurs de la commande.</p>
+        <p class="pull">Une fonctionnalité qui affaiblissait la relation commerciale était écartée, même si elle simplifiait le parcours.</p>
+        <p>Ce modèle a servi de test pour chaque arbitrage. Une fonctionnalité qui donnait de l'autonomie sans couper le lien passait en priorité.</p>
       <div class="ba">
         <div class="figure">
-          <img src="assets/proshop-value-1.png" alt="Carte d'écosystème Healthanea : flux d'argent, de biens et de données entre patients, médecins, laboratoires, objets connectés et spécialistes du bien-être.">
+          <img src="assets/proshop-value-1.png" alt="Schéma : le client veut pouvoir choisir entre autonomie et contact ; le personnel de vente peut ainsi consacrer plus de temps aux nouveaux clients.">
         </div>
         <div class="figure">
-          <img src="assets/proshop-value-2.png" alt="Carte d'écosystème Healthanea : flux d'argent, de biens et de données entre patients, médecins, laboratoires, objets connectés et spécialistes du bien-être.">
+          <img src="assets/proshop-value-2.png" alt="Schéma : le client souhaite un suivi simple et efficace de sa commande et connaître le statut de l'expédition ; les employés peuvent allouer du temps à des tâches autres que la surveillance.">
         </div>
         <div class="figure">
-          <img src="assets/proshop-value-3.png" alt="Carte d'écosystème Healthanea : flux d'argent, de biens et de données entre patients, médecins, laboratoires, objets connectés et spécialistes du bien-être.">        
+          <img src="assets/proshop-value-3.png" alt="Schéma : le client souhaite une gestion et une consultation simplifiées de son historique d'achat ; les commerciaux utilisent ces outils pour échanger des informations avec leurs clients sur une base commune.">        
         </div>
       </div>
         <p class="figcap">Exemples de problématiques externes qui apportent de la valeur en interne.</p>
@@ -181,7 +223,7 @@
           <div class="node"><div class="n">03</div><h4>Des processus sans boucle</h4><p>Une fonction clé attribuée à une personne identifiée pour casser les allers-retours, et un commercial référent affecté à chaque client pour traiter ses problèmes de bout en bout.</p></div>
           <div class="node"><div class="n">04</div><h4>Le B2B enfin adressable</h4><p>Commandes en volume, parcours d'entrée pour les partenariats importants, et une architecture pensée pour absorber la croissance plutôt que la subir.</p></div>
         </div>
-        <p style="margin-top:36px">Aucun de ces chantiers ne relève du e-commerce au sens strict. Tous découlent du même déplacement : dès lors que l'outil sert la relation au lieu de la remplacer, ce qu'il faut concevoir n'est plus un tunnel d'achat mais un modèle de vente.</p>
+        <p>Ces quatre chantiers dépassent le e-commerce. Dès que l'outil sert la relation, on conçoit un modèle de vente, et plus seulement un tunnel d'achat.</p>
       </article>
 
       <article class="chapter" id="c5">
@@ -195,7 +237,9 @@
           <li><span>05</span>Plan de site intégrant l'ensemble des familles de produits et leurs filtres</li>
           <li><span>06</span>Audits des solutions et des prestataires au regard des ambitions posées</li>
         </ul>
+        <!-- TODO Brann : galerie des livrables (tâche 9 du brief). Aucun fichier fourni, rien n'est affiché. Fichiers attendus dans assets/ : proshop-architecture.png (légende : « L'architecture d'information, organisée autour des familles de produits et de leurs filtres. »), proshop-wireframe-produit-1.png (légende à valider : « Une page produit : l'autonomie du client et l'accès à son commercial, sur le même écran. »), proshop-wireframe-produit-2.png (légende à écrire selon ce que montre l'écran), proshop-taskflow.png (légende : « Le nouveau modèle de vente, vu depuis un service. »). Une figure par fichier, dans le composant figure existant. -->
         <p style="margin-top:36px">Le blocage n'est pas venu du modèle, mais de ce qu'il demandait d'admettre. La direction voyait dans la digitalisation un moyen de réduire la force commerciale, et tenait pour acquis que les ventes suivraient d'elles-mêmes. Le modèle cross-canal disait l'inverse&#8239;: la valeur ne venait pas du canal, elle venait de ce qui se jouait entre les commerciaux et leurs clients; et un outil qui coupe ce lien ne produit pas d'économies, il produit une perte.</p>
+        <p>Le modèle demandait à la direction de changer une croyance&#8239;: la relation commerciale comme coût. Donella Meadows range ce niveau, le paradigme, parmi les leviers les plus puissants d'un système, et parmi ceux qui résistent le plus. L'arrêt du projet l'illustre.</p>
         <p>C'est une conséquence difficile à se représenter tant qu'on n'a pas vu le système en entier. La délibération sur la solution technique s'est étirée, le périmètre a glissé vers un portail de services - informer le client, laisser la commande aux équipes de vente comme auparavant - puis le projet s'est arrêté.</p>
       </article>
 
@@ -266,6 +310,14 @@
       <p>C'est d'ailleurs Norman lui-m&ecirc;me qui va revenir sur ces positions. Vingt ans apr&egrave;s avoir appris &agrave; toute une profession &agrave; rendre les objets simplement <em>utilisables</em>, il &eacute;crit <em>Emotional Design</em> pour reconna&icirc;tre ce que le premier livre laissait de c&ocirc;t&eacute;&#8239;: on n'aime pas un objet parce qu'il fonctionne, et un objet parfaitement fonctionnel peut nous laisser froids, voire nous devenir odieux.</p>
       <p>Il y d&eacute;crit trois niveaux par lesquels un objet nous atteint&#8239;: le <em>visc&eacute;ral</em>, l'&eacute;motion imm&eacute;diate des sens&#8239;; le <em>comportemental</em>, le plaisir de l'usage&#8239;; et le <em>r&eacute;flexif</em>, le plus profond, ce que l'objet raconte de nous, les souvenirs et le sens qu'on y attache. Autrement dit&#8239;: la valeur d'une chose ne tient pas dans la chose, mais dans ce qui se joue entre elle et celui qui la vit. Le ma&icirc;tre de l'objet fonctionnel admettait, &agrave; sa mani&egrave;re, que la fonction ne suffit jamais.</p>
       <p><strong>Mais Norman s'arr&ecirc;te au seuil que ce cas m'a fait franchir.</strong> Son &eacute;motion reste celle d'une personne face &agrave; un objet&#8239;: la th&eacute;i&egrave;re qu'on ch&eacute;rit, la voiture qu'on aime conduire. Chez Proshop, l'affect ne se logeait pas entre le client et la plateforme - il se logeait entre le client et son commercial. Ce que Norman ouvre vers l'&eacute;motion de l'objet, ce terrain m'a forc&eacute; &agrave; l'ouvrir d'un cran de plus&#8239;: vers l'&eacute;motion du lien, entre les gens. L&agrave; o&ugrave; il conçoit un objet qu'on aime, je conçois l'outil qui prot&egrave;ge la relation qu'on ne veut pas perdre.</p>
+    </div>
+  </div>
+</section>
+
+<section class="livre">
+  <div class="livre-inner">
+    <div class="livre-body">
+      <p>Ce cas se prolonge dans le texte «&#8239;<a href="/04-le-lien-importe-plus-que-le-bien">Le lien importe plus que le bien</a>&#8239;».</p>
     </div>
   </div>
 </section>
