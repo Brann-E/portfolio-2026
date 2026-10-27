@@ -43,6 +43,7 @@
   --ff-serif: "Instrument Serif", Georgia, serif;
   --ff-sans: "Inter", system-ui, sans-serif;
   --fs-xs: 11px;
+  --fs-nav: 14px;
   --fs-sm: 13px;
   --fs-base: 15px;
   --fs-md: 17px;
@@ -5839,8 +5840,8 @@ body {
   white-space: nowrap;
 }
 .site-nav .site-mark {
-  width: 28px;
-  height: 42px;
+  width: 25px;
+  height: 37px;
   display: block;
   object-fit: contain;
   flex: none;
@@ -5885,7 +5886,7 @@ body {
   padding: 5px 0;
   color: var(--nav-link);
   font:
-    400 12px/1.2 "Inter",
+    400 var(--fs-nav)/1.2 "Inter",
     sans-serif;
   letter-spacing: 0.05em;
   text-decoration: none;
@@ -6096,7 +6097,9 @@ footer a {
 }
 .ft-top {
   display: grid;
-  grid-template-columns: minmax(230px, 1fr) 2.15fr;
+  /* trois blocs (signature, liens, réseaux) répartis à intervalles égaux, du bord gauche au bord droit */
+  grid-template-columns: repeat(3, auto);
+  justify-content: space-between;
   gap: clamp(40px, 6vw, 90px);
 }
 
@@ -6167,10 +6170,9 @@ footer a {
 }
 
 .ft-role3 {
-  font-size: var(--fs-sm);
-  font-weight: 200;
+  font-size: var(--fs-base);
+  font-weight: 300;
   color: var(--muted2);
-  letter-spacing: 0.02em;
 }
 
 .ft-claim {
@@ -6192,19 +6194,18 @@ footer a {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: var(--fs-md);
+  font-size: var(--fs-base);
+  font-weight: 300;
   line-height: 1.5;
   color: var(--muted2);
-  letter-spacing: 0.01em;
 }
 .ft-pin { width: 20px; height: 20px; flex: none; fill: var(--t-personne); }
 .ft-ville { color: var(--paper); font-weight: 400; }
 
 /* — colonnes — */
 .ft-cols {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(24px, 3.2vw, 48px);
+  /* le conteneur s'efface : ses deux colonnes deviennent des blocs de .ft-top */
+  display: contents;
 }
 /* la vieille règle `footer a { border-bottom }` soulignait tout : on ne garde
    le filet que sous les intitulés de colonne (.ft-h, qui porte le sien) */
@@ -6242,6 +6243,16 @@ footer a {
 }
 .ft-col a:hover {
   color: var(--paper);
+}
+/* les liens de « Pour aller plus loin » se signalent par une flèche, sans soulignement */
+.ft-col ul a::after {
+  content: "→";
+  color: var(--muted);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.ft-col ul a:hover::after {
+  transform: translateX(4px);
+  color: var(--c1);
 }
 .ft-col .ft-tag {
   font-size: var(--fs-xs);
@@ -6355,6 +6366,11 @@ footer a {
 .ft-col a.ft-pill:focus-visible .holo { opacity: 1; }
 .ft-col a.ft-pill:active { transform: translateY(1px) scale(0.985); }
 .ft-pill .holo-label { position: relative; z-index: 2; }
+/* le libellé du bouton suit la taille du texte courant du pied de page */
+.ft-col a.ft-pill .holo-label {
+  font-size: var(--fs-base);
+  font-weight: 500;
+}
 
 /* réseaux : un logo et un nom par ligne, sous le lieu ; le nom est souligné en foil holographique */
 .ft-social {
@@ -6364,11 +6380,16 @@ footer a {
   gap: 14px;
   margin-top: 14px;
 }
+/* réseaux : dans les colonnes de droite, troisième colonne, alignés sur le haut de la colonne voisine */
+.ft-col .ft-social {
+  margin-top: 0;
+}
 .ft-social a {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: var(--fs-md);
+  font-size: var(--fs-base);
+  font-weight: 300;
   line-height: 1.5;
   color: var(--paper);
   text-decoration: none;
@@ -7599,7 +7620,7 @@ a.porte,
    Etat fige : grain.png 600% . multiply . 0.62 . saturate(158%)
    ==================================================================== */
 .holo-label { 
-  font-weight: 600;
+  font-weight: 400;
 }
 .site-nav .site-links a.site-pill .holo {
   position: absolute;
@@ -7931,12 +7952,12 @@ a.pl-cta {
 .hero-sig {
   display: flex;
   align-items: center;
-  gap: clamp(20px, 3vw, 36px);
-  margin: clamp(8px, 2vh, 16px) 0 clamp(24px, 4vh, 36px);
+  gap: clamp(20px, 2.2vw, 28px);
+  margin: clamp(32px, 4vh, 40px) 0 clamp(50px, 8vh, 70px);
 }
 .sig-portrait {
   position: relative;
-  width: clamp(168px, 15vw, 200px);
+  width: 160px;
   aspect-ratio: 1;
   border-radius: 50%;
   overflow: hidden;
@@ -7944,7 +7965,7 @@ a.pl-cta {
   background: var(--surface);
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.06),
-    0 0 60px -8px rgba(255, 255, 255, 0.18);
+    0 0 60px -8px rgba(255, 255, 255, 0.09);
   flex: none;
 }
 .sig-portrait img {
@@ -8008,7 +8029,6 @@ a.pl-cta {
   color: var(--muted2);
   letter-spacing: 0.02em;
   margin-top: clamp(12px, 1.5vw, 20px);
-  padding-left: clamp(14px, 2vw, 28px);
 }
 .sig-claim {
   font-family: var(--ff-serif);
@@ -8023,7 +8043,7 @@ a.pl-cta {
 @media (max-width: 720px) {
   /* mobile : le portrait passe au-dessus du texte, aligné à gauche, et reste assez grand */
   .hero-sig { flex-direction: column; align-items: flex-start; gap: 20px; }
-  .sig-portrait { width: clamp(140px, 42vw, 176px); }
+  .sig-portrait { width: clamp(120px, 38vw, 160px); }
 }
 
 .ident-ligne {
@@ -8830,6 +8850,9 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
   margin-bottom: clamp(24px, 4vh, 36px);
   color: var(--text-intro);
 }
+.hero--home .fin-liens {
+  column-gap: 28px;
+}
 .wrap > .hero.hero--cas {
   min-height: 0;
   padding-top: clamp(90px, 15vh, 180px);
@@ -8947,8 +8970,8 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 
 /* ===== Slider : ligne d'introduction au-dessus de la carte ===== */
 .sy-intro {
-  font-family: var(--ff-serif);
-  font-size: var(--fs-xl);
+  font-family: var(--ff-sans);
+  font-size: var(--fs-md);
   line-height: 1.3;
   color: var(--muted2);
   margin: 0 0 clamp(16px, 3vh, 28px);
@@ -9072,4 +9095,266 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 .proto-note a {
   color: var(--paper);
   text-underline-offset: 3px;
+}
+
+/* ===== Accueil : le constat =====
+   Quatre situations. L'angle mort est un passage masqué dans la phrase : on le lève sur place.
+   Rien ne bouge au clic : même police, même taille, même place, avant et après.
+   Trois tailles : 46 px (titre du bloc), 26 px (situation), 17 px (tout le reste). ===== */
+.sy-intro-titre {
+  font-family: var(--ff-serif);
+  font-weight: 400;
+  font-size: var(--fs-title-m);
+  line-height: 1.1;
+  color: var(--paper);
+  max-width: 24ch;
+  margin: 0 0 clamp(10px, 1.6vh, 16px);
+}
+.sy-stage.sy-v3 {
+  /* --sc : couleur de la situation ; --sc-b : couleur vers laquelle le fond glisse quand on lève le masque */
+  --sc: var(--c1);
+  --dest: var(--c2);
+  align-items: stretch;
+  text-align: left;
+  color: var(--ink);
+  background: var(--paper);
+  gap: clamp(18px, 3vh, 28px);
+  padding: clamp(24px, 4vh, 40px) clamp(12px, 3vw, 36px) clamp(18px, 3vh, 26px);
+}
+.sy-stage.sy-v3:has(.sy-slide:nth-child(1).is-active) { --sc: var(--c1); --dest: var(--c2); }
+.sy-stage.sy-v3:has(.sy-slide:nth-child(2).is-active) { --sc: var(--c5); --dest: var(--c3); }
+.sy-stage.sy-v3:has(.sy-slide:nth-child(3).is-active) { --sc: var(--c4); --dest: var(--c2); }
+.sy-stage.sy-v3:has(.sy-slide:nth-child(4).is-active) { --sc: var(--c2); --dest: var(--c1); }
+.sy-stage.sy-v3 { --sc-b: color-mix(in srgb, var(--sc) 65%, var(--paper)); }
+.sy-stage.sy-v3:has(.sy-slide.is-active.is-open) { --sc-b: var(--dest); }
+.sy-v3 .sy-rangee,
+.sy-v3 .sy-bas { position: relative; z-index: 1; }
+
+.sy-v3 .sy-rangee {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 2vw, 24px);
+  width: 100%;
+}
+.sy-v3 .sy-nav-arrow {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--ink) 70%, transparent);
+  border-radius: 50%;
+  color: var(--ink);
+  opacity: 0.85;
+  font-size: var(--fs-2xl);
+  line-height: 1;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+.sy-v3 .sy-nav-arrow:hover:not(:disabled) {
+  opacity: 1;
+  transform: none;
+  border-color: var(--ink);
+}
+.sy-v3 .sy-nav-arrow:disabled {
+  opacity: 0.4;
+  cursor: default;
+  transform: none;
+}
+.sy-v3 .sy-nav-arrow:focus-visible,
+.sy-v3 .sy-nav-dots button:focus-visible,
+.sy-v3 .sy-masque:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+/* la piste : toutes les diapositives dans la même cellule, la plus haute fixe la hauteur */
+.sy-v3 .sy-pistes {
+  display: grid;
+  flex: 1;
+  min-width: 0;
+  min-height: var(--h, 0px);
+  touch-action: pan-y;
+}
+.sy-v3 .sy-slide {
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 2vh, 18px);
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(12px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s linear 0.2s;
+}
+.sy-v3 .sy-slide.is-active {
+  visibility: visible;
+  opacity: 1;
+  transform: none;
+  transition-delay: 0s;
+}
+.sy-v3 .sy-num {
+  margin: 0;
+  font-size: var(--fs-md);
+  color: color-mix(in srgb, var(--ink) 85%, transparent);
+}
+.sy-v3 .sy-titre {
+  margin: 0 0 clamp(6px, 1.2vh, 12px);
+  font-size: var(--fs-2xl);
+  line-height: 1.25;
+  color: var(--ink);
+  max-width: 28ch;
+}
+
+/* trois lignes alignées à gauche, chacune avec sa légende : ce qu'on se dit, l'angle mort, ce qui apparaît */
+.sy-v3 .sy-lignes {
+  display: flex;
+  flex-direction: column;
+  max-width: 68ch;
+}
+.sy-v3 .sy-ligne {
+  display: grid;
+  grid-template-columns: 10.5rem 1fr;
+  column-gap: 18px;
+  align-items: baseline;
+  margin: 0;
+  padding: 12px 0;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
+  font-family: var(--ff-sans);
+  font-size: var(--fs-md);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--ink);
+}
+.sy-v3 .sy-lib {
+  font-weight: 500;
+  color: color-mix(in srgb, var(--ink) 85%, transparent);
+}
+.sy-v3 .sy-constat {
+  height: auto;
+  display: inline;
+  margin: 0;
+  max-width: none;
+  font: inherit;
+  color: inherit;
+}
+.sy-v3 .sy-masque {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  cursor: pointer;
+}
+.sy-v3 .sy-hypo {
+  /* masqué : la barre et le texte ont la même couleur ; levé : la barre disparaît, le texte reste exactement au même endroit */
+  display: inline;
+  opacity: 1;
+  text-shadow: none;
+  max-width: none;
+  margin: 0;
+  padding: 1px 4px;
+  font: inherit;
+  line-height: inherit;
+  color: var(--ink);
+  background: var(--ink);
+  border-radius: 3px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  transition: background 0.25s ease;
+}
+.sy-v3 .sy-masque:hover .sy-hypo { background: color-mix(in srgb, var(--ink) 82%, transparent); }
+.sy-v3 .sy-slide.is-open .sy-hypo,
+.sy-v3 .sy-slide.is-open .sy-masque:hover .sy-hypo {
+  background: color-mix(in srgb, var(--paper) 60%, transparent);
+}
+/* la troisième ligne garde sa place : l'invitation, puis ce qui apparaît (le mot et la forme qu'il prend) */
+.sy-v3 .sy-apparait { display: grid; }
+.sy-v3 .sy-apparait > span {
+  grid-area: 1 / 1;
+  transition: opacity 0.25s ease;
+}
+.sy-v3 .sy-aide-avant { color: color-mix(in srgb, var(--ink) 85%, transparent); }
+.sy-v3 .sy-aide-apres { opacity: 0; }
+.sy-v3 .sy-slide.is-open .sy-aide-avant { opacity: 0; }
+.sy-v3 .sy-slide.is-open .sy-aide-apres { opacity: 1; }
+.sy-v3 .sy-mot { font-weight: 500; }
+
+.sy-v3 .sy-bas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sy-v3 .sy-nav-dots button {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background: none;
+  opacity: 1;
+  transform: none;
+}
+.sy-v3 .sy-nav-dots button::before {
+  content: "";
+  position: absolute;
+  inset: 7.5px;
+  border-radius: 50%;
+  background: var(--ink);
+  opacity: 0.55;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.sy-v3 .sy-nav-dots button:hover::before { opacity: 0.8; }
+.sy-v3 .sy-nav-dots button.active::before {
+  opacity: 0.9;
+  transform: scale(1.35);
+}
+.sy-pont { margin: clamp(20px, 3vh, 32px) 0 0; }
+.sy-pont .proof-link { font-size: var(--fs-md); }
+
+@media (max-width: 640px) {
+  .sy-v3 .sy-nav-arrow { display: none; }
+  .sy-v3 .sy-ligne { grid-template-columns: 8rem 1fr; column-gap: 12px; }
+}
+@media (max-width: 480px) {
+  .sy-v3 .sy-ligne { grid-template-columns: 1fr; row-gap: 2px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sy-v3 .sy-slide,
+  .sy-v3 .sy-hypo,
+  .sy-v3 .sy-aide > span,
+  .sy-stage.sy-v3 { transition: none; }
+}
+
+/* ===== Accueil : la valeur (quatre cartes, chiffres, angle mort, résultat) ===== */
+.proof--valeur {
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+}
+.proof--valeur .l {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 14px;
+  margin: 14px 0 0;
+}
+.proof--valeur .l b {
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.proof--valeur .l span {
+  font-size: var(--fs-base);
+  line-height: 1.55;
+  color: var(--muted2);
+}
+.proof--valeur .l:last-of-type span { color: var(--paper); }
+.proof--valeur a.proof-cas {
+  display: inline-block;
+  margin-top: 22px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.proof--valeur a.proof-cas:hover { color: var(--paper); }
+@media (max-width: 420px) {
+  .proof--valeur { grid-template-columns: 1fr; }
+  .proof--valeur .l { grid-template-columns: 6.5rem 1fr; gap: 10px; }
 }
