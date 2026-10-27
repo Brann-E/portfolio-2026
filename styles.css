@@ -1543,6 +1543,14 @@ h3,
 .ba .figure {
   margin: 0;
 }
+/* captures d'écran de téléphone : jusqu'à quatre en rang, deux sur petit écran */
+.ba--ecrans {
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: clamp(16px, 2.4vw, 28px);
+}
+.ba--ecrans .figure {
+  padding: 0;
+}
 .ba figcaption {
   font-size: var(--fs-sm);
   color: var(--muted);

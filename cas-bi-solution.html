@@ -173,7 +173,7 @@
         </div>
         <p>Un moteur seul avance sans direction&#8239;; une boussole seule indique sans avancer. Ce qui produit la justesse n'est ni l'un ni l'autre, mais la tension entretenue entre les deux. C'est ce couple qui structure les cartes de métriques, et à travers elles, tout le système.</p>
       <div class="figure">
-          <img src="assets/engine-compass.png" alt="Carte d'écosystème Healthanea : flux d'argent, de biens et de données entre patients, médecins, laboratoires, objets connectés et spécialistes du bien-être.">
+          <img src="assets/engine-compass.png" alt="Fiche moteur et boussole : en haut, l'objectif métier à atteindre ; en dessous, deux colonnes, le moteur (la métrique primaire) et la boussole (la métrique de garde de Goodhart), chacune avec son explication, sa finalité et sa formule ; puis les tensions stratégiques, les cas limites et les risques, le format et la surface d'affichage, et le responsable de la métrique.">
         </div>
         <p class="figcap">Fiche récapitulative mis à disposition des équipes pour expliquer le rôle du moteur et de la boussole dans la structuration des cartes de métriques.</p>
       </article>
@@ -181,8 +181,47 @@
       <article class="chapter" id="c5">
         <h3>05 &middot; Un outil que les équipes s'approprient, et qui grandit avec elles</h3>
         <p>La refonte s'est traduite par une architecture d'information qui suit les décisions plutôt que les tables de données&#8239;: cinq pages centrales communes à tous, et trois pages adaptées aux besoins propres de chaque business unit. Une hiérarchie de l'information lisible, un filtrage puissant, et la fin des tableaux encombrés au profit d'une vue d'ensemble immédiate.</p>
+        <!-- TODO Brann : le menu de la capture ci-dessous compte huit entrées (Recap, % Sales Margin, RFC, BKG, BILL, Project, SLS, Supply Chain). Dire lesquelles sont les cinq pages centrales et les trois propres à chaque business unit, pour nommer les pages dans le schéma ci-dessous. -->
         <div class="figure">
-          <img src="assets/home-bi.png" alt="Carte d'écosystème Healthanea : flux d'argent, de biens et de données entre patients, médecins, laboratoires, objets connectés et spécialistes du bien-être.">
+          <svg viewBox="0 0 360 430" role="img" aria-label="Schéma de l'architecture d'information du tableau de bord Power BI : un filtrage commun à toutes les pages ; à gauche, cinq pages centrales communes à toutes les business units ; à droite, trois pages propres à chaque business unit ; la structure se réplique d'une business unit à l'autre sans être reconstruite.">
+            <rect x="70" y="8" width="220" height="44" rx="8" fill="var(--paper)"/>
+            <text x="180" y="35" text-anchor="middle" font-size="13" font-weight="500" fill="var(--ink)">Le tableau de bord Power BI</text>
+
+            <path d="M180 52 L180 72" fill="none" stroke="var(--muted)" stroke-width="1.5"/>
+            <rect x="10" y="72" width="340" height="30" rx="15" fill="none" stroke="var(--muted)" stroke-dasharray="3 3"/>
+            <text x="180" y="91" text-anchor="middle" font-size="11" fill="var(--muted2)">un filtrage commun, sur toutes les pages</text>
+
+            <path d="M85 102 L85 124" fill="none" stroke="var(--muted)" stroke-width="1.5"/>
+            <path d="M260 102 L260 124" fill="none" stroke="var(--muted)" stroke-width="1.5"/>
+
+            <rect x="10" y="124" width="150" height="196" rx="10" fill="none" stroke="var(--c5)" stroke-width="1.5"/>
+            <text text-anchor="middle" font-size="12" font-weight="500" fill="var(--paper)"><tspan x="85" y="146">Cinq pages centrales</tspan></text>
+            <text text-anchor="middle" font-size="10" fill="var(--muted2)"><tspan x="85" y="162">communes à toutes</tspan><tspan x="85" y="175">les business units</tspan></text>
+            <rect x="26" y="190" width="118" height="20" rx="6" fill="var(--surface)" stroke="var(--c5)"/>
+            <rect x="26" y="216" width="118" height="20" rx="6" fill="var(--surface)" stroke="var(--c5)"/>
+            <rect x="26" y="242" width="118" height="20" rx="6" fill="var(--surface)" stroke="var(--c5)"/>
+            <rect x="26" y="268" width="118" height="20" rx="6" fill="var(--surface)" stroke="var(--c5)"/>
+            <rect x="26" y="294" width="118" height="20" rx="6" fill="var(--surface)" stroke="var(--c5)"/>
+            <text text-anchor="middle" font-size="10" fill="var(--muted2)"><tspan x="85" y="204">page 1</tspan><tspan x="85" y="230">page 2</tspan><tspan x="85" y="256">page 3</tspan><tspan x="85" y="282">page 4</tspan><tspan x="85" y="308">page 5</tspan></text>
+
+            <rect x="170" y="124" width="180" height="196" rx="10" fill="none" stroke="var(--c3)" stroke-width="1.5"/>
+            <text text-anchor="middle" font-size="12" font-weight="500" fill="var(--paper)"><tspan x="260" y="146">Trois pages par business unit</tspan></text>
+            <text text-anchor="middle" font-size="10" fill="var(--muted2)"><tspan x="260" y="162">adaptées aux besoins propres</tspan><tspan x="260" y="175">de chacune</tspan></text>
+            <rect x="186" y="190" width="148" height="20" rx="6" fill="var(--surface)" stroke="var(--c3)"/>
+            <rect x="186" y="216" width="148" height="20" rx="6" fill="var(--surface)" stroke="var(--c3)"/>
+            <rect x="186" y="242" width="148" height="20" rx="6" fill="var(--surface)" stroke="var(--c3)"/>
+            <text text-anchor="middle" font-size="10" fill="var(--muted2)"><tspan x="260" y="204">page propre 1</tspan><tspan x="260" y="230">page propre 2</tspan><tspan x="260" y="256">page propre 3</tspan></text>
+            <text text-anchor="middle" font-size="10" fill="var(--c3)"><tspan x="260" y="286">la même structure,</tspan><tspan x="260" y="300">pour chaque business unit</tspan></text>
+
+            <path d="M180 320 L180 346" fill="none" stroke="var(--muted)" stroke-width="1.5"/>
+            <rect x="10" y="346" width="340" height="68" rx="10" fill="var(--surface)" stroke="var(--muted)"/>
+            <text text-anchor="middle" font-size="12" font-weight="500" fill="var(--paper)"><tspan x="180" y="372">Une v1 conçue pour se répliquer</tspan></text>
+            <text text-anchor="middle" font-size="10.5" fill="var(--muted2)"><tspan x="180" y="391">la structure s'adapte à chaque business unit</tspan><tspan x="180" y="405">sans être reconstruite</tspan></text>
+          </svg>
+        </div>
+        <p class="figcap">L'architecture suit les décisions plutôt que les tables de données&#8239;: cinq pages communes, trois pages propres à chaque business unit.</p>
+        <div class="figure">
+          <img src="assets/home-bi.png" alt="Accueil du tableau de bord Power BI de Nexans Suisse : filtres en haut, menu à gauche (Recap, % Sales Margin, RFC, BKG, BILL, Project, SLS, Supply Chain), trois indicateurs (performance du revenu 116 %, BKG sur budget 56,12 %, marge commerciale réelle 22 %), un graphique d'écart entre budget, RFC et BKG, et une vue macro du revenu mois par mois.">
         </div>
         <p class="figcap">Accueil Power BI, commune à toutes les business units.</p>
         <p>Côté produit, une v1 conçue pour se répliquer&#8239;: la structure s'adapte à chaque business unit sans être reconstruite, les fonctionnalités sont priorisées selon les besoins réels, et la structure de données a été reprise pour rester utilisable dans la durée.</p>
