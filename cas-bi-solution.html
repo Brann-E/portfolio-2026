@@ -66,14 +66,11 @@
 
 <!-- ═══════════ STRATE 2 ═══════════ -->
 <section class="s2">
-  <div class="eyebrow">Sommaire</div>
-  <div class="trajet"><b>Trajet</b> : outil → organisation → (organisation) → (organisation) → outil → (outil + organisation)</div>
   <div class="summary">
     <a class="row" href="#c1">
       <div class="num">01</div>
       <div class="txt">
         <div class="t">Dix-huit pages d'Excel, trente minutes de chargement chaque matin</div>
-        <span class="tfrise" data-on="1"></span>
         <div class="d">L'outil de pilotage commercial est devenu un obstacle. Des business units entières se retrouvent bloquées, les remontées s'accumulent, la direction décide de migrer vers Power BI.</div>
       </div>
     </a>
@@ -82,7 +79,6 @@
       <div class="num">02</div>
       <div class="txt">
         <div class="t">Le vrai sujet n'était pas la donnée, mais ce qu'elle devait servir à décider</div>
-        <span class="tfrise" data-on="1,3" data-arrow="1-3"></span>
         <div class="d">Entretiens et enquête à tous les niveaux. Les utilisateurs ne savent pas exprimer leur besoin, non par incompétence, mais parce que l'outil les a habitués à consulter des chiffres plutôt qu'à poser des questions. On partait de ce qu'on pouvait mesurer, jamais de ce qu'il fallait trancher.</div>
       </div>
     </a>
@@ -91,7 +87,6 @@
       <div class="num">03</div>
       <div class="txt">
         <div class="t">Les Atomic Metrics : co-concevoir le BI depuis les décisions réelles</div>
-        <span class="tfrise" data-on="3"></span>
         <div class="d">Une carte d'identité par métrique : à quoi elle sert, comment elle se construit, à quoi elle se relie, comment la visualiser. Remplies en atelier avec les utilisateurs, elles font apparaître les priorités et deviennent la structure même des pages du BI.</div>
       </div>
     </a>
@@ -100,7 +95,6 @@
       <div class="num">04</div>
       <div class="txt">
         <div class="t">Chaque métrique a besoin d'une autre pour ne pas dériver</div>
-        <span class="tfrise" data-on="3"></span>
         <div class="d">Une métrique isolée devient une cible, et cesse d'être une bonne mesure. D'où le couple moteur / boussole : l'une propulse la performance, l'autre garde le cap sur l'objectif réel. C'est leur tension qui produit la justesse.</div>
       </div>
     </a>
@@ -109,7 +103,6 @@
       <div class="num">05</div>
       <div class="txt">
         <div class="t">Un outil que les équipes s'approprient, et qui grandit avec elles</div>
-        <span class="tfrise" data-on="1,3" data-arrow="3-1"></span>
         <div class="d">Cinq pages centrales et trois pages adaptées aux besoins spécifiques des business units, un chargement quasi instantané, une architecture pensée pour se répliquer et évoluer. Près de 100% d'adoption.</div>
       </div>
     </a>
@@ -118,7 +111,6 @@
       <div class="num">06</div>
       <div class="txt">
         <div class="t">Deux leçons : sur l'outil, et sur la nécessité de l'information</div>
-        <span class="tfrise" data-on="1,3"></span>
         <div class="d">L'outil n'est jamais la finalité, il est le vaisseau de la décision. Et rien ne mérite d'exister par défaut : toute information qui n'éclaire aucune décision doit être questionnée.</div>
       </div>
     </a>
@@ -135,8 +127,7 @@
     <div class="chapters">
 
       <article class="chapter" id="c1">
-        <div class="eyebrow">01 - Le problème, tel qu'il était posé</div>
-        <h3>Un outil de pilotage devenu un obstacle</h3>
+        <h3>01 &middot; Un outil de pilotage devenu un obstacle</h3>
         <p class="quiet">Nexans, acteur mondial du câble, pilote son activité commerciale en Suisse depuis un fichier Excel de dix-huit pages. Le système est lent, illisible, et n'absorbe plus l'évolution des besoins. Il faut parfois une calculatrice pour retrouver un chiffre que le tableau devrait donner.</p>
         <p class="quiet">Les temps de chargement atteignent trente minutes. Les sauvegardes et mises à jour quotidiennes deviennent une corvée à part entière. À plusieurs reprises, des business units entières se retrouvent à l'arrêt, incapables d'ouvrir le fichier. Après des remontées répétées, la direction décide de migrer vers une solution Power BI.</p>
         <p class="brief">Transformer l'Excel en un outil moderne. Réduire les temps de chargement. Voilà ce qu'on me demandait de regarder.</p>
@@ -144,19 +135,21 @@
       </article>
 
       <article class="chapter" id="c2">
-        <div class="eyebrow">02 - Le déplacement du regard</div>
-        <h3>On savait tout afficher, et rien décider</h3>
+        <h3>02 &middot; On savait tout afficher, et rien décider</h3>
         <p>J'avais un accès complet aux utilisateurs - directeurs de business unit, managers commerciaux, commerciaux terrain - pour de la recherche qualitative et quantitative. Ce qui remonte des entretiens est plus troublant qu'un problème d'ergonomie.</p>
         <p>Les utilisateurs peinent à formuler leur besoin. Pas par incompétence : parce que l'outil les a formés à consulter des chiffres, jamais à poser des questions. La complexité du système a créé une déconnexion. Beaucoup l'évitent purement et simplement, et ceux qui l'utilisent y cherchent une information sans savoir ce qu'ils en feront.</p>
         <p>Côté produit, la rigidité de l'architecture rend chaque demande d'évolution coûteuse. Côté métier, ajouter une vue ou intégrer un jeu de données représente un investissement tel que la business unit y renonce. Le système est figé et cher, et chaque itération le fige davantage.</p>
         <p>Mais le motif commun, à tous les niveaux, est ailleurs. On avait construit un outil qui part de la donnée disponible et cherche ensuite à quoi elle pourrait servir. Jamais l'inverse. Personne ne s'était demandé quelles décisions cette organisation devait prendre, ni de quoi elle avait besoin pour les prendre.</p>
         <p class="pull">On ne concevait pas un outil de décision. On concevait un affichage de données, en espérant que les décisions suivraient.</p>
         <p>Le déplacement tient en une bascule&#8239;: passer d'une approche <em>data-driven</em> à une stratégie <em>business-centered, data-informed</em>. On ne part plus de ce qu'on peut mesurer, mais de ce que l'activité a besoin de trancher, et la donnée redevient un moyen au lieu d'être le sujet.</p>
+              <h4>Ce qui circulait</h4>
+        <ul>
+          <li>Chez Nexans, une décision que personne n'avait formulée.</li>
+        </ul>
       </article>
 
       <article class="chapter" id="c3">
-        <div class="eyebrow">03 - L'instrument</div>
-        <h3>Les Atomic Metrics, ou comment faire dire aux gens ce qu'ils cherchent à savoir</h3>
+        <h3>03 &middot; Les Atomic Metrics, ou comment faire dire aux gens ce qu'ils cherchent à savoir</h3>
         <p>Le problème pratique était le suivant&#8239;: si les utilisateurs ne savent pas exprimer leur besoin en données, on ne peut ni les interroger frontalement, ni décider à leur place.</p>
         <p>D'où la méthode des Atomic Metrics. Chaque métrique reçoit une carte d'identité qui pose quatre questions&#8239;: à quoi elle sert, comment elle se construit, à quoi elle se relie, comment elle pourrait se visualiser. En atelier, les participants complètent ces cartes ensemble, et ce faisant, ils rendent visibles leurs priorités, les relations entre les indicateurs, et les questions qui comptent vraiment pour eux.</p>
         <p>Le résultat n'est pas une liste de KPI. C'est une base partagée à partir de laquelle se dessinent les pages du BI, sa navigation et sa logique de données. Une carte dit non seulement ce qu'on veut mesurer, mais où cette mesure doit apparaître et comment on interagira avec elle.</p>
@@ -164,8 +157,7 @@
       </article>
 
       <article class="chapter" id="c4">
-        <div class="eyebrow">04 - Le monde que le déplacement fait apparaître</div>
-        <h3>Une métrique seule finit toujours par mentir</h3>
+        <h3>04 &middot; Une métrique seule finit toujours par mentir</h3>
         <p>Concevoir depuis les décisions plutôt que depuis les données fait surgir un problème que l'ancienne approche masquait&#8239;: une bonne métrique ne se contente pas de mesurer, elle oriente. Et dès qu'elle oriente, elle devient une cible et donc elle se dégrade.</p>
         <p>C'est <a href="https://everlaab.com/leffet-cobra-et-la-loi-de-goodhart/">la loi de Goodhart ou l'effet cobra</a>&#8239;: quand une mesure devient un objectif, elle cesse d'être une bonne mesure. Ce n'est pas un accident, c'est une propriété. Dès qu'un indicateur devient le point de focalisation unique, les équipes trouvent des moyens de l'optimiser, souvent au détriment de la qualité, de l'éthique ou du long terme.</p>
         <p>La réponse que j'ai construite ne consiste pas à trouver la métrique parfaite, mais à ne jamais en laisser une seule décider.</p>
@@ -187,8 +179,7 @@
       </article>
 
       <article class="chapter" id="c5">
-        <div class="eyebrow">05 - Ce que ça a produit</div>
-        <h3>Un outil que les équipes s'approprient, et qui grandit avec elles</h3>
+        <h3>05 &middot; Un outil que les équipes s'approprient, et qui grandit avec elles</h3>
         <p>La refonte s'est traduite par une architecture d'information qui suit les décisions plutôt que les tables de données&#8239;: cinq pages centrales communes à tous, et trois pages adaptées aux besoins propres de chaque business unit. Une hiérarchie de l'information lisible, un filtrage puissant, et la fin des tableaux encombrés au profit d'une vue d'ensemble immédiate.</p>
         <div class="figure">
           <img src="assets/home-bi.png" alt="Carte d'écosystème Healthanea : flux d'argent, de biens et de données entre patients, médecins, laboratoires, objets connectés et spécialistes du bien-être.">
@@ -235,7 +226,7 @@
     <div class="scope">Sur la nécessité de l'information</div>
     <blockquote>Rien ne mérite d'exister par défaut. Toute donnée, toute information qui n'éclaire aucune décision<br><span>doit être questionnée.</span></blockquote>
     <div class="ancrage-body">
-      <p>Depuis ce projet, je pose la même question à chaque information que je fais figurer quelque part&#8239;: qu'est-ce qu'elle permet de trancher qui ne l'était pas sans elle&#8239;? Celle qui ne sait pas répondre n'est pas neutre : elle occupe de la place, détourne l'attention, et laisse croire qu'on sait quelque chose. Cette exigence, je l'applique aujourd'hui à chaque écran, chaque fonctionnalité, chaque étape d'un parcours. C'est devenu ma constante, quel que soit le terrain, seuls les moyens changent.</p>
+      <p>Depuis ce projet, je pose la même question à chaque information que je fais figurer quelque part&#8239;: qu'est-ce qu'elle permet de trancher qui ne l'était pas sans elle&#8239;? Celle qui ne sait pas répondre n'est pas neutre : elle occupe de la place, détourne l'attention, et laisse croire qu'on sait quelque chose. Cette exigence, je l'applique aujourd'hui à chaque écran, chaque fonctionnalité, chaque étape d'un parcours.</p>
     </div>
   </div>
 </section>
@@ -274,7 +265,6 @@ secs.forEach(s=>s&&io.observe(s));
 <script src="background.js"></script>
 <script src="figure-zoom.js"></script>
 <script src="site-nav.js"></script>
-<script src="terrains.js"></script>
 <div id="site-footer"></div>
 </body>
 </html>

@@ -442,11 +442,11 @@ function revealNote() {
     var nom = (form.nom.value || "").trim();
     var email = (form.email.value || "").trim();
     var msg = (form.message.value || "").trim();
-    var sujet = "Un contre-don" + (nom ? " - " + nom : "");
+    var sujet = "Un message" + (nom ? " - " + nom : "");
     var corps =
       (msg || "") + "\n\n- " + (nom || "") + (email ? " (" + email + ")" : "");
     window.location.href =
-      "mailto:brann.etienne@gmail.com?subject=" +
+      "mailto:aloha@brannetienne.com?subject=" +
       encodeURIComponent(sujet) +
       "&body=" +
       encodeURIComponent(corps);
@@ -502,7 +502,7 @@ function revealNote() {
         })
         .catch(function () {
           setStatus(
-            "L'envoi a échoué. Écrivez-moi directement à brann.etienne@gmail.com.",
+            "L'envoi a échoué. Écrivez-moi directement à aloha@brannetienne.com.",
             true
           );
         })

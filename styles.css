@@ -3193,6 +3193,18 @@ em.grad {
 .don-modal [hidden] {
   display: none !important;
 }
+/* contact direct, en tête de page, au-dessus de la machine à dons */
+.don-direct {
+  margin-bottom: clamp(64px, 10vh, 110px);
+}
+.don-direct .don-give {
+  margin-left: 0;
+  text-align: left;
+}
+.don-direct .don-give .contact-mail {
+  text-align: left;
+}
+
 .don-title {
   font-family: var(--ff-serif);
   font-weight: 400;
@@ -8793,6 +8805,52 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
   margin: 0 0 clamp(16px, 2.4vh, 24px);
 }
 
+/* cas Chalon : texte à gauche, téléphone cliquable à droite, en haut de page */
+.s1--proto {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  justify-content: normal;
+  column-gap: clamp(32px, 6vw, 96px);
+}
+/* le titre et les faits au-dessus ; le haut du téléphone tombe sur la question */
+.s1--proto > h1,
+.s1--proto > .facts,
+.s1--proto > .s1-text {
+  grid-column: 1;
+}
+.s1--proto > .facts {
+  margin-bottom: clamp(40px, 6vh, 68px);
+}
+.s1--proto .question {
+  margin-top: 0;
+}
+.s1--proto > .proto {
+  grid-column: 2;
+  grid-row: 3;
+  padding-top: 0;
+}
+@media (max-width: 820px) {
+  /* étroit : tout se range en colonne, le téléphone vient après « Personne ne m'avait rien demandé… » */
+  .s1--proto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .s1--proto > .proto {
+    align-self: center;
+    width: 100%;
+    padding-top: clamp(32px, 6vh, 56px);
+  }
+}
+/* le téléphone reste visible sous le texte, y compris sur petit écran (la règle générale le masque) */
+@media (max-width: 820px), (pointer: coarse) {
+  .s1--proto .proto-stage {
+    height: calc(min(896px, 85dvh) + 22px);
+    overflow: visible;
+    visibility: visible;
+  }
+}
 .case .prod {
   font-family: var(--ff-serif);
   font-size: var(--fs-md);

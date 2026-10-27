@@ -6,18 +6,18 @@
 <link rel="stylesheet" href="styles.css">
 <script src="reveal.js"></script>
 <title>Contact - Brann Etienne</title>
-<meta name="description" content="Écrivez-moi quelques mots : discutons de ce qui, chez vous, se bloque ou pourrait mieux circuler.">
+<meta name="description" content="Un poste, une mission, une question sur un produit : écrivez-moi.">
 <link rel="canonical" href="https://brannetienne.com/contact">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Brann Etienne">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:title" content="Contact - Brann Etienne">
-<meta property="og:description" content="Écrivez-moi quelques mots : discutons de ce qui, chez vous, se bloque ou pourrait mieux circuler.">
+<meta property="og:description" content="Un poste, une mission, une question sur un produit : écrivez-moi.">
 <meta property="og:url" content="https://brannetienne.com/contact">
 <meta property="og:image" content="https://brannetienne.com/assets/og-card.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Contact - Brann Etienne">
-<meta name="twitter:description" content="Écrivez-moi quelques mots : discutons de ce qui, chez vous, se bloque ou pourrait mieux circuler.">
+<meta name="twitter:description" content="Un poste, une mission, une question sur un produit : écrivez-moi.">
 <meta name="twitter:image" content="https://brannetienne.com/assets/og-card.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,25 +54,28 @@
 
 <div class="wrap">
   <section class="contact contact--don">
-    <div class="eyebrow">Contact</div>
+    <div class="don-direct">
+      <h1 class="don-title">Écrivez-moi.</h1>
+      <p class="contact-lead don-sub">Pour un poste de product designer ou de design strategist, une mission sur un produit, ou simplement pour échanger.</p>
+
+      <div class="don-give" id="don-give">
+        <form class="don-form" id="don-form" action="https://formspree.io/f/xzezpppj" method="POST">
+          <input class="don-field" type="text" name="nom" placeholder="Votre nom" autocomplete="name" required>
+          <input class="don-field" type="email" name="email" placeholder="Votre email" autocomplete="email" required>
+          <textarea class="don-field" name="message" placeholder="Ce que vous aimeriez me dire&hellip;" required></textarea>
+          <input type="hidden" name="_subject" value="Un message - via le portfolio">
+          <button class="don-submit" type="submit"><span class="holo" aria-hidden="true"></span><span class="don-submit-sweep" aria-hidden="true"></span><span class="don-submit-t">Écrire un message</span></button>
+          <p class="don-status" id="don-status" role="status" aria-live="polite" hidden></p>
+        </form>
+        <p class="contact-mail"><a href="mailto:aloha@brannetienne.com">aloha@brannetienne.com</a> &middot; Lyon, à distance et sur site</p>
+      </div>
+    </div>
+
     <h2 class="don-title">Avant de me laisser quelque chose de vous,<br><em class="spectrum-word">laissez-moi vous donner quelque chose de moi.</em></h2>
-    <p class="contact-lead don-sub">Chaque carte porte une idée qui m'a semblé trop belle pour la garder : sur le don, le lien, ce qui circule entre les gens. Tirez-en autant que vous voulez. C'est cadeau 🎁</p>
+    <p class="contact-lead don-sub">Chaque carte porte une idée qui m'a semblé trop belle pour la garder. Tirez-en autant que vous voulez.</p>
 
     <div class="don-grid" id="don-grid" role="group" aria-label="Cartes de dons &agrave; retourner"></div>
     <button class="don-reshuffle" type="button" id="don-reshuffle">&#8635;&#8239;&nbsp;Nouvelle donne</button>
-
-    <div class="don-give" id="don-give">
-      <p class="don-note" id="don-note" hidden></p>
-      <form class="don-form" id="don-form" action="https://formspree.io/f/xzezpppj" method="POST">
-        <input class="don-field" type="text" name="nom" placeholder="Votre nom" autocomplete="name" required>
-        <input class="don-field" type="email" name="email" placeholder="Votre email" autocomplete="email" required>
-        <textarea class="don-field" name="message" placeholder="Ce que vous aimeriez me dire&hellip;" required></textarea>
-        <input type="hidden" name="_subject" value="Un contre-don - via le portfolio">
-        <button class="don-submit" type="submit"><span class="holo" aria-hidden="true"></span><span class="don-submit-sweep" aria-hidden="true"></span><span class="don-submit-t">Ouvrir quelque chose</span></button>
-        <p class="don-status" id="don-status" role="status" aria-live="polite" hidden></p>
-      </form>
-      <p class="contact-mail">Ou directement&#8239;: <a href="mailto:aloha@brannetienne.com">aloha@brannetienne.com</a><br>Lyon, en remote et sur site</p>
-    </div>
   </section>
 </div>
 
