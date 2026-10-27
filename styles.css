@@ -2008,6 +2008,32 @@ header .sub {
 .wrap > .hero h1 {
   max-width: 32ch;
 }
+.pi-page h1 em {
+  font-style: italic;
+  background: linear-gradient(
+    90deg,
+    var(--c2),
+    var(--c1),
+    var(--c3),
+    var(--c5),
+    var(--c4),
+    var(--c2)
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: hue 11s linear infinite;
+}
+@keyframes hue {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
+}
 .hero h1 em {
   font-style: italic;
   background: linear-gradient(
@@ -7953,7 +7979,7 @@ a.pl-cta {
   display: flex;
   align-items: center;
   gap: clamp(20px, 2.2vw, 28px);
-  margin: clamp(32px, 4vh, 40px) 0 clamp(50px, 8vh, 70px);
+  margin: clamp(60px, 12vh, 100px) 0 clamp(50px, 8vh, 70px);
 }
 .sig-portrait {
   position: relative;
@@ -8021,14 +8047,13 @@ a.pl-cta {
   font-weight: 400;
   color: var(--muted2);
   letter-spacing: 0.02em;
-  margin-top: clamp(8px, 1vw, 14px);
 }
 .sig-lieu {
   font-size: var(--fs-sig-desc);
   font-weight: 200;
   color: var(--muted2);
   letter-spacing: 0.02em;
-  margin-top: clamp(12px, 1.5vw, 20px);
+  margin-top: clamp(6px, 1.1vw, 10px);
 }
 .sig-claim {
   font-family: var(--ff-serif);
@@ -8476,7 +8501,6 @@ body.has-site-nav.pratique .veil { display: none; }
 .pi-page h1 em{ font-style:italic; color:var(--muted); display:block; margin-top:4px; }
 .pi-page h2{ font-size: var(--fs-title-s); color:var(--paper); }
 .pi-page h2 em{ font-style:italic; color:var(--muted); }
-.pi-page p{ margin:0 0 1.05em; }
 .pi-page p:last-child{ margin-bottom:0; }
 .pi-page strong{ font-weight:500; color:var(--paper); }
 .pi-page [hidden]{ display:none!important; }
@@ -8847,7 +8871,7 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 .hero--home h1,
 .hero--cas h1 { margin-bottom: clamp(20px, 3vh, 32px); }
 .hero--home .lede {
-  margin-bottom: clamp(24px, 4vh, 36px);
+  margin-bottom: clamp(35px, 7vh, 60px);
   color: var(--text-intro);
 }
 .hero--home .fin-liens {
@@ -9325,36 +9349,40 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
   .sy-stage.sy-v3 { transition: none; }
 }
 
-/* ===== Accueil : la valeur (quatre cartes, chiffres, angle mort, résultat) ===== */
+/* ===== Accueil : la valeur (quatre cartes : un titre, une phrase, les cas cliquables en bas) ===== */
 .proof--valeur {
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
 }
-.proof--valeur .l {
-  display: grid;
-  grid-template-columns: 7.5rem 1fr;
-  gap: 14px;
-  margin: 14px 0 0;
+@media (min-width: 1240px) {
+  .proof--valeur { grid-template-columns: repeat(4, 1fr); }
 }
-.proof--valeur .l b {
-  font-size: var(--fs-sm);
-  font-weight: 500;
-  color: var(--muted);
-  line-height: 1.6;
+.proof--valeur .cell {
+  display: flex;
+  flex-direction: column;
 }
-.proof--valeur .l span {
-  font-size: var(--fs-base);
+.proof--valeur .d {
+  margin: 0;
+  font-size: var(--fs-md);
   line-height: 1.55;
   color: var(--muted2);
 }
-.proof--valeur .l:last-of-type span { color: var(--paper); }
-.proof--valeur a.proof-cas {
-  display: inline-block;
-  margin-top: 22px;
+.proof--valeur .cas-liens {
+  margin: auto 0 0;
+  padding-top: 26px;
+  font-size: var(--fs-md);
+  line-height: 1.7;
+  color: var(--muted);
+}
+.proof--valeur .cas-liens a {
+  display: block;
+  color: var(--t);
   text-decoration: none;
   transition: color 0.3s ease;
 }
-.proof--valeur a.proof-cas:hover { color: var(--paper); }
-@media (max-width: 420px) {
+.proof--valeur .cas-liens a::after {
+  content: " →";
+}
+.proof--valeur .cas-liens a:hover { color: var(--paper); }
+@media (max-width: 600px) {
   .proof--valeur { grid-template-columns: 1fr; }
-  .proof--valeur .l { grid-template-columns: 6.5rem 1fr; gap: 10px; }
 }
