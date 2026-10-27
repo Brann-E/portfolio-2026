@@ -7107,19 +7107,19 @@ footer a {
   background-position: 10% 89%;
 }
 /* héros : le secondaire est une pastille en contour, qui se remplit au survol */
-.hero .fin-liens a:not(.fin-primaire) {
+.hero:not(.hero--home) .fin-liens a:not(.fin-primaire) {
   padding: 13px 28px;
   border: 1px solid color-mix(in srgb, var(--paper) 45%, transparent);
   border-radius: 999px;
   background: transparent;
   transition: background-color 0.28s ease, border-color 0.28s ease, color 0.25s ease;
 }
-.hero .fin-liens a:not(.fin-primaire):hover,
-.hero .fin-liens a:not(.fin-primaire):focus-visible {
+.hero:not(.hero--home) .fin-liens a:not(.fin-primaire):hover,
+.hero:not(.hero--home) .fin-liens a:not(.fin-primaire):focus-visible {
   border-color: var(--paper);
   background: color-mix(in srgb, var(--paper) 12%, transparent);
 }
-.hero .fin-liens a:not(.fin-primaire)::after { display: none; }
+.hero:not(.hero--home) .fin-liens a:not(.fin-primaire)::after { display: none; }
 .fin-liens a:focus-visible { outline: 2px solid var(--paper); outline-offset: 4px; }
 @media (prefers-reduced-motion: reduce) {
   .fin-liens a, .fin-liens a::after { transition: none; }
@@ -7760,6 +7760,7 @@ a.porte,
 .sy-constat-section {
   padding: clamp(60px, 10vh, 120px) 0 clamp(40px, 7vh, 70px);
 }
+.sy-constat-section .fin-liens { margin-top: clamp(24px, 4vh, 36px); }
 .sy-stage {
   position: relative;
   width: 100%;
@@ -9142,13 +9143,27 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
   text-align: left;
   color: var(--ink);
   background: var(--paper);
-  gap: clamp(18px, 3vh, 28px);
-  padding: clamp(24px, 4vh, 40px) clamp(12px, 3vw, 36px) clamp(18px, 3vh, 26px);
+  /* RÉGLAGES DE LA CARTE : les distances verticales, de haut en bas */
+  --carte-haut: clamp(28px, 4vh, 40px);        /* bord haut de la carte, puis le compteur */
+  --compteur-contenu: clamp(18px, 3vh, 28px);  /* compteur, puis le bloc titre + lignes */
+  --contenu-points: clamp(18px, 3vh, 28px);    /* bloc titre + lignes, puis les points */
+  --carte-bas: clamp(28px, 4vh, 40px);         /* points, puis le bord bas de la carte */
+  /* flèches : leur recul vers les bords et l'espace qui les sépare du texte */
+  --rangee-gap: clamp(20px, 4vw, 56px);
+  --fleche-recul: clamp(4px, 1.6vw, 20px);
+  gap: 0;
+  padding: var(--carte-haut) clamp(12px, 3vw, 36px) var(--carte-bas);
 }
-.sy-stage.sy-v3:has(.sy-slide:nth-child(1).is-active) { --sc: var(--c1); --dest: var(--c2); }
+.sy-stage.sy-v3 {
+  /* le violet et le rose purs ne tiennent pas 7:1 avec le texte sombre : versions éclaircies, réservées aux fonds */
+  --c2-fond: color-mix(in srgb, var(--c2) 55%, var(--paper));
+  --c4-fond: color-mix(in srgb, var(--c4) 65%, var(--paper));
+}
+.sy-stage.sy-v3:has(.sy-slide:nth-child(1).is-active) { --sc: var(--c1); --dest: var(--c2-fond); }
 .sy-stage.sy-v3:has(.sy-slide:nth-child(2).is-active) { --sc: var(--c5); --dest: var(--c3); }
-.sy-stage.sy-v3:has(.sy-slide:nth-child(3).is-active) { --sc: var(--c4); --dest: var(--c2); }
-.sy-stage.sy-v3:has(.sy-slide:nth-child(4).is-active) { --sc: var(--c2); --dest: var(--c1); }
+.sy-stage.sy-v3:has(.sy-slide:nth-child(3).is-active) { --sc: var(--c4-fond); --dest: var(--c2-fond); }
+.sy-stage.sy-v3:has(.sy-slide:nth-child(4).is-active) { --sc: var(--c2-fond); --dest: var(--c1); }
+.sy-stage.sy-v3:has(.sy-slide:nth-child(5).is-active) { --sc: var(--c3); --dest: var(--c4-fond); }
 .sy-stage.sy-v3 { --sc-b: color-mix(in srgb, var(--sc) 65%, var(--paper)); }
 .sy-stage.sy-v3:has(.sy-slide.is-active.is-open) { --sc-b: var(--dest); }
 .sy-v3 .sy-rangee,
@@ -9157,7 +9172,7 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 .sy-v3 .sy-rangee {
   display: flex;
   align-items: center;
-  gap: clamp(8px, 2vw, 24px);
+  gap: var(--rangee-gap);
   width: 100%;
 }
 .sy-v3 .sy-nav-arrow {
@@ -9167,18 +9182,36 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
   padding: 0;
   display: grid;
   place-items: center;
-  border: 1px solid color-mix(in srgb, var(--ink) 70%, transparent);
-  border-radius: 50%;
+  border: 0;
   color: var(--ink);
   opacity: 0.85;
-  font-size: var(--fs-2xl);
+  /* le chevron est un tracé à bouts arrondis : le glyphe du HTML est masqué */
+  font-size: 0;
   line-height: 1;
-  transition: opacity 0.2s ease, border-color 0.2s ease;
+  /* près des bords de la carte */
+  margin-inline: calc(-1 * var(--fleche-recul));
+  transition: opacity 0.2s ease;
 }
+.sy-v3 .sy-nav-arrow::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: currentColor;
+  -webkit-mask: var(--chevron) center / contain no-repeat;
+  mask: var(--chevron) center / contain no-repeat;
+  transition: transform 0.2s ease;
+}
+.sy-v3 .sy-nav-arrow:first-child {
+  --chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 5l-7 7 7 7'/%3E%3C/svg%3E");
+}
+.sy-v3 .sy-nav-arrow:last-child {
+  --chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 5l7 7-7 7'/%3E%3C/svg%3E");
+}
+.sy-v3 .sy-nav-arrow:first-child:hover:not(:disabled)::before { transform: translateX(-2px); }
+.sy-v3 .sy-nav-arrow:last-child:hover:not(:disabled)::before { transform: translateX(2px); }
 .sy-v3 .sy-nav-arrow:hover:not(:disabled) {
   opacity: 1;
   transform: none;
-  border-color: var(--ink);
 }
 .sy-v3 .sy-nav-arrow:disabled {
   opacity: 0.4;
@@ -9199,6 +9232,7 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
   min-width: 0;
   min-height: var(--h, 0px);
   touch-action: pan-y;
+  margin:clamp(12px, 2vh, 18px) 0 0;
 }
 .sy-v3 .sy-slide {
   grid-area: 1 / 1;
@@ -9217,16 +9251,20 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
   transition-delay: 0s;
 }
 .sy-v3 .sy-num {
-  margin: 0;
+  position: relative;
+  z-index: 1;
+  /* aligné sur le texte : largeur de la flèche, moins son recul de chaque côté, plus l'espace avant le texte */
+  margin: 0 0 var(--compteur-contenu) calc(44px - 2 * var(--fleche-recul) + var(--rangee-gap));
   font-size: var(--fs-md);
   color: color-mix(in srgb, var(--ink) 85%, transparent);
 }
 .sy-v3 .sy-titre {
+  font-style: normal;
   margin: 0 0 clamp(6px, 1.2vh, 12px);
   font-size: var(--fs-2xl);
   line-height: 1.25;
   color: var(--ink);
-  max-width: 28ch;
+  max-width: 32ch;
 }
 
 /* trois lignes alignées à gauche, chacune avec sa légende : ce qu'on se dit, l'angle mort, ce qui apparaît */
@@ -9262,6 +9300,7 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
   color: inherit;
 }
 .sy-v3 .sy-masque {
+  position: relative;
   margin: 0;
   padding: 0;
   border: 0;
@@ -9282,22 +9321,34 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
   font: inherit;
   line-height: inherit;
   color: var(--ink);
-  background: var(--ink);
+  background-color: var(--ink);
+  /* reflet qui traverse les barres une fois à l'arrivée de la diapositive */
+  background-image: linear-gradient(100deg, transparent 35%, color-mix(in srgb, var(--paper) 38%, transparent) 50%, transparent 65%);
+  background-size: 300% 100%;
+  background-position: 130% 0;
+  background-repeat: no-repeat;
   border-radius: 3px;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
-  transition: background 0.25s ease;
+  transition: background-color 0.1s linear;
 }
-.sy-v3 .sy-masque:hover .sy-hypo { background: color-mix(in srgb, var(--ink) 82%, transparent); }
+.sy-v3 .sy-slide.is-active:not(.is-open) .sy-hypo { animation: sy-reflet 1.3s ease 0.6s 1 both; }
+@keyframes sy-reflet {
+  from { background-position: 130% 0; }
+  to { background-position: -30% 0; }
+}
+.sy-v3 .sy-masque:hover .sy-hypo { background-color: color-mix(in srgb, var(--ink) 82%, transparent); }
 .sy-v3 .sy-slide.is-open .sy-hypo,
 .sy-v3 .sy-slide.is-open .sy-masque:hover .sy-hypo {
-  background: color-mix(in srgb, var(--paper) 60%, transparent);
+  background-color: transparent;
 }
+/* le début de la phrase reste lisible : seule la suite passe sous la barre */
+.sy-v3 .sy-fuite { color: var(--ink); }
 /* la troisième ligne garde sa place : l'invitation, puis ce qui apparaît (le mot et la forme qu'il prend) */
 .sy-v3 .sy-apparait { display: grid; }
 .sy-v3 .sy-apparait > span {
   grid-area: 1 / 1;
-  transition: opacity 0.25s ease;
+  transition: opacity 0.1s linear;
 }
 .sy-v3 .sy-aide-avant { color: color-mix(in srgb, var(--ink) 85%, transparent); }
 .sy-v3 .sy-aide-apres { opacity: 0; }
@@ -9337,6 +9388,7 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 
 @media (max-width: 640px) {
   .sy-v3 .sy-nav-arrow { display: none; }
+  .sy-v3 .sy-num { margin-left: 0; }
   .sy-v3 .sy-ligne { grid-template-columns: 8rem 1fr; column-gap: 12px; }
 }
 @media (max-width: 480px) {
@@ -9347,6 +9399,7 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
   .sy-v3 .sy-hypo,
   .sy-v3 .sy-aide > span,
   .sy-stage.sy-v3 { transition: none; }
+  .sy-v3 .sy-slide.is-active .sy-hypo { animation: none; }
 }
 
 /* ===== Accueil : la valeur (quatre cartes : un titre, une phrase, les cas cliquables en bas) ===== */
