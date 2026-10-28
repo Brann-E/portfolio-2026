@@ -6,7 +6,7 @@
 :root {
   --ink: #0b0d10;
   --paper: #f2f2f0;
-  --muted: #929bab;
+  --muted: #b0b6c0;
   --muted2: #b6bcc6;
   --faint: #242932;
   --surface: #10141a;
@@ -9466,4 +9466,23 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 .proof--valeur .cas-liens a:hover { color: var(--paper); }
 @media (max-width: 600px) {
   .proof--valeur { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   ENCARTS INTERACTIFS : Healthanea, la suite (Nova, carte, pistes, parcours)
+   Cadre aux couleurs du site autour d'une app qui garde ses propres couleurs.
+   La hauteur vient de l'app (variable --embed-height posée sur l'iframe) ;
+   la valeur par défaut ne sert que tant que l'app n'a pas répondu.
+   ============================================================ */
+.encart-interactif {
+  margin: 44px 0 16px;
+  max-width: 100%;
+}
+.encart-frame {
+  display: block;
+  width: 100%;
+  height: var(--embed-height, 1600px);
+  border: 1px solid var(--faint);
+  border-radius: 8px;
+  background: transparent;
 }
