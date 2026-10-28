@@ -289,6 +289,83 @@
         </ul>
         <div class="figure"><img src="assets/proshop-taskflow.png" alt="Taskflow du scénario « Commercial itinérant avec nouveau lead »&#8239;: le client accueille un commercial pour discuter de ses besoins, puis le parcours se déroule en couloirs par acteur et par système, le client, le rendez-vous accompagné, la relation commerciale, le paiement et la logistique, avec les étapes, les points de décision et les documents échangés." loading="lazy"></div>
         <p class="figcap">Le modèle de vente déroulé sur un parcours réel&#8239;: un client reçoit un commercial itinérant pour un nouveau besoin. Chaque acteur et chaque système a son couloir, de la prise de contact à la livraison.</p>
+
+        <div class="figure figure--large">
+          <svg viewBox="0 0 700 348" role="img" aria-label="Schéma de l'architecture d'information produit : un même référentiel d'attributs, construit à partir du catalogue par familles (panneaux, onduleurs, gestion de l'énergie, fixations, PAC, climatisation, eau chaude, accessoires), sert deux usages. À gauche, la navigation à double entrée : entrer par marque fait remonter le filtre catégorie, entrer par catégorie fait remonter le filtre marque, le menu choisi remontant d'abord le filtre complémentaire. À droite, la structure de la page produit en quatre niveaux : la catégorie comme filtre primaire, la caractéristique filtrante, la caractéristique affichée sur la fiche, la caractéristique élémentaire, complétées des téléchargements (datasheet, certificats CE et VDE).">
+            <defs>
+              <marker id="proshop-ia-fleche" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+                <path d="M0 0 L8 4 L0 8 z" fill="var(--muted)"/>
+              </marker>
+            </defs>
+
+            <text x="20" y="13" font-size="10" letter-spacing="0.12em" fill="var(--muted)">LE CATALOGUE, PAR FAMILLES</text>
+            <g font-size="9" text-anchor="middle" fill="var(--muted2)">
+              <rect x="20" y="22" width="76" height="22" rx="6" fill="var(--surface)" stroke="var(--faint)"/><text x="58" y="36">Panneaux</text>
+              <rect x="103" y="22" width="76" height="22" rx="6" fill="var(--surface)" stroke="var(--faint)"/><text x="141" y="36">Onduleurs</text>
+              <rect x="186" y="22" width="76" height="22" rx="6" fill="var(--surface)" stroke="var(--faint)"/><text x="224" y="36">Gestion énergie</text>
+              <rect x="269" y="22" width="76" height="22" rx="6" fill="var(--surface)" stroke="var(--faint)"/><text x="307" y="36">Fixations</text>
+              <rect x="352" y="22" width="76" height="22" rx="6" fill="var(--surface)" stroke="var(--faint)"/><text x="390" y="36">PAC</text>
+              <rect x="435" y="22" width="76" height="22" rx="6" fill="var(--surface)" stroke="var(--faint)"/><text x="473" y="36">Climatisation</text>
+              <rect x="518" y="22" width="76" height="22" rx="6" fill="var(--surface)" stroke="var(--faint)"/><text x="556" y="36">Eau chaude</text>
+              <rect x="601" y="22" width="76" height="22" rx="6" fill="var(--surface)" stroke="var(--faint)"/><text x="639" y="36">Accessoires</text>
+            </g>
+
+            <path d="M350 44 L350 62" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#proshop-ia-fleche)"/>
+
+            <rect x="180" y="64" width="340" height="46" rx="10" fill="var(--surface)" stroke="var(--c1)" stroke-width="1.5"/>
+            <text x="350" y="85" text-anchor="middle" font-size="13" font-weight="500" fill="var(--paper)">Un même référentiel d'attributs produit</text>
+            <text x="350" y="101" text-anchor="middle" font-size="9" fill="var(--muted2)">marque · puissance · type · rendement · cellules · certifications…</text>
+
+            <path d="M260 110 C210 128 185 130 180 146" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#proshop-ia-fleche)"/>
+            <path d="M440 110 C490 128 515 130 520 146" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#proshop-ia-fleche)"/>
+
+            <line x1="350" y1="128" x2="350" y2="336" stroke="var(--faint)" stroke-width="1" stroke-dasharray="3 4"/>
+
+            <!-- gauche : navigation double entrée -->
+            <text x="175" y="152" text-anchor="middle" font-size="10.5" font-weight="500" fill="var(--accent)">Naviguer, à double entrée</text>
+
+            <rect x="30" y="166" width="118" height="30" rx="8" fill="var(--surface)" stroke="var(--muted)"/>
+            <text x="89" y="185" text-anchor="middle" font-size="10.5" fill="var(--paper)">Par marque</text>
+            <path d="M148 181 L182 181" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#proshop-ia-fleche)"/>
+            <rect x="186" y="166" width="134" height="30" rx="8" fill="var(--surface)" stroke="var(--c5)"/>
+            <text x="253" y="185" text-anchor="middle" font-size="10.5" fill="var(--paper)">filtre Catégorie</text>
+
+            <rect x="30" y="210" width="118" height="30" rx="8" fill="var(--surface)" stroke="var(--muted)"/>
+            <text x="89" y="229" text-anchor="middle" font-size="10.5" fill="var(--paper)">Par catégorie</text>
+            <path d="M148 225 L182 225" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#proshop-ia-fleche)"/>
+            <rect x="186" y="210" width="134" height="30" rx="8" fill="var(--surface)" stroke="var(--c5)"/>
+            <text x="253" y="229" text-anchor="middle" font-size="10.5" fill="var(--paper)">filtre Marque</text>
+
+            <text x="175" y="266" text-anchor="middle" font-size="9" fill="var(--muted2)">Le menu choisi fait remonter en premier</text>
+            <text x="175" y="279" text-anchor="middle" font-size="9" fill="var(--muted2)">le filtre complémentaire.</text>
+
+            <!-- droite : page produit, 4 niveaux -->
+            <text x="525" y="152" text-anchor="middle" font-size="10.5" font-weight="500" fill="var(--accent)">Structurer la page produit, en 4 niveaux</text>
+
+            <g font-size="10" fill="var(--paper)">
+              <rect x="380" y="164" width="300" height="28" rx="6" fill="var(--surface)" stroke="var(--faint)"/>
+              <rect x="380" y="164" width="5" height="28" rx="2" fill="var(--c4)"/>
+              <text x="396" y="182"><tspan fill="var(--muted)" font-size="9">1 </tspan>Catégorie, le filtre primaire</text>
+
+              <rect x="380" y="196" width="300" height="28" rx="6" fill="var(--surface)" stroke="var(--faint)"/>
+              <rect x="380" y="196" width="5" height="28" rx="2" fill="var(--c5)"/>
+              <text x="396" y="214"><tspan fill="var(--muted)" font-size="9">2 </tspan>Caractéristique filtrante</text>
+
+              <rect x="380" y="228" width="300" height="28" rx="6" fill="var(--surface)" stroke="var(--faint)"/>
+              <rect x="380" y="228" width="5" height="28" rx="2" fill="var(--c3)"/>
+              <text x="396" y="246"><tspan fill="var(--muted)" font-size="9">3 </tspan>Caractéristique affichée sur la fiche</text>
+
+              <rect x="380" y="260" width="300" height="28" rx="6" fill="var(--surface)" stroke="var(--faint)"/>
+              <rect x="380" y="260" width="5" height="28" rx="2" fill="var(--c1)"/>
+              <text x="396" y="278"><tspan fill="var(--muted)" font-size="9">4 </tspan>Caractéristique élémentaire, le détail</text>
+            </g>
+
+            <rect x="380" y="298" width="300" height="28" rx="6" fill="none" stroke="var(--muted)" stroke-dasharray="4 3"/>
+            <text x="530" y="316" text-anchor="middle" font-size="9.5" fill="var(--muted2)">Téléchargements&#8239;: datasheet · certificat CE · VDE</text>
+          </svg>
+        </div>
+        <p class="figcap">L'architecture d'information produit, distillée&#8239;: un seul référentiel d'attributs sert la navigation (des filtres à double entrée) et la structure de chaque page produit (quatre niveaux, de la catégorie au détail).</p>
+
         <!-- TODO Brann : galerie des livrables (tâche 9 du brief). Fichiers à déposer dans assets/ : proshop-architecture.png, proshop-wireframe-produit-1.png, proshop-wireframe-produit-2.png. Légende du 2e wireframe à écrire, celle du 1er à valider. Quand un fichier arrive, décommenter sa figure et rédiger son texte alternatif d'après l'image.
         <div class="figure"><img src="assets/proshop-architecture.png" alt="À rédiger d'après l'image" loading="lazy"></div>
         <p class="figcap">L'architecture d'information, organisée autour des familles de produits et de leurs filtres.</p>

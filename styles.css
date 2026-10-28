@@ -1525,6 +1525,10 @@ h3,
   height: auto;
   margin: 0 auto;
 }
+/* schémas larges : prennent toute la largeur de la colonne */
+.figure--large svg {
+  max-width: 100%;
+}
 .figcap {
   font-size: var(--fs-sm);
   color: var(--muted);
