@@ -65,8 +65,16 @@
   </div>
 
   <div class="proto" data-no-rv aria-label="Prototype de l'application Chalon dans la rue">
+    <div class="proto-head">
+      <p class="proto-title">Application interactive</p>
+      <p class="proto-sub">Données réelles du festival intégrées</p>
+    </div>
     <div class="proto-stage" data-no-rv>
       <div class="proto-frame" id="protoFrame">
+        <div class="proto-loader" id="protoLoader" aria-hidden="true">
+          <span class="proto-spin"></span>
+          <span class="proto-loading-txt">Chargement de l'application&hellip;</span>
+        </div>
         <iframe class="proto-screen" src="/prototypes/chalon-dans-la-rue/" title="Prototype cliquable de l'application Chalon dans la rue" loading="lazy"></iframe>
       </div>
     </div>
@@ -298,6 +306,17 @@ const io=new IntersectionObserver(es=>{
   })
 },{rootMargin:'-40% 0px -50% 0px'});
 secs.forEach(s=>s&&io.observe(s));
+</script>
+<script>
+(function(){
+  var f=document.querySelector('.proto-screen');
+  var l=document.getElementById('protoLoader');
+  if(!f||!l)return;
+  var done=function(){l.classList.add('is-done');};
+  try{ if(f.contentDocument&&f.contentDocument.readyState==='complete'){done();return;} }catch(e){}
+  f.addEventListener('load',done);
+  setTimeout(done,8000); /* filet de sécurité : jamais coincé */
+})();
 </script>
 <script src="background.js"></script>
 <script src="figure-zoom.js"></script>

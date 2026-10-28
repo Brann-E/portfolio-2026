@@ -420,7 +420,7 @@
   visibility: hidden;
 }
 
-/* La pile va du haut de la carte jusqu'à la place du bouton filtre : le bouton reste toujours au même endroit, visible, et seule la liste défile. */
+/* La pile peut monter jusqu'au haut de la carte, mais la fenêtre se cale en bas, juste au-dessus du bouton filtre (qui reste toujours au même endroit). La carte grandit vers le haut ; quand elle atteint le plafond, seule sa liste défile — elle ne se fige jamais en haut. */
 .mapfilters__stack {
   position: absolute;
   top: var(--mapfilters-top);
@@ -429,7 +429,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: var(--mapfilters-confirm-gap);
 }
 
