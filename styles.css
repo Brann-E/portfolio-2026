@@ -1499,6 +1499,10 @@ h3,
   max-width: 100%;
   border-radius: 8px;
 }
+/* vignette réduite : aperçu compact, le clic révèle la pleine définition */
+.figure--mini {
+  max-width: 400px;
+}
 
 .figure .icp {
   max-width: 80%;
