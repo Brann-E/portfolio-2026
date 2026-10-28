@@ -6147,10 +6147,10 @@ footer a {
 }
 .ft-top {
   display: grid;
-  /* trois blocs (signature, liens, réseaux) répartis à intervalles égaux, du bord gauche au bord droit */
-  grid-template-columns: repeat(3, auto);
+  /* quatre blocs (signature, réseaux, missions, liens) répartis du bord gauche au bord droit */
+  grid-template-columns: repeat(4, auto);
   justify-content: space-between;
-  gap: clamp(40px, 6vw, 90px);
+  gap: clamp(32px, 4.5vw, 72px);
 }
 
 /* — signature — */
@@ -6294,16 +6294,6 @@ footer a {
 .ft-col a:hover {
   color: var(--paper);
 }
-/* les liens de « Pour aller plus loin » se signalent par une flèche, sans soulignement */
-.ft-col ul a::after {
-  content: "→";
-  color: var(--muted);
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-.ft-col ul a:hover::after {
-  transform: translateX(4px);
-  color: var(--c1);
-}
 .ft-col .ft-tag {
   font-size: var(--fs-xs);
   color: var(--muted);
@@ -6362,14 +6352,14 @@ footer a {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: var(--fs-sm);
-  color: var(--c1);
+  font-size: var(--fs-base);
+  color: var(--muted2);
   text-decoration: none;
   transition: gap 0.35s ease, color 0.3s ease;
 }
 .ft-col .ft-more:hover {
   gap: 13px;
-  color: var(--c3);
+  color: var(--paper);
 }
 .ft-col .ft-mail {
   font-size: var(--fs-sm);
