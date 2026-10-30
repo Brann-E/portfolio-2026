@@ -5556,7 +5556,7 @@ h3 {
   letter-spacing: -0.02em;
   line-height: 1.04;
   max-width: 16ch;
-  margin-bottom: clamp(120px, 16vh, 180px);
+  margin-bottom: clamp(60px, 8vh, 90px);
 }
 /* le mot qui se compose depuis les 5 couleurs */
 .spectrum-word {
@@ -7595,7 +7595,7 @@ a.porte,
   border: 1px solid var(--faint);
   border-radius: 10px;
   padding: clamp(24px, 3vw, 34px);
-  margin: clamp(30px, 5vh, 44px) 0;
+  margin: clamp(30px, 5vh, 44px) 0 clamp(60px, 8vh, 80px);
 }
 .porte-lat-l {
   display: block;

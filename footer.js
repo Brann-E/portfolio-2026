@@ -20,10 +20,10 @@
           <img src="assets/logo_256.png" alt="" aria-hidden="true">
           <div>
             <div class="ft-ligne">
-              <div class="ft-name">Brann Etienne</div>
-              <div class="ft-role2"><em>Product designer</em></div>
+              <div class="ft-name">Brann Etienne </div>
+              <div class="ft-role2"><em>Product design strategist</em></div>
             </div>
-            <div class="ft-role3">12 ans de produit et de design,<br>dans des environnements complexes</div>
+            <div class="ft-role3">12 ans de produit, de design, et de stratégie<br>dans des environnements complexes.</div>
           </div>
         </div>
         <div class="ft-place"><svg class="ft-pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg><span><span class="ft-ville">Lyon</span>, à distance et sur site</span></div>
