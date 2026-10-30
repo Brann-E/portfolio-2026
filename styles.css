@@ -8077,6 +8077,7 @@ a.pl-cta {
   font-weight: 400;
   color: var(--muted2);
   letter-spacing: 0.02em;
+  max-width: 340px;
 }
 .sig-lieu {
   font-size: var(--fs-sig-desc);
