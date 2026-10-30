@@ -3086,6 +3086,7 @@ em.grad {
   color: var(--paper);
   margin-bottom: 10px;
   line-height: 1.15;
+  min-height: 116px;
 }
 .proof .k em {
   font-style: italic;
@@ -9525,6 +9526,267 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 @media (max-width: 600px) {
   .proof--valeur { grid-template-columns: 1fr; }
 }
+
+/* ===== Bilan : douze ans en quatre chiffres (accueil, juste avant « Ce que j'apporte ») =====
+   Bandeau de preuve détaché : accent spectre, chiffres qui rayonnent.
+   55 et 11 ouvrent une modale « nuage » qui montre de qui/quoi on parle. ===== */
+.band--bilan .bilan-panel {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(130% 150% at 0% 0%, color-mix(in srgb, var(--c2) 12%, transparent), transparent 55%),
+    radial-gradient(130% 150% at 100% 100%, color-mix(in srgb, var(--c4) 10%, transparent), transparent 55%),
+    var(--surface);
+  border: 1px solid var(--faint);
+  border-radius: 8px;
+  padding: clamp(30px, 4vw, 58px);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 24px 80px -26px rgba(0, 0, 0, 0.6),
+    0 0 90px -30px color-mix(in srgb, var(--c3) 38%, transparent);
+}
+/* liseré spectre en haut du panneau : le gemme qui court */
+.band--bilan .bilan-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  background: linear-gradient(90deg, var(--c1), var(--c2), var(--c3), var(--c4), var(--c5));
+}
+.bilan {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(24px, 2.6vw, 44px);
+  align-items: start;
+}
+.bilan-item {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1.1vh, 12px);
+  padding-left: clamp(20px, 2vw, 32px);
+  border-left: 1px solid var(--faint);
+}
+.bilan-item:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+.bilan-toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(8px, 1.1vh, 12px);
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+.bilan-fig {
+  display: flex;
+  align-items: baseline;
+  gap: 0.04em;
+  font-family: var(--ff-serif);
+  font-weight: 400;
+  font-size: clamp(2.7rem, 5.2vw, 4.4rem);
+  line-height: 0.95;
+  letter-spacing: -0.015em;
+  color: var(--t, var(--c1));
+  text-shadow: 0 0 34px color-mix(in srgb, var(--t, var(--c1)) 38%, transparent);
+}
+.bilan-unit,
+.bilan-plus {
+  font-size: 0.42em;
+  color: color-mix(in srgb, var(--t, var(--c1)) 65%, var(--muted2));
+}
+.bilan-sub {
+  font-size: var(--fs-sm);
+  letter-spacing: 0.01em;
+  color: color-mix(in srgb, var(--t, var(--c1)) 72%, var(--muted2));
+}
+.bilan-lib {
+  font-size: var(--fs-base);
+  line-height: 1.5;
+  color: var(--muted2);
+  max-width: 24ch;
+}
+/* affordance « ouvre le détail » */
+.bilan-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 4px;
+  font-size: var(--fs-sm);
+  letter-spacing: 0.02em;
+  color: var(--t, var(--c1));
+}
+.bilan-more::after {
+  content: "+";
+  display: inline-grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid currentColor;
+  font-size: 11px;
+  line-height: 1;
+}
+@media (hover: hover) {
+  .bilan-toggle:hover .bilan-fig { filter: brightness(1.14); }
+  .bilan-toggle:hover .bilan-more { text-decoration: underline; text-underline-offset: 3px; }
+}
+.bilan-toggle:focus-visible {
+  outline: 2px solid var(--t, var(--c1));
+  outline-offset: 6px;
+  border-radius: 3px;
+}
+@media (max-width: 900px) {
+  .bilan {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: clamp(22px, 4vw, 40px);
+    row-gap: clamp(36px, 5vh, 52px);
+  }
+  .bilan-item:nth-child(odd) { padding-left: 0; border-left: 0; }
+}
+@media (max-width: 540px) {
+  .bilan { grid-template-columns: 1fr; }
+  .bilan-item,
+  .bilan-item:nth-child(odd) {
+    padding-left: 0;
+    border-left: 0;
+    padding-top: 24px;
+    border-top: 1px solid var(--faint);
+  }
+  .bilan-item:first-child { padding-top: 0; border-top: 0; }
+}
+
+/* ---- Modale « nuage » : le détail derrière 55 et 11 ---- */
+.bilan-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  padding: clamp(16px, 4vw, 40px);
+}
+.bilan-modal[hidden] { display: none !important; }
+.bilan-modal-scrim {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  background: rgba(4, 4, 6, 0.74);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: donFade 0.35s ease;
+}
+.bilan-modal-card {
+  position: relative;
+  width: min(820px, 100%);
+  max-height: 86vh;
+  overflow: auto;
+  background: var(--ink);
+  border: 1px solid var(--faint);
+  border-radius: 16px;
+  padding: clamp(30px, 4vw, 50px);
+  box-shadow:
+    0 30px 90px -20px rgba(0, 0, 0, 0.7),
+    0 0 100px -30px color-mix(in srgb, var(--c3) 42%, transparent);
+  animation: donPop 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  scrollbar-width: thin;
+}
+.bilan-modal-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  background: linear-gradient(90deg, var(--c1), var(--c2), var(--c3), var(--c4), var(--c5));
+}
+.bilan-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font-size: 26px;
+  line-height: 1;
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+.bilan-modal-close:hover { color: var(--paper); }
+.bilan-cloud-wrap[hidden] { display: none; }
+.bilan-modal-k {
+  margin: 0;
+  font-family: var(--ff-serif);
+  font-weight: 400;
+  font-size: var(--fs-title-s);
+  line-height: 1.1;
+  color: var(--paper);
+}
+.bilan-modal-k strong { font-weight: 400; color: var(--c3); }
+.bilan-modal-sub {
+  margin: 10px 0 clamp(24px, 3.4vh, 32px);
+  font-size: var(--fs-base);
+  line-height: 1.6;
+  color: var(--muted2);
+  max-width: 56ch;
+}
+.cloud-group + .cloud-group { margin-top: clamp(24px, 3.4vh, 34px); }
+.cloud-group-t {
+  margin: 0 0 14px;
+  font-size: var(--fs-sm);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.cloud-group-t span { color: var(--paper); font-weight: 600; }
+.cloud {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  align-items: baseline;
+}
+.cloud li {
+  font-family: var(--ff-sans);
+  line-height: 1.2;
+  padding: 7px 14px;
+  border-radius: 999px;
+  color: var(--paper);
+  border: 1px solid color-mix(in srgb, var(--tc, var(--c3)) 42%, transparent);
+  background: color-mix(in srgb, var(--tc, var(--c3)) 13%, transparent);
+}
+/* nuage : couleurs du spectre en rotation, tailles variées pour la respiration */
+.cloud li:nth-child(5n+1) { --tc: var(--c1); }
+.cloud li:nth-child(5n+2) { --tc: var(--c2); }
+.cloud li:nth-child(5n+3) { --tc: var(--c3); }
+.cloud li:nth-child(5n+4) { --tc: var(--c4); }
+.cloud li:nth-child(5n+5) { --tc: var(--c5); }
+.cloud li:nth-child(3n+1) { font-size: var(--fs-md); }
+.cloud li:nth-child(3n+2) { font-size: var(--fs-base); }
+.cloud li:nth-child(3n) { font-size: var(--fs-sm); }
+.cloud--secteurs { gap: 11px; }
+.cloud--secteurs li { font-size: var(--fs-md); padding: 10px 18px; }
+@media (max-width: 540px) {
+  .cloud--secteurs li { font-size: var(--fs-base); }
+}
+
+/* on fige le fond quand la modale est ouverte */
+body.bilan-lock { overflow: hidden; }
 
 /* ============================================================
    ENCARTS INTERACTIFS : Healthanea, la suite (Nova, carte, pistes, parcours)

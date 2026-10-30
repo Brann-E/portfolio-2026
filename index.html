@@ -157,24 +157,88 @@
 
   
 
+  <section class="band band--bilan" aria-labelledby="bilan-titre">
+    <h2 id="bilan-titre">12 ans à connecter les gens<br><em>jusqu'à ce que ça se voie.</em></h2>
+    <div class="bilan-panel rv">
+      <ol class="bilan">
+        <li class="bilan-item" style="--t: var(--c1)">
+          <span class="bilan-fig">~100<span class="bilan-unit">%</span></span>
+          <span class="bilan-sub">de 75&#8239;% à presque 100&#8239;%</span>
+          <span class="bilan-lib">Taux d'appropriation des outils métiers par les équipes.</span>
+        </li>
+        <li class="bilan-item is-expandable" style="--t: var(--c2)">
+          <button class="bilan-toggle" type="button" data-cloud="expertises" aria-haspopup="dialog">
+            <span class="bilan-fig">55</span>
+            <span class="bilan-lib">Expertises tech et métiers mises en dialogue.</span>
+            <span class="bilan-more">Qui, précisément</span>
+          </button>
+        </li>
+        <li class="bilan-item is-expandable" style="--t: var(--c3)">
+          <button class="bilan-toggle" type="button" data-cloud="secteurs" aria-haspopup="dialog">
+            <span class="bilan-fig">11</span>
+            <span class="bilan-lib">Secteurs explorés pour saisir toutes leurs complexités.</span>
+            <span class="bilan-more">Lesquels</span>
+          </button>
+        </li>
+        <li class="bilan-item" style="--t: var(--c4)">
+          <span class="bilan-fig">200<span class="bilan-plus">+</span></span>
+          <span class="bilan-lib">Personnes écoutées pour capter la matière première de chaque décision.</span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Modale « nuage » : le détail de ce que recouvrent 55 et 11 -->
+  <div class="bilan-modal" id="bilan-modal" hidden>
+    <button class="bilan-modal-scrim" type="button" aria-label="Fermer"></button>
+    <div class="bilan-modal-card" role="dialog" aria-modal="true" aria-labelledby="bilan-modal-k">
+      <button class="bilan-modal-close" type="button" aria-label="Fermer">&times;</button>
+
+      <div class="bilan-cloud-wrap" data-cloud="expertises" hidden>
+        <p class="bilan-modal-k" id="bilan-modal-k-exp"><strong>55</strong> expertises, mises en dialogue</p>
+        <p class="bilan-modal-sub">Les métiers et les techs que j'ai fait travailler ensemble, projet après projet.</p>
+        <div class="cloud-group">
+          <p class="cloud-group-t"><span>39</span> métiers</p>
+          <ul class="cloud">
+            <li>Go-to-market</li><li>Santé / Health team</li><li>Customer success</li><li>Program manager</li><li>Top management</li><li>Design manager</li><li>CFO</li><li>CMO</li><li>Business unit manager</li><li>Market line manager</li><li>Commercial / salesperson</li><li>Project manager</li><li>Business analyst</li><li>CEO</li><li>Sales director</li><li>Sales manager</li><li>Administration des ventes</li><li>Logistique</li><li>Achats</li><li>Service énergie</li><li>Marketing</li><li>Support</li><li>Directeur fondateur</li><li>Operations manager</li><li>Ingénieur pédagogique</li><li>Membre du bureau</li><li>UX writer</li><li>Platform manager</li><li>Community manager</li><li>Manager de plateforme</li><li>Relation client</li><li>Responsable marketing</li><li>Ingénieur documentaire</li><li>Chef de projet gestion documentaire</li><li>Archiviste</li><li>Responsable gestion des connaissances</li><li>Fondateur</li><li>Responsable commercial</li><li>Artisan</li>
+          </ul>
+        </div>
+        <div class="cloud-group">
+          <p class="cloud-group-t"><span>16</span> tech</p>
+          <ul class="cloud cloud--tech">
+            <li>Head of Product</li><li>Product Manager / Product Owner</li><li>Architecte</li><li>Tech lead</li><li>DevOps</li><li>Développeur full stack</li><li>Lead developer</li><li>Delivery manager</li><li>Scrum Master</li><li>Data engineer</li><li>Data scientist</li><li>Data lead</li><li>Géomaticien</li><li>Ingénieur informatique</li><li>CPTO</li><li>Head of Engineering</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bilan-cloud-wrap" data-cloud="secteurs" hidden>
+        <p class="bilan-modal-k"><strong>11</strong> secteurs explorés</p>
+        <p class="bilan-modal-sub">À chaque fois, entrer dans une complexité différente pour la comprendre de l'intérieur.</p>
+        <ul class="cloud cloud--secteurs">
+          <li>Santé numérique</li><li>Transformation numérique &amp; conseil tech</li><li>Énergie &amp; greentech</li><li>Retail / e-commerce</li><li>Franchise &amp; immobilier commercial</li><li>RSE / association</li><li>Freelancing / communauté pro</li><li>Télécoms</li><li>Hôtellerie / café premium</li><li>Documentation, archives &amp; recherche</li><li>Artisanat / SaaS</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   <section class="band" id="valeur">
     <h2>Ce que j'apporte<br><em>à un produit.</em></h2>
     <div class="proof proof--valeur">
       <div class="cell rv" style="--t: var(--t-outil)">
         <div class="k"><em>Des outils</em> qu'on utilise vraiment</div>
-        <p class="d">Je conçois jusqu'à l'adoption, et pas seulement jusqu'à la livraison.</p>
+        <p class="d">Je conçois jusqu'à l'adoption, et pas seulement jusqu'à la livraison. Un outil n'échoue pas à sa sortie, il échoue dans les habitudes.</p>
       </div>
       <div class="cell rv" style="--t: var(--t-ecosysteme)">
         <div class="k"><em>Des systèmes complexes</em> rendus lisibles</div>
         <p class="d">Six niveaux hiérarchiques, un écosystème de santé entier&#8239;: je tiens l'ensemble avant de simplifier.</p>
       </div>
-      <div class="cell rv" style="--t: var(--t-organisation)">
-        <div class="k"><em>Des décisions</em> qu'on peut tenir</div>
-        <p class="d">Une règle d'arbitrage, une unité de pilotage, une trajectoire&#8239;: de quoi trancher demain sans moi.</p>
-      </div>
       <div class="cell rv" style="--t: var(--t-personne)">
         <div class="k"><em>Des relations</em> qui tiennent</div>
         <p class="d">La confiance d'un client, le soutien d'un patient, l'attention d'un public&#8239;: ce que l'outil fait circuler entre les gens.</p>
+      </div>
+      <div class="cell rv" style="--t: var(--t-organisation)">
+        <div class="k"><em>Des décisions</em> qui restent</div>
+        <p class="d">Une règle d'arbitrage, une unité de pilotage, une trajectoire&#8239;: de quoi trancher demain en toute autonomie.</p>
       </div>
     </div>
     <div class="fin-liens sy-pont">
@@ -201,7 +265,7 @@
   
 <section class="sy-constat-section" aria-labelledby="constat-titre">
     <h2 class="sy-intro-titre" id="constat-titre">Quelques situations familières à révéler qui cassent sans bruit.</h2>
-    <p class="sy-intro">Les chiffres et les verbatims en donnent une lecture.<br>L'angle mort apparait pour venir la compléter.</p>
+    <p class="sy-intro">Les chiffres et les verbatims en donnent une lecture.<br>L'angle mort apparaît pour venir la compléter.</p>
     <div class="sy-stage sy-v3" id="syc-stage" role="region" aria-roledescription="carrousel" aria-labelledby="constat-titre">
       <div class="sy-bg sy-solid" aria-hidden="true"><span class="sy-spectre"></span></div>
       <p class="sy-num" id="syc-num" aria-hidden="true">1 / 5</p>
@@ -263,7 +327,7 @@
       </div>
     </div>
     <div class="fin-liens">
-      <a href="/parcours-interactif">Explorer plus encore ce qui a cesser de circuler, à travers 3 situations</a>
+      <a href="/parcours-interactif">Explorer plus encore ce qui a cessé de circuler, à travers 3 situations</a>
     </div>
   </section>
 
@@ -293,6 +357,35 @@ const io=new IntersectionObserver(es=>{
   })
 },{threshold:.15});
 document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+</script>
+<script>
+/* bilan : les chiffres 55 et 11 ouvrent une modale « nuage » qui montre de qui on parle */
+(function(){
+  var modal=document.getElementById('bilan-modal');
+  if(!modal) return;
+  var toggles=[].slice.call(document.querySelectorAll('.bilan-toggle[data-cloud]'));
+  var wraps=[].slice.call(modal.querySelectorAll('.bilan-cloud-wrap'));
+  var closers=[].slice.call(modal.querySelectorAll('.bilan-modal-scrim, .bilan-modal-close'));
+  var last=null;
+
+  function open(name){
+    wraps.forEach(function(w){ w.hidden = w.getAttribute('data-cloud')!==name; });
+    modal.hidden=false;
+    document.body.classList.add('bilan-lock');
+    var c=modal.querySelector('.bilan-modal-close'); if(c) c.focus();
+  }
+  function close(){
+    modal.hidden=true;
+    document.body.classList.remove('bilan-lock');
+    if(last) last.focus();
+  }
+
+  toggles.forEach(function(btn){
+    btn.addEventListener('click',function(){ last=btn; open(btn.getAttribute('data-cloud')); });
+  });
+  closers.forEach(function(el){ el.addEventListener('click',close); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape' && !modal.hidden) close(); });
+})();
 </script>
 <script>
 /* constat : une situation à la fois ; l'angle mort est un passage masqué que l'on lève sur place */
