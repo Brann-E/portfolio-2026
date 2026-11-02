@@ -6201,7 +6201,6 @@ footer a {
 }
 .ft-role2 {
   font-family: "Instrument Serif", Georgia, serif;
-  font-style: italic;
   font-weight: 400;
   font-size: var(--fs-ft-role);
   line-height: 1.1;
@@ -8940,7 +8939,7 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
 }
 @media (max-width: 600px) {
   .wrap > .hero.hero--home { padding-top: 6vh; padding-top: 6svh; padding-bottom: 6vh; padding-bottom: 6svh; }
-  .hero--home h1 { font-size: clamp(2.8rem, 15vw, 4.2rem); line-height: 1.02; margin-bottom: 4vh; margin-bottom: 4svh; }
+  .hero--home h1 { font-size: clamp(2.8rem, 13vw, 3.2rem); line-height: 1.02; margin-bottom: 4vh; margin-bottom: 4svh; }
   .hero--home .lede { font-size: var(--fs-md); line-height: 1.55; margin-bottom: 4vh; margin-bottom: 4svh; }
 }
 .wrap > .hero.hero--cas {
