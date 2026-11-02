@@ -8079,7 +8079,6 @@ a.pl-cta {
 }
 .sig-role {
   font-family: var(--ff-serif);
-  font-style: italic;
   font-weight: 400;
   font-size: var(--fs-sig-role);
   line-height: 1.1;
@@ -8127,7 +8126,7 @@ a.pl-cta {
 }
 @media (max-width: 720px) {
   /* mobile : le portrait passe au-dessus du texte, aligné à gauche, et reste assez grand */
-  .hero-sig { flex-direction: column; align-items: flex-start; gap: 20px; margin: 40px 0 0; }
+  .hero-sig { flex-direction: column; align-items: flex-start; gap: 20px; margin: 120px 0 0; }
   .sig-portrait { width: clamp(120px, 38vw, 160px); }
 }
 
