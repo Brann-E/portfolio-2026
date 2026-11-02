@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Healthanea, le parcours du patient</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#000071; --ink-soft:#2A2A9C;
+  --coral:#FF5F68; --coral-deep:#D9434C;
+  --rose:#FF9BA6; --sun:#FCC300;
+  --cream:#FFF8F2; --cream-2:#FDEDEA;
+  --warm-gray:#6E6470; --line:#ebd9d6; --surface:#fff;
+  --phone-h:600px;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  background:#ECEEFA; color:var(--ink);
+  font-family:Inter,system-ui,sans-serif;
+  min-height:700px;
+  display:flex; align-items:flex-start; justify-content:center;
+  padding:28px 20px;
+}
+.serif{font-family:"DM Serif Display",Georgia,serif;font-weight:400}
+
+.scene{display:flex; align-items:flex-start; justify-content:center; gap:22px;}
+.block{display:flex; flex-direction:column; align-items:center; flex:none;}
+.blabel{height:34px; display:flex; align-items:center; gap:8px; font-size:14px; font-weight:500; color:var(--ink); margin-bottom:12px;}
+.bcap{margin-top:8px; font-size:12px; color:var(--warm-gray);}
+
+/* commentaire EXTERIEUR : le flux, hors de l'application */
+.flux-note{margin-top:14px; min-height:18px; display:flex; align-items:center; gap:8px; font-size:12px; color:var(--warm-gray);}
+.flux-note .fdot{width:9px;height:9px;border-radius:50%;flex:none}
+.flux-note b{color:var(--ink);font-weight:500}
+
+/* ---- Colonne d'actions ---- */
+.actions{width:328px; height:var(--phone-h); display:flex; flex-direction:column; gap:7px;}
+.action{flex:1 1 0; min-height:0; text-align:left; font:inherit; cursor:pointer; background:var(--surface); color:var(--ink); border:1px solid var(--line); border-radius:14px; padding:0 14px; display:flex; align-items:center; gap:11px; transition:border-color .25s, background .25s;}
+.action:hover{border-color:var(--rose)}
+.action:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.action[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--cream)}
+.action[aria-pressed="true"] .a-num{background:var(--coral);color:#fff}
+.a-num{flex:none;width:24px;height:24px;border-radius:50%;background:var(--cream-2);color:var(--ink);display:grid;place-items:center;font-size:12px;font-weight:600}
+.a-label{font-size:13px;line-height:1.3}
+
+/* ---- Smartphone (identique patient / source) ---- */
+.phone{width:286px;height:var(--phone-h);flex:none;background:var(--ink);border-radius:42px;padding:9px;position:relative;box-shadow:0 18px 40px -22px rgba(0,0,114,.5)}
+.notch{position:absolute;top:9px;left:50%;transform:translateX(-50%);width:116px;height:20px;background:var(--ink);border-radius:0 0 13px 13px;z-index:3}
+.screen{background:var(--cream);border-radius:34px;height:100%;overflow:hidden;display:flex;flex-direction:column}
+.status{flex:none;height:36px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 22px 4px;font-size:11px;font-weight:600;color:var(--ink)}
+.appbar{flex:none;display:flex;align-items:center;gap:8px;padding:8px 18px 10px;font-size:13px;font-weight:600;color:var(--ink)}
+.appbar .dot{width:7px;height:7px;border-radius:50%;background:var(--coral)}
+.body{flex:1;min-height:0;overflow:hidden;padding:4px 18px 10px;display:flex;flex-direction:column}
+.nav{flex:none;height:56px;border-top:1px solid var(--line);display:flex;background:var(--surface)}
+.nav div{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:10px;color:var(--warm-gray)}
+.nav div.on{color:var(--coral)}
+.nav svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+
+/* contenu patient */
+.eyebrow{font-size:12px;font-weight:600;color:var(--coral-deep);margin:2px 0 7px}
+.ptitle{font-size:23px;line-height:1.15;margin:0 0 11px;color:var(--ink)}
+.ptext{font-size:14px;line-height:1.5;color:var(--ink);margin:0 0 12px}
+.cta{margin-top:auto;display:flex;flex-direction:column;gap:8px}
+.btn{font:inherit;font-size:13px;font-weight:500;border-radius:999px;padding:11px 14px;text-align:center;border:1px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+.btn.primary{background:var(--coral);border-color:var(--coral);color:#fff}
+.btn[disabled]{cursor:default}
+.link{background:none;border:0;padding:0;font:inherit;font-size:13px;color:var(--coral-deep);text-decoration:underline;cursor:pointer;text-align:left;margin:0 0 10px}
+.info{background:var(--cream-2);border-radius:12px;padding:10px 12px;font-size:13px;line-height:1.5;color:var(--ink);margin:0 0 12px}
+.done{background:var(--cream-2);border-radius:12px;padding:10px 12px;font-size:13px;line-height:1.5;color:var(--ink);margin-top:10px}
+.sub{font-size:12px;font-weight:600;color:var(--warm-gray);margin:4px 0 8px}
+.choice{margin-top:2px}
+.opts{display:flex;gap:7px;flex-wrap:wrap}
+.opts.col{flex-direction:column}
+.opt{font:inherit;font-size:13px;cursor:pointer;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:12px;padding:10px 12px;text-align:left}
+.opt.sel{border-color:var(--coral);background:var(--cream-2);font-weight:500}
+.cdone{margin-top:9px;font-size:12px;color:var(--coral-deep);font-weight:500}
+.chat{display:flex;flex-direction:column;gap:7px;margin-bottom:12px}
+.bubble{max-width:86%;font-size:13px;line-height:1.4;padding:9px 12px;border-radius:14px;background:var(--cream-2);color:var(--ink);align-self:flex-start;border-bottom-left-radius:4px}
+.peer{display:flex;align-items:center;gap:11px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:11px;margin-bottom:12px}
+.peer .av{width:38px;height:38px;border-radius:50%;background:var(--coral);color:#fff;display:grid;place-items:center;font-weight:600;flex:none}
+.peer b{display:block;font-size:14px}.peer span{font-size:12px;color:var(--warm-gray)}
+.mapbox{position:relative;height:148px;background:var(--cream-2);border-radius:14px;margin-bottom:4px;overflow:hidden}
+.mapbox:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 55%, rgba(255,95,104,.08), transparent 60%)}
+.pin{position:absolute;width:18px;height:18px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--coral);border:2px solid #fff;cursor:pointer;padding:0}
+.pin.sel{background:var(--ink)}
+.mini{margin:0 0 12px;padding-left:18px;font-size:13px;line-height:1.7;color:var(--ink)}
+.note{background:var(--cream-2);border-radius:12px;padding:11px;font-size:13px;line-height:1.5;color:var(--ink);font-style:italic;margin-bottom:12px}
+.swrow{display:flex;align-items:center;justify-content:space-between;font-size:13px;color:var(--ink);padding:9px 0;border-bottom:1px solid var(--line);cursor:pointer}
+.sw{width:38px;height:22px;border-radius:999px;background:var(--line);position:relative;flex:none;transition:background .2s}
+.sw:after{content:"";position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;background:#fff;transition:transform .2s}
+.sw.on{background:var(--coral)}
+.sw.on:after{transform:translateX(16px)}
+.cards{display:flex;flex-direction:column;gap:7px}
+.empty{margin:auto;text-align:center;color:var(--warm-gray);font-size:14px;line-height:1.5;padding:0 14px}
+.empty .serif{display:block;font-size:24px;color:var(--ink);margin-bottom:8px}
+
+/* contenu source (app pro) */
+.src-ctx{font-size:12px;color:var(--warm-gray);margin:2px 0 10px}
+.src-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:13px}
+.src-card h3{font-size:18px;line-height:1.2;margin:0 0 8px;color:var(--ink)}
+.src-card p{font-size:13px;line-height:1.5;color:var(--warm-gray);margin:0}
+.src-act{margin-top:12px;font-size:12px;font-weight:600;color:var(--coral-deep);display:flex;align-items:center;gap:7px}
+
+/* fleche de revelation */
+.reveal{display:flex;align-items:flex-start;gap:16px;flex:none;opacity:0;transform:translateX(-14px);pointer-events:none;transition:opacity .4s ease,transform .4s ease}
+.reveal.on{opacity:1;transform:none;pointer-events:auto}
+.arrow{display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--coral);width:64px;flex:none;margin-top:300px}
+.arrow svg{width:64px;height:24px}
+.arrow span{font-size:11px;color:var(--warm-gray);text-align:center;line-height:1.3}
+
+@media (max-width:1120px){ .reveal{display:none} }
+</style>
+</head>
+<body>
+
+<div class="scene">
+  <div class="block">
+    <div class="blabel">Ce que l'app apporte au patient</div>
+    <div class="actions" id="actions"></div>
+  </div>
+
+  <div class="block">
+    <div class="blabel">Vue patient</div>
+    <div class="phone"><div class="notch"></div><div class="screen" id="patientScreen"></div></div>
+    <div class="flux-note" id="fluxNote"></div>
+    <div class="bcap">Jeanne, 58 ans · patient fictif</div>
+  </div>
+
+  <div class="reveal" id="reveal">
+    <div class="arrow">
+      <svg viewBox="0 0 64 24" fill="none" aria-hidden="true"><path d="M2 12H58 M49 5L58 12L49 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>d'où ça vient</span>
+    </div>
+    <div class="block">
+      <div class="blabel" id="sourceLabel">Vue du professionnel</div>
+      <div class="phone"><div class="notch"></div><div class="screen" id="sourceScreen"></div></div>
+    </div>
+  </div>
+</div>
+
+<script>
+var IC={
+  home:'<path d="M4 11l8-6 8 6M6 10v8h12v-8"/>',
+  circle:'<circle cx="9" cy="9" r="3"/><circle cx="15.5" cy="9" r="3"/><path d="M4 18c0-2.5 2-4 4.5-4M13 14c2.5 0 4.5 1.5 4.5 4"/>',
+  chat:'<path d="M5 5h14v10H9l-4 4z"/>',
+  list:'<path d="M5 7h14M5 12h14M5 17h9"/>',
+  pulse:'<path d="M4 12h3.5l2-5 3 10 2-5H20"/>',
+  target:'<circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>',
+  map:'<path d="M5 6l4.5-2 5 2 4.5-2v14l-4.5 2-5-2-4.5 2z M9.5 4v14 M14.5 6v14"/>'
+};
+function nav(items){ return '<div class="nav">'+items.map(function(it){return '<div class="'+(it.on?'on':'')+'"><svg viewBox="0 0 24 24">'+IC[it.i]+'</svg>'+it.l+'</div>';}).join('')+'</div>'; }
+function status(){ return '<div class="status"><span>9:41</span><svg width="52" height="12" viewBox="0 0 52 12" fill="currentColor"><rect x="0" y="6" width="3" height="6" rx="1"/><rect x="5" y="4" width="3" height="8" rx="1"/><rect x="10" y="2" width="3" height="10" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/><path d="M25 4c3-3 8-3 11 0" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M28 7c1.5-1.5 4-1.5 5.5 0" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/><rect x="40" y="2" width="10" height="7" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><rect x="42" y="4" width="6" height="3" rx="1"/></svg></div>'; }
+
+var FLUX={
+  attention:{dot:"#FF5F68",nom:"attention"},
+  confiance:{dot:"#000071",nom:"confiance"},
+  reconnaissance:{dot:"#C23A63",nom:"reconnaissance"},
+  soutien:{dot:"#FCC300",nom:"soutien"}
+};
+
+var PNAV={
+  accueil:[{i:"home",l:"Accueil",on:1},{i:"circle",l:"Mon cercle"},{i:"chat",l:"Messages"}],
+  cercle:[{i:"home",l:"Accueil"},{i:"circle",l:"Mon cercle",on:1},{i:"chat",l:"Messages"}],
+  messages:[{i:"home",l:"Accueil"},{i:"circle",l:"Mon cercle"},{i:"chat",l:"Messages",on:1}]
+};
+var SNAV={
+  medecin:[{i:"list",l:"Patients",on:1},{i:"pulse",l:"Suivi"},{i:"chat",l:"Messages"}],
+  nutri:[{i:"pulse",l:"Suivis",on:1},{i:"target",l:"Objectifs"},{i:"chat",l:"Messages"}],
+  communaute:[{i:"map",l:"Carte",on:1},{i:"circle",l:"Cercle"},{i:"chat",l:"Fil"}]
+};
+var ROLE={medecin:"Vue médecin",nutri:"Vue nutritionniste",communaute:"Vue communauté"};
+
+var ACTIONS=[
+ {n:1,label:"Un signe d'attention quand je décroche",flux:"attention",
+  p:{nav:"accueil",app:"Accueil",ui:
+   '<p class="eyebrow">Un message pour vous</p>'+
+   '<h2 class="ptitle serif">On a pris de vos nouvelles.</h2>'+
+   '<p class="ptext">Vos prises se sont espacées. Pas d\'alerte, juste un mot pour savoir comment vous allez.</p>'+
+   '<div class="cta"><button class="btn primary" data-reveal="r1a">Ça va</button><button class="btn" data-reveal="r1b">J\'en parle</button></div>'+
+   '<div class="done" id="r1a" hidden>Merci. On reste là si besoin.</div>'+
+   '<div class="done" id="r1b" hidden>Un créneau d\'échange vous est proposé.</div>'},
+  s:{role:"medecin",app:"Suivi patient",ctx:"Patient · Jeanne D.",ti:"Un signal faible",bo:"Prises espacées depuis 30 jours.",act:"Envoyer un mot, pas une alerte"}},
+
+ {n:2,label:"Une explication claire de mon traitement",flux:"confiance",
+  p:{nav:"accueil",app:"Mon traitement",ui:
+   '<p class="eyebrow">Mon traitement</p>'+
+   '<h2 class="ptitle serif">Metformine, matin et soir.</h2>'+
+   '<button class="link" data-reveal="r2">Pourquoi ce changement ?</button>'+
+   '<div class="info" id="r2" hidden>Votre glycémie du matin restait haute. On renforce la prise du matin, rien de plus.</div>'+
+   '<p class="sub">Adapter l\'heure de prise</p>'+
+   '<div class="choice"><div class="opts"><button class="opt">Matin</button><button class="opt">Midi</button><button class="opt">Soir</button></div><div class="cdone" hidden>Horaire enregistré.</div></div>'},
+  s:{role:"medecin",app:"Ordonnance",ctx:"Patient · Jeanne D.",ti:"Ajuste et explique",bo:"Nouvelle dose + une explication courte jointe.",act:"Proposer, sans imposer"}},
+
+ {n:3,label:"Un lien direct avec mon médecin",flux:"confiance",
+  p:{nav:"messages",app:"Mon médecin",ui:
+   '<p class="eyebrow">Mon médecin</p>'+
+   '<div class="chat"><div class="bubble">Comment ça va depuis l\'ajustement ?</div></div>'+
+   '<p class="sub">Prendre rendez-vous</p>'+
+   '<div class="choice"><div class="opts col"><button class="opt">Mar. 14h00</button><button class="opt">Jeu. 9h30</button><button class="opt">Ven. 17h00</button></div><div class="cdone" hidden>Rendez-vous confirmé.</div></div>'},
+  s:{role:"medecin",app:"Messagerie",ctx:"Patient · Jeanne D.",ti:"Reste joignable",bo:"Un canal d\'échange et des créneaux ouverts.",act:"Joignable, sans surveiller"}},
+
+ {n:4,label:"Une mise en relation avec un pair",flux:"soutien",
+  p:{nav:"cercle",app:"Mon cercle",ui:
+   '<p class="eyebrow">Un relais humain</p>'+
+   '<h2 class="ptitle serif">Quelqu\'un qui a fait le chemin.</h2>'+
+   '<div class="peer"><div class="av">M</div><div><b>Marc</b><span>diabète type 2 depuis 4 ans</span></div></div>'+
+   '<div class="cta"><button class="btn primary" data-reveal="r4">Faire connaissance</button></div>'+
+   '<div class="done" id="r4">« J\'ai mis du temps, mais on s\'en sort. Écris-moi quand tu veux. »</div>'},
+  s:{role:"communaute",app:"Mise en relation",ctx:"Binômes",ti:"Un pair volontaire",bo:"Relie deux parcours proches, à leur rythme.",act:"Le soutien avant le soin"}},
+
+ {n:5,label:"Un pair proche à rencontrer",flux:"soutien",
+  p:{nav:"cercle",app:"Près de chez moi",ui:
+   '<p class="eyebrow">Tout près</p>'+
+   '<h2 class="ptitle serif">Se voir, pour de vrai.</h2>'+
+   '<div class="choice"><div class="mapbox"><button class="pin" style="left:30%;top:45%" data-d="1,2 km"></button><button class="pin" style="left:62%;top:28%" data-d="2,8 km"></button><button class="pin" style="left:48%;top:66%" data-d="0,6 km"></button></div><div class="cdone" hidden></div></div>'+
+   '<p class="sub" style="margin-top:10px">Touchez un pair proche de chez vous.</p>'},
+  s:{role:"communaute",app:"Carte des pairs",ctx:"Secteur · Lyon 7e",ti:"La proximité d\'abord",bo:"Met en avant les pairs proches géographiquement.",act:"Un lien réel, hors écran"}},
+
+ {n:6,label:"Une reconnaissance de mes efforts",flux:"reconnaissance",
+  p:{nav:"accueil",app:"Ma semaine",ui:
+   '<p class="eyebrow">Ma semaine</p>'+
+   '<h2 class="ptitle serif">Vous avez tenu, et ça compte.</h2>'+
+   '<ul class="mini"><li>4 marches cette semaine</li><li>Prises régulières 5 jours sur 7</li></ul>'+
+   '<div class="note">« J\'ai vu vos efforts cette semaine, bravo pour la régularité. » — votre nutritionniste</div>'+
+   '<div class="cta"><button class="btn primary" data-reveal="r6">Merci</button></div>'+
+   '<div class="done" id="r6" hidden>Votre nutritionniste a été prévenue.</div>'},
+  s:{role:"nutri",app:"Suivi",ctx:"Patient · Jeanne D.",ti:"Reconnaît l\'effort",bo:"Un retour sur ce qui a été tenté, pas que le résultat.",act:"Valoriser l\'essai"}},
+
+ {n:7,label:"Un cap du jour choisi par moi",flux:"confiance",
+  p:{nav:"accueil",app:"Aujourd'hui",ui:
+   '<p class="eyebrow">Aujourd\'hui</p>'+
+   '<h2 class="ptitle serif">Je choisis mon petit pas.</h2>'+
+   '<div class="choice"><div class="opts col"><button class="opt">Boire un verre d\'eau au réveil</button><button class="opt">Marcher 10 min après le déjeuner</button><button class="opt">Un fruit à 16h</button></div><div class="cdone" hidden>C\'est mon cap du jour.</div></div>'},
+  s:{role:"nutri",app:"Objectifs",ctx:"Patient · Jeanne D.",ti:"Un objectif co-construit",bo:"Propose plusieurs petits pas tenables.",act:"Le patient choisit"}},
+
+ {n:8,label:"Une place pour un proche",flux:"attention",
+  p:{nav:"cercle",app:"Mon entourage",ui:
+   '<p class="eyebrow">Mon entourage</p>'+
+   '<h2 class="ptitle serif">Inviter un proche, si je veux.</h2>'+
+   '<div class="peer"><div class="av">S</div><div><b>Sophie</b><span>ma soeur</span></div></div>'+
+   '<p class="sub">Ce qu\'elle peut voir — je garde la main</p>'+
+   '<label class="swrow">Mes rendez-vous <span class="sw on"></span></label>'+
+   '<label class="swrow">Mes moments difficiles <span class="sw"></span></label>'+
+   '<div class="cta"><button class="btn primary" data-reveal="r8">Inviter Sophie</button></div>'+
+   '<div class="done" id="r8" hidden>Invitation envoyée. Révocable à tout moment.</div>'},
+  s:{role:"communaute",app:"Le cercle",ctx:"Patient · Jeanne D.",ti:"Fait entrer l\'entourage",bo:"Ajoute un proche selon les choix du patient.",act:"Seulement si le patient le demande"}},
+
+ {n:9,label:"Des repères repas simples, à ma main",flux:"confiance",
+  p:{nav:"accueil",app:"Mes repères",ui:
+   '<p class="eyebrow">Mes repères</p>'+
+   '<h2 class="ptitle serif">Des repas simples, à ma main.</h2>'+
+   '<div class="choice"><div class="cards"><button class="opt">Assiette équilibrée express</button><button class="opt">En-cas sans sucre rapide</button><button class="opt">Dîner léger du soir</button></div><div class="cdone" hidden>Ajouté à mes repères.</div></div>'},
+  s:{role:"nutri",app:"Repères",ctx:"Patient · Jeanne D.",ti:"Des repères simples",bo:"Propose des repas tenables au quotidien.",act:"Simple et adaptable"}}
+];
+
+var elActions=document.getElementById("actions");
+var elP=document.getElementById("patientScreen");
+var elS=document.getElementById("sourceScreen");
+var elReveal=document.getElementById("reveal");
+var elSrcLabel=document.getElementById("sourceLabel");
+var elFlux=document.getElementById("fluxNote");
+var buttons=[];
+
+elP.innerHTML=status()+'<div class="body"><div class="empty"><span class="serif">Mon parcours</span>Touchez une action à gauche pour voir ce qu\'elle change, pour moi.</div></div>'+nav(PNAV.accueil);
+
+ACTIONS.forEach(function(a,i){
+  var b=document.createElement("button");
+  b.type="button"; b.className="action"; b.setAttribute("aria-pressed","false");
+  b.innerHTML='<span class="a-num">'+a.n+'</span><span class="a-label">'+a.label+'</span>';
+  b.addEventListener("click",function(){select(i);});
+  elActions.appendChild(b); buttons.push(b);
+});
+
+/* interactions internes a l'ecran patient (delegation, attachee une fois) */
+elP.addEventListener("click",function(e){
+  var rev=e.target.closest("[data-reveal]");
+  if(rev){ var t=elP.querySelector("#"+rev.getAttribute("data-reveal")); if(t)t.hidden=false; rev.setAttribute("disabled","disabled"); rev.style.opacity=.55; return; }
+  var pin=e.target.closest(".pin");
+  if(pin){ var c=pin.closest(".choice"); c.querySelectorAll(".pin").forEach(function(x){x.classList.remove("sel")}); pin.classList.add("sel"); var cd=c.querySelector(".cdone"); if(cd){cd.textContent="À "+pin.getAttribute("data-d")+" de chez vous. Proposer un café."; cd.hidden=false;} return; }
+  var opt=e.target.closest(".opt");
+  if(opt){ var g=opt.parentNode; g.querySelectorAll(".opt").forEach(function(x){x.classList.remove("sel")}); opt.classList.add("sel"); var c2=opt.closest(".choice"); var cd2=c2&&c2.querySelector(".cdone"); if(cd2)cd2.hidden=false; return; }
+  var sw=e.target.closest(".swrow");
+  if(sw){ var s2=sw.querySelector(".sw"); if(s2)s2.classList.toggle("on"); return; }
+});
+
+function select(i){
+  var a=ACTIONS[i];
+  buttons.forEach(function(b,j){b.setAttribute("aria-pressed",j===i?"true":"false");});
+  elP.innerHTML=status()+'<div class="appbar"><span class="dot"></span>'+a.p.app+'</div><div class="body">'+a.p.ui+'</div>'+nav(PNAV[a.p.nav]);
+  elS.innerHTML=status()+'<div class="appbar"><span class="dot"></span>'+a.s.app+'</div><div class="body"><p class="src-ctx">'+a.s.ctx+'</p><div class="src-card"><h3 class="serif">'+a.s.ti+'</h3><p>'+a.s.bo+'</p></div><div class="src-act"><span style="font-size:16px">&rarr;</span>'+a.s.act+'</div></div>'+nav(SNAV[a.s.role]);
+  elSrcLabel.textContent=ROLE[a.s.role];
+  var f=FLUX[a.flux];
+  elFlux.innerHTML='<span class="fdot" style="background:'+f.dot+'"></span>Ce qui circule jusqu\'au patient : <b>'+f.nom+'</b>';
+  elReveal.classList.add("on");
+}
+
+function sizeParent(){ try{ if(window.frameElement){ window.frameElement.style.setProperty("--embed-height", Math.ceil(document.body.scrollHeight)+"px"); } }catch(e){} }
+window.addEventListener("load",sizeParent);
+window.addEventListener("resize",sizeParent);
+sizeParent();
+</script>
+</body>
+</html>

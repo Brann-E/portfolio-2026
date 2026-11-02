@@ -48,9 +48,27 @@
   }
 
   /* ---- Aperçu (vignette dans la page) ------------------------------------ */
+  /* Hauteur paysage de l'apercu (meme mise en page que le plein ecran, en plus
+     petit). Format large, jamais tout en longueur. */
+  var APERCU_H = 560;
+
   function fitApercu(encart) {
     var frame = encart.querySelector(".encart-frame");
-    if (frame) scaleFrame(frame, encart.clientWidth, encart.clientHeight);
+    if (!frame) return;
+    if (isRepo(frame)) {
+      /* L'apercu EST la vue plein ecran en reduit : meme mise en page paysage
+         (.nova-full) rendue directement a la taille de la carte, sans scale. */
+      try {
+        frame.contentDocument.documentElement.classList.add("nova-full");
+      } catch (e) {}
+      encart.style.height = APERCU_H + "px";
+      frame.style.transform = "";
+      frame.style.width = "100%";
+      frame.style.height = APERCU_H + "px";
+    } else {
+      /* Carte : vignette de la toile entiere dans la boite (hauteur CSS). */
+      scaleFrame(frame, encart.clientWidth, encart.clientHeight);
+    }
   }
 
   /* ---- Plein écran ------------------------------------------------------- */
@@ -79,6 +97,42 @@
 
   function isRepo(frame) {
     return (frame.getAttribute("src") || "").indexOf("vue=repository") !== -1;
+  }
+
+  /* Tous les liens de l'app (iframe, même origine) s'ouvrent dans un nouvel
+     onglet. Un <base target="_blank"> ne suffit pas : l'app intercepte le clic
+     sur ses liens et navigue elle-même (ce qui remplace l'onglet courant). On
+     capture donc le clic sur tout <a href> AVANT le handler de l'app, et on
+     ouvre l'URL dans un nouvel onglet nous-mêmes. */
+  function blankLinks(frame) {
+    try {
+      var d = frame.contentDocument;
+      var w = frame.contentWindow;
+      if (!d || d._blankDone) return;
+      d._blankDone = true;
+      if (d.head && !d.head.querySelector("base[data-blank]")) {
+        var b = d.createElement("base");
+        b.setAttribute("target", "_blank");
+        b.setAttribute("data-blank", "");
+        d.head.appendChild(b);
+      }
+      d.addEventListener(
+        "click",
+        function (e) {
+          var a = e.target.closest ? e.target.closest("a[href]") : null;
+          if (!a || !a.href) return;
+          e.preventDefault();
+          e.stopPropagation();
+          var nw = w.open(a.href, "_blank");
+          if (nw) {
+            try {
+              nw.opener = null;
+            } catch (_) {}
+          }
+        },
+        true
+      );
+    } catch (e) {}
   }
 
   function fitFullscreen() {
@@ -115,7 +169,10 @@
     f.setAttribute("src", src.getAttribute("src"));
     if (src.getAttribute("title")) f.setAttribute("title", src.getAttribute("title"));
     f.hidden = true;
-    f.addEventListener("load", fitFullscreen);
+    f.addEventListener("load", function () {
+      blankLinks(f);
+      fitFullscreen();
+    });
     overlay.insertBefore(f, closeBtn);
     encart._lbFrame = f;
     return f;
@@ -171,11 +228,13 @@
     var frame = encart.querySelector(".encart-frame");
     if (frame) {
       frame.addEventListener("load", function () {
+        blankLinks(frame);
         fitApercu(encart);
       });
       watchHeight(frame, function () {
         fitApercu(encart);
       });
+      blankLinks(frame);
       fitApercu(encart);
     }
   });

@@ -7169,6 +7169,7 @@ footer a {
 /* mobile : le lien secondaire devient un bouton à contour, de même gabarit que le
    bouton principal (texte aligné dessus). Un seul trait ne souligne pas deux lignes. */
 @media (max-width: 600px) {
+  .fin-liens a { font-size: var(--fs-base); }
   .fin-liens a:not(.fin-primaire) {
     padding: 10px 26px;
     border: 1px solid color-mix(in srgb, var(--paper) 45%, transparent);
@@ -8938,8 +8939,9 @@ a.pi-further-link:hover,a.pi-further-link:focus-visible{ border-color:var(--cc);
   column-gap: 28px;
 }
 @media (max-width: 600px) {
-  .wrap > .hero.hero--home { padding-top: 40px; padding-bottom: 48px; }
-  .hero--home .lede { margin-bottom: 32px; }
+  .wrap > .hero.hero--home { padding-top: 6vh; padding-top: 6svh; padding-bottom: 6vh; padding-bottom: 6svh; }
+  .hero--home h1 { font-size: clamp(2.8rem, 15vw, 4.2rem); line-height: 1.02; margin-bottom: 4vh; margin-bottom: 4svh; }
+  .hero--home .lede { font-size: var(--fs-md); line-height: 1.55; margin-bottom: 4vh; margin-bottom: 4svh; }
 }
 .wrap > .hero.hero--cas {
   min-height: 0;
