@@ -29,15 +29,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 
 </head>
-<body class="has-site-nav"><nav class="site-nav" aria-label="Navigation principale">
-  <a class="site-brand" href="/"><img class="site-mark" src="assets/logo_256.png" alt=""><span class="site-name">Brann Etienne <span class="site-role">&middot; Product designer</span></span></a>
-  <div class="site-links">
-    <a href="/etudes-de-cas" data-section="cases" class="active">&Eacute;tudes de cas</a>
-    <a href="/comment-je-travaille" data-section="pratique">Comment je travaille</a>
-    <a href="/a-propos" data-section="apropos">&Agrave; propos</a>
-    <a class="site-contact" href="/contact">Contact</a>
-  </div>
-</nav>
+<body class="has-site-nav"><script src="nav.js"></script>
 <canvas id="bg" aria-hidden="true"></canvas>
 <div class="veil" aria-hidden="true"></div>
 
@@ -51,7 +43,7 @@
   <h1>Projet <em>SHIFT Prime</em></h1>
 
   <dl class="facts">
-    <div><dt>Rôle</dt><dd>Design strategist</dd></div>
+    <div><dt>Rôle</dt><dd>Product design strategist</dd></div>
     <div><dt>Client</dt><dd>Nexans</dd></div>
     <div><dt>Secteur</dt><dd>Industrie</dd></div>
     <div><dt>Date</dt><dd>2023</dd></div>
@@ -59,7 +51,7 @@
 
   <p class="question">Et si le plus grand désaccord était celui que personne n'a jamais pu avoir ?</p>
 
-  <p class="context">Nexans, leader mondial de l'industrie du câble, déploie SHIFT Prime, une plateforme de pilotage des campagnes marketing à l'échelle mondiale, construite sur Microsoft Project Accelerator. <br>Sur le papier, tout est en place. Dans les faits, l'adoption ne décolle pas et les niveaux de l'organisation ne s'alignent pas. J'interviens comme lead product designer pour refondre la plateforme et comprendre pourquoi elle ne prend pas.</p>
+  <p class="context">Nexans, leader mondial de l'industrie du câble, déploie la plateforme de SHIFT Prime, pour piloter ses campagnes marketing à l'échelle mondiale. Construite sur Microsoft Project Accelerator, <br>elle est en place sur le papier. Dans les faits, l'adoption ne décolle pas et les niveaux de l'organisation ne s'alignent pas. Product design strategist, je conduis la discovery pour comprendre pourquoi elle ne prend pas, et cadrer ce qui doit changer.</p>
 
   <p class="bascule">On m'a demandé de réparer une plateforme.<br><span>Chacun avait raison depuis là où il se tenait, et c'est exactement ce qui bloquait.</span></p>
 </section>
@@ -103,7 +95,7 @@
       <div class="num">05</div>
       <div class="txt">
         <div class="t">Une colonne vertébrale, et une trajectoire au-delà de la v1</div>
-        <div class="d">Le modèle d'offre devient la structure sur laquelle se greffent les usages émergents, le reporting, et l'extension à d'autres métiers du groupe.</div>
+        <div class="d">Le modèle d'offre devient la structure sur laquelle se greffent les usages émergents, le reporting, et l'extension à d'autres métiers du groupe. +75% d'adoption au premier trimestre.</div>
       </div>
     </a>
 
@@ -129,7 +121,7 @@
       <article class="chapter" id="c1">
         <h3>Le problème posé</h3>
         <p class="chapter-sub">Une plateforme en place, et une adoption qui ne vient pas</p>
-        <p class="quiet">Nexans déploie SHIFT Prime pour piloter ses campagnes marketing à l'échelle mondiale, une plateforme construite sur Microsoft Project Accelerator, pensée pour donner de la visibilité sur les initiatives, les budgets et les performances, depuis les équipes locales jusqu'au comité de direction.</p>
+        <p class="quiet">Nexans déploie la plateforme de SHIFT Prime pour piloter ses campagnes marketing à l'échelle mondiale, construite sur Microsoft Project Accelerator, pensée pour donner de la visibilité sur les initiatives, les budgets et les performances, depuis les équipes locales jusqu'au comité de direction.</p>
         <p class="quiet">Le constat est net : les équipes ne s'en emparent pas. Le pilotage reste flou là où la plateforme devait l'éclairer, et les niveaux de l'organisation ne s'accordent pas sur ce qu'ils regardent.</p>
         <p class="brief">Refondre la plateforme. Améliorer l'expérience. <br>Voilà ce qu'on me demandait de regarder.</p>
         <p class="quiet">Posé ainsi, c'est un problème de produit : une interface à revoir, des fonctionnalités à ajuster, une conduite du changement à muscler. On cherche du côté de l'outil, puisque c'est l'outil qui ne prend pas.</p>
@@ -174,11 +166,87 @@
 
         <div class="ba">
           <figure>
-            <div class="figure"><img src="assets/shift-hypothese.png" alt="Schéma de l'hypothèse de départ : la plateforme contient une offre et un projet, tous deux suivis d'un point d'interrogation, sans articulation définie."></div>
-            <figcaption><span class="lt">Avant</span>Les trois termes coexistent sans hiérarchie ni relation établie. Chacun place l'offre et le projet là où sa propre pratique les situe.</figcaption>
+            <div class="figure">
+              <svg viewBox="0 0 360 340" role="img" aria-label="Schéma de l'état de départ : dans la plateforme, trois projets côte à côte ; chacun contient une offre en pointillé, qui n'existe pas en tant que telle sur la plateforme ; un terme flottant, initiative, est relié en pointillé aux projets et désigne tantôt l'un, tantôt l'autre.">
+                <rect x="8" y="8" width="344" height="324" rx="14" fill="none" stroke="var(--faint)"/>
+                <text x="24" y="32" font-size="11" letter-spacing="1.5" fill="var(--muted)">PLATEFORME</text>
+
+                <rect x="124" y="46" width="112" height="30" rx="8" fill="none" stroke="var(--c4)" stroke-dasharray="4 4"/>
+                <text x="180" y="66" text-anchor="middle" font-size="12" fill="var(--c4)">Offre</text>
+                <text font-size="10" fill="var(--muted)"><tspan x="246" y="58">absente de</tspan><tspan x="246" y="71">la plateforme</tspan></text>
+                <path d="M150 76 L72 96 M180 76 L180 96 M210 76 L288 96" fill="none" stroke="var(--c4)" stroke-dasharray="3 4"/>
+
+                <g fill="var(--surface)" stroke="var(--muted)">
+                  <rect x="24" y="96" width="96" height="84" rx="8"/>
+                  <rect x="132" y="96" width="96" height="84" rx="8"/>
+                  <rect x="240" y="96" width="96" height="84" rx="8"/>
+                </g>
+                <g font-size="13" font-weight="500" fill="var(--paper)" text-anchor="middle">
+                  <text x="72" y="122">Projet</text>
+                  <text x="180" y="122">Projet</text>
+                  <text x="288" y="122">Projet</text>
+                </g>
+                <g fill="none" stroke="var(--c4)" stroke-dasharray="4 4">
+                  <rect x="40" y="138" width="64" height="26" rx="6"/>
+                  <rect x="148" y="138" width="64" height="26" rx="6"/>
+                  <rect x="256" y="138" width="64" height="26" rx="6"/>
+                </g>
+                <g font-size="10" fill="var(--c4)" text-anchor="middle">
+                  <text x="72" y="155">offre ?</text>
+                  <text x="180" y="155">offre ?</text>
+                  <text x="288" y="155">offre ?</text>
+                </g>
+
+                <path d="M132 214 L72 180 M228 214 L288 180" fill="none" stroke="var(--muted)" stroke-dasharray="3 4"/>
+                <rect x="104" y="214" width="152" height="30" rx="15" fill="none" stroke="var(--muted)" stroke-dasharray="4 4"/>
+                <text x="180" y="234" text-anchor="middle" font-size="12" fill="var(--muted2)">Initiative</text>
+                <text x="180" y="262" text-anchor="middle" font-size="10" fill="var(--muted)">tantôt l'un, tantôt l'autre</text>
+
+                <text x="180" y="304" text-anchor="middle" font-size="12" font-weight="500" fill="var(--c4)">L'offre n'existe que déguisée en projet</text>
+              </svg>
+            </div>
+            <figcaption><span class="lt">Avant</span>L'offre n'existe pas sur la plateforme&#8239;: elle n'y vit que déguisée en projet, et «&nbsp;initiative&nbsp;» désigne tantôt l'un, tantôt l'autre.</figcaption>
           </figure>
           <figure>
-            <div class="figure"><img src="assets/shift-paradigme.png" alt="Schéma du nouveau paradigme : trois cercles concentriques - la plateforme contient les projets, qui accueillent les offres."></div>
+            <div class="figure">
+              <svg viewBox="0 0 360 340" role="img" aria-label="Schéma du nouveau paradigme : dans la plateforme, l'offre, avec son cycle de vie propre, est injectée dans trois projets qui la portent ; le projet devient le véhicule de l'offre.">
+                <defs>
+                  <marker id="shift-ba-apres" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+                    <path d="M0 0 L8 4 L0 8 z" fill="var(--c2)"/>
+                  </marker>
+                </defs>
+                <rect x="8" y="8" width="344" height="324" rx="14" fill="none" stroke="var(--faint)"/>
+                <text x="24" y="32" font-size="11" letter-spacing="1.5" fill="var(--muted)">PLATEFORME</text>
+
+                <rect x="104" y="46" width="152" height="46" rx="10" fill="var(--c2)"/>
+                <text text-anchor="middle" fill="var(--ink)"><tspan x="180" y="66" font-size="14" font-weight="500">Offre</tspan><tspan x="180" y="82" font-size="10">son propre cycle de vie</tspan></text>
+
+                <g fill="none" stroke="var(--c2)" stroke-width="2">
+                  <path d="M150 92 C130 128 72 128 72 170" marker-end="url(#shift-ba-apres)"/>
+                  <path d="M180 92 L180 170" marker-end="url(#shift-ba-apres)"/>
+                  <path d="M210 92 C230 128 288 128 288 170" marker-end="url(#shift-ba-apres)"/>
+                </g>
+                <text x="192" y="136" font-size="10" fill="var(--c2)">injectée</text>
+
+                <g fill="var(--surface)" stroke="var(--c2)">
+                  <rect x="24" y="172" width="96" height="84" rx="8"/>
+                  <rect x="132" y="172" width="96" height="84" rx="8"/>
+                  <rect x="240" y="172" width="96" height="84" rx="8"/>
+                </g>
+                <g text-anchor="middle" fill="var(--paper)">
+                  <text x="72" y="208" font-size="13" font-weight="500">Projet</text>
+                  <text x="180" y="208" font-size="13" font-weight="500">Projet</text>
+                  <text x="288" y="208" font-size="13" font-weight="500">Projet</text>
+                </g>
+                <g font-size="10" fill="var(--muted2)" text-anchor="middle">
+                  <text x="72" y="228">porte l'offre</text>
+                  <text x="180" y="228">porte l'offre</text>
+                  <text x="288" y="228">porte l'offre</text>
+                </g>
+
+                <text x="180" y="304" text-anchor="middle" font-size="12" font-weight="500" fill="var(--c2)">Le projet devient le véhicule de l'offre</text>
+              </svg>
+            </div>
             <figcaption><span class="lt">Après</span>Une articulation unique, valable à tous les niveaux. La plateforme accueille les projets, les projets accueillent les offres.</figcaption>
           </figure>
         </div>
@@ -202,6 +270,63 @@
         <h3>Le champ ouvert</h3>
         <p class="chapter-sub">Une fois l'unité de pilotage changée, tout devient concevable</p>
         <p>Cette bascule n'est pas un ajustement de vocabulaire : l'offre devient la colonne vertébrale du pilotage. Dès qu'elle est posée, cinq chantiers s'ouvrent en même temps alors qu'aucun n'était formulable tant que chacun pilotait depuis sa propre définition.</p>
+        <p class="pull pull--grand">«&nbsp;Passage d'un pilotage &ldquo;Projet&rdquo; à un pilotage &ldquo;Offre&rdquo;&#8239;: harmonisation globale de la gouvernance des campagnes et de la gestion de portefeuille d'offres pour éviter le morcellement régional.&nbsp;»</p>
+        <p class="figcap">Formulation de Nexans.</p>
+        <div class="ba">
+          <figure>
+            <div class="figure">
+              <svg viewBox="0 0 360 290" role="img" aria-label="Schéma de l'approche actuelle, centrée sur le projet : huit projets dispersés, pilotés un par un, dont trois portent une initiative locale qui contourne l'offre globale.">
+                <text x="8" y="22" font-size="13" letter-spacing="1.5" fill="var(--muted)">PROJECT-CENTRIC</text>
+                <g fill="var(--surface)" stroke="var(--muted)" stroke-width="1.5">
+                  <circle cx="50" cy="80" r="9"/>
+                  <circle cx="120" cy="62" r="9"/>
+                  <circle cx="196" cy="92" r="9"/>
+                  <circle cx="284" cy="66" r="9"/>
+                  <circle cx="76" cy="136" r="9"/>
+                  <circle cx="166" cy="156" r="9"/>
+                  <circle cx="250" cy="130" r="9"/>
+                  <circle cx="306" cy="184" r="9"/>
+                </g>
+                <g fill="none" stroke="var(--c4)" stroke-dasharray="4 4">
+                  <circle cx="120" cy="62" r="18"/>
+                  <circle cx="76" cy="136" r="18"/>
+                  <circle cx="250" cy="130" r="18"/>
+                </g>
+                <text x="8" y="240" font-size="16" font-weight="500" fill="var(--paper)">On pilote chaque projet, un par un</text>
+                <text x="8" y="264" font-size="12" fill="var(--c4)">des initiatives locales contournent l'offre globale</text>
+              </svg>
+            </div>
+            <figcaption><span class="lt">Aujourd'hui</span>Une approche centrée sur le projet&#8239;: chacun est piloté seul, et des initiatives locales contournent l'offre globale.</figcaption>
+          </figure>
+          <figure>
+            <div class="figure">
+              <svg viewBox="0 0 360 290" role="img" aria-label="Schéma de l'approche cible, centrée sur l'offre : trois offres, chacune portant plusieurs projets, et une initiative locale qui s'adosse à l'une d'elles.">
+                <text x="8" y="22" font-size="13" letter-spacing="1.5" fill="var(--c2)">OFFER-CENTRIC</text>
+                <g fill="none" stroke="var(--c2)" stroke-width="2">
+                  <circle cx="90" cy="92" r="40"/>
+                  <circle cx="190" cy="140" r="40"/>
+                  <circle cx="284" cy="82" r="40"/>
+                </g>
+                <g fill="var(--c2)">
+                  <circle cx="78" cy="84" r="7"/>
+                  <circle cx="104" cy="102" r="7"/>
+                  <circle cx="176" cy="132" r="7"/>
+                  <circle cx="202" cy="150" r="7"/>
+                  <circle cx="180" cy="158" r="7"/>
+                  <circle cx="270" cy="74" r="7"/>
+                  <circle cx="296" cy="92" r="7"/>
+                </g>
+                <path d="M84 132 L74 164" fill="none" stroke="var(--c4)" stroke-dasharray="3 4"/>
+                <circle cx="70" cy="176" r="9" fill="none" stroke="var(--c4)" stroke-dasharray="4 4"/>
+                <text x="86" y="198" font-size="12" fill="var(--c4)">s'adosse à l'offre</text>
+                <text x="8" y="240" font-size="16" font-weight="500" fill="var(--paper)">On pilote l'offre, les projets suivent</text>
+                <text x="8" y="264" font-size="12" fill="var(--c2)">condition&#8239;: un Pareto de l'offre</text>
+              </svg>
+            </div>
+            <figcaption><span class="lt">Demain</span>Une approche centrée sur l'offre&#8239;: l'unité de pilotage change, et les initiatives locales s'y adossent au lieu de la contourner.</figcaption>
+          </figure>
+        </div>
+        <h4>Cinq chantiers que cette bascule rend possibles</h4>
         <div class="nodes">
           <div class="node"><div class="n">01</div><h4>Un focus sur l'offre</h4><p>Un template par offre globale pour faciliter sa duplication dans les business units, un système de tags pour la granularité, et des initiatives locales qui s'adossent à l'offre globale plutôt que de la contourner.</p></div>
           <div class="node"><div class="n">02</div><h4>Un meilleur suivi de projet</h4><p>Une vue claire sur les étapes, du market sizing au scale-up. Des tâches simplifiées, des alertes sur les risques et les prévisions, des notifications qui déclenchent l'action.</p></div>
@@ -226,13 +351,81 @@
 
       <article class="chapter" id="c7">
         <h3>Résultats</h3>
-        <h4>Ce que le programme a produit</h4>
-        <p>Résultats publiés par Nexans pour le programme SHIFT, dont SHIFT Prime est l'un des deux axes&#8239;:</p>
-        <div class="metrics big">
-          <div class="metric"><div class="v">+20 M€</div><div class="l">d'EBITDA additionnel sur les solutions à valeur ajoutée (SHIFT Prime)</div></div>
-          <div class="metric"><div class="v">−40%</div><div class="l">de besoin en fonds de roulement (programme SHIFT)</div></div>
+        <h4>Ce que la refonte a produit</h4>
+        <p>L'adoption se joue en bas de la chaîne. Les Project Managers et les Program Owners, les Shift Leaders, sont ceux qui font vivre la plateforme au quotidien&#8239;: c'est chez eux que l'effet se mesure.</p>
+        <div class="metrics">
+          <div class="metric"><div class="v">+75%</div><div class="l">d'adoption sur le premier trimestre après le lancement de la V1</div></div>
+          <div class="metric"><div class="v">8 h</div><div class="l">économisées par semaine et par équipe, en moyenne</div></div>
+          <div class="metric"><div class="v">+20%</div><div class="l">de ROI sur les campagnes marketing pilotées depuis la plateforme</div></div>
         </div>
-        <p class="figcap">Sources&#8239;: nexans.com, «&nbsp;Notre parcours de transformation&nbsp;»&#8239;; Boursier.com, 15 février 2024.</p>
+        <p>Avant, une partie des usages vivait ailleurs&#8239;: fichiers Excel, outils tiers, ce qu'on appelle du shadow IT. Les équipes notaient leur engagement 2 sur 5 sur la plateforme, contre 4 sur 5 en dehors. La v1 a été conçue pour rapatrier ces usages&#8239;: documents, notifications, templates et suivi vivent dans l'outil. Les usages se concentrent désormais à l'intérieur, et le shadow IT perd sa raison d'être.</p>
+
+        <h4>Ce que le programme a produit</h4>
+        <p>Chiffres publiés par Nexans, dont SHIFT Prime est l'un des deux axes du programme SHIFT&#8239;:</p>
+        <div class="metrics big">
+          <div class="metric"><div class="v">+36 M€</div><div class="l">d'EBITDA au premier semestre 2023, avec les programmes SHIFT Prime et Amplify</div></div>
+          <div class="metric"><div class="v">+20 M€</div><div class="l">d'EBITDA additionnel sur les solutions à valeur ajoutée (SHIFT Prime)</div></div>
+        </div>
+        <p class="figcap">Sources&#8239;: nexans.com, «&nbsp;Notre parcours de transformation&nbsp;»&#8239;; communiqué des résultats du premier semestre 2023, Nexans, 26 juillet 2023&#8239;; Boursier.com, 15 février 2024.</p>
+      </article>
+
+      <article class="chapter" id="c8">
+        <h3>Le chemin parcouru</h3>
+        <p class="chapter-sub">Vingt-trois étapes, quatre mouvements, un fil</p>
+        <p>Chaque étape s'ouvre sur un constat et se ferme sur la question que la suivante prend en charge. De l'écoute à la roadmap&#8239;:</p>
+        <div class="legend">
+          <div><span class="lt">1 · Écouter</span><p>Kick-off, atelier 360, sondage, interviews. Chaque niveau décrit un problème différent.</p></div>
+          <div><span class="lt">2 · Cartographier</span><p>L'organisation, ses deux zones, ses mots qui flottent. On cherche d'où chacun regarde.</p></div>
+          <div><span class="lt">3 · Nommer</span><p>Projet, offre, initiative&#8239;: une règle de définition, un nouveau paradigme, une phrase pour convaincre.</p></div>
+          <div><span class="lt">4 · Ouvrir et cadrer</span><p>L'offre au centre, tout devient priorisable et livrable&#8239;: cinq axes, une matrice d'impact, un delivery, des user stories.</p></div>
+        </div>
+        <div class="figure">
+          <img src="assets/shift-atelier-360.png" alt="Gabarit de l'atelier 360 sur le thème User commitment : quatre cases, ce qui se passe (faible engagement sur la plateforme malgré le besoin), pourquoi (manque de formation, règles qui changent, barrière de la langue, vocabulaire inintelligible, outil trop compliqué), ce qu'il faut accomplir (les utilisateurs veulent organiser leurs tâches et être autonomes) et les idées de réponse (tutoriels, documentation, notifications, formations).">
+        </div>
+        <p class="figcap">L'atelier 360 avec la Product Owner&#8239;: quatorze thèmes qualifiés dans un même gabarit, ici «&nbsp;User commitment&nbsp;».</p>
+
+        <details class="etapes">
+          <summary>Les vingt-trois étapes, une par une</summary>
+
+          <p class="mv">1 · Écouter</p>
+          <ol>
+            <li><strong>Kick-off avec l'équipe projet</strong>La plateforme peine à être adoptée par les PM et les PO sur plusieurs continents, et le client veut comprendre comment améliorer l'engagement et aider les exécutifs à décider.<span class="suite">Ensuite&#8239;: approfondir avec la Product Owner et établir une stratégie de recherche.</span></li>
+            <li><strong>Stratégie de discovery</strong>L'environnement est plus vaste que prévu, avec l'intuition qu'on oublie vite la big picture en se concentrant sur les équipes opérationnelles.<span class="suite">Ensuite&#8239;: interviews à différents niveaux, atelier avec la Product Owner, sondage auprès des utilisateurs.</span></li>
+            <li><strong>Atelier 360 avec la Product Owner</strong>Quatorze thèmes, de l'engagement des utilisateurs à la qualité des données, qualifiés dans un gabarit commun. Le focus est sur les utilisateurs, la vision globale reste à construire.<span class="suite">Ensuite&#8239;: un guide d'entretien pour interviewer les personnes pertinentes.</span></li>
+            <li><strong>Sondage auprès des utilisateurs</strong>De gros écarts d'alignement entre l'exécutif et les équipes de terrain, un sentiment d'isolement, un besoin de soutien qui émerge nettement.<span class="suite">Ensuite&#8239;: un guide d'entretien pour approfondir avec les Program Owners et les Project Managers.</span></li>
+            <li><strong>Interviews des PO et PM du programme</strong>Quatre interviews, au Chili, au Liban, au Pérou et en Australie. De nouveaux acteurs apparaissent (Marketing, Finance, Design Labs), des process sont inadaptés à l'outil, et des usages vivent hors de la plateforme.<span class="suite">Ensuite&#8239;: échanger avec ces services et analyser le process d'un projet.</span></li>
+            <li><strong>Audit du processus de création d'offres</strong>Co-conçu avec la Product Owner. Des incompréhensions sémantiques récurrentes sur l'articulation entre projet et offre, et une participation plurielle des acteurs.<span class="suite">Ensuite&#8239;: continuer avec les services stratégiques.</span></li>
+            <li><strong>Interview de la Direction</strong>Leur vision&#8239;: la plateforme est la principale responsable des problèmes. Leurs besoins&#8239;: une vision macro, suivre l'avancée d'un coup d'œil, valider ou annuler sur des données concrètes.<span class="suite">Ensuite&#8239;: parler aux acteurs restants du projet.</span></li>
+          </ol>
+
+          <p class="mv">2 · Cartographier</p>
+          <ol>
+            <li><strong>Point de réflexion</strong>Un manque de vision globale, une rupture entre l'EXCOM et la base, un savoir dispersé hors de la plateforme, des termes flous malgré leur importance&#8239;: projet, offre, initiative.<span class="suite">Ensuite&#8239;: cartographier les acteurs et s'interroger sur le sens des termes.</span></li>
+            <li><strong>Cartographie de l'organisation</strong>Co-conçue avec la Product Owner. Les interactions se font avec les niveaux directs, et deux zones apparaissent&#8239;: décision et arbitrage, action.<span class="suite">Ensuite&#8239;: valider le rôle des services restants.</span></li>
+            <li><strong>Première réflexion sur le vocabulaire</strong>Projet, offre et initiative sont employés tour à tour, sans jamais exprimer une idée nouvelle.<span class="suite">Ensuite&#8239;: recueillir les définitions de chaque service et les confronter.</span></li>
+            <li><strong>Interviews du deuxième round</strong>Design Labs, Finance et Marketing. Chaque service a des besoins précis, et ce sont eux qui détiennent la connaissance pour faire évoluer la plateforme.<span class="suite">Ensuite&#8239;: compléter la cartographie.</span></li>
+            <li><strong>Audit de la plateforme</strong>Les fonctionnalités se sont ajoutées les unes après les autres, la base de données est fragile, les informations statiques et dynamiques ne sont pas distinguées, et le terme «&nbsp;offre&nbsp;» n'apparaît nulle part.</li>
+            <li><strong>Cartographie augmentée</strong>Les nouveaux services interviennent à beaucoup d'endroits des projets. Ils sont le lieu d'adhérence entre la tête et les jambes du programme.<span class="suite">Ensuite&#8239;: poursuivre la réflexion sur le vocabulaire.</span></li>
+          </ol>
+
+          <p class="mv">3 · Nommer</p>
+          <ol>
+            <li><strong>Réflexions finales sur le vocabulaire</strong>Les définitions sont le principal terrain de dissonance. Règle retenue&#8239;: la définition d'un terme revient à l'entité qui en est la garante.<span class="suite">Ensuite&#8239;: intégrer ces conclusions, la pièce manquante aux ambitions du programme.</span></li>
+            <li><strong>Achèvement de la big picture</strong>Beaucoup d'améliorations dépendent de fonctionnalités ou d'un travail d'architecture de l'information. Le problème le plus important est l'absence des offres sur la plateforme.<span class="suite">Ensuite&#8239;: partir de l'hypothèse que les offres sont intégrées, et trouver où, quand et comment les afficher.</span></li>
+            <li><strong>Un nouveau paradigme</strong>Une offre encapsulée dans tous les projets&#8239;: plus de simplicité d'accès, des règles harmonisées entre offre et projet, un template de process, un meilleur suivi.<span class="suite">Ensuite&#8239;: itérer pour compléter le design de la plateforme.</span></li>
+            <li><strong>Une bonne accroche pour convaincre</strong>Valoriser et harmoniser&#8239;: le projet devient le véhicule de valorisation de l'offre. Une phrase percutante pour onboarder les décideurs.<span class="suite">Ensuite&#8239;: continuer à itérer.</span></li>
+          </ol>
+
+          <p class="mv">4 · Ouvrir et cadrer</p>
+          <ol>
+            <li><strong>Traitement des thèmes satellites</strong>Quatre questions à traiter&#8239;: gérer les projets, centraliser les usages, rendre les actions signifiantes et sécurisées, faciliter l'utilisation. La boîte à idées, créée dès le début, rend la tâche adressable.<span class="suite">Ensuite&#8239;: présenter les améliorations séparées par thème.</span></li>
+            <li><strong>Les cinq axes d'amélioration</strong>Un focus sur l'offre, un meilleur suivi de projet, une centralisation de l'information, responsabilité et sécurité, onboarding et usages.<span class="suite">Ensuite&#8239;: une matrice d'impact pour prioriser.</span></li>
+            <li><strong>Prioriser les chantiers</strong>Une matrice d'impact, réalisée en atelier de co-conception avec la Product Owner.<span class="suite">Ensuite&#8239;: détailler les étapes du delivery et rédiger les user stories.</span></li>
+            <li><strong>Expliquer le delivery</strong>Une itération en sept étapes, pour rassurer le client&#8239;: prérequis, atelier de co-construction, implémentation, test interne, démo, recette externe, correction.</li>
+            <li><strong>Rédaction des user stories de la v1</strong>Un tableau par thématique, avec ses epics et ses features, pour que le client voie concrètement le travail à effectuer.</li>
+            <li><strong>Roadmap discovery</strong>Six temps au-delà de la v1&#8239;: le comportement des équipes, le suivi Power BI, la cascade du modèle d'offre, les usages émergents, l'enrichissement de la vision, l'extension à d'autres métiers.</li>
+          </ol>
+        </details>
       </article>
 
       <article class="chapter" id="c6">
@@ -253,6 +446,7 @@
       <a href="#c4"><span class="dot"></span>Le champ ouvert</a>
       <a href="#c5"><span class="dot"></span>La trajectoire</a>
       <a href="#c7"><span class="dot"></span>Résultats</a>
+      <a href="#c8"><span class="dot"></span>Le chemin parcouru</a>
       <a href="#c6"><span class="dot"></span>Ma pratique ?</a>
     </nav>
 

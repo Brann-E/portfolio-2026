@@ -1503,6 +1503,79 @@ h3,
   padding-left: 26px;
   border-left: 2px solid var(--accent);
 }
+/* citation maîtresse du chapitre : même assertion, en grand */
+.pull--grand {
+  font-size: var(--fs-title-m);
+  line-height: 1.25;
+  max-width: 34ch;
+  margin: 64px 0 20px;
+  border-left-width: 4px;
+}
+/* déroulé d'une mission : bloc repliable, une étape par ligne */
+.etapes {
+  margin-top: 36px;
+  border-top: 1px solid var(--faint);
+  counter-reset: etape;
+}
+.etapes > summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 20px 0;
+  font-family: var(--ff-serif);
+  font-style: italic;
+  font-size: var(--fs-xl);
+  color: var(--accent);
+}
+.etapes > summary::-webkit-details-marker {
+  display: none;
+}
+.etapes > summary::after {
+  content: " +";
+}
+.etapes[open] > summary::after {
+  content: " −";
+}
+.etapes .mv {
+  font-size: var(--fs-xs);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 500;
+  margin: 32px 0 8px;
+}
+.etapes ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.etapes li {
+  counter-increment: etape;
+  position: relative;
+  padding: 16px 0 16px 3em;
+  border-top: 1px solid var(--faint);
+  font-size: var(--fs-base);
+  line-height: 1.65;
+  color: var(--muted2);
+}
+.etapes li::before {
+  content: counter(etape, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  font-family: var(--ff-serif);
+  color: var(--accent);
+}
+.etapes li strong {
+  display: block;
+  font-weight: 500;
+  color: var(--paper);
+  margin-bottom: 4px;
+}
+.etapes .suite {
+  display: block;
+  margin-top: 8px;
+  font-size: var(--fs-sm);
+  color: var(--accent);
+}
 .figure {
   margin: 44px 0 16px;
   //**background: var(--paper);**//
@@ -1551,7 +1624,7 @@ h3,
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: clamp(24px, 4vw, 48px);
-  margin-top: 8px;
+  margin: 20px 0;
 }
 .legend > div {
   border-left: 2px solid var(--accent);
@@ -7030,6 +7103,7 @@ footer a {
 .portrait-me {
   flex: none;
   width: clamp(120px, 20vw, 168px);
+  height: auto;
   aspect-ratio: 1;
   border-radius: 50%;
   object-fit: cover;
@@ -9926,4 +10000,28 @@ body.bilan-lock { overflow: hidden; }
   z-index: 121;
   background: color-mix(in srgb, var(--ink) 72%, transparent);
   backdrop-filter: blur(4px);
+}
+
+/* ============ B.I SOLUTION : GALERIE DES PAGES ============ */
+.bi-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: clamp(16px, 2.4vw, 28px);
+  margin: 44px 0 16px;
+}
+.bi-gallery .figure {
+  margin: 0;
+  padding: 0;
+}
+.bi-gallery .fig-btn img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: top;
+}
+.bi-gallery .figure span {
+  display: block;
+  margin-top: 10px;
+  font-size: var(--fs-sm);
+  color: var(--muted);
 }
