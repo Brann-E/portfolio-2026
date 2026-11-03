@@ -26,14 +26,14 @@ if page in ("menu", "card", "fiche"):
     out = im.crop((0, 0, w2, min(h, bottom + pad)))
 else:
     out = im.crop((0, 0, w, bottom))
-# sans perte, sauf si le fichier dépasse 150 Ko (au-delà, certains téléchargements locaux sont coupés)
-buf = io.BytesIO()
-out.save(buf, "WEBP", lossless=True, method=6)
-if buf.tell() > 150 * 1024:
-    buf = io.BytesIO()
-    out.save(buf, "WEBP", quality=92, method=6)
+# on garde le plus léger entre sans perte et avec perte (au-delà de ~190 Ko, certains téléchargements locaux sont coupés)
+lossless = io.BytesIO()
+out.save(lossless, "WEBP", lossless=True, method=6)
+lossy = io.BytesIO()
+out.save(lossy, "WEBP", quality=88, method=6)
+buf = lossless if lossless.tell() <= lossy.tell() else lossy
 open(dst, "wb").write(buf.getvalue())
-print(dst, out.size, buf.tell() // 1024, "KB")
+print(dst, out.size, len(buf.getvalue()) // 1024, "KB")
 PYEOF
   [ -n "$KEEP" ] || rm -f "$tmp"
 done

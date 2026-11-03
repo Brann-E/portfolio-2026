@@ -16,7 +16,7 @@
   "use strict";
 
   var HTML = `<nav class="site-nav" aria-label="Navigation principale">
-  <a class="site-brand" href="/"><img class="site-mark" src="assets/logo_256.png" alt=""><span class="site-name">Brann Etienne <span class="site-role">&middot; Product design strategist</span></span></a>
+  <a class="site-brand" href="/"><img class="site-mark" src="assets/logo_256.png" alt=""><span class="site-name">Brann Etienne &nbsp;<span class="site-role"> Product design strategist</span></span></a>
   <div class="site-links">
     <a href="/etudes-de-cas" data-section="cases">&Eacute;tudes de cas</a>
     <a href="/comment-je-travaille" data-section="pratique">Comment je travaille</a>

@@ -1944,7 +1944,8 @@ header .sub {
   margin-bottom: clamp(16px, 2.4vh, 26px);
   transition: color 0.5s ease;
 }
-.case:hover .q {
+.case:hover .q,
+.carte:hover .q {
   color: var(--accent);
 }
 
@@ -1961,7 +1962,8 @@ header .sub {
   color: var(--muted2);
   transition: color 0.5s ease;
 }
-.case:hover .rel {
+.case:hover .rel,
+.carte:hover .rel {
   color: var(--paper);
 }
 .term {
@@ -1988,7 +1990,8 @@ header .sub {
   transform-origin: left center;
   transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
-.case:hover .tie::after {
+.case:hover .tie::after,
+.carte:hover .tie::after {
   transform: scaleX(1);
 }
 .tie::before {
@@ -2002,7 +2005,8 @@ header .sub {
   background: var(--faint);
   transition: background 0.5s ease 0.1s;
 }
-.case:hover .tie::before {
+.case:hover .tie::before,
+.carte:hover .tie::before {
   background: var(--accent);
 }
 .dot-end {
@@ -2015,7 +2019,8 @@ header .sub {
   background: var(--faint);
   transition: background 0.4s ease;
 }
-.case:hover .dot-end {
+.case:hover .dot-end,
+.carte:hover .dot-end {
   background: var(--accent);
   transition-delay: 0.55s;
 }
@@ -2045,6 +2050,88 @@ header .sub {
 }
 .case.soon .meta {
   color: var(--faint);
+}
+
+/* ---------- cartes : deux par ligne, la question en titre, le visuel dessous ---------- */
+.cartes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+  gap: clamp(40px, 6vw, 80px);
+}
+.carte {
+  display: block;
+  color: inherit;
+}
+.carte-face {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  background: var(--ink);
+  padding: clamp(22px, 2.6vw, 36px) clamp(22px, 2.6vw, 36px) 0;
+  box-shadow: 0 0 0 0 transparent;
+  transition: box-shadow 0.6s ease, transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+/* le glow vit à l'extérieur de la carte, avec un soulèvement à peine perceptible */
+.carte:hover .carte-face {
+  box-shadow: 0 0 48px 2px color-mix(in srgb, var(--accent) 40%, transparent);
+  transform: translateY(-2px);
+}
+.carte .q {
+  color: var(--paper);
+  max-width: none;
+}
+.carte .rel {
+  font-size: var(--fs-xl);
+  margin-bottom: clamp(18px, 2.6vh, 28px);
+}
+.carte .term {
+  white-space: normal;
+}
+.carte .tie {
+  width: clamp(28px, 4vw, 56px);
+}
+/* le visuel : cadré sur ce qui se lit, pas sur toute la planche */
+.carte-visuel {
+  margin: auto calc(-1 * clamp(22px, 2.6vw, 36px)) 0;
+  aspect-ratio: 9 / 8;
+  overflow: hidden;
+  background: var(--paper);
+}
+.carte-visuel img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--fx, 50%) var(--fy, 50%);
+  transform: scale(var(--z, 1));
+  transform-origin: var(--fx, 50%) var(--fy, 50%);
+}
+/* visuel en 3D : le fond porte la couleur du cas, l'image ne sert que de repli */
+.carte-visuel[data-scene] {
+  position: relative;
+  color: var(--accent);
+  background: radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--accent) 38%, var(--ink)) 0%, color-mix(in srgb, var(--accent) 14%, var(--ink)) 100%);
+}
+/* le canevas est posé sur la zone, hors du flux : c'est la zone qui lui donne sa taille, jamais l'inverse
+   (sinon sa taille de dessin, mesurée par la zone, la fait grandir sans fin) */
+.carte-visuel canvas {
+  display: none;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.carte-visuel.is-3d canvas {
+  display: block;
+}
+.carte-visuel.is-3d img {
+  display: none;
+}
+.carte .meta {
+  margin: 0 0 clamp(14px, 2vh, 22px);
 }
 
 /* apparition */
@@ -5458,7 +5545,7 @@ a.cta-serie:focus-visible {
 /* liens "composants" (nav, cartes, boutons, footer, CTA) : jamais soulignés.
    Préfixe a. pour égaler la spécificité de a:link et gagner par l'ordre. */
 a.site-brand, a.site-pill, a.site-contact,
-a.proof-link, a.row, a.case, a.expl-card, a.cta-serie, a.fin-primaire, a.fin-secondaire,
+a.proof-link, a.row, a.case, a.carte, a.expl-card, a.cta-serie, a.fin-primaire, a.fin-secondaire,
 a.prelim-go, a.porte, a.porte-seuil, a.porte-geste, a.porte-source,
 a.station, a.serie-article, a.don-lien, a.don-more,
 a.pi-exit, a.pi-back,
@@ -6385,6 +6472,31 @@ footer a {
 }
 .ft-col a:hover {
   color: var(--paper);
+}
+/* pastille de la couleur du cas, devant chaque mission */
+.ft-dot {
+  flex: none;
+  align-self: center;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--dot);
+  transition: box-shadow 0.3s ease;
+}
+.ft-cas--c1 { --dot: var(--c1); }
+.ft-cas--c2 { --dot: var(--c2); }
+.ft-cas--c3 { --dot: var(--c3); }
+.ft-cas--c4 { --dot: var(--c4); }
+.ft-cas--c5 { --dot: var(--c5); }
+/* survol : le cas prend la couleur de sa pastille, avec un léger glow */
+.ft-col a.ft-cas:hover,
+.ft-col a.ft-cas:focus-visible {
+  color: var(--dot);
+  text-shadow: 0 0 8px color-mix(in srgb, var(--dot) 35%, transparent);
+}
+.ft-col a.ft-cas:hover .ft-dot,
+.ft-col a.ft-cas:focus-visible .ft-dot {
+  box-shadow: 0 0 6px var(--dot);
 }
 .ft-col .ft-tag {
   font-size: var(--fs-xs);

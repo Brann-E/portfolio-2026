@@ -20,8 +20,8 @@
           <img src="assets/logo_256.png" alt="" aria-hidden="true">
           <div>
             <div class="ft-ligne">
-              <div class="ft-name">Brann Etienne </div>
-              <div class="ft-role2"><em>Product design strategist</em></div>
+              <div class="ft-name">Brann Etienne</div>
+              <div class="ft-role2">Product design strategist</div>
             </div>
             <div class="ft-role3">12 ans de produit, de design, et de stratégie<br>dans des environnements complexes.</div>
           </div>
@@ -43,11 +43,11 @@
         <div class="ft-col">
           <div class="ft-h">Missions</div>
           <ul>
-            <li><a href="/cas-healthanea">Healthanea</a></li>
-            <li><a href="/cas-shift-prime">SHIFT Prime</a></li>
-            <li><a href="/cas-bi-solution">B.I Solution</a></li>
-            <li><a href="/cas-proshop">Proshop &amp; Beyond</a></li>
-            <li><a href="/cas-chalon-dans-la-rue">Chalon dans la rue</a></li>
+            <li><a class="ft-cas ft-cas--c1" href="/cas-healthanea"><i class="ft-dot" aria-hidden="true"></i>Healthanea</a></li>
+            <li><a class="ft-cas ft-cas--c2" href="/cas-shift-prime"><i class="ft-dot" aria-hidden="true"></i>SHIFT Prime</a></li>
+            <li><a class="ft-cas ft-cas--c4" href="/cas-bi-solution"><i class="ft-dot" aria-hidden="true"></i>B.I Solution</a></li>
+            <li><a class="ft-cas ft-cas--c3" href="/cas-proshop"><i class="ft-dot" aria-hidden="true"></i>Proshop &amp; Beyond</a></li>
+            <li><a class="ft-cas ft-cas--c5" href="/cas-chalon-dans-la-rue"><i class="ft-dot" aria-hidden="true"></i>Chalon dans la rue</a></li>
           </ul>
           <a class="ft-more" href="/etudes-de-cas">Toutes les &eacute;tudes de cas</a>
         </div>

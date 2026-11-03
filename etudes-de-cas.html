@@ -22,22 +22,14 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 
 </head>
-<body class="has-site-nav"><nav class="site-nav" aria-label="Navigation principale">
-  <a class="site-brand" href="/"><img class="site-mark" src="assets/logo_256.png" alt=""><span class="site-name">Brann Etienne <span class="site-role">&middot; Product designer</span></span></a>
-  <div class="site-links">
-    <a href="/etudes-de-cas" data-section="cases" class="active">&Eacute;tudes de cas</a>
-    <a href="/comment-je-travaille" data-section="pratique">Comment je travaille</a>
-    <a href="/a-propos" data-section="apropos">&Agrave; propos</a>
-    <a class="site-contact" href="/contact">Contact</a>
-  </div>
-</nav>
+<body class="has-site-nav"><script src="nav.js"></script>
 <canvas id="bg" aria-hidden="true"></canvas>
 <div class="veil" aria-hidden="true"></div>
 
@@ -45,58 +37,73 @@
 
   <section class="hero hero--cas">
     <h1>Cinq projets,<br>un <em>même regard.</em></h1>
-    <p class="lede">Derrière chaque demande initiale se cache la vraie complexité du terrain. Les études de cas retracent ces chemins : le point de départ, l'immersion, les dispositifs créés, ce qui a chnage et ce que l'organisation et moi en gardons.</p>
+    <p class="lede">Derrière chaque demande initiale se cache la vraie complexité du terrain. Les études de cas retracent ces chemins, ces reconnexions : le point de départ, l'immersion, les dispositifs créés, ce qui a changé et ce que l'organisation et moi en gardons.</p>
   </section>
 
-  <div class="cases">
-    <a class="case rv" href="/cas-healthanea" style="--accent:var(--c1)">
-      <div class="q">Et si la meilleure façon de soigner,<br>c'était de mieux relier&#8239;?</div>
-      <div class="rel">
-        <span class="term">Un patient</span>
-        <span class="tie"><span class="dot-end"></span></span>
-        <span class="term">tout ce qui l'entoure</span>
+  <div class="cartes">
+    <a class="carte rv" href="/cas-healthanea" style="--accent:var(--c1)">
+      <div class="carte-face">
+        <div class="meta"><b>Healthanea</b> · Santé · 2024</div>
+        <div class="q">Et si la meilleure façon de soigner,<br>c'était de mieux relier&#8239;?</div>
+        <div class="rel">
+          <span class="term">Un patient</span>
+          <span class="tie"><span class="dot-end"></span></span>
+          <span class="term">tout ce qui l'entoure</span>
+        </div>
+        <div class="carte-visuel" data-scene="healthanea"><canvas aria-hidden="true"></canvas><img src="assets/ecosystem-map.png" width="1250" height="1340" alt="Carte de l'écosystème Healthanea : le patient, l'application et les acteurs qui l'entourent, reliés par des flux d'argent, de biens et de données" loading="lazy"></div>
       </div>
-      <div class="meta"><b>Healthanea</b> · Santé · 2024</div>
     </a>
 
-    <a class="case rv" href="/cas-shift-prime" style="--accent:var(--c2)">
-      <div class="q">Et si le plus grand désaccord était celui<br>que personne n'a jamais pu avoir&#8239;?</div>
-      <div class="rel">
-        <span class="term">Un comité exécutif</span>
-        <span class="tie"><span class="dot-end"></span></span>
-        <span class="term">ses équipes, six étages plus bas</span>
+    <a class="carte rv" href="/cas-shift-prime" style="--accent:var(--c2)">
+      <div class="carte-face">
+        <div class="meta"><b>SHIFT Prime</b> · Industrie · 2023</div>
+        <div class="q">Et si le plus grand désaccord était celui<br>que personne n'a jamais pu avoir&#8239;?</div>
+        <div class="rel">
+          <span class="term">Un comité exécutif</span>
+          <span class="tie"><span class="dot-end"></span></span>
+          <span class="term">ses équipes, six étages plus bas</span>
+        </div>
+        <div class="carte-visuel" data-scene="shift"><canvas aria-hidden="true"></canvas><img src="assets/shift-pyramide.png" width="940" height="790" alt="Pyramide organisationnelle SHIFT Prime : six niveaux du CEO aux team members, séparés par une ligne entre décision et action" loading="lazy"></div>
       </div>
-      <div class="meta"><b>SHIFT Prime</b> · Industrie · 2023</div>
     </a>
 
-    <a class="case rv" href="/cas-bi-solution" style="--accent:var(--c4)">
-      <div class="q">Et si le problème n'était pas les données,<br>mais ce qu'on cherchait à leur faire dire&#8239;?</div>
-      <div class="rel">
-        <span class="term">Une donnée</span>
-        <span class="tie"><span class="dot-end"></span></span>
-        <span class="term">la décision qu'elle doit éclairer</span>
+    <a class="carte rv" href="/cas-bi-solution" style="--accent:var(--c4)">
+      <div class="carte-face">
+        <div class="meta"><b>B.I Solution</b> · Data · 2023</div>
+        <div class="q">Et si le problème n'était pas les données,<br>mais ce qu'on cherchait à leur faire dire&#8239;?</div>
+        <div class="rel">
+          <span class="term">Une donnée</span>
+          <span class="tie"><span class="dot-end"></span></span>
+          <span class="term">la décision qu'elle doit éclairer</span>
+        </div>
+        <div class="carte-visuel" data-scene="bi"><canvas aria-hidden="true"></canvas><img src="assets/bi-solution/excel-3.jpg" width="900" height="578" alt="L'ancien fichier Excel de pilotage commercial, volontairement flouté : un tableau dense de chiffres mensuels et un graphique" loading="lazy"></div>
       </div>
-      <div class="meta"><b>B.I Solution</b> · Data · 2023</div>
     </a>
 
-    <a class="case rv" href="/cas-proshop" style="--accent:var(--c3)">
-      <div class="q">Et si le meilleur outil de vente<br>était celui qui ne remplace personne&#8239;?</div>
-      <div class="rel">
-        <span class="term">Un commercial</span>
-        <span class="tie"><span class="dot-end"></span></span>
-        <span class="term">le client qu'il connaît par cœur</span>
+    <a class="carte rv" href="/cas-proshop" style="--accent:var(--c3)">
+      <div class="carte-face">
+        <div class="meta"><b>Proshop &amp; Beyond</b> · Commerce · 2022</div>
+        <div class="q">Et si le meilleur outil de vente<br>était celui qui ne remplace personne&#8239;?</div>
+        <div class="rel">
+          <span class="term">Un commercial</span>
+          <span class="tie"><span class="dot-end"></span></span>
+          <span class="term">le client qu'il connaît par cœur</span>
+        </div>
+        <div class="carte-visuel" data-scene="proshop" style="--z:2;--fx:78%;--fy:24%"><canvas aria-hidden="true"></canvas><img src="assets/proshop-vp.png" width="1922" height="1932" alt="Value Proposition Canvas à double profil : le commercial et le client, leurs gains, leurs pains et leurs tâches à accomplir" loading="lazy"></div>
       </div>
-      <div class="meta"><b>Proshop &amp; Beyond</b> · Commerce · 2022</div>
     </a>
 
-    <a class="case rv" href="/cas-chalon-dans-la-rue" style="--accent:var(--c5)">
-      <div class="q">Et si l'application d'un festival<br>servait aussi ceux qui le jouent&#8239;?</div>
-      <div class="rel">
-        <span class="term">Un festivalier</span>
-        <span class="tie"><span class="dot-end"></span></span>
-        <span class="term">la compagnie qu'il n'aurait pas trouvée</span>
+    <a class="carte rv" href="/cas-chalon-dans-la-rue" style="--accent:var(--c5)">
+      <div class="carte-face">
+        <div class="meta"><b>Chalon dans la rue</b> · Culture · 2025</div>
+        <div class="q">Et si l'application d'un festival<br>servait aussi ceux qui le jouent&#8239;?</div>
+        <div class="rel">
+          <span class="term">Un festivalier</span>
+          <span class="tie"><span class="dot-end"></span></span>
+          <span class="term">le spectacle qu'il n'aurait pas trouvé</span>
+        </div>
+        <div class="carte-visuel" data-scene="chalon" style="--fy:38%"><canvas aria-hidden="true"></canvas><img src="assets/chalon-liste.jpg" width="828" height="1792" alt="Écran Découvrir de l'application : filtres et fiche d'un spectacle avec ses représentations" loading="lazy"></div>
       </div>
-      <div class="meta"><b>Chalon dans la rue</b> · Culture · 2025</div>
     </a>
   </div>
 
@@ -112,6 +119,7 @@ const io=new IntersectionObserver(es=>{
 },{threshold:.15});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 </script>
+<script type="module" src="cartes-3d.js"></script>
 <script src="background.js"></script>
 <script src="figure-zoom.js"></script>
 <script src="site-nav.js"></script>
