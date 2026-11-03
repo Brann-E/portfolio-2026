@@ -2130,6 +2130,10 @@ header .sub {
 .carte-visuel.is-3d img {
   display: none;
 }
+/* tant qu'il n'a pas d'adresse, l'image de repli ne montre rien (pas même son texte alternatif) */
+.carte-visuel img:not([src]) {
+  visibility: hidden;
+}
 .carte .meta {
   margin: 0 0 clamp(14px, 2vh, 22px);
 }

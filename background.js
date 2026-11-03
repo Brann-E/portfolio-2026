@@ -3,11 +3,12 @@
   if(!cv)return;
   const x=cv.getContext('2d');
   const PALETTE=[[159,110,255],[40,230,255],[47,255,180],[255,234,77],[249,104,167]];
-  let W,H,DPR,P=[],links=[];
+  let W,H,DPR,P=[],links=[],raf=0,n=0,order=[];
   let mx=-9999,my=-9999;
   let SP,LINK,LINK2,DEPTH=820;const FOV=800,REVEAL=170;
   function size(){DPR=Math.min(devicePixelRatio||1,2);W=cv.clientWidth=innerWidth;H=cv.clientHeight=innerHeight;cv.width=W*DPR;cv.height=H*DPR;x.setTransform(DPR,0,0,DPR,0,0);build();}
   function build(){
+    n=0;
     SP=Math.max(120,Math.min(W,H)/7);LINK=SP*1.7;LINK2=LINK*LINK;P=[];
     const cols=Math.ceil(W/SP)+2,rows=Math.ceil(H/SP)+2,deps=3;
     for(let iz=0;iz<deps;iz++)for(let iy=0;iy<rows;iy++)for(let ix=0;ix<cols;ix++){
@@ -31,7 +32,7 @@
       let tg=0;const dm=Math.hypot(p.sx-mx,p.sy-my);if(dm<REVEAL)tg=(1-dm/REVEAL);
       if(tg>p.e)p.e+=(tg-p.e)*0.10;else p.e+=(tg-p.e)*0.05;
     }
-    const order=P.map((p,i)=>i).sort((a,b)=>P[b].z-P[a].z);
+    if(n++%15===0)order=P.map((p,i)=>i).sort((a,b)=>P[b].z-P[a].z);
     for(const [i,j] of links){
       const a=P[i],b=P[j];if(Math.abs(a.x-b.x)>LINK*1.5||Math.abs(a.y-b.y)>LINK*1.5)continue;
       const rev=Math.max(a.e,b.e),op=(0.02+rev*0.20)*Math.max(a.s,b.s),col=colorAt(((a.sx+b.sx)/(2*W))*0.75+((a.sy+b.sy)/(2*H))*0.25),r=col[0],g=col[1],bl=col[2];
@@ -43,7 +44,11 @@
       x.globalAlpha=op;x.fillStyle='rgb('+(r|0)+','+(g|0)+','+(bl|0)+')';
       const rad=(1.2+rev*1.5)*p.s*1.4;x.beginPath();x.arc(p.sx,p.sy,Math.max(0.4,rad),0,6.28);x.fill();
     }
-    x.globalAlpha=1;requestAnimationFrame(frame);
+    x.globalAlpha=1;raf=requestAnimationFrame(frame);
   }
+  document.addEventListener('visibilitychange',()=>{
+    cancelAnimationFrame(raf);
+    if(!document.hidden)raf=requestAnimationFrame(frame);
+  });
   frame();
 })();

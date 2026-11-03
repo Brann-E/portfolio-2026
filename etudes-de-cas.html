@@ -50,7 +50,7 @@
           <span class="tie"><span class="dot-end"></span></span>
           <span class="term">tout ce qui l'entoure</span>
         </div>
-        <div class="carte-visuel" data-scene="healthanea"><canvas aria-hidden="true"></canvas><img src="assets/ecosystem-map.png" width="1250" height="1340" alt="Carte de l'écosystème Healthanea : le patient, l'application et les acteurs qui l'entourent, reliés par des flux d'argent, de biens et de données" loading="lazy"></div>
+        <div class="carte-visuel" data-scene="healthanea"><canvas aria-hidden="true"></canvas><img data-src="assets/carte-healthanea-900.webp" data-srcset="assets/carte-healthanea-900.webp 900w, assets/carte-healthanea-1600.webp 1600w" sizes="(max-width: 600px) 100vw, 884px" width="1600" height="1422" alt="Carte de l'écosystème Healthanea : le patient, l'application et les acteurs qui l'entourent, reliés par des flux d'argent, de biens et de données"></div>
       </div>
     </a>
 
@@ -63,7 +63,7 @@
           <span class="tie"><span class="dot-end"></span></span>
           <span class="term">ses équipes, six étages plus bas</span>
         </div>
-        <div class="carte-visuel" data-scene="shift"><canvas aria-hidden="true"></canvas><img src="assets/shift-pyramide.png" width="940" height="790" alt="Pyramide organisationnelle SHIFT Prime : six niveaux du CEO aux team members, séparés par une ligne entre décision et action" loading="lazy"></div>
+        <div class="carte-visuel" data-scene="shift"><canvas aria-hidden="true"></canvas><img data-src="assets/shift-pyramide.png" width="940" height="790" alt="Pyramide organisationnelle SHIFT Prime : six niveaux du CEO aux team members, séparés par une ligne entre décision et action"></div>
       </div>
     </a>
 
@@ -76,7 +76,7 @@
           <span class="tie"><span class="dot-end"></span></span>
           <span class="term">la décision qu'elle doit éclairer</span>
         </div>
-        <div class="carte-visuel" data-scene="bi"><canvas aria-hidden="true"></canvas><img src="assets/bi-solution/excel-3.jpg" width="900" height="578" alt="L'ancien fichier Excel de pilotage commercial, volontairement flouté : un tableau dense de chiffres mensuels et un graphique" loading="lazy"></div>
+        <div class="carte-visuel" data-scene="bi"><canvas aria-hidden="true"></canvas><img data-src="assets/bi-solution/excel-3.jpg" width="900" height="578" alt="L'ancien fichier Excel de pilotage commercial, volontairement flouté : un tableau dense de chiffres mensuels et un graphique"></div>
       </div>
     </a>
 
@@ -89,7 +89,7 @@
           <span class="tie"><span class="dot-end"></span></span>
           <span class="term">le client qu'il connaît par cœur</span>
         </div>
-        <div class="carte-visuel" data-scene="proshop" style="--z:2;--fx:78%;--fy:24%"><canvas aria-hidden="true"></canvas><img src="assets/proshop-vp.png" width="1922" height="1932" alt="Value Proposition Canvas à double profil : le commercial et le client, leurs gains, leurs pains et leurs tâches à accomplir" loading="lazy"></div>
+        <div class="carte-visuel" data-scene="proshop"><canvas aria-hidden="true"></canvas><img data-src="assets/carte-proshop-900.webp" data-srcset="assets/carte-proshop-900.webp 900w, assets/carte-proshop-1600.webp 1600w" sizes="(max-width: 600px) 100vw, 884px" width="1600" height="1422" alt="Value Proposition Canvas à double profil : le commercial et le client, leurs gains, leurs pains et leurs tâches à accomplir"></div>
       </div>
     </a>
 
@@ -102,7 +102,7 @@
           <span class="tie"><span class="dot-end"></span></span>
           <span class="term">le spectacle qu'il n'aurait pas trouvé</span>
         </div>
-        <div class="carte-visuel" data-scene="chalon" style="--fy:38%"><canvas aria-hidden="true"></canvas><img src="assets/chalon-liste.jpg" width="828" height="1792" alt="Écran Découvrir de l'application : filtres et fiche d'un spectacle avec ses représentations" loading="lazy"></div>
+        <div class="carte-visuel" data-scene="chalon"><canvas aria-hidden="true"></canvas><img data-src="assets/carte-chalon-900.webp" data-srcset="assets/carte-chalon-900.webp 900w, assets/carte-chalon-1600.webp 1600w" sizes="(max-width: 600px) 100vw, 884px" width="1600" height="1422" alt="Écran Carte de l'application : plan du quartier Saint-Vincent, avec les spectacles repérés par des numéros"></div>
       </div>
     </a>
   </div>
@@ -124,6 +124,7 @@ document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 <script src="figure-zoom.js"></script>
 <script src="site-nav.js"></script>
 </main>
+<script nomodule>document.querySelectorAll('img[data-src]').forEach(function(i){if(i.dataset.srcset)i.srcset=i.dataset.srcset;i.src=i.dataset.src;});</script>
 
 <div id="site-footer"></div>
 </body>

@@ -47,11 +47,13 @@
   function open(img, from) {
     if (!overlay) build();
     opener = from || null;
-    imgEl.src = img.currentSrc || img.src;
-    var ss = img.getAttribute("srcset");
+    /* data-zoom : fichier pleine définition réservé à l'ouverture, la vignette reste légère */
+    var big = img.getAttribute("data-zoom");
+    imgEl.src = big || img.currentSrc || img.src;
+    var ss = big ? null : img.getAttribute("srcset");
     if (ss) imgEl.setAttribute("srcset", ss);
     else imgEl.removeAttribute("srcset");
-    var sz = img.getAttribute("sizes");
+    var sz = big ? null : img.getAttribute("sizes");
     if (sz) imgEl.setAttribute("sizes", sz);
     else imgEl.removeAttribute("sizes");
     imgEl.alt = img.alt || "";

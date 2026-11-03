@@ -1089,7 +1089,16 @@ function chargerThree() {
 
 async function monter(zone) {
   const nom = zone.dataset.scene;
-  if (!scenes[nom]) return;
+  if (!scenes[nom]) { reveler(zone); return; }
+/* l'image de repli n'a pas d'adresse tant que la 3D n'a pas échoué : on la lui rend seulement alors */
+function reveler(zone) {
+  const img = zone.querySelector('img[data-src]');
+  if (!img) return;
+  if (img.dataset.srcset) img.srcset = img.dataset.srcset;
+  img.src = img.dataset.src;
+  img.removeAttribute('data-src'); img.removeAttribute('data-srcset');
+}
+
   try {
     T ??= await chargerThree();
     await Promise.all([
@@ -1101,7 +1110,7 @@ async function monter(zone) {
        mesurée par la zone, la fait grandir sans fin. On le pose donc nous-mêmes hors du flux, sur la zone. */
     if (getComputedStyle(zone).position === 'static') zone.style.position = 'relative';
     Object.assign(canvas.style, { position: 'absolute', inset: '0', width: '100%', height: '100%' });
-    const renderer = new T.WebGLRenderer({ canvas, antialias: true, alpha: true });
+    const renderer = new T.WebGLRenderer({ canvas, antialias: false, alpha: true });
     renderer.setClearColor(0x000000, 0);
     const accent = getComputedStyle(zone).color;
     const vue = await scenes[nom]({ accent });
@@ -1113,7 +1122,7 @@ async function monter(zone) {
     const calibrer = () => {
       const { width, height } = zone.getBoundingClientRect();
       if (!width || !height) return;
-      renderer.setPixelRatio(Math.min(Math.max(devicePixelRatio, 2), 3)); // au moins le double : le rendu est sur-échantillonné, donc net même sur un écran standard
+      renderer.setPixelRatio(2); // au moins le double : le rendu est sur-échantillonné, donc net même sur un écran standard
       renderer.setSize(width, height, false);
       vue.resize(width / height, { px: width, dpr: renderer.getPixelRatio() });
       dessiner();
@@ -1150,12 +1159,16 @@ async function monter(zone) {
       });
     }
   } catch (e) {
-    zone.classList.remove('is-3d'); // WebGL indisponible : l'image de repli reste en place
+    zone.classList.remove('is-3d'); // WebGL indisponible : on charge l'image de repli
+    reveler(zone);
     console.warn('cartes-3d :', e);
   }
 }
 
 const vus = new IntersectionObserver((entrees) => {
-  entrees.forEach((e) => { if (e.isIntersecting) { vus.unobserve(e.target); monter(e.target); } });
+  entrees.forEach((e) => { if (e.isIntersecting) {
+      vus.unobserve(e.target); monter(e.target);
+      setTimeout(() => { if (!e.target.classList.contains('is-3d')) reveler(e.target); }, 8000); // filet : la 3D tarde trop, l'image prend le relais
+    } });
 }, { rootMargin: '200px' });
 document.querySelectorAll('.carte-visuel[data-scene]').forEach((z) => vus.observe(z));
