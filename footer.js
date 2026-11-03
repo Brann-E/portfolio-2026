@@ -41,7 +41,7 @@
         </div>
 
         <div class="ft-col">
-          <div class="ft-h">Missions</div>
+          <div class="ft-h">&Eacute;tudes de cas</div>
           <ul>
             <li><a class="ft-cas ft-cas--c1" href="/cas-healthanea"><i class="ft-dot" aria-hidden="true"></i>Healthanea</a></li>
             <li><a class="ft-cas ft-cas--c2" href="/cas-shift-prime"><i class="ft-dot" aria-hidden="true"></i>SHIFT Prime</a></li>

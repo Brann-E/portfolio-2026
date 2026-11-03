@@ -1,11 +1,14 @@
 /* Visuels 3D des cartes d'études de cas (Three.js).
    Rien ne tourne au repos : une image fixe au chargement, l'animation seulement au survol.
-   Sur tactile ou avec « réduire les animations », la scène reste dans son état assemblé. */
+   Sur tactile, l'animation se joue quand la carte arrive à l'écran. Avec « réduire les animations », la scène reste dans son état assemblé. */
 
 const THREE_URL = new URL('./assets/vendor/three/three.module.min.js', import.meta.url).href;
 const reduit = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const tactile = matchMedia('(hover: none)').matches;
 const statique = reduit || tactile;
+const DELAI_VUE = 0.08; // secondes : sur tactile, l'attente entre l'arrivée d'une carte à l'écran et le début de son animation
+const ZOOM_SEUIL = 480; // px : en dessous, le visuel est cadré plus serré
+const ZOOM_ETROIT = 1.1;
 const DUREE = 0.8; // secondes : la durée du trait animé « Un comité exécutif → ses équipes » sous le titre (0,7 s, plus le point d'arrivée)
 
 
@@ -1087,9 +1090,6 @@ function chargerThree() {
   return pThree;
 }
 
-async function monter(zone) {
-  const nom = zone.dataset.scene;
-  if (!scenes[nom]) { reveler(zone); return; }
 /* l'image de repli n'a pas d'adresse tant que la 3D n'a pas échoué : on la lui rend seulement alors */
 function reveler(zone) {
   const img = zone.querySelector('img[data-src]');
@@ -1099,6 +1099,9 @@ function reveler(zone) {
   img.removeAttribute('data-src'); img.removeAttribute('data-srcset');
 }
 
+async function monter(zone) {
+  const nom = zone.dataset.scene;
+  if (!scenes[nom]) { reveler(zone); return; }
   try {
     T ??= await chargerThree();
     await Promise.all([
@@ -1115,7 +1118,7 @@ function reveler(zone) {
     const accent = getComputedStyle(zone).color;
     const vue = await scenes[nom]({ accent });
 
-    let p = statique ? 1 : 0, cible = p, enCours = false, derniere = 0, t = 0;
+    let p = reduit ? 1 : 0, cible = p, enCours = false, derniere = 0, t = 0;
     const pointeur = { x: 0, y: 0, cx: 0, cy: 0 };
 
     const dessiner = () => { vue.update(p, t, pointeur); renderer.render(vue.scene, vue.camera); };
@@ -1124,7 +1127,9 @@ function reveler(zone) {
       if (!width || !height) return;
       renderer.setPixelRatio(2); // au moins le double : le rendu est sur-échantillonné, donc net même sur un écran standard
       renderer.setSize(width, height, false);
-      vue.resize(width / height, { px: width, dpr: renderer.getPixelRatio() });
+      const zoom = width < ZOOM_SEUIL ? ZOOM_ETROIT : 1; // petit écran : on cadre un peu plus serré, le visuel y gagne en taille
+      vue.camera.zoom = zoom;
+      vue.resize(width / height, { px: width * zoom, dpr: renderer.getPixelRatio() });
       dessiner();
     };
     const boucle = (now) => {
@@ -1143,6 +1148,16 @@ function reveler(zone) {
     zone.classList.add('is-3d');
     new ResizeObserver(calibrer).observe(zone);
     calibrer();
+
+    /* tactile : pas de survol, la carte joue son animation d'elle-même dès qu'elle est à l'écran, et se remet au repos en sortant (elle rejoue au retour) */
+    if (tactile && !reduit) {
+      let depart;
+      new IntersectionObserver(([e]) => {
+        clearTimeout(depart);
+        if (e.isIntersecting) depart = setTimeout(() => { cible = 1; lancer(); }, DELAI_VUE * 1000);
+        else { cible = p = 0; lancer(); }
+      }, { threshold: 0.5 }).observe(zone);
+    }
 
     if (!statique) {
       const carte = zone.closest('.carte');
