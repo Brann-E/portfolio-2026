@@ -722,14 +722,6 @@ scenes.bi = async ({ accent }) => {
 
 const R_PIECE = 0.92; // le rayon de toutes les pièces : elles ont toutes la même taille
 
-function dessinerCoeur(c) {
-  c.lineJoin = 'round';
-  const trace = () => { c.beginPath(); c.moveTo(64, 112); c.bezierCurveTo(8, 74, 14, 22, 64, 44); c.bezierCurveTo(114, 22, 120, 74, 64, 112); c.closePath(); };
-  trace(); c.lineWidth = 12; c.strokeStyle = '#fff'; c.stroke();
-  trace(); c.fillStyle = '#ff3b6b'; c.fill();
-  c.fillStyle = 'rgba(255,255,255,0.45)'; c.beginPath(); c.ellipse(40, 54, 9, 14, -0.7, 0, 7); c.fill();
-}
-
 /* la bulle du client : la question qu'un installateur se pose vraiment au moment de commander */
 function dessinerBulle(c) {
   c.fillStyle = '#fff'; c.beginPath(); c.roundRect(2, 2, 296, 84, 22); c.fill();
@@ -751,9 +743,11 @@ function dessinerFacePiece(c, icone) {
   const k = Math.min(168 / sw, 168 / sh);
   c.drawImage(img, sx, sy, sw, sh, R - (sw * k) / 2, R - (sh * k) / 2, sw * k, sh * k);
 }
-function dessinerFaceCoeur(c) {
-  c.fillStyle = '#fff'; c.beginPath(); c.arc(128, 128, 128, 0, 7); c.fill();
-  c.save(); c.translate(128, 134); c.scale(1.7, 1.7); c.translate(-64, -76); dessinerCoeur(c); c.restore();
+function dessinerFaceCoeur(c, icone) {
+  const { img, sx, sy, sw, sh } = icone, R = 128;
+  c.fillStyle = '#fff'; c.beginPath(); c.arc(R, R, R, 0, 7); c.fill();
+  const k = Math.min(184 / sw, 184 / sh);
+  c.drawImage(img, sx, sy, sw, sh, R - (sw * k) / 2, R - (sh * k) / 2, sw * k, sh * k);
 }
 
 /* les petites légendes du repos, sous chaque pièce */
@@ -775,7 +769,7 @@ function dessinerLienAlliance(c) {
 const ROND = (() => { const c = document.createElement('canvas'); c.width = c.height = 64; const x = c.getContext('2d'); const g = x.createRadialGradient(32, 32, 0, 32, 32, 32); g.addColorStop(0, '#fff'); g.addColorStop(0.4, 'rgba(255,255,255,0.7)'); g.addColorStop(1, 'rgba(255,255,255,0)'); x.fillStyle = g; x.fillRect(0, 0, 64, 64); return c; })();
 
 scenes.proshop = async ({ accent }) => {
-  const [iCom, iCli, iSite, iEpees] = await Promise.all(['commercial', 'client', 'site', 'epees'].map((n) => chargerIcone(n, './assets/proshop/')));
+  const [iCom, iCli, iSite, iEpees, iCoeur] = await Promise.all(['commercial', 'client', 'site', 'epees', 'coeur'].map((n) => chargerIcone(n, './assets/proshop/')));
   const scene = new T.Scene();
   const camera = new T.PerspectiveCamera(30, 1, 0.1, 100);
   const racine = new T.Group();
@@ -807,7 +801,7 @@ scenes.proshop = async ({ accent }) => {
   /* le commercial et le ProShop : chacun a le pictogramme de l'autre au dos, pour que la pièce qui les réunit ait ses deux faces */
   const pieceCom = piece((c) => dessinerFacePiece(c, iCom), (c) => dessinerFacePiece(c, iSite));
   const pieceSite = piece((c) => dessinerFacePiece(c, iSite), (c) => dessinerFacePiece(c, iCom));
-  const pieceCli = piece((c) => dessinerFacePiece(c, iCli), dessinerFaceCoeur);
+  const pieceCli = piece((c) => dessinerFacePiece(c, iCli), (c) => dessinerFaceCoeur(c, iCoeur));
 
   const plan = (w, h, dw, dh, dessiner) => { const m = nette(w, h, dw, dh, dessiner); racine.add(m); return m; };
   const epees = plan(0.95, 0.95, 200, 200, (c) => dessinerEpees(c, iEpees));
