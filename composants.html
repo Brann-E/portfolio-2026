@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Composants - Brann Etienne</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500..700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&display=swap" rel="stylesheet">
+<style>
+/* Page de documentation : chaque exemple est le vrai composant, avec la vraie classe de styles.css. */
+.co-bloc { display: grid; grid-template-columns: subgrid; grid-column: 1 / -1; align-items: start; row-gap: var(--ligne); }
+.co-demo { grid-column: span 8; display: flex; flex-wrap: wrap; align-items: center; gap: var(--ligne); }
+.co-nom { grid-column: span 4; }
+.co-nom code { font-family: ui-monospace, Consolas, monospace; font-size: var(--fs-s); line-height: 0; }
+.co-nom p { margin-top: 0; font-size: var(--fs-s); }
+.co-grille-btn { margin-top: calc(var(--ligne) * 2); }
+.co-tableau { width: 100%; border-collapse: collapse; font-size: var(--fs-s); line-height: var(--ligne); }
+.co-tableau th, .co-tableau td { text-align: left; font-weight: 400; padding: 0 var(--ligne) 0 0; box-shadow: inset 0 calc(-1 * var(--rule-w)) 0 var(--encre); }
+.co-tableau th { font-family: var(--ff-title); font-weight: 600; }
+.co-demo > .champ-da { max-width: calc(var(--col) * 4 + var(--gut) * 3); }
+.co-pastille { width: calc(var(--ligne) * 4); height: calc(var(--ligne) * 3); box-shadow: inset 0 0 0 var(--rule-w) var(--encre); }
+.co-p-papier { background: var(--papier); }
+.co-p-anthracite { background: var(--anthracite); }
+.co-p-vert { background: var(--c-vert); }
+.co-p-jaune { background: var(--c-jaune); }
+.co-p-magenta { background: var(--c-magenta); }
+.co-p-menthe { background: var(--c-menthe); }
+.co-p-cyan { background: var(--c-cyan); }
+.co-p-citron { background: var(--c-citron); }
+.co-bloc .photo-da { max-width: calc(var(--col) * 2 + var(--gut)); }
+@media (max-width: 859px) {
+  .co-demo, .co-nom { grid-column: 1 / -1; }
+}
+</style>
+</head>
+<body class="has-site-nav da" id="top"><script src="nav.js"></script>
+<main id="contenu">
+
+<section class="hero hero--page" data-vivant aria-labelledby="titre">
+  <canvas id="cv-disques" aria-hidden="true"></canvas>
+  <canvas id="cv-grille" aria-hidden="true"></canvas>
+  <div class="hero-texte page">
+    <h1 id="titre" class="t-display c-12" data-texte>Les composants.</h1>
+    <p class="lead t-lede c-8 sp-2" data-texte>Chaque exemple est le composant réel, avec la classe réelle de la feuille de style. Les pages n'en emploient pas d'autres. La typographie a sa page : <a href="typographie.html">l'échelle typographique</a>.</p>
+  </div>
+  <div class="hero-scene" aria-hidden="true"></div>
+</section>
+
+<section class="section">
+  <div class="page">
+    <h2 class="t-h2 c-8">Grille</h2>
+    <div class="co-bloc c-12 sp-2">
+      <div class="co-demo">
+        <table class="co-tableau">
+          <tr><th>Ligne</th><td>--ligne</td><td>28 px</td><td>tout ce qui est vertical en est un multiple</td></tr>
+          <tr><th>Colonne</th><td>--col</td><td>84 px</td><td>70, 56 puis 42 px quand la fenêtre se resserre</td></tr>
+          <tr><th>Gouttière</th><td>--gut</td><td>28 px</td><td>une colonne et sa gouttière font 112 px, soit quatre lignes</td></tr>
+          <tr><th>Boîte</th><td>margin-inline: -14 px</td><td>+ 28 px</td><td>une boîte dépasse la colonne d'une demi-ligne de chaque côté : ses bords tombent sur les filets de la grille</td></tr>
+          <tr><th>Carte</th><td>--carte-largeur</td><td>784 px</td><td>sept colonnes (756 px) plus une ligne, soit 28 lignes de large</td></tr>
+        </table>
+        <button class="btn btn--sec co-grille-btn" type="button" data-grille-bouton aria-pressed="false">Afficher la grille (touche G)</button>
+      </div>
+      <div class="co-nom"><p class="etiquette">Règle</p><p>Un bloc se pose sur la grille : sa largeur est un nombre de colonnes (plus une ligne s'il est une boîte), sa hauteur un nombre de lignes. Aucune valeur en pixels dans les composants. Le bouton montre les colonnes (vert) et les lignes de la page par-dessus tous les exemples de cette page.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="page">
+    <h2 class="t-h2 c-8">Carte</h2>
+    <div class="co-bloc c-12 sp-2">
+      <div class="co-demo">
+        <div class="cartes c-12">
+          <a class="carte" href="cas-healthanea.html">
+            <div class="carte-face">
+              <div class="meta"><b>Healthanea</b> · Santé · 2024</div>
+              <div class="q">Et si la meilleure façon de soigner,<br>c'était de mieux relier&#8239;?</div>
+              <div class="rel"><span class="term">Un patient</span><span class="tie"><span class="dot-end"></span></span><span class="term">tout ce qui l'entoure</span></div>
+              <div class="carte-visuel"><img src="assets/carte-healthanea-900.webp" width="1600" height="1422" alt="Carte de l'écosystème Healthanea" loading="lazy"></div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="co-nom"><p class="etiquette">Classes</p><p><code>.cartes</code>, <code>.carte</code>, <code>.carte-face</code>, <code>.carte-visuel</code>. Employée par Études de cas. Largeur : sept colonnes plus une ligne. Hauteur : 32 lignes (le visuel en fait 24, un nombre de lignes et non un ratio). Au survol, la couleur du cas la remplit de gauche à droite.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="page">
+    <h2 class="t-h2 c-8">Logos</h2>
+    <div class="co-bloc c-12 sp-2">
+      <div class="co-demo">
+        <div class="logos c-12">
+          <div><img src="assets/clients/axa.png" alt="AXA"></div>
+          <div><img src="assets/clients/microsoft.png" alt="Microsoft"></div>
+          <div><img src="assets/clients/novo-nordisk.png" alt="Novo Nordisk"></div>
+        </div>
+      </div>
+      <div class="co-nom"><p class="etiquette">Classes</p><p><code>.logos</code>. Trois par ligne, quatre lignes de haut : chaque case fait quatre colonnes, ses filets tombent sur les lignes de la grille. Neuf logos font trois rangées pleines, sans case vide. Le logo est centré dans sa case : c'est la case qui est sur la grille, pas le dessin.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="page">
+    <h2 class="t-h2 c-8">Couleurs</h2>
+    <div class="co-bloc c-12 sp-2">
+      <div class="co-demo">
+        <span class="co-pastille co-p-papier" title="--papier"></span>
+        <span class="co-pastille co-p-anthracite" title="--anthracite"></span>
+        <span class="co-pastille co-p-vert" title="--c-vert"></span>
+        <span class="co-pastille co-p-jaune" title="--c-jaune"></span>
+        <span class="co-pastille co-p-magenta" title="--c-magenta"></span>
+        <span class="co-pastille co-p-menthe" title="--c-menthe"></span>
+        <span class="co-pastille co-p-cyan" title="--c-cyan"></span>
+        <span class="co-pastille co-p-citron" title="--c-citron"></span>
+      </div>
+      <div class="co-nom"><p class="etiquette">Jetons</p><p>Papier, anthracite, puis les accents que le visiteur choisit. En mode sombre, le fond et l'encre s'inversent et les accents passent en versions foncées.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="page">
+    <h2 class="t-h2 c-8">Boutons</h2>
+    <div class="co-bloc c-12 sp-2">
+      <div class="co-demo">
+        <a class="btn" href="#top">Bouton principal</a>
+        <a class="btn btn--sec" href="#top">Bouton secondaire</a>
+        <a class="lien-sec" href="#top">Lien secondaire</a>
+      </div>
+      <div class="co-nom"><p class="etiquette">Classes</p><p><code>.btn</code>, <code>.btn--sec</code>, <code>.lien-sec</code>. Une boîte de la grille : deux lignes de haut, huit cases de large. Au survol, l'accent la remplit de gauche à droite.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="page">
+    <h2 class="t-h2 c-8">Champs</h2>
+    <div class="co-bloc c-12 sp-2">
+      <div class="co-demo">
+        <input class="champ-da" type="text" placeholder="Votre nom" aria-label="Exemple de champ">
+        <textarea class="champ-da" placeholder="Votre message" aria-label="Exemple de zone de texte"></textarea>
+      </div>
+      <div class="co-nom"><p class="etiquette">Classe</p><p><code>.champ-da</code>. Quand on sélectionne le champ, il prend la couleur d'accent, avec le même remplissage que les boutons. Aucun liseré de sélection.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="page">
+    <h2 class="t-h2 c-8">Étiquette</h2>
+    <div class="co-bloc c-12 sp-2">
+      <div class="co-demo"><span class="etiquette">Projets personnels</span></div>
+      <div class="co-nom"><p class="etiquette">Classe</p><p><code>.etiquette</code>. Le H5 : 14 px, police des titres, capitales.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="page">
+    <h2 class="t-h2 c-8">Boîte</h2>
+    <div class="co-bloc c-12 sp-2">
+      <div class="co-demo">
+        <div class="boite hote in" data-hote><p class="etiquette">Boîte</p><p>Un cadre à angle droit qui dépasse le texte d'une demi-ligne de chaque côté.</p></div>
+        <div class="boite boite--accent hote in" data-hote><p class="etiquette">Boîte à survol</p><p>L'accent la remplit de gauche à droite.</p></div>
+      </div>
+      <div class="co-nom"><p class="etiquette">Classes</p><p><code>.boite</code>, <code>.boite--accent</code>. Employée par À propos (le bloc du haut, « Ce que je cherche »).</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="page">
+    <h2 class="t-h2 c-8">Liste à lignes</h2>
+    <div class="co-bloc c-12 sp-2">
+      <div class="co-demo">
+        <ul class="liste-da c-12">
+          <li><a class="ligne" href="#top"><b>Première ligne</b> : un lien, rempli par l'accent au survol</a></li>
+          <li><a class="ligne" href="#top"><b>Deuxième ligne</b> : même comportement</a></li>
+        </ul>
+      </div>
+      <div class="co-nom"><p class="etiquette">Classes</p><p><code>.liste-da</code>, <code>.ligne</code>. Employée par À propos (« Là où je l'éprouve »).</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="page">
+    <h2 class="t-h2 c-8">Photo</h2>
+    <div class="co-bloc c-12 sp-2">
+      <div class="co-demo"><img class="photo-da" src="portrait.jpg" alt="Portrait de Brann Etienne" width="1071" height="1008" loading="lazy"></div>
+      <div class="co-nom"><p class="etiquette">Classe</p><p><code>.photo-da</code>. Un cadre à angle droit, jamais un cercle.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="page">
+    <h2 class="t-h2 c-8">Héros de page</h2>
+    <div class="co-bloc c-12 sp-2">
+      <div class="co-demo"><p>Six lignes au-dessus du titre, quatre en dessous, la grille et les disques derrière : le héros de la home, repris par chaque page.</p></div>
+      <div class="co-nom"><p class="etiquette">Classes</p><p><code>.hero</code>, <code>.hero--page</code>, <code>.hero-texte</code>, <code>.page</code>. Voir le haut de cette page.</p></div>
+    </div>
+  </div>
+</section>
+
+</main>
+<script src="footer.js"></script>
+<script src="vivant.js"></script>
+<script src="grille.js"></script>
+<script src="site-nav.js"></script>
+<script src="grille-visible.js"></script>
+</body>
+</html>

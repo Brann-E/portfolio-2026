@@ -6,10 +6,10 @@ const THREE_URL = new URL('./assets/vendor/three/three.module.min.js', import.me
 const reduit = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const tactile = matchMedia('(hover: none)').matches;
 const statique = reduit || tactile;
-const DELAI_VUE = 0.08; // secondes : sur tactile, l'attente entre l'arrivée d'une carte à l'écran et le début de son animation
-const ZOOM_SEUIL = 480; // px : en dessous, le visuel est cadré plus serré
-const ZOOM_ETROIT = 1.1;
-const DUREE = 0.8; // secondes : la durée du trait animé « Un comité exécutif → ses équipes » sous le titre (0,7 s, plus le point d'arrivée)
+const DELAI_VUE = 0.5; // secondes : sur tactile, l'attente entre l'arrivée d'une carte à l'écran et le début de son animation
+const ZOOM_SEUIL = 480; // px : en dessous, le visuel est cadré un peu plus large, pour que les vignettes aient de l'air autour
+const ZOOM_ETROIT = 0.9;
+const DUREE = tactile ? 1.6 : 0.8; // secondes : la durée du trait animé « Un comité exécutif → ses équipes » sous le titre (0,7 s, plus le point d'arrivée) ; sur tactile, deux fois plus lente pour qu'on la suive
 
 
 /* une ressource qui échoue (connexion coupée) est retentée deux fois avant d'abandonner */
@@ -25,6 +25,16 @@ const scenes = {}; // nom de scène -> fabrique
 
 /* ───────── noyau commun : une même matière pour toutes les cartes ───────── */
 
+/* le thème : la couleur du texte posé sur la scène (fond transparent) suit celle du site (--encre : claire en sombre, sombre en clair) ;
+   en clair, la lumière ne s'additionne plus (elle disparaîtrait sur le papier) : halos et étincelles se mélangent au papier. */
+let TXT = '#fff', PAPIER = '#2d2f32', CLAIR = false;
+function lireTheme() {
+  const css = getComputedStyle(document.documentElement);
+  TXT = css.getPropertyValue('--encre').trim() || '#fff';
+  PAPIER = css.getPropertyValue('--bg').trim() || '#2d2f32';
+  CLAIR = document.documentElement.getAttribute('data-theme') !== 'dark';
+}
+const rgba = (hex, a) => { const n = parseInt(hex.replace('#', '').slice(0, 6), 16); return `rgba(${n >> 16},${(n >> 8) & 255},${n & 255},${a})`; };
 const ease = (x) => 1 - Math.pow(1 - Math.min(1, Math.max(0, x)), 3);
 const mix = (a, b, t) => a + (b - a) * t;
 
@@ -91,7 +101,7 @@ function halo(color) {
   gr.addColorStop(0, color); gr.addColorStop(1, 'transparent');
   x.fillStyle = gr; x.fillRect(0, 0, 256, 256);
   const tex = new T.CanvasTexture(c); tex.colorSpace = T.SRGBColorSpace;
-  return new T.Sprite(new T.SpriteMaterial({ map: tex, transparent: true, depthWrite: false, blending: T.AdditiveBlending }));
+  return new T.Sprite(new T.SpriteMaterial({ map: tex, transparent: true, depthWrite: false, blending: CLAIR ? T.NormalBlending : T.AdditiveBlending }));
 }
 
 /* ───────── Healthanea : le patient, et ce qui gravite autour de lui ─────────
@@ -99,9 +109,9 @@ function halo(color) {
    (prototypes/healthanea-suite), châssis et écrans du parcours patient (prototypes/healthanea-parcours). */
 
 const S = 3; // finesse des textures : 3 pixels par unité de dessin
-const FONT_UI = 'Inter, system-ui, sans-serif';
-const FONT_SERIF = '"DM Serif Display", Georgia, serif';
-const FONT_CARTE = 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif';
+const FONT_UI = '"Familjen Grotesk", system-ui, sans-serif';   // les polices du portfolio : titres (Familjen Grotesk) et corps de texte (Newsreader)
+const FONT_SERIF = '"Newsreader", Georgia, serif';
+const FONT_CARTE = '"Familjen Grotesk", system-ui, sans-serif';
 
 
 /* six acteurs de la carte : libellé et icône réels. `sens` : 1 vers le patient, -1 depuis lui.
@@ -411,7 +421,7 @@ function etiquette({ lignes, w, h, px, couleur = '#fff', align = 'center' }) {
   const PX = 220, cv = document.createElement('canvas');
   cv.width = Math.round(w * PX); cv.height = Math.round(h * PX);
   const c = cv.getContext('2d');
-  c.font = `600 ${px}px Inter, system-ui, sans-serif`; c.fillStyle = couleur; c.textBaseline = 'middle'; c.textAlign = align;
+  c.font = `600 ${px}px ${FONT_UI}`; c.fillStyle = couleur; c.textBaseline = 'middle'; c.textAlign = align;
   const x = align === 'left' ? 4 : cv.width / 2;
   lignes.forEach((l, i) => c.fillText(l, x, cv.height / 2 + (i - (lignes.length - 1) / 2) * px * 1.25));
   const tex = new T.CanvasTexture(cv); tex.colorSpace = T.SRGBColorSpace; tex.anisotropy = 4;
@@ -477,11 +487,11 @@ scenes.shift = async ({ accent }) => {
   const [ax, ay] = P(90, 437), [bx] = P(858, 437);
   const ligne = new T.Line(
     new T.BufferGeometry().setFromPoints([new T.Vector3(ax, ay, 0), new T.Vector3(bx, ay, 0)]),
-    new T.LineDashedMaterial({ color: 0xece7ff, dashSize: 0.1, gapSize: 0.07, transparent: true, opacity: 0 })
+    new T.LineDashedMaterial({ color: new T.Color(TXT), dashSize: 0.1, gapSize: 0.07, transparent: true, opacity: 0 })
   );
   ligne.computeLineDistances();
   const mention = (lignes, w, [x, y], decalX) => {
-    const e = etiquette({ lignes, w, h: 0.3, px: 28, couleur: '#ece7ff', align: 'left' });
+    const e = etiquette({ lignes, w, h: 0.3, px: 28, couleur: TXT, align: 'left' });
     e.position.set(x + decalX, y, 0); e.material.opacity = 0; return e;
   };
   const decision = mention(['Décision et Arbitrage'], 2.2, P(88, 418), 1.1);
@@ -523,7 +533,7 @@ scenes.shift = async ({ accent }) => {
    question, la lecture des chiffres, l'action. */
 
 const FEUILLES = 6; // assets/bi-solution/excel-1.jpg … excel-6.jpg : captures de l'Excel d'origine, floutées
-const FONT_ITALIQUE = '"Instrument Serif", Georgia, serif';
+const FONT_ITALIQUE = '"Newsreader", Georgia, serif';
 
 /* un hasard qui ne change jamais : le mur est le même à chaque visite */
 const graine = (s) => () => ((s = (s * 16807) % 2147483647) - 1) / 2147483646;
@@ -576,12 +586,12 @@ function dessinerChiffre(c, { titre, note, valeur, evolution, bon, ligne1, ligne
 /* le titre : ce que l'écran explique, en grand et en blanc, aligné à gauche sur le bord des cartes */
 const TITRE_SURVOL = 'Des chiffres structurés pour poser les bonnes questions et décider.';
 function dessinerTitre(c) {
-  c.fillStyle = '#fff'; c.font = `400 36px ${FONT_ITALIQUE}`; c.textAlign = 'left'; c.textBaseline = 'middle';
-  coupe(c, TITRE_SURVOL, 470).forEach((l, i, a) => c.fillText(l, 11.5, 22 + i * 40));
+  c.fillStyle = TXT; c.font = `400 31px ${FONT_ITALIQUE}`; c.textAlign = 'left'; c.textBaseline = 'middle';   // Newsreader est plus large que l'ancienne police : 31 px et une ligne plus longue pour rester sur deux lignes
+  coupe(c, TITRE_SURVOL, 590).forEach((l, i, a) => c.fillText(l, 11.5, 22 + i * 40));
 }
 
 /* le contenu parle d'une seule voix : la question et la réponse ont exactement la même fonte (famille, graisse, taille, couleur) */
-const fonteContenu = (c) => { c.fillStyle = '#fff'; c.font = `600 22px ${FONT_UI}`; c.textAlign = 'left'; c.textBaseline = 'middle'; };
+const fonteContenu = (c) => { c.fillStyle = TXT; c.font = `600 22px ${FONT_UI}`; c.textAlign = 'left'; c.textBaseline = 'middle'; };
 
 /* la question concrète que les chiffres tranchent, en deux lignes : on coupe après la virgule */
 function dessinerQuestion(c) {
@@ -593,7 +603,7 @@ function dessinerQuestion(c) {
 /* la réponse : la règle posée comme une question en gris, puis ce qu'on en fait, alignés à gauche */
 function dessinerAction(c) {
   c.textAlign = 'left'; c.textBaseline = 'middle';
-  c.fillStyle = 'rgba(255,255,255,0.74)'; c.font = `400 16px ${FONT_UI}`;
+  c.fillStyle = rgba(TXT, 0.74); c.font = `400 16px ${FONT_UI}`;
   c.fillText("Chiffre d'affaires au-dessus de 100\u202f% et marge sous le plan\u202f?", 11.5, 14);
   fonteContenu(c);
   c.fillText('Revoir les prix avant de pousser davantage.', 11.5, 48);
@@ -752,16 +762,16 @@ function dessinerFaceCoeur(c, icone) {
 
 /* les petites légendes du repos, sous chaque pièce */
 const dessinerLegende = (texte) => (c) => {
-  c.fillStyle = 'rgba(255,255,255,0.92)'; c.font = `500 17px ${FONT_UI}`; c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillText(texte, 100, 15);
+  c.fillStyle = rgba(TXT, 0.92); c.font = `500 17px ${FONT_UI}`; c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillText(texte, 100, 15);
 };
 
 /* le titre, et la liaison tout en bas */
 function dessinerTitreAlliance(c) {
-  c.fillStyle = '#fff'; c.font = `italic 400 46px ${FONT_ITALIQUE}`; c.textAlign = 'center'; c.textBaseline = 'middle';
+  c.fillStyle = TXT; c.font = `italic 400 46px ${FONT_ITALIQUE}`; c.textAlign = 'center'; c.textBaseline = 'middle';
   c.fillText('Le meilleur des deux mondes.', 320, 26);
 }
 function dessinerLienAlliance(c) {
-  c.fillStyle = '#fff'; c.font = `500 27px ${FONT_UI}`; c.textAlign = 'center'; c.textBaseline = 'middle';
+  c.fillStyle = TXT; c.font = `500 27px ${FONT_UI}`; c.textAlign = 'center'; c.textBaseline = 'middle';
   c.fillText('Le commercial et le ProShop', 320, 24);
   c.fillText('au service du client et de sa satisfaction.', 320, 60);
 }
@@ -820,9 +830,10 @@ scenes.proshop = async ({ accent }) => {
   const geoF = new T.BufferGeometry();
   geoF.setAttribute('position', new T.BufferAttribute(new Float32Array(GERBES.length * PAR * 3), 3));
   geoF.setAttribute('color', new T.BufferAttribute(new Float32Array(GERBES.length * PAR * 3), 3));
-  const artifice = new T.Points(geoF, new T.PointsMaterial({ size: 0.34, map: new T.CanvasTexture(ROND), vertexColors: true, transparent: true, blending: T.AdditiveBlending, depthWrite: false }));
+  const artifice = new T.Points(geoF, new T.PointsMaterial({ size: 0.34, map: new T.CanvasTexture(ROND), vertexColors: true, transparent: true, blending: CLAIR ? T.NormalBlending : T.AdditiveBlending, depthWrite: false }));
   artifice.frustumCulled = false; artifice.renderOrder = 50;
   racine.add(artifice);
+  const fonds = new T.Color(PAPIER);
   const hs = graine(21), direction = Array.from({ length: GERBES.length * PAR }, (_, i) => [(i % PAR) / PAR * Math.PI * 2 + hs() * 0.25, 0.7 + hs() * 0.9, Math.floor(hs() * couleurs.length)]);
 
   /* repos : la rangée des deux adversaires en haut, le client dessous ; survol : la pièce commune, le client, la liaison en bas */
@@ -886,7 +897,8 @@ scenes.proshop = async ({ accent }) => {
           const r = vit * u * 1.5;
           pos.setXYZ(i, gx + Math.cos(th) * r, gy + Math.sin(th) * r - 0.9 * u * u, gz);
           const fade = 1.7 * Math.pow(1 - u, 1.1) * intens, c = couleurs[(ci + g) % couleurs.length];
-          col.setXYZ(i, c.r * fade, c.g * fade, c.b * fade);
+          if (CLAIR) { const f = Math.min(1, fade); col.setXYZ(i, mix(fonds.r, c.r, f), mix(fonds.g, c.g, f), mix(fonds.b, c.b, f)); }   // en clair : l'étincelle s'éteint vers le papier
+          else col.setXYZ(i, c.r * fade, c.g * fade, c.b * fade);
         }
       });
       pos.needsUpdate = true; col.needsUpdate = true;
@@ -1099,8 +1111,8 @@ async function monter(zone) {
   try {
     T ??= await chargerThree();
     await Promise.all([
-      document.fonts.load('400 12px Inter'), document.fonts.load('500 13px Inter'), document.fonts.load('600 13px Inter'),
-      document.fonts.load('400 24px "DM Serif Display"'), document.fonts.load('italic 400 28px "Instrument Serif"'),
+      document.fonts.load('500 13px "Familjen Grotesk"'), document.fonts.load('600 13px "Familjen Grotesk"'), document.fonts.load('700 13px "Familjen Grotesk"'),
+      document.fonts.load('400 24px "Newsreader"'), document.fonts.load('italic 400 28px "Newsreader"'),
     ]);
     const canvas = zone.querySelector('canvas');
     /* la mise en page ne doit jamais dépendre du canevas, même si la feuille de style n'est pas (encore) chargée : sinon sa taille de dessin,
@@ -1109,8 +1121,8 @@ async function monter(zone) {
     Object.assign(canvas.style, { position: 'absolute', inset: '0', width: '100%', height: '100%' });
     const renderer = new T.WebGLRenderer({ canvas, antialias: false, alpha: true });
     renderer.setClearColor(0x000000, 0);
-    const accent = getComputedStyle(zone).color;
-    const vue = await scenes[nom]({ accent });
+    const construire = () => { lireTheme(); return scenes[nom]({ accent: getComputedStyle(zone).color }); };
+    let vue = await construire();
 
     let p = reduit ? 1 : 0, cible = p, enCours = false, derniere = 0, t = 0;
     const pointeur = { x: 0, y: 0, cx: 0, cy: 0 };
@@ -1137,26 +1149,34 @@ async function monter(zone) {
       else { p = cible; pointeur.x = pointeur.y = 0; dessiner(); enCours = false; }
     };
     const lancer = () => { if (!enCours) { enCours = true; derniere = performance.now(); requestAnimationFrame(boucle); } };
+    /* la scène joue si la carte est au centre de l'écran (défilement lent, defilement-cas.js) OU si elle est survolée : deux raisons, un seul état */
+    let centre = false, survol = false;
+    const majCible = () => { cible = (centre || survol) ? 1 : 0; if (!survol) { pointeur.cx = pointeur.cy = 0; } lancer(); };
+    zone.activer = (v) => { if (statique) return; centre = v; majCible(); };
     zone.piloter = (valeur) => { p = cible = valeur; dessiner(); }; // fige la scène à une progression donnée (0 à 1), pour examiner une transition image par image
 
     zone.classList.add('is-3d');
     new ResizeObserver(calibrer).observe(zone);
     calibrer();
+    /* thème ou couleur d'accent changés (site-nav.js) : la scène se reconstruit avec les bonnes couleurs de texte et de lumière */
+    window.addEventListener('grille:refresh', async () => { vue = await construire(); calibrer(); });
 
     /* tactile : pas de survol, la carte joue son animation d'elle-même dès qu'elle est à l'écran, et se remet au repos en sortant (elle rejoue au retour) */
-    if (tactile && !reduit) {
+    if (tactile && !reduit && !window.__pileCas) {   // sur la page des cas, pile-cas.js désigne la carte du devant (une seule joue à la fois)
+      const carte = zone.closest('.carte'); // .is-active : le CSS s'en sert comme du survol (titre, trait, halo)
       let depart;
       new IntersectionObserver(([e]) => {
         clearTimeout(depart);
-        if (e.isIntersecting) depart = setTimeout(() => { cible = 1; lancer(); }, DELAI_VUE * 1000);
-        else { cible = p = 0; lancer(); }
+        if (e.isIntersecting) depart = setTimeout(() => { cible = 1; carte.classList.add('is-active'); lancer(); }, DELAI_VUE * 1000);
+        else { cible = p = 0; carte.classList.remove('is-active'); lancer(); }
       }, { threshold: 0.5 }).observe(zone);
     }
 
     if (!statique) {
       const carte = zone.closest('.carte');
-      const entrer = () => { cible = 1; lancer(); };
-      const sortir = () => { cible = 0; pointeur.cx = pointeur.cy = 0; lancer(); };
+      const entrer = () => { survol = true; majCible(); };
+      const sortir = () => { survol = false; majCible(); };
+      if (zone.__actif) zone.activer(true);   // la carte était déjà au centre avant que la scène soit prête
       carte.addEventListener('pointerenter', entrer);
       carte.addEventListener('pointerleave', sortir);
       carte.addEventListener('focusin', entrer);

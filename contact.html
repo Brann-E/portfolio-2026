@@ -22,17 +22,14 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96.png">
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500..700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 </head>
-<body class="has-site-nav" id="top"><script src="nav.js"></script>
-<canvas id="bg" aria-hidden="true"></canvas>
-<div class="veil" aria-hidden="true"></div>
-
-<!-- dégradé irisé partagé (bordures + glyphes des dons) -->
+<body class="has-site-nav da" id="top"><script src="nav.js"></script>
+<!-- dégradé partagé (glyphes des cartes) -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
   <linearGradient id="donGrad" x1="0" y1="0" x2="1" y2="1" spreadMethod="reflect">
     <stop offset="0" style="stop-color:var(--c1)"/>
@@ -40,36 +37,71 @@
     <stop offset="0.5" style="stop-color:var(--c3)"/>
     <stop offset="0.75" style="stop-color:var(--c4)"/>
     <stop offset="1" style="stop-color:var(--c5)"/>
-    <animateTransform attributeName="gradientTransform" type="rotate" from="0 0.5 0.5" to="360 0.5 0.5" dur="14s" repeatCount="indefinite"/>
   </linearGradient>
 </defs></svg>
 
-<div class="wrap">
-  <section class="contact contact--don">
-    <div class="don-direct">
-      <h1 class="don-title">Écrivez-moi,</h1>
-      <p class="contact-lead don-sub">Pour un poste de product designer ou de design strategist, une mission sur un produit, ou simplement pour échanger.</p>
+<main id="contenu">
 
-      <div class="don-give" id="don-give">
-        <form class="don-form" id="don-form" action="https://formspree.io/f/xzezpppj" method="POST">
-          <input class="don-field" type="text" name="nom" placeholder="Votre nom" autocomplete="name" required>
-          <input class="don-field" type="email" name="email" placeholder="Votre email" autocomplete="email" required>
-          <textarea class="don-field" name="message" placeholder="Ce que vous aimeriez me dire&hellip;" required></textarea>
-          <input type="hidden" name="_subject" value="Un message - via le portfolio">
-          <button class="don-submit" type="submit"><span class="holo" aria-hidden="true"></span><span class="don-submit-sweep" aria-hidden="true"></span><span class="don-submit-t">Écrire un message</span></button>
-          <p class="don-status" id="don-status" role="status" aria-live="polite" hidden></p>
-        </form>
-        <p class="contact-mail"><a href="mailto:aloha@brannetienne.com">aloha@brannetienne.com</a> &middot; Lyon, à distance et sur site</p>
-      </div>
+<!-- Héros : même construction que la home ; le titre, le sous-titre, le formulaire, l'adresse dessous -->
+<section class="hero hero--page" data-vivant aria-labelledby="titre">
+  <canvas id="cv-disques" aria-hidden="true"></canvas>
+  <canvas id="cv-grille" aria-hidden="true"></canvas>
+  <div class="hero-texte page">
+    <h1 id="titre" class="t-display t-hero c-12" data-texte>Écrivez-moi,</h1>
+    <p class="lead t-lede c-8 sp-2" data-texte>Pour parler de votre produit, d’une idée ou d’une collaboration,<br>ou&nbsp;simplement&nbsp;dire&nbsp;bonjour👋 </p>
+
+    <div class="c-8 sp-2" data-texte id="don-give">
+      <form class="formulaire" id="don-form" action="https://formspree.io/f/xzezpppj" method="POST">
+        <input class="champ-da don-field" type="text" name="nom" placeholder="Votre nom" autocomplete="name" aria-label="Votre nom" required>
+        <input class="champ-da don-field" type="email" name="email" placeholder="Votre email" autocomplete="email" aria-label="Votre email" required>
+        <textarea class="champ-da don-field" name="message" placeholder="Ce que vous aimeriez me dire&hellip;" aria-label="Votre message" required></textarea>
+        <input type="hidden" name="_subject" value="Un message - via le portfolio">
+        <div class="actions"><button class="btn don-submit" type="submit"><span class="don-submit-t">Écrire un message</span></button></div>
+        <p class="don-status" id="don-status" role="status" aria-live="polite" hidden></p>
+      </form>
     </div>
 
-    <h2 class="don-title">Après m'avoir laisser quelque chose de vous,<br><em class="spectrum-word">laissez-moi vous donner quelque chose de moi.</em></h2>
-    <p class="contact-lead don-sub">Chaque carte porte une idée qui m'a semblé trop belle pour la garder. Tirez-en autant que vous voulez.</p>
+    <p class="adresse c-12 sp-2" data-texte>
+      <a href="mailto:aloha@brannetienne.com" id="mail">aloha@brannetienne.com</a>
+      <button class="btn btn--sec" type="button" id="copier">Copier l'adresse</button>
+      <span class="copie-statut" id="copie-statut" role="status" aria-live="polite"></span>
+    </p>
+  </div>
+  <div class="hero-scene" aria-hidden="true"></div>
+</section>
 
-    <div class="don-grid" id="don-grid" role="group" aria-label="Cartes de dons &agrave; retourner"></div>
-    <button class="don-reshuffle" type="button" id="don-reshuffle">&#8635;&#8239;&nbsp;Nouvelle donne</button>
-  </section>
-</div>
+<!-- Les cartes à retourner -->
+<section class="don-zone">
+  <div class="page">
+    <h2 class="t-h2 c-12">Après m'avoir laisser quelque chose de vous,<br>laissez-moi vous donner quelque chose de moi.</h2>
+    <p class="t-lede c-8 sp-2">Chaque carte porte une idée qui m'a semblé trop belle pour la garder. Tirez-en autant que vous voulez.</p>
+    <div class="don-corps sp-3">
+      <div class="don-grid" id="don-grid" role="group" aria-label="Cartes de dons &agrave; retourner"></div>
+      <div class="don-legende">
+        <p class="etiquette">Au dos des cartes</p>
+        <ul>
+          <li>
+            <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="15"/><circle cx="24" cy="24" r="8"/><circle class="plein" cx="24" cy="24" r="2.2"/></svg>
+            <span><strong>Anthropologie</strong><br>l'origine qui rayonne</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 9 L37 16.5 L37 31.5 L24 39 L11 31.5 L11 16.5 Z"/></svg>
+            <span><strong>Auteurs</strong><br>la pens&eacute;e b&acirc;tie</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M9 25 A15 15 0 0 1 39 25"/></svg>
+            <span><strong>Questions</strong><br>l'adresse ouverte</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="don-pied">
+      <button class="don-reshuffle btn btn--sec" type="button" id="don-reshuffle">&#8635;&#8239;&nbsp;Nouvelle donne</button>
+      <a class="lien-sec don-source" href="circulation-paradigme-du-design.html">Découvrir d'où viennent ces idées</a>
+    </div>
+  </div>
+</section>
+</main>
 
 <div class="don-modal" id="don-modal" hidden>
   <button class="don-backdrop" id="don-backdrop" type="button" aria-label="Fermer"></button>
@@ -88,8 +120,27 @@
   </div>
 </div>
 
-<script src="background.js"></script>
 <script src="contact-dons.js"></script>
+<script>
+// copier l'adresse : le lien reste un lien, le bouton copie le texte
+(function () {
+  var bouton = document.getElementById("copier"), lien = document.getElementById("mail"), statut = document.getElementById("copie-statut"), minuteur = 0;
+  if (!bouton || !lien) return;
+  function dire(t) { statut.textContent = t; clearTimeout(minuteur); minuteur = setTimeout(function () { statut.textContent = ""; }, 2600); }
+  function secours() {
+    var r = document.createRange(); r.selectNodeContents(lien);
+    var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+    try { document.execCommand("copy") ? dire("Adresse copiée.") : dire("Adresse sélectionnée : copiez-la avec Ctrl+C."); } catch (e) { dire("Adresse sélectionnée : copiez-la avec Ctrl+C."); }
+  }
+  bouton.addEventListener("click", function () {
+    var t = lien.textContent.trim();
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(function () { dire("Adresse copiée."); }, secours);
+    else secours();
+  });
+})();
+</script>
+<script src="vivant.js"></script>
+<script src="snap-grille.js"></script>
 <script src="site-nav.js"></script>
 
 <div id="site-footer"></div>

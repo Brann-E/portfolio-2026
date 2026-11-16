@@ -22,9 +22,9 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96.png">
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500..700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 
@@ -33,15 +33,22 @@
 <canvas id="bg" aria-hidden="true"></canvas>
 <div class="veil" aria-hidden="true"></div>
 
+<section class="hero hero--page" data-vivant aria-labelledby="titre">
+  <canvas id="cv-disques" aria-hidden="true"></canvas>
+  <canvas id="cv-grille" aria-hidden="true"></canvas>
+  <div class="hero-texte page">
+    <h1 id="titre" class="t-display c-12" data-texte>Ce qui use une relation est rarement ce qu'on regarde.</h1>
+    <p class="lead t-lede c-8 sp-2" data-texte>Cette page présente une méthode pour les coopérations entre personnes et entre structures. Elle prolonge, hors du produit, la lecture que j'applique dans mes projets : regarder ce qui circule entre les gens, et ce qui a cessé de circuler.</p>
+    <p class="lead t-lede c-8 sp-1" data-texte>On a appris aux gens à se coordonner, pas à se rencontrer. À produire des dispositifs, pas à concevoir des relations. À mesurer des résultats, pas à prendre soin de ce qui les rend possibles.</p>
+    <p class="lead t-lede c-8 sp-1" data-texte>Ce n'est pas une fatalité. C'est un mécanisme, et un mécanisme, ça se répare.</p>
+  </div>
+  <div class="hero-scene" aria-hidden="true"></div>
+</section>
+
 <div class="wrap">
 
 <!-- I. RECONNAÎTRE -->
- <section class="hero hero--recherche">
-  <h1>Ce qui use une relation est <span class="spectrum-word">rarement ce qu'on regarde.</span></h1>
-  <p class="lede">Cette page présente une méthode pour les coopérations entre personnes et entre structures. Elle prolonge, hors du produit, la lecture que j'applique dans mes projets : regarder ce qui circule entre les gens, et ce qui a cessé de circuler.</p>
-  <p class="lede">On a appris aux gens à se coordonner, pas à se rencontrer. À produire des dispositifs, pas à concevoir des relations. À mesurer des résultats, pas à prendre soin de ce qui les rend possibles.</p>
-  <p class="lede">Ce n'est pas une fatalité. C'est un mécanisme, et un mécanisme, ça se répare.</p>
-</section>
+
 
 <div class="erratum">
   <span class="erratum-tag">Erratum</span>
@@ -156,15 +163,15 @@
   <div class="roles rv">
     <h3>Les rôles</h3>
     <div class="rgrid">
-      <div class="role">
+      <div class="role-reciprocite">
         <div class="rn">Le relieur</div>
         <p>Gardien du processus. Il ne porte aucun projet et ne décide rien à la place des autres&#8239;: il crée les conditions pour que ce qui existe déjà puisse se voir, se dire et se tenir.</p>
       </div>
-      <div class="role">
+      <div class="role-reciprocite">
         <div class="rn">Le récipreneur</div>
         <p>Celui qui prend l'initiative. Il s'empare d'une réciprocité, réunit les personnes concernées, porte l'intention de départ sans être garant du processus.</p>
       </div>
-      <div class="role">
+      <div class="role-reciprocite">
         <div class="rn">Le réciprenant</div>
         <p>Celui qui entre dans la réciprocité. Il apporte ce qu'il a, reçoit ce qui circule, et s'engage avec les autres.</p>
       </div>
@@ -381,7 +388,7 @@
     <p>Une série en six temps. Elle part d'une phrase contre-intuitive, traverse la généalogie des paradigmes du design, nomme un concept qui manquait, et montre où tout cela s'incarne concrètement dans l'univers numérique.</p>
   </div>
 
-  <a class="cta-serie rv" href="/circulation-paradigme-du-design">
+  <a class="btn" href="/circulation-paradigme-du-design">
     <span>Aller plus loin</span>
     <span class="arw">→</span>
   </a>
@@ -445,6 +452,8 @@ document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 </script>
 <script src="background.js"></script>
 <script src="figure-zoom.js"></script>
+<script src="vivant.js"></script>
+<script src="snap-grille.js"></script>
 <script src="site-nav.js"></script>
 <div id="site-footer"></div>
 </body>

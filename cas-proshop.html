@@ -22,92 +22,268 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96.png">
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500..700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 
 </head>
-<body class="has-site-nav"><script src="nav.js"></script>
+<body class="has-site-nav" data-accent="#8DC8FF"><script src="nav.js"></script>
 <canvas id="bg" aria-hidden="true"></canvas>
 <div class="veil" aria-hidden="true"></div>
 
 
 
 
-<main class="wrap">
+<main id="contenu">
 
-<!-- ═══════════ STRATE 1 ═══════════ -->
-<section class="s1">
-  <h1>Projet <em>Proshop</em></h1>
+<section class="hero hero--page hero--cas" data-vivant aria-labelledby="titre">
+  <canvas id="cv-disques" aria-hidden="true"></canvas>
+  <canvas id="cv-grille" aria-hidden="true"></canvas>
+  <div class="hero-texte page">
+    <div class="cas-prov" data-texte data-sans-grille>
+      <p class="cas-nom">Proshop</p>
+      <p class="arrondi cas-pastille"><img class="cas-logo cas-logo--grand cas-logo--mylight" src="assets/clients/carte/mylight.png" alt="MyLight150"><span>Commerce</span></p>
+    </div>
+    <h1 id="titre" class="t-display c-12" data-texte>L'outil ne remplace pas la relation, il en devient le support</h1>
+    <ul class="cas-tags" data-texte data-sans-grille aria-label="Nature de la mission">
+      <li class="arrondi cas-pastille">E-commerce B2B</li>
+      <li class="arrondi cas-pastille">Recherche utilisateur</li>
+      <li class="arrondi cas-pastille">Modèle cross-canal</li>
+      <li class="arrondi cas-pastille">Taskflows et blueprints</li>
+    </ul>
+  </div>
+  <div class="hero-scene" aria-hidden="true"></div>
+</section>
 
-  <dl class="facts">
-    <div><dt>Rôle</dt><dd>Product designer</dd></div>
-    <div><dt>Client</dt><dd>Alaska Energies (Mylight150)</dd></div>
-    <div><dt>Secteur</dt><dd>Commerce, greentech</dd></div>
-    <div><dt>Date</dt><dd>2022</dd></div>
+<div class="wrap">
+
+<div class="cas-visuel cas-visuel--grand arrondi">
+  <figure>
+    <svg viewBox="0 0 360 470" role="img" aria-label="Schéma de la chaîne commerciale avant le projet : le client est relié au commercial itinérant et au vendeur en magasin par un trait épais, la confiance et le conseil, que la désintermédiation allait couper ; le client commande seul sur le Proshop, qui ne sait pas tout faire ; le Proshop renvoie vers le support, en pointillé, les tickets, c'est-à-dire la charge que l'outil ne sait pas absorber ; rien n'outille les commerciaux ni les vendeurs.">
+            <defs>
+              <marker id="proshop-chaine-gris" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+                <path d="M0 0 L8 4 L0 8 z" fill="var(--muted)"/>
+              </marker>
+              <marker id="proshop-chaine-rose" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+                <path d="M0 0 L8 4 L0 8 z" fill="var(--c4)"/>
+              </marker>
+            </defs>
+
+            <path d="M132 64 C104 88 84 100 84 130" fill="none" stroke="var(--c3)" stroke-width="3" stroke-linecap="round"/>
+            <path d="M228 64 C256 88 276 100 276 130" fill="none" stroke="var(--c3)" stroke-width="3" stroke-linecap="round"/>
+            <text x="8" y="94" font-size="10.5" fill="var(--c3)">confiance,</text>
+            <text x="8" y="108" font-size="10.5" fill="var(--c3)">conseil</text>
+            <text x="352" y="94" text-anchor="end" font-size="10.5" fill="var(--c3)">confiance,</text>
+            <text x="352" y="108" text-anchor="end" font-size="10.5" fill="var(--c3)">conseil</text>
+
+            <rect x="110" y="16" width="140" height="48" rx="8" fill="var(--surface)" stroke="var(--muted)"/>
+            <text x="180" y="45" text-anchor="middle" font-size="13" font-weight="500" fill="var(--encre)">Les clients</text>
+
+            <rect x="8" y="130" width="150" height="64" rx="8" fill="var(--surface)" stroke="var(--c3)"/>
+            <text text-anchor="middle" font-size="12" font-weight="500" fill="var(--encre)"><tspan x="83" y="156">Les commerciaux</tspan><tspan x="83" y="172">itinérants</tspan></text>
+            <text x="83" y="187" text-anchor="middle" font-size="10" fill="var(--muted2)">rien ne les outille</text>
+
+            <rect x="202" y="130" width="150" height="64" rx="8" fill="var(--surface)" stroke="var(--c3)"/>
+            <text text-anchor="middle" font-size="12" font-weight="500" fill="var(--encre)"><tspan x="277" y="156">Les vendeurs</tspan><tspan x="277" y="172">en magasin</tspan></text>
+            <text x="277" y="187" text-anchor="middle" font-size="10" fill="var(--muted2)">rien ne les outille</text>
+
+            <path d="M180 64 L180 246" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#proshop-chaine-gris)"/>
+            <text x="188" y="224" font-size="10" fill="var(--muted)">commande seul</text>
+
+            <rect x="80" y="250" width="200" height="60" rx="10" fill="var(--encre)"/>
+            <text text-anchor="middle" font-size="13" font-weight="500" fill="var(--bg)"><tspan x="180" y="276">Le Proshop</tspan><tspan x="180" y="294">ne sait pas tout faire</tspan></text>
+
+            <path d="M180 310 L180 396" fill="none" stroke="var(--c4)" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#proshop-chaine-rose)"/>
+            <text font-size="10" fill="var(--c4)"><tspan x="190" y="346">des tickets, pour ce que</tspan><tspan x="190" y="360">l'outil ne sait pas faire</tspan></text>
+
+            <rect x="100" y="400" width="160" height="56" rx="8" fill="var(--surface)" stroke="var(--c4)"/>
+            <text text-anchor="middle" font-size="12" font-weight="500" fill="var(--encre)"><tspan x="180" y="425">Le support</tspan><tspan x="180" y="441">absorbe la charge</tspan></text>
+          </svg>
+    <p class="cas-etat">Avant</p>
+    <figcaption>Ce qui circulait dans la chaîne commerciale. Le trait épais, la confiance et le conseil entre le client et son commercial, est ce que la désintermédiation allait couper ; le pointillé rose, la charge que le support absorbait en tickets.</figcaption>
+  </figure>
+  <figure>
+    <svg viewBox="0 0 360 440" role="img" aria-label="Schéma du modèle cross-canal : au centre, le Proshop, plateforme unique ; autour, trois porteurs de la commande qui y passent commande, le client en autonomie pour le réassort, l'article connu et l'urgence, le commercial itinérant pour le conseil, le chantier et le dépannage, et le vendeur en magasin ; un trait pointillé relie le client et le commercial, la relation conservée ; en sortie, une vue unique sur ce qui se vend, quel que soit le chemin.">
+            <defs>
+              <marker id="proshop-fleche" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+                <path d="M0 0 L8 4 L0 8 z" fill="var(--muted)"/>
+              </marker>
+            </defs>
+
+            <path d="M62 52 C62 22 180 22 180 52" fill="none" stroke="var(--c3)" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <text x="121" y="14" text-anchor="middle" font-size="11" fill="var(--c3)">la relation, conservée</text>
+
+            <rect x="8" y="52" width="108" height="120" rx="8" fill="var(--surface)" stroke="var(--muted)"/>
+            <text text-anchor="middle" font-size="12" font-weight="500" fill="var(--encre)"><tspan x="62" y="78">Le client,</tspan><tspan x="62" y="94">en autonomie</tspan></text>
+            <text text-anchor="middle" font-size="10.5" fill="var(--muted2)"><tspan x="62" y="118">réassort,</tspan><tspan x="62" y="133">article connu,</tspan><tspan x="62" y="148">urgence</tspan></text>
+
+            <rect x="126" y="52" width="108" height="120" rx="8" fill="var(--surface)" stroke="var(--muted)"/>
+            <text text-anchor="middle" font-size="12" font-weight="500" fill="var(--encre)"><tspan x="180" y="78">Le commercial</tspan><tspan x="180" y="94">itinérant</tspan></text>
+            <text text-anchor="middle" font-size="10.5" fill="var(--muted2)"><tspan x="180" y="118">conseil,</tspan><tspan x="180" y="133">chantier,</tspan><tspan x="180" y="148">dépannage</tspan></text>
+
+            <rect x="244" y="52" width="108" height="120" rx="8" fill="var(--surface)" stroke="var(--muted)"/>
+            <text text-anchor="middle" font-size="12" font-weight="500" fill="var(--encre)"><tspan x="298" y="78">Le vendeur</tspan><tspan x="298" y="94">en magasin</tspan></text>
+
+            <path d="M62 172 L90 246" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#proshop-fleche)"/>
+            <path d="M180 172 L180 246" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#proshop-fleche)"/>
+            <path d="M298 172 L270 246" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#proshop-fleche)"/>
+            <text x="68" y="212" text-anchor="middle" font-size="10" fill="var(--muted)">passe commande</text>
+            <text x="180" y="204" text-anchor="middle" font-size="10" fill="var(--muted)">passe commande</text>
+            <text x="292" y="212" text-anchor="middle" font-size="10" fill="var(--muted)">passe commande</text>
+
+            <rect x="40" y="250" width="280" height="64" rx="10" fill="var(--encre)"/>
+            <text text-anchor="middle" font-size="13" font-weight="500" fill="var(--bg)"><tspan x="180" y="277">Le Proshop,</tspan><tspan x="180" y="296">plateforme unique</tspan></text>
+
+            <path d="M180 314 L180 366" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#proshop-fleche)"/>
+            <rect x="20" y="370" width="320" height="56" rx="8" fill="none" stroke="var(--muted)" stroke-dasharray="2 3"/>
+            <text text-anchor="middle" font-size="12" fill="var(--encre)"><tspan x="180" y="394">Une vue unique sur ce qui se vend,</tspan><tspan x="180" y="411">quel que soit le chemin</tspan></text>
+          </svg>
+    <p class="cas-etat">Après</p>
+    <figcaption>Le modèle cross-canal : une seule plateforme, trois porteurs de la commande.</figcaption>
+  </figure>
+</div>
+
+<section class="cas-contexte" id="contexte">
+  <dl class="cas-fiche">
+    <div><dt>Stack technique</dt><dd>Magento, Microsoft Dynamics 365, SAP</dd></div>
+    <div><dt>Durée (année)</dt><dd>9 mois (2022)</dd></div>
+    <div><dt>Rôles</dt><dd>Product designer</dd></div>
+    <div><dt>Équipe</dt><dd><span>PM / PO, CPTO, Head of Engineering,  Architect, Techlead, Dev full stack</span></dd></div>
+    <div><dt>Rencontrés</dt><dd><span>Sales director, Sales manager, Sales administration, Salesperson, Logistics specialist, Purchasing department, Energy service, Marketing service, Support service, et des clients au profil cible (ICP)</span></dd></div>
+    <div><dt>Périmètre</dt><dd><span>Plus de 30 entretiens → Modèle cross-canal → 6 livrables</span><span>Benchmark, taskflows, matrice d'impact, architecture d'information, plan de site, audits</span></dd></div>
   </dl>
+  <div class="cas-contexte-texte">
+    <p class="t-label cas-etiquette">Le produit</p>
+    <p class="t-h3 cas-produit">On m'a demandé de désintermédier la vente. La relation commerciale était justement ce qui faisait tenir l'entreprise.</p>
+    <p class="t-lede">Alaska Energies, désormais MyLight150, distribue des fournitures pour le bâtiment à énergie positive. Sa plateforme e-commerce, le Proshop, ne pèse que 2,5 % des ventes malgré des investissements répétés : parcours illisible, paniers abandonnés, catalogue défaillant.</p>
+    <p class="t-lede">J'interviens comme product designer pour la refondre, avec un accès rare : l'ensemble de la chaîne commerciale, des acheteurs aux magasiniers, et les clients eux-mêmes.</p>
+    <h2 class="cas-question">Et si le meilleur outil de vente était celui qui ne remplace personne ?</h2>
+    <div class="cas-changement" id="impact">
+      <h2 class="cas-sous-titre">Impact</h2>
+      <div class="metrics">
+        <div class="metric arrondi"><div class="v">40+</div><div class="l">entretiens, dans toute la chaîne commerciale et chez les clients</div></div>
+        <div class="metric arrondi"><div class="v">6</div><div class="l">livrables qui posent les fondations d'un modèle de vente resté valable</div></div>
+        <div class="metric arrondi"><div class="v">Arrêt</div><div class="l">du projet, faute d'accord entre les décideurs sur la solution technique</div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <p class="question">Et si le meilleur outil de vente était celui qui ne remplace personne ?</p>
+<section class="tradeoffs" id="tradeoffs">
+  <h2>Trade-off</h2>
+  <div class="cas-tradeoffs">
 
-  <p class="context">Alaska Energies, désormais MyLight150, distribue des fournitures pour le bâtiment à énergie positive. Sa plateforme e-commerce, le Proshop, ne pèse que 2,5% des ventes malgré des investissements répétés : parcours illisible, paniers abandonnés, catalogue défaillant. J'interviens comme product designer pour la refondre, avec un accès rare : l'ensemble de la chaîne commerciale, des acheteurs aux magasiniers, et les clients eux-mêmes.</p>
+    <article class="cas-tradeoff arrondi">
+      <p class="arrondi cas-tradeoff-type" data-sans-grille>Produit</p>
+      <div class="cas-tradeoff-question">Faut-il retirer l'humain du parcours de vente, ou outiller la relation ?</div>
+      <div class="cas-tradeoff-choix">
+        <div class="cas-tradeoff-cadre cas-tradeoff-retenu arrondi">
+          <div class="cas-tradeoff-label">Retenu</div>
+          <div class="cas-tradeoff-texte">Un modèle cross-canal : une plateforme unique où le client, le commercial itinérant et le vendeur en magasin passent commande.</div>
+        </div>
+        <div class="cas-tradeoff-cadre arrondi">
+          <div class="cas-tradeoff-label">Écarté</div>
+          <div class="cas-tradeoff-texte">Désintermédier la vente : retirer l'humain du parcours, comme le fait un e-commerce classique.</div>
+        </div>
+      </div>
+      <div class="cas-tradeoff-decision arrondi">
+        <div class="cas-tradeoff-label">Décision et conséquences</div>
+        <div class="cas-tradeoff-texte">L'outil cesse de remplacer la relation pour devenir son support. Une fonctionnalité qui affaiblissait la relation commerciale était écartée, même si elle simplifiait le parcours.</div>
+      </div>
+    </article>
 
-  <p class="bascule">On m'a demandé de désintermédier la vente.<br><span>La relation commerciale était justement ce qui faisait tenir l'entreprise.</span></p>
+    <article class="cas-tradeoff arrondi">
+      <p class="arrondi cas-tradeoff-type" data-sans-grille>Design</p>
+      <div class="cas-tradeoff-question">Faut-il corriger le tunnel de commande, ou écouter toute la chaîne avant de dessiner ?</div>
+      <div class="cas-tradeoff-choix">
+        <div class="cas-tradeoff-cadre cas-tradeoff-retenu arrondi">
+          <div class="cas-tradeoff-label">Retenu</div>
+          <div class="cas-tradeoff-texte">Écouter toute la chaîne commerciale et des clients au profil cible : plus de trente entretiens, avant de toucher au parcours.</div>
+        </div>
+        <div class="cas-tradeoff-cadre arrondi">
+          <div class="cas-tradeoff-label">Écarté</div>
+          <div class="cas-tradeoff-texte">Fluidifier le tunnel, assainir le catalogue, refaire l'interface : un problème de e-commerce classique.</div>
+        </div>
+      </div>
+      <div class="cas-tradeoff-decision arrondi">
+        <div class="cas-tradeoff-label">Décision et conséquences</div>
+        <div class="cas-tradeoff-texte">Le regard se déplace : les clients ne demandaient pas moins de relation, mais de choisir quand elle sert le plus. Il fallait outiller les commerciaux et donner de l'autonomie au client.</div>
+      </div>
+    </article>
+
+    <article class="cas-tradeoff arrondi">
+      <p class="arrondi cas-tradeoff-type" data-sans-grille>Stratégie</p>
+      <div class="cas-tradeoff-question">Faut-il voir la relation commerciale comme un coût à réduire, ou comme un actif ?</div>
+      <div class="cas-tradeoff-choix">
+        <div class="cas-tradeoff-cadre cas-tradeoff-retenu arrondi">
+          <div class="cas-tradeoff-label">Retenu</div>
+          <div class="cas-tradeoff-texte">Défendre le modèle cross-canal : la valeur vient de ce qui se joue entre les commerciaux et leurs clients.</div>
+        </div>
+        <div class="cas-tradeoff-cadre arrondi">
+          <div class="cas-tradeoff-label">Écarté</div>
+          <div class="cas-tradeoff-texte">Voir dans la digitalisation un moyen de réduire la force commerciale, en tenant les ventes pour acquises.</div>
+        </div>
+      </div>
+      <div class="cas-tradeoff-decision arrondi">
+        <div class="cas-tradeoff-label">Décision et conséquences</div>
+        <div class="cas-tradeoff-texte">Le modèle demandait à la direction de changer une croyance : la relation commerciale comme coût. La délibération sur la solution technique s'est étirée, le périmètre a glissé vers un portail de services, puis le projet s'est arrêté.</div>
+      </div>
+    </article>
+
+  </div>
 </section>
 
 <!-- ═══════════ STRATE 2 ═══════════ -->
 <section class="s2">
-  <div class="summary">
-    <a class="row" href="#c1">
-      <div class="num">01</div>
-      <div class="txt">
-        <div class="t">Une plateforme e-commerce qui pèse 2,5% des ventes</div>
-        <div class="d">Une tentative précédente a échoué. Le parcours est illisible, le catalogue truffé d'erreurs, les paniers s'abandonnent. Face à des concurrents européens où l'on commande en trois clics, il faut refondre, vite !</div>
+  <h2 class="s2-titre">Le résumé</h2>
+  <ol class="resume-liste">
+    <li class="resume-ligne">
+      <div class="resume-intitule">
+        <div class="resume-nom">Le problème posé</div>
+        <div class="resume-phrase">Une plateforme qui coûte cher et ne vend rien</div>
       </div>
-    </a>
-
-    <a class="row" href="#c2">
-      <div class="num">02</div>
-      <div class="txt">
-        <div class="t">Les clients ne voulaient pas se passer des commerciaux, ils voulaient choisir quand les solliciter</div>
-        <div class="d">Plus de trente entretiens dans toute la chaîne. Ce qui apparaît : la relation commerciale est le principal actif de l'entreprise, pas son frein. Les clients veulent de l'autonomie là où le commercial n'apporte rien, et le garder partout ailleurs.</div>
+      <div class="resume-texte">Le Proshop ne représente que 2,5 % des ventes malgré des investissements substantiels et une refonte déjà avortée : parcours illisible, paniers abandonnés, catalogue défaillant. On me demande de refaire le Proshop et de simplifier le parcours d'achat.</div>
+    </li>
+    <li class="resume-ligne">
+      <div class="resume-intitule">
+        <div class="resume-nom">Le déplacement</div>
+        <div class="resume-phrase">Ce qu'on prenait pour un frein était le principal actif</div>
       </div>
-    </a>
-
-    <a class="row" href="#c3">
-      <div class="num">03</div>
-      <div class="txt">
-        <div class="t">Un modèle cross-canal : une seule plateforme, plusieurs porteurs de la commande</div>
-        <div class="d">Le client, le commercial itinérant et le vendeur en magasin passent commande au même endroit. L'outil cesse de remplacer la relation pour devenir son support.</div>
+      <div class="resume-texte">Plus de trente entretiens, dans toute la chaîne commerciale et chez les clients. Ils ne voulaient pas se passer des commerciaux : ils voulaient agir seuls là où le commercial n'apporte rien, et le garder partout ailleurs.</div>
+    </li>
+    <li class="resume-ligne">
+      <div class="resume-intitule">
+        <div class="resume-nom">L'instrument</div>
+        <div class="resume-phrase">Un modèle cross-canal, où l'outil devient le support de la relation</div>
       </div>
-    </a>
-
-    <a class="row" href="#c4">
-      <div class="num">04</div>
-      <div class="txt">
-        <div class="t">Ce que le modèle ouvre : règles, interconnexions, B2B</div>
-        <div class="d">Une fois la vente pensée en cross-canal, tout un chantier devient formulable, règles commerciales explicites, interconnexion CRM / ERP / WMS / TMS / CPQ, commandes en volume, autonomie client sans perte de relation.</div>
+      <div class="resume-texte">Une plateforme unique où toutes les commandes sont passées, portées par le client, le commercial itinérant ou le vendeur en magasin. L'outil ne remplace pas la relation : il en devient le support.</div>
+    </li>
+    <li class="resume-ligne">
+      <div class="resume-intitule">
+        <div class="resume-nom">Le champ ouvert</div>
+        <div class="resume-phrase">Une fois la vente pensée en cross-canal, tout devient formulable</div>
       </div>
-    </a>
-
-    <a class="row" href="#c5">
-      <div class="num">05</div>
-      <div class="txt">
-        <div class="t">Le raisonnement était juste. L'alignement n'a pas suivi.</div>
-        <div class="d">Le choix de la solution technique n'a pas trouvé d'accord entre les décideurs. Le projet a d'abord glissé vers un portail de services, puis s'est arrêté. Les livrables, eux, ont posé les fondations d'un modèle de vente qui restait valable.</div>
+      <div class="resume-texte">Quatre chantiers s'ouvrent : des règles commerciales explicites, une plateforme interconnectée (CRM, ERP, WMS, TMS, CPQ), des processus sans boucle, le B2B enfin adressable.</div>
+    </li>
+    <li class="resume-ligne">
+      <div class="resume-intitule">
+        <div class="resume-nom">Ce qu'il en reste</div>
+        <div class="resume-phrase">Le raisonnement était juste. L'alignement n'a pas suivi.</div>
       </div>
-    </a>
-
-    <a class="row" href="#c6">
-      <div class="num">06</div>
-      <div class="txt">
-        <div class="t">Deux leçons : une sur le produit, une sur la décision</div>
-        <div class="d">Un outil ne remplace pas une relation, il lui donne les moyens d'exister. Et un raisonnement juste ne suffit pas : encore faut-il que ceux qui décident puissent voir ce qu'il rend possible.</div>
+      <div class="resume-texte">Le choix de la solution technique n'a pas trouvé d'accord entre les décideurs. Le projet a glissé vers un portail de services, puis s'est arrêté. Les livrables ont posé les fondations d'un modèle de vente qui restait valable.</div>
+    </li>
+    <li class="resume-ligne">
+      <div class="resume-intitule">
+        <div class="resume-nom">Ma pratique ?</div>
+        <div class="resume-phrase">Ce que ce projet a ancré dans ma pratique</div>
       </div>
-    </a>
-  </div>
+      <div class="resume-texte">Un outil ne remplace pas une relation, il lui donne les moyens d'exister. Et un raisonnement juste ne suffit pas : encore faut-il que ceux qui décident puissent voir ce qu'il rend possible.</div>
+    </li>
+  </ol>
 </section>
+
 
 <!-- ═══════════ STRATE 3 ═══════════ -->
 <section class="s3">
@@ -161,27 +337,27 @@
             <text x="352" y="108" text-anchor="end" font-size="10.5" fill="var(--c3)">conseil</text>
 
             <rect x="110" y="16" width="140" height="48" rx="8" fill="var(--surface)" stroke="var(--muted)"/>
-            <text x="180" y="45" text-anchor="middle" font-size="13" font-weight="500" fill="var(--paper)">Les clients</text>
+            <text x="180" y="45" text-anchor="middle" font-size="13" font-weight="500" fill="var(--encre)">Les clients</text>
 
             <rect x="8" y="130" width="150" height="64" rx="8" fill="var(--surface)" stroke="var(--c3)"/>
-            <text text-anchor="middle" font-size="12" font-weight="500" fill="var(--paper)"><tspan x="83" y="156">Les commerciaux</tspan><tspan x="83" y="172">itinérants</tspan></text>
+            <text text-anchor="middle" font-size="12" font-weight="500" fill="var(--encre)"><tspan x="83" y="156">Les commerciaux</tspan><tspan x="83" y="172">itinérants</tspan></text>
             <text x="83" y="187" text-anchor="middle" font-size="10" fill="var(--muted2)">rien ne les outille</text>
 
             <rect x="202" y="130" width="150" height="64" rx="8" fill="var(--surface)" stroke="var(--c3)"/>
-            <text text-anchor="middle" font-size="12" font-weight="500" fill="var(--paper)"><tspan x="277" y="156">Les vendeurs</tspan><tspan x="277" y="172">en magasin</tspan></text>
+            <text text-anchor="middle" font-size="12" font-weight="500" fill="var(--encre)"><tspan x="277" y="156">Les vendeurs</tspan><tspan x="277" y="172">en magasin</tspan></text>
             <text x="277" y="187" text-anchor="middle" font-size="10" fill="var(--muted2)">rien ne les outille</text>
 
             <path d="M180 64 L180 246" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#proshop-chaine-gris)"/>
             <text x="188" y="224" font-size="10" fill="var(--muted)">commande seul</text>
 
-            <rect x="80" y="250" width="200" height="60" rx="10" fill="var(--paper)"/>
-            <text text-anchor="middle" font-size="13" font-weight="500" fill="var(--ink)"><tspan x="180" y="276">Le Proshop</tspan><tspan x="180" y="294">ne sait pas tout faire</tspan></text>
+            <rect x="80" y="250" width="200" height="60" rx="10" fill="var(--encre)"/>
+            <text text-anchor="middle" font-size="13" font-weight="500" fill="var(--bg)"><tspan x="180" y="276">Le Proshop</tspan><tspan x="180" y="294">ne sait pas tout faire</tspan></text>
 
             <path d="M180 310 L180 396" fill="none" stroke="var(--c4)" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#proshop-chaine-rose)"/>
             <text font-size="10" fill="var(--c4)"><tspan x="190" y="346">des tickets, pour ce que</tspan><tspan x="190" y="360">l'outil ne sait pas faire</tspan></text>
 
             <rect x="100" y="400" width="160" height="56" rx="8" fill="var(--surface)" stroke="var(--c4)"/>
-            <text text-anchor="middle" font-size="12" font-weight="500" fill="var(--paper)"><tspan x="180" y="425">Le support</tspan><tspan x="180" y="441">absorbe la charge</tspan></text>
+            <text text-anchor="middle" font-size="12" font-weight="500" fill="var(--encre)"><tspan x="180" y="425">Le support</tspan><tspan x="180" y="441">absorbe la charge</tspan></text>
           </svg>
         </div>
         <p class="figcap">Ce qui circulait dans la chaîne commerciale. Le trait épais, la confiance et le conseil entre le client et son commercial, est ce que la désintermédiation allait couper&#8239;; le pointillé rose, la charge que le support absorbait en tickets.</p>
@@ -211,15 +387,15 @@
             <text x="121" y="14" text-anchor="middle" font-size="11" fill="var(--c3)">la relation, conservée</text>
 
             <rect x="8" y="52" width="108" height="120" rx="8" fill="var(--surface)" stroke="var(--muted)"/>
-            <text text-anchor="middle" font-size="12" font-weight="500" fill="var(--paper)"><tspan x="62" y="78">Le client,</tspan><tspan x="62" y="94">en autonomie</tspan></text>
+            <text text-anchor="middle" font-size="12" font-weight="500" fill="var(--encre)"><tspan x="62" y="78">Le client,</tspan><tspan x="62" y="94">en autonomie</tspan></text>
             <text text-anchor="middle" font-size="10.5" fill="var(--muted2)"><tspan x="62" y="118">réassort,</tspan><tspan x="62" y="133">article connu,</tspan><tspan x="62" y="148">urgence</tspan></text>
 
             <rect x="126" y="52" width="108" height="120" rx="8" fill="var(--surface)" stroke="var(--muted)"/>
-            <text text-anchor="middle" font-size="12" font-weight="500" fill="var(--paper)"><tspan x="180" y="78">Le commercial</tspan><tspan x="180" y="94">itinérant</tspan></text>
+            <text text-anchor="middle" font-size="12" font-weight="500" fill="var(--encre)"><tspan x="180" y="78">Le commercial</tspan><tspan x="180" y="94">itinérant</tspan></text>
             <text text-anchor="middle" font-size="10.5" fill="var(--muted2)"><tspan x="180" y="118">conseil,</tspan><tspan x="180" y="133">chantier,</tspan><tspan x="180" y="148">dépannage</tspan></text>
 
             <rect x="244" y="52" width="108" height="120" rx="8" fill="var(--surface)" stroke="var(--muted)"/>
-            <text text-anchor="middle" font-size="12" font-weight="500" fill="var(--paper)"><tspan x="298" y="78">Le vendeur</tspan><tspan x="298" y="94">en magasin</tspan></text>
+            <text text-anchor="middle" font-size="12" font-weight="500" fill="var(--encre)"><tspan x="298" y="78">Le vendeur</tspan><tspan x="298" y="94">en magasin</tspan></text>
 
             <path d="M62 172 L90 246" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#proshop-fleche)"/>
             <path d="M180 172 L180 246" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#proshop-fleche)"/>
@@ -228,12 +404,12 @@
             <text x="180" y="204" text-anchor="middle" font-size="10" fill="var(--muted)">passe commande</text>
             <text x="292" y="212" text-anchor="middle" font-size="10" fill="var(--muted)">passe commande</text>
 
-            <rect x="40" y="250" width="280" height="64" rx="10" fill="var(--paper)"/>
-            <text text-anchor="middle" font-size="13" font-weight="500" fill="var(--ink)"><tspan x="180" y="277">Le Proshop,</tspan><tspan x="180" y="296">plateforme unique</tspan></text>
+            <rect x="40" y="250" width="280" height="64" rx="10" fill="var(--encre)"/>
+            <text text-anchor="middle" font-size="13" font-weight="500" fill="var(--bg)"><tspan x="180" y="277">Le Proshop,</tspan><tspan x="180" y="296">plateforme unique</tspan></text>
 
             <path d="M180 314 L180 366" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#proshop-fleche)"/>
             <rect x="20" y="370" width="320" height="56" rx="8" fill="none" stroke="var(--muted)" stroke-dasharray="2 3"/>
-            <text text-anchor="middle" font-size="12" fill="var(--paper)"><tspan x="180" y="394">Une vue unique sur ce qui se vend,</tspan><tspan x="180" y="411">quel que soit le chemin</tspan></text>
+            <text text-anchor="middle" font-size="12" fill="var(--encre)"><tspan x="180" y="394">Une vue unique sur ce qui se vend,</tspan><tspan x="180" y="411">quel que soit le chemin</tspan></text>
           </svg>
         </div>
         <p class="figcap">Le modèle cross-canal&#8239;: une seule plateforme, trois porteurs de la commande.</p>
@@ -258,7 +434,7 @@
         <h3>Le champ ouvert</h3>
         <p class="chapter-sub">Une fois la vente pensée en cross-canal, tout devient formulable</p>
         <p>Le modèle posé, un ensemble de chantiers s'ouvre, dont aucun n'était formulable tant qu'on raisonnait en pensant le tunnel e-commerce comme isolé.</p>
-        <div class="nodes">
+        <div class="nodes hote in" data-hote>
           <div class="node"><div class="n">01</div><h4>Des règles commerciales explicites</h4><p>Remises simplifiées, conditions de port et barème clarifiés, règles d'encours définies, primes de fin d'année cadrées, et un mécanisme de calcul de marge brute qui valide ou bloque une vente avant qu'elle ne parte.</p></div>
           <div class="node"><div class="n">02</div><h4>Une plateforme interconnectée</h4><p>Le Proshop cesse d'être une île : connexion au CRM, à l'ERP, au WMS, au TMS et au CPQ, pour que la donnée circule au lieu d'être ressaisie à chaque étape.</p></div>
           <div class="node"><div class="n">03</div><h4>Des processus sans boucle</h4><p>Une fonction clé attribuée à une personne identifiée pour casser les allers-retours, et un commercial référent affecté à chaque client pour traiter ses problèmes de bout en bout.</p></div>
@@ -305,7 +481,7 @@
             <path d="M350 44 L350 62" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#proshop-ia-fleche)"/>
 
             <rect x="180" y="64" width="340" height="46" rx="10" fill="var(--surface)" stroke="var(--c1)" stroke-width="1.5"/>
-            <text x="350" y="85" text-anchor="middle" font-size="13" font-weight="500" fill="var(--paper)">Un même référentiel d'attributs produit</text>
+            <text x="350" y="85" text-anchor="middle" font-size="13" font-weight="500" fill="var(--encre)">Un même référentiel d'attributs produit</text>
             <text x="350" y="101" text-anchor="middle" font-size="9" fill="var(--muted2)">marque · puissance · type · rendement · cellules · certifications…</text>
 
             <path d="M260 110 C210 128 185 130 180 146" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#proshop-ia-fleche)"/>
@@ -317,16 +493,16 @@
             <text x="175" y="152" text-anchor="middle" font-size="10.5" font-weight="500" fill="var(--accent)">Naviguer, à double entrée</text>
 
             <rect x="30" y="166" width="118" height="30" rx="8" fill="var(--surface)" stroke="var(--muted)"/>
-            <text x="89" y="185" text-anchor="middle" font-size="10.5" fill="var(--paper)">Par marque</text>
+            <text x="89" y="185" text-anchor="middle" font-size="10.5" fill="var(--encre)">Par marque</text>
             <path d="M148 181 L182 181" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#proshop-ia-fleche)"/>
             <rect x="186" y="166" width="134" height="30" rx="8" fill="var(--surface)" stroke="var(--c5)"/>
-            <text x="253" y="185" text-anchor="middle" font-size="10.5" fill="var(--paper)">filtre Catégorie</text>
+            <text x="253" y="185" text-anchor="middle" font-size="10.5" fill="var(--encre)">filtre Catégorie</text>
 
             <rect x="30" y="210" width="118" height="30" rx="8" fill="var(--surface)" stroke="var(--muted)"/>
-            <text x="89" y="229" text-anchor="middle" font-size="10.5" fill="var(--paper)">Par catégorie</text>
+            <text x="89" y="229" text-anchor="middle" font-size="10.5" fill="var(--encre)">Par catégorie</text>
             <path d="M148 225 L182 225" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#proshop-ia-fleche)"/>
             <rect x="186" y="210" width="134" height="30" rx="8" fill="var(--surface)" stroke="var(--c5)"/>
-            <text x="253" y="229" text-anchor="middle" font-size="10.5" fill="var(--paper)">filtre Marque</text>
+            <text x="253" y="229" text-anchor="middle" font-size="10.5" fill="var(--encre)">filtre Marque</text>
 
             <text x="175" y="266" text-anchor="middle" font-size="9" fill="var(--muted2)">Le menu choisi fait remonter en premier</text>
             <text x="175" y="279" text-anchor="middle" font-size="9" fill="var(--muted2)">le filtre complémentaire.</text>
@@ -334,7 +510,7 @@
             <!-- droite : page produit, 4 niveaux -->
             <text x="525" y="152" text-anchor="middle" font-size="10.5" font-weight="500" fill="var(--accent)">Structurer la page produit, en 4 niveaux</text>
 
-            <g font-size="10" fill="var(--paper)">
+            <g font-size="10" fill="var(--encre)">
               <rect x="380" y="164" width="300" height="28" rx="6" fill="var(--surface)" stroke="var(--faint)"/>
               <rect x="380" y="164" width="5" height="28" rx="2" fill="var(--c4)"/>
               <text x="396" y="182"><tspan fill="var(--muted)" font-size="9">1 </tspan>Catégorie, le filtre primaire</text>
@@ -366,7 +542,7 @@
         <div class="figure"><img src="assets/proshop-wireframe-produit-2.png" alt="À rédiger d'après l'image" loading="lazy"></div>
         <p class="figcap">[Légende à écrire selon ce que montre l'écran]</p>
         -->
-        <p style="margin-top:36px">Le blocage n'est pas venu du modèle, mais de ce qu'il demandait d'admettre. La direction voyait dans la digitalisation un moyen de réduire la force commerciale, et tenait pour acquis que les ventes suivraient d'elles-mêmes. Le modèle cross-canal disait l'inverse&#8239;: la valeur ne venait pas du canal, elle venait de ce qui se jouait entre les commerciaux et leurs clients; et un outil qui coupe ce lien ne produit pas d'économies, il produit une perte.</p>
+        <p>Le blocage n'est pas venu du modèle, mais de ce qu'il demandait d'admettre. La direction voyait dans la digitalisation un moyen de réduire la force commerciale, et tenait pour acquis que les ventes suivraient d'elles-mêmes. Le modèle cross-canal disait l'inverse&#8239;: la valeur ne venait pas du canal, elle venait de ce qui se jouait entre les commerciaux et leurs clients; et un outil qui coupe ce lien ne produit pas d'économies, il produit une perte.</p>
         <p>Le modèle demandait à la direction de changer une croyance&#8239;: la relation commerciale comme coût. Donella Meadows range ce niveau, le paradigme, parmi les leviers les plus puissants d'un système, et parmi ceux qui résistent le plus. L'arrêt du projet l'illustre.</p>
         <p>C'est une conséquence difficile à se représenter tant qu'on n'a pas vu le système en entier. La délibération sur la solution technique s'est étirée, le périmètre a glissé vers un portail de services - informer le client, laisser la commande aux équipes de vente comme auparavant - puis le projet s'est arrêté.</p>
       </article>
@@ -404,7 +580,7 @@
 <!-- ============================================ -->
 <section class="livre" aria-label="Un livre qui a nourri ce regard">
   <div class="livre-inner">
-    <img class="livre-cover" src="assets/design-of-everyday-things-300.webp" width="300" height="450" alt="Couverture du livre The Design of Everyday Things, de Don Norman" loading="lazy">
+    <img class="livre-cover" src="assets/Livres/design-of-everyday-things-300.webp" width="184" height="280" alt="Couverture du livre The Design of Everyday Things, de Don Norman" loading="lazy">
     <div class="livre-body">
       <div class="eyebrow">Là où je quitte le paradigme de l'objet</div>
       <h3 class="livre-title">The Design of Everyday Things<span>Don Norman</span></h3>
@@ -421,7 +597,7 @@
 <!-- ============================================ -->
 <section class="livre" aria-label="Le livre où Norman revient sur ses positions">
   <div class="livre-inner">
-    <img class="livre-cover" src="assets/emotional-design-300.webp" width="300" height="447" alt="Couverture du livre Emotional Design, de Don Norman" loading="lazy">
+    <img class="livre-cover" src="assets/Livres/emotional-design-300.webp" width="184" height="280" alt="Couverture du livre Emotional Design, de Don Norman" loading="lazy">
     <div class="livre-body">
       <div class="eyebrow">La suite - et le pas qu'il n'a pas franchi</div>
       <h3 class="livre-title">Emotional Design<span>Don Norman</span></h3>
@@ -440,6 +616,20 @@
   </div>
 </section>
 
+<nav class="suite-cas" aria-label="Autres études de cas">
+  <a href="/cas-bi-solution" rel="prev"><span class="suite-sens">← Cas précédent</span><span class="suite-nom">B.I Solution</span><span class="suite-meta">Data · 2023</span></a>
+  <a href="/cas-chalon-dans-la-rue" rel="next"><span class="suite-sens">Cas suivant →</span><span class="suite-nom">Chalon dans la rue</span><span class="suite-meta">Culture · 2025</span></a>
+</nav>
+</div>
+<section class="bandeau-accent hote" data-hote aria-labelledby="t-suite">
+  <div class="page">
+    <h2 class="c-10" id="t-suite">Une situation qui ressemble<br>à la vôtre ?</h2>
+    <p class="t-lede c-8">Parlons de votre produit.<br>Je m'assure qu'il résolve le vrai problème.</p>
+    <div class="actions c-12">
+      <a class="btn" href="/contact">On en discute ?</a>
+    </div>
+  </div>
+</section>
 </main>
 
 <script>
@@ -458,6 +648,9 @@ secs.forEach(s=>s&&io.observe(s));
 </script>
 <script src="background.js"></script>
 <script src="figure-zoom.js"></script>
+<script src="vivant.js"></script>
+<script src="grille.js"></script>
+<script src="snap-grille.js"></script>
 <script src="site-nav.js"></script>
 <div id="site-footer"></div>
 </body>

@@ -22,91 +22,273 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96.png">
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500..700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 
 </head>
-<body class="has-site-nav"><script src="nav.js"></script>
+<body class="has-site-nav" data-accent="#FFA3C1"><script src="nav.js"></script>
 <canvas id="bg" aria-hidden="true"></canvas>
 <div class="veil" aria-hidden="true"></div>
 
 
 
 
-<main class="wrap">
+<main id="contenu">
 
-<!-- ═══════════ STRATE 1 ═══════════ -->
-<section class="s1">
-  <h1>Projet <em>SHIFT Prime</em></h1>
+<section class="hero hero--page hero--cas" data-vivant aria-labelledby="titre">
+  <canvas id="cv-disques" aria-hidden="true"></canvas>
+  <canvas id="cv-grille" aria-hidden="true"></canvas>
+  <div class="hero-texte page">
+    <div class="cas-prov" data-texte data-sans-grille>
+      <p class="cas-nom">SHIFT Prime</p>
+      <p class="arrondi cas-pastille"><img class="cas-logo" src="assets/clients/nexans.png" alt="Nexans"><span>Industrie</span></p>
+    </div>
+    <h1 id="titre" class="t-display c-12" data-texte>Un même langage, du comité exécutif aux équipes</h1>
+    <ul class="cas-tags" data-texte data-sans-grille aria-label="Nature de la mission">
+      <li class="arrondi cas-pastille">Plateforme B2E</li>
+      <li class="arrondi cas-pastille">Discovery multi-niveaux</li>
+      <li class="arrondi cas-pastille">Alignement organisationnel</li>
+      <li class="arrondi cas-pastille">Transformation opérationnelle</li>
 
-  <dl class="facts">
-    <div><dt>Rôle</dt><dd>Product design strategist</dd></div>
-    <div><dt>Client</dt><dd>Nexans</dd></div>
-    <div><dt>Secteur</dt><dd>Industrie</dd></div>
-    <div><dt>Date</dt><dd>2023</dd></div>
+
+
+    </ul>
+  </div>
+  <div class="hero-scene" aria-hidden="true"></div>
+</section>
+
+<div class="wrap">
+
+<div class="cas-visuel arrondi">
+  <figure>
+    <svg viewBox="0 0 360 340" role="img" aria-label="Schéma de l'état de départ : l'offre existe côté Marketing, mais pas sur la plateforme ; sur la plateforme, trois projets font office d'offre, et le mot initiative désigne tantôt l'un, tantôt l'autre.">
+          <rect x="82" y="10" width="196" height="46" rx="10" fill="none" stroke="var(--c2)" stroke-width="2" stroke-dasharray="5 5"/>
+          <text text-anchor="middle" fill="var(--paper)"><tspan x="180" y="30" font-size="14" font-weight="500">Offre</tspan><tspan x="180" y="46" font-size="10">côté Marketing, hors plateforme</tspan></text>
+
+          <rect x="8" y="84" width="344" height="248" rx="14" fill="var(--bg)" stroke="var(--faint)"/>
+          <text x="24" y="108" font-size="11" letter-spacing="1.5" fill="var(--muted)">PLATEFORME</text>
+
+          <g fill="var(--surface)" stroke="var(--c2)">
+            <rect x="24" y="124" width="96" height="84" rx="8"/>
+            <rect x="132" y="124" width="96" height="84" rx="8"/>
+            <rect x="240" y="124" width="96" height="84" rx="8"/>
+          </g>
+          <g text-anchor="middle" fill="var(--paper)">
+            <text x="72" y="160" font-size="13" font-weight="500">Projet</text>
+            <text x="180" y="160" font-size="13" font-weight="500">Projet</text>
+            <text x="288" y="160" font-size="13" font-weight="500">Projet</text>
+          </g>
+          <g font-size="10" fill="var(--muted2)" text-anchor="middle">
+            <text x="72" y="180">fait office d'offre</text>
+            <text x="180" y="180">fait office d'offre</text>
+            <text x="288" y="180">fait office d'offre</text>
+          </g>
+
+          <text x="180" y="250" text-anchor="middle" font-size="11" fill="var(--paper)">« initiative » : tantôt l'un, tantôt l'autre</text>
+          <text x="180" y="296" text-anchor="middle" font-size="12" font-weight="500" fill="var(--c2)">L'offre n'existe que déguisée en projet</text>
+        </svg>
+    <p class="cas-etat">Avant</p>
+    <figcaption>L'offre n'existe pas sur la plateforme : elle n'y vit que déguisée en projet, et « initiative » désigne tantôt l'un, tantôt l'autre.</figcaption>
+  </figure>
+  <figure>
+    <svg viewBox="0 0 360 340" role="img" aria-label="Schéma du nouveau paradigme : dans la plateforme, l'offre, avec son cycle de vie propre, est injectée dans trois projets qui la portent ; le projet devient le véhicule de l'offre.">
+                <defs>
+                  <marker id="shift-ba-apres" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+                    <path d="M0 0 L8 4 L0 8 z" fill="var(--c2)"/>
+                  </marker>
+                </defs>
+                <rect x="8" y="8" width="344" height="324" rx="14" fill="var(--bg)" stroke="var(--faint)"/>
+                <text x="24" y="32" font-size="11" letter-spacing="1.5" fill="var(--muted)">PLATEFORME</text>
+
+                <rect x="104" y="46" width="152" height="46" rx="10" fill="var(--c2)"/>
+                <text text-anchor="middle" fill="var(--bg)"><tspan x="180" y="66" font-size="14" font-weight="500">Offre</tspan><tspan x="180" y="82" font-size="10">son propre cycle de vie</tspan></text>
+
+                <g fill="none" stroke="var(--c2)" stroke-width="2">
+                  <path d="M150 92 C130 128 72 128 72 170" marker-end="url(#shift-ba-apres)"/>
+                  <path d="M180 92 L180 170" marker-end="url(#shift-ba-apres)"/>
+                  <path d="M210 92 C230 128 288 128 288 170" marker-end="url(#shift-ba-apres)"/>
+                </g>
+                <text x="192" y="136" font-size="10" fill="var(--c2)">injectée</text>
+
+                <g fill="var(--surface)" stroke="var(--c2)">
+                  <rect x="24" y="172" width="96" height="84" rx="8"/>
+                  <rect x="132" y="172" width="96" height="84" rx="8"/>
+                  <rect x="240" y="172" width="96" height="84" rx="8"/>
+                </g>
+                <g text-anchor="middle" fill="var(--encre)">
+                  <text x="72" y="208" font-size="13" font-weight="500">Projet</text>
+                  <text x="180" y="208" font-size="13" font-weight="500">Projet</text>
+                  <text x="288" y="208" font-size="13" font-weight="500">Projet</text>
+                </g>
+                <g font-size="10" fill="var(--muted2)" text-anchor="middle">
+                  <text x="72" y="228">porte l'offre</text>
+                  <text x="180" y="228">porte l'offre</text>
+                  <text x="288" y="228">porte l'offre</text>
+                </g>
+
+                <text x="180" y="304" text-anchor="middle" font-size="12" font-weight="500" fill="var(--c2)">Le projet devient le véhicule de l'offre</text>
+              </svg>
+    <p class="cas-etat">Après</p>
+    <figcaption>Une articulation unique, valable à tous les niveaux. La plateforme accueille les projets, les projets accueillent les offres.</figcaption>
+  </figure>
+</div>
+
+
+<section class="cas-contexte" id="contexte">
+  <dl class="cas-fiche">
+    <div><dt>Stack technique</dt><dd>Microsoft Project </dd>
+        <dd>+ Addon Accelerator</dd></div>
+    <div><dt>Durée (année)</dt><dd>3 mois (2023)</dd></div>
+    <div><dt>Rôles</dt><dd>Product Designer → Design strategist → Proxy Product Owner</dd></div>
+    <div><dt>Équipe</dt><dd><span>Program Director, Product owner, Project owner, Lead Dev</dd></div>
+    <div><dt>Rencontrés</dt><dd><span>EXCOM, Finance, Design labs, Marketing, Program owners et Project Managers autour du monde : Chili, Liban, Pérou, Australie</span></dd></div>
+    <div><dt>Périmètre</dt><dd><span>23 étapes séparées en 4 mouvements :</span><span>Écouter → Cartographier → Nommer → Ouvrir et cadrer</dd></div>
   </dl>
+  <div class="cas-contexte-texte">
+    <p class="t-label cas-etiquette">Le produit</p>
+    <p class="t-h3 cas-produit">On m'a demandé de réparer une plateforme. Chacun avait raison depuis là où il se tenait, et c'est exactement ce qui bloquait.</p>
+    <p class="t-lede">SHIFT Prime est la plateforme avec laquelle Nexans pilote ses campagnes marketing dans le monde, des équipes locales jusqu'au comité de direction. Elle repose sur Microsoft Project Accelerator, une solution de gestion de portefeuille de projets bâtie sur la Power Platform (Power Apps, Power Automate, Power BI).</p>
+    <p class="t-lede">Elle est en place sur le papier, mais l'adoption ne décolle pas. Je conduis la discovery pour comprendre pourquoi, et cadrer ce qui doit changer.</p>
+    <h2 class="cas-question">Et si le plus grand désaccord était celui que personne n'a jamais pu avoir ?</h2>
+    <div class="cas-changement" id="impact">
+      <h2 class="cas-sous-titre">Impact</h2>
+      <div class="metrics">
+        <div class="metric arrondi"><div class="v">+20 M€</div><div class="l">d'EBITDA additionnel sur les solutions à valeur ajoutée (chiffre publié par Nexans)</div></div>
+        <div class="metric arrondi"><div class="v">+75%</div><div class="l">d'adoption sur le premier trimestre après le lancement de la v1</div></div>
+        <div class="metric arrondi"><div class="v">8 h</div><div class="l">économisées par semaine et par équipe, en moyenne</div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <p class="question">Et si le plus grand désaccord était celui que personne n'a jamais pu avoir ?</p>
+<!-- Trade-off : trois types (stratégie, design, produit). Chaque trade-off est un seul bloc : question, retenu et écarté, puis décision et conséquences. Textes à valider. -->
+<section class="tradeoffs" id="tradeoffs">
+  <h2>Trade-off</h2>
+  <div class="cas-tradeoffs">
 
-  <p class="context">Nexans, leader mondial de l'industrie du câble, déploie la plateforme de SHIFT Prime, pour piloter ses campagnes marketing à l'échelle mondiale. Construite sur Microsoft Project Accelerator, <br>elle est en place sur le papier. Dans les faits, l'adoption ne décolle pas et les niveaux de l'organisation ne s'alignent pas. Product design strategist, je conduis la discovery pour comprendre pourquoi elle ne prend pas, et cadrer ce qui doit changer.</p>
+    <article class="cas-tradeoff arrondi">
+      <p class="arrondi cas-tradeoff-type" data-sans-grille>Produit</p>
+      <div class="cas-tradeoff-question">Par où commencer : l'interface de la plateforme, ou l'écoute de ceux qui s'en servent ?</div>
+      <div class="cas-tradeoff-choix">
+        <div class="cas-tradeoff-cadre cas-tradeoff-retenu arrondi">
+          <div class="cas-tradeoff-label">Retenu</div>
+          <div class="cas-tradeoff-texte">Écouter à tous les niveaux avant de toucher à l'interface.</div>
+        </div>
+        <div class="cas-tradeoff-cadre arrondi">
+          <div class="cas-tradeoff-label">Écarté</div>
+          <div class="cas-tradeoff-texte">Partir de l'interface, puisque c'est l'outil qui ne prend pas.</div>
+        </div>
+      </div>
+      <div class="cas-tradeoff-decision arrondi">
+        <div class="cas-tradeoff-label">Décision et conséquences</div>
+        <div class="cas-tradeoff-texte">Le dessin de l'interface attend la fin de l'écoute, mais il repose ensuite sur un langage partagé : un outil ne répare pas un malentendu, il l'industrialise.</div>
+      </div>
+    </article>
 
-  <p class="bascule">On m'a demandé de réparer une plateforme.<br><span>Chacun avait raison depuis là où il se tenait, et c'est exactement ce qui bloquait.</span></p>
+    <article class="cas-tradeoff arrondi">
+      <p class="arrondi cas-tradeoff-type" data-sans-grille>Design</p>
+      <div class="cas-tradeoff-question">Comment faire cesser la confusion entre projet, offre et initiative ?</div>
+      <div class="cas-tradeoff-choix">
+        <div class="cas-tradeoff-cadre cas-tradeoff-retenu arrondi">
+          <div class="cas-tradeoff-label">Retenu</div>
+          <div class="cas-tradeoff-texte">Fixer trois mots, chacun défini par l'entité qui en est la garante : l'offre au Marketing, le projet aux Program Owners et aux Project Managers.</div>
+        </div>
+        <div class="cas-tradeoff-cadre arrondi">
+          <div class="cas-tradeoff-label">Écarté</div>
+          <div class="cas-tradeoff-texte">Un glossaire de définitions officielles.</div>
+        </div>
+      </div>
+      <div class="cas-tradeoff-decision arrondi">
+        <div class="cas-tradeoff-label">Décision et conséquences</div>
+        <div class="cas-tradeoff-texte">Le Pareto de l'offre : aller au plus efficace plutôt qu'au plus complet. Trois termes concentraient l'essentiel du désordre, il suffisait de fixer ceux-là. Le désaccord devient formulable, et les cycles de vie du projet et de l'offre sont enfin découplés.</div>
+      </div>
+    </article>
+
+    <article class="cas-tradeoff arrondi">
+      <p class="arrondi cas-tradeoff-type" data-sans-grille>Stratégie</p>
+      <div class="cas-tradeoff-question">Quelle unité piloter : chaque projet, ou l'offre qu'ils portent ?</div>
+      <div class="cas-tradeoff-choix">
+        <div class="cas-tradeoff-cadre cas-tradeoff-retenu arrondi">
+          <div class="cas-tradeoff-label">Retenu</div>
+          <div class="cas-tradeoff-texte">Piloter par l'offre, seule unité qui fasse sens à tous les niveaux à la fois, du terrain au marché.</div>
+        </div>
+        <div class="cas-tradeoff-cadre arrondi">
+          <div class="cas-tradeoff-label">Écarté</div>
+          <div class="cas-tradeoff-texte">Continuer à piloter chaque projet seul, un par un.</div>
+        </div>
+      </div>
+      <div class="cas-tradeoff-decision arrondi">
+        <div class="cas-tradeoff-label">Décision et conséquences</div>
+        <div class="cas-tradeoff-texte">Le pilotage bascule du projet vers l'offre. Les deux cycles de vie se découplent, et de nombreux chantiers s'ouvrent : suivi de projet, centralisation de l'information, responsabilité, onboarding.</div>
+      </div>
+    </article>
+  </div>
 </section>
 
 <!-- ═══════════ STRATE 2 ═══════════ -->
 <section class="s2">
-  <div class="summary">
-    <a class="row" href="#c1">
-      <div class="num">01</div>
-      <div class="txt">
-        <div class="t">Une plateforme mondiale que personne n'utilise</div>
-        <div class="d">Nexans pilote ses campagnes marketing depuis une plateforme déployée à l'échelle du groupe, donc de la planète. L'adoption stagne, les niveaux de l'organisation ne s'alignent pas. On me demande de la refondre.</div>
+  <h2 class="s2-titre">Le résumé</h2>
+  <ol class="resume-liste">
+    <li class="resume-ligne">
+      <div class="resume-intitule">
+        <div class="resume-nom">Le problème posé</div>
+        <div class="resume-phrase">Une plateforme en place, et une adoption qui ne vient pas</div>
       </div>
-    </a>
-
-    <a class="row" href="#c2">
-      <div class="num">02</div>
-      <div class="txt">
-        <div class="t">J'enquête à tous les niveaux : les mêmes mots ne désignent pas les mêmes choses</div>
-        <div class="d">Direction, équipes de terrain, Program Owners, Finance, Design Labs, Marketing : chacun raisonne juste depuis sa position. Sur la plateforme, l'offre n'existe nulle part, et projet, offre et initiative se remplacent. Le désaccord était structurellement invisible.</div>
+      <div class="resume-texte">Nexans pilote ses campagnes marketing dans le monde depuis une plateforme construite sur Microsoft Project Accelerator. Les équipes ne s'en emparent pas, et on me demande de la refondre : une interface à revoir, des fonctionnalités à ajuster.</div>
+    </li>
+    <li class="resume-ligne">
+      <div class="resume-intitule">
+        <div class="resume-nom">Le déplacement</div>
+        <div class="resume-phrase">Tout le monde parlait la même langue. Personne ne parlait de la même chose.</div>
       </div>
-    </a>
-
-    <a class="row" href="#c3">
-      <div class="num">03</div>
-      <div class="txt">
-        <div class="t">Un glossaire pour fixer trois termes fondamentaux : projet, offre et initiative</div>
-        <div class="d">Mettre à plat les mots employés chaque jour, faire apparaître les écarts que personne ne pouvait voir depuis sa place, et découpler deux cycles de vie qui se confondaient : celui du projet et celui de l'offre.</div>
+      <div class="resume-texte">J'écoute à tous les niveaux : direction, Program Owners et Project Managers, équipes de terrain, Finance, Design Labs, Marketing. Chacun a raison depuis sa place. Projet, offre et initiative se remplacent, et l'offre n'existe nulle part sur la plateforme : le désaccord était invisible.</div>
+    </li>
+    <li class="resume-ligne">
+      <div class="resume-intitule">
+        <div class="resume-nom">L'instrument</div>
+        <div class="resume-phrase">Fixer ce que chaque terme désigne, et poser leur articulation</div>
       </div>
-    </a>
-
-    <a class="row" href="#c4">
-      <div class="num">04</div>
-      <div class="txt">
-        <div class="t">Le pilotage bascule du projet vers l'offre, et de nombreux chantiers s'ouvrent</div>
-        <div class="d">Une fois l'unité de pilotage changée, un modèle commun devient concevable : focus sur l'offre, suivi de projet, centralisation de l'information, responsabilité, onboarding.</div>
+      <div class="resume-texte">Trois mots concentraient l'essentiel du désordre : projet, offre, initiative. Plutôt qu'un glossaire exhaustif, un Pareto de l'offre : fixer ces trois-là, chacun défini par l'entité qui en est la garante. Le désaccord devient formulable, et les cycles de vie de l'offre et du projet se découplent.</div>
+    </li>
+    <li class="resume-ligne">
+      <div class="resume-intitule">
+        <div class="resume-nom">Le champ ouvert</div>
+        <div class="resume-phrase">Une fois l'unité de pilotage changée, tout devient concevable</div>
       </div>
-    </a>
-
-    <a class="row" href="#c5">
-      <div class="num">05</div>
-      <div class="txt">
-        <div class="t">Une colonne vertébrale, et une trajectoire au-delà de la v1</div>
-        <div class="d">Le modèle d'offre devient la structure sur laquelle se greffent les usages émergents, le reporting, et l'extension à d'autres métiers du groupe. +75% d'adoption au premier trimestre.</div>
+      <div class="resume-texte">L'offre devient la colonne vertébrale du pilotage, et cinq chantiers s'ouvrent : un focus sur l'offre, un meilleur suivi de projet, la centralisation de l'information, responsabilité et sécurité, onboarding et usages.</div>
+    </li>
+    <li class="resume-ligne">
+      <div class="resume-intitule">
+        <div class="resume-nom">La trajectoire</div>
+        <div class="resume-phrase">Une colonne vertébrale, et une trajectoire au-delà de la v1</div>
       </div>
-    </a>
-
-    <a class="row" href="#c6">
-      <div class="num">06</div>
-      <div class="txt">
-        <div class="t">Voir un système dans son entier est rare : il faut construire l'endroit d'où le regarder ensemble</div>
-        <div class="d">Aucun outil ne répare un malentendu, il l'industrialise. On ne demande pas aux gens de mieux se comprendre : on construit l'endroit où ça devient possible.</div>
+      <div class="resume-texte">Le modèle d'offre donne au produit une profondeur : une roadmap en six temps, du comportement des équipes à l'extension à d'autres métiers du groupe (commerce, industrie, supply chain).</div>
+    </li>
+    <li class="resume-ligne">
+      <div class="resume-intitule">
+        <div class="resume-nom">Résultats</div>
+        <div class="resume-phrase">Ce que la refonte a produit</div>
       </div>
-    </a>
-  </div>
+      <div class="resume-texte">+75&#8239;% d'adoption sur le premier trimestre après la V1, 8&nbsp;h économisées par semaine et par équipe. Côté Nexans : +20&nbsp;M€ d'EBITDA additionnel sur les solutions à valeur ajoutée, +36&nbsp;M€ au premier semestre 2023 avec SHIFT Prime et Amplify.</div>
+    </li>
+    <li class="resume-ligne">
+      <div class="resume-intitule">
+        <div class="resume-nom">Le chemin parcouru</div>
+        <div class="resume-phrase">Vingt-trois étapes, quatre mouvements, un fil</div>
+      </div>
+      <div class="resume-texte">De l'écoute à la roadmap : écouter, cartographier, nommer, ouvrir et cadrer. Chaque étape s'ouvre sur un constat et se ferme sur la question que la suivante prend en charge.</div>
+    </li>
+    <li class="resume-ligne">
+      <div class="resume-intitule">
+        <div class="resume-nom">Ma pratique ?</div>
+        <div class="resume-phrase">Ce que ce projet a ancré dans ma pratique</div>
+      </div>
+      <div class="resume-texte">On ne demande pas aux gens de mieux se comprendre : on construit l'endroit où ça devient possible. Un outil ne répare pas un malentendu, il l'industrialise à l'échelle du groupe.</div>
+    </li>
+  </ol>
 </section>
 
 <!-- ═══════════ STRATE 3 ═══════════ -->
@@ -163,6 +345,7 @@
         <p>Le glossaire n'est pas un livrable. C'est l'instrument qui rend le désaccord formulable, un espace où les rationalités de chacun peuvent enfin se rencontrer, au lieu de coexister sans jamais se croiser.</p>
         <p>Son intérêt n'est pas de produire des définitions officielles. Il est de faire apparaître, dans la même pièce, que deux personnes qui se comprenaient parfaitement depuis des mois ne parlaient pas de la même chose.</p>
         <p>Trois termes concentraient l'essentiel du désordre&#8239;: projet, offre, initiative. Personne ne savait dire comment ils s'articulaient, et chacun tenait pour évidente une articulation différente.</p>
+        <p>Plutôt qu'un glossaire exhaustif, un Pareto de l'offre&#8239;: aller au plus efficace, en fixant d'abord les trois mots qui portaient l'essentiel de la confusion.</p>
 
         <div class="ba">
           <figure>
@@ -181,7 +364,7 @@
                   <rect x="132" y="96" width="96" height="84" rx="8"/>
                   <rect x="240" y="96" width="96" height="84" rx="8"/>
                 </g>
-                <g font-size="13" font-weight="500" fill="var(--paper)" text-anchor="middle">
+                <g font-size="13" font-weight="500" fill="var(--encre)" text-anchor="middle">
                   <text x="72" y="122">Projet</text>
                   <text x="180" y="122">Projet</text>
                   <text x="288" y="122">Projet</text>
@@ -219,7 +402,7 @@
                 <text x="24" y="32" font-size="11" letter-spacing="1.5" fill="var(--muted)">PLATEFORME</text>
 
                 <rect x="104" y="46" width="152" height="46" rx="10" fill="var(--c2)"/>
-                <text text-anchor="middle" fill="var(--ink)"><tspan x="180" y="66" font-size="14" font-weight="500">Offre</tspan><tspan x="180" y="82" font-size="10">son propre cycle de vie</tspan></text>
+                <text text-anchor="middle" fill="var(--bg)"><tspan x="180" y="66" font-size="14" font-weight="500">Offre</tspan><tspan x="180" y="82" font-size="10">son propre cycle de vie</tspan></text>
 
                 <g fill="none" stroke="var(--c2)" stroke-width="2">
                   <path d="M150 92 C130 128 72 128 72 170" marker-end="url(#shift-ba-apres)"/>
@@ -233,7 +416,7 @@
                   <rect x="132" y="172" width="96" height="84" rx="8"/>
                   <rect x="240" y="172" width="96" height="84" rx="8"/>
                 </g>
-                <g text-anchor="middle" fill="var(--paper)">
+                <g text-anchor="middle" fill="var(--encre)">
                   <text x="72" y="208" font-size="13" font-weight="500">Projet</text>
                   <text x="180" y="208" font-size="13" font-weight="500">Projet</text>
                   <text x="288" y="208" font-size="13" font-weight="500">Projet</text>
@@ -253,7 +436,7 @@
 
         <p>Pour trancher, une règle simple&#8239;: la définition d'un terme revient à l'entité qui en est la garante. L'offre relève du Marketing, le projet des Program Owners et des Project Managers. Quant à «&nbsp;initiative&nbsp;», un mot-valise qui recouvrait les deux autres sans apporter de nuance, c'est lui qui entretenait la confusion.</p>
 
-        <dl class="defs">
+        <dl class="defs-liste">
           <div><dt>Offre</dt><dd>Un produit ou un service défini, conçu ou au moins validé par le Marketing. Une entité autonome, avec son cycle de vie propre, injectée dans les projets qui la portent.</dd></div>
           <div><dt>Projet</dt><dd>Un ensemble d'étapes qui concrétise une offre à une échelle géographique précise, rattaché à une business unit et à un client précis. Il a son propre cycle de vie.</dd></div>
           <div><dt>Initiative</dt><dd>Un mot-valise, employé tantôt pour une offre, tantôt pour un projet, sans nuance.</dd></div>
@@ -292,7 +475,7 @@
                   <circle cx="76" cy="136" r="18"/>
                   <circle cx="250" cy="130" r="18"/>
                 </g>
-                <text x="8" y="240" font-size="16" font-weight="500" fill="var(--paper)">On pilote chaque projet, un par un</text>
+                <text x="8" y="240" font-size="16" font-weight="500" fill="var(--encre)">On pilote chaque projet, un par un</text>
                 <text x="8" y="264" font-size="12" fill="var(--c4)">des initiatives locales contournent l'offre globale</text>
               </svg>
             </div>
@@ -319,7 +502,7 @@
                 <path d="M84 132 L74 164" fill="none" stroke="var(--c4)" stroke-dasharray="3 4"/>
                 <circle cx="70" cy="176" r="9" fill="none" stroke="var(--c4)" stroke-dasharray="4 4"/>
                 <text x="86" y="198" font-size="12" fill="var(--c4)">s'adosse à l'offre</text>
-                <text x="8" y="240" font-size="16" font-weight="500" fill="var(--paper)">On pilote l'offre, les projets suivent</text>
+                <text x="8" y="240" font-size="16" font-weight="500" fill="var(--encre)">On pilote l'offre, les projets suivent</text>
                 <text x="8" y="264" font-size="12" fill="var(--c2)">condition&#8239;: un Pareto de l'offre</text>
               </svg>
             </div>
@@ -327,14 +510,14 @@
           </figure>
         </div>
         <h4>Cinq chantiers que cette bascule rend possibles</h4>
-        <div class="nodes">
+        <div class="nodes hote in" data-hote>
           <div class="node"><div class="n">01</div><h4>Un focus sur l'offre</h4><p>Un template par offre globale pour faciliter sa duplication dans les business units, un système de tags pour la granularité, et des initiatives locales qui s'adossent à l'offre globale plutôt que de la contourner.</p></div>
           <div class="node"><div class="n">02</div><h4>Un meilleur suivi de projet</h4><p>Une vue claire sur les étapes, du market sizing au scale-up. Des tâches simplifiées, des alertes sur les risques et les prévisions, des notifications qui déclenchent l'action.</p></div>
           <div class="node"><div class="n">03</div><h4>Une centralisation de l'information</h4><p>Les documents rassemblés dans l'environnement M365, accessibles depuis la plateforme. Une documentation apprise par l'usage. Et la distinction explicite entre information statique et dynamique, pour rendre le pilotage agile.</p></div>
           <div class="node"><div class="n">04</div><h4>Responsabilité et sécurité</h4><p>Des rôles définis à chaque étape du projet et de l'offre, un sign-off pour approuver les jalons, et des règles de calcul harmonisées dès le démarrage.</p></div>
           <div class="node"><div class="n">05</div><h4>Onboarding et usages</h4><p>Des formations à l'outil, des program owners et project managers transformés en ambassadeurs auprès des équipes, et des supports partagés pour harmoniser les présentations.</p></div>
         </div>
-        <p style="margin-top:36px">Aucun de ces chantiers n'était accessible tant qu'on cherchait le problème dans l'interface. Tous le deviennent ensemble, parce qu'ils procèdent du même déplacement.</p>
+        <p>Aucun de ces chantiers n'était accessible tant qu'on cherchait le problème dans l'interface. Tous le deviennent ensemble, parce qu'ils procèdent du même déplacement.</p>
       </article>
 
       <article class="chapter" id="c5">
@@ -354,17 +537,16 @@
         <h4>Ce que la refonte a produit</h4>
         <p>L'adoption se joue en bas de la chaîne. Les Project Managers et les Program Owners, les Shift Leaders, sont ceux qui font vivre la plateforme au quotidien&#8239;: c'est chez eux que l'effet se mesure.</p>
         <div class="metrics">
-          <div class="metric"><div class="v">+75%</div><div class="l">d'adoption sur le premier trimestre après le lancement de la V1</div></div>
-          <div class="metric"><div class="v">8 h</div><div class="l">économisées par semaine et par équipe, en moyenne</div></div>
-          <div class="metric"><div class="v">+20%</div><div class="l">de ROI sur les campagnes marketing pilotées depuis la plateforme</div></div>
+          <div class="metric arrondi"><div class="v">+75%</div><div class="l">d'adoption sur le premier trimestre après le lancement de la V1</div></div>
+          <div class="metric arrondi"><div class="v">8 h</div><div class="l">économisées par semaine et par équipe, en moyenne</div></div>
         </div>
         <p>Avant, une partie des usages vivait ailleurs&#8239;: fichiers Excel, outils tiers, ce qu'on appelle du shadow IT. Les équipes notaient leur engagement 2 sur 5 sur la plateforme, contre 4 sur 5 en dehors. La v1 a été conçue pour rapatrier ces usages&#8239;: documents, notifications, templates et suivi vivent dans l'outil. Les usages se concentrent désormais à l'intérieur, et le shadow IT perd sa raison d'être.</p>
 
         <h4>Ce que le programme a produit</h4>
         <p>Chiffres publiés par Nexans, dont SHIFT Prime est l'un des deux axes du programme SHIFT&#8239;:</p>
-        <div class="metrics big">
-          <div class="metric"><div class="v">+36 M€</div><div class="l">d'EBITDA au premier semestre 2023, avec les programmes SHIFT Prime et Amplify</div></div>
-          <div class="metric"><div class="v">+20 M€</div><div class="l">d'EBITDA additionnel sur les solutions à valeur ajoutée (SHIFT Prime)</div></div>
+        <div class="metrics">
+          <div class="metric arrondi"><div class="v">+20 M€</div><div class="l">d'EBITDA additionnel sur les solutions à valeur ajoutée (SHIFT Prime)</div></div>
+          <div class="metric arrondi"><div class="v">+36 M€</div><div class="l">d'EBITDA au premier semestre 2023, avec les programmes SHIFT Prime et Amplify</div></div>
         </div>
         <p class="figcap">Sources&#8239;: nexans.com, «&nbsp;Notre parcours de transformation&nbsp;»&#8239;; communiqué des résultats du premier semestre 2023, Nexans, 26 juillet 2023&#8239;; Boursier.com, 15 février 2024.</p>
       </article>
@@ -455,6 +637,9 @@
 
 
 
+
+
+
   </div>
 </section>
 
@@ -463,7 +648,7 @@
 <!-- ============================================ -->
 <section class="livre" aria-label="Un livre qui a nourri ce regard">
   <div class="livre-inner">
-    <img class="livre-cover" src="assets/systeme-1-systeme-2.jpg" alt="Couverture du livre Système 1 / Système 2, de Daniel Kahneman" width="657" height="1000" loading="lazy">
+    <img class="livre-cover" src="assets/Livres/systeme-1-systeme-2.jpg" alt="Couverture du livre Système 1 / Système 2, de Daniel Kahneman" width="184" height="280" loading="lazy">
     <div class="livre-body">
       <div class="eyebrow">Ce qui a nourri ce regard</div>
       <h3 class="livre-title">Système 1 / Système 2<span>Daniel Kahneman</span></h3>
@@ -474,6 +659,11 @@
   </div>
 </section>
 
+
+<nav class="suite-cas" aria-label="Autres études de cas">
+  <a href="/cas-healthanea" rel="prev"><span class="suite-sens">← Cas précédent</span><span class="suite-nom">Healthanea</span><span class="suite-meta">Santé · 2024</span></a>
+  <a href="/cas-bi-solution" rel="next"><span class="suite-sens">Cas suivant →</span><span class="suite-nom">B.I Solution</span><span class="suite-meta">Data · 2023</span></a>
+</nav>
 
 <script>
 const links=[...document.querySelectorAll('.toc a')];
@@ -491,7 +681,20 @@ secs.forEach(s=>s&&io.observe(s));
 </script>
 <script src="background.js"></script>
 <script src="figure-zoom.js"></script>
+<script src="vivant.js"></script>
+<script src="grille.js"></script>
+<script src="snap-grille.js"></script>
 <script src="site-nav.js"></script>
+</div>
+<section class="bandeau-accent hote" data-hote aria-labelledby="t-suite">
+  <div class="page">
+    <h2 class="c-10" id="t-suite">Une situation qui ressemble<br>à la vôtre ?</h2>
+    <p class="t-lede c-8">Parlons de votre produit.<br>Je m'assure qu'il résolve le vrai problème.</p>
+    <div class="actions c-12">
+      <a class="btn" href="/contact">On en discute ?</a>
+    </div>
+  </div>
+</section>
 </main>
 
 <div id="site-footer"></div>

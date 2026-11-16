@@ -4,10 +4,10 @@
     {
       "name": "Portfolio",
       "autoPort": true,
-      "runtimeExecutable": ".venv/Scripts/python.exe",
+      "runtimeExecutable": "node",
       "runtimeArgs": [
-        "-c",
-        "import os,http.server\nclass H(http.server.SimpleHTTPRequestHandler):\n    def end_headers(self):\n        self.send_header(\"Cache-Control\",\"no-store, must-revalidate\")\n        super().end_headers()\n    def send_header(self,k,v):\n        if k==\"Last-Modified\": return\n        super().send_header(k,v)\np=int(os.environ.get(\"PORT\",\"8777\"))\nhttp.server.ThreadingHTTPServer((\"127.0.0.1\",p),H).serve_forever()"
+        "-e",
+        "const h=require(\"http\"),f=require(\"fs\"),p=require(\"path\");\nconst R=process.cwd(),P=+process.env.PORT||8777;\nconst T={\".html\":\"text/html; charset=utf-8\",\".css\":\"text/css; charset=utf-8\",\".js\":\"text/javascript; charset=utf-8\",\".mjs\":\"text/javascript; charset=utf-8\",\".json\":\"application/json\",\".svg\":\"image/svg+xml\",\".png\":\"image/png\",\".jpg\":\"image/jpeg\",\".jpeg\":\"image/jpeg\",\".gif\":\"image/gif\",\".webp\":\"image/webp\",\".ico\":\"image/x-icon\",\".pdf\":\"application/pdf\",\".txt\":\"text/plain; charset=utf-8\",\".xml\":\"application/xml\",\".woff2\":\"font/woff2\",\".mp4\":\"video/mp4\",\".patch\":\"text/plain\"};\nh.createServer((q,s)=>{\n  const x=p.join(R,decodeURIComponent(q.url.split(\"?\")[0]));\n  if(!x.startsWith(R)){s.writeHead(403);return s.end();}\n  const t=(g,sinon)=>f.stat(g,(e,st)=>{\n    if(!e&&st.isDirectory())return t(p.join(g,\"index.html\"),sinon);\n    if(e||!st.isFile()){if(sinon)return sinon();s.writeHead(404,{\"Content-Type\":\"text/plain\"});return s.end(\"404\");}\n    s.writeHead(200,{\"Content-Type\":T[p.extname(g).toLowerCase()]||\"application/octet-stream\",\"Content-Length\":st.size,\"Cache-Control\":\"no-store, must-revalidate\"});\n    f.createReadStream(g).pipe(s);\n  });\n  t(x,p.extname(x)?null:()=>t(x+\".html\"));\n}).listen(P);\n"
       ],
       "port": 8777
     }

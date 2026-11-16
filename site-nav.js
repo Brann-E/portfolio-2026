@@ -1,101 +1,100 @@
-/* Menu hamburger pour la navigation principale.
-   Aucune modification du HTML n'est nécessaire : le bouton est créé ici.
-   Il n'apparaît que sous le point de rupture défini en CSS (760 px) ;
-   au-dessus, le menu reste affiché en ligne et le bouton est masqué. */
+/* Comportement de la barre de navigation (le HTML vient de nav.js, le choix du visiteur est déjà posé sur <html>) :
+   - la couleur d'accent : un curseur de teinte (0 à 359) sous le bouton, que l'on fait glisser de haut en bas ;
+   - le mode clair ou sombre ;
+   - le menu en hamburger sous 1100 px.
+   Le choix du visiteur est gardé (clés be-theme et be-accent) ; chaque changement prévient les pages qui dessinent
+   avec ces couleurs (le héros, les blobs) par l'événement « grille:refresh ». */
 (function () {
+  "use strict";
+
+  var D = document.documentElement, KT = "be-theme", KA = "be-accent";   // KA garde la teinte (un nombre) ; les anciens noms sont lus par nav.js
+
+  function ecrire(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* stockage indisponible */ } }
+  function prevenir() { window.dispatchEvent(new Event("grille:refresh")); }
+
+  // En local (localhost, fichier ouvert), les adresses propres du site (« /contact ») n'existent pas : on pointe vers les fichiers.
+  // En ligne, rien ne change.
+  function liensLocaux() {
+    var local = location.protocol === "file:" || /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
+    if (!local) return;
+    document.querySelectorAll('a[href^="/"]').forEach(function (a) {
+      var m = /^\/([^#?]*)([#?].*)?$/.exec(a.getAttribute("href"));
+      if (!m || /^\/\//.test(a.getAttribute("href"))) return;
+      var nom = m[1].replace(/\/+$/, "");
+      a.setAttribute("href", (nom ? nom + (/\.[a-z0-9]+$/i.test(nom) ? "" : ".html") : "index.html") + (m[2] || ""));
+    });
+  }
+
   function init() {
-    var nav = document.querySelector('.site-nav');
-    if (!nav) return;
-    var links = nav.querySelector('.site-links');
-    if (!links || nav.querySelector('.nav-toggle')) return;
+    liensLocaux();
+    window.addEventListener("load", liensLocaux);
+    var barre = document.querySelector(".bar");
+    if (!barre) return;
 
-    if (!links.id) links.id = 'site-links';
+    // la cible du lien « Aller au contenu » : le contenu de la page
+    var corps = document.querySelector("main, .wrap");
+    if (corps && !corps.id) corps.id = "contenu";
 
-    var btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'nav-toggle';
-    btn.setAttribute('aria-label', 'Ouvrir le menu');
-    btn.setAttribute('aria-expanded', 'false');
-    btn.setAttribute('aria-controls', links.id);
-    btn.innerHTML = '<span class="nav-bars" aria-hidden="true"></span>';
-    nav.appendChild(btn);
+    // ----- couleur d'accent -----
+    var cBtn = barre.querySelector(".couleur-btn"), curseur = barre.querySelector(".teinte");
+    function fermerListe() { if (cBtn) cBtn.setAttribute("aria-expanded", "false"); }
+    function theme() { return D.getAttribute("data-theme") === "dark" ? "dark" : "light"; }
+    // la barre du curseur montre les vraies couleurs, de 0 à 359, pour le thème en cours (clair ou sombre)
+    function peindreBarre() {
+      if (!curseur || !window.accentDe) return;
+      var arrets = [];
+      for (var h = 0; h <= 360; h += 20) arrets.push(window.accentDe(h % 360, theme()) + " " + (h / 360 * 100).toFixed(1) + "%");
+      curseur.style.setProperty("--barre", "linear-gradient(to right, " + arrets.join(", ") + ")");
+    }
+    if (curseur && window.poserAccent) {
+      curseur.value = String(window.teinteLue(D.style.getPropertyValue("--teinte")));
+      peindreBarre();
+      // en glissant, la couleur change tout de suite sur la page ; à la fin du geste, les pages qui dessinent (héros, scènes 3D) la relisent
+      curseur.addEventListener("input", function () { window.poserAccent(+curseur.value, theme()); });
+      curseur.addEventListener("change", function () { ecrire(KA, curseur.value); prevenir(); });
+    }
+    if (cBtn) {
+      cBtn.addEventListener("click", function (e) { e.stopPropagation(); cBtn.setAttribute("aria-expanded", String(cBtn.getAttribute("aria-expanded") !== "true")); });
+      document.addEventListener("click", function (e) { if (!e.target.closest(".couleur")) fermerListe(); });
+    }
 
+    // ----- mode clair ou sombre -----
+    var tBtn = barre.querySelector(".theme-btn");
+    function montrerTheme(nom) {
+      if (!tBtn) return;
+      tBtn.setAttribute("aria-pressed", String(nom === "dark"));
+      tBtn.setAttribute("aria-label", nom === "dark" ? "Mode clair" : "Mode sombre");
+    }
+    montrerTheme(D.getAttribute("data-theme"));
+    if (tBtn) tBtn.addEventListener("click", function () {
+      var nom = D.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      D.setAttribute("data-theme", nom); montrerTheme(nom); ecrire(KT, nom);
+      if (window.poserAccent) { window.poserAccent(window.teinteLue(D.style.getPropertyValue("--teinte")), nom); peindreBarre(); }   // la même teinte, à la clarté du thème
+      prevenir();
+    });
+
+    // ----- menu (mobile) -----
+    var tog = barre.querySelector(".nav-toggle"), nav = barre.querySelector(".nav");
     function ouvrir(oui) {
-      nav.classList.toggle('nav-open', oui);
-      // le menu couvre la page : on bloque le défilement derrière
-      document.body.classList.toggle('nav-locked', oui);
-      btn.setAttribute('aria-expanded', oui ? 'true' : 'false');
-      btn.setAttribute('aria-label', oui ? 'Fermer le menu' : 'Ouvrir le menu');
+      barre.classList.toggle("nav-open", oui);
+      document.body.classList.toggle("nav-locked", oui);
+      tog.setAttribute("aria-expanded", String(oui));
+      tog.setAttribute("aria-label", oui ? "Fermer le menu" : "Ouvrir le menu");
+    }
+    if (tog && nav) {
+      tog.addEventListener("click", function (e) { e.stopPropagation(); ouvrir(!barre.classList.contains("nav-open")); });
+      nav.addEventListener("click", function (e) { if (e.target.closest("a")) ouvrir(false); });
+      document.addEventListener("click", function (e) { if (barre.classList.contains("nav-open") && !barre.contains(e.target)) ouvrir(false); });
+      window.addEventListener("resize", function () { if (window.innerWidth > 1100) ouvrir(false); });
     }
 
-    btn.addEventListener('click', function (e) {
-      e.stopPropagation();
-      ouvrir(!nav.classList.contains('nav-open'));
-    });
-
-    // un clic sur un lien referme
-    links.addEventListener('click', function (e) {
-      if (e.target.closest('a')) ouvrir(false);
-    });
-
-    // clic en dehors
-    document.addEventListener('click', function (e) {
-      if (nav.classList.contains('nav-open') && !nav.contains(e.target)) ouvrir(false);
-    });
-
-    // touche Échap
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && nav.classList.contains('nav-open')) {
-        ouvrir(false);
-        btn.focus();
-      }
-    });
-
-    // repasser en grand écran referme le panneau
-    window.addEventListener('resize', function () {
-      if (window.innerWidth > 760) ouvrir(false);
+    // ----- clavier -----
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape") return;
+      fermerListe();
+      if (tog && barre.classList.contains("nav-open")) { ouvrir(false); tog.focus(); }
     });
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
-})();
-
-/* ------------------------------------------------------------------
-   Effet holographique — reprise exacte du bouton « Et si…? ».
-   Point clé : l'écoute se fait sur un GRAND conteneur (ici la page),
-   pas sur l'élément lui-même. La position du pointeur est normalisée
-   sur ce conteneur, puis écrite dans --px / --py de chaque élément.
-   C'est ce qui fait que le fond bouge quand on déplace la souris
-   n'importe où, et pas seulement en survolant le bouton.
-   Contrairement à la référence, on ne pilote PAS --tiltx / --tilty :
-   aucune inclinaison.
-   ------------------------------------------------------------------ */
-(function () {
-  const hotes = [...document.querySelectorAll('.holo')]
-    .map(function (h) { return h.parentElement; })
-    .filter(Boolean);
-  if (!hotes.length) return;
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-  let px = '50%', py = '50%', enAttente = false;
-
-  function appliquer() {
-    enAttente = false;
-    for (const h of hotes) {
-      h.style.setProperty('--px', px);
-      h.style.setProperty('--py', py);
-    }
-  }
-
-  addEventListener('pointermove', function (e) {
-    const nx = Math.max(0, Math.min(1, e.clientX / innerWidth));
-    const ny = Math.max(0, Math.min(1, e.clientY / innerHeight));
-    px = (nx * 100).toFixed(1) + '%';
-    py = (ny * 100).toFixed(1) + '%';
-    if (!enAttente) { enAttente = true; requestAnimationFrame(appliquer); }
-  }, { passive: true });
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
 })();

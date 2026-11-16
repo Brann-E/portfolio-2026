@@ -22,114 +22,204 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96.png">
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500..700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 
 </head>
-<body class="has-site-nav"><script src="nav.js"></script>
+<body class="has-site-nav" data-accent="#FDFD98"><script src="nav.js"></script>
 <canvas id="bg" aria-hidden="true"></canvas>
 <div class="veil" aria-hidden="true"></div>
 
 
 
 
-<main class="wrap">
+<main id="contenu">
 
-<section class="s1 s1--proto">
-  <h1>Projet <em>Chalon dans la rue</em></h1>
-
-  <dl class="facts">
-    <div><dt>Rôle</dt><dd>Product designer</dd></div>
-    <div><dt>Client</dt><dd>Projet personnel</dd></div>
-    <div><dt>Secteur</dt><dd>Culture, arts de la rue</dd></div>
-    <div><dt>Date</dt><dd>2025</dd></div>
-  </dl>
-
-  <div class="s1-text">
-  <p class="question">Et si l'application d'un festival servait aussi ceux qui le jouent&#8239;?</p>
-
-  <p class="context">Chalon dans la rue transforme chaque été Chalon-sur-Saône en scène à ciel ouvert&#8239;: une vingtaine de compagnies dans la programmation officielle, le In, et près de cent trente dans le Off. Le festival n'avait pas d'application. J'ai conçu celle qui me manquait, de la recherche au prototype codé, sur les données réelles du programme.</p>
-
-  <p class="bascule">Personne ne m'avait rien demandé.<br><span>Un premier festival, deux catalogues en main, a suffi pour voir ce qui manquait.</span></p>
+<section class="hero hero--page hero--cas" data-vivant aria-labelledby="titre">
+  <canvas id="cv-disques" aria-hidden="true"></canvas>
+  <canvas id="cv-grille" aria-hidden="true"></canvas>
+  <div class="hero-texte page">
+    <div class="cas-prov" data-texte data-sans-grille>
+      <p class="cas-nom">Chalon dans la rue</p>
+      <p class="arrondi cas-pastille"><img class="cas-logo" src="assets/clients/carte/brann-etienne.svg" alt="Brann Etienne"><span>Culture</span></p>
+    </div>
+    <h1 id="titre" class="t-display c-12" data-texte>Un support décide toujours de qui sera vu</h1>
+    <ul class="cas-tags" data-texte data-sans-grille aria-label="Nature de la mission">
+      <li class="arrondi cas-pastille">App B2C</li>
+      <li class="arrondi cas-pastille">Jobs-to-be-done</li>
+      <li class="arrondi cas-pastille">Prototype codé</li>
+    </ul>
   </div>
+  <div class="hero-scene" aria-hidden="true"></div>
+</section>
 
-  <div class="proto" data-no-rv aria-label="Prototype de l'application Chalon dans la rue">
-    <div class="proto-head">
+<div class="wrap">
+
+<div class="cas-visuel-piste" data-sans-grille>
+<div class="cas-visuel cas-visuel--solo cas-visuel--proto arrondi" data-sans-grille>
+  <figure>
+    <div class="proto" data-no-rv data-sans-grille aria-label="Prototype de l'application Chalon dans la rue">
       <p class="proto-title">Application interactive</p>
-      <p class="proto-sub">Données réelles du festival intégrées</p>
-    </div>
-    <div class="proto-stage" data-no-rv>
-      <div class="proto-frame" id="protoFrame">
-        <div class="proto-loader" id="protoLoader" aria-hidden="true">
-          <span class="proto-spin"></span>
-          <span class="proto-loading-txt">Chargement de l'application&hellip;</span>
+      <div class="proto-stage" data-no-rv>
+        <div class="proto-frame arrondi" id="protoFrame">
+          <div class="proto-loader arrondi" id="protoLoader" aria-hidden="true">
+            <span class="proto-spin"></span>
+            <span class="proto-loading-txt">Chargement de l'application&hellip;</span>
+          </div>
+          <iframe class="proto-screen arrondi" src="prototypes/chalon-dans-la-rue/index.html" title="Prototype cliquable de l'application Chalon dans la rue" loading="lazy"></iframe>
         </div>
-        <iframe class="proto-screen" src="/prototypes/chalon-dans-la-rue/" title="Prototype cliquable de l'application Chalon dans la rue" loading="lazy"></iframe>
+      </div>
+      <p class="proto-bouton"><a class="btn" href="prototypes/chalon-dans-la-rue/index.html">Ouvrir en plein écran</a></p>
+      <p class="proto-code"><a href="https://github.com/Brann-E/chalon-dans-la-rue" target="_blank" rel="noopener">Voir le code sur GitHub</a></p>
+    </div>
+  </figure>
+</div>
+</div>
+
+<section class="cas-contexte" id="contexte">
+  <dl class="cas-fiche">
+    <div><dt>Stack technique</dt><dd>HTML, CSS, JavaScript</dd><dd>prototype codé avec Claude Code, sans serveur</dd></div>
+    <div><dt>Durée (année)</dt><dd>6 mois (2025)</dd></div>
+    <div><dt>Rôles</dt><dd>Product designer</dd></div>
+    <div><dt>Équipe</dt><dd>Projet personnel, sans commanditaire</dd></div>
+    <div><dt>Rencontrés</dt><dd><span>Six festivaliers et cinq artistes, comédiens et metteurs en scène</span></dd></div>
+    <div><dt>Périmètre</dt><dd><span>11 entretiens → Jobs-to-be-done → Conception (Figma, FigJam) → Prototype codé</span><span>147 spectacles, 6 usages, code offert à la communauté sur <a href="https://github.com/Brann-E/chalon-dans-la-rue" target="_blank" rel="noopener">GitHub</a></span></dd></div>
+  </dl>
+  <div class="cas-contexte-texte">
+    <p class="t-label cas-etiquette">Le produit</p>
+    <p class="t-h3 cas-produit">Personne ne m'avait rien demandé. Un premier festival, deux catalogues en main, a suffi pour voir ce qui manquait.</p>
+    <p class="t-lede">Chalon dans la rue transforme chaque été Chalon-sur-Saône en scène à ciel ouvert&#8239;: une vingtaine de compagnies dans la programmation officielle, le In, et près de cent trente dans le Off. Le festival n'avait pas d'application.</p>
+    <p class="t-lede">J'ai conçu celle qui me manquait, de la recherche au prototype codé, sur les données réelles du programme.</p>
+    <h2 class="cas-question">Et si l'application d'un festival servait aussi ceux qui le jouent&#8239;?</h2>
+    <div class="cas-changement" id="impact">
+      <h2 class="cas-sous-titre">Quelques chiffres</h2>
+      <div class="metrics">
+        <div class="metric arrondi"><div class="v">147</div><div class="l">spectacles, l'intégralité de l'édition 2026, intégrés au prototype</div></div>
+        <div class="metric arrondi"><div class="v">6</div><div class="l">usages couverts, de la carte au programme personnel</div></div>
+        <div class="metric arrondi"><div class="v">1</div><div class="l">prototype codé, dont le code est public</div></div>
       </div>
     </div>
-    <p class="proto-note">
-      Donn&eacute;es du programme public du festival. Prototype HTML/CSS/JS, sans serveur.
-      <a href="/prototypes/chalon-dans-la-rue/">Ouvrir en plein &eacute;cran</a> &middot;
-      <a href="https://github.com/Brann-E/chalon-dans-la-rue" target="_blank" rel="noopener">Voir le code</a>
-    </p>
   </div>
 </section>
 
+<section class="tradeoffs" id="tradeoffs">
+  <h2>Trade-off</h2>
+  <div class="cas-tradeoffs">
+
+    <article class="cas-tradeoff arrondi">
+      <p class="arrondi cas-tradeoff-type" data-sans-grille>Produit</p>
+      <div class="cas-tradeoff-question">Faut-il remplacer deux livrets par une application, ou concevoir un outil qui serve deux mondes ?</div>
+      <div class="cas-tradeoff-choix">
+        <div class="cas-tradeoff-cadre cas-tradeoff-retenu arrondi">
+          <div class="cas-tradeoff-label">Retenu</div>
+          <div class="cas-tradeoff-texte">Un outil d'organisation pour le public et une plateforme de diffusion pour les compagnies.</div>
+        </div>
+        <div class="cas-tradeoff-cadre arrondi">
+          <div class="cas-tradeoff-label">Écarté</div>
+          <div class="cas-tradeoff-texte">Remplacer simplement deux livrets par une application.</div>
+        </div>
+      </div>
+      <div class="cas-tradeoff-decision arrondi">
+        <div class="cas-tradeoff-label">Décision et conséquences</div>
+        <div class="cas-tradeoff-texte">Six usages, de la carte interactive au programme personnel, servent à la fois celui qui prépare sa journée et celui qui décide au coin d'une rue.</div>
+      </div>
+    </article>
+
+    <article class="cas-tradeoff arrondi">
+      <p class="arrondi cas-tradeoff-type" data-sans-grille>Design</p>
+      <div class="cas-tradeoff-question">Comment rendre un spectacle trouvable, par ceux qui préparent leur parcours comme par ceux qui se laissent porter ?</div>
+      <div class="cas-tradeoff-choix">
+        <div class="cas-tradeoff-cadre cas-tradeoff-retenu arrondi">
+          <div class="cas-tradeoff-label">Retenu</div>
+          <div class="cas-tradeoff-texte">Reprendre et affiner les catégories du festival, pour qu'un spectacle soit trouvable par plusieurs entrées.</div>
+        </div>
+        <div class="cas-tradeoff-cadre arrondi">
+          <div class="cas-tradeoff-label">Écarté</div>
+          <div class="cas-tradeoff-texte">Un catalogue, qui ne sert vraiment ni les uns ni les autres.</div>
+        </div>
+      </div>
+      <div class="cas-tradeoff-decision arrondi">
+        <div class="cas-tradeoff-label">Décision et conséquences</div>
+        <div class="cas-tradeoff-texte">Une catégorie est d'abord une adresse : c'est par elle que le public retrouve un spectacle. Chaque spectacle donne envie dès sa fiche.</div>
+      </div>
+    </article>
+
+    <article class="cas-tradeoff arrondi">
+      <p class="arrondi cas-tradeoff-type" data-sans-grille>Stratégie</p>
+      <div class="cas-tradeoff-question">Comment distribuer l'attention, quand elle devient directement le revenu des comédiens ?</div>
+      <div class="cas-tradeoff-choix">
+        <div class="cas-tradeoff-cadre cas-tradeoff-retenu arrondi">
+          <div class="cas-tradeoff-label">Retenu</div>
+          <div class="cas-tradeoff-texte">La première version : donner à chaque compagnie toute la possibilité de soigner sa communication, et la mettre en responsabilité.</div>
+        </div>
+        <div class="cas-tradeoff-cadre arrondi">
+          <div class="cas-tradeoff-label">Écarté</div>
+          <div class="cas-tradeoff-texte">Un ordre d'affichage équitable, une rotation par défaut dans le Off : je l'ajouterais aujourd'hui.</div>
+        </div>
+      </div>
+      <div class="cas-tradeoff-decision arrondi">
+        <div class="cas-tradeoff-label">Décision et conséquences</div>
+        <div class="cas-tradeoff-texte">Dans le Off, les comédiens sont payés au chapeau : l'attention que l'application distribue devient leur revenu. Un support décide toujours de qui sera vu.</div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ═══════════ STRATE 2 ═══════════ -->
 <section class="s2">
-  <div class="summary">
-    <a class="row" href="#c1">
-      <div class="num">01</div>
-      <div class="txt">
-        <div class="t">Un festival qui se vit avec deux catalogues</div>
-        <div class="d">Le programme d'un côté, la carte et les horaires de l'autre, et aucune application. Je décide de concevoir celle qui me manque.</div>
+  <h2 class="s2-titre">Le résumé</h2>
+  <ol class="resume-liste">
+    <li class="resume-ligne">
+      <div class="resume-intitule">
+        <div class="resume-nom">Le problème posé</div>
+        <div class="resume-phrase">Deux catalogues pour une ville entière</div>
       </div>
-    </a>
-
-    <a class="row" href="#c2">
-      <div class="num">02</div>
-      <div class="txt">
-        <div class="t">Deux façons de vivre le festival, et des compagnies qui veulent être trouvées</div>
-        <div class="d">Six festivaliers et cinq artistes interrogés. Les uns s'organisent à l'avance, les autres se laissent porter. Les compagnies demandent une seule chose&#8239;: être trouvées.</div>
+      <div class="resume-texte">Un livret pour la programmation, un autre pour la carte et les horaires, et aucune application. Personne ne m'avait commandé ce travail : je décide de concevoir l'outil qui me manque, après avoir vérifié qu'il manquait aussi aux autres.</div>
+    </li>
+    <li class="resume-ligne">
+      <div class="resume-intitule">
+        <div class="resume-nom">Le déplacement</div>
+        <div class="resume-phrase">Le public ne vit pas le même festival. Les compagnies veulent toutes la même chose.</div>
       </div>
-    </a>
-
-    <a class="row" href="#c3">
-      <div class="num">03</div>
-      <div class="txt">
-        <div class="t">Partir de ce que chacun cherche à faire</div>
-        <div class="d">Les besoins ressortent de l'analyse des entretiens, pas des entretiens eux-mêmes&#8239;: l'outil part des usages, pas du catalogue.</div>
+      <div class="resume-texte">Six festivaliers et cinq artistes interrogés. Les uns s'organisent à l'avance, les autres se laissent porter, et les compagnies veulent une seule chose : être trouvées. Il faut un outil d'organisation pour le public et une plateforme de diffusion pour elles.</div>
+    </li>
+    <li class="resume-ligne">
+      <div class="resume-intitule">
+        <div class="resume-nom">L'instrument</div>
+        <div class="resume-phrase">Partir de ce que chacun cherche à faire</div>
       </div>
-    </a>
-
-    <a class="row" href="#c4">
-      <div class="num">04</div>
-      <div class="txt">
-        <div class="t">Un outil d'organisation, une plateforme de diffusion</div>
-        <div class="d">Six usages, de la carte interactive au programme personnel, qui servent à la fois le public et les compagnies.</div>
+      <div class="resume-texte">Les jobs-to-be-done font ressortir six tâches côté public et une côté compagnies : être trouvée. Pour elles, tout se joue dans les catégories : une catégorie est d'abord une adresse.</div>
+    </li>
+    <li class="resume-ligne">
+      <div class="resume-intitule">
+        <div class="resume-nom">Le champ ouvert</div>
+        <div class="resume-phrase">Un outil d'organisation, une plateforme de diffusion</div>
       </div>
-    </a>
-
-    <a class="row" href="#c5">
-      <div class="num">05</div>
-      <div class="txt">
-        <div class="t">Un prototype complet, sur les données réelles</div>
-        <div class="d">Du Figma au prototype codé, jouable dans le navigateur, avec le code public.</div>
+      <div class="resume-texte">Six usages, de la carte interactive au programme personnel, servent à la fois celui qui prépare sa journée et celui qui décide au coin d'une rue.</div>
+    </li>
+    <li class="resume-ligne">
+      <div class="resume-intitule">
+        <div class="resume-nom">Ce que ça a produit</div>
+        <div class="resume-phrase">Un prototype complet, sur les données réelles</div>
       </div>
-    </a>
-
-    <a class="row" href="#c6">
-      <div class="num">06</div>
-      <div class="txt">
-        <div class="t">Un support n'est jamais neutre</div>
-        <div class="d">Dans le Off, l'attention que l'application distribue devient le revenu des comédiens.</div>
+      <div class="resume-texte">Du Figma au prototype codé en HTML, CSS et JavaScript, alimenté par les 147 spectacles de l'édition 2026. Il n'est pas déployé, mais le code est public.</div>
+    </li>
+    <li class="resume-ligne">
+      <div class="resume-intitule">
+        <div class="resume-nom">Ma pratique ?</div>
+        <div class="resume-phrase">Ce que ce projet a ancré dans ma pratique</div>
       </div>
-    </a>
-  </div>
+      <div class="resume-texte">Un support décide toujours de qui sera vu. Dans le Off, l'attention que l'application distribue devient le revenu des comédiens : concevoir les catégories, les filtres et l'ordre d'affichage, c'est décider de qui pourra vivre de son spectacle.</div>
+    </li>
+  </ol>
 </section>
 
+
+<!-- ═══════════ STRATE 3 ═══════════ -->
 <section class="s3">
   <div class="intro">
     <h2>Le détail</h2>
@@ -166,12 +256,12 @@
         <p class="chapter-sub">Partir de ce que chacun cherche à faire</p>
         <p>Pendant l'entretien, on pose le pourquoi, sans chercher à tout faire dire. Le travail vient après&#8239;: en recoupant les réponses, des motifs émergent. Pour les explorer, je me suis servi des jobs-to-be-done, un outil pour comprendre ce que chacun cherche à accomplir, à un moment précis du festival. Côté public, six tâches revenaient sans cesse&#8239;:</p>
         <ul>
-          <li>me repérer dans une ville transformée en scène&#8239;;</li>
-          <li>trouver vite un spectacle qui me correspond, selon le genre, l'heure et l'endroit&#8239;;</li>
-          <li>composer mon programme, et le retrouver le jour venu&#8239;;</li>
-          <li>découvrir les lieux du festival&#8239;;</li>
-          <li>trouver les services essentiels, toilettes et restauration&#8239;;</li>
-          <li>savoir tout d'un spectacle en quelques gestes.</li>
+          <li>Me repérer dans une ville transformée en scène&#8239;;</li>
+          <li>Trouver vite un spectacle qui me correspond, selon le genre, l'heure et l'endroit&#8239;;</li>
+          <li>Composer mon programme, et le retrouver le jour venu&#8239;;</li>
+          <li>Découvrir les lieux du festival&#8239;;</li>
+          <li>Trouver les services essentiels, toilettes et restauration&#8239;;</li>
+          <li>Savoir tout d'un spectacle en quelques gestes.</li>
         </ul>
         <p>Côté compagnies, une seule tâche, mais décisive&#8239;: être trouvée par le public qui cherche ce genre de spectacle.</p>
         <p>Pour elles, tout se jouait dans les catégories, que définit le festival. Je les ai reprises et affinées, pour qu'un spectacle soit trouvable par plusieurs entrées, et qu'il donne envie dès sa fiche.</p>
@@ -182,7 +272,7 @@
         <h3>Le champ ouvert</h3>
         <p class="chapter-sub">Un outil d'organisation, une plateforme de diffusion</p>
         <p>Les six tâches sont devenues six usages, chacun pensé pour servir à la fois celui qui prépare sa journée et celui qui décide au coin d'une rue.</p>
-        <div class="nodes">
+        <div class="nodes hote in" data-hote>
           <div class="node"><div class="n">01</div><h4>Se repérer dans la ville</h4><p>Une carte interactive des lieux du festival, filtrable par spectacles ou par services, avec l'itinéraire à pied.</p></div>
           <div class="node"><div class="n">02</div><h4>Trouver un spectacle</h4><p>Des filtres par catégorie, horaire et lieu, pour aller vite quand on a vingt minutes devant soi.</p></div>
           <div class="node"><div class="n">03</div><h4>Composer son programme</h4><p>Les favoris d'un geste, puis un planning personnel, vide au départ, qui se remplit au fil des choix.</p></div>
@@ -235,9 +325,9 @@
         <p>Je l'ai codé avec Claude Code&#8239;: l'IA a écrit le code, et je l'ai dirigée à partir des écrans et des décisions de conception.</p>
 
         <div class="metrics">
-          <div class="metric"><div class="v">147</div><div class="l">spectacles, l'intégralité de l'édition 2026, intégrés au prototype</div></div>
-          <div class="metric"><div class="v">6</div><div class="l">usages couverts, de la carte au programme personnel</div></div>
-          <div class="metric"><div class="v">1</div><div class="l">prototype codé, dont le code est public</div></div>
+          <div class="metric arrondi"><div class="v">147</div><div class="l">spectacles, l'intégralité de l'édition 2026, intégrés au prototype</div></div>
+          <div class="metric arrondi"><div class="v">6</div><div class="l">usages couverts, de la carte au programme personnel</div></div>
+          <div class="metric arrondi"><div class="v">1</div><div class="l">prototype codé, dont le code est public</div></div>
         </div>
         <p>L'application n'a pas été déployée&#8239;: elle reste un prototype. Mais un prototype complet, qui fonctionne sur les vraies données, et dont chaque choix peut être vérifié dans le code.</p>
 
@@ -245,7 +335,7 @@
         <p>Une partie de ce que les artistes m'avaient dit est restée dans mes notes. En relisant le projet, elle change ma lecture de l'application.</p>
         <p>Dans le Off, les compagnies viennent par leurs propres moyens, et les comédiens sont payés au chapeau. L'attention que l'application distribue y devient directement un revenu. Dans la première version, l'idée était de donner à chaque compagnie toute la possibilité de soigner sa communication, et de créer un appel d'air&#8239;: leur donner envie de bien faire, d'écrire un texte qui touche les gens, de choisir de belles photos. L'application met tout en valeur&#8239;; à elles de faire leur part. C'est une manière de les mettre en responsabilité.</p>
         <!-- TODO Brann : un fait reste à confirmer. Le fonctionnement du Off (appel à candidatures, compagnies à leurs frais, comédiens payés au chapeau) vient d'une collecte HelloAsso que je n'ai pas pu ouvrir (accès refusé) : https://www.helloasso.com/associations/janitor/collectes/en-route-pour-chalon-dans-la-rue . Vérifié : les volumes du In et du Off, 20 et environ 150 en 2013 (https://www.macommune.info/arts-de-la-rue-des-bisontins-pour-la-27e-edition-du-festival-de-chalon-86683) et 16 et 138 en 2017 (https://www.macommune.info/le-festival-chalon-dans-la-rue-a-lheure-de-la-maturite-165352), cohérents avec « une vingtaine » et « près de cent trente » pour 2026. -->
-        <div class="nodes">
+        <div class="nodes hote in" data-hote>
           <div class="node"><div class="n">01</div><h4>Une fiche au même format pour tous</h4><p>Catégorie, durée, public, déambulation ou lieu fixe, une photo&#8239;: les mêmes champs pour chaque spectacle. La contrainte rend tout le monde également trouvable.</p></div>
           <div class="node"><div class="n">02</div><h4>Autour de moi, maintenant</h4><p>Les spectacles qui commencent bientôt, à quelques minutes à pied. L'attention se distribue selon l'endroit où se trouve le public, plus selon les moyens des compagnies.</p></div>
           <div class="node"><div class="n">03</div><h4>Un ordre d'affichage équitable</h4><p>Dans le Off, une rotation par défaut, pour que chaque spectacle passe en tête à son tour.</p></div>
@@ -257,7 +347,7 @@
         <h3>Ma pratique ?</h3>
         <p class="chapter-sub">Ce que ce projet a ancré dans ma pratique</p>
         <p class="pull">Un support décide toujours de qui sera vu.</p>
-        <p>J'ai commencé ce projet pour régler un problème de festivalier&#8239;: trop de papier, pas assez de temps. Les entretiens avec les artistes m'ont montré l'autre face de l'outil. Une application de programme distribue de l'attention, et pour une partie des artistes, cette attention est leur revenu.</p>
+        <p>J'ai commencé ce projet pour régler un problème de festivalier&#8239;: trop de papier, pas assez de temps. Les entretiens avec les artistes m'ont montré l'autre face de l'outil. Une application de programme distribue de l'attention, et pour une bonne partie des artistes, cette attention est leur revenu.</p>
         <p>Concevoir les catégories, les filtres, l'ordre d'affichage, c'est décider de qui sera vu, et donc de qui pourra vivre de son spectacle ce soir-là. C'est ce que je regarde désormais dans chaque outil&#8239;: ce qu'il fait circuler, et vers qui.</p>
       </article>
 
@@ -283,6 +373,20 @@
   </div>
 </section>
 
+<nav class="suite-cas" aria-label="Autres études de cas">
+  <a href="/cas-proshop" rel="prev"><span class="suite-sens">← Cas précédent</span><span class="suite-nom">Proshop</span><span class="suite-meta">Commerce · 2022</span></a>
+  <a href="/cas-healthanea" rel="next"><span class="suite-sens">Cas suivant →</span><span class="suite-nom">Healthanea</span><span class="suite-meta">Santé · 2024</span></a>
+</nav>
+</div>
+<section class="bandeau-accent hote" data-hote aria-labelledby="t-suite">
+  <div class="page">
+    <h2 class="c-10" id="t-suite">Une situation qui ressemble<br>à la vôtre ?</h2>
+    <p class="t-lede c-8">Parlons de votre produit.<br>Je m'assure qu'il résolve le vrai problème.</p>
+    <div class="actions c-12">
+      <a class="btn" href="/contact">On en discute ?</a>
+    </div>
+  </div>
+</section>
 </main>
 
 <script>
@@ -312,6 +416,9 @@ secs.forEach(s=>s&&io.observe(s));
 </script>
 <script src="background.js"></script>
 <script src="figure-zoom.js"></script>
+<script src="vivant.js"></script>
+<script src="grille.js"></script>
+<script src="snap-grille.js"></script>
 <script src="site-nav.js"></script>
 <div id="site-footer"></div>
 </body>

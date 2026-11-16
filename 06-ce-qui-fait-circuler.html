@@ -22,9 +22,9 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96.png">
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500..700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 
@@ -59,19 +59,21 @@
 </head>
 
 <body class="has-site-nav art-6" id="top"><script src="nav.js"></script>
-<canvas id="bg" aria-hidden="true"></canvas>
-<div class="veil" aria-hidden="true"></div>
 
-<div class="hero">
-  <div class="hero-bg"></div>
-  <h1 class="hero-title">Ce qui fait circuler.<br><em>La circulation a <br>toujours un support.</em></h1>
-  <p class="hero-sub">Toute la s&eacute;rie a montr&eacute; que ce qui tient, circule. Restait une question qu'elle n'a jamais pos&eacute;e&nbsp;: par quoi&nbsp;? Une circulation n'est jamais nue - elle passe par un m&eacute;dium, une forme, un outil. Concevoir ces supports, c'est mon m&eacute;tier. Voici ce que la th&eacute;orie devient quand elle touche le terrain.</p>
-  <div class="hero-meta"><span class="hero-meta-item">9 min de lecture</span></div>
-</div>
+<section class="hero hero--page" data-vivant aria-labelledby="titre">
+  <canvas id="cv-disques" aria-hidden="true"></canvas>
+  <canvas id="cv-grille" aria-hidden="true"></canvas>
+  <div class="hero-texte page">
+    <h1 id="titre" class="t-display c-12" data-texte>Ce qui fait circuler. La circulation a toujours un support.</h1>
+    <p class="lead t-lede c-8 sp-2" data-texte>Toute la s&eacute;rie a montr&eacute; que ce qui tient, circule. Restait une question qu'elle n'a jamais pos&eacute;e&nbsp;: par quoi&nbsp;? Une circulation n'est jamais nue - elle passe par un m&eacute;dium, une forme, un outil. Concevoir ces supports, c'est mon m&eacute;tier. Voici ce que la th&eacute;orie devient quand elle touche le terrain.</p>
+    <p class="etiquette c-12 sp-2" data-texte>9 min de lecture</p>
+  </div>
+  <div class="hero-scene" aria-hidden="true"></div>
+</section>
 
 <div class="article">
 
-  <h2 class="section-title" style="margin-top:clamp(16px,3vh,28px)">Résumé des épisodes précédents</h2>
+  <h2 class="section-title">Résumé des épisodes précédents</h2>
 
   <p>Tout est parti d'un renversement&nbsp;: rien ne tient tout seul, et ce qu'on prend pour des choses stables - une &eacute;quipe, une institution, un lien - n'est vivant que tant que quelque chose y circule. Mais cette circulation, on ne la voit jamais en entier, chacun n'en per&ccedil;oit que le fragment qui le traverse, et il faut un seuil particulier pour que le collectif la voie ensemble, la m&eacute;taliminalit&eacute;. Reste l'&eacute;lan de faire circuler&nbsp;: c'est le don, avec sa dette jamais tout &agrave; fait sold&eacute;e, qui en est le plus vieux moteur. Car lorsque plus rien ne circule, le lien ne se tend pas&nbsp;: il se d&eacute;fait. Ce texte peut se lire seul, il est aussi l'endroit o&ugrave; tout ce qui pr&eacute;c&egrave;de devient concret et op&eacute;rable.</p>
 
@@ -194,7 +196,7 @@
         <span class="note">Les r&eacute;gimes de visibilit&eacute; produits par le design des plateformes fa&ccedil;onnent la forme des relations possibles&nbsp;: rendre visible, c'est d&eacute;j&agrave; agencer le lien.</span></li>
     </ul>
 
-    <p class="biblio-intro" style="margin:30px 0 0">Le don (Mauss, Caill&eacute;), le savoir commun (Chwe) et la m&eacute;taliminalit&eacute;, mobilis&eacute;s ici comme acquis, sont d&eacute;velopp&eacute;s dans les textes 3, 4 et 5 de la s&eacute;rie.</p>
+    <p class="biblio-intro">Le don (Mauss, Caill&eacute;), le savoir commun (Chwe) et la m&eacute;taliminalit&eacute;, mobilis&eacute;s ici comme acquis, sont d&eacute;velopp&eacute;s dans les textes 3, 4 et 5 de la s&eacute;rie.</p>
   </section>
 
   <div class="serie-nav">
@@ -251,6 +253,8 @@
 
 <script src="background.js"></script>
 <script src="figure-zoom.js"></script>
+<script src="vivant.js"></script>
+<script src="snap-grille.js"></script>
 <script src="site-nav.js"></script>
 </body>
 </html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Séparateurs - Brann Etienne</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500..700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&display=swap" rel="stylesheet">
+<style>
+/* Étude de séparateurs : trois propositions, côte à côte (pas encore sur le site). Tout est calé sur la grille :
+   hauteur de 2 lignes (56 px), boîte qui déborde de 14 px pour tomber sur les lignes, disques centrés sur les intersections, diamètres multiples de 14 px.
+   Touche G : affiche la grille. */
+.section::after { display: none; }
+.page > * { grid-column: 1 / -1; }
+.page > p { max-width: calc(var(--col) * 5 + var(--gut) * 4); }
+.page > * + * { margin-top: var(--ligne); }
+.sep { grid-column: 1 / -1; position: relative; height: calc(var(--ligne) * 2); margin-inline: calc(var(--demi-ligne) * -1); }
+.sep > i { position: absolute; display: block; border-radius: 50% !important; background: var(--accent-fond); transform: scale(0); transition: transform .9s cubic-bezier(.2, .7, .2, 1); }
+.sep.on > i { transform: scale(1); }
+@media (prefers-reduced-motion: reduce) { .sep > i { transform: scale(1); transition: none; } }
+
+/* 1. Le fil et le nœud : un filet sur une ligne de la grille, un disque de 28 px posé dessus sur une intersection */
+.sep-fil::before { content: ""; position: absolute; left: 0; right: 0; top: var(--ligne); height: var(--rule-w); background: var(--encre); }
+.sep-fil > i { left: calc(var(--ligne) * 1.5); top: var(--demi-ligne); width: var(--ligne); height: var(--ligne); }
+
+/* 2. Trois blobs en croissance : 14, 28 et 42 px sur trois intersections de la maille (56 px), reliés par un filet */
+.sep-trois::before { content: ""; position: absolute; left: calc(var(--ligne) * 2); width: calc(var(--ligne) * 4); top: var(--ligne); height: var(--rule-w); background: var(--encre); }
+.sep-trois > i:nth-child(1) { left: calc(var(--ligne) * 2 - var(--demi-ligne) / 2); top: calc(var(--ligne) - var(--demi-ligne) / 2); width: var(--demi-ligne); height: var(--demi-ligne); }
+.sep-trois > i:nth-child(2) { left: calc(var(--ligne) * 4 - var(--demi-ligne)); top: calc(var(--ligne) - var(--demi-ligne)); width: var(--ligne); height: var(--ligne); transition-delay: .15s; }
+.sep-trois > i:nth-child(3) { left: calc(var(--ligne) * 6 - var(--demi-ligne) * 1.5); top: calc(var(--ligne) - var(--demi-ligne) * 1.5); width: calc(var(--demi-ligne) * 3); height: calc(var(--demi-ligne) * 3); transition-delay: .3s; }
+
+/* 3. Rangée de trame : la grille se montre, un point toutes les 56 px sur la ligne centrale, quelques-uns pleins */
+.sep-trame { margin-inline: calc(var(--demi-ligne) * -1); background: radial-gradient(circle at center, var(--encre) 1.5px, transparent 2px) calc(var(--ligne) * -1) 0 / calc(var(--ligne) * 2) calc(var(--ligne) * 2) repeat-x; }
+.sep-trame > i { top: var(--demi-ligne); width: var(--ligne); height: var(--ligne); }
+.sep-trame > i:nth-child(1) { left: calc(var(--ligne) * 2 - var(--demi-ligne)); }
+.sep-trame > i:nth-child(2) { left: calc(var(--ligne) * 4 - var(--demi-ligne)); transition-delay: .1s; }
+.sep-trame > i:nth-child(3) { left: calc(var(--ligne) * 10 - var(--demi-ligne)); transition-delay: .2s; }
+.sep-trame > i:nth-child(4) { left: calc(var(--ligne) * 12 - var(--demi-ligne)); transition-delay: .3s; width: calc(var(--demi-ligne) * 3); height: calc(var(--demi-ligne) * 3); top: calc(var(--ligne) - var(--demi-ligne) * 1.5); margin-left: calc(var(--demi-ligne) * -.25); }
+.sep-trame > i:nth-child(5) { left: calc(var(--ligne) * 14 - var(--demi-ligne)); transition-delay: .4s; }
+@media (max-width: 859px) { .sep-trame > i:nth-child(n+4) { display: none; } }
+</style>
+</head>
+<body class="has-site-nav da" id="top"><script src="nav.js"></script>
+<main id="contenu">
+
+<section class="section">
+  <div class="page">
+    <h1 class="t-h2">Séparateurs : trois propositions.</h1>
+    <p class="t-lede">Chaque séparateur est posé entre deux sections, sur la grille. Touche G pour afficher la grille et vérifier qu'il tombe sur les lignes.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="page">
+    <h2 class="t-h3">1. Le fil et le nœud</h2>
+    <p class="t-body">Un filet sur une ligne de la grille et un disque d'accent posé dessus. Le disque grandit quand il apparaît.</p>
+    <div class="sep sep-fil" aria-hidden="true"><i class="dot"></i></div>
+    <p class="t-body">Et la section suivante commence ici.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="page">
+    <h2 class="t-h3">2. Trois blobs en croissance</h2>
+    <p class="t-body">Trois disques de 14, 28 et 42 px sur trois intersections de la maille, reliés par un filet : la grammaire du héros, en miniature.</p>
+    <div class="sep sep-trois" aria-hidden="true"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
+    <p class="t-body">Et la section suivante commence ici.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="page">
+    <h2 class="t-h3">3. Rangée de trame</h2>
+    <p class="t-body">La grille se montre : un point toutes les 56 px, dont quelques-uns pleins, en accent, comme des pixels.</p>
+    <div class="sep sep-trame" aria-hidden="true"><i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
+    <p class="t-body">Et la section suivante commence ici.</p>
+  </div>
+</section>
+
+</main>
+<script src="footer.js"></script>
+<script src="grille.js"></script>
+<script src="site-nav.js"></script>
+<script src="grille-visible.js"></script>
+<script>
+(function () {
+  var seps = document.querySelectorAll(".sep");
+  if (!("IntersectionObserver" in window)) { [].forEach.call(seps, function (s) { s.classList.add("on"); }); return; }
+  var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); } }); }, { threshold: .6 });
+  [].forEach.call(seps, function (s) { io.observe(s); });
+})();
+</script>
+</body>
+</html>

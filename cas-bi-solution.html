@@ -22,100 +22,195 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96.png">
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500..700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 
 </head>
-<body class="has-site-nav"><nav class="site-nav" aria-label="Navigation principale">
-  <a class="site-brand" href="/"><img class="site-mark" src="assets/logo_256.png" alt=""><span class="site-name">Brann Etienne <span class="site-role">&middot; Product designer</span></span></a>
-  <div class="site-links">
-    <a href="/etudes-de-cas" data-section="cases" class="active">&Eacute;tudes de cas</a>
-    <a href="/comment-je-travaille" data-section="pratique">Comment je travaille</a>
-    <a href="/a-propos" data-section="apropos">&Agrave; propos</a>
-    <a class="site-contact" href="/contact">Contact</a>
-  </div>
-</nav>
+<body class="has-site-nav" data-accent="#9EFBAF"><script src="nav.js"></script>
 <canvas id="bg" aria-hidden="true"></canvas>
 <div class="veil" aria-hidden="true"></div>
 
 
 
 
-<main class="wrap">
+<main id="contenu">
 
-<!-- ═══════════ STRATE 1 ═══════════ -->
-<section class="s1">
-  <h1>Projet <em>B.I Solution Upgrade</em></h1>
+<section class="hero hero--page hero--cas" data-vivant aria-labelledby="titre">
+  <canvas id="cv-disques" aria-hidden="true"></canvas>
+  <canvas id="cv-grille" aria-hidden="true"></canvas>
+  <div class="hero-texte page">
+    <div class="cas-prov" data-texte data-sans-grille>
+      <p class="cas-nom">B.I Solution</p>
+      <p class="arrondi cas-pastille"><img class="cas-logo" src="assets/clients/nexans.png" alt="Nexans"><span>Data</span></p>
+    </div>
+    <h1 id="titre" class="t-display c-12" data-texte>Partir des décisions, pas des données</h1>
+    <ul class="cas-tags" data-texte data-sans-grille aria-label="Nature de la mission">
+      <li class="arrondi cas-pastille">Plateforme B2E</li>
+      <li class="arrondi cas-pastille">Business intelligence</li>
+      <li class="arrondi cas-pastille">Co-conception en atelier</li>
+      <li class="arrondi cas-pastille">Atomic metrics</li>
+    </ul>
+  </div>
+  <div class="hero-scene" aria-hidden="true"></div>
+</section>
 
-  <dl class="facts">
-    <div><dt>Rôle</dt><dd>Product designer</dd></div>
-    <div><dt>Client</dt><dd>Nexans, via Exakis-Nelite</dd></div>
-    <div><dt>Secteur</dt><dd>Industrie, commerce</dd></div>
-    <div><dt>Date</dt><dd>2023</dd></div>
+<div class="wrap">
+
+<div class="cas-visuel arrondi">
+  <figure>
+    <img class="arrondi" src="assets/bi-excel-avant.webp" width="831" height="588" alt="L'ancien fichier Excel de pilotage commercial, volontairement flouté : un tableau dense de chiffres mensuels et un graphique, avec des bandeaux jaunes écrits dans les cellules pour indiquer quelles données utiliser.">
+    <p class="cas-etat">Avant</p>
+    <figcaption>L'outil d'avant, flouté par confidentialité : des consignes écrites en jaune dans les cellules, pour savoir comment le lire.</figcaption>
+  </figure>
+  <figure>
+    <img class="arrondi" src="assets/bi-recap-1880.webp" data-zoom="assets/bi-recap.webp" width="1880" height="1241" alt="Accueil du tableau de bord Power BI de Nexans Suisse : filtres en haut, menu à gauche, quatre cartes (performance du revenu 116 %, BKG sur budget 56,12 %, marge commerciale réelle 22 %, écart entre budget, RFC et BKG) et une vue macro du revenu mois par mois.">
+    <p class="cas-etat">Après</p>
+    <figcaption>Accueil Power BI, commune à toutes les business units. Données fictives.</figcaption>
+  </figure>
+</div>
+
+<section class="cas-contexte" id="contexte">
+  <dl class="cas-fiche">
+    <div><dt>Stack technique</dt><dd>Excel, remplacé par Power BI</dd></dd></div>
+    <div><dt>Durée (année)</dt><dd>3 mois (2023)</dd></div>
+    <div><dt>Rôles</dt><dd>Product designer</dd></div>
+    <div><dt>Équipe</dt><dd><span>BO Manager, Project owner, Lead Dev, Data engineer</span></dd></div>
+    <div><dt>Rencontrés</dt><dd><span>Directeurs de business unit, Business Unit Manager, Market Line Manager</span></dd></div>
+    <div><dt>Périmètre</dt><dd><span>Recherche → Atomic Metrics en atelier → Architecture d'information → v1 Power BI</span><span>8 pages, dont 5 communes à toutes les business units</span></dd></div>
   </dl>
+  <div class="cas-contexte-texte">
+    <p class="t-label cas-etiquette">Le produit</p>
+    <p class="t-h3 cas-produit">On m'a demandé de mieux montrer les données. Il fallait d'abord savoir ce que l'activité avait besoin de décider.</p>
+    <p class="t-lede">Les équipes commerciales de Nexans pilotent leur activité depuis un fichier Excel de dix-huit pages, dont le temps de chargement atteint trente minutes. Certaines business units se retrouvent purement à l'arrêt.</p>
+    <p class="t-lede">La direction décide de migrer vers Power BI. J'interviens comme product designer, avec un accès direct aux directeurs de BU, aux managers et aux commerciaux.</p>
+    <h2 class="cas-question">Et si le problème n'était pas les données, mais ce qu'on cherchait à leur faire dire ?</h2>
+    <div class="cas-changement" id="impact">
+      <h2 class="cas-sous-titre">Impact</h2>
+      <div class="metrics">
+        <div class="metric arrondi"><div class="v">1</div><div class="l">modèle prêt à être cascadé dans les autres business units du groupe, à l'échelle de la .</div></div>
+        <div class="metric arrondi"><div class="v">~100%</div><div class="l">d'adoption par les équipes commerciales, là où plusieurs business units évitaient l'outil.</div></div>
+        <div class="metric arrondi"><div class="v">30 min</div><div class="l">de chargement avant, quasi instantané après.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <p class="question">Et si le problème n'était pas les données, mais ce qu'on cherchait à leur faire dire ?</p>
+<section class="tradeoffs" id="tradeoffs">
+  <h2>Trade-off</h2>
+  <div class="cas-tradeoffs">
 
-  <p class="context">Les équipes commerciales de Nexans pilotent leur activité depuis un fichier Excel de dix-huit pages, dont le temps de chargement atteint trente minutes. Certaines business units se retrouvent purement à l'arrêt. La direction décide de migrer vers Power BI. J'interviens comme product designer, avec un accès direct aux directeurs de BU, aux managers et aux commerciaux.</p>
+    <article class="cas-tradeoff arrondi">
+      <p class="arrondi cas-tradeoff-type" data-sans-grille>Produit</p>
+      <div class="cas-tradeoff-question">Faut-il porter l'Excel tel quel vers Power BI, ou repartir des décisions à prendre ?</div>
+      <div class="cas-tradeoff-choix">
+        <div class="cas-tradeoff-cadre cas-tradeoff-retenu arrondi">
+          <div class="cas-tradeoff-label">Retenu</div>
+          <div class="cas-tradeoff-texte">Concevoir à partir des décisions que l'activité doit prendre : une stratégie business-centered, data-informed.</div>
+        </div>
+        <div class="cas-tradeoff-cadre arrondi">
+          <div class="cas-tradeoff-label">Écarté</div>
+          <div class="cas-tradeoff-texte">Migrer les données existantes vers une meilleure interface, avec de meilleurs temps de réponse.</div>
+        </div>
+      </div>
+      <div class="cas-tradeoff-decision arrondi">
+        <div class="cas-tradeoff-label">Décision et conséquences</div>
+        <div class="cas-tradeoff-texte">L'architecture suit les décisions plutôt que les tables de données : cinq pages centrales communes à tous, trois pages propres à chaque business unit. L'outil cesse d'être un affichage de données en espérant que les décisions suivent.</div>
+      </div>
+    </article>
 
-  <p class="bascule">On m'a demandé de mieux montrer les données.<br><span>Il fallait d'abord savoir ce que l'activité avait besoin de décider.</span></p>
+    <article class="cas-tradeoff arrondi">
+      <p class="arrondi cas-tradeoff-type" data-sans-grille>Design</p>
+      <div class="cas-tradeoff-question">Comment faire dire à des utilisateurs ce qu'ils cherchent à savoir, quand ils ne savent pas formuler leur besoin ?</div>
+      <div class="cas-tradeoff-choix">
+        <div class="cas-tradeoff-cadre cas-tradeoff-retenu arrondi">
+          <div class="cas-tradeoff-label">Retenu</div>
+          <div class="cas-tradeoff-texte">Les Atomic Metrics : une carte d'identité par métrique, complétée en atelier avec les participants.</div>
+        </div>
+        <div class="cas-tradeoff-cadre arrondi">
+          <div class="cas-tradeoff-label">Écarté</div>
+          <div class="cas-tradeoff-texte">Les interroger frontalement sur les données qu'ils veulent, ou décider à leur place.</div>
+        </div>
+      </div>
+      <div class="cas-tradeoff-decision arrondi">
+        <div class="cas-tradeoff-label">Décision et conséquences</div>
+        <div class="cas-tradeoff-texte">Le résultat n'est pas une liste de KPI mais une base partagée, d'où se dessinent les pages du BI, sa navigation et sa logique de données.</div>
+      </div>
+    </article>
+
+    <article class="cas-tradeoff arrondi">
+      <p class="arrondi cas-tradeoff-type" data-sans-grille>Stratégie</p>
+      <div class="cas-tradeoff-question">Faut-il chercher la métrique parfaite, ou ne jamais en laisser une seule décider ?</div>
+      <div class="cas-tradeoff-choix">
+        <div class="cas-tradeoff-cadre cas-tradeoff-retenu arrondi">
+          <div class="cas-tradeoff-label">Retenu</div>
+          <div class="cas-tradeoff-texte">Un moteur et une boussole pour chaque objectif : une métrique primaire qui propulse la performance, une métrique de garde qui maintient le cap.</div>
+        </div>
+        <div class="cas-tradeoff-cadre arrondi">
+          <div class="cas-tradeoff-label">Écarté</div>
+          <div class="cas-tradeoff-texte">La métrique unique, qui devient une cible et se dégrade (loi de Goodhart).</div>
+        </div>
+      </div>
+      <div class="cas-tradeoff-decision arrondi">
+        <div class="cas-tradeoff-label">Décision et conséquences</div>
+        <div class="cas-tradeoff-texte">La justesse vient de la tension entretenue entre les deux. Ce couple structure les cartes de métriques et, à travers elles, tout le système : vendre davantage ne sert à rien si la marge s'effondre.</div>
+      </div>
+    </article>
+
+  </div>
 </section>
 
 <!-- ═══════════ STRATE 2 ═══════════ -->
 <section class="s2">
-  <div class="summary">
-    <a class="row" href="#c1">
-      <div class="num">01</div>
-      <div class="txt">
-        <div class="t">Dix-huit pages d'Excel, trente minutes de chargement chaque matin</div>
-        <div class="d">L'outil de pilotage commercial est devenu un obstacle, et la direction décide de migrer vers Power BI.</div>
+  <h2 class="s2-titre">Le résumé</h2>
+  <ol class="resume-liste">
+    <li class="resume-ligne">
+      <div class="resume-intitule">
+        <div class="resume-nom">Le problème posé</div>
+        <div class="resume-phrase">Un outil de pilotage devenu un obstacle</div>
       </div>
-    </a>
-
-    <a class="row" href="#c2">
-      <div class="num">02</div>
-      <div class="txt">
-        <div class="t">Le vrai sujet n'était pas la donnée, mais ce qu'elle devait servir à décider</div>
-        <div class="d">Les utilisateurs ne savent pas dire leur besoin : on partait de ce qu'on pouvait mesurer, jamais de ce qu'il fallait trancher.</div>
+      <div class="resume-texte">Nexans pilote son activité commerciale en Suisse depuis un fichier Excel de dix-huit pages, jusqu'à trente minutes de chargement. La direction décide de migrer vers Power BI : on me demande de transformer l'Excel en un outil moderne.</div>
+    </li>
+    <li class="resume-ligne">
+      <div class="resume-intitule">
+        <div class="resume-nom">Le déplacement</div>
+        <div class="resume-phrase">On savait tout afficher, et rien décider</div>
       </div>
-    </a>
-
-    <a class="row" href="#c3">
-      <div class="num">03</div>
-      <div class="txt">
-        <div class="t">Les Atomic Metrics : co-concevoir le BI depuis les décisions réelles</div>
-        <div class="d">Une carte d'identité par métrique, remplie en atelier, devient la structure même des pages du BI.</div>
+      <div class="resume-texte">Les utilisateurs ne savent pas dire leur besoin : l'outil les a formés à consulter des chiffres, jamais à poser des questions. On partait de ce qu'on pouvait mesurer, jamais de ce qu'il fallait trancher.</div>
+    </li>
+    <li class="resume-ligne">
+      <div class="resume-intitule">
+        <div class="resume-nom">L'instrument</div>
+        <div class="resume-phrase">Les Atomic Metrics, ou comment faire dire aux gens ce qu'ils cherchent à savoir</div>
       </div>
-    </a>
-
-    <a class="row" href="#c4">
-      <div class="num">04</div>
-      <div class="txt">
-        <div class="t">Chaque métrique a besoin d'une autre pour ne pas dériver</div>
-        <div class="d">Une métrique isolée devient une cible : l'une propulse la performance, l'autre garde le cap.</div>
+      <div class="resume-texte">Une carte d'identité par métrique, complétée en atelier : à quoi elle sert, comment elle se construit, à quoi elle se relie, comment la visualiser. Elle devient la structure même des pages du BI.</div>
+    </li>
+    <li class="resume-ligne">
+      <div class="resume-intitule">
+        <div class="resume-nom">Le champ ouvert</div>
+        <div class="resume-phrase">Une métrique seule finit toujours par mentir</div>
       </div>
-    </a>
-
-    <a class="row" href="#c5">
-      <div class="num">05</div>
-      <div class="txt">
-        <div class="t">Un outil que les équipes s'approprient, et qui grandit avec elles</div>
-        <div class="d">Cinq pages centrales, trois pages propres à chaque business unit, un chargement quasi instantané, près de 100% d'adoption.</div>
+      <div class="resume-texte">Une métrique isolée devient une cible et se dégrade. Chaque objectif reçoit donc un moteur, qui propulse la performance, et une boussole, qui garde le cap.</div>
+    </li>
+    <li class="resume-ligne">
+      <div class="resume-intitule">
+        <div class="resume-nom">Ce que ça a produit</div>
+        <div class="resume-phrase">Un outil que les équipes s'approprient, et qui grandit avec elles</div>
       </div>
-    </a>
-
-    <a class="row" href="#c6">
-      <div class="num">06</div>
-      <div class="txt">
-        <div class="t">Deux leçons : sur l'outil, et sur la nécessité de l'information</div>
-        <div class="d">L'outil n'est jamais la finalité, et rien ne mérite d'exister par défaut.</div>
+      <div class="resume-texte">Cinq pages centrales, trois pages propres à chaque business unit, un chargement quasi instantané, près de 100 % d'adoption.</div>
+    </li>
+    <li class="resume-ligne">
+      <div class="resume-intitule">
+        <div class="resume-nom">Ce que j'en garde</div>
+        <div class="resume-phrase">Ce que ce projet a ancré dans ma pratique</div>
       </div>
-    </a>
-  </div>
+      <div class="resume-texte">L'outil n'est jamais la finalité, et rien ne mérite d'exister par défaut : toute information qui n'éclaire aucune décision doit être questionnée.</div>
+    </li>
+  </ol>
 </section>
+
 
 <!-- ═══════════ STRATE 3 ═══════════ -->
 <section class="s3">
@@ -167,10 +262,12 @@
         <p>La réponse que j'ai construite ne consiste pas à trouver la métrique parfaite, mais à ne jamais en laisser une seule décider.</p>
         <div class="duo">
           <div>
+            <img class="duo-icone arrondi" src="assets/bi-moteur.png" alt="" width="128" height="128">
             <div class="k">Le moteur</div>
             <p>La métrique primaire, celle qui propulse la performance de l'organisation. Elle donne la puissance et rend l'action mesurable.</p>
           </div>
           <div>
+            <img class="duo-icone arrondi" src="assets/bi-boussole.png" alt="" width="128" height="128">
             <div class="k">La boussole</div>
             <p>La métrique de garde, celle qui maintient le cap sur l'objectif réel de l'activité et empêche de courir après des signaux trompeurs.</p>
           </div>
@@ -202,14 +299,15 @@
           <div class="figure"><img src="assets/bi-bkg-640.webp" data-zoom="assets/bi-bkg.webp" width="640" height="420" alt="Page BKG : commandes prises sur le budget, part en retard, et liste des commandes." loading="lazy"><span>BKG</span></div>
           <div class="figure"><img src="assets/bi-bill-640.webp" data-zoom="assets/bi-bill.webp" width="640" height="359" alt="Page BILL : part facturée des commandes, marge à la commande et à la facturation, détail de facturation." loading="lazy"><span>BILL</span></div>
           <div class="figure"><img src="assets/bi-project-640.webp" data-zoom="assets/bi-project.webp" width="640" height="373" alt="Page Project : mix produits et services par mois, et vue par projet." loading="lazy"><span>Project</span></div>
-          <div class="figure"><img src="assets/bi-sls-640.webp" data-zoom="assets/bi-sls.webp" width="640" height="538" alt="Page SLS : meilleurs articles, répartition par pays, charge sur l'année et détail par client." loading="lazy"><span>SLS</span></div>
           <div class="figure"><img src="assets/bi-supply-640.webp" data-zoom="assets/bi-supply.webp" width="640" height="391" alt="Page Supply Chain : charge et valeur par jour du mois, et lignes de commande." loading="lazy"><span>Supply Chain</span></div>
+          <div class="figure"><img src="assets/bi-sls-640.webp" data-zoom="assets/bi-sls.webp" width="640" height="538" alt="Page SLS : meilleurs articles, répartition par pays, charge sur l'année et détail par client." loading="lazy"><span>SLS</span></div>
         </div>
         <p class="figcap">Les sept autres pages. Cliquer pour agrandir. Données fictives.</p>
         <p>Côté produit, une v1 conçue pour se répliquer&#8239;: la structure s'adapte à chaque business unit sans être reconstruite, les fonctionnalités sont priorisées selon les besoins réels, et la structure de données a été reprise pour rester utilisable dans la durée.</p>
         <div class="metrics">
-          <div class="metric"><div class="v">~100%</div><div class="l">d'adoption par les équipes commerciales, là où plusieurs business units évitaient l'outil</div></div>
-          <div class="metric"><div class="v">30 min → instantané</div><div class="l">de temps de chargement, pour un accès aux données en temps réel</div></div>
+          <div class="metric arrondi"><div class="v">1</div><div class="l">modèle prêt à être cascadé dans les autres business units du groupe, à l'échelle de la planète.</div></div>
+          <div class="metric arrondi"><div class="v">~100%</div><div class="l">d'adoption par les équipes commerciales, là où plusieurs business units évitaient l'outil.</div></div>
+          <div class="metric arrondi"><div class="v">30 min</div><div class="l">de temps de chargement avant, quasi instantané après, pour un accès aux données en temps réel.</div></div>
         </div>
         <p>Au-delà des chiffres, le changement le plus notable est ailleurs&#8239;: les équipes ont cessé de subir l'outil. Les goulots d'étranglement opérationnels ont disparu, les coûts liés au traitement des données ont baissé, et la qualité de la donnée s'est améliorée d'elle-même, parce que chacun savait enfin à quoi elle servait.</p>
       </article>
@@ -247,13 +345,27 @@
 <!-- ============================================ -->
 <section class="livre" aria-label="Un livre qui a nourri ce regard">
   <div class="livre-inner">
-    <img class="livre-cover" src="assets/design-of-business-300.webp" width="300" height="453" alt="Couverture du livre The Design of Business, de Roger Martin" loading="lazy">
+    <img class="livre-cover" src="assets/Livres/tyranny-of-metrics.png" width="184" height="280" alt="Couverture du livre The Tyranny of Metrics, de Jerry Z. Muller" loading="lazy">
     <div class="livre-body">
       <div class="eyebrow">Ce qui a nourri ce regard</div>
-      <h3 class="livre-title">The Design of Business<span>Roger Martin</span></h3>
-      <p>Ce r&eacute;flexe de partir de la d&eacute;cision plut&ocirc;t que de la donn&eacute;e a une source que j'assume volontiers&#8239;: <em>The Design of Business</em>, de Roger Martin. C'est le livre qui m'a donn&eacute; une grammaire pour nommer ce que je voyais &agrave; l'&oelig;uvre chez Nexans.</p>
-      <p>Martin d&eacute;crit ce qu'il appelle l'entonnoir de la connaissance&#8239;: une organisation avance d'un myst&egrave;re vers une heuristique, puis vers un algorithme&#8239;: une r&egrave;gle qu'on applique sans plus la penser. C'est efficace, mais il y a un pi&egrave;ge&#8239;: &agrave; force de figer ce qu'on sait d&eacute;j&agrave; faire, on cesse de se poser la question qui avait tout d&eacute;clench&eacute;. L'Excel de dix-huit pages &eacute;tait exactement cela&#8239;: un algorithme devenu si lourd qu'il avait remplac&eacute; la question qu'il &eacute;tait cens&eacute; servir.</p>
-      <p>J'en ai gard&eacute; l'exigence, mais je l'ai d&eacute;plac&eacute;e&#8239;: l&agrave; o&ugrave; Martin oppose la fiabilit&eacute; de l'algorithme &agrave; la validit&eacute; de l'exploration, je cherche &agrave; rouvrir l'entonnoir depuis les relations, en co-concevant, avec ceux qui d&eacute;cident, ce qu'ils cherchaient &agrave; savoir avant m&ecirc;me de savoir le demander.</p>
+      <h3 class="livre-title">The Tyranny of Metrics<span>Jerry Z. Muller</span></h3>
+      <p>Ce r&eacute;flexe de partir de la d&eacute;cision plut&ocirc;t que de la donn&eacute;e a une source que j'assume volontiers&#8239;: <em>The Tyranny of Metrics</em>, de Jerry Z. Muller. C'est le livre qui m'a donn&eacute; les mots pour ce que je voyais &agrave; l'&oelig;uvre chez Nexans.</p>
+      <p>Muller part d'un constat que r&eacute;sume la loi de Goodhart&#8239;: quand une mesure devient un objectif, elle cesse d'&ecirc;tre une bonne mesure. On finit par optimiser le chiffre, plus ce qu'il &eacute;tait cens&eacute; dire. L'effet cobra en est l'illustration la plus parlante&#8239;: &agrave; force de r&eacute;compenser chaque cobra tu&eacute; pour r&eacute;duire leur nombre, on a pouss&eacute; les gens &agrave; en &eacute;lever.</p>
+      <p>L'Excel de dix-huit pages relevait exactement de cela&#8239;: des indicateurs si nombreux et si suivis qu'ils avaient fini par remplacer la d&eacute;cision qu'ils devaient &eacute;clairer. J'en ai gard&eacute; un r&eacute;flexe&#8239;: ne jamais demander quels chiffres afficher, mais quelle d&eacute;cision ils doivent servir.</p>
+    </div>
+  </div>
+</section>
+<nav class="suite-cas" aria-label="Autres études de cas">
+  <a href="/cas-shift-prime" rel="prev"><span class="suite-sens">← Cas précédent</span><span class="suite-nom">SHIFT Prime</span><span class="suite-meta">Industrie · 2023</span></a>
+  <a href="/cas-proshop" rel="next"><span class="suite-sens">Cas suivant →</span><span class="suite-nom">Proshop</span><span class="suite-meta">Commerce · 2022</span></a>
+</nav>
+</div>
+<section class="bandeau-accent hote" data-hote aria-labelledby="t-suite">
+  <div class="page">
+    <h2 class="c-10" id="t-suite">Une situation qui ressemble<br>à la vôtre ?</h2>
+    <p class="t-lede c-8">Parlons de votre produit.<br>Je m'assure qu'il résolve le vrai problème.</p>
+    <div class="actions c-12">
+      <a class="btn" href="/contact">On en discute ?</a>
     </div>
   </div>
 </section>
@@ -275,6 +387,9 @@ secs.forEach(s=>s&&io.observe(s));
 </script>
 <script src="background.js"></script>
 <script src="figure-zoom.js"></script>
+<script src="vivant.js"></script>
+<script src="grille.js"></script>
+<script src="snap-grille.js"></script>
 <script src="site-nav.js"></script>
 <div id="site-footer"></div>
 </body>

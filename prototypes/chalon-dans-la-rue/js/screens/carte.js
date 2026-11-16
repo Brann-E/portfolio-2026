@@ -188,7 +188,7 @@ function createSearch() {
   const input = h("input", {
     class: "map-search__input",
     type: "search",
-    placeholder: "Recherchez un lieu, un artiste,...",
+    placeholder: "Un lieu, un artiste…",
     "aria-label": "Rechercher un lieu ou un artiste",
     autocomplete: "off",
   });
@@ -304,7 +304,21 @@ async function build() {
     pitchWithRotate: false,
   });
   map.touchZoomRotate.disableRotation();
-  map.addControl(new maplibregl.AttributionControl({ compact: true }), "bottom-left");
+  const attribution = new maplibregl.AttributionControl({ compact: true });
+  map.addControl(attribution, "bottom-left");
+  // Attribution repliée à l'ouverture : seule l'icône (i) reste visible (le texte passait sous le bouton des filtres) ; un clic l'ouvre.
+  // MapLibre la rouvre à chaque redimensionnement : on la referme tant que personne n'y a touché.
+  const attributionEl = attribution._container;
+  let attributionTouchee = false;
+  const replierAttribution = () => {
+    if (attributionTouchee) return;
+    attributionEl.removeAttribute("open");
+    attributionEl.classList.remove("maplibregl-compact-show");
+  };
+  attributionEl.addEventListener("click", () => { attributionTouchee = true; });
+  replierAttribution();
+  map.once("idle", replierAttribution);
+  map.on("resize", replierAttribution);
 
   for (const service of services) {
     const el = createServicePin(service);

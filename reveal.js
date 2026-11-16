@@ -61,7 +61,11 @@
     ".wrap > section > *",      // sous-blocs des sections (héros, bandes, série…)
     ".chapters > .chapter",     // chapitres des études de cas
     ".chapters > .ancrage",     // bloc d'ancrage final des cas
-    ".article > *"              // blocs internes des essais / la pratique
+    ".article > *",             // blocs internes des essais / la pratique
+    "[data-vivant=\"page\"] .hero-texte > *",  // titre et sous-titre d'une page à fond vivant (le héros est hors de .wrap)
+    ".hero--page .hero-texte > *",            // titre et chapeau des héros de page (hors de .wrap)
+    ".chapitre .page > *",                    // les chapitres des pages à chapitres (Comment je travaille, À propos) : sections hors de .wrap
+    ".bandeau-accent .page > *"               // le bandeau d'accent de fin de page
   ].join(",");
 
   function eligible(el) {
@@ -69,6 +73,7 @@
     if (el.classList.contains("toc")) return false;      // le sommaire lui-même
     if (el.closest(".toc, [data-no-rv]")) return false;  // dans un sommaire / opt-out
     if (el.querySelector(".toc")) return false;          // ancêtre d'un sommaire sticky
+    if (el.classList.contains("cartes")) return false;   // la pile de cas : chaque carte se révèle seule ; un seul bloc de 6000 px n'atteindrait jamais le seuil de visibilité
     return true;
   }
 

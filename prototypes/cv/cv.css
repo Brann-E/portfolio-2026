@@ -1,0 +1,313 @@
+/* ============================================================
+   CV Brann Etienne : une page A4, deux versions (même feuille).
+   Jetons repris de styles.css (DA papier + anthracite). Aucune valeur en dur
+   hors de ce bloc : tout le reste lit les variables.
+   ============================================================ */
+:root {
+  /* couleurs : mêmes noms et mêmes valeurs que styles.css */
+  --papier: #F6F3EB;
+  --anthracite: #2D2F32;
+  --blanc: #FFFFFF;
+  --bg: color-mix(in srgb, var(--papier) 50%, var(--blanc)); /* le papier du site, éclairci vers le blanc : mieux pour l'impression */
+  --encre: var(--anthracite);
+  --encre-2: #3F444B;
+  --muted: #4A4E55;
+
+  /* typos du site */
+  --ff-body: "Newsreader", Georgia, serif;
+  --ff-title: "Familjen Grotesk", system-ui, sans-serif;
+  --title-weight: 700;
+  --title-tracking: -.02em;
+
+  /* page */
+  --page-l: 210mm;
+  --page-h: 297mm;
+  --marge-x: 15mm;
+  --marge-haut: 13mm;
+  --marge-bas: 11mm;
+
+  /* échelle typographique du CV, par rôle */
+  --t-nom: 30pt;
+  --t-poste: 12pt;
+  --t-section: 7.6pt;
+  --t-poste-exp: 10.2pt;
+  --t-corps: 9.7pt;
+  --t-petit: 8.4pt;
+  --lh: 1.42;
+
+  /* espaces */
+  --sp-1: 1mm;
+  --sp-2: 2.6mm;
+  --sp-3: 4mm;
+  --sp-4: 6mm;
+  --col-date: 24mm;
+  --rule-w: 1px; /* le filet du site */
+  --demi-ligne: .875rem;
+  --maille: 3.5rem;
+  --cases-entete: 3;
+  --filet-leger: color-mix(in srgb, var(--encre) 20%, transparent); /* le séparateur du site : l'encre à 20 % */
+  --point-r: 1.4px;
+  --grille-trait: color-mix(in srgb, var(--encre) 3%, transparent);
+  --grille-point: color-mix(in srgb, var(--encre) 9%, transparent);
+
+  --portrait-l: 30mm;
+  --portrait-h: 30mm;
+}
+
+@page { size: A4; margin: 0; }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { background: var(--bg); }
+
+body {
+  background: var(--bg);
+  color: var(--encre);
+  font-family: var(--ff-body);
+  font-size: var(--t-corps);
+  line-height: var(--lh);
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.cv {
+  position: relative;
+  width: var(--page-l);
+  height: var(--page-h);
+  padding: var(--marge-haut) var(--marge-x) var(--marge-bas);
+  overflow: hidden;
+  background: var(--bg);
+}
+
+/* ---------- en-tête ---------- */
+.entete {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr var(--portrait-l);
+  column-gap: var(--sp-4);
+  align-items: center;
+  /* l'entête fait quatre cases de la grille depuis le haut de la page, et s'arrête sur le filet de la quatrième */
+  height: calc(var(--maille) * var(--cases-entete));
+  margin-top: calc(var(--marge-haut) * -1); /* l'entête part du haut de la page : son contenu est centré sur les trois cases */
+  margin-bottom: var(--sp-3);
+}
+
+/* le séparateur parcourt toute la page, bord à bord */
+.entete::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--marge-x) * -1);
+  right: calc(var(--marge-x) * -1);
+  bottom: 0;
+  height: var(--rule-w);
+  background: var(--filet-leger);
+}
+
+.motif {
+  position: absolute;
+  top: 0;
+  left: calc(var(--marge-x) * -1);
+  right: calc(var(--marge-x) * -1);
+  bottom: 0;
+  pointer-events: none;
+  /* la grille de la home : une maille de 56 px, filets d'un pixel, un point à chaque noeud.
+     Les filets partent 14 px à gauche du bord du texte (comme la page), du haut du document. */
+  background-image:
+    radial-gradient(circle at 0 0, var(--grille-point) var(--point-r), transparent calc(var(--point-r) + .5px)),
+    radial-gradient(circle at 100% 0, var(--grille-point) var(--point-r), transparent calc(var(--point-r) + .5px)),
+    radial-gradient(circle at 0 100%, var(--grille-point) var(--point-r), transparent calc(var(--point-r) + .5px)),
+    radial-gradient(circle at 100% 100%, var(--grille-point) var(--point-r), transparent calc(var(--point-r) + .5px)),
+    linear-gradient(to right, var(--grille-trait) var(--rule-w), transparent var(--rule-w)),
+    linear-gradient(to bottom, var(--grille-trait) var(--rule-w), transparent var(--rule-w));
+  background-size: var(--maille) var(--maille);
+  background-position: calc(var(--marge-x) - var(--demi-ligne)) 0;
+}
+
+.identite { position: relative; }
+
+.nom {
+  font-family: var(--ff-title);
+  font-weight: var(--title-weight);
+  letter-spacing: var(--title-tracking);
+  font-size: var(--t-nom);
+  line-height: 1;
+}
+
+.poste {
+  margin-top: var(--sp-2);
+  font-family: var(--ff-title);
+  font-weight: 500;
+  font-size: var(--t-poste);
+  letter-spacing: -.005em;
+  line-height: 1.2;
+}
+
+.contacts {
+  margin-top: var(--sp-3);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--sp-3);
+  font-size: var(--t-petit);
+  color: var(--encre-2);
+}
+
+.contacts a {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: var(--rule-w);
+  text-underline-offset: .5mm;
+}
+
+.portrait {
+  position: relative;
+  width: var(--portrait-l);
+  height: var(--portrait-h);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 35%;
+}
+
+/* ---------- texte d'intro : celui de la home ---------- */
+.intro {
+  max-width: 172mm;
+  font-size: calc(var(--t-corps) * 1.04);
+  line-height: 1.42;
+  margin-bottom: var(--sp-2);
+}
+
+/* ---------- sections ---------- */
+.section { padding-top: var(--sp-2); }
+
+.section > h2 {
+  display: grid;
+  grid-template-columns: var(--col-date) 1fr;
+  align-items: center;
+  column-gap: 0;
+  font-family: var(--ff-title);
+  font-weight: var(--title-weight);
+  font-size: var(--t-section);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  margin-bottom: var(--sp-2);
+}
+
+.section > h2::after {
+  content: "";
+  grid-column: 2;
+  height: 0;
+  border-top: var(--rule-w) solid var(--encre);
+  margin-left: var(--sp-3);
+}
+
+.entree {
+  display: grid;
+  grid-template-columns: var(--col-date) 1fr;
+  column-gap: var(--sp-3);
+  padding-top: var(--sp-2);
+  padding-bottom: var(--sp-2);
+  border-top: var(--rule-w) solid color-mix(in srgb, var(--encre) 28%, transparent);
+}
+
+.entree:first-of-type { border-top: 0; padding-top: 0; }
+
+.date {
+  font-family: var(--ff-title);
+  font-size: var(--t-petit);
+  font-weight: 500;
+  letter-spacing: .02em;
+  padding-top: .35mm;
+  color: var(--encre-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.entree h3 {
+  font-family: var(--ff-title);
+  font-weight: var(--title-weight);
+  font-size: var(--t-poste-exp);
+  letter-spacing: var(--title-tracking);
+  line-height: 1.25;
+}
+
+.entree h3 .lieu { font-weight: 500; }
+
+.contexte {
+  font-style: italic;
+  color: var(--encre-2);
+  margin-top: .3mm;
+}
+
+.entree ul {
+  margin-top: var(--sp-1);
+  padding-left: 3.4mm;
+  list-style: disc;
+}
+
+.entree li { padding-left: .6mm; }
+.entree li + li { margin-top: .5mm; }
+.entree li::marker { color: var(--encre); font-size: .8em; }
+
+.entree .liste {
+  margin-top: var(--sp-1);
+}
+
+.chiffre { font-weight: 600; }
+
+/* ---------- bas de page : quatre blocs ---------- */
+.bas {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr 1fr;
+  column-gap: var(--sp-4);
+  margin-top: var(--sp-2);
+  padding-top: var(--sp-3);
+  border-top: var(--rule-w) solid var(--encre);
+}
+
+.bas h2 {
+  font-family: var(--ff-title);
+  font-weight: var(--title-weight);
+  font-size: var(--t-section);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  margin-bottom: var(--sp-2);
+}
+
+.bas p, .bas li { font-size: var(--t-petit); line-height: 1.38; }
+.bas ul { list-style: none; }
+.bas li + li { margin-top: .6mm; }
+.bas b { font-family: var(--ff-title); font-weight: 600; font-size: .96em; }
+.bas .bloc + .bloc { margin-top: var(--sp-3); }
+.bas .annee { font-family: var(--ff-title); font-variant-numeric: tabular-nums; color: var(--encre-2); }
+
+/* les mots mis en avant : le gras du texte et des étiquettes en tête de ligne */
+.entree li b { font-weight: 700; font-style: normal; }
+
+/* deux pages A4 : chacune est une feuille entière */
+.cv { break-after: page; page-break-after: always; }
+.cv:last-of-type { break-after: auto; page-break-after: auto; }
+.page-2 { display: flex; flex-direction: column; }
+
+
+/* bandeau de la page 2 */
+.tete-suite {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: var(--sp-2);
+  margin-bottom: var(--sp-4);
+  border-bottom: var(--rule-w) solid var(--filet-leger);
+  font-family: var(--ff-title);
+  font-size: var(--t-petit);
+  color: var(--encre-2);
+}
+.nom-suite { font-weight: var(--title-weight); font-size: var(--t-poste-exp); color: var(--encre); letter-spacing: var(--title-tracking); }

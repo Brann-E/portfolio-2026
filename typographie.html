@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Échelle typographique - Brann Etienne</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500..700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&display=swap" rel="stylesheet">
+<style>
+/* Page de documentation : chaque exemple utilise le rôle qu'il décrit, et les mesures sont lues sur la feuille de style, jamais écrites à la main. */
+.ty-h1 { font-family: var(--ff-title); font-weight: var(--title-weight); letter-spacing: var(--title-tracking); font-size: var(--fs-3xl); line-height: var(--lh-3xl); }
+.ty-h2 { font-family: var(--ff-title); font-weight: var(--title-weight); letter-spacing: var(--title-tracking); font-size: var(--fs-2xl); line-height: var(--lh-2xl); }
+.ty-h3 { font-family: var(--ff-title); font-weight: var(--title-weight); letter-spacing: var(--title-tracking); font-size: var(--fs-l); line-height: var(--ligne); }
+.ty-h4 { font-family: var(--ff-title); font-weight: var(--title-weight); letter-spacing: var(--title-tracking); font-size: var(--fs-s); line-height: var(--ligne); }
+.ty-h5 { font-family: var(--ff-title); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; font-size: var(--fs-xs); line-height: var(--ligne); }
+.ty-lede { font-family: var(--ff-body); font-size: var(--fs-m); line-height: var(--ligne); }
+.ty-body { font-family: var(--ff-body); font-size: var(--fs-s); line-height: var(--ligne); }
+.ty-small { font-family: var(--ff-body); font-size: var(--fs-s); line-height: var(--ligne); }
+.ty-table { width: 100%; border-collapse: collapse; margin-top: var(--ligne); }
+.ty-table th, .ty-table td { padding: var(--ligne) var(--demi-ligne) var(--ligne) 0; box-shadow: inset 0 var(--rule-w) 0 var(--encre); text-align: left; vertical-align: top; font-weight: 400; line-height: var(--ligne); }
+.ty-table th { font-family: var(--ff-title); font-size: var(--fs-xs); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+.ty-table td:first-child { white-space: nowrap; font-family: var(--ff-title); font-weight: 600; }
+@media (max-width: 859px) { .ty-table { display: block; overflow-x: auto; } }
+.ty-mesure { font-family: var(--ff-title); font-weight: 600; white-space: nowrap; }
+.ty-note { max-width: 62ch; }
+.ty-liste { margin: var(--ligne) 0 0; padding-left: var(--ligne); max-width: 66ch; }
+.ty-liste li + li { margin-top: 0; }
+.ty-code { font-family: ui-monospace, Consolas, monospace; font-size: .92em; }
+.ty-section { margin-top: calc(var(--ligne) * 3); }
+body.has-site-nav .wrap > h1 { margin: calc(var(--ligne) * 4) 0 var(--ligne); font-family: var(--ff-title); font-weight: var(--title-weight); letter-spacing: var(--title-tracking); font-size: var(--fs-3xl); line-height: var(--lh-3xl); }
+.ty-section > h2 { margin: 0; }
+.ty-section > p { margin: 0; }
+</style>
+</head>
+<body class="has-site-nav"><script src="nav.js"></script>
+<div class="wrap" id="contenu">
+
+  <h1>Échelle typographique</h1>
+  <p class="ty-lede ty-note">Un seul jeu de rôles pour tout le site. Le H1 est le plus grand texte : rien ne le dépasse. Les mesures de cette page sont lues sur la feuille de style au moment où elle s'affiche : elles ne peuvent pas différer de ce que fait le site.</p>
+
+  <section class="ty-section">
+    <h2 class="ty-h3">Les rôles</h2>
+    <table class="ty-table" id="ty-roles">
+      <thead><tr><th>Rôle</th><th>Exemple</th><th>Bureau</th><th>Mobile</th><th>Jeton</th><th>Où</th></tr></thead>
+      <tbody>
+        <tr data-role="ty-h1" data-jeton="--fs-3xl"><td>H1</td><td><span class="ty-h1">Titre</span></td><td class="ty-mesure" data-bureau></td><td class="ty-mesure" data-mobile></td><td class="ty-code">--fs-3xl</td><td>Titre de page, héros. Le plus grand texte du site.</td></tr>
+        <tr data-role="ty-h2" data-jeton="--fs-2xl"><td>H2</td><td><span class="ty-h2">Titre de section</span></td><td class="ty-mesure" data-bureau></td><td class="ty-mesure" data-mobile></td><td class="ty-code">--fs-2xl</td><td>Titre de section, grande question d'une carte.</td></tr>
+        <tr data-role="ty-h3" data-jeton="--fs-l"><td>H3</td><td><span class="ty-h3">Titre de cellule</span></td><td class="ty-mesure" data-bureau></td><td class="ty-mesure" data-mobile></td><td class="ty-code">--fs-l</td><td>Titre de chapitre, de cellule, citation courte, question d'une carte.</td></tr>
+        <tr data-role="ty-h4"><td>H4</td><td><span class="ty-h4">Sous-titre</span></td><td class="ty-mesure" data-bureau></td><td class="ty-mesure" data-mobile></td><td class="ty-code">--fs-s</td><td>Sous-titre d'une partie : la taille du texte courant, en police de titre.</td></tr>
+        <tr data-role="ty-h5" data-jeton="--fs-xs"><td>H5</td><td><span class="ty-h5">Étiquette</span></td><td class="ty-mesure" data-bureau></td><td class="ty-mesure" data-mobile></td><td class="ty-code">--fs-xs</td><td>Étiquette (« eyebrow ») : capitales, interlettrage .12em. Voir plus bas.</td></tr>
+        <tr data-role="ty-lede" data-jeton="--fs-m"><td>Chapeau</td><td><span class="ty-lede">Une phrase d'entrée</span></td><td class="ty-mesure" data-bureau></td><td class="ty-mesure" data-mobile></td><td class="ty-code">--fs-m</td><td>Texte d'introduction sous un titre.</td></tr>
+        <tr data-role="ty-body" data-jeton="--fs-s"><td>Texte courant</td><td><span class="ty-body">Le texte qu'on lit</span></td><td class="ty-mesure" data-bureau></td><td class="ty-mesure" data-mobile></td><td class="ty-code">--fs-s</td><td>Paragraphes des pages et des articles.</td></tr>
+        <tr data-role="ty-small" data-jeton="--fs-s"><td>Petit texte</td><td><span class="ty-small">Une légende</span></td><td class="ty-mesure" data-bureau></td><td class="ty-mesure" data-mobile></td><td class="ty-code">--fs-s</td><td>Légendes, notes, textes de cellules étroites.</td></tr>
+      </tbody>
+    </table>
+    <p class="ty-small ty-note">Bureau : mesure sur cet écran, largeur <span id="ty-largeur" class="ty-mesure"></span> px. Mobile : valeurs du bloc « max-width: 859px » de la feuille de style. Les titres sont en <span class="ty-code">Familjen Grotesk</span> bold, interlettrage -.02em ; le texte est en <span class="ty-code">Newsreader</span>.</p>
+  </section>
+
+  <section class="ty-section">
+    <h2 class="ty-h3">Les étiquettes (eyebrows)</h2>
+    <p class="ty-body ty-note">Un seul style pour tous les petits repères en capitales : 14 px, police des titres, graisse 600, interlettrage .12em, interligne d'une ligne (28 px). Les classes suivantes l'emploient :</p>
+    <ul class="ty-liste ty-small">
+      <li><span class="ty-code">.eyebrow</span>, <span class="ty-code">.cartes-titre</span> : titres de rang (« Projets personnels »).</li>
+      <li><span class="ty-code">.facts dt</span> : Rôle, Client, Secteur, Date d'une étude de cas.</li>
+      <li><span class="ty-code">.meta</span>, <span class="ty-code">.carte .meta</span> : repère d'une carte (nom du projet, secteur, année).</li>
+      <li><span class="ty-code">.legend .lt</span>, <span class="ty-code">.node .n</span> : légendes et numéros de cellule.</li>
+      <li><span class="ty-code">.toc a</span> : l'accès rapide à droite d'une étude de cas.</li>
+      <li><span class="ty-code">.livre-title span</span> : auteur d'un livre.</li>
+      <li><span class="ty-code">.sit-num</span> : bandeau d'une boîte de la home.</li>
+    </ul>
+  </section>
+
+  <section class="ty-section">
+    <h2 class="ty-h3">Règles</h2>
+    <ul class="ty-liste ty-body">
+      <li>Le H1 de chaque page est celui du héros. Aucun texte, nombre ou citation ne dépasse sa taille.</li>
+      <li>Titres : police Familjen Grotesk, bold, droits (pas d'italique). Texte : Newsreader.</li>
+      <li>Les capitales ne servent qu'aux étiquettes (H5).</li>
+      <li>Pour changer une taille, on change le rôle (<span class="ty-code">--t-*</span>), pas la page.</li>
+      <li>Les jetons sont en tête du bloc « NOUVELLE DA » de <span class="ty-code">styles.css</span>, section « jetons » ; leurs valeurs mobiles sont dans le bloc « max-width: 859px ».</li>
+    </ul>
+  </section>
+
+</div>
+<div id="site-footer"></div>
+<script src="footer.js"></script>
+<script src="site-nav.js"></script>
+<script>
+(function () {
+  "use strict";
+  var racine = document.documentElement;
+  function px(el) { var cs = getComputedStyle(el); return Math.round(parseFloat(cs.fontSize) * 10) / 10 + " / " + Math.round(parseFloat(cs.lineHeight) * 10) / 10; }
+
+  // la valeur mobile : lue dans la règle « :root » du bloc « max-width: 859px » de la feuille de style
+  function mobile(jeton) {
+    var v = null;
+    Array.prototype.forEach.call(document.styleSheets, function (feuille) {
+      var regles; try { regles = feuille.cssRules; } catch (e) { return; }
+      Array.prototype.forEach.call(regles, function (r) {
+        if (r.type === 4 && /859px/.test(r.conditionText || r.media.mediaText)) {
+          Array.prototype.forEach.call(r.cssRules, function (s) { if (s.selectorText === ":root" && s.style.getPropertyValue(jeton)) v = s.style.getPropertyValue(jeton).trim(); });
+        }
+      });
+    });
+    return v;
+  }
+  function enPx(v, rem) { if (!v) return null; var m = /^([\d.]+)rem$/.exec(v); return m ? Math.round(parseFloat(m[1]) * 16 * 10) / 10 : (/^([\d.]+)px$/.test(v) ? parseFloat(v) : null); }
+
+  function lignes() {
+    document.querySelectorAll("#ty-roles tbody tr").forEach(function (tr) {
+      var ex = tr.querySelector("span"); tr.querySelector("[data-bureau]").textContent = px(ex).replace(" / ", " / ") + " px";
+      var jeton = tr.getAttribute("data-jeton"), t = enPx(mobile(jeton || "--fs-s"));
+      tr.querySelector("[data-mobile]").textContent = t ? t + " px" : "identique";   // un rôle qui ne change pas se lit « identique » ; le H4 suit le texte courant
+    });
+    var rem = parseFloat(getComputedStyle(racine).fontSize);
+    document.getElementById("ty-largeur").textContent = window.innerWidth;
+  }
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(lignes); else window.addEventListener("load", lignes);
+  window.addEventListener("resize", lignes);
+})();
+</script>
+</body>
+</html>

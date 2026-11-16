@@ -22,95 +22,192 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96.png">
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500..700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 
 </head>
-<body class="has-site-nav"><script src="nav.js"></script>
-<canvas id="bg" aria-hidden="true"></canvas>
-<div class="veil" aria-hidden="true"></div>
+<body class="has-site-nav" data-accent="#A7FFFF"><script src="nav.js"></script>
+<main id="contenu">
 
-
-
-
-<main class="wrap">
-
-<!-- ═══════════ STRATE 1 - SURFACE ═══════════ -->
-<section class="s1">
-  <h1>Projet <em>Healthanea</em></h1>
-
-  <dl class="facts">
-    <div><dt>Rôle</dt><dd>Lead 
-      Product Designer</dd></div>
-    <div><dt>Client</dt><dd>AXA Group Operations × Microsoft</dd></div>
-    <div><dt>Secteur</dt><dd>Santé</dd></div>
-    <div><dt>Date</dt><dd>2024</dd></div>
-  </dl>
-
-  <p class="question">Et si la meilleure façon de soigner, c'était de mieux relier ?</p>
-
-  <p class="context">Healthanea, issu d'un partenariat entre AXA Group Operations et Microsoft, est missionné par Novo Nordisk pour concevoir un dispositif numérique d'accompagnement des maladies chroniques. <br>J'y interviens comme lead product designer, avec une commande claire, créer un parcours de soin pour améliorer le suivi d'un traitement.</p>
-
-  <p class="bascule">On m'a demandé de tracer<br> un chemin pour le patient.<br><span>La recherche a montré qu'il fallait<br> bâtir un monde autour de lui.</span></p>
+<section class="hero hero--page hero--cas" data-vivant aria-labelledby="titre">
+  <canvas id="cv-disques" aria-hidden="true"></canvas>
+  <canvas id="cv-grille" aria-hidden="true"></canvas>
+  <div class="hero-texte page">
+    <div class="cas-prov" data-texte data-sans-grille>
+      <p class="cas-nom">Healthanea</p>
+      <p class="arrondi cas-pastille"><img class="cas-logo cas-logo--grand" src="assets/clients/carte/axa.png" alt="AXA"><img class="cas-logo cas-logo--grand cas-logo--microsoft" src="assets/clients/carte/microsoft.png" alt="Microsoft"><span>Santé</span></p>
+    </div>
+    <h1 id="titre" class="t-display c-12" data-texte>Bâtir un monde autour du patient, plutôt qu'un parcours</h1>
+    <ul class="cas-tags" data-texte data-sans-grille aria-label="Nature de la mission">
+      <li class="arrondi cas-pastille">HealthTech B2B2C</li>
+      <li class="arrondi cas-pastille">Desk research</li>
+      <li class="arrondi cas-pastille">Approche systémique</li>
+      <li class="arrondi cas-pastille">Design de service</li>
+    </ul>
+  </div>
+  <div class="hero-scene" aria-hidden="true"></div>
 </section>
 
-<!-- ═══════════ STRATE 2 - LE RÉSUMÉ ═══════════ -->
-<section class="s2">
-  <div class="summary">
-    <a class="row" href="#c1">
-      <div class="num">01</div>
-      <div class="txt">
-        <div class="t">Un parcours de soin à clarifier</div>
-        <div class="d">AXA GO lance Healthanea pour aider les malades chroniques à naviguer des parcours fragmentés. On me demande de fluidifier le service, sans pouvoir interroger les patients moi-même.</div>
-      </div>
-    </a>
+<div class="wrap">
 
-    <a class="row" href="#c2">
-      <div class="num">02</div>
-      <div class="txt">
-        <div class="t">La recherche déplace le regard : ce n'est pas le service, c'est l'isolement</div>
-        <div class="d">Faute de pouvoir mener mes propres entretiens, je construis un repository à partir de données éparses, entretiens de patients compris. Ce qui apparaît ? Les patients chroniques ne décrochent pas de leur traitement par manque d'outil, mais parce qu'ils sont seuls à le porter.</div>
-      </div>
-    </a>
+<div class="cas-visuel cas-visuel--solo arrondi">
+  <figure>
+    <img class="carte-eco" src="assets/carte-healthanea-recadree-1600.webp" srcset="assets/carte-healthanea-recadree-900.webp 639w, assets/carte-healthanea-recadree-1600.webp 1136w" sizes="(max-width: 859px) 100vw, 1136px" width="1136" height="1223" alt="Carte de l'écosystème Healthanea : le patient, l'application et les acteurs qui l'entourent, reliés par des flux d'argent, de biens et de données">
+    <figcaption>La carte de l'écosystème : trois flux distincts, tous les acteurs, <span class="legende-suite">et les étoiles là où quelque chose peut naître.</span></figcaption>
+  </figure>
+</div>
 
-    <a class="row" href="#c3">
-      <div class="num">03</div>
-      <div class="txt">
-        <div class="t">Une carte d'écosystème pour rendre le tissu visible</div>
-        <div class="d">Je cartographie tous les acteurs et les trois flux qui circulent entre eux, argent, biens, données, pour voir où le courant passe et où il casse.</div>
+<section class="cas-contexte" id="contexte">
+  <dl class="cas-fiche">
+    <div><dt>Stack technique</dt><dd>Front : PrimeFaces<br>Back : JavaServer Faces</dd></div>
+    <div><dt>Durée (année)</dt><dd>9 mois (2024)</dd></div>
+    <div><dt>Rôles</dt><dd>Lead Product Designer → UX Researcher → Design Strategist</dd></div>
+    <div><dt>Équipe</dt><dd><span>Head of Product, PM / PO, Architect, Techlead, DevOps, Dev full stack, Delivery Manager, Scrum Master, Data Engineer</span></dd></div>
+    <div><dt>Rencontrés</dt><dd><span>Go-to-Market team, Health Team, Customer Success Team. Aucun accès direct aux patients : entretiens déjà recueillis (diabète de type 2) et littérature.</span></dd></div>
+    <div><dt>Périmètre</dt><dd><span>Research repository sur données existantes → Carte d'écosystème → Pistes → Alignement</span></dd></div>
+  </dl>
+  <div class="cas-contexte-texte">
+    <p class="t-label cas-etiquette">Le produit</p>
+    <p class="t-h3 cas-produit">On m'a demandé de tracer un chemin pour le patient. La recherche a montré qu'il fallait bâtir un monde autour de lui.</p>
+    <p class="t-lede">Healthanea, issu d'un partenariat entre AXA Group Operations et Microsoft, est missionné par Novo Nordisk pour concevoir un dispositif numérique d'accompagnement des maladies chroniques.</p>
+    <p class="t-lede">J'y interviens comme lead product designer, avec une commande claire : créer un parcours de soin pour améliorer le suivi d'un traitement.</p>
+    <h2 class="cas-question">Et si la meilleure façon de soigner, c'était de mieux relier ?</h2>
+    <div class="cas-changement" id="impact">
+      <h2 class="cas-sous-titre">Impact</h2>
+      <div class="metrics">
+        <div class="metric arrondi"><div class="v">3 flux</div><div class="l">cartographiés entre tous les acteurs : l'argent, les biens, les données</div></div>
+        <div class="metric arrondi"><div class="v">1 vue</div><div class="l">commune à la stratégie, au design et à l'exécution</div></div>
+        <div class="metric arrondi"><div class="v">4 pistes</div><div class="l">ouvertes par la carte : laboratoires et médecins, effet réseau, bien-être, médecin coordinateur</div></div>
       </div>
-    </a>
-
-    <a class="row" href="#c4">
-      <div class="num">04</div>
-      <div class="txt">
-        <div class="t">Un champ de possibles s'ouvre là où il n'y avait qu'une impasse</div>
-        <div class="d">Relation laboratoires et médecins à reconnecter, effet réseau comme levier thérapeutique, spécialistes du bien-être à intégrer, médecin repositionné en coordinateur. Aucune de ces pistes n'était visible ou même envisageable avant le déplacement.</div>
-      </div>
-    </a>
-
-    <a class="row" href="#c5">
-      <div class="num">05</div>
-      <div class="txt">
-        <div class="t">La conversation change : on ne parle plus de fonctionnalités, mais de relations</div>
-        <div class="d">Stratégie, design et exécution s'alignent sur une même vue. Le projet cesse d'être « créer un produit » pour devenir concevoir un service qui trouve sa place dans l'écosystème. L'application devient le lieu de rencontre des besoins de tous.</div>
-      </div>
-    </a>
-
-    <a class="row" href="#c6">
-      <div class="num">06</div>
-      <div class="txt">
-        <div class="t">Une habitude ne se crée pas dans un produit, mais dans ce qu'on relie autour du patient</div>
-        <div class="d">La complexité n'est pas un obstacle à contourner, c'est la matière même de travail. Je ne l'aplatis pas, je la tiens entière,  et c'est là que se trouve le lien que personne ne regardait.</div>
-      </div>
-    </a>
+    </div>
   </div>
 </section>
 
-<!-- ═══════════ STRATE 3 - LE DÉTAIL ═══════════ -->
+<section class="tradeoffs" id="tradeoffs">
+  <h2>Trade-off</h2>
+  <div class="cas-tradeoffs">
+
+    <article class="cas-tradeoff arrondi">
+      <p class="arrondi cas-tradeoff-type" data-sans-grille>Produit</p>
+      <div class="cas-tradeoff-question">Faut-il concevoir un produit tout de suite, ou traiter d'abord les problèmes systémiques ?</div>
+      <div class="cas-tradeoff-choix">
+        <div class="cas-tradeoff-cadre cas-tradeoff-retenu arrondi">
+          <div class="cas-tradeoff-label">Retenu</div>
+          <div class="cas-tradeoff-texte">Prendre le temps de traiter les problèmes systémiques en amont, avec une vue commune pour la stratégie, le design et l'exécution, puis concevoir des services qui s'intègrent à l'écosystème de santé existant.</div>
+        </div>
+        <div class="cas-tradeoff-cadre arrondi">
+          <div class="cas-tradeoff-label">Écarté</div>
+          <div class="cas-tradeoff-texte">Se jeter dans la conception d'un produit, qui s'ajouterait à l'écosystème au lieu de s'y intégrer.</div>
+        </div>
+      </div>
+      <div class="cas-tradeoff-decision arrondi">
+        <div class="cas-tradeoff-label">Décision et conséquences</div>
+        <div class="cas-tradeoff-texte">Le projet cesse d'être « créer un produit » pour devenir concevoir des services qui s'intègrent au système existant. Cette bascule l'a rendu viable dans la durée, au prix du temps pris en amont, avant la conception.</div>
+      </div>
+    </article>
+
+    <article class="cas-tradeoff arrondi">
+      <p class="arrondi cas-tradeoff-type" data-sans-grille>Design</p>
+      <div class="cas-tradeoff-question">Comment tenir toute la complexité de l'expérience patient sans la réduire ?</div>
+      <div class="cas-tradeoff-choix">
+        <div class="cas-tradeoff-cadre cas-tradeoff-retenu arrondi">
+          <div class="cas-tradeoff-label">Retenu</div>
+          <div class="cas-tradeoff-texte">Cartographier tous les acteurs et les trois flux : l'argent, les biens, les données.</div>
+        </div>
+        <div class="cas-tradeoff-cadre arrondi">
+          <div class="cas-tradeoff-label">Écarté</div>
+          <div class="cas-tradeoff-texte">Traiter un aspect isolé du parcours, ou réduire le système à trois blocs.</div>
+        </div>
+      </div>
+      <div class="cas-tradeoff-decision arrondi">
+        <div class="cas-tradeoff-label">Décision et conséquences</div>
+        <div class="cas-tradeoff-texte">La carte donne à tous une vue commune. Elle reste dense, parce qu'elle sert à voir plutôt qu'à résumer : les patients ne vivent pas dans des silos, ils traversent une toile de services disjoints, et la carte permet de concevoir avec.</div>
+      </div>
+    </article>
+
+    <article class="cas-tradeoff arrondi">
+      <p class="arrondi cas-tradeoff-type" data-sans-grille>Stratégie</p>
+      <div class="cas-tradeoff-question">Faut-il clarifier le parcours, comme la commande le demandait, ou traiter l'isolement que la recherche a révélé ?</div>
+      <div class="cas-tradeoff-choix">
+        <div class="cas-tradeoff-cadre cas-tradeoff-retenu arrondi">
+          <div class="cas-tradeoff-label">Retenu</div>
+          <div class="cas-tradeoff-texte">Traiter le vide relationnel que la recherche a fait apparaître : l'isolement.</div>
+        </div>
+        <div class="cas-tradeoff-cadre arrondi">
+          <div class="cas-tradeoff-label">Écarté</div>
+          <div class="cas-tradeoff-texte">La commande telle qu'elle était posée : clarifier le parcours, fluidifier le service.</div>
+        </div>
+      </div>
+      <div class="cas-tradeoff-decision arrondi">
+        <div class="cas-tradeoff-label">Décision et conséquences</div>
+        <div class="cas-tradeoff-texte">L'isolement est directement lié à la capacité à tenir un traitement. Sortir du brief déplace la conversation avec le client, des fonctionnalités vers les relations.</div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ═══════════ STRATE 2 ═══════════ -->
+<section class="s2">
+  <h2 class="s2-titre">Le résumé</h2>
+  <ol class="resume-liste">
+    <li class="resume-ligne">
+      <div class="resume-intitule">
+        <div class="resume-nom">Le problème posé</div>
+        <div class="resume-phrase">Un parcours fragmenté, illisible, difficile à suivre</div>
+      </div>
+      <div class="resume-texte">Healthanea, initiative d'AXA Group Operations, doit aider les malades chroniques à naviguer des parcours fragmentés. On me demande de clarifier le parcours et de fluidifier le service, sans accès direct aux patients.</div>
+    </li>
+    <li class="resume-ligne">
+      <div class="resume-intitule">
+        <div class="resume-nom">Le déplacement</div>
+        <div class="resume-phrase">Ils ne manquaient pas de service. Ils manquaient d'un entourage.</div>
+      </div>
+      <div class="resume-texte">Faute d'entretiens menés de ma main, je construis un repository de recherche à partir de données éparses. Les patients chroniques ne décrochent pas faute d'outil, mais parce qu'ils sont seuls à porter leur traitement : le brief demandait de relier des services, la réalité de relier des gens.</div>
+    </li>
+    <li class="resume-ligne">
+      <div class="resume-intitule">
+        <div class="resume-nom">L'instrument</div>
+        <div class="resume-phrase">Une carte pour voir, pas pour simplifier</div>
+      </div>
+      <div class="resume-texte">La carte d'écosystème rend visible ce qui circule, l'argent, les biens, les données, et où le courant passe ou casse. Elle ne réduit pas la toile de services que traversent les patients : elle permet de concevoir avec.</div>
+    </li>
+    <li class="resume-ligne">
+      <div class="resume-intitule">
+        <div class="resume-nom">Le champ ouvert</div>
+        <div class="resume-phrase">Ce n'est pas une solution qui émerge. C'est un champ.</div>
+      </div>
+      <div class="resume-texte">Quatre pistes apparaissent : la relation laboratoires et médecins, l'effet réseau comme levier thérapeutique, les spécialistes du bien-être, le médecin coordinateur. Aucune n'était accessible avant le déplacement.</div>
+    </li>
+    <li class="resume-ligne">
+      <div class="resume-intitule">
+        <div class="resume-nom">L'alignement</div>
+        <div class="resume-phrase">Aligner stratégie, design et exécution</div>
+      </div>
+      <div class="resume-texte">La carte donne à la stratégie, au design et à l'exécution une vue commune. Le projet cesse d'être « créer un produit » pour devenir concevoir des services qui s'intègrent à l'écosystème, et la conversation passe des fonctionnalités aux relations.</div>
+    </li>
+    <li class="resume-ligne">
+      <div class="resume-intitule">
+        <div class="resume-nom">Une suite ?</div>
+        <div class="resume-phrase">Un prolongement personnel, pas un résultat</div>
+      </div>
+      <div class="resume-texte">Construit après la mission : cinq familles de flux hors marché, une chaîne de la carte à la revue, un parcours côté patient. Des hypothèses, pas des résultats.</div>
+    </li>
+    <li class="resume-ligne">
+      <div class="resume-intitule">
+        <div class="resume-nom">Ma pratique ?</div>
+        <div class="resume-phrase">Ce que ce projet a ancré dans ma pratique</div>
+      </div>
+      <div class="resume-texte">Une habitude ne se crée pas dans un parcours simplifié à l'intérieur d'un produit : elle se crée grâce à tout ce qu'on relie autour du patient. La complexité n'est pas un obstacle à contourner, c'est la matière même du travail.</div>
+    </li>
+  </ol>
+</section>
+
+
+<!-- ═══════════ STRATE 3 ═══════════ -->
 <section class="s3">
   <div class="intro">
     <h2>Le détail</h2>
@@ -124,7 +221,7 @@
         <p class="chapter-sub">Un parcours fragmenté, illisible, difficile à suivre</p>
         <p class="quiet">Healthanea était une initiative ambitieuse d'AXA Group Operations : repenser la façon dont les patients naviguent des parcours de soin complexes. J'ai rejoint l'équipe comme Lead Product Designer, à la croisée de l'expérience, du produit et de la stratégie.</p>
         <p class="quiet">Ma mission telle qu'elle m'était confiée : apporter de la clarté dans un paysage morcelé, aligner l'équipe autour des besoins réels, et faire apparaître des opportunités en reliant les enjeux métiers, techniques et patients.</p>
-        <p class="brief">Clarifier le parcours. Fluidifier le service. <br>Voilà ce qu'on me demandait de regarder.</p>
+        <p class="brief">Clarifier le parcours. Fluidifier le service.<br>Voilà ce qu'on me demandait de regarder.</p>
         <p class="quiet">Et une contrainte de départ qui semblait rédhibitoire : aucun accès direct aux patients. Impossible de mener mes propres entretiens, impossible d'observer leurs difficultés de première main. Le genre de contrainte qui pousse habituellement à combler les trous par des suppositions.</p>
       </article>
 
@@ -143,9 +240,7 @@
         <p>Ce constat retourne la commande. Le problème n'était pas un manque de services : c'était un vide relationnel et social qui laissait les patients seuls dans leur expérience. Il ne s'agissait plus d'améliorer un accès aux soins, mais de créer les conditions d'un environnement où le patient se sent relié, soutenu, capable d'agir sur sa propre santé, mais aussi celle des autres.</p>
         <p>Le brief demandait de mieux relier des services. La réalité demandait de relier des gens.</p>
               <h4>Ce qui circulait</h4>
-        <ul>
-          <li>Autour d'un patient chronique, le soutien qui manquait.</li>
-        </ul>
+        <p class="pull">Autour d'un patient chronique, le soutien qui manquait.</p>
       </article>
 
       <article class="chapter" id="c3">
@@ -166,7 +261,7 @@
         <p class="chapter-sub">Ce n'est pas une solution qui émerge. C'est un champ.</p>
         <p>Au moment où la carte est achevée, un voile se lève. La complexité qui paraissait insurmontable devient un terrain de jeu. Les idées affluent, pas avant mais précisément à cet instant !</p>
         <p>À l'occasion d'ateliers, nous apercevons avec les membres de l'équipe, des connexions qui étaient là depuis le début, cachées en pleine lumière, et des opportunités cachées par le désordre apparent du système.</p>
-        <div class="nodes">
+        <div class="nodes hote in" data-hote>
           <div class="node"><div class="n">01</div><h4>La relation laboratoires / médecins</h4>
           <p>En instaurant un dialogue plus dynamique et transparent entre ces deux acteurs, les traitements peuvent enfin être personnalisés et alignés sur les besoins réels du patient.</p></div>
           <div class="node"><div class="n">02</div><h4>L'effet réseau comme levier thérapeutique</h4>
@@ -176,7 +271,7 @@
           <div class="node"><div class="n">04</div><h4>Le médecin comme coordinateur</h4>
           <p>Rendre plus de responsabilité aux médecins et aux spécialistes, en les repositionnant en pilotes actifs du parcours plutôt qu'en prescripteurs de passage.</p></div>
         </div>
-        <p style="margin-top:36px">Aucune de ces pistes n'était accessible tant qu'on regardait le mauvais problème. Toutes le deviennent ensemble, parce qu'elles procèdent du même déplacement. Ce qui ressemblait à une toile de problèmes isolés est devenu un réseau de points reliés, avec les moyens de créer les relations entre eux.</p>
+        <p>Aucune de ces pistes n'était accessible tant qu'on regardait le mauvais problème. Toutes le deviennent ensemble, parce qu'elles procèdent du même déplacement. Ce qui ressemblait à une toile de problèmes isolés est devenu un réseau de points reliés, avec les moyens de créer les relations entre eux.</p>
       </article>
 
       <article class="chapter" id="c5">
@@ -186,9 +281,13 @@
         <p>Cet alignement n'a pas seulement évité les écarts : il a permis de hiérarchiser. Plutôt que de se jeter dans la conception d'un produit, nous avons pris le temps de traiter les problèmes systémiques en amont, pour que la solution trouve sa place dans l'écosystème de santé au lieu de s'y ajouter.</p>
         <p>Le projet n'était pas de « créer un produit ». Il s'agissait de concevoir les services qui s'intègreront au système existant, nouvellement révélé, et c'est cette bascule qui l'a rendu viable dans la durée, plutôt que simplement utile sur le papier.</p>
         <p>Concrètement, cela a déplacé la conversation avec le client : on a cessé de discuter des fonctionnalités de l'application pour discuter des relations qu'elle pouvait instaurer entre des acteurs qui, jusque-là, ne se parlaient pas.</p>
-        <p class="pull">L'application n'est que le catalyseur des relations qui se nouent en-elle mais aussi au-delà d'elle.</p>
+        <p class="pull">L'application n'est que le catalyseur des relations qui se nouent en elle mais aussi au-delà d'elle.</p>
 
-        <h4>Une suite, conçue après la mission</h4>
+        </article>
+
+      <article class="chapter" id="c5b">
+        <h3>Une suite ?</h3>
+        <p class="chapter-sub">Un prolongement personnel, pas un résultat</p>
         <p>Ce qui suit n'a pas été construit pendant la mission. C'est un prolongement personnel&#8239;: je me suis demandé ce que la carte permettrait de fabriquer. Il montre ce qui aurait pu l'être, pas ce qui l'a été, et il n'a rien d'un résultat.</p>
         <p>Le cas s'arrête avant toute construction, sur une carte et un champ de pistes. La suite part de là&#8239;: transformer ces pistes en un produit qui fonctionne.</p>
 
@@ -198,7 +297,7 @@
 
         <h4>De la carte aux objectifs</h4>
         <p>L'application suit une chaîne en cinq temps, de la carte à la revue.</p>
-        <div class="nodes">
+        <div class="nodes hote in" data-hote>
           <div class="node"><div class="n">01</div><h4>La carte</h4><p>L'écosystème du patient, avec toutes les familles de flux.</p></div>
           <div class="node"><div class="n">02</div><h4>Les points de levier</h4><p>Les endroits où un flux casse.</p></div>
           <div class="node"><div class="n">03</div><h4>Les objectifs</h4><p>Chaque point de levier devient un objectif, formulé avec le patient.</p></div>
@@ -214,21 +313,15 @@
         <p class="figcap">Version volontairement appauvrie&#8239;: elle met en valeur les fonctionnalités, pas l'interface finale. À gauche, ce que l'app apporte au patient&#8239;; au centre, sa vue&#8239;; au clic, la source de chaque fonctionnalité.</p>
 
         <h4>Quelques principes</h4>
-        <ul>
-          <li>Partir des points de levier, pas des fonctionnalités.</li>
-          <li>Garder la carte visible, au lieu de la réduire à une liste de tâches.</li>
-          <li>Chaque objectif nomme ceux qui y contribuent.</li>
-          <li>Concevoir la réciprocité, pas la capture&#8239;: le patient reçoit et peut rendre, sans points ni badges qui transformeraient l'entraide en monnaie.</li>
-          <li>Un moteur et une boussole par objectif, pour que l'un empêche l'autre de dériver.</li>
-          <li>Le médecin coordonne, il ne surveille pas&#8239;: sa vue sert à repérer les ruptures de flux, pas à contrôler l'observance.</li>
-        </ul>
+        <div class="nodes hote in" data-hote>
+          <div class="node"><div class="n">01</div><h4>Partir des points de levier, pas des fonctionnalités.</h4></div>
+          <div class="node"><div class="n">02</div><h4>Garder la carte visible, au lieu de la réduire à une liste de tâches.</h4></div>
+          <div class="node"><div class="n">03</div><h4>Chaque objectif nomme ceux qui y contribuent.</h4></div>
+          <div class="node"><div class="n">04</div><h4>Concevoir la réciprocité, pas la capture</h4><p>le patient reçoit et peut rendre, sans points ni badges qui transformeraient l'entraide en monnaie.</p></div>
+          <div class="node"><div class="n">05</div><h4>Un moteur et une boussole par objectif, pour que l'un empêche l'autre de dériver.</h4></div>
+          <div class="node"><div class="n">06</div><h4>Le médecin coordonne, il ne surveille pas</h4><p>sa vue sert à repérer les ruptures de flux, pas à contrôler l'observance.</p></div>
+        </div>
 
-        <h4>Ce que ce n'est pas</h4>
-        <ul>
-          <li>Un concept validé&#8239;: aucun patient n'a confirmé ces flux.</li>
-          <li>Une application réelle&#8239;: les données de santé exigent un hébergeur certifié HDS et relèvent des données sensibles du RGPD, ce qu'un prototype peut ignorer, pas un produit.</li>
-          <li>Une piste laboratoires et médecins&#8239;: je l'ai laissée de côté, elle pose un risque de conflit d'intérêts et d'accès industriel aux données des patients.</li>
-        </ul>
         <!-- TODO Brann : vérifier ce que le contrat de mission autorise à réutiliser de la carte et des livrables avant publication. Format (prototype Figma ou app codée) et présentation (extension du cas) : section en fin de cas, sans écran pour l'instant. -->
       </article>
 
@@ -248,6 +341,7 @@
       <a href="#c3"><span class="dot"></span>L'instrument</a>
       <a href="#c4"><span class="dot"></span>Le champ ouvert</a>
       <a href="#c5"><span class="dot"></span>L'alignement</a>
+      <a href="#c5b"><span class="dot"></span>Une suite ?</a>
       <a href="#c6"><span class="dot"></span>Ma pratique ?</a>
     </nav>
 
@@ -260,13 +354,27 @@
 <!-- ═══════════ LIVRE ═══════════ -->
 <section class="livre" aria-label="Un livre qui a nourri ce regard">
   <div class="livre-inner">
-    <img class="livre-cover" src="assets/hooked.jpg" alt="Couverture du livre Hooked, de Nir Eyal" width="657" height="1000" loading="lazy">
+    <img class="livre-cover" src="assets/Livres/hooked.jpg" alt="Couverture du livre Hooked, de Nir Eyal" width="184" height="280" loading="lazy">
     <div class="livre-body">
       <div class="eyebrow">Ce qui a nourri ce regard</div>
       <h3 class="livre-title">Hooked<span>Nir Eyal, avec Ryan Hoover</span></h3>
       <p>Cette posture de regarder autour du produit plut&ocirc;t que dedans, a une source que j'assume volontiers&#8239;: <em>Hooked</em>, de Nir Eyal. C'est le livre qui m'a donn&eacute; une premi&egrave;re grammaire de l'habitude, et l'envie d'aller voir ce qu'il y avait derri&egrave;re.</p>
       <p>Eyal y d&eacute;cortique le m&eacute;canisme des produits qui accrochent&#8239;: un d&eacute;clencheur, une action, une r&eacute;compense variable, un investissement qui referme la boucle. J'en ai gard&eacute; la rigueur, mais je l'ai d&eacute;plac&eacute;e&#8239;: cette boucle, chez moi, ne se joue pas uniquement dans l'&eacute;cran, elle se tisse aussi dans tout ce qu'on relie autour de la personne.</p>
       <p>À l'image de Ryan Hoover avec Product Hunt, c'est en incarnant la communauté dans le monde réel, par des rencontres physiques, que le produit prend toute sa valeur et crée un attachement durable.</p>
+    </div>
+  </div>
+</section>
+<nav class="suite-cas" aria-label="Autres études de cas">
+  <a href="/cas-chalon-dans-la-rue" rel="prev"><span class="suite-sens">← Cas précédent</span><span class="suite-nom">Chalon dans la rue</span><span class="suite-meta">Culture · 2025</span></a>
+  <a href="/cas-shift-prime" rel="next"><span class="suite-sens">Cas suivant →</span><span class="suite-nom">SHIFT Prime</span><span class="suite-meta">Industrie · 2023</span></a>
+</nav>
+</div>
+<section class="bandeau-accent hote" data-hote aria-labelledby="t-suite">
+  <div class="page">
+    <h2 class="c-10" id="t-suite">Une situation qui ressemble<br>à la vôtre ?</h2>
+    <p class="t-lede c-8">Parlons de votre produit.<br>Je m'assure qu'il résolve le vrai problème.</p>
+    <div class="actions c-12">
+      <a class="btn" href="/contact">On en discute ?</a>
     </div>
   </div>
 </section>
@@ -286,9 +394,11 @@ const io=new IntersectionObserver(es=>{
 },{rootMargin:'-40% 0px -50% 0px'});
 secs.forEach(s=>s&&io.observe(s));
 </script>
-<script src="background.js"></script>
 <script src="figure-zoom.js"></script>
 <script src="encart-zoom.js"></script>
+<script src="vivant.js"></script>
+<script src="grille.js"></script>
+<script src="snap-grille.js"></script>
 <script src="site-nav.js"></script>
 <div id="site-footer"></div>
 </body>

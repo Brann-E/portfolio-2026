@@ -84,7 +84,7 @@
   }
 
   function init() {
-    var imgs = document.querySelectorAll(".figure > img");
+    var imgs = document.querySelectorAll(".figure > img, .cas-visuel:not(.cas-visuel--solo) figure > img");
     if (!imgs.length) return;
     Array.prototype.forEach.call(imgs, function (img) {
       var btn = document.createElement("button");
