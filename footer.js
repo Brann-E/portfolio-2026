@@ -46,7 +46,7 @@
         </ul>
       </div>
     </div>
-    <div class="pied-bas c-12 sp-3"><span>© 2026 Brann Etienne</span><a href="#top">Retour en haut ↑</a></div>
+    <div class="pied-bas c-12 sp-3"><a href="mentions-legales.html">Mentions légales</a><a href="#top">Retour en haut ↑</a><span>© 2026 Brann Etienne</span></div>
   </div>
 </footer>`;
 
