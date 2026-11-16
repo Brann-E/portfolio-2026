@@ -81,12 +81,12 @@
   var HTML = `<a class="skip" href="#contenu">Aller au contenu</a>
 <header class="bar" id="top">
   <div class="bar-in">
-    <a class="brand" href="index.html"><span class="logo" role="img" aria-label="Brann Etienne"></span><span class="brand-texte">Brann Etienne</span></a>
+    <a class="brand" href="/"><span class="logo" role="img" aria-label="Brann Etienne"></span><span class="brand-texte">Brann Etienne</span></a>
     <div class="bar-droite">
       <nav class="nav" id="menu-nav" aria-label="Navigation principale">
-        <a href="etudes-de-cas.html" data-section="cases">Études de cas</a>
-        <a href="a-propos.html" data-section="apropos">À propos</a>
-        <a href="contact.html" data-section="contact">Contact</a>
+        <a href="/etudes-de-cas" data-section="cases">Études de cas</a>
+        <a href="/a-propos" data-section="apropos">À propos</a>
+        <a href="/contact" data-section="contact">Contact</a>
       </nav>
       <div class="reglages">
         <div class="theme"><button class="theme-btn" type="button" aria-pressed="false" aria-label="Mode sombre"><svg class="lune" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg><svg class="soleil" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button></div>

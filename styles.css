@@ -4917,6 +4917,9 @@ body.has-site-nav.pratique .veil {
    Classes préfixées pi- pour éviter toute collision (.wrap/.q/.btn existants).
    Réutilise les tokens du site (--c1..c5, --bg, --encre, --muted, --faint).
    ===================================================================== */
+.pi-page, .pi-page * {
+  transition:color .38s ease, background-color .38s ease, border-color .38s ease, fill .38s ease, stroke .38s ease;
+}
 .pi-page {
   font-weight:400;
   font-size: var(--fs-s);
@@ -4982,16 +4985,15 @@ body.has-site-nav.pratique .veil {
   color:var(--muted);
   background:none;
   border:none;
-  padding:0;
+  padding:0 var(--sp-2);
+  margin-left:calc(-1 * var(--sp-2));
   cursor:pointer;
   text-decoration:none;
   white-space:nowrap;
   flex:0 0 auto;
-  transition:color .3s;
 }
 .pi-back:hover, .pi-back:focus-visible {
   color:var(--ac);
-  outline:none;
 }
 .pi-steps {
   display:flex;
@@ -5015,48 +5017,58 @@ body.has-site-nav.pratique .veil {
 .pi-step + .pi-step::before {
   content:"";
   width:clamp(8px,2.4vw,24px);
-  height:1px;
-  background:var(--faint);
+  height:var(--rule-w);
   margin-right:8px;
+  /* étape pas encore atteinte : filet pointillé */
+  background:repeating-linear-gradient(90deg,var(--encre) 0 3px,transparent 3px 6px);
+}
+.pi-step.pi-done::before, .pi-step.pi-cur::before {
+  background:var(--encre); /* étape atteinte : filet plein */
 }
 .pi-step .n {
+  box-sizing:border-box;
   width:var(--ligne);
   height:var(--ligne);
-  border-radius:50%;
-  border:1px solid var(--faint);
-  display:grid;
-  place-items:center;
+  padding:0 0 2px; /* le chiffre de Familjen Grotesk tombe 1 px trop bas dans sa ligne : 2 px de padding le recentrent */
+  border:var(--rule-w) solid var(--encre);
+  display:flex;
+  align-items:center;
+  justify-content:center;
   font-size: var(--fs-s);
+  line-height:1;
+  font-variant-numeric:tabular-nums;
   flex:0 0 auto;
-  transition:border-color .3s,background .3s,color .3s;
+}
+/* pas encore atteinte : bordure en pointillé, texte atténué */
+.pi-step:not(.pi-done):not(.pi-cur) .n {
+  border-style:dashed;
 }
 .pi-step.pi-done {
   color:var(--encre);
 }
-.pi-step.pi-done .n {
-  border-color:var(--ac);
-  color:var(--ac);
-}
+/* l'étape courante : pastille pleine (encre), libellé en gras et souligné */
 .pi-step.pi-cur {
-  color:var(--ac);
+  color:var(--encre);
 }
 .pi-step.pi-cur .n {
-  border-color:var(--ac);
-  background:color-mix(in srgb,var(--ac) 18%,transparent);
-  color:var(--ac);
+  background-color:var(--encre);
+  color:var(--bg);
+}
+.pi-step.pi-cur .lb {
+  font-weight:700;
+  text-decoration:underline;
+  text-decoration-thickness:.08em;
+  text-underline-offset:.3em;
 }
 .pi-step.pi-clickable {
   cursor:pointer;
 }
-.pi-step.pi-clickable:hover {
-  color:var(--ac);
+.pi-step .lb {
+  white-space:nowrap;
 }
-.pi-step.pi-clickable:hover .n {
-  border-color:var(--ac);
-  color:var(--ac);
-}
-@media (max-width:900px){
-  .pi-step .lb {
+/* place comptée : seul le libellé de l'étape courante reste, les autres se réduisent à leur numéro */
+@media (max-width:1100px){
+  .pi-step:not(.pi-cur) .lb {
     display:none;
   }
 }
@@ -5142,7 +5154,7 @@ body.has-site-nav.pratique .veil {
    (la page scrolle), plus de recentrage vertical qui fait « sauter » l'écran. */
 .pi-screen {
   display:none;
-  min-height:60svh;
+  min-height:calc(100svh - var(--ligne) * 2);
   flex-direction:column;
   justify-content:flex-start;
   padding-top:calc(var(--ligne) * 3);
@@ -5168,22 +5180,16 @@ body.has-site-nav.pratique .veil {
 .pi-btn {
   display:inline-flex;
   align-items:center;
-  gap:10px;
-  background:none;
-  border:1px solid var(--faint);
+  gap:var(--sp-3);
+  background-color:transparent;
+  border:var(--rule-w) solid var(--encre);
   color:var(--encre);
-  font:500 var(--fs-s)/var(--ligne) var(--ff-title);
+  font:600 var(--fs-s)/var(--ligne) var(--ff-title);
   padding:var(--demi-ligne) var(--ligne);
-  border-radius:999px;
   cursor:pointer;
-  transition:.3s;
-  margin-top:32px;
+  text-decoration:none;
+  margin-top:var(--ligne);
   align-self:flex-start;
-}
-.pi-btn:hover, .pi-btn:focus-visible {
-  border-color:var(--ac);
-  color:var(--ac);
-  outline:none;
 }
 
 .pi-scene {
@@ -5209,19 +5215,12 @@ body.has-site-nav.pratique .veil {
   gap:9px;
 }
 .pi-opt {
-  background:none;
-  border:1px solid var(--faint);
+  background-color:transparent;
+  border:var(--rule-w) solid var(--encre);
   color:var(--encre);
-  border-radius:999px;
   padding:var(--demi-ligne) var(--ligne);
-  font:500 var(--fs-s)/var(--ligne) var(--ff-title);
+  font:600 var(--fs-s)/var(--ligne) var(--ff-title);
   cursor:pointer;
-  transition:.25s;
-}
-.pi-opt:hover, .pi-opt:focus-visible {
-  border-color:var(--ac);
-  color:var(--ac);
-  outline:none;
 }
 
 .pi-turn {
@@ -5248,14 +5247,15 @@ body.has-site-nav.pratique .veil {
 }
 .pi-appears p {
   font-family: var(--ff-title);
-  font-size: var(--fs-l);
-  line-height: var(--lh-l);
+  font-size: var(--fs-xl);
+  line-height: calc(var(--ligne) * 1.5);
+  text-wrap:balance;
   color:var(--ac);
-  max-width:24ch;
+  max-width:34ch;
   margin:0 auto;
 }
 .pi-appears .pi-app-more, .pi-appears .pi-app-more p {
-  max-width:52ch;
+  max-width:44ch;
   margin:20px auto 0;
   padding-top:20px;
   text-align:center;
@@ -5346,22 +5346,21 @@ body.has-site-nav.pratique .veil {
   margin-top:26px;
 }
 
-.pi-defs {
-  position:absolute;
-  width:0;
-  height:0;
-}
 .pi-cards {
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:24px;
+  column-gap:24px;
+  row-gap:0;
   margin-top:48px;
 }
 .pi-card {
   position:relative;
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
+  display:grid;
+  grid-row:span 4;
+  grid-template-rows:subgrid;
+  row-gap:0;
+  justify-items:start;
+  align-content:start;
   text-align:left;
   width:100%;
   background:var(--bg);
@@ -5371,7 +5370,7 @@ body.has-site-nav.pratique .veil {
   color:var(--encre);
   cursor:pointer;
   font-family:inherit;
-  transition:border-color .35s,transform .35s;
+  transition:border-color .35s;
   --cc:var(--c1);
 }
 .pi-cards .pi-card:nth-child(1) {
@@ -5393,26 +5392,23 @@ body.has-site-nav.pratique .veil {
   border-radius:inherit;
   pointer-events:none;
   opacity:0;
-  transition:opacity .4s;
-  background:color-mix(in srgb,var(--encre) 5%,transparent);
 }
-.pi-card:hover, .pi-card:focus-visible, .pi-card.pi-done {
+.pi-card:hover, .pi-card:focus-visible {
   border-color:var(--encre);
-  transform:translateY(-3px);
-  outline:none;
-}
-.pi-card:hover::after, .pi-card:focus-visible::after, .pi-card.pi-done::after {
-  opacity:1;
 }
 .pi-ic {
   display:block;
   width:clamp(112px,12vw,150px);
   height:auto;
   margin:10px auto 32px;
-  transition:transform .35s;
+  color:var(--encre);
+  transform-origin:50% 50%;
+  will-change:transform;
+  backface-visibility:hidden;
+  transition:transform .35s cubic-bezier(.3,.7,.3,1), color .38s ease, opacity .38s ease;
 }
-.pi-card:hover .pi-ic, .pi-card:focus-visible .pi-ic, .pi-card.pi-done .pi-ic {
-  transform:scale(1.05);
+.pi-card:hover .pi-ic, .pi-card:focus-visible .pi-ic {
+  transform:scale(1.06);
 }
 .pi-card-name {
   font-family: var(--ff-title);
@@ -5422,7 +5418,7 @@ body.has-site-nav.pratique .veil {
   margin:0;
   transition:color .35s;
 }
-.pi-card:hover .pi-card-name, .pi-card:focus-visible .pi-card-name, .pi-card.pi-done .pi-card-name {
+.pi-card:hover .pi-card-name, .pi-card:focus-visible .pi-card-name {
   color:var(--cc);
 }
 .pi-card-tag {
@@ -5435,6 +5431,15 @@ body.has-site-nav.pratique .veil {
   line-height: var(--lh-s);
   color:var(--muted2);
   margin:var(--ligne) 0 0;
+}
+.pi-card.pi-done {
+  background-color:color-mix(in srgb,var(--encre) 7%,var(--bg));
+}
+.pi-card.pi-done .pi-ic {
+  opacity:.5;
+}
+.pi-card.pi-done .pi-card-name, .pi-card.pi-done .pi-card-tag {
+  color:var(--muted2);
 }
 /* carte meta désactivée : inactive, non cliquable, sans survol */
 .pi-card:disabled {
@@ -5456,7 +5461,9 @@ body.has-site-nav.pratique .veil {
 @media (max-width:860px){
   .pi-cards {
     grid-template-columns:1fr;
-    gap:18px;
+  }
+  .pi-card + .pi-card {
+    margin-top:var(--ligne);
   }
 }
 /* « Aller plus loin » : apparaît sur l'accueil une fois les trois parcours faits */
@@ -5504,7 +5511,6 @@ a.pi-further-link:hover, a.pi-further-link:focus-visible {
   border-color:var(--cc);
   transform:translateY(-3px);
   box-shadow:0 18px 40px -24px color-mix(in srgb,var(--cc) 65%,transparent);
-  outline:none;
 }
 .pi-further-k {
   font-family: var(--ff-title);
@@ -5679,7 +5685,7 @@ a.pi-further-link:hover, a.pi-further-link:focus-visible {
   background:color-mix(in srgb,var(--encre) 6%,var(--bg));
   opacity:0;
   animation:pi-op .55s ease forwards;
-  transition:border-color .3s, transform .3s, box-shadow .3s;
+  transition:border-color .38s ease, background-color .38s ease, transform .3s;
 }
 .pi-role--a {
   top:0;
@@ -5934,8 +5940,7 @@ a.pi-further-link:hover, a.pi-further-link:focus-visible {
 .pi-tl-node.pi-open::before {
   transform-origin:top;
   animation:pi-draw .6s ease both;
-  background:linear-gradient(180deg,var(--ac),color-mix(in srgb,var(--ac) 35%,var(--faint)));
-  box-shadow:0 0 14px color-mix(in srgb,var(--ac) 55%,transparent);
+  background:var(--encre);
 }
 @keyframes pi-draw{
   from{
@@ -5982,12 +5987,10 @@ a.pi-further-link:hover, a.pi-further-link:focus-visible {
 }
 .pi-tl-head:hover .pi-tl-dot, .pi-tl-head:focus-visible .pi-tl-dot {
   border-color:var(--ac);
-  outline:none;
 }
 .pi-tl-node.pi-open .pi-tl-dot {
   border-color:var(--ac);
   background:var(--ac);
-  box-shadow:0 0 0 5px color-mix(in srgb,var(--ac) 15%,transparent), 0 0 18px color-mix(in srgb,var(--ac) 60%,transparent);
 }
 .pi-tl-label {
   font-family: var(--ff-title);
@@ -6079,7 +6082,6 @@ a.pi-further-link:hover, a.pi-further-link:focus-visible {
 }
 .pi-ans-head:hover, .pi-ans-head:focus-visible {
   color:var(--ac);
-  outline:none;
 }
 .pi-ans-label {
   font-family: var(--ff-title);
@@ -6104,7 +6106,7 @@ a.pi-further-link:hover, a.pi-further-link:focus-visible {
   color:var(--ac);
 }
 .pi-ans-body {
-  padding:0 20px 18px;
+  padding:var(--demi-ligne) 22px var(--ligne);
 }
 .pi-ans-block.pi-open .pi-ans-body {
   animation:pi-fade .35s ease;
@@ -6119,7 +6121,7 @@ a.pi-further-link:hover, a.pi-further-link:focus-visible {
   font-family: var(--ff-title);
   font-weight:500;
   display:block;
-  margin-top:10px;
+  margin-top:var(--demi-ligne);
   font-size: var(--fs-s);
   color:var(--muted);
 }
@@ -6183,6 +6185,45 @@ a.pi-further-link:hover, a.pi-further-link:focus-visible {
 .pi-contact a.pi-btn:hover, .pi-contact a.pi-btn:focus-visible {
   color:var(--ac);
   border-color:var(--ac);
+}
+
+/* le survol de tous les boutons du parcours : celui du site, l'accent les remplit de gauche à droite et le texte prend l'encre (AAA sur l'accent) */
+.pi-btn, .pi-opt, .pi-card, .pi-back, a.pi-further-link, .pi-step.pi-clickable .n {
+  background-image:linear-gradient(var(--accent-fond), var(--accent-fond));
+  background-repeat:no-repeat;
+  background-position:left center;
+  background-size:0% 100%;
+  transition:background-size .38s cubic-bezier(.3,.7,.3,1), color .38s ease, background-color .38s ease, border-color .38s ease;
+}
+.pi-btn:hover, .pi-btn:focus-visible, .pi-opt:hover, .pi-opt:focus-visible,
+.pi-card:hover, .pi-card:focus-visible, .pi-back:hover, .pi-back:focus-visible,
+a.pi-further-link:hover, a.pi-further-link:focus-visible,
+.pi-step.pi-clickable:hover .n, .pi-step.pi-clickable:focus-visible .n {
+  background-size:100% 100%;
+  color:var(--encre);
+}
+.pi-card:hover :is(.pi-card-tag, .pi-card-sum, .pi-card-name),
+.pi-card:focus-visible :is(.pi-card-tag, .pi-card-sum, .pi-card-name),
+.pi-ans-head:hover .pi-ans-plus, .pi-ans-head:focus-visible .pi-ans-plus,
+a.pi-further-link:hover .pi-further-d, a.pi-further-link:focus-visible .pi-further-d {
+  color:var(--encre);
+}
+/* les choix de réponse et les cartes rôles : pas de remplissage, juste un fond qui change en douceur */
+.pi-ans-head, .pi-role-btn {
+  transition:background-color .3s ease, color .3s ease;
+}
+.pi-ans-head:hover, .pi-ans-head:focus-visible,
+.pi-role:not(.pi-open) .pi-role-btn:hover, .pi-role:not(.pi-open) .pi-role-btn:focus-visible {
+  background-color:color-mix(in srgb,var(--encre) 8%,var(--bg));
+}
+/* la pastille de l'étape courante garde sa pleine encre au survol */
+.pi-step.pi-cur.pi-clickable:hover .n {
+  color:var(--bg);
+}
+/* le rond central : « .arrondi » l'exempte de la règle sans rayon de la DA, mais lui donne un petit rayon ; ici c'est un vrai rond */
+.pi-produit.arrondi {
+  border-radius:50%;
+  padding:var(--demi-ligne);
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -6545,6 +6586,7 @@ body.bilan-lock {
   --encre: var(--anthracite); /* le texte et les filets */
   --encre-2: #3F444B;
   --c-vert: #00FF00;
+  --vert-led: #00FF00;   /* le voyant « Disponible » : le même vert vif dans les deux thèmes (--c-vert devient un vert foncé en sombre) */
   --c-jaune: #D9FF00;
   --c-magenta: #FF3CFC;
   --c-orange: #FFA703;
@@ -9658,7 +9700,7 @@ body.has-site-nav .article p, body.has-site-nav .article li, body.has-site-nav .
 .brief, .pull, .pull-quote, .claim, .erratum {
   border-left-color: var(--accent-fond);
 }
-body.has-site-nav :is(main, .wrap, .article) :is(p, li):not(.figcap):not(.meta):not(.rnote):not(.olab):not(.note):not(.etiquette):not(.eyebrow):not(.t-lede):not(.t-display):not(.t-h2):not(.t-h3):not(.t-small):not(.t-label):not(.chapitre *):not(.bandeau-accent *):not(.boite--reciprocites *):not(.liste-da *):not(.presentation *):not(.hero *):not(.chapter *):not(.nodes *):not(.s1b *):not(.livre *):not(.decisions *):not(.summary *):not(.erratum-meta):not([class*="proto-"]):not([class*="serie-article"]) {
+body.has-site-nav :is(main, .wrap, .article) :is(p, li):not(.figcap):not(.meta):not(.rnote):not(.olab):not(.note):not(.etiquette):not(.eyebrow):not(.t-lede):not(.t-display):not(.t-h2):not(.t-h3):not(.t-small):not(.t-label):not(.chapitre *):not(.pi-page *):not(.bandeau-accent *):not(.boite--reciprocites *):not(.liste-da *):not(.presentation *):not(.hero *):not(.chapter *):not(.nodes *):not(.s1b *):not(.livre *):not(.decisions *):not(.summary *):not(.erratum-meta):not([class*="proto-"]):not([class*="serie-article"]) {
   font-size: max(var(--fs-s), 1em);
   line-height: var(--lh-s);
 }
@@ -10308,7 +10350,7 @@ body .hero--page .hero-texte > :is(h1, h2) + * {
   font-family: var(--ff-body);
   font-style: italic;
   font-weight: 400;
-  font-size: var(--fs-l);
+  font-size: var(--fs-m);
   line-height: var(--lh-l);
 }
 
@@ -12639,7 +12681,7 @@ body.has-site-nav .tradeoffs ~ .s3 .chapter .legend p {
   box-shadow: inset calc(var(--rule-w) * -1) calc(var(--rule-w) * -1) 0 color-mix(in srgb, var(--encre) 50%, transparent);
   transform: rotate(45deg);
 }
-/* « Disponible » : une étiquette noire sous le portrait, avec un voyant vert ; elle suit le portrait dans son rebond (accueil.js) */
+/* « Disponible » : une étiquette noire sous le portrait (couleurs fixes, identiques en clair et en sombre : anthracite, papier, vert vif ; --encre, --bg et --c-vert s'inversent en sombre), avec un voyant vert ; elle suit le portrait dans son rebond (accueil.js) */
 .portrait-dispo {
   display: flex;
   align-items: center;
@@ -12653,8 +12695,8 @@ body.has-site-nav .tradeoffs ~ .s3 .chapter .legend p {
   margin: 0;
   padding-inline: var(--demi-ligne);
   border-radius: 999px;
-  background: var(--encre);
-  color: var(--bg);
+  background: var(--anthracite);
+  color: var(--papier);
   font-family: var(--ff-title);
   font-weight: 600;
   font-size: var(--fs-s);
@@ -12664,6 +12706,9 @@ body.has-site-nav .tradeoffs ~ .s3 .chapter .legend p {
 /* Le voyant : une petite lampe à coque de verre. Éteinte, c'est un dôme vert très sombre avec son reflet ; allumée, une couche vive (cœur clair, bords plus profonds,
    point de brillance) s'ajoute par-dessus, et une lueur diffuse déborde autour (mélange « screen », comme une vraie lumière sur fond sombre).
    Au chargement elle s'allume en vacillant, comme un tube qui accroche, puis respire lentement. */
+:root[data-theme="dark"] .portrait-dispo {
+  box-shadow: inset 0 0 0 var(--rule-w) color-mix(in srgb, var(--papier) 28%, transparent);   /* sur le fond sombre, un fin liseré garde sa forme à l'étiquette */
+}
 .portrait-dispo .voyant {
   position: relative;
   isolation: isolate;
@@ -12672,9 +12717,9 @@ body.has-site-nav .tradeoffs ~ .s3 .chapter .legend p {
   height: calc(var(--demi-ligne) * .75);
   border-radius: 50%;
   background:
-    radial-gradient(circle at 36% 30%, color-mix(in srgb, var(--bg) 45%, transparent) 0 12%, transparent 32%),
-    radial-gradient(circle at 50% 55%, color-mix(in srgb, var(--c-vert) 24%, var(--encre)), color-mix(in srgb, var(--c-vert) 10%, var(--encre)) 75%);
-  box-shadow: 0 0 0 1px color-mix(in srgb, var(--bg) 22%, transparent), inset 0 -1px 2px color-mix(in srgb, var(--encre) 70%, black);
+    radial-gradient(circle at 36% 30%, color-mix(in srgb, var(--papier) 45%, transparent) 0 12%, transparent 32%),
+    radial-gradient(circle at 50% 55%, color-mix(in srgb, var(--vert-led) 24%, var(--anthracite)), color-mix(in srgb, var(--vert-led) 10%, var(--anthracite)) 75%);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--papier) 22%, transparent), inset 0 -1px 2px color-mix(in srgb, var(--anthracite) 70%, black);
 }
 .portrait-dispo .voyant::before,
 .portrait-dispo .voyant::after {
@@ -12687,14 +12732,14 @@ body.has-site-nav .tradeoffs ~ .s3 .chapter .legend p {
 .portrait-dispo .voyant::after {   /* la coque allumée */
   inset: 0;
   background:
-    radial-gradient(circle at 36% 30%, color-mix(in srgb, var(--bg) 95%, transparent) 0 11%, transparent 30%),
-    radial-gradient(circle at 50% 52%, color-mix(in srgb, var(--c-vert) 45%, var(--bg)) 0, var(--c-vert) 42%, color-mix(in srgb, var(--c-vert) 62%, var(--encre)) 100%);
+    radial-gradient(circle at 36% 30%, color-mix(in srgb, var(--papier) 95%, transparent) 0 11%, transparent 30%),
+    radial-gradient(circle at 50% 52%, color-mix(in srgb, var(--vert-led) 45%, var(--papier)) 0, var(--vert-led) 42%, color-mix(in srgb, var(--vert-led) 62%, var(--anthracite)) 100%);
 }
 .portrait-dispo .voyant::before {   /* la lueur qui déborde */
   inset: -130%;
   z-index: -1;
   mix-blend-mode: screen;
-  background: radial-gradient(circle, color-mix(in srgb, var(--c-vert) 62%, transparent) 0, color-mix(in srgb, var(--c-vert) 24%, transparent) 30%, color-mix(in srgb, var(--c-vert) 7%, transparent) 52%, transparent 70%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--vert-led) 62%, transparent) 0, color-mix(in srgb, var(--vert-led) 24%, transparent) 30%, color-mix(in srgb, var(--vert-led) 7%, transparent) 52%, transparent 70%);
 }
 @keyframes voyantAllume {   /* accroche, vacille, tient */
   0%   { opacity: 0; }

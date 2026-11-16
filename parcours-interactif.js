@@ -211,28 +211,28 @@ let cs=0, placesGateShown=false;
 /* Liens « pour aller plus loin » désactivés pour l'instant. */
 function gateHTML(g){return '';}
 
-/* Barre du haut : retour à l'accueil du parcours + fil des 4 étapes du scénario. */
+/* Sous-barre (sous la navigation du site) : retour aux situations + fil des 5 étapes du scénario. Masquée sur l'accueil du parcours. */
 const STEP_LABELS=['La situation','Plus tard','Ailleurs','Le fond','La piste'];
 const STEP_OF={'s-mur':0,'s-turn':1,'s-places':2,'s-vue':2,'s-end':3,'s-piste':4};
 const SCREEN_OF_STEP=['s-mur','s-turn','s-places','s-end','s-piste'];
 let piMax=0; // étape la plus avancée atteinte dans le scénario courant (cliquable jusque-là)
 function updateChrome(id){
  const top=document.querySelector('.pi-top');
- const exit=document.getElementById('pi-exit'), back=document.getElementById('pi-back'), steps=document.getElementById('pi-steps');
+ const back=document.getElementById('pi-back'), steps=document.getElementById('pi-steps');
  if(id in STEP_OF){
   const cur=STEP_OF[id];
   if(cur>piMax) piMax=cur;
   top.style.setProperty('--ac',S[cs].c);
-  exit.hidden=true; back.hidden=false; steps.hidden=false;
+  top.hidden=false; back.hidden=false; steps.hidden=false;
   steps.innerHTML=STEP_LABELS.map((lb,i)=>{
    const reach=i<=piMax;
    const cls='pi-step'+(i===cur?' pi-cur':(reach?' pi-done':''))+(reach?' pi-clickable':'');
-   return '<li class="'+cls+'"'+(reach?' data-step="'+i+'"':'')+'><span class="n">'+(i+1)+'</span><span class="lb">'+lb+'</span></li>';
+   return '<li class="'+cls+'"'+(i===cur?' aria-current="step"':'')+(reach?' data-step="'+i+'"':'')+'><span class="n">'+(i+1)+'</span><span class="lb">'+lb+'</span></li>';
   }).join('');
   steps.querySelectorAll('.pi-clickable').forEach(li=>{ li.onclick=()=>go(SCREEN_OF_STEP[+li.dataset.step]); });
  }else{
   top.style.removeProperty('--ac');
-  exit.hidden=false; back.hidden=true; steps.hidden=true;
+  top.hidden=true; back.hidden=true; steps.hidden=true;
  }
 }
 
@@ -338,7 +338,7 @@ function toPlaces(){const s=S[cs];const el=document.getElementById('s-places');
  const betCls=['pi-bet--r','pi-bet--b','pi-bet--l'];
  const bet=(s.between||[]).map((bb,i)=>'<div class="pi-bet '+betCls[i]+'"><span class="pi-bet-label">'+bb.label+'</span><p>'+bb.text+'</p></div>').join('');
  p.innerHTML='<div class="pi-cscene">'+svg
-   +'<span class="pi-produit"><span class="pi-produit-nm">'+((s.center&&s.center.nm)||'Le produit')+'</span><span class="pi-produit-sub">'+((s.center&&s.center.sub)||'ce qui les relie')+'</span></span>'
+   +'<span class="pi-produit arrondi"><span class="pi-produit-nm">'+((s.center&&s.center.nm)||'Le produit')+'</span><span class="pi-produit-sub">'+((s.center&&s.center.sub)||'ce qui les relie')+'</span></span>'
    +roles+bet+'</div>'
    +'<p class="pi-cercle-hint" id="pi-cercle-hint">Autour du produit, 3 rôles. Ouvrez-les pour découvrir ce que chacun vit.</p>'
    +'<button class="pi-btn pi-cercle-see" id="pi-cercle-see" type="button" hidden>Voir ce qui les relie</button>';
@@ -388,7 +388,7 @@ function toPiste(){const s=S[cs];const el=document.getElementById('s-piste');
  const roles=s.v.map((v,k)=>'<div class="pi-role pi-role--mini '+roleCls[k]+'" style="--cc:'+v.c+'"><div class="pi-role-head">'+ic+'<span class="pi-role-nm">'+v.nm+'</span></div>'+'<p class="pi-role-mininote">'+(v.pnote||'[À compléter : ce qui change pour '+v.nm.toLowerCase()+'.]')+'</p></div>').join('');
  const bet=(s.betweenAfter||s.between||[]).map((bb,i)=>'<div class="pi-bet '+['pi-bet--r','pi-bet--b','pi-bet--l'][i]+'"><span class="pi-bet-label">'+bb.label+'</span><p>'+bb.text+'</p></div>').join('');
  cont.className='pi-cscene pi-alive';
- cont.innerHTML=svg+'<span class="pi-produit"><span class="pi-produit-nm">'+((s.center&&s.center.nm)||'Le produit')+'</span><span class="pi-produit-sub">'+((s.center&&s.center.sub)||'ce qui les relie')+'</span></span>'+roles+bet;
+ cont.innerHTML=svg+'<span class="pi-produit arrondi"><span class="pi-produit-nm">'+((s.center&&s.center.nm)||'Le produit')+'</span><span class="pi-produit-sub">'+((s.center&&s.center.sub)||'ce qui les relie')+'</span></span>'+roles+bet;
  requestAnimationFrame(()=>requestAnimationFrame(()=>cont.classList.add('pi-linked')));
  // le texte de piste, en accompagnement dessous
  document.getElementById('pt-body').innerHTML='<h3 class="pi-piste-title">'+(s.fixLead||'Ce qui a suffi')+'</h3>'+s.fix;

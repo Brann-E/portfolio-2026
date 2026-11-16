@@ -23,30 +23,30 @@
         <ul>
           <li><a href="https://www.linkedin.com/in/brann-etienne" target="_blank" rel="noopener">LinkedIn</a></li>
           <li><a href="https://github.com/Brann-E" target="_blank" rel="noopener">GitHub</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="/contact">Contact</a></li>
           <li><a href="cv-brann-etienne.pdf">Mon CV</a></li>
         </ul>
       </div>
       <div>
-        <h4><a href="index.html#cas">Études de cas</a></h4>
+        <h4><a href="/#cas">Études de cas</a></h4>
         <ul>
-          <li><a href="cas-healthanea.html">Healthanea</a></li>
-          <li><a href="cas-shift-prime.html">SHIFT Prime</a></li>
-          <li><a href="cas-bi-solution.html">B.I Solution</a></li>
-          <li><a href="cas-proshop.html">Proshop</a></li>
-          <li><a href="cas-chalon-dans-la-rue.html">Chalon dans la rue</a></li>
+          <li><a href="/cas-healthanea">Healthanea</a></li>
+          <li><a href="/cas-shift-prime">SHIFT Prime</a></li>
+          <li><a href="/cas-bi-solution">B.I Solution</a></li>
+          <li><a href="/cas-proshop">Proshop</a></li>
+          <li><a href="/cas-chalon-dans-la-rue">Chalon dans la rue</a></li>
         </ul>
       </div>
       <div>
         <h4>Pour aller plus loin</h4>
         <ul>
-          <li><a href="parcours-interactif.html">Regarder autrement</a></li>
-          <li><a href="circulation-paradigme-du-design.html">La circulation, paradigme du design</a></li>
-          <li><a href="reciprocites.html">Les Réciprocités</a></li>
+          <li><a href="/parcours-interactif">3 situations à explorer</a></li>
+          <li><a href="/circulation-paradigme-du-design">La circulation, paradigme du design</a></li>
+          <li><a href="/reciprocites">Les Réciprocités</a></li>
         </ul>
       </div>
     </div>
-    <div class="pied-bas c-12 sp-3"><a href="mentions-legales.html">Mentions légales</a><a href="#top">Retour en haut ↑</a><span>© 2026 Brann Etienne</span></div>
+    <div class="pied-bas c-12 sp-3"><a href="/mentions-legales">Mentions légales</a><a href="#top">Retour en haut ↑</a><span>© 2026 Brann Etienne</span></div>
   </div>
 </footer>`;
 
