@@ -37,7 +37,8 @@
   var MAXI = 1.5;            // jamais plus de 1,5 fois ce nombre
   var VIE_MIN = 70000, VIE_MAX = 130000;   // durée de vie d'un disque, en ms (avant : 26 à 52 s)
   var DIAGONALE = 0.3;       // chance de bourgeonner en diagonale : les liens ne suivent plus seulement la grille
-  var VISITEUR_MAX = 60, VISITEUR_MAX_APPUI = 90;   // disques dessinés par le visiteur, en même temps (avant : 20 et 28)
+  var VISITEUR_MAX = 60;     // disques dessinés par le visiteur, en même temps ; au-delà, le plus ancien s'efface pour laisser la place au nouveau
+  var VIE_VISITEUR_MIN = 90000, VIE_VISITEUR_MAX = 150000;   // durée de vie d'un disque dessiné, en ms (1 min 30 à 2 min 30) ; ils ne comptent pas dans la cible et ne sont jamais retirés avant l'heure
   var CHANCE = 0.6;          // chance qu'une intersection croisée par le curseur fasse naître un disque (60 %) ; le clic, lui, pose toujours un disque
 
   // Départ tranquille (la home seulement) : au lieu de peupler une vingtaine de disques d'un coup, quelques petits amas, trois au plus, loin du texte et du portrait,
@@ -46,9 +47,19 @@
   var AMAS = 3;                          // nombre d'amas au départ, au plus
   var AMAS_DISQUES = [3, 5];             // disques par amas, au départ
   var AMAS_DELAI = [4000, 7000];         // délai entre la naissance de deux amas, en ms
+  // Départ sur tactile (la home) : personne n'attend dix secondes devant un fond vide. Un petit nombre d'amas naissent à des moments tirés au hasard dans les premières secondes,
+  // et vite ; ensuite le rythme calme habituel reprend.
+  var AMAS_TACTILE = 5;                  // amas au départ (au plus)
+  var HASARD_TACTILE = 0.35;             // sur tactile, au repos : un geste sur trois fait naître un disque ailleurs, au hasard, sans parent (il se reliera ensuite à ce qui l'entoure)
+  var AMAS_DISQUES_TACTILE = [1, 3];     // disques par amas
+  var DEPART_TACTILE = { premier: 250, fenetre: 3500, naissance: [1000, 1800], bourgeon: [400, 900], fin: 6000, rythme: [400, 900] };   // ms : le premier amas au plus tôt à 0,25 s, tous avant 3,75 s ; un disque naît en 1 à 1,8 s ; un bourgeon part 0,4 à 0,9 s après son parent ; jusqu'à 6 s, tant qu'on est sous la cible, un nouveau disque toutes les 0,4 à 0,9 s, puis le rythme calme reprend
   var POINTS_CALME = 11, MAXI_CALME = 1.25;   // disques au repos et plafond (les amas grossissent à peine)
-  var TACTILE = !!(window.matchMedia && matchMedia("(hover: none)").matches);
-  var RYTHME_TACTILE = 0.55;             // sur tactile (ni curseur ni survol : le fond doit vivre seul), le délai entre deux gestes est multiplié par 0,55 : un geste 1,8 fois plus souvent
+  // « tactile » = pas de survol, OU mise en page mobile (859 px et moins, comme le CSS) : une fenêtre étroite sur ordinateur a la mise en page du téléphone et doit se comporter comme lui.
+  // Relu à chaque mise en page : si la fenêtre franchit les 859 px, le comportement change avec.
+  var MQ_TACTILE = window.matchMedia ? matchMedia("(hover: none), (max-width: 859px)") : null;
+  var TACTILE = !!(MQ_TACTILE && MQ_TACTILE.matches);
+  var DENSITE_TACTILE = 1.3;             // sur tactile, 30 % de disques de plus au repos (14 au lieu de 11 sur la home, 26 au lieu de 20 ailleurs) : ni curseur ni survol, le fond doit se suffire
+  var RYTHME_TACTILE = 0.4;             // sur tactile (ni curseur ni survol : le fond doit vivre seul), le délai entre deux gestes est multiplié par 0,4 : un geste 2,5 fois plus souvent
   var LENTEUR = 1.8;                     // une naissance dure 1,8 fois plus longtemps
 
   var W = 0, H = 0, DPR = 1, S = 56, ox = 0, oy = 0, cols = 0, rows = 0;
@@ -89,6 +100,7 @@
   function ny(j) { return oy + (j - 1) * S; }
 
   function layout() {
+    TACTILE = !!(MQ_TACTILE && MQ_TACTILE.matches);
     var hr = region.getBoundingClientRect();
     W = Math.round(hr.width); H = Math.round(hr.height);
     DPR = Math.min(window.devicePixelRatio || 1, 2);
@@ -113,9 +125,17 @@
     (pageMode ? region.querySelectorAll("[data-texte], .carte, .cartes-titre") : hero.querySelectorAll("[data-texte]")).forEach(function (el) {
       if (pageMode && getComputedStyle(el.closest(".hero-texte") || el).position === "fixed") return;   // le titre fixé à droite ne réserve aucune place : le vivant couvre toute la page
       var r = el.getBoundingClientRect();
+      if (TACTILE && !pageMode && el.hasAttribute("data-texte") && /^(H1|H2|H3|P)$/.test(el.tagName)) {   // tactile : chaque ligne réserve sa largeur (pas la boîte entière), les disques peuvent naître à droite des lignes courtes
+        var rl = document.createRange(); rl.selectNodeContents(el);
+        var lr = rl.getClientRects();
+        for (var li = 0; li < lr.length; li++) if (lr[li].width > 1) rects.push({ x0: lr[li].left - hr.left, y0: lr[li].top - hr.top, x1: lr[li].right - hr.left, y1: lr[li].bottom - hr.top });
+        return;
+      }
       if (pageMode && el.hasAttribute("data-texte")) { var rg = document.createRange(); rg.selectNodeContents(el); var tr = rg.getBoundingClientRect(); if (tr.width) r = tr; }   // l'étendue du texte, pas la boîte (le titre occupe toute la largeur de la page)
       rects.push({ x0: r.left - hr.left, y0: r.top - hr.top, x1: r.right - hr.left, y1: r.bottom - hr.top });
     });
+
+    if (TACTILE && !pageMode) { var bf = hero.querySelector(".figer"); if (bf) { var rb = bf.getBoundingClientRect(); rects.push({ x0: rb.left - hr.left, y0: rb.top - hr.top, x1: rb.right - hr.left, y1: rb.bottom - hr.top }); } }
 
     // la grille du héros s'amarre sur les lignes de la grille de la page (14 px à gauche du bord de page, multiples de la maille depuis le haut
     // du document), comme les cadres : les points tombent sur des lignes, pas sur le texte
@@ -127,16 +147,18 @@
     ox = ((((pl - S / 4) - hr.left) % S) + S) % S;
     oy = (((-(hr.top + window.pageYOffset)) % S) + S) % S;
 
+    var ancCols = cols;
     cols = Math.ceil((W - ox) / S) + 2; rows = Math.ceil((H - oy) / S) + 2;
     var n = cols * rows;
     gestes.length = 0;
+    var anc = (state && !pageMode && cols === ancCols) ? { n: state.length, state: state, tStart: tStart, dur: dur, tEnd: tEnd, ddur: ddur, src: src, lifeEnd: lifeEnd, vis: vis, gsz: gsz, szc: szc } : null;   // la grille garde ses colonnes : on garde les disques
     state = new Uint8Array(n); tStart = new Float64Array(n); dur = new Float32Array(n);
     tEnd = new Float64Array(n); ddur = new Float32Array(n); src = new Int32Array(n).fill(-1);
     lifeEnd = new Float64Array(n); vis = new Uint8Array(n); gsz = new Float32Array(n); szc = new Float32Array(n);
 
     // la zone du vivant : uniquement à droite du texte (colonne de la scène)
     var sc = hero.querySelector(".hero-scene");
-    var sr = (sc && !pageMode) ? sc.getBoundingClientRect() : hr;
+    var sr = (sc && !pageMode && !TACTILE) ? sc.getBoundingClientRect() : hr;   // tactile : toute la hauteur du héros, pas seulement la colonne de la scène
     var z = { x0: sr.left - hr.left + 0.3 * S, y0: sr.top - hr.top + 0.3 * S, x1: sr.right - hr.left - 0.3 * S, y1: sr.bottom - hr.top - 0.3 * S };
     zone = new Uint8Array(n); zoneCount = 0;
     fx = new Float32Array(n);
@@ -146,10 +168,25 @@
       d = 1e9;
       for (var q = 0; q < rects.length; q++) d = Math.min(d, distRect(x, y, rects[q]));
       // en mode page, la zone est tout ce qui est libre : à plus de trois quarts de maille du moindre texte ou de la moindre carte
-      if (x >= z.x0 && x <= z.x1 && y >= z.y0 && y <= z.y1 && (!pageMode || d >= 0.75 * S)) { zone[k] = 1; zoneCount++; }
+      if (x >= z.x0 && x <= z.x1 && y >= z.y0 && y <= z.y1 && (!(pageMode || TACTILE) || d >= 0.75 * S)) { zone[k] = 1; zoneCount++; }
       fx[k] = smooth(0.2 * S, 1.5 * S, d);
     }
-    startMotif();
+    // Les polices ou une image qui arrivent déplacent un peu le texte et refont la mise en page : sans cela, tout le motif repartait de zéro à ce moment-là,
+    // et rien ne se voyait avant (sur téléphone : plusieurs secondes). On garde donc les disques déjà nés ; ceux qui se retrouvent sous le texte s'effacent.
+    var gardes = 0;
+    if (anc) {
+      var m = Math.min(n, anc.n);
+      for (k = 0; k < m; k++) {
+        if (!anc.state[k]) continue;
+        state[k] = anc.state[k]; tStart[k] = anc.tStart[k]; dur[k] = anc.dur[k]; tEnd[k] = anc.tEnd[k]; ddur[k] = anc.ddur[k]; src[k] = anc.src[k];
+        lifeEnd[k] = anc.lifeEnd[k]; vis[k] = anc.vis[k]; gsz[k] = anc.gsz[k]; szc[k] = anc.szc[k];
+        if (state[k] === 1) {
+          gardes++;
+          if (!zone[k]) { state[k] = 2; tEnd[k] = vt; ddur[k] = rand(3200, 5800); src[k] = -1; }   // il n'a plus sa place : il s'efface
+        }
+      }
+    }
+    if (gardes) scheduleNext(); else startMotif();
   }
 
   function solid(k) { return state[k] === 1 && vt - tStart[k] > dur[k] * 0.4; }
@@ -210,11 +247,9 @@
     var zoneIdx = [];
     for (k = 0; k < zone.length; k++) if (zone[k] && (y0 === undefined || (ny((k - (k % cols)) / cols) >= y0 && ny((k - (k % cols)) / cols) < y1))) zoneIdx.push(k);
     if (!zoneIdx.length) return;
-    // centre de la zone, un peu à gauche et plus haut que le milieu
-    var minX = 1e9, maxX = -1e9, minY = 1e9, maxY = -1e9;
-    zoneIdx.forEach(function (q) { var qi = q % cols, qj = (q - qi) / cols; minX = Math.min(minX, nx(qi)); maxX = Math.max(maxX, nx(qi)); minY = Math.min(minY, ny(qj)); maxY = Math.max(maxY, ny(qj)); });
-    cx = minX + (maxX - minX) * rand(0.66, 0.82); cy = minY + (maxY - minY) * rand(0.3, 0.5);
-    zoneIdx.forEach(function (q) { var qi = q % cols, qj = (q - qi) / cols; d = Math.hypot(nx(qi) - cx, ny(qj) - cy); if (d < bd && state[q] === 0) { bd = d; best = q; } });
+    // un point de départ tiré au hasard dans toute la zone libre (plus de « centre de la zone, un peu à gauche et plus haut que le milieu » : il fallait toujours commencer au même endroit)
+    var libresDepart = zoneIdx.filter(function (q) { return state[q] === 0; });
+    if (libresDepart.length) best = libresDepart[Math.floor(Math.random() * libresDepart.length)];
     if (best < 0) return;
     born(best, -1, 1800, vt);
     var nb = neighborsOf(best).filter(function (q) { return zone[q] && state[q] === 0; });
@@ -229,31 +264,37 @@
   // Le départ tranquille : des amas éloignés les uns des autres (au moins 3,5 mailles), sur des cases à l'écart du texte et du portrait ; chaque amas naît d'un disque,
   // les autres en bourgeonnent un à un avec un long retard. Le premier amas apparaît après une seconde et demie, les suivants quelques secondes plus tard.
   function semerAmas(nb) {
+    if (TACTILE && nb > 1) nb = AMAS_TACTILE;
     var cand = [], k;
-    for (k = 0; k < zone.length; k++) if (zone[k] && fx[k] >= 0.7) cand.push(k);
+    for (k = 0; k < zone.length; k++) if (zone[k] && fx[k] >= (TACTILE ? 0.5 : 0.7)) cand.push(k);
     if (!cand.length) { seedGroup(); return; }
     var X = function (q) { return nx(q % cols); }, Y = function (q) { return ny((q - (q % cols)) / cols); };
     var centres = [], essais = 0;
+    // sur tactile, les trois premiers amas naissent dans ce qu'on voit à l'ouverture de la page (la hauteur de l'écran moins une barre de navigateur), s'il y a la place
+    var visibles = (TACTILE && !pageMode) ? cand.filter(function (q) { return Y(q) <= window.innerHeight - 100 - region.getBoundingClientRect().top; }) : [];
     while (centres.length < nb && essais++ < 80) {
-      var q = cand[Math.floor(Math.random() * cand.length)];
-      if (centres.every(function (c) { return Math.hypot(X(q) - X(c), Y(q) - Y(c)) >= 3.5 * S; })) centres.push(q);
+      var pool = (visibles.length >= 3 && centres.length < 3) ? visibles : cand;
+      var q = pool[Math.floor(Math.random() * pool.length)];
+      if (centres.every(function (c) { return Math.hypot(X(q) - X(c), Y(q) - Y(c)) >= (TACTILE ? 2 : 3.5) * S; })) centres.push(q);
     }
     centres.forEach(function (c, n) {
-      var t0 = vt + 1500 + n * rand(AMAS_DELAI[0], AMAS_DELAI[1]);
-      var taille = Math.round(rand(AMAS_DISQUES[0], AMAS_DISQUES[1])), membres = [{ k: c, t: t0 }];
-      born(c, -1, rand(4500, 6500), t0);
+      var DT = DEPART_TACTILE, DQ = TACTILE ? AMAS_DISQUES_TACTILE : AMAS_DISQUES;
+      var t0 = TACTILE ? vt + (n === 0 ? 60 : DT.premier + rand(0, DT.fenetre)) : vt + 1500 + n * rand(AMAS_DELAI[0], AMAS_DELAI[1]);   // sur tactile : un tirage au hasard, pas une file
+      var taille = Math.round(rand(DQ[0], DQ[1])), membres = [{ k: c, t: t0 }];
+      born(c, -1, TACTILE ? (n === 0 ? rand(600, 1000) : rand(DT.naissance[0], DT.naissance[1])) : rand(4500, 6500), t0);   // sur tactile, le premier amas naît tout de suite
       for (var m = 1; m < taille; m++) {
         var par = membres[Math.floor(Math.random() * membres.length)];
         var libresAutour = libres(par.k, Math.random() < DIAGONALE).filter(function (q) { return fx[q] >= 0.4; });
         if (!libresAutour.length) continue;
-        var q2 = libresAutour[Math.floor(Math.random() * libresAutour.length)], t = par.t + rand(1800, 3200);
-        born(q2, par.k, rand(4500, 6500), t);
+        var q2 = libresAutour[Math.floor(Math.random() * libresAutour.length)], t = par.t + (TACTILE ? rand(DT.bourgeon[0], DT.bourgeon[1]) : rand(1800, 3200));
+        born(q2, par.k, TACTILE ? rand(DT.naissance[0], DT.naissance[1]) : rand(4500, 6500), t);
         membres.push({ k: q2, t: t });
       }
     });
   }
 
   function scheduleNext() {
+    if (TACTILE && CALME && enDessous && vt < DEPART_TACTILE.fin) { nextEvent = vt + rand(DEPART_TACTILE.rythme[0], DEPART_TACTILE.rythme[1]); return; }   // départ rapide sur tactile
     // sous la cible : on remplit vite ; à la cible : un changement de temps en temps (le motif respire, il ne clignote pas)
     // au repos, un geste de temps en temps (toutes les 7 à 13 s sur la home, 4,5 à 8,5 s ailleurs), et le calme entre deux
     var f = (!enDessous && TACTILE) ? RYTHME_TACTILE : 1;   // le rythme plus soutenu ne vaut qu'au repos : le peuplement du départ garde le sien
@@ -263,12 +304,13 @@
 
   function cibleN() {
     var n = pageMode ? Math.round(POINTS * 0.6 * H / Math.max(1, VH)) : (CALME ? POINTS_CALME : POINTS);   // 20 dans le héros (11 sur la home) ; en mode page, 12 par hauteur d'écran
+    if (TACTILE) n = Math.round(n * DENSITE_TACTILE);
     return Math.max(8, Math.min(n, Math.floor(zoneCount * 0.3)));
   }
 
   function event() {
     var list = [], k;
-    for (k = 0; k < state.length; k++) if (solid(k)) list.push(k);
+    for (k = 0; k < state.length; k++) if (solid(k) && !vis[k]) list.push(k);   // les disques dessinés par le visiteur ne comptent pas : ni dans la cible, ni parmi ceux qui peuvent disparaître
     var A = list.length, target = cibleN(), maxA = Math.ceil(target * (CALME ? MAXI_CALME : MAXI));
 
     if (A === 0) {
@@ -305,7 +347,7 @@
       if (Math.random() < 0.6) {
         var best = -1; free.forEach(function (q) { var n = nbCount(q) + Math.random() * 0.9; if (n > best) { best = n; pick = q; } });
       } else pick = free[Math.floor(Math.random() * free.length)];
-      born(pick, k);
+      born(pick, k, (TACTILE && CALME && vt < DEPART_TACTILE.fin) ? rand(DEPART_TACTILE.naissance[0], DEPART_TACTILE.naissance[1]) : undefined);
       return;
     }
   }
@@ -320,7 +362,15 @@
     return c;
   }
   function choisir(l) { return l[Math.floor(Math.random() * l.length)]; }
+  function semerUn() {
+    var cand = [];
+    for (var k = 0; k < zone.length; k++) if (zone[k] && state[k] === 0 && fx[k] >= 0.35 && nbCount(k) === 0) cand.push(k);
+    if (!cand.length) return false;
+    born(choisir(cand), -1, rand(1800, 3200));
+    return true;
+  }
   function geste(list) {
+    if (TACTILE && Math.random() < HASARD_TACTILE && semerUn()) return;   // un disque naît au hasard, sans parent
     var cand = list.filter(function (q) { return !vis[q] && vt - tStart[q] > 6000; });
     if (!cand.length) { grow(list); return; }
     // le geste est tiré d'abord (déménager 45 %, tendre la main 35 %, hésiter 20 %), puis on cherche un disque qui peut le faire ; sinon on essaie le suivant
@@ -409,9 +459,14 @@
   // avec une taille propre, puis s'efface de lui-même.
   var lastP = null, lastCell = -1, lastBirth = 0;
 
+  function effacerLePlusAncien() {
+    var o = -1;
+    for (var q = 0; q < state.length; q++) if (vis[q] && state[q] === 1 && (o < 0 || tStart[q] < tStart[o])) o = q;
+    if (o >= 0) retire(o);
+  }
   function visitorCount() { var n = 0; for (var q = 0; q < state.length; q++) if (vis[q] && state[q] === 1) n++; return n; }
 
-  function place(x, y, long, force) {
+  function place(x, y, force) {
     var i = Math.round((x - ox) / S) + 1, j = Math.round((y - oy) / S) + 1;
     if (i < 0 || j < 0 || i >= cols || j >= rows) return;
     var k = j * cols + i;
@@ -420,23 +475,23 @@
     lastCell = k;
     var now = performance.now();
     if (!force) {
-      if (now - lastBirth < (long ? 25 : 35)) return;                 // un souffle entre deux naissances
+      if (now - lastBirth < 35) return;                 // un souffle entre deux naissances
       if (Math.random() > CHANCE) return;                // la chance de naître
-      if (visitorCount() >= (long ? VISITEUR_MAX_APPUI : VISITEUR_MAX)) return;                    // jamais plus que quelques-uns
+      if (visitorCount() >= VISITEUR_MAX) effacerLePlusAncien();                    // jamais plus que quelques-uns : le plus ancien s'efface
     }
     lastBirth = now;
     var nb = neighborsOf(k).filter(function (q) { return solid(q); });
     var parent = nb.length ? nb[Math.floor(Math.random() * nb.length)] : -1;
     born(k, parent, rand(380, 650), vt, 0, rand(0.6, 1));   // le disque du visiteur naît en une demi-seconde : il répond au geste
     szc[k] = gsz[k] * 0.9;
-    vis[k] = 1; lifeEnd[k] = vt + (long ? rand(16000, 24000) : rand(9000, 15000));
+    vis[k] = 1; lifeEnd[k] = vt + rand(VIE_VISITEUR_MIN, VIE_VISITEUR_MAX);
     startLoop();
   }
 
-  function trace(x, y, long) {
+  function trace(x, y) {
     if (lastP) {
       var dx = x - lastP.x, dy = y - lastP.y, n = Math.max(1, Math.ceil(Math.hypot(dx, dy) / (S * 0.6)));
-      for (var t = 1; t <= n; t++) place(lastP.x + dx * t / n, lastP.y + dy * t / n, long, false);
+      for (var t = 1; t <= n; t++) place(lastP.x + dx * t / n, lastP.y + dy * t / n, false);
     }
     lastP = { x: x, y: y };
   }
@@ -535,13 +590,14 @@
   var evtHost = pageMode ? document : hero;
   evtHost.addEventListener("pointerdown", function (e) {
     if (e.target.closest("a,button")) return;
-    down = true; lastP = null; lastCell = -1; var p = pos(e); place(p.x, p.y, true, true); lastP = { x: p.x, y: p.y };
+    if (e.pointerType === "mouse") return;   // à la souris, seul le survol dessine : le clic (maintenu ou non) ne pose rien
+    down = true; lastP = null; lastCell = -1; var p = pos(e); place(p.x, p.y, true); lastP = { x: p.x, y: p.y };
   });
   window.addEventListener("pointerup", function () { down = false; });
   evtHost.addEventListener("pointermove", function (e) {
     if (e.target.closest("a,button")) { lastP = null; return; }
     if (e.pointerType === "touch" && !down) return;
-    var p = pos(e); trace(p.x, p.y, true);   // survol et clic maintenu dessinent pareil : plus de différence entre les deux
+    var p = pos(e); trace(p.x, p.y);   // le survol de la souris, ou le glissé d'un doigt
   });
   (pageMode ? document.documentElement : hero).addEventListener("pointerleave", function () { lastP = null; });
 
@@ -550,7 +606,8 @@
     btnFiger.addEventListener("click", function () {
       paused = !paused;
       btnFiger.setAttribute("aria-pressed", String(paused));
-      btnFiger.textContent = paused ? "Laisser se relier" : "Retenir le fil";
+      var en = document.documentElement.lang === "en";
+      btnFiger.textContent = paused ? (en ? "Let it link up again" : "Laisser se relier") : (en ? "Hold the thread" : "Retenir le fil");
       if (!paused) startLoop();
     });
   }
@@ -602,5 +659,6 @@
     layout(); placeOmbre(); readColors(); draw();
     if (!reduce) startLoop();
   }
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(init); else init();
+  init();   // on démarre tout de suite : attendre les polices retardait l'apparition de plusieurs secondes sur téléphone
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { relayout(); });   // quand elles arrivent, la mise en page se recalcule, sans perdre les disques
 })();
