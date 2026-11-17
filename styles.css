@@ -10360,6 +10360,21 @@ body .page :is(h1, h2):is(.t-display, .t-h2) + :is(p, .lead) {
 body .hero--page .hero-texte > :is(h1, h2) + * {
   margin-top: var(--ligne);
 }
+/* Page des six textes (Circulation) seulement : plus d'air entre le titre et la première ligne (2 lignes au lieu d'1), et la première ligne se rapproche du paragraphe (1 ligne au lieu de 2) */
+body:has(.serie) .hero--page .hero-texte > h1 + .lead {
+  margin-top: calc(var(--ligne) * 2);
+}
+body:has(.serie) .hero--page .hero-texte > .lead + .lead {
+  margin-top: var(--ligne);
+}
+/* même page : entre le titre de chaque texte et sa description, une demi-ligne d'air. Le filet de grille (snap-grille.js) ramène toute marge à 0 ou à 28 px,
+   donc on garde la marge d'une ligne et on remonte la description et le pied de 14 px : la distance vue est de 14 px, les hauteurs de blocs ne bougent pas */
+.station .body h3 {
+  margin-bottom: var(--ligne);
+}
+.station .body :is(.idea, .foot) {
+  translate: 0 calc(var(--demi-ligne) * -1);
+}
 .section h2 + .sp-2, .section h2 + p.t-lede {
   margin-top: var(--ligne);
 }

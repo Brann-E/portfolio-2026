@@ -47,6 +47,8 @@
   var AMAS_DISQUES = [3, 5];             // disques par amas, au départ
   var AMAS_DELAI = [4000, 7000];         // délai entre la naissance de deux amas, en ms
   var POINTS_CALME = 11, MAXI_CALME = 1.25;   // disques au repos et plafond (les amas grossissent à peine)
+  var TACTILE = !!(window.matchMedia && matchMedia("(hover: none)").matches);
+  var RYTHME_TACTILE = 0.55;             // sur tactile (ni curseur ni survol : le fond doit vivre seul), le délai entre deux gestes est multiplié par 0,55 : un geste 1,8 fois plus souvent
   var LENTEUR = 1.8;                     // une naissance dure 1,8 fois plus longtemps
 
   var W = 0, H = 0, DPR = 1, S = 56, ox = 0, oy = 0, cols = 0, rows = 0;
@@ -56,6 +58,7 @@
   var paused = false, visible = true, raf = 0, lastFrame = 0, lastMove = 0;
   var vt = 0;               // horloge du motif : n'avance que lorsqu'il tourne
   var nextEvent = 0, emptySince = 0, enDessous = true;
+  var gestes = [];          // gestes en cours : { at, run } (la suite d'un geste, quelques secondes plus tard)
 
   function rand(a, b) { return a + Math.random() * (b - a); }
   function clamp(x, a, b) { return Math.max(a, Math.min(b, x)); }
@@ -126,6 +129,7 @@
 
     cols = Math.ceil((W - ox) / S) + 2; rows = Math.ceil((H - oy) / S) + 2;
     var n = cols * rows;
+    gestes.length = 0;
     state = new Uint8Array(n); tStart = new Float64Array(n); dur = new Float32Array(n);
     tEnd = new Float64Array(n); ddur = new Float32Array(n); src = new Int32Array(n).fill(-1);
     lifeEnd = new Float64Array(n); vis = new Uint8Array(n); gsz = new Float32Array(n); szc = new Float32Array(n);
@@ -251,8 +255,10 @@
 
   function scheduleNext() {
     // sous la cible : on remplit vite ; à la cible : un changement de temps en temps (le motif respire, il ne clignote pas)
-    if (CALME) nextEvent = vt + (enDessous ? rand(2500, 4500) : rand(5000, 9000));
-    else nextEvent = vt + (enDessous ? rand(500, 1300) : rand(2600, 5600));
+    // au repos, un geste de temps en temps (toutes les 7 à 13 s sur la home, 4,5 à 8,5 s ailleurs), et le calme entre deux
+    var f = (!enDessous && TACTILE) ? RYTHME_TACTILE : 1;   // le rythme plus soutenu ne vaut qu'au repos : le peuplement du départ garde le sien
+    if (CALME) nextEvent = vt + (enDessous ? rand(2500, 4500) : rand(7000, 13000) * f);
+    else nextEvent = vt + (enDessous ? rand(500, 1300) : rand(4500, 8500) * f);
   }
 
   function cibleN() {
@@ -278,8 +284,8 @@
     // et il naît aussitôt autre chose : le nombre de disques reste stable, la forme change doucement.
     if (A < target) { grow(list); return; }
     if (A >= maxA) { die(list); return; }
-    if (A > target * 1.12) { if (Math.random() < 0.6) die(list); return; }
-    if (Math.random() < 0.85) grow(list);
+    if (A > target * 1.12) { if (Math.random() < 0.6) die(list); else geste(list); return; }
+    geste(list);   // au repos, plus d'apparition ni de disparition au hasard : un disque prend l'initiative
   }
 
   // Une naissance : on part d'un disque (de préférence un disque isolé, pour qu'il se relie), vers une case libre. La case choisie est le plus souvent
@@ -302,6 +308,49 @@
       born(pick, k);
       return;
     }
+  }
+
+  // Un geste : de temps en temps, un disque prend l'initiative. Le nombre de disques ne bouge presque pas, c'est la forme qui change.
+  //  - il tend la main : un bourgeon sort de lui vers la case qui touche un autre disque ; le lien se fait et reste ;
+  //  - il déménage : un bourgeon sort de lui vers une case libre, puis lui-même se retire dans ce bourgeon : le disque a changé de case ;
+  //  - il hésite : un bourgeon sort sans rien trouver, reste un instant, puis se retire. Jamais un disque bien relié au cœur d'un amas ne déménage.
+  function nbCountSans(k, ex) {
+    var c = 0, nb = neighbors8(k);
+    for (var a = 0; a < nb.length; a++) if (nb[a] !== ex && solid(nb[a])) c++;
+    return c;
+  }
+  function choisir(l) { return l[Math.floor(Math.random() * l.length)]; }
+  function geste(list) {
+    var cand = list.filter(function (q) { return !vis[q] && vt - tStart[q] > 6000; });
+    if (!cand.length) { grow(list); return; }
+    // le geste est tiré d'abord (déménager 45 %, tendre la main 35 %, hésiter 20 %), puis on cherche un disque qui peut le faire ; sinon on essaie le suivant
+    var r = Math.random(), type = r < 0.45 ? "demenage" : (r < 0.8 ? "main" : "hesite");
+    for (var t = 0; t < 24; t++) {
+      var a = choisir(cand);
+      if (type === "demenage" && nbCount(a) > 1) continue;            // un disque bien relié ne quitte pas son amas
+      var free = libres(a, Math.random() < DIAGONALE);
+      if (!free.length) free = libres(a, true);
+      if (!free.length) continue;
+      var touche = free.filter(function (q) { return nbCountSans(q, a) > 0; });    // les cases qui touchent un autre disque que lui
+      var seule = free.filter(function (q) { return nbCountSans(q, a) === 0; });   // les cases où il serait seul avec son bourgeon
+      var d = rand(3200, 5000) * (CALME ? LENTEUR : 1), b;
+      if (type === "main") {
+        if (!touche.length) continue;
+        b = choisir(touche); born(b, a, d);                                         // le lien se fait et reste
+        return;
+      }
+      if (type === "hesite") {
+        if (!seule.length) continue;
+        b = choisir(seule); born(b, a, d);
+        (function (a, b) { gestes.push({ at: vt + d + rand(2500, 4500), run: function () { if (state[b] === 1 && !vis[b] && nbCountSans(b, a) === 0) { retire(b); if (state[a] === 1) src[b] = a; } } }); })(a, b);
+        return;
+      }
+      b = (touche.length && Math.random() < 0.6) ? choisir(touche) : choisir(free);  // il déménage, de préférence vers d'autres disques
+      born(b, a, d);
+      (function (a, b) { gestes.push({ at: vt + d * 0.9, run: function () { if (state[a] === 1 && state[b] === 1) { retire(a); src[a] = b; } } }); })(a, b);
+      return;
+    }
+    grow(list);
   }
 
   // Une disparition : d'abord ce qui est isolé (il ne tient à rien), puis ce qui est le plus ancien. Jamais un disque bien relié au cœur de l'amas.
@@ -472,6 +521,7 @@
     var dt = lastFrame ? Math.min(now - lastFrame, 100) : 16.7; lastFrame = now;
     vt += dt;
     while (vt >= nextEvent) { event(); scheduleNext(); if (nextEvent <= vt) nextEvent = vt + 800; }
+    for (var g = gestes.length - 1; g >= 0; g--) if (vt >= gestes[g].at) { var o = gestes[g]; gestes.splice(g, 1); o.run(); }
     if (vt - lastExp > 250) { lastExp = vt; for (var e = 0; e < state.length; e++) if (vis[e] && state[e] === 1 && vt > lifeEnd[e]) retire(e); }
     draw();
     raf = requestAnimationFrame(frame);
