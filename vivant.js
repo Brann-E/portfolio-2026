@@ -13,7 +13,7 @@
   var hero = document.querySelector("[data-vivant]");
   if (!hero) return;
   // data-vivant="page" : le fond couvre toute la page (du haut du <main> au pied de page), pas seulement le héros. Les toiles sont alors collées à l'écran
-  // (position: fixed, taille de la fenêtre) et ne dessinent que ce qui est visible ; les disques vivent dans les marges et entre les blocs, jamais sous le texte.
+  // (position: fixed, taille de la fenêtre) et ne dessinent que ce qui est visible ; les disques vivent PARTOUT, y compris sous le texte et sous tous les éléments (règle de Brann, 2026-11-17).
   var pageMode = hero.getAttribute("data-vivant") === "page";
   var region = pageMode ? (hero.closest("main") || document.body) : hero;
   var VW = 0, VH = 0, lastW = 0, lastH = 0, lastVH = 0;
@@ -32,6 +32,9 @@
   var btnFiger = document.getElementById("figer");
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  // ===== RÈGLE ABSOLUE (Brann, 2026-11-17) : LES DISQUES VIVENT PARTOUT. =====
+  // Sous le texte, sous les cartes, sous le portrait, sous tous les éléments de la page, sur mobile comme sur ordinateur. Il n'existe aucune zone interdite,
+  // aucune distance à respecter avec le texte. Le but est que ça soit vivant. Ne JAMAIS ajouter d'exclusion, de marge autour du texte ou de colonne réservée.
   // ===== RÉGLAGES : tout ce qui change la densité et la vie du motif se change ici =====
   var POINTS = 20;           // nombre de disques au départ et au repos (une vingtaine)
   var MAXI = 1.5;            // jamais plus de 1,5 fois ce nombre
@@ -91,10 +94,6 @@
     colors.fond = parseColor(cs.getPropertyValue("--accent-fond"));
   }
 
-  function distRect(x, y, r) {
-    var dx = Math.max(r.x0 - x, 0, x - r.x1), dy = Math.max(r.y0 - y, 0, y - r.y1);
-    return Math.hypot(dx, dy);
-  }
 
   function nx(i) { return ox + (i - 1) * S; }
   function ny(j) { return oy + (j - 1) * S; }
@@ -125,17 +124,9 @@
     (pageMode ? region.querySelectorAll("[data-texte], .carte, .cartes-titre") : hero.querySelectorAll("[data-texte]")).forEach(function (el) {
       if (pageMode && getComputedStyle(el.closest(".hero-texte") || el).position === "fixed") return;   // le titre fixé à droite ne réserve aucune place : le vivant couvre toute la page
       var r = el.getBoundingClientRect();
-      if (TACTILE && !pageMode && el.hasAttribute("data-texte") && /^(H1|H2|H3|P)$/.test(el.tagName)) {   // tactile : chaque ligne réserve sa largeur (pas la boîte entière), les disques peuvent naître à droite des lignes courtes
-        var rl = document.createRange(); rl.selectNodeContents(el);
-        var lr = rl.getClientRects();
-        for (var li = 0; li < lr.length; li++) if (lr[li].width > 1) rects.push({ x0: lr[li].left - hr.left, y0: lr[li].top - hr.top, x1: lr[li].right - hr.left, y1: lr[li].bottom - hr.top });
-        return;
-      }
       if (pageMode && el.hasAttribute("data-texte")) { var rg = document.createRange(); rg.selectNodeContents(el); var tr = rg.getBoundingClientRect(); if (tr.width) r = tr; }   // l'étendue du texte, pas la boîte (le titre occupe toute la largeur de la page)
       rects.push({ x0: r.left - hr.left, y0: r.top - hr.top, x1: r.right - hr.left, y1: r.bottom - hr.top });
     });
-
-    if (TACTILE && !pageMode) { var bf = hero.querySelector(".figer"); if (bf) { var rb = bf.getBoundingClientRect(); rects.push({ x0: rb.left - hr.left, y0: rb.top - hr.top, x1: rb.right - hr.left, y1: rb.bottom - hr.top }); } }
 
     // la grille du héros s'amarre sur les lignes de la grille de la page (14 px à gauche du bord de page, multiples de la maille depuis le haut
     // du document), comme les cadres : les points tombent sur des lignes, pas sur le texte
@@ -156,20 +147,17 @@
     tEnd = new Float64Array(n); ddur = new Float32Array(n); src = new Int32Array(n).fill(-1);
     lifeEnd = new Float64Array(n); vis = new Uint8Array(n); gsz = new Float32Array(n); szc = new Float32Array(n);
 
-    // la zone du vivant : uniquement à droite du texte (colonne de la scène)
-    var sc = hero.querySelector(".hero-scene");
-    var sr = (sc && !pageMode && !TACTILE) ? sc.getBoundingClientRect() : hr;   // tactile : toute la hauteur du héros, pas seulement la colonne de la scène
-    var z = { x0: sr.left - hr.left + 0.3 * S, y0: sr.top - hr.top + 0.3 * S, x1: sr.right - hr.left - 0.3 * S, y1: sr.bottom - hr.top - 0.3 * S };
+    // LA ZONE DU VIVANT, c'est toute la région, sans exception : les disques vivent PARTOUT, sous le texte, sous les cartes, sous tous les éléments de la page.
+    // Aucune colonne réservée, aucune distance au texte, aucune case interdite. (Règle de Brann, 2026-11-17 : « Les blobs peuvent vivre sous tous les éléments de
+    // vivant.js. Il peut vivre partout. C'est le but, c'est que ça soit vivant. ») Ne jamais réintroduire d'exclusion : les couleurs s'adaptent au texte, pas l'inverse.
+    var z = { x0: 0.3 * S, y0: 0.3 * S, x1: W - 0.3 * S, y1: H - 0.3 * S };
     zone = new Uint8Array(n); zoneCount = 0;
     fx = new Float32Array(n);
-    var i, j, k, x, y, d;
+    var i, j, k, x, y;
     for (j = 0; j < rows; j++) for (i = 0; i < cols; i++) {
       k = j * cols + i; x = nx(i); y = ny(j);
-      d = 1e9;
-      for (var q = 0; q < rects.length; q++) d = Math.min(d, distRect(x, y, rects[q]));
-      // en mode page, la zone est tout ce qui est libre : à plus de trois quarts de maille du moindre texte ou de la moindre carte
-      if (x >= z.x0 && x <= z.x1 && y >= z.y0 && y <= z.y1 && (!(pageMode || TACTILE) || d >= 0.75 * S)) { zone[k] = 1; zoneCount++; }
-      fx[k] = smooth(0.2 * S, 1.5 * S, d);
+      if (x >= z.x0 && x <= z.x1 && y >= z.y0 && y <= z.y1) { zone[k] = 1; zoneCount++; }
+      fx[k] = 1;   // aucune case n'est meilleure qu'une autre : plus de préférence pour « loin du texte »
     }
     // Les polices ou une image qui arrivent déplacent un peu le texte et refont la mise en page : sans cela, tout le motif repartait de zéro à ce moment-là,
     // et rien ne se voyait avant (sur téléphone : plusieurs secondes). On garde donc les disques déjà nés ; ceux qui se retrouvent sous le texte s'effacent.
