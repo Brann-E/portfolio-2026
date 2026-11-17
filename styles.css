@@ -6465,6 +6465,23 @@ body.bilan-lock {
   border-radius: 8px;
   background: transparent;
 }
+/* tant que l'iframe charge, un message par-dessus le cadre (retiré par encart-zoom.js) */
+.encart-attente::after {
+  content: "Chargement du prototype";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: start center;
+  padding-top: var(--ligne);
+  color: var(--anthracite);
+  font-family: var(--ff-title);
+  font-size: var(--fs-xs);
+  line-height: var(--lh-xs);
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
 
 /* --- Aperçu dans la page + ouverture plein écran --------------------- */
 .encart-interactif {
@@ -6844,8 +6861,10 @@ html {
   grid-template-columns: 1fr 1fr;
 } /* moitié gauche : l'accent ; moitié droite : le chevron */
 .theme-btn {
-  width: 1.5rem;
-}
+  width: calc(var(--control-s) * 1.5);
+  height: calc(var(--control-s) * 1.5);
+  border-radius: 50%;
+} /* le bouton est un rond, sans contour : seule l'icône se voit, le rond d'accent apparaît derrière au survol */
 .couleur-btn:active, .theme-btn:active {
   transform: scale(.94);
 }
@@ -6872,8 +6891,8 @@ html {
 
 .theme-btn svg {
   position: absolute;
-  width: .95rem;
-  height: .95rem;
+  width: 1.1rem;
+  height: 1.1rem;
   fill: none;
   stroke: currentColor;
   stroke-width: 2;
@@ -7739,7 +7758,7 @@ body.nav-locked {
 .pied-grille > * {
   grid-column: span 3;
 }
-.pied h4 {
+.pied h2 {
   font-family: var(--ff-title);
   font-size: var(--fs-xs);
   line-height: var(--lh-xs);
@@ -8166,7 +8185,7 @@ h1 em, h2 em, h3 em, h1 i, h2 i, h3 i, .hero-title em, .section-title em, .don-t
 }
 
 /* aucun rayon : le cadre est un angle droit (les points ronds restent des points) */
-body.has-site-nav *:not(.dot):not(.pastille):not(.pastille-actuelle):not(.portrait-me):not(.arrondi) {
+body.has-site-nav *:not(.dot):not(.pastille):not(.pastille-actuelle):not(.portrait-me):not(.arrondi):not(.theme-btn) {
   border-radius: 0 !important;
 }
 body.has-site-nav svg rect[rx] {
@@ -10098,7 +10117,7 @@ section.tail {
   display: block;
   margin-left: 0;
 }
-.pied h4 a {
+.pied h2 a {
   text-decoration: none;
 }
 

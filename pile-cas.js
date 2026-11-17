@@ -15,7 +15,7 @@
   var racine = document.documentElement;
   var reduit = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;   // sans animation : le retour à la carte se fait sans défilement animé
   var tactile = window.matchMedia && matchMedia("(hover: none)").matches;   // pas de survol : c'est la carte du devant qui joue son animation (is-active), à la place du survol
-  window.__pileCas = true;                                                  // dit à cartes-3d.js que la pile s'occupe de l'animation des cartes sur tactile
+  window.__pileCas = function () { return !normal(); };                     // dit à cartes-3d.js si la pile s'occupe de l'animation des cartes sur tactile (non : home sous 1028 px, les cartes défilent normalement et jouent d'elles-mêmes)
   var tagsCas = [].slice.call(document.querySelectorAll(".cas-tags[data-cas]"));   // les pastilles de chaque cas (home) : seules celles du cas du devant sont visibles
   var FREIN = 168;
   var racineTags = tagsCas.length ? tagsCas[0].parentElement : null;

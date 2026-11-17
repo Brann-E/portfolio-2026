@@ -1162,7 +1162,7 @@ async function monter(zone) {
     window.addEventListener('grille:refresh', async () => { vue = await construire(); calibrer(); });
 
     /* tactile : pas de survol, la carte joue son animation d'elle-même dès qu'elle est à l'écran, et se remet au repos en sortant (elle rejoue au retour) */
-    if (tactile && !reduit && !window.__pileCas) {   // sur la page des cas, pile-cas.js désigne la carte du devant (une seule joue à la fois)
+    if (tactile && !reduit && !(window.__pileCas && window.__pileCas())) {   // quand la pile est active (page des cas), pile-cas.js désigne la carte du devant (une seule joue à la fois) ; sinon (home mobile), chaque carte joue d'elle-même
       const carte = zone.closest('.carte'); // .is-active : le CSS s'en sert comme du survol (titre, trait, halo)
       let depart;
       new IntersectionObserver(([e]) => {

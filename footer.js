@@ -19,7 +19,7 @@
         <p class="lieu">📍 Lyon, à distance et sur site</p>
       </div>
       <div>
-        <h4>Me retrouver</h4>
+        <h2>Me retrouver</h2>
         <ul>
           <li><a href="https://www.linkedin.com/in/brann-etienne" target="_blank" rel="noopener">LinkedIn</a></li>
           <li><a href="https://github.com/Brann-E" target="_blank" rel="noopener">GitHub</a></li>
@@ -28,7 +28,7 @@
         </ul>
       </div>
       <div>
-        <h4><a href="/#cas">Études de cas</a></h4>
+        <h2><a href="/#cas">Études de cas</a></h2>
         <ul>
           <li><a href="/cas-healthanea">Healthanea</a></li>
           <li><a href="/cas-shift-prime">SHIFT Prime</a></li>
@@ -38,7 +38,7 @@
         </ul>
       </div>
       <div>
-        <h4>Pour aller plus loin</h4>
+        <h2>Pour aller plus loin</h2>
         <ul>
           <li><a href="/parcours-interactif">3 situations à explorer</a></li>
           <li><a href="/circulation-paradigme-du-design">La circulation, paradigme du design</a></li>

@@ -239,3 +239,60 @@
     }
   });
 })();
+
+
+/* Chargement des prototypes : (1) un message sur le cadre tant que l'iframe n'a pas répondu (sans lui, un cadre vide
+   ressemble à une panne) ; (2) un préchauffage : quand un prototype approche de l'écran (bien avant le seuil du
+   chargement différé du navigateur), on précharge les scripts et feuilles de style de l'app pour que l'iframe les trouve
+   déjà en cache. Les adresses (à empreinte) sont lues dans le HTML de l'app, donc rien à mettre à jour après un build. */
+(function () {
+  "use strict";
+  var encarts = document.querySelectorAll(".encart-interactif");
+  if (!encarts.length) return;
+
+  Array.prototype.forEach.call(encarts, function (encart) {
+    var frame = encart.querySelector(".encart-frame");
+    if (!frame) return;
+    encart.classList.add("encart-attente");
+    var fini = function () { encart.classList.remove("encart-attente"); };
+    frame.addEventListener("load", fini, { once: true });
+    setTimeout(fini, 30000); /* le message ne reste jamais indéfiniment */
+  });
+
+  if (!("IntersectionObserver" in window) || !window.fetch) return;
+  var deja = {};
+  function prechauffer(src) {
+    if (deja[src]) return;
+    deja[src] = true;
+    var base = new URL(src, location.href);
+    fetch(base.href, { credentials: "same-origin" })
+      .then(function (r) { return r.ok ? r.text() : ""; })
+      .then(function (html) {
+        var doc = new DOMParser().parseFromString(html, "text/html");
+        doc.querySelectorAll('script[type="module"][src]').forEach(function (s) {
+          var l = document.createElement("link");
+          l.rel = "modulepreload";
+          l.href = new URL(s.getAttribute("src"), base).href;
+          document.head.appendChild(l);
+        });
+        doc.querySelectorAll('link[rel="stylesheet"][href]').forEach(function (s) {
+          var l = document.createElement("link");
+          l.rel = "preload";
+          l.as = "style";
+          l.href = new URL(s.getAttribute("href"), base).href;
+          l.crossOrigin = "anonymous";
+          document.head.appendChild(l);
+        });
+      })
+      .catch(function () {});
+  }
+  var io = new IntersectionObserver(function (entrees) {
+    entrees.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      io.unobserve(e.target);
+      var frame = e.target.querySelector(".encart-frame");
+      if (frame) prechauffer(frame.getAttribute("src"));
+    });
+  }, { rootMargin: "3000px 0px" });
+  Array.prototype.forEach.call(encarts, function (encart) { io.observe(encart); });
+})();
