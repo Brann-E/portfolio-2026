@@ -13351,3 +13351,13 @@ html:has(.section-cas) body {
 }
 
 /* ===== NOUVELLE DA : fin ===== */
+
+/* ---------- liste à lignes, version coupée (mentions légales) : six carrés du quadrillage en moins à droite (6 lignes de 28 px) ; l’angle arrondi vient de .arrondi ---------- */
+.liste-da--six {
+  overflow: hidden;
+}
+@media (min-width: 860px) {
+  .liste-da--six {
+    margin-right: calc(var(--ligne) * 6 - var(--demi-ligne));
+  }
+}
