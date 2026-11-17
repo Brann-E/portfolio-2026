@@ -12647,6 +12647,19 @@ body.has-site-nav .tradeoffs ~ .s3 .chapter .legend p {
   border-radius: 50%;
   object-fit: cover;
 }
+/* mode sombre : un autre portrait (lunettes de soleil) et « Bonsoir » au lieu d'« Aloha » ; en mode clair, la version « nuit » est masquée (et, chargée en différé, ne coûte rien) */
+.portrait-hero img.nuit, .portrait-bulle .nuit {
+  display: none;
+}
+[data-theme="dark"] .portrait-hero img.jour, [data-theme="dark"] .portrait-bulle .jour {
+  display: none;
+}
+[data-theme="dark"] .portrait-hero img.nuit {
+  display: block;
+}
+[data-theme="dark"] .portrait-bulle .nuit {
+  display: inline;
+}
 /* Lyon et À distance : chaque lieu est une pastille construite à l'horizontale (contenu centré, mêmes marges des deux côtés,
    35 px de haut, la bulle en fait 56) ; c'est son conteneur .portrait-lieu qui la penche, posées à des hauteurs différentes sur le bord du portrait ;
    la bulle est dans le même esprit, penchée de l'autre côté. */
@@ -12788,6 +12801,24 @@ body.has-site-nav .tradeoffs ~ .s3 .chapter .legend p {
   .accueil .hero {
     padding-bottom: calc(var(--ligne) * 3 - var(--home-hero-surplus));
   }
+  /* mobile, héros de la home seulement : le titre et le H2 sont plus grands, et le H2 respire (1,5 ligne) ; rien d'autre sur le site ne change */
+  .accueil .hero-texte > h1 {
+    font-size: 3.25rem;
+    line-height: calc(var(--ligne) * 2.25);
+    width: calc(100vw - var(--ligne) * 1.5);   /* la grille de 4 colonnes s'arrête avant la marge droite : le titre prend toute la largeur utile (bord gauche déjà débordant d'une demi-ligne) */
+    margin-right: 0;
+  }
+  .accueil .hero-texte > .surtitre {
+    font-size: 1.875rem;
+    line-height: calc(var(--ligne) * 1.5);
+  }
+  /* mobile : le portrait (avec « Aloha », Lyon, À distance, Disponible) monte entre le H2 et le texte « Depuis 12 ans », pour un début de page plus vivant ; l'ordre du HTML ne change pas */
+  .accueil .hero-texte > .portrait-hero {
+    order: 1;
+  }
+  .accueil .hero-texte > :is(.lead, .actions) {
+    order: 2;
+  }
   .accueil .hero-texte > .portrait-hero, .hero-texte.presentation > .portrait-apropos {
     --zone: 100%;
     grid-column: 1 / -1;
@@ -12801,6 +12832,13 @@ body.has-site-nav .tradeoffs ~ .s3 .chapter .legend p {
     margin-left: calc(var(--demi-ligne) * -1);   /* ... au même bord que le texte, qui déborde d'une demi-ligne */
     margin-right: 0;
     margin-bottom: calc(var(--ligne) * 3);   /* la place de « Disponible » (une ligne d'air + 2 lignes), qui est hors du flux */
+  }
+  .hero-texte.presentation > .portrait-apropos {   /* À propos : même taille et même bord gauche que le portrait du héros de la home */
+    --w: min(calc(var(--ligne) * 6), calc(100vw - var(--ligne) * 6.5));
+    justify-self: start;
+    margin-left: calc(var(--demi-ligne) * -1);
+    margin-right: 0;
+    margin-bottom: calc(var(--ligne) * 2 - var(--apropos-entre-paragraphes));   /* autant d'air sous le portrait (2 lignes, avec la marge du paragraphe suivant) qu'au-dessus */
   }
   /* mobile : les informations passent à droite du portrait, l'une sous l'autre, sans rien recouvrir ; la bulle revient à la ligne pour tenir dans la colonne restante */
   .accueil .portrait-hero .portrait-bulle {
