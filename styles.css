@@ -6913,6 +6913,34 @@ html {
   transform: rotate(90deg) scale(.4);
 }
 
+/* le choix de la langue : un rond comme le thème, avec le code de l'autre langue (EN sur la page française, FR sur l'anglaise) */
+.langue {
+  display: flex;
+}
+.langue-btn {
+  display: grid;
+  place-items: center;
+  width: calc(var(--control-s) * 1.5);
+  height: calc(var(--control-s) * 1.5);
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--bg);
+  color: var(--encre);
+  font-family: var(--ff-title);
+  font-size: .8125rem;
+  font-weight: 600;
+  letter-spacing: .05em;
+  text-decoration: none;
+  cursor: pointer;
+}
+.langue-btn:active {
+  transform: scale(.94);
+}
+/* le mot « et » du lien entre deux cartes, dit dans la langue de la page */
+html[lang="en"] .carte .tie::before {
+  content: "and";
+}
+
 /* la liste des couleurs : deux cases de large, comme le bouton, juste dessous ; chaque ligne est une case de haut et son accent est
    sous celui du bouton (même moitié gauche) */
 .liste-couleurs {
@@ -7176,14 +7204,14 @@ html, body, .bar, .hero {
 }
 
 /* le survol des boutons : l'accent les remplit de gauche à droite ; le texte prend la couleur de l'encre (AAA sur l'accent) */
-.btn, .figer, .couleur-btn, .theme-btn, .pastille {
+.btn, .figer, .couleur-btn, .theme-btn, .langue-btn, .pastille {
   background-image: linear-gradient(var(--accent-fond), var(--accent-fond));
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 0% 100%;
   transition: background-size .38s cubic-bezier(.3, .7, .3, 1), color .38s ease, transform .15s ease;
 }
-.btn:hover, .btn:focus-visible, .figer:hover, .couleur-btn:hover, .theme-btn:hover, .pastille:hover {
+.btn:hover, .btn:focus-visible, .figer:hover, .couleur-btn:hover, .theme-btn:hover, .langue-btn:hover, .langue-btn:focus-visible, .pastille:hover {
   background-size: 100% 100%;
   color: var(--encre);
 }
@@ -8063,7 +8091,7 @@ html[data-grille] .page::before {
 }
 
 /* réglages de l'en-tête : pas de cadre autour du choix de couleur, du thème ni de la liste ; le remplissage de l'accent au survol reste */
-.couleur-btn, .theme-btn {
+.couleur-btn, .theme-btn, .langue-btn {
   border: 0;
 }
 .liste-couleurs, .liste-couleurs li + li {
@@ -8185,7 +8213,7 @@ h1 em, h2 em, h3 em, h1 i, h2 i, h3 i, .hero-title em, .section-title em, .don-t
 }
 
 /* aucun rayon : le cadre est un angle droit (les points ronds restent des points) */
-body.has-site-nav *:not(.dot):not(.pastille):not(.pastille-actuelle):not(.portrait-me):not(.arrondi):not(.theme-btn) {
+body.has-site-nav *:not(.dot):not(.pastille):not(.pastille-actuelle):not(.portrait-me):not(.arrondi):not(.theme-btn):not(.langue-btn) {
   border-radius: 0 !important;
 }
 body.has-site-nav svg rect[rx] {
@@ -8701,11 +8729,35 @@ body.has-site-nav .livre .livre-title, .livre-title {
 .hero .hero-texte > #don-give {
   justify-self: stretch;
 }
+/* Contact, sous le formulaire : un filet (celui des séparateurs), « Ou directement par mail », puis l'adresse (un lien mailto) et un bouton icône qui la copie */
 .adresse {
+  position: relative;
+  width: calc(100% + var(--ligne));   /* la largeur des champs, qui dépassent d'une demi-ligne de chaque côté */
+  padding-top: var(--ligne);
+}
+.adresse::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--rule-w);
+  background: var(--encre);
+  opacity: var(--diviseur-a);
+}
+.adresse-label {
+  margin: 0;
+  padding-left: var(--demi-ligne);
+  font-size: var(--fs-s);
+  line-height: var(--ligne);
+}
+.adresse-ligne {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--demi-ligne) var(--ligne);
+  gap: var(--demi-ligne) var(--demi-ligne);
+  min-height: calc(var(--ligne) * 2);
+  padding-left: var(--demi-ligne);
 }
 .adresse a {
   font-weight: 600;
@@ -8714,6 +8766,26 @@ body.has-site-nav .livre .livre-title, .livre-title {
 }
 .adresse .btn {
   margin-left: 0;
+}
+.adresse .btn-icone {
+  width: calc(var(--ligne) * 2);
+  min-height: calc(var(--ligne) * 2);
+  padding: 0;
+}
+.btn-icone svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.btn-icone .i-ok, .btn-icone.est-copie .i-copier {
+  display: none;
+}
+.btn-icone.est-copie .i-ok {
+  display: block;
 }
 /* Contact : tout s'aligne sur le bord gauche des champs (qui dépassent d'une demi-ligne) */
 body .hero--page .hero-texte:has(#don-form) > :is(h1, .lead, .adresse) {
@@ -13419,6 +13491,42 @@ html:has(.section-cas) body {
 @media (max-width: 859px) {
   .bi-gallery {
     grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Accueil, le carrousel des situations : le passage masqué est une barre de censure, noire en clair comme en sombre (en sombre, --encre devient clair : les barres étaient blanches sur le violet).
+   Le reflet qui les traverse reste lui aussi clair, dans les deux thèmes. */
+.hypo {
+  color: transparent;   /* le texte caché ne doit jamais transparaître quand le reflet passe sur la barre */
+  background-color: var(--anthracite);
+  background-image: linear-gradient(100deg, transparent 35%, color-mix(in srgb, var(--papier) 38%, transparent) 50%, transparent 65%);
+}
+.sit-masque:hover .hypo {
+  background-color: color-mix(in srgb, var(--anthracite) 82%, transparent);
+}
+.is-revealed .hypo, .is-revealed .sit-masque:hover .hypo {
+  background-color: transparent;
+  background-image: none;
+}
+@media (max-width: 640px) {
+  /* mobile : la boîte garde la hauteur de la plus haute des cinq situations (elles restent superposées) : elle ne change ni d'une situation à l'autre ni quand on lève le masque.
+     La ligne « Ce qui fait tenir » garde la place de son texte. */
+  /* plus de bande vide sous le tableau : la boîte garde sa hauteur (celle de la plus haute situation), et la dernière ligne s'étire jusqu'à son bord bas */
+  .slide {
+    display: flex;
+    flex-direction: column;
+  }
+  .slide .sit-lignes {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+  }
+  .slide .sit-lignes > div:last-child {
+    flex: 1 1 auto;
+  }
+  /* les barres de censure se touchent d'une ligne à l'autre : un seul bloc plein, pas des pastilles éparses */
+  .hypo {
+    padding: 4px;
   }
 }
 

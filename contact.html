@@ -61,11 +61,17 @@
       </form>
     </div>
 
-    <p class="adresse c-12 sp-2" data-texte>
-      <a href="mailto:aloha@brannetienne.com" id="mail">aloha@brannetienne.com</a>
-      <button class="btn btn--sec" type="button" id="copier">Copier l'adresse</button>
-      <span class="copie-statut" id="copie-statut" role="status" aria-live="polite"></span>
-    </p>
+    <div class="adresse c-8 sp-2" data-texte>
+      <p class="adresse-label">Ou directement par mail</p>
+      <div class="adresse-ligne">
+        <a href="mailto:aloha@brannetienne.com" id="mail">aloha@brannetienne.com</a>
+        <button class="btn btn--sec btn-icone" type="button" id="copier" aria-label="Copier l'adresse" title="Copier l'adresse">
+          <svg class="i-copier" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg>
+          <svg class="i-ok" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+        </button>
+        <span class="copie-statut" id="copie-statut" role="status" aria-live="polite"></span>
+      </div>
+    </div>
   </div>
   <div class="hero-scene" aria-hidden="true"></div>
 </section>
@@ -126,7 +132,7 @@
 (function () {
   var bouton = document.getElementById("copier"), lien = document.getElementById("mail"), statut = document.getElementById("copie-statut"), minuteur = 0;
   if (!bouton || !lien) return;
-  function dire(t) { statut.textContent = t; clearTimeout(minuteur); minuteur = setTimeout(function () { statut.textContent = ""; }, 2600); }
+  function dire(t) { statut.textContent = t; bouton.classList.toggle("est-copie", t === "Adresse copiée."); clearTimeout(minuteur); minuteur = setTimeout(function () { statut.textContent = ""; bouton.classList.remove("est-copie"); }, 2600); }
   function secours() {
     var r = document.createRange(); r.selectNodeContents(lien);
     var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);

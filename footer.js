@@ -10,25 +10,31 @@
 (function () {
   "use strict";
 
+  /* La langue : celle de la page (<html lang="fr"> ou "en"). Les liens de pages pointent vers la version française tant que la page n'est pas traduite. */
+  var EN = document.documentElement.lang === "en";
+  var L = EN
+    ? { resume: "12 years of product, design,<br>and strategy.", lieu: "📍 Lyon, remote and on site", retrouver: "Find me", cv: "My CV", cvLien: "/cv-brann-etienne.pdf", cas: "Case studies", casLien: "/en/#cas", loin: "Going further", situations: "3 situations to explore", circulation: "Circulation, a paradigm for design", reciprocites: "The Reciprocities", mentions: "Legal notice", haut: "Back to top ↑" }
+    : { resume: "12 ans de produit, de design,<br>et de stratégie.", lieu: "📍 Lyon, à distance et sur site", retrouver: "Me retrouver", cv: "Mon CV", cvLien: "cv-brann-etienne.pdf", cas: "Études de cas", casLien: "/#cas", loin: "Pour aller plus loin", situations: "3 situations à explorer", circulation: "La circulation, paradigme du design", reciprocites: "Les Réciprocités", mentions: "Mentions légales", haut: "Retour en haut ↑" };
+
   var HTML = `<footer class="pied">
   <div class="pied-in page">
     <div class="pied-grille c-12">
       <div>
         <p class="pied-nom">Brann Etienne<span>Product designer<br>Design strategist</span></p>
-        <p>12 ans de produit, de design,<br>et de stratégie.</p>
-        <p class="lieu">📍 Lyon, à distance et sur site</p>
+        <p>${L.resume}</p>
+        <p class="lieu">${L.lieu}</p>
       </div>
       <div>
-        <h2>Me retrouver</h2>
+        <h2>${L.retrouver}</h2>
         <ul>
           <li><a href="https://www.linkedin.com/in/brann-etienne" target="_blank" rel="noopener">LinkedIn</a></li>
           <li><a href="https://github.com/Brann-E" target="_blank" rel="noopener">GitHub</a></li>
           <li><a href="/contact">Contact</a></li>
-          <li><a href="cv-brann-etienne.pdf">Mon CV</a></li>
+          <li><a href="${L.cvLien}">${L.cv}</a></li>
         </ul>
       </div>
       <div>
-        <h2><a href="/#cas">Études de cas</a></h2>
+        <h2><a href="${L.casLien}">${L.cas}</a></h2>
         <ul>
           <li><a href="/cas-healthanea">Healthanea</a></li>
           <li><a href="/cas-shift-prime">SHIFT Prime</a></li>
@@ -38,15 +44,15 @@
         </ul>
       </div>
       <div>
-        <h2>Pour aller plus loin</h2>
+        <h2>${L.loin}</h2>
         <ul>
-          <li><a href="/parcours-interactif">3 situations à explorer</a></li>
-          <li><a href="/circulation-paradigme-du-design">La circulation, paradigme du design</a></li>
-          <li><a href="/reciprocites">Les Réciprocités</a></li>
+          <li><a href="/parcours-interactif">${L.situations}</a></li>
+          <li><a href="/circulation-paradigme-du-design">${L.circulation}</a></li>
+          <li><a href="/reciprocites">${L.reciprocites}</a></li>
         </ul>
       </div>
     </div>
-    <div class="pied-bas c-12 sp-3"><a href="/mentions-legales">Mentions légales</a><a href="#top">Retour en haut ↑</a><span>© 2026 Brann Etienne</span></div>
+    <div class="pied-bas c-12 sp-3"><a href="/mentions-legales">${L.mentions}</a><a href="#top">${L.haut}</a><span>© 2026 Brann Etienne</span></div>
   </div>
 </footer>`;
 

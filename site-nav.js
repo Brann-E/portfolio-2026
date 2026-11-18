@@ -9,6 +9,7 @@
 
   var D = document.documentElement, KT = "be-theme", KA = "be-accent";   // KA garde la teinte (un nombre) ; les anciens noms sont lus par nav.js
 
+  var T = window.navTextes || { sombre: "Mode sombre", clair: "Mode clair", ouvrir: "Ouvrir le menu", fermer: "Fermer le menu" };   // les libellés dans la langue de la page (voir nav.js)
   function ecrire(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* stockage indisponible */ } }
   function prevenir() { window.dispatchEvent(new Event("grille:refresh")); }
 
@@ -17,11 +18,13 @@
   function liensLocaux() {
     var local = location.protocol === "file:" || /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
     if (!local) return;
+    var prefixe = /\/en\/[^\/]*$/.test(location.pathname) ? "../" : "";   // une page de /en/ remonte d'un cran pour retrouver les pages du site
     document.querySelectorAll('a[href^="/"]').forEach(function (a) {
       var m = /^\/([^#?]*)([#?].*)?$/.exec(a.getAttribute("href"));
       if (!m || /^\/\//.test(a.getAttribute("href"))) return;
       var nom = m[1].replace(/\/+$/, "");
-      a.setAttribute("href", (nom ? nom + (/\.[a-z0-9]+$/i.test(nom) ? "" : ".html") : "index.html") + (m[2] || ""));
+      var cible = nom === "en" ? "en/index.html" : (nom ? nom + (/\.[a-z0-9]+$/i.test(nom) ? "" : ".html") : "index.html");
+      a.setAttribute("href", prefixe + cible + (m[2] || ""));
     });
   }
 
@@ -63,7 +66,7 @@
     function montrerTheme(nom) {
       if (!tBtn) return;
       tBtn.setAttribute("aria-pressed", String(nom === "dark"));
-      tBtn.setAttribute("aria-label", nom === "dark" ? "Mode clair" : "Mode sombre");
+      tBtn.setAttribute("aria-label", nom === "dark" ? T.clair : T.sombre);
     }
     montrerTheme(D.getAttribute("data-theme"));
     if (tBtn) tBtn.addEventListener("click", function () {
@@ -79,7 +82,7 @@
       barre.classList.toggle("nav-open", oui);
       document.body.classList.toggle("nav-locked", oui);
       tog.setAttribute("aria-expanded", String(oui));
-      tog.setAttribute("aria-label", oui ? "Fermer le menu" : "Ouvrir le menu");
+      tog.setAttribute("aria-label", oui ? T.fermer : T.ouvrir);
     }
     if (tog && nav) {
       tog.addEventListener("click", function (e) { e.stopPropagation(); ouvrir(!barre.classList.contains("nav-open")); });
