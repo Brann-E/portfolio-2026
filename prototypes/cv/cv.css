@@ -30,10 +30,10 @@
   --t-nom: 30pt;
   --t-poste: 12pt;
   --t-section: 7.6pt;
-  --t-poste-exp: 10.2pt;
-  --t-corps: 9.7pt;
-  --t-petit: 8.4pt;
-  --lh: 1.42;
+  --t-poste-exp: 9.9pt;
+  --t-corps: 9.1pt;
+  --t-petit: 8.1pt;
+  --lh: 1.34;
 
   /* espaces */
   --sp-1: 1mm;
@@ -311,3 +311,178 @@ body {
   color: var(--encre-2);
 }
 .nom-suite { font-weight: var(--title-weight); font-size: var(--t-poste-exp); color: var(--encre); letter-spacing: var(--title-tracking); }
+
+/* hiérarchie : environnement sous la description, en parallèle après les puces */
+.entree .env { font-size: var(--t-petit); color: var(--encre-2); margin-top: var(--sp-1); margin-bottom: var(--sp-1); }
+.entree .parallele { margin-top: var(--sp-2); }
+.entree .mission + .mission { margin-top: var(--sp-3); }
+.entree h4 {
+  font-family: var(--ff-title);
+  font-weight: var(--title-weight);
+  font-size: calc(var(--t-poste-exp) * .96);
+  letter-spacing: var(--title-tracking);
+  line-height: 1.25;
+}
+
+.entree .suite-de { font-family: var(--ff-title); font-size: var(--t-petit); letter-spacing: .02em; color: var(--encre-2); margin-bottom: var(--sp-1); }
+
+.entree .suite-de { font-family: var(--ff-title); font-size: var(--t-petit); letter-spacing: .02em; color: var(--encre-2); margin-bottom: var(--sp-1); }
+
+/* en-tête : les codes de la home (disques sur la grille, bulle, titre surligné) */
+:root { --accent: #CFBEFF; /* la primary du mode clair, nav.js */ }
+.disques {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.poste span { background: linear-gradient(transparent 58%, var(--accent) 58%, var(--accent) 92%, transparent 92%); padding: 0 .6mm; }
+.bulle {
+  position: absolute;
+  top: 7mm;
+  right: calc(var(--portrait-l) + 9mm);
+  padding: 1.6mm 3.4mm;
+  background: var(--bg);
+  border-radius: 3.2mm;
+  box-shadow: inset 0 0 0 var(--rule-w) var(--encre);
+  font-family: var(--ff-title);
+  font-weight: 500;
+  font-size: var(--t-petit);
+  transform: rotate(-3deg);
+  white-space: nowrap;
+}
+.bulle::after {
+  content: "";
+  position: absolute;
+  right: 3mm;
+  bottom: -1.5mm;
+  width: 3mm;
+  height: 3mm;
+  background: var(--bg);
+  box-shadow: inset calc(var(--rule-w) * -1) calc(var(--rule-w) * -1) 0 var(--encre);
+  transform: rotate(45deg) skew(10deg, 10deg);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+.bas .langues { margin-top: var(--sp-3); font-size: var(--t-petit); line-height: 1.38; }
+.bas .langues b { font-family: var(--ff-title); font-weight: 600; font-size: .96em; }
+
+/* en-tête épuré : identité à gauche, portrait seul à droite */
+.pastille {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.2mm;
+  height: 5.8mm;
+  padding-inline: 2.4mm;
+  border-radius: 999px;
+  font-family: var(--ff-title);
+  font-weight: 600;
+  font-size: 7.8pt;
+  line-height: 1;
+  white-space: nowrap;
+  background: var(--bg);
+  box-shadow: inset 0 0 0 var(--rule-w) color-mix(in srgb, var(--encre) 35%, transparent);
+}
+.icone { font-size: .95em; line-height: 1; }
+.portrait { overflow: visible; border-radius: 0; }
+.portrait img { border-radius: 50%; }
+.pastille { position: absolute; margin: 0; }
+.lieu-lyon { left: -22%; top: 60%; }
+.lieu-distance { right: -26%; top: 74%; }
+.logo-nom { height: 8mm; width: auto; display: block; margin-bottom: var(--sp-3); }
+.motif { overflow: hidden; }
+.disques { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.nom-suite { font-weight: var(--title-weight); font-size: var(--t-poste-exp); color: var(--encre); letter-spacing: var(--title-tracking); }
+
+/* hiérarchie : environnement sous la description, en parallèle après les puces */
+.entree .env { font-size: var(--t-petit); color: var(--encre-2); margin-top: var(--sp-1); margin-bottom: var(--sp-1); }
+.entree .parallele { margin-top: var(--sp-2); }
+.entree .mission + .mission { margin-top: var(--sp-3); }
+.entree h4 {
+  font-family: var(--ff-title);
+  font-weight: var(--title-weight);
+  font-size: calc(var(--t-poste-exp) * .96);
+  letter-spacing: var(--title-tracking);
+  line-height: 1.25;
+}
+
+.entree .suite-de { font-family: var(--ff-title); font-size: var(--t-petit); letter-spacing: .02em; color: var(--encre-2); margin-bottom: var(--sp-1); }
+
+.entree .suite-de { font-family: var(--ff-title); font-size: var(--t-petit); letter-spacing: .02em; color: var(--encre-2); margin-bottom: var(--sp-1); }
+
+/* en-tête : les codes de la home (disques sur la grille, bulle, titre surligné) */
+:root { --accent: #CFBEFF; /* la primary du mode clair, nav.js */ }
+.disques {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.poste span { background: linear-gradient(transparent 58%, var(--accent) 58%, var(--accent) 92%, transparent 92%); padding: 0 .6mm; }
+.bulle {
+  position: absolute;
+  top: 7mm;
+  right: calc(var(--portrait-l) + 9mm);
+  padding: 1.6mm 3.4mm;
+  background: var(--bg);
+  border-radius: 3.2mm;
+  box-shadow: inset 0 0 0 var(--rule-w) var(--encre);
+  font-family: var(--ff-title);
+  font-weight: 500;
+  font-size: var(--t-petit);
+  transform: rotate(-3deg);
+  white-space: nowrap;
+}
+.bulle::after {
+  content: "";
+  position: absolute;
+  right: 3mm;
+  bottom: -1.5mm;
+  width: 3mm;
+  height: 3mm;
+  background: var(--bg);
+  box-shadow: inset calc(var(--rule-w) * -1) calc(var(--rule-w) * -1) 0 var(--encre);
+  transform: rotate(45deg) skew(10deg, 10deg);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+.bas .langues { margin-top: var(--sp-3); font-size: var(--t-petit); line-height: 1.38; }
+.bas .langues b { font-family: var(--ff-title); font-weight: 600; font-size: .96em; }
+
+/* en-tête épuré : identité à gauche, portrait seul à droite */
+.pastille {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.2mm;
+  height: 5.8mm;
+  padding-inline: 2.4mm;
+  border-radius: 999px;
+  font-family: var(--ff-title);
+  font-weight: 600;
+  font-size: 7.8pt;
+  line-height: 1;
+  white-space: nowrap;
+  background: var(--bg);
+  box-shadow: inset 0 0 0 var(--rule-w) color-mix(in srgb, var(--encre) 35%, transparent);
+}
+.icone { font-size: .95em; line-height: 1; }
+.infos { margin-top: var(--sp-3); display: flex; align-items: center; flex-wrap: wrap; gap: var(--sp-2) var(--sp-4); }
+.infos p { margin: 0; }
+.infos .contacts { margin-top: 0; }
+.lieux { display: flex; gap: var(--sp-2); }
+.nom-suite { display: inline-flex; align-items: center; gap: var(--sp-2); }
+.nom-suite .logo { width: 6.5mm; height: 6.5mm; display: block; }
+.tete-suite { align-items: center; }
+.nom-suite .logo { width: 4.8mm; height: 4.8mm; }
+.tete-suite { padding-bottom: calc(var(--sp-2) * .7); margin-bottom: var(--sp-3); }
+
+/* en-tête : trois lignes de contact, même écart que nom et titre */
+.contacts { flex-direction: column; flex-wrap: nowrap; align-items: flex-start; gap: var(--sp-1); margin-top: var(--sp-2); }
+.nom-suite .logo, .logo-nom { display: none; }
+
+/* téléphone sans soulignement ; introduction équilibrée sur trois lignes pleines */
+.contacts a[href^="tel"] { text-decoration: none; }
+.intro { text-align: left; }
+
+/* titre un peu plus grand, rapproché du nom */
+.poste { font-size: 14pt; margin-top: var(--sp-1); }
