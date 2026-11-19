@@ -55,7 +55,7 @@
         <input class="champ-da don-field" type="text" name="nom" placeholder="Votre nom" autocomplete="name" aria-label="Votre nom" required>
         <input class="champ-da don-field" type="email" name="email" placeholder="Votre email" autocomplete="email" aria-label="Votre email" required>
         <textarea class="champ-da don-field" name="message" placeholder="Ce que vous aimeriez me dire&hellip;" aria-label="Votre message" required></textarea>
-        <input type="hidden" name="_subject" value="Un message - via le portfolio">
+        <input type="hidden" name="_subject" value="Un message · via le portfolio">
         <div class="actions"><button class="btn don-submit" type="submit"><span class="don-submit-t">Écrire un message</span></button></div>
         <p class="don-status" id="don-status" role="status" aria-live="polite" hidden></p>
       </form>
@@ -64,7 +64,7 @@
     <div class="adresse c-8 sp-2" data-texte>
       <p class="adresse-label">Ou directement par mail</p>
       <div class="adresse-ligne">
-        <a href="mailto:aloha@brannetienne.com" id="mail">aloha@brannetienne.com</a>
+        <a href="mailto:aloha@brannetienne.com" id="mail" target="_blank" rel="noopener">aloha@brannetienne.com</a>
         <button class="btn btn--sec btn-icone" type="button" id="copier" aria-label="Copier l'adresse" title="Copier l'adresse">
           <svg class="i-copier" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg>
           <svg class="i-ok" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
@@ -79,7 +79,7 @@
 <!-- Les cartes à retourner -->
 <section class="don-zone">
   <div class="page">
-    <h2 class="t-h2 c-12">Après m'avoir laisser quelque chose de vous,<br>laissez-moi vous donner quelque chose de moi.</h2>
+    <h2 class="t-h2 c-12">Après m'avoir laissé quelque chose de vous,<br>laissez-moi vous donner quelque chose de moi.</h2>
     <p class="t-lede c-8 sp-2">Chaque carte porte une idée qui m'a semblé trop belle pour la garder. Tirez-en autant que vous voulez.</p>
     <div class="don-corps sp-3">
       <div class="don-grid" id="don-grid" role="group" aria-label="Cartes de dons &agrave; retourner"></div>
@@ -88,15 +88,15 @@
         <ul>
           <li>
             <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="15"/><circle cx="24" cy="24" r="8"/><circle class="plein" cx="24" cy="24" r="2.2"/></svg>
-            <span><strong>Anthropologie</strong><br>l'origine qui rayonne</span>
+            <span><strong>Rites & mythes</strong><br>des pratiques qui traversent le temps</span>
           </li>
           <li>
             <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 9 L37 16.5 L37 31.5 L24 39 L11 31.5 L11 16.5 Z"/></svg>
-            <span><strong>Auteurs</strong><br>la pens&eacute;e b&acirc;tie</span>
+            <span><strong>Auteurs & théories</strong><br>des conceptss qui structurent le pr&eacute;sent</span>
           </li>
           <li>
             <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M9 25 A15 15 0 0 1 39 25"/></svg>
-            <span><strong>Questions</strong><br>l'adresse ouverte</span>
+            <span><strong>Horizons & possibles</strong><br>des questions pour penser l'avenir</span>
           </li>
         </ul>
       </div>
@@ -104,6 +104,7 @@
     <div class="don-pied">
       <button class="don-reshuffle btn btn--sec" type="button" id="don-reshuffle">&#8635;&#8239;&nbsp;Nouvelle donne</button>
       <a class="lien-sec don-source" href="/circulation-paradigme-du-design">Découvrir d'où viennent ces idées</a>
+      <p class="don-note" id="don-note" role="status" aria-live="polite" hidden></p>
     </div>
   </div>
 </section>

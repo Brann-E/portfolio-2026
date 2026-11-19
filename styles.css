@@ -8773,8 +8773,8 @@ body.has-site-nav .livre .livre-title, .livre-title {
   padding: 0;
 }
 .btn-icone svg {
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.7;
@@ -8865,12 +8865,14 @@ body .hero--page .hero-texte:has(#don-form) > :is(h1, .lead, .adresse) {
 .don-zone :is(h2, .t-lede) {
   margin-left: calc(var(--demi-ligne) * -1);
 }
+/* sous les cartes : « Nouvelle donne » puis, juste dessous, le lien ; l'un et l'autre centrés sur le centre des cartes (le bloc a la largeur de la grille, 3 cartes et 2 écarts = 32 lignes) */
 .don-pied {
   grid-column: 1 / -1;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
   gap: var(--ligne);
+  width: calc(var(--ligne) * 32);
   margin-left: calc(var(--demi-ligne) * -1);
   margin-top: var(--ligne);
 }
@@ -13528,6 +13530,143 @@ html:has(.section-cas) body {
   .hypo {
     padding: 4px;
   }
+}
+
+/* Contact, cartes retournées : le bouton plus est 25 % plus grand (35 px au lieu de 28) pour se cliquer plus facilement. */
+.don-plus {
+  width: calc(var(--control-s) * 1.25);
+  height: calc(var(--control-s) * 1.25);
+}
+.don-plus svg {
+  width: calc(18px * 1.25);
+  height: calc(18px * 1.25);
+}
+/* Tout part du même endroit : le logo, puis le titre (une ou deux lignes), puis le texte, à partir d'une valeur fixe depuis le haut ;
+   le bouton plus est posé à une valeur fixe depuis le bas de la carte, donc à la même hauteur sur toutes. Ça demande une carte d'au moins 250 px de large (voir plus bas : une colonne sur téléphone). */
+.don-face--front {
+  justify-content: flex-start;
+  padding-top: calc(var(--ligne) * 2);
+}
+.don-plus {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: var(--ligne);
+  margin: 0 auto;
+}
+
+/* Contact, mobile : la grille des cartes prend toute la largeur (elle se réduisait à ses écarts, faute de largeur), et le bas se centre sur elle */
+@media (max-width: 859px) {
+  .don-zone .don-grid {
+    width: calc(100% + var(--ligne));
+  }
+  .don-pied {
+    width: calc(100% + var(--ligne));
+  }
+}
+
+/* Contact : les cartes ne flottent plus (la « respiration » faisait un effet bizarre sur les traits extérieurs) : elles sont statiques. */
+.don-cell {
+  animation: none;
+  will-change: auto;
+}
+
+/* Contact, cartes : des traits nets, de la même épaisseur partout. La carte avait un rapport 3 / 4,1, donc une hauteur à virgule (382,67 px à 280 de large) :
+   chaque rangée tombait à une fraction de pixel différente et le filet de 1 px s'étalait ici, restait net là. La hauteur est maintenant un nombre entier de lignes (14 lignes = 392 px à 280 de large),
+   la plus proche du rapport d'origine, donc toutes les rangées tombent sur des pixels entiers. Au survol, la carte rebondit un peu (elle est immobile au repos). */
+.don-cell {
+  container-type: inline-size;
+}
+.don-flip {
+  aspect-ratio: auto;
+  height: round(nearest, calc(100cqw * 4.1 / 3), var(--ligne));
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .don-cell {
+    transition: transform .35s cubic-bezier(.34, 1.56, .64, 1);
+  }
+  .don-cell:hover {
+    transform: translateY(-6px);
+  }
+}
+
+/* Contact, sous les cartes : plus d'air entre les cartes et « Nouvelle donne », moins entre le bouton et le lien. La flèche du lien (visible au survol) occupait 24 px à droite du texte :
+   le texte était décalé de 12 px par rapport au bouton. Elle sort du flux : le texte est centré sur le bouton et sur les cartes. */
+.don-pied {
+  gap: var(--demi-ligne);
+  margin-top: calc(var(--ligne) * 2 - 20px);   /* remonté d'une vingtaine de pixels */
+}
+.don-zone .don-pied .don-source {
+  position: relative;
+  min-height: var(--ligne);
+}
+.don-zone .don-pied .don-source::after {
+  position: absolute;
+  top: 0;
+  left: 100%;
+}
+
+/* Contact, carte ouverte : le site reste visible derrière, voilé plus légèrement et flouté, pour qu'on reste concentré sur la carte. */
+/* La cause du « tout disparaît » : le conteneur plein écran de la modale avait le fond du papier (règle commune « .don-card, .don-modal »), donc le voile était posé sur un écran opaque. Le conteneur est transparent, seule la carte a son fond. */
+.don-modal {
+  background: none;
+  border: 0;
+}
+.don-backdrop {
+  background: color-mix(in srgb, var(--encre) 30%, transparent);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+}
+
+/* Contact : les cartes tombent sur des pixels entiers (contact-dons.js pose --snap-x), sinon les traits de 1 px s'étalent sur deux pixels et paraissent plus épais d'un côté. */
+.don-corps, .don-pied {
+  translate: var(--snap-x, 0px) 0;
+}
+
+/* Contact, cartes et fenêtre d'une carte : le liseré clair qui doublait le trait noir est la « bordure irisée animée » de l'ancienne DA (.don-holo::before : un anneau de 1,5 px en dégradé
+   pastel qui défile, posé sur le bord). Il éclaircissait le trait par endroits et sa largeur à virgule le rendait irrégulier. Il est supprimé : il ne reste que le filet noir de 1 px de la DA. */
+.don-holo::before {
+  display: none;
+}
+
+/* Contact, carte ouverte : le texte était flou pendant l'apparition, puis s'éclaircissait. L'apparition faisait glisser (16 px) et réduire (97 %) la carte : un texte mis à l'échelle est étiré comme une image, il ne redevient net qu'une fois l'animation finie.
+   Elle ne fait plus qu'apparaître en fondu : aucune transformation, le texte est net dès la première image. */
+@keyframes donApparition {
+  from {
+    opacity: 0;
+  }
+}
+.don-card {
+  animation: donApparition .25s ease-out;
+}
+
+/* Téléphone : deux colonnes donnaient des cartes de 100 px de large, où rien ne tient (logo coupé, titre qui déborde, bouton plus hors de la carte). Une carte par rangée, à la largeur de la page :
+   elle fait alors plus de 250 px, comme au bureau, et le contenu y tient. */
+@media (max-width: 559px) {
+  .don-zone .don-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Carte ouverte, petit écran : la fenêtre (637 à 749 px de haut) dépassait d'un écran de 640 px, sans défilement, et le bouton de fermeture restait hors d'écran.
+   Le conteneur défile ; la carte reste centrée quand il y a la place (marge automatique) et démarre en haut sinon ; le voile reste fixe, il couvre toujours l'écran. */
+.don-modal {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  align-items: start;
+  justify-items: center;
+}
+.don-modal .don-card {
+  margin-block: auto;
+}
+.don-backdrop {
+  position: fixed;
+}
+
+/* Contact : le message qui apparaît après trois cartes retournées se pose sous le lien, centré comme le bouton et le lien. */
+.don-pied .don-note {
+  margin: var(--ligne) 0 0;
+  text-align: center;
 }
 
 /* ===== NOUVELLE DA : fin ===== */
