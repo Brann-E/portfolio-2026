@@ -13510,6 +13510,20 @@ html:has(.section-cas) body {
   background-color: transparent;
   background-image: none;
 }
+/* partout (pas seulement sur mobile) : les cinq situations ont la hauteur de la plus haute ; quand une situation est plus courte (le texte anglais n'a pas les mêmes
+   longueurs que le français), la dernière ligne s'étire jusqu'au bord bas de la boîte au lieu de laisser une bande vide */
+.slide {
+  display: flex;
+  flex-direction: column;
+}
+.slide .sit-lignes {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+.slide .sit-lignes > div:last-child {
+  flex: 1 1 auto;
+}
 @media (max-width: 640px) {
   /* mobile : la boîte garde la hauteur de la plus haute des cinq situations (elles restent superposées) : elle ne change ni d'une situation à l'autre ni quand on lève le masque.
      La ligne « Ce qui fait tenir » garde la place de son texte. */
