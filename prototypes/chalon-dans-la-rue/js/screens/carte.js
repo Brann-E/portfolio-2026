@@ -8,6 +8,7 @@ import { createVenuePin, createServicePin, createUserMarker } from "../map/marke
 import { createNewsButton } from "../ui/news-button.js";
 import { fetchWalkingRoute, straightRoute, formatDuration, formatDistance } from "../map/route.js";
 
+import { tr } from "../i18n.js";
 /**
  * Écran Carte (Accueil) : vraie carte interactive MapLibre centrée sur le centre-ville de
  * Chalon-sur-Saône, avec les 82 lieux du plan du festival, les services (OpenStreetMap),
@@ -137,8 +138,8 @@ async function routeTo(spot) {
   const entry = venuePins.get(Number(spot));
   if (!entry) return;
   const token = ++routeToken;
-  const destination = `À pied vers ${entry.venue.name}`;
-  setRouteBanner({ headline: "Calcul de l’itinéraire…", destination });
+  const destination = tr("À pied vers {venue}", { venue: entry.venue.name });
+  setRouteBanner({ headline: tr("Calcul de l’itinéraire…"), destination });
 
   if (!map.loaded()) await new Promise((resolve) => map.once("idle", resolve));
   ensureRouteLayers();
@@ -157,7 +158,7 @@ async function routeTo(spot) {
   map.setPaintProperty("route-dots", "circle-opacity", route.estimated ? parseFloat(cssToken("--route-estimated-opacity")) : 1);
   map.setPaintProperty("route-dots", "circle-stroke-opacity", route.estimated ? parseFloat(cssToken("--route-estimated-opacity")) : 1);
   drawRouteDots();
-  setRouteBanner({ headline: `${formatDuration(route.duration)} · ${formatDistance(route.distance)}${route.estimated ? " (estimé)" : ""}`, destination });
+  setRouteBanner({ headline: `${formatDuration(route.duration)} · ${formatDistance(route.distance)}${route.estimated ? tr(" (estimé)") : ""}`, destination });
 
   const lngs = route.coordinates.map(([lng]) => lng);
   const lats = route.coordinates.map(([, lat]) => lat);
@@ -173,7 +174,7 @@ function suggestionsFor(query) {
   const results = [];
   for (const venue of venues) {
     if (normalize(`${venue.name} ${venue.address}`).includes(q)) {
-      results.push({ label: venue.name, sub: `Repère ${venue.spot}${venue.address ? ` · ${venue.address}` : ""}`, spot: venue.spot });
+      results.push({ label: venue.name, sub: `${tr("Repère {spot}", { spot: venue.spot })}${venue.address ? ` · ${venue.address}` : ""}`, spot: venue.spot });
     }
   }
   for (const show of shows) {
@@ -188,8 +189,8 @@ function createSearch() {
   const input = h("input", {
     class: "map-search__input",
     type: "search",
-    placeholder: "Un lieu, un artiste…",
-    "aria-label": "Rechercher un lieu ou un artiste",
+    placeholder: tr("Un lieu, un artiste…"),
+    "aria-label": tr("Rechercher un lieu ou un artiste"),
     autocomplete: "off",
   });
   const list = h("ul", { class: "map-suggestions", hidden: true, role: "listbox" });
@@ -277,7 +278,7 @@ async function build() {
     {
       class: "map-filter",
       type: "button",
-      "aria-label": "Filtrer la carte",
+      "aria-label": tr("Filtrer la carte"),
       onclick: (e) => e.currentTarget.dispatchEvent(new CustomEvent("open-map-filters", { bubbles: true })),
     },
     img("assets/sliders.png")
@@ -286,7 +287,7 @@ async function build() {
     "div",
     { class: "route-banner", role: "status", hidden: true },
     h("div", { class: "route-banner__text" }, h("span", { class: "route-banner__time" }), h("span", { class: "route-banner__dest" })),
-    h("button", { class: "route-banner__close", type: "button", "aria-label": "Effacer l’itinéraire", onclick: clearRoute }, img("assets/fermer.png"))
+    h("button", { class: "route-banner__close", type: "button", "aria-label": tr("Effacer l’itinéraire"), onclick: clearRoute }, img("assets/fermer.png"))
   );
   screen = h("section", { class: "screen screen--map", dataset: { screen: "carte" } }, canvas, ...createSearch(), filterButton, createNewsButton({ floating: true }), routeBanner);
 

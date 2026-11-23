@@ -1,0 +1,112 @@
+{
+ "pairs": [
+  {
+   "fr": "Un poste, une mission, une question sur un produit : écrivez-moi.",
+   "en": "A role, an assignment, a question about a product: write to me."
+  },
+  {
+   "fr": "Écrivez-moi,",
+   "en": "Write to me,"
+  },
+  {
+   "fr": "Pour parler de votre produit, d’une idée ou d’une collaboration,<br>ou&nbsp;simplement&nbsp;dire&nbsp;bonjour👋 ",
+   "en": "To talk about your product, an idea or a collaboration,<br>or&nbsp;simply&nbsp;say&nbsp;hello👋 "
+  },
+  {
+   "fr": "Votre nom",
+   "en": "Your name"
+  },
+  {
+   "fr": "Votre email",
+   "en": "Your email"
+  },
+  {
+   "fr": "Ce que vous aimeriez me dire&hellip;",
+   "en": "What you would like to tell me&hellip;"
+  },
+  {
+   "fr": "Votre message",
+   "en": "Your message"
+  },
+  {
+   "fr": "Un message · via le portfolio",
+   "en": "A message · via the portfolio"
+  },
+  {
+   "fr": "Écrire un message",
+   "en": "Send a message"
+  },
+  {
+   "fr": "Ou directement par mail",
+   "en": "Or directly by email"
+  },
+  {
+   "fr": "Copier l'adresse",
+   "en": "Copy the address"
+  },
+  {
+   "fr": "Après m'avoir laissé quelque chose de vous,<br>laissez-moi vous donner quelque chose de moi.",
+   "en": "After leaving me something of yourself,<br>let me give you something of mine."
+  },
+  {
+   "fr": "Chaque carte porte une idée qui m'a semblé trop belle pour la garder. Tirez-en autant que vous voulez.",
+   "en": "Each card carries an idea that seemed too beautiful for me to keep to myself. Draw as many as you like."
+  },
+  {
+   "fr": "Cartes de dons &agrave; retourner",
+   "en": "Gift cards to flip"
+  },
+  {
+   "fr": "Au dos des cartes",
+   "en": "On the back of the cards"
+  },
+  {
+   "fr": "Rites &amp; mythes",
+   "en": "Rites &amp; myths"
+  },
+  {
+   "fr": "des pratiques qui traversent le temps",
+   "en": "practices that cross time"
+  },
+  {
+   "fr": "Auteurs &amp; théories",
+   "en": "Authors &amp; theories"
+  },
+  {
+   "fr": "des concepts qui structurent le pr&eacute;sent",
+   "en": "concepts that shape the present"
+  },
+  {
+   "fr": "Horizons &amp; possibles",
+   "en": "Horizons &amp; possibilities"
+  },
+  {
+   "fr": "des questions pour penser l'avenir",
+   "en": "questions to think about the future"
+  },
+  {
+   "fr": "Nouvelle donne",
+   "en": "Deal again"
+  },
+  {
+   "fr": "Découvrir d'où viennent ces idées",
+   "en": "Discover where these ideas come from"
+  },
+  {
+   "fr": "aria-label=\"Fermer\"",
+   "en": "aria-label=\"Close\""
+  },
+  {
+   "fr": "Creuser sur Wikip&eacute;dia &rarr;",
+   "en": "Dig deeper on Wikipedia &rarr;"
+  },
+  {
+   "fr": "Adresse copiée.",
+   "en": "Address copied."
+  },
+  {
+   "fr": "Adresse sélectionnée : copiez-la avec Ctrl+C.",
+   "en": "Address selected: copy it with Ctrl+C."
+  }
+ ]
+}

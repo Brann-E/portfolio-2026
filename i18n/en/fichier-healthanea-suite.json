@@ -1,0 +1,1562 @@
+{
+ "source": "prototypes/healthanea-suite/assets/index-CimnhAHC.js",
+ "output": "prototypes/healthanea-suite/assets/index-CimnhAHC.en.js",
+ "pairs": [
+  {
+   "fr": "`Systèmes`",
+   "en": "`Systems`"
+  },
+  {
+   "fr": "`Signaux systémiques et comportementaux`",
+   "en": "`Systemic and behavioral signals`"
+  },
+  {
+   "fr": "`Vie du patient`",
+   "en": "`Patient life`"
+  },
+  {
+   "fr": "`Vie du patient et dimension psychosociale`",
+   "en": "`Patient life and psychosocial dimension`"
+  },
+  {
+   "fr": "`Écosystème`",
+   "en": "`Ecosystem`"
+  },
+  {
+   "fr": "`Écosystème de soin et acteurs`",
+   "en": "`Care ecosystem and actors`"
+  },
+  {
+   "fr": "`Services et technologies existants`",
+   "en": "`Existing services and technologies`"
+  },
+  {
+   "fr": "`Médical`",
+   "en": "`Medical`"
+  },
+  {
+   "fr": "`Médical et scientifique`",
+   "en": "`Medical and scientific`"
+  },
+  {
+   "fr": "`Entretiens et matériel interne`",
+   "en": "`Interviews and internal material`"
+  },
+  {
+   "fr": "`Médicament et traitement`",
+   "en": "`Medication and treatment`"
+  },
+  {
+   "fr": "`Explorer les traitements, les expériences et les freins.`",
+   "en": "`Explore treatments, experiences and barriers.`"
+  },
+  {
+   "fr": "`Quelles sont les options de traitement ?`",
+   "en": "`What are the treatment options?`"
+  },
+  {
+   "fr": "`Que ressentent les patients à propos de Rybelsus et des comprimés quotidiens ?`",
+   "en": "`How do patients feel about Rybelsus and daily tablets?`"
+  },
+  {
+   "fr": "`Quels effets secondaires ou inquiétudes influencent l’observance ?`",
+   "en": "`Which side effects or concerns influence adherence?`"
+  },
+  {
+   "fr": "`Quelles sont les thérapies alternatives ?`",
+   "en": "`What are the alternative therapies?`"
+  },
+  {
+   "fr": "`Vie du patient et quotidien`",
+   "en": "`Patient life and daily routine`"
+  },
+  {
+   "fr": "`Ancrer les insights dans l’expérience vécue au quotidien.`",
+   "en": "`Anchor insights in lived, everyday experience.`"
+  },
+  {
+   "fr": "`À quoi ressemble une journée type ?`",
+   "en": "`What does a typical day look like?`"
+  },
+  {
+   "fr": "`Comment les patients gèrent-ils repas, médicaments et stress ?`",
+   "en": "`How do patients manage meals, medication and stress?`"
+  },
+  {
+   "fr": "`Où se situent les moments de vulnérabilité ou d’opportunité ?`",
+   "en": "`Where are the moments of vulnerability or opportunity?`"
+  },
+  {
+   "fr": "`Paysage émotionnel et comportement`",
+   "en": "`Emotional landscape and behavior`"
+  },
+  {
+   "fr": "`Cartographier les états émotionnels tout au long du parcours.`",
+   "en": "`Map emotional states throughout the journey.`"
+  },
+  {
+   "fr": "`Quelles barrières psychologiques existent ?`",
+   "en": "`What psychological barriers exist?`"
+  },
+  {
+   "fr": "`Comment la stigmatisation touche-t-elle les patients ?`",
+   "en": "`How does stigma affect patients?`"
+  },
+  {
+   "fr": "`Quand la motivation et l’énergie baissent-elles ou culminent-elles ?`",
+   "en": "`When do motivation and energy drop or peak?`"
+  },
+  {
+   "fr": "`Qu’est-ce qui déclenche le décrochage ou un nouvel élan ?`",
+   "en": "`What triggers dropping off or a renewed drive?`"
+  },
+  {
+   "fr": "`Parties prenantes et écosystème`",
+   "en": "`Stakeholders and ecosystem`"
+  },
+  {
+   "fr": "`Clarifier tous les acteurs qui influencent les résultats.`",
+   "en": "`Clarify all the actors who influence outcomes.`"
+  },
+  {
+   "fr": "`Quel est le rôle du médecin, du pharmacien ou de l’assureur ?`",
+   "en": "`What is the role of the doctor, the pharmacist or the insurer?`"
+  },
+  {
+   "fr": "`Qui soutient le patient, émotionnellement ou logistiquement ?`",
+   "en": "`Who supports the patient, emotionally or logistically?`"
+  },
+  {
+   "fr": "`Quelles tensions ou manques existent entre ces rôles ?`",
+   "en": "`What tensions or gaps exist between these roles?`"
+  },
+  {
+   "fr": "`Savoir et éducation`",
+   "en": "`Knowledge and education`"
+  },
+  {
+   "fr": "`Repérer la clarté (ou la confusion) dans la compréhension du patient.`",
+   "en": "`Spot clarity (or confusion) in the patient's understanding.`"
+  },
+  {
+   "fr": "`Que savent ou croient les patients ?`",
+   "en": "`What do patients know or believe?`"
+  },
+  {
+   "fr": "`Quelles sont les plus grandes confusions ou idées reçues ?`",
+   "en": "`What are the biggest confusions or misconceptions?`"
+  },
+  {
+   "fr": "`À quoi ressemble une éducation efficace ?`",
+   "en": "`What does effective education look like?`"
+  },
+  {
+   "fr": "`Freins et opportunités`",
+   "en": "`Barriers and opportunities`"
+  },
+  {
+   "fr": "`Synthétiser les frictions systémiques et les opportunités de design.`",
+   "en": "`Synthesize systemic friction and design opportunities.`"
+  },
+  {
+   "fr": "`Quels sont les blocages structurels ?`",
+   "en": "`What are the structural blockages?`"
+  },
+  {
+   "fr": "`Où le design ou les outils numériques peuvent-ils débloquer la situation ?`",
+   "en": "`Where can design or digital tools unblock the situation?`"
+  },
+  {
+   "fr": "`Quelles opportunités cachées existent dans les moments négligés ?`",
+   "en": "`What hidden opportunities exist in overlooked moments?`"
+  },
+  {
+   "fr": "`OMS, communiqué du 1er juillet 2003`",
+   "en": "`WHO, press release of July 1, 2003`"
+  },
+  {
+   "fr": "`Une observance moyenne de 50 %`",
+   "en": "`An average adherence of 50%`"
+  },
+  {
+   "fr": "`Dans les pays développés, l’observance des patients atteints de maladies chroniques n’atteint en moyenne que 50 %, selon des revues citées par l’OMS.`",
+   "en": "`In developed countries, adherence among patients with chronic diseases averages only 50%, according to reviews cited by the WHO.`"
+  },
+  {
+   "fr": "`Des systèmes pas conçus pour soutenir`",
+   "en": "`Systems not designed to support`"
+  },
+  {
+   "fr": "`Les patients sont trop souvent blâmés : les systèmes de santé n’ont pas été conçus pour soutenir le changement de comportement.`",
+   "en": "`Patients are too often blamed: health systems were not designed to support behavior change.`"
+  },
+  {
+   "fr": "`Équipes à former`",
+   "en": "`Teams to be trained`"
+  },
+  {
+   "fr": "`Des équipes non formées au soutien comportemental`",
+   "en": "`Teams not trained in behavioral support`"
+  },
+  {
+   "fr": "`Les équipes soignantes ne sont généralement pas formées pour apporter un soutien comportemental aux patients.`",
+   "en": "`Care teams are generally not trained to provide behavioral support to patients.`"
+  },
+  {
+   "fr": "`Méta-analyse`",
+   "en": "`Meta-analysis`"
+  },
+  {
+   "fr": "`Le soutien pratique, le plus lié à l’observance`",
+   "en": "`Practical support, the most linked to adherence`"
+  },
+  {
+   "fr": "`Sur 122 études, le soutien pratique est celui qui est le plus fortement corrélé à l’observance du traitement.`",
+   "en": "`Across 122 studies, practical support is the most strongly correlated with treatment adherence.`"
+  },
+  {
+   "fr": "`Qi et al., peer support et HbA1c`",
+   "en": "`Qi et al., peer support and HbA1c`"
+  },
+  {
+   "fr": "`Qi L. et al., BMC Public Health, 2015 ; 15 : 471`",
+   "en": "`Qi L. et al., BMC Public Health, 2015; 15: 471`"
+  },
+  {
+   "fr": "`Le soutien par les pairs fait baisser l’HbA1c de 0,57 point`",
+   "en": "`Peer support lowers HbA1c by 0.57 points`"
+  },
+  {
+   "fr": "`13 essais, 2 352 patients : baisse de 0,57 point (IC 95 % −0,78 à −0,36), surtout quand l’HbA1c de départ dépasse 7,5 %. Hétérogénéité élevée.`",
+   "en": "`13 trials, 2,352 patients: a drop of 0.57 points (95% CI −0.78 to −0.36), especially when baseline HbA1c exceeds 7.5%. High heterogeneity.`"
+  },
+  {
+   "fr": "`Qi et al., 2015`",
+   "en": "`Qi et al., 2015`"
+  },
+  {
+   "fr": "`Luo et al., peer support après 40 ans`",
+   "en": "`Luo et al., peer support after 40`"
+  },
+  {
+   "fr": "`Luo J. et al., PeerJ, 2025 ; 13 : e19803`",
+   "en": "`Luo J. et al., PeerJ, 2025; 13: e19803`"
+  },
+  {
+   "fr": "`Le même soutien, un effet plus modeste : 0,20 point`",
+   "en": "`The same support, a more modest effect: 0.20 points`"
+  },
+  {
+   "fr": "`11 essais, 2 187 patients de plus de 40 ans : baisse « modeste mais significative » de 0,20 point (IC 95 % −0,37 à −0,02).`",
+   "en": "`11 trials, 2,187 patients over 40: a “modest but significant” drop of 0.20 points (95% CI −0.37 to −0.02).`"
+  },
+  {
+   "fr": "`Luo et al., 2025`",
+   "en": "`Luo et al., 2025`"
+  },
+  {
+   "fr": "`DAWN2, étude internationale`",
+   "en": "`DAWN2, international study`"
+  },
+  {
+   "fr": "`Étude`",
+   "en": "`Study`"
+  },
+  {
+   "fr": "`Nicolucci A. et al., Diabetic Medicine, 2013 ; 30 : 767-777`",
+   "en": "`Nicolucci A. et al., Diabetic Medicine, 2013; 30: 767-777`"
+  },
+  {
+   "fr": "`DAWN2, résultats britanniques`",
+   "en": "`DAWN2, UK results`"
+  },
+  {
+   "fr": "`Communiqué`",
+   "en": "`Press release`"
+  },
+  {
+   "fr": "`Détresse`",
+   "en": "`Distress`"
+  },
+  {
+   "fr": "`Détresse liée au diabète et accès à l’éducation`",
+   "en": "`Diabetes-related distress and access to education`"
+  },
+  {
+   "fr": "`Étude internationale (17 pays) : 44,6 % des personnes déclarent une détresse liée au diabète. Au Royaume-Uni, 78 % n’ont jamais suivi de programme d’éducation.`",
+   "en": "`International study (17 countries): 44.6% of people report diabetes-related distress. In the UK, 78% have never attended an education program.`"
+  },
+  {
+   "fr": "`DAWN2, 2013 et 2014`",
+   "en": "`DAWN2, 2013 and 2014`"
+  },
+  {
+   "fr": "`Rôle des proches`",
+   "en": "`Role of loved ones`"
+  },
+  {
+   "fr": "`Des proches peu associés, souvent inquiets`",
+   "en": "`Loved ones rarely involved, often worried`"
+  },
+  {
+   "fr": "`Au Royaume-Uni, les proches sont rarement associés aux programmes d’éducation (79 %), et environ 47 % d’entre eux s’inquiètent des hypoglycémies.`",
+   "en": "`In the UK, loved ones are rarely involved in education programs (79%), and around 47% of them worry about hypoglycemia.`"
+  },
+  {
+   "fr": "`HAS, Structuration d’un programme d’éducation thérapeutique du patient`",
+   "en": "`HAS, Structuring a therapeutic patient education program`"
+  },
+  {
+   "fr": "`HAS, guide méthodologique, juin 2007 (mis à jour en 2008)`",
+   "en": "`HAS, methodological guide, June 2007 (updated in 2008)`"
+  },
+  {
+   "fr": "`Éducation (ETP)`",
+   "en": "`Education (TPE)`"
+  },
+  {
+   "fr": "`Des programmes d’éducation thérapeutique existent`",
+   "en": "`Therapeutic education programs exist`"
+  },
+  {
+   "fr": "`Selon la HAS, l’éducation thérapeutique aide les patients à acquérir ou maintenir les compétences pour vivre avec une maladie chronique, dont des compétences d’adaptation (gérer ses émotions, décider, communiquer). Les proches peuvent y être associés si le patient le souhaite.`",
+   "en": "`According to the HAS, therapeutic education helps patients acquire or maintain the skills to live with a chronic disease, including coping skills (managing emotions, deciding, communicating). Loved ones can be involved if the patient wishes.`"
+  },
+  {
+   "fr": "`Fiche réservée`",
+   "en": "`Reserved sheet`"
+  },
+  {
+   "fr": "`Résumé des caractéristiques du produit, Rybelsus`",
+   "en": "`Summary of product characteristics, Rybelsus`"
+  },
+  {
+   "fr": "`À jeun, 30 min`",
+   "en": "`Fasting, 30 min`"
+  },
+  {
+   "fr": "`Une prise à jeun, puis 30 minutes d’attente`",
+   "en": "`One dose on an empty stomach, then 30 minutes of waiting`"
+  },
+  {
+   "fr": "`Le comprimé se prend à jeun, avec 120 ml d’eau au plus, au moins 30 minutes avant de manger, boire ou prendre un autre médicament. En dessous de 30 minutes, l’absorption diminue.`",
+   "en": "`The tablet is taken on an empty stomach, with no more than 120 ml of water, at least 30 minutes before eating, drinking or taking another medication. Below 30 minutes, absorption decreases.`"
+  },
+  {
+   "fr": "`Une montée en dose progressive`",
+   "en": "`A gradual dose increase`"
+  },
+  {
+   "fr": "`Dose de départ de 3 mg par jour pendant un mois, puis 7 mg.`",
+   "en": "`Starting dose of 3 mg per day for one month, then 7 mg.`"
+  },
+  {
+   "fr": "`HAS, avis de la Commission de la transparence`",
+   "en": "`HAS, opinion of the Transparency Committee`"
+  },
+  {
+   "fr": "`HAS, avis du 21 juillet 2021`",
+   "en": "`HAS, opinion of July 21, 2021`"
+  },
+  {
+   "fr": "`Des événements digestifs documentés`",
+   "en": "`Documented digestive events`"
+  },
+  {
+   "fr": "`Pour la classe des analogues du GLP-1, la HAS décrit des événements digestifs : nausées, vomissements, diarrhées.`",
+   "en": "`For the GLP-1 analogue class, the HAS describes digestive events: nausea, vomiting, diarrhea.`"
+  },
+  {
+   "fr": "`Haskard Zolnierek et DiMatteo, communication du médecin`",
+   "en": "`Haskard Zolnierek and DiMatteo, physician communication`"
+  },
+  {
+   "fr": "`Une mauvaise communication augmente le risque de 19 %`",
+   "en": "`Poor communication raises the risk by 19%`"
+  },
+  {
+   "fr": "`106 études corrélationnelles : quand le médecin communique mal, le risque de non-observance du patient augmente de 19 %.`",
+   "en": "`106 correlational studies: when the doctor communicates poorly, the patient's risk of non-adherence rises by 19%.`"
+  },
+  {
+   "fr": "`Haskard Zolnierek et DiMatteo, 2009`",
+   "en": "`Haskard Zolnierek and DiMatteo, 2009`"
+  },
+  {
+   "fr": "`Un médecin formé : 1,62 fois plus de chances d’observance`",
+   "en": "`A trained doctor: 1.62 times the odds of adherence`"
+  },
+  {
+   "fr": "`21 études expérimentales : après une formation à la communication, les chances d’observance des patients sont multipliées par 1,62.`",
+   "en": "`21 experimental studies: after communication training, patients' odds of adherence are multiplied by 1.62.`"
+  },
+  {
+   "fr": "`Carte d’écosystème de la mission`",
+   "en": "`The mission's ecosystem map`"
+  },
+  {
+   "fr": "`Carte d’écosystème, mission Healthanea`",
+   "en": "`Ecosystem map, Healthanea mission`"
+  },
+  {
+   "fr": "`Le maillon manquant entre médecin et laboratoire`",
+   "en": "`The missing link between doctor and laboratory`"
+  },
+  {
+   "fr": "`La carte révèle un lien absent entre le médecin traitant et le laboratoire : un partenariat pour des traitements plus personnalisés et une meilleure observance.`",
+   "en": "`The map reveals an absent link between the attending physician and the laboratory: a partnership for more personalized treatments and better adherence.`"
+  },
+  {
+   "fr": "`Émotions`",
+   "en": "`Emotions`"
+  },
+  {
+   "fr": "`Thème`",
+   "en": "`Theme`"
+  },
+  {
+   "fr": "`Seul face à chaque action`",
+   "en": "`Alone in the face of every action`"
+  },
+  {
+   "fr": "`Chaque action demandée au patient, il la fait seul.`",
+   "en": "`Every action asked of the patient, they do alone.`"
+  },
+  {
+   "fr": "`Deux méta-analyses, deux ordres de grandeur (0,57 contre 0,20 point). Arbitrage : l’effet existe mais reste modeste, il dépend du public et de la fréquence des contacts.`",
+   "en": "`Two meta-analyses, two orders of magnitude (0.57 versus 0.20 points). Trade-off: the effect exists but remains modest, it depends on the audience and on how often contact happens.`"
+  },
+  {
+   "fr": "`Un relais humain pour chaque action demandée`",
+   "en": "`A human relay for every action asked`"
+  },
+  {
+   "fr": "`Mettre en relation avec un pair qui a déjà fait le chemin`",
+   "en": "`Connect with a peer who has already walked the path`"
+  },
+  {
+   "fr": "`Associer un proche aux moments clés du traitement`",
+   "en": "`Involve a loved one at key moments of the treatment`"
+  },
+  {
+   "fr": "`Le matin, un protocole`",
+   "en": "`Mornings, a protocol`"
+  },
+  {
+   "fr": "`Le matin à jeun transforme chaque journée en protocole.`",
+   "en": "`Fasting mornings turn every day into a protocol.`"
+  },
+  {
+   "fr": "`Prévenir de l’inconfort attendu avant la première prise`",
+   "en": "`Warn about the expected discomfort before the first dose`"
+  },
+  {
+   "fr": "`Ancrer la prise dans une routine simple`",
+   "en": "`Anchor the dose in a simple routine`"
+  },
+  {
+   "fr": "`Proposer un petit-déjeuner compatible avec l’attente`",
+   "en": "`Suggest a breakfast compatible with the waiting time`"
+  },
+  {
+   "fr": "`Le lien au médecin`",
+   "en": "`The link to the doctor`"
+  },
+  {
+   "fr": "`Le lien avec le médecin est le premier déclencheur.`",
+   "en": "`The link with the doctor is the first trigger.`"
+  },
+  {
+   "fr": "`Donner au médecin une vue sur les ruptures d’information`",
+   "en": "`Give the doctor a view of information breaks`"
+  },
+  {
+   "fr": "`Fixer un échange court après chaque ajustement`",
+   "en": "`Set a short exchange after each adjustment`"
+  },
+  {
+   "fr": "`Outiller l’équipe au soutien comportemental`",
+   "en": "`Equip the team for behavioral support`"
+  },
+  {
+   "fr": "`Nœud inconnu : ${e}`",
+   "en": "`Unknown node: ${e}`"
+  },
+  {
+   "fr": "`Nœud absent : ${e}`",
+   "en": "`Missing node: ${e}`"
+  },
+  {
+   "fr": "`Nœud absent : ${e.from}`",
+   "en": "`Missing node: ${e.from}`"
+  },
+  {
+   "fr": "`Contenu réservé : ce que contient cette source interne n’est pas publié.`",
+   "en": "`Reserved content: what this internal source contains is not published.`"
+  },
+  {
+   "fr": "`Clique un élément du schéma pour lire sa fiche et suivre son fil.`",
+   "en": "`Click an element of the diagram to read its sheet and follow its thread.`"
+  },
+  {
+   "fr": "`Référence`",
+   "en": "`Reference`"
+  },
+  {
+   "fr": "`Lien avec les autres éléments`",
+   "en": "`Link with other elements`"
+  },
+  {
+   "fr": "`D’où ça vient`",
+   "en": "`Where it comes from`"
+  },
+  {
+   "fr": "`Où ça va`",
+   "en": "`Where it goes`"
+  },
+  {
+   "fr": "`L’insight`",
+   "en": "`The insight`"
+  },
+  {
+   "fr": "`Thèmes`",
+   "en": "`Themes`"
+  },
+  {
+   "fr": "`Séparation`",
+   "en": "`Separation`"
+  },
+  {
+   "fr": "`Schéma de Nova, défilement horizontal possible`",
+   "en": "`Nova diagram, horizontal scrolling possible`"
+  },
+  {
+   "fr": "`Fil de l’insight : ${s.statement}`",
+   "en": "`Insight thread: ${s.statement}`"
+  },
+  {
+   "fr": "`vers le potentiel d’action`",
+   "en": "`toward the potential for action`"
+  },
+  {
+   "fr": "`sort du repository`",
+   "en": "`leaves the repository`"
+  },
+  {
+   "fr": "`Potentiel d’action`",
+   "en": "`Action potential`"
+  },
+  {
+   "fr": "`Le schéma défile horizontalement.`",
+   "en": "`The diagram scrolls horizontally.`"
+  },
+  {
+   "fr": "`Potentiel d’action `",
+   "en": "`Action potential`"
+  },
+  {
+   "fr": "`Détail de l’élément choisi`",
+   "en": "`Detail of the chosen element`"
+  },
+  {
+   "fr": "`Données`",
+   "en": "`Data`"
+  },
+  {
+   "fr": "`Charge portée seul`",
+   "en": "`Load carried alone`"
+  },
+  {
+   "fr": "`Professionnels de santé`",
+   "en": "`Healthcare professionals`"
+  },
+  {
+   "fr": "`Le patient et son entourage`",
+   "en": "`The patient and their circle`"
+  },
+  {
+   "fr": "`Spécialistes du bien-être`",
+   "en": "`Wellness specialists`"
+  },
+  {
+   "fr": "`Médecin spécialiste`",
+   "en": "`Medical specialist`"
+  },
+  {
+   "fr": "`Médecin traitant`",
+   "en": "`Attending physician`"
+  },
+  {
+   "fr": "`Contenus et narration`",
+   "en": "`Content and narration`"
+  },
+  {
+   "fr": "`Communauté`",
+   "en": "`Community`"
+  },
+  {
+   "fr": "`Objets connectés`",
+   "en": "`Connected devices`"
+  },
+  {
+   "fr": "`Suivi du diabète`",
+   "en": "`Diabetes tracking`"
+  },
+  {
+   "fr": "`Coach de vie`",
+   "en": "`Life coach`"
+  },
+  {
+   "fr": "`Thérapeute`",
+   "en": "`Therapist`"
+  },
+  {
+   "fr": "`Présence dans l’app`",
+   "en": "`Presence in the app`"
+  },
+  {
+   "fr": "`Services et consultations`",
+   "en": "`Services and consultations`"
+  },
+  {
+   "fr": "`Webinaires, formations, études`",
+   "en": "`Webinars, training, studies`"
+  },
+  {
+   "fr": "`Aides thérapeutiques`",
+   "en": "`Therapeutic aids`"
+  },
+  {
+   "fr": "`Améliorations`",
+   "en": "`Improvements`"
+  },
+  {
+   "fr": "`Fonctionnalités`",
+   "en": "`Features`"
+  },
+  {
+   "fr": "`Effet réseau`",
+   "en": "`Network effect`"
+  },
+  {
+   "fr": "`Calibration du profil`",
+   "en": "`Profile calibration`"
+  },
+  {
+   "fr": "`Patients et clients`",
+   "en": "`Patients and customers`"
+  },
+  {
+   "fr": "`Accompagnement personnalisé`",
+   "en": "`Personalized support`"
+  },
+  {
+   "fr": "`Statistiques d’usage`",
+   "en": "`Usage statistics`"
+  },
+  {
+   "fr": "`Confiance dans la prescription`",
+   "en": "`Trust in the prescription`"
+  },
+  {
+   "fr": "`Écoute et temps accordé`",
+   "en": "`Listening and time given`"
+  },
+  {
+   "fr": "`Légitimité scientifique`",
+   "en": "`Scientific legitimacy`"
+  },
+  {
+   "fr": "`Connaissance des patients`",
+   "en": "`Knowledge of patients`"
+  },
+  {
+   "fr": "`Confiance dans les données`",
+   "en": "`Trust in the data`"
+  },
+  {
+   "fr": "`Rappels et encouragements`",
+   "en": "`Reminders and encouragement`"
+  },
+  {
+   "fr": "`Réassurance en continu`",
+   "en": "`Continuous reassurance`"
+  },
+  {
+   "fr": "`Charge de la saisie quotidienne`",
+   "en": "`Burden of daily entry`"
+  },
+  {
+   "fr": "`Confiance accordée`",
+   "en": "`Trust granted`"
+  },
+  {
+   "fr": "`Écoute et motivation`",
+   "en": "`Listening and motivation`"
+  },
+  {
+   "fr": "`Soutien des pairs`",
+   "en": "`Peer support`"
+  },
+  {
+   "fr": "`Reconnaissance du vécu`",
+   "en": "`Recognition of lived experience`"
+  },
+  {
+   "fr": "`Récits où se reconnaître`",
+   "en": "`Stories to recognize oneself in`"
+  },
+  {
+   "fr": "`Choisissez les flux que vous voulez voir apparaître`",
+   "en": "`Choose the flows you want to see appear`"
+  },
+  {
+   "fr": "`Les flux marchands`",
+   "en": "`Market flows`"
+  },
+  {
+   "fr": "`Ce que nous avons cartographié pendant la mission : argent, biens, données.`",
+   "en": "`What we mapped during the mission: money, goods, data.`"
+  },
+  {
+   "fr": "`Les flux qui se chiffrent mal`",
+   "en": "`Flows that are hard to quantify`"
+  },
+  {
+   "fr": "`Ce que j’aurais aimé faire, hors mission : ce qui circule sans se facturer ni se mesurer.`",
+   "en": "`What I would have liked to do, outside the mission: what circulates without being invoiced or measured.`"
+  },
+  {
+   "fr": "`Carte d’écosystème, défilement horizontal possible`",
+   "en": "`Ecosystem map, horizontal scrolling possible`"
+  },
+  {
+   "fr": "`Carte d’écosystème autour du patient`",
+   "en": "`Ecosystem map around the patient`"
+  },
+  {
+   "fr": "`Légende`",
+   "en": "`Legend`"
+  },
+  {
+   "fr": "`Vecteur d’innovation`",
+   "en": "`Innovation vector`"
+  },
+  {
+   "fr": "`Relation laboratoires et médecins`",
+   "en": "`Laboratory and doctor relationship`"
+  },
+  {
+   "fr": "`Rapproche le laboratoire du suivi, mais pose un risque de conflit d’intérêts et d’accès industriel aux données.`",
+   "en": "`Brings the laboratory closer to follow-up, but poses a risk of conflict of interest and industry access to data.`"
+  },
+  {
+   "fr": "`Répond à l’isolement du patient, mais demande une masse critique pour fonctionner.`",
+   "en": "`Answers the patient's isolation, but needs a critical mass to work.`"
+  },
+  {
+   "fr": "`Des acteurs déjà accessibles, mais personne ne coordonne leur action autour du patient.`",
+   "en": "`Actors already within reach, but nobody coordinates their action around the patient.`"
+  },
+  {
+   "fr": "`Médecin coordinateur`",
+   "en": "`Coordinating doctor`"
+  },
+  {
+   "fr": "`Un rôle qui existe déjà. L’enjeu est de lui donner une vue sur les ruptures, pas un outil de contrôle.`",
+   "en": "`A role that already exists. The challenge is to give them a view on breaks, not a control tool.`"
+  },
+  {
+   "fr": "` · faisabilité `",
+   "en": "` · feasibility`"
+  },
+  {
+   "fr": "`Faisabilité →`",
+   "en": "`Feasibility →`"
+  },
+  {
+   "fr": "`Vue du patient`",
+   "en": "`Patient view`"
+  },
+  {
+   "fr": "`Le médecin`",
+   "en": "`The doctor`"
+  },
+  {
+   "fr": "`Le médecin ajuste le traitement`",
+   "en": "`The doctor adjusts the treatment`"
+  },
+  {
+   "fr": "`Ce que fait un médecin ou un spécialiste, et ce que le patient en vit.`",
+   "en": "`What a doctor or specialist does, and what the patient experiences of it.`"
+  },
+  {
+   "fr": "`Vue du médecin`",
+   "en": "`Doctor view`"
+  },
+  {
+   "fr": "`Où en est-il après 30 jours ?`",
+   "en": "`Where are they after 30 days?`"
+  },
+  {
+   "fr": "`Dose de départ depuis 30 jours`",
+   "en": "`Starting dose for 30 days`"
+  },
+  {
+   "fr": "`Ce qu’il a écrit`",
+   "en": "`What they wrote`"
+  },
+  {
+   "fr": "`Nausées les premiers jours, passées depuis`",
+   "en": "`Nausea in the first days, gone since`"
+  },
+  {
+   "fr": "`Étape possible : la dose suivante.`",
+   "en": "`Possible next step: the next dose.`"
+  },
+  {
+   "fr": "`Proposer l’ajustement`",
+   "en": "`Propose the adjustment`"
+  },
+  {
+   "fr": "`Le médecin a lu ce que le patient a dit, pas seulement un chiffre.`",
+   "en": "`The doctor read what the patient said, not just a number.`"
+  },
+  {
+   "fr": "`Votre médecin a lu votre retour`",
+   "en": "`Your doctor read your feedback`"
+  },
+  {
+   "fr": "`Il vous propose de changer de dose.`",
+   "en": "`They propose changing the dose.`"
+  },
+  {
+   "fr": "`Rien à faire avant votre échange.`",
+   "en": "`Nothing to do before your exchange.`"
+  },
+  {
+   "fr": "`Il se sent écouté avant même la consultation.`",
+   "en": "`They feel listened to even before the consultation.`"
+  },
+  {
+   "fr": "`Hors écran : le médecin garde un créneau court pour en parler de vive voix.`",
+   "en": "`Off screen: the doctor keeps a short slot to talk in person.`"
+  },
+  {
+   "fr": "`Préparer le changement`",
+   "en": "`Prepare the change`"
+  },
+  {
+   "fr": "`Ce qui peut arriver`",
+   "en": "`What may happen`"
+  },
+  {
+   "fr": "`Un inconfort digestif possible au début`",
+   "en": "`Possible digestive discomfort at the start`"
+  },
+  {
+   "fr": "`Ce qui est attendu`",
+   "en": "`What is expected`"
+  },
+  {
+   "fr": "`Il tend à diminuer avec le temps`",
+   "en": "`It tends to decrease over time`"
+  },
+  {
+   "fr": "`Envoyer le message`",
+   "en": "`Send the message`"
+  },
+  {
+   "fr": "`Prévenir avant que l’inconfort arrive, pour qu’il ne soit pas pris pour un échec.`",
+   "en": "`Warn before the discomfort arrives, so that it isn't taken for a failure.`"
+  },
+  {
+   "fr": "`À savoir`",
+   "en": "`Good to know`"
+  },
+  {
+   "fr": "`Ce qui peut changer`",
+   "en": "`What may change`"
+  },
+  {
+   "fr": "`Un inconfort digestif est possible au début.`",
+   "en": "`Digestive discomfort is possible at the start.`"
+  },
+  {
+   "fr": "`Il tend à diminuer avec le temps.`",
+   "en": "`It tends to decrease over time.`"
+  },
+  {
+   "fr": "`Je préfère en parler`",
+   "en": "`I'd rather talk about it`"
+  },
+  {
+   "fr": "`Un inconfort attendu ne veut plus dire « je fais mal ».`",
+   "en": "`Expected discomfort no longer means “I'm doing it wrong”.`"
+  },
+  {
+   "fr": "`Hors écran : le pharmacien est prévenu de l’ajustement et peut répondre aux questions au comptoir.`",
+   "en": "`Off screen: the pharmacist is informed of the adjustment and can answer questions at the counter.`"
+  },
+  {
+   "fr": "`Vue du médecin coordinateur`",
+   "en": "`Coordinating doctor view`"
+  },
+  {
+   "fr": "`L’information a-t-elle circulé ?`",
+   "en": "`Has the information circulated?`"
+  },
+  {
+   "fr": "`Ordonnance délivrée`",
+   "en": "`Prescription dispensed`"
+  },
+  {
+   "fr": "`Prochain échange`",
+   "en": "`Next exchange`"
+  },
+  {
+   "fr": "`À fixer`",
+   "en": "`To be set`"
+  },
+  {
+   "fr": "`Cette vue montre où l’information s’arrête, pas la discipline du patient.`",
+   "en": "`This view shows where information stops, not the patient's discipline.`"
+  },
+  {
+   "fr": "`Fixer un échange`",
+   "en": "`Set an exchange`"
+  },
+  {
+   "fr": "`Le médecin coordonne : il repère les ruptures, il ne surveille pas.`",
+   "en": "`The doctor coordinates: they spot breaks, they don't monitor.`"
+  },
+  {
+   "fr": "`Rendez-vous`",
+   "en": "`Appointment`"
+  },
+  {
+   "fr": "`Dans deux semaines`",
+   "en": "`In two weeks`"
+  },
+  {
+   "fr": "`Vous pouvez le déplacer`",
+   "en": "`You can move it`"
+  },
+  {
+   "fr": "`D’ici là, écrivez si quelque chose vous inquiète.`",
+   "en": "`Until then, write if something worries you.`"
+  },
+  {
+   "fr": "`Il sait qu’il n’est pas laissé seul entre deux rendez-vous.`",
+   "en": "`They know they are not left alone between two appointments.`"
+  },
+  {
+   "fr": "`Hors écran : un créneau est réservé dans l’agenda du cabinet.`",
+   "en": "`Off screen: a slot is reserved in the practice's calendar.`"
+  },
+  {
+   "fr": "`La nutritionniste`",
+   "en": "`The nutritionist`"
+  },
+  {
+   "fr": "`La nutritionniste rend les repas actionnables`",
+   "en": "`The nutritionist makes meals actionable`"
+  },
+  {
+   "fr": "`Des repères simples, sans score et sans mécanique anxiogène.`",
+   "en": "`Simple guides, with no score and no anxiety-inducing mechanics.`"
+  },
+  {
+   "fr": "`Vue de la nutritionniste`",
+   "en": "`Nutritionist view`"
+  },
+  {
+   "fr": "`Semaine du patient`",
+   "en": "`The patient's week`"
+  },
+  {
+   "fr": "`Partir de ce qui existe`",
+   "en": "`Start from what exists`"
+  },
+  {
+   "fr": "`À jeun, 30 minutes d’attente avant de manger`",
+   "en": "`Fasting, 30 minutes of waiting before eating`"
+  },
+  {
+   "fr": "`Déjeuner sur le lieu de travail`",
+   "en": "`Lunch at the workplace`"
+  },
+  {
+   "fr": "`Déjà en place`",
+   "en": "`Already in place`"
+  },
+  {
+   "fr": "`Le dîner en famille`",
+   "en": "`Family dinner`"
+  },
+  {
+   "fr": "`Commencer par ce qui marche`",
+   "en": "`Start with what works`"
+  },
+  {
+   "fr": "`Elle part de la semaine réelle du patient, pas d’un régime idéal.`",
+   "en": "`She starts from the patient's real week, not from an ideal diet.`"
+  },
+  {
+   "fr": "`On part de ce qui marche déjà`",
+   "en": "`We start from what already works`"
+  },
+  {
+   "fr": "`Rien à changer de ce côté.`",
+   "en": "`Nothing to change on that side.`"
+  },
+  {
+   "fr": "`Il n’est pas jugé sur ce qu’il ne fait pas.`",
+   "en": "`They are not judged on what they don't do.`"
+  },
+  {
+   "fr": "`Hors écran : un premier échange de vingt minutes, en visio ou en pharmacie.`",
+   "en": "`Off screen: a first twenty-minute exchange, by video or at the pharmacy.`"
+  },
+  {
+   "fr": "`Un seul repère`",
+   "en": "`A single guide`"
+  },
+  {
+   "fr": "`Choisir un pas, pas un plan`",
+   "en": "`Choose a step, not a plan`"
+  },
+  {
+   "fr": "`Préparer le déjeuner du mardi`",
+   "en": "`Prepare Tuesday's lunch`"
+  },
+  {
+   "fr": "`Prévoir le petit-déjeuner après l’attente`",
+   "en": "`Plan breakfast after the waiting time`"
+  },
+  {
+   "fr": "`Un repère à la fois.`",
+   "en": "`One guide at a time.`"
+  },
+  {
+   "fr": "`Proposer ce repère`",
+   "en": "`Propose this guide`"
+  },
+  {
+   "fr": "`Un seul pas, choisi avec lui et facile à faire.`",
+   "en": "`A single step, chosen with them and easy to take.`"
+  },
+  {
+   "fr": "`Cette semaine`",
+   "en": "`This week`"
+  },
+  {
+   "fr": "`Un repère`",
+   "en": "`A guide`"
+  },
+  {
+   "fr": "`Une idée simple, sans rien à peser`",
+   "en": "`A simple idea, with nothing to weigh`"
+  },
+  {
+   "fr": "`Je l’essaie`",
+   "en": "`I'll try it`"
+  },
+  {
+   "fr": "`Ne pas y arriver ne fait rien apparaître en rouge.`",
+   "en": "`Not managing it shows nothing in red.`"
+  },
+  {
+   "fr": "`Hors écran : une fiche papier ou un message, selon ce qu’il préfère.`",
+   "en": "`Off screen: a paper sheet or a message, whichever they prefer.`"
+  },
+  {
+   "fr": "`Retour de la semaine`",
+   "en": "`The week's feedback`"
+  },
+  {
+   "fr": "`Ajuster avec lui`",
+   "en": "`Adjust with them`"
+  },
+  {
+   "fr": "`Ce qui a fonctionné`",
+   "en": "`What worked`"
+  },
+  {
+   "fr": "`Selon lui : le mardi`",
+   "en": "`According to them: Tuesday`"
+  },
+  {
+   "fr": "`Ce qui a coincé`",
+   "en": "`What got stuck`"
+  },
+  {
+   "fr": "`Le petit-déjeuner du jeudi`",
+   "en": "`Thursday's breakfast`"
+  },
+  {
+   "fr": "`Aucun score. Seulement ce qu’il dit.`",
+   "en": "`No score. Only what they say.`"
+  },
+  {
+   "fr": "`Ajuster le repère`",
+   "en": "`Adjust the guide`"
+  },
+  {
+   "fr": "`Ce qui a coincé devient une information utile, pas un échec.`",
+   "en": "`What got stuck becomes useful information, not a failure.`"
+  },
+  {
+   "fr": "`Votre repère`",
+   "en": "`Your guide`"
+  },
+  {
+   "fr": "`Il évolue avec vous`",
+   "en": "`It evolves with you`"
+  },
+  {
+   "fr": "`On garde le mardi.`",
+   "en": "`We keep Tuesday.`"
+  },
+  {
+   "fr": "`On cherche autre chose pour le jeudi, ensemble.`",
+   "en": "`We look for something else for Thursday, together.`"
+  },
+  {
+   "fr": "`Il reste maître du rythme.`",
+   "en": "`They remain in charge of the pace.`"
+  },
+  {
+   "fr": "`Hors écran : la nutritionniste lui laisse la main sur la fréquence des échanges.`",
+   "en": "`Off screen: the nutritionist leaves them in control of how often they talk.`"
+  },
+  {
+   "fr": "`La communauté`",
+   "en": "`The community`"
+  },
+  {
+   "fr": "`Un membre de la communauté prend le relais`",
+   "en": "`A community member steps in`"
+  },
+  {
+   "fr": "`Une autre personne vivant avec une maladie chronique répond présent, et l’effet est réciproque.`",
+   "en": "`Another person living with a chronic disease shows up, and the effect is reciprocal.`"
+  },
+  {
+   "fr": "`Vue d’un membre de la communauté`",
+   "en": "`Community member view`"
+  },
+  {
+   "fr": "`Demande de soutien`",
+   "en": "`Request for support`"
+  },
+  {
+   "fr": "`Quelqu’un cherche un coup de main`",
+   "en": "`Someone is looking for a hand`"
+  },
+  {
+   "fr": "`Matins compliqués depuis le changement de dose`",
+   "en": "`Complicated mornings since the dose change`"
+  },
+  {
+   "fr": "`Ce qu’il demande`",
+   "en": "`What they ask`"
+  },
+  {
+   "fr": "`Parler à quelqu’un qui est passé par là`",
+   "en": "`Talk to someone who has been through it`"
+  },
+  {
+   "fr": "`Pas de conseil médical : vous racontez votre expérience.`",
+   "en": "`No medical advice: you share your experience.`"
+  },
+  {
+   "fr": "`Je peux en parler`",
+   "en": "`I can talk about it`"
+  },
+  {
+   "fr": "`Quelqu’un qui a déjà fait ce chemin répond présent.`",
+   "en": "`Someone who has already walked this path shows up.`"
+  },
+  {
+   "fr": "`Vous n’avez rien d’autre à faire`",
+   "en": "`You have nothing else to do`"
+  },
+  {
+   "fr": "`Quelqu’un a répondu.`",
+   "en": "`Someone answered.`"
+  },
+  {
+   "fr": "`Vous choisissez si, quand et comment on échange.`",
+   "en": "`You choose whether, when and how you talk.`"
+  },
+  {
+   "fr": "`Demander n’est pas avouer qu’on échoue.`",
+   "en": "`Asking is not admitting you're failing.`"
+  },
+  {
+   "fr": "`Hors écran : un animateur vérifie la mise en relation. Aucune donnée de santé n’est échangée.`",
+   "en": "`Off screen: a host checks the introduction. No health data is exchanged.`"
+  },
+  {
+   "fr": "`Premier échange`",
+   "en": "`First exchange`"
+  },
+  {
+   "fr": "`Dix minutes, à deux`",
+   "en": "`Ten minutes, just the two of you`"
+  },
+  {
+   "fr": "`Mardi, en fin de journée`",
+   "en": "`Tuesday, at the end of the day`"
+  },
+  {
+   "fr": "`Message ou appel, au choix du patient`",
+   "en": "`Message or call, at the patient's choice`"
+  },
+  {
+   "fr": "`Savoir d’expérience`",
+   "en": "`Knowledge from experience`"
+  },
+  {
+   "fr": "`Ce qu’aucune notice ne dit : comment on organise ses matins.`",
+   "en": "`What no leaflet says: how to organize your mornings.`"
+  },
+  {
+   "fr": "`Échange`",
+   "en": "`Exchange`"
+  },
+  {
+   "fr": "`Une personne qui connaît ces matins`",
+   "en": "`A person who knows these mornings`"
+  },
+  {
+   "fr": "`Mardi, fin de journée`",
+   "en": "`Tuesday, end of day`"
+  },
+  {
+   "fr": "`Vous pouvez déplacer ou annuler`",
+   "en": "`You can move or cancel`"
+  },
+  {
+   "fr": "`Il n’est plus seul avec son traitement.`",
+   "en": "`They are no longer alone with their treatment.`"
+  },
+  {
+   "fr": "`Hors écran : si le patient préfère l’écrit, l’échange reste en messages.`",
+   "en": "`Off screen: if the patient prefers writing, the exchange stays in messages.`"
+  },
+  {
+   "fr": "`Après l’échange`",
+   "en": "`After the exchange`"
+  },
+  {
+   "fr": "`Ce que votre soutien a changé`",
+   "en": "`What your support changed`"
+  },
+  {
+   "fr": "`Votre échange l’a aidé à tenir ses matins.`",
+   "en": "`Your exchange helped them hold their mornings.`"
+  },
+  {
+   "fr": "`Faire une pause`",
+   "en": "`Take a break`"
+  },
+  {
+   "fr": "`Recevoir le merci`",
+   "en": "`Receive the thank-you`"
+  },
+  {
+   "fr": "`Le membre reçoit en retour : rendre devient possible pour les deux.`",
+   "en": "`The member receives in return: giving back becomes possible for both.`"
+  },
+  {
+   "fr": "`À votre tour, quand vous voudrez`",
+   "en": "`Your turn, whenever you want`"
+  },
+  {
+   "fr": "`Vous pourrez soutenir quelqu’un qui commence.`",
+   "en": "`You will be able to support someone who is starting out.`"
+  },
+  {
+   "fr": "`Il n’y a aucune obligation.`",
+   "en": "`There is no obligation.`"
+  },
+  {
+   "fr": "`Il passe de celui qui reçoit à quelqu’un qui peut donner, quand il le décide.`",
+   "en": "`They go from the one who receives to someone who can give, when they decide.`"
+  },
+  {
+   "fr": "`Hors écran : une rencontre locale ou en ligne, ouverte à celles et ceux qui veulent partager.`",
+   "en": "`Off screen: a local or online meet-up, open to those who want to share.`"
+  },
+  {
+   "fr": "`Scénarios`",
+   "en": "`Scenarios`"
+  },
+  {
+   "fr": "`Étape `",
+   "en": "`Step`"
+  },
+  {
+   "fr": "`Agissez comme l’acteur : le bouton déclenche ce que le patient reçoit.`",
+   "en": "`Act as the actor: the button triggers what the patient receives.`"
+  },
+  {
+   "fr": "`Le patient n’a encore rien reçu.`",
+   "en": "`The patient has received nothing yet.`"
+  },
+  {
+   "fr": "`Pour lui`",
+   "en": "`For them`"
+  },
+  {
+   "fr": "`Rejouer le scénario`",
+   "en": "`Replay the scenario`"
+  },
+  {
+   "fr": "`Étape suivante`",
+   "en": "`Next step`"
+  },
+  {
+   "fr": "`Healthanea, la suite`",
+   "en": "`Healthanea, the next step`"
+  },
+  {
+   "fr": "`Prolongement personnel, conçu après la mission. Ce qui est montré ici n’a pas été construit ni validé auprès de patients.`",
+   "en": "`Personal extension, designed after the mission. What is shown here was not built or validated with patients.`"
+  },
+  {
+   "fr": "`Le repository de recherche`",
+   "en": "`The research repository`"
+  },
+  {
+   "fr": "`Sans accès aux patients, la structure a été pensée pour tenir seule.`",
+   "en": "`With no access to patients, the structure was designed to stand on its own.`"
+  },
+  {
+   "fr": "`La carte d’écosystème`",
+   "en": "`The ecosystem map`"
+  },
+  {
+   "fr": "`La carte de la mission, puis ce qu’elle ne montrait pas : ce qui circule entre les gens.`",
+   "en": "`The mission's map, then what it didn't show: what circulates between people.`"
+  },
+  {
+   "fr": "`Quatre pistes, une décision`",
+   "en": "`Four directions, one decision`"
+  },
+  {
+   "fr": "`Valeur et faisabilité, pour passer d’un champ de pistes à une stratégie.`",
+   "en": "`Value and feasibility, to go from a field of directions to a strategy.`"
+  },
+  {
+   "fr": "`La solution : l’expérience de ceux qui entourent le patient`",
+   "en": "`The solution: the experience of those around the patient`"
+  },
+  {
+   "fr": "`Trois scénarios. À chaque fois, une action d’un acteur, et ce qu’elle change pour le patient.`",
+   "en": "`Three scenarios. Each time, one action by one actor, and what it changes for the patient.`"
+  },
+  {
+   "fr": "`Interne`",
+   "en": "`Internal`"
+  },
+  {
+   "fr": "`Document officiel`",
+   "en": "`Official document`"
+  },
+  {
+   "fr": "`Soutien pratique`",
+   "en": "`Practical support`"
+  },
+  {
+   "fr": "`Source interne`",
+   "en": "`Internal source`"
+  },
+  {
+   "fr": "`Entretien`",
+   "en": "`Interview`"
+  },
+  {
+   "fr": "`RCP Rybelsus`",
+   "en": "`SmPC Rybelsus`"
+  },
+  {
+   "fr": "`Effets digestifs`",
+   "en": "`Digestive effects`"
+  },
+  {
+   "fr": "`Carte mission`",
+   "en": "`Mission map`"
+  },
+  {
+   "fr": "`Livrable`",
+   "en": "`Deliverable`"
+  },
+  {
+   "fr": "`Maillon manquant`",
+   "en": "`Missing link`"
+  },
+  {
+   "fr": "`Acteurs`",
+   "en": "`Actors`"
+  },
+  {
+   "fr": "`Freins`",
+   "en": "`Barriers`"
+  },
+  {
+   "fr": "`Traitement`",
+   "en": "`Treatment`"
+  },
+  {
+   "fr": "`Quotidien`",
+   "en": "`Daily life`"
+  },
+  {
+   "fr": "`Savoir`",
+   "en": "`Knowledge`"
+  },
+  {
+   "fr": "`Fiche`",
+   "en": "`Sheet`"
+  },
+  {
+   "fr": "`Fiches`",
+   "en": "`Sheets`"
+  },
+  {
+   "fr": "`Questions guides`",
+   "en": "`Guiding questions`"
+  },
+  {
+   "fr": "`Choisissez votre insight`",
+   "en": "`Choose your insight`"
+  },
+  {
+   "fr": "`Argent`",
+   "en": "`Money`"
+  },
+  {
+   "fr": "`Biens`",
+   "en": "`Goods`"
+  },
+  {
+   "fr": "`Confiance`",
+   "en": "`Trust`"
+  },
+  {
+   "fr": "`Reconnaissance`",
+   "en": "`Recognition`"
+  },
+  {
+   "fr": "`Soutien`",
+   "en": "`Support`"
+  },
+  {
+   "fr": "`Rupture`",
+   "en": "`Break`"
+  },
+  {
+   "fr": "`Laboratoire pharmaceutique`",
+   "en": "`Pharmaceutical laboratory`"
+  },
+  {
+   "fr": "`Nutritionniste`",
+   "en": "`Nutritionist`"
+  },
+  {
+   "fr": "`Entourage`",
+   "en": "`Loved ones`"
+  },
+  {
+   "fr": "`Livraison`",
+   "en": "`Delivery`"
+  },
+  {
+   "fr": "`Abonnement`",
+   "en": "`Subscription`"
+  },
+  {
+   "fr": "`Achat`",
+   "en": "`Purchase`"
+  },
+  {
+   "fr": "`Fonctions`",
+   "en": "`Features`"
+  },
+  {
+   "fr": "`Contenu`",
+   "en": "`Content`"
+  },
+  {
+   "fr": "`Retours patients`",
+   "en": "`Patient feedback`"
+  },
+  {
+   "fr": "`Soutien quotidien`",
+   "en": "`Daily support`"
+  },
+  {
+   "fr": "`Coordination absente`",
+   "en": "`Missing coordination`"
+  },
+  {
+   "fr": "`Valeur `",
+   "en": "`Value `"
+  },
+  {
+   "fr": "`Piste retenue`",
+   "en": "`Direction chosen`"
+  },
+  {
+   "fr": "`Accompagnement`",
+   "en": "`Support`"
+  },
+  {
+   "fr": "`Message lu`",
+   "en": "`Message read`"
+  },
+  {
+   "fr": "`Oui`",
+   "en": "`Yes`"
+  },
+  {
+   "fr": "`Matin`",
+   "en": "`Morning`"
+  },
+  {
+   "fr": "`Midi`",
+   "en": "`Noon`"
+  },
+  {
+   "fr": "`Votre semaine`",
+   "en": "`Your week`"
+  },
+  {
+   "fr": "`Plus tard`",
+   "en": "`Later`"
+  },
+  {
+   "fr": "`Sa situation`",
+   "en": "`Their situation`"
+  },
+  {
+   "fr": "`Votre demande`",
+   "en": "`Your request`"
+  },
+  {
+   "fr": "`Confirmer`",
+   "en": "`Confirm`"
+  },
+  {
+   "fr": "`Continuer`",
+   "en": "`Continue`"
+  },
+  {
+   "fr": "`Aucun badge, aucun classement. Seulement un merci.`",
+   "en": "`No badges, no rankings. Just a thank-you.`"
+  }
+ ]
+}

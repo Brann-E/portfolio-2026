@@ -85,9 +85,10 @@
     ? { skip: "Skip to content", accueil: "/en/", principale: "Main navigation", cas: "Case studies", apropos: "About", contact: "Contact", sombre: "Dark mode", clair: "Light mode", ouvrir: "Open the menu", fermer: "Close the menu", autre: "FR", autreLabel: "Lire en français" }
     : { skip: "Aller au contenu", accueil: "/", principale: "Navigation principale", cas: "Études de cas", apropos: "À propos", contact: "Contact", sombre: "Mode sombre", clair: "Mode clair", ouvrir: "Ouvrir le menu", fermer: "Fermer le menu", autre: "EN", autreLabel: "Read in English" };
   window.navTextes = T;
+  var P = EN ? "/en" : "";   // les pages de /en/ pointent vers leurs versions anglaises
 
   /* l'adresse de la même page dans l'autre langue ; une page qui n'est pas encore traduite renvoie à l'accueil anglais */
-  var TRADUITES = ["", "index"];   // les pages qui existent en anglais (à compléter au fur et à mesure)
+  var TRADUITES = ["", "index", "a-propos", "contact", "mentions-legales", "etudes-de-cas", "parcours-interactif", "circulation-paradigme-du-design", "reciprocites", "cas-healthanea", "cas-shift-prime", "cas-bi-solution", "cas-proshop", "cas-chalon-dans-la-rue", "01-rien-ne-tient-tout-seul", "02-les-relations-ne-se-voient-que-dun-certain-endroit", "03-la-metaliminalite", "04-le-lien-importe-plus-que-le-bien", "05-ce-qui-ne-circule-plus-casse", "06-ce-qui-fait-circuler"];   // les pages qui existent en anglais
   function pageCourante() { return location.pathname.replace(/\/+$/, "").split("/").pop().replace(/\.html$/, ""); }
   function autreLangue() {
     if (EN) return location.pathname.replace(/^(.*?)\/en(\/|$)/, "$1/").replace(/(^|\/)index\.html$/, "$1") || "/";
@@ -101,12 +102,13 @@
     <a class="brand" href="${T.accueil}"><span class="logo" role="img" aria-label="Brann Etienne"></span><span class="brand-texte">Brann Etienne</span></a>
     <div class="bar-droite">
       <nav class="nav" id="menu-nav" aria-label="${T.principale}">
-        <a href="/etudes-de-cas" data-section="cases">${T.cas}</a>
-        <a href="/a-propos" data-section="apropos">${T.apropos}</a>
-        <a href="/contact" data-section="contact">${T.contact}</a>
+        <a href="${P}/etudes-de-cas" data-section="cases">${T.cas}</a>
+        <a href="${P}/a-propos" data-section="apropos">${T.apropos}</a>
+        <a href="${P}/contact" data-section="contact">${T.contact}</a>
       </nav>
       <div class="reglages">
         <div class="theme"><button class="theme-btn" type="button" aria-pressed="false" aria-label="${T.sombre}"><svg class="lune" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg><svg class="soleil" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button></div>
+        <div class="langue"><a class="langue-btn" href="${autreLangue()}" hreflang="${EN ? "fr" : "en"}" lang="${EN ? "fr" : "en"}" aria-label="${T.autreLabel}">${T.autre}</a></div>
         <button class="nav-toggle" type="button" aria-label="${T.ouvrir}" aria-expanded="false" aria-controls="menu-nav"><span class="nav-bars" aria-hidden="true"></span></button>
       </div>
     </div>

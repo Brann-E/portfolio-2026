@@ -1,0 +1,62 @@
+[
+  {
+    "id": "horaire-we-want-you",
+    "kind": "modif",
+    "title": "Time changed: “We Want You!”",
+    "text": "The performance on Friday 24/07 moves from 20h20 to 21h00, at Place Général de Gaulle.",
+    "when": "12 min ago",
+    "show": "we-want-you"
+  },
+  {
+    "id": "happy-hour-cour",
+    "kind": "bon-plan",
+    "title": "Good deal: happy hour at the festival courtyard",
+    "text": "Half-price drinks from 6 pm to 7 pm, Thursday and Friday.",
+    "when": "40 min ago",
+    "spot": 13
+  },
+  {
+    "id": "hydratation",
+    "kind": "conseil",
+    "title": "Remember to stay hydrated",
+    "text": "It will be hot this afternoon. Water points are spread across the city: turn them on in the map filters."
+  },
+  {
+    "id": "navette",
+    "kind": "info",
+    "title": "Free shuttle from the car park",
+    "text": "A shuttle connects the Edmé Vadot car park to the city center every 15 minutes, from 10 am to midnight.",
+    "when": "1 h ago",
+    "spot": 35
+  },
+  {
+    "id": "gaufres",
+    "kind": "bon-plan",
+    "title": "Two waffles bought, one free",
+    "text": "The Gaufres Volantes will treat you until 5 pm, near the École primaire de l'Est.",
+    "when": "This morning",
+    "spot": 19
+  },
+  {
+    "id": "lieu-madame",
+    "kind": "modif",
+    "title": "New slot: “MaDame”",
+    "text": "An extra performance is added on Sunday. Remember to add it to your schedule.",
+    "when": "This morning",
+    "show": "madame"
+  },
+  {
+    "id": "meteo",
+    "kind": "conseil",
+    "title": "Possible showers on Friday evening",
+    "text": "Bring a rain jacket: the shows take place outdoors, even if it rains a little.",
+    "when": "Yesterday"
+  },
+  {
+    "id": "silence",
+    "kind": "conseil",
+    "title": "Shows love silence",
+    "text": "Put your phone on silent during performances: the artists say thank you.",
+    "when": "Yesterday"
+  }
+]

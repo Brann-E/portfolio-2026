@@ -1,0 +1,19 @@
+# Noms propres et titres de projets qui restent en français (contrôle de build_en.py)
+La MYNE
+Chalon dans la rue
+Chalon-sur-Saône
+Ce sera pire après
+Général de Gaulle
+cas-chalon-dans-la-rue
+Caillé
+Émile Nourry
+Müdigkeitsgesellschaft
+Éloge de l'inactivité
+Schön
+Essai sur le don. Forme et raison de l'échange dans les sociétés archaïques
+L'Année sociologique
+La Découverte
+Desclée
+Essai sur le don
+Régis Debray
+Les liaisons numériques

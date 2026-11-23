@@ -4,6 +4,7 @@ import { findConflict } from "../planning-rules.js";
 import { showToast } from "./toast.js";
 import { shareRep } from "./share.js";
 
+import { tr } from "../i18n.js";
 /**
  * Actions de l'utilisateur sur un spectacle (cœur, épingle) avec leur retour visuel :
  * petit rebond de l'icône, puis confirmation en bas avec « Annuler » (le chevauchement est signalé dès l'épingle).
@@ -37,8 +38,8 @@ export function toggleFavorite(show, trigger) {
   store.toggleFavorite(show.id);
   pop(trigger);
   showToast({
-    message: added ? `« ${show.title} » ajouté aux favoris` : `« ${show.title} » retiré des favoris`,
-    actionLabel: "Annuler",
+    message: added ? tr("« {title} » ajouté aux favoris", { title: show.title }) : tr("« {title} » retiré des favoris", { title: show.title }),
+    actionLabel: tr("Annuler"),
     onAction: () => store.toggleFavorite(show.id),
   });
 }
@@ -50,14 +51,14 @@ export async function togglePin(show, index, trigger) {
   pop(trigger);
 
   if (removing) {
-    showToast({ message: `« ${show.title} » retiré du planning`, actionLabel: "Annuler", onAction: () => store.setPin(show.id, index) });
+    showToast({ message: tr("« {title} » retiré du planning", { title: show.title }), actionLabel: tr("Annuler"), onAction: () => store.setPin(show.id, index) });
     return;
   }
   const rep = show.reps[index];
   const clash = findConflict(await loadShows(), store.getPlanning(), show.id);
   showToast({
-    message: `Ajouté au planning : ${rep.date} - ${rep.time}${clash ? ` · chevauche « ${clash} »` : ""}`,
-    actionLabel: "Annuler",
+    message: tr("Ajouté au planning : {date} - {time}", { date: rep.date, time: rep.time }) + (clash ? tr(" · chevauche « {clash} »", { clash }) : ""),
+    actionLabel: tr("Annuler"),
     onAction: () => (previous === null ? store.togglePin(show.id, index) : store.setPin(show.id, previous)),
   });
 }

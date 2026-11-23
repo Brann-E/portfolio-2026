@@ -1,6 +1,7 @@
 import { h, img } from "../dom.js";
 import { createNewsButton } from "./news-button.js";
 
+import { tr } from "../i18n.js";
 /**
  * Gabarit commun des écrans : en-tête jaune (titre centré) + corps défilant.
  * @param {{id: string, title: string, body: Node|Node[], above?: Node, softLine?: boolean, bodyClass?: string,
@@ -16,7 +17,7 @@ export function createScreen({ id, title, body, above, softLine = false, bodyCla
       {
         class: "screen__back",
         type: "button",
-        "aria-label": "Retour",
+        "aria-label": tr("Retour"),
         onclick: (event) =>
           event.currentTarget.dispatchEvent(new CustomEvent("navigate", { bubbles: true, detail: { to: back.to, params: back.params, options: { transition: "fade" } } })),
       },

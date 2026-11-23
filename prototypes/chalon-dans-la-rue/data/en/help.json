@@ -1,0 +1,29 @@
+{
+  "aide": [
+    {
+      "q": "How do I add a show to my schedule?",
+      "a": "Tap the pin icon on a performance. The Schedule sorts your choices by day and flags slots that overlap."
+    },
+    {
+      "q": "How do I set a show aside?",
+      "a": "Tap the little heart on the map or on the show's page: it appears in Favorites."
+    },
+    {
+      "q": "How do I find a venue on the map?",
+      "a": "Use “See on the map” under a performance, the search at the top of the map, or the list of venues in the Menu. Tap a marker to see the shows playing there."
+    },
+    {
+      "q": "What do IN and OFF mean?",
+      "a": "Artistic projects are either selected by the festival (In Selection) or programmed (Off Selection). The IN/OFF filter in the Discover list lets you choose one or the other."
+    },
+    {
+      "q": "Are my favorites and my schedule saved?",
+      "a": "Yes, but only on this device and in this browser. Clearing the browser data erases them."
+    }
+  ],
+  "cgu": [
+    "This application is a demonstration prototype made as part of a portfolio project.",
+    "The shows, times, venues and texts come from the official website of the Chalon dans la rue festival. They belong to the festival and to the companies concerned.",
+    "No personal data is sent: your favorites, your schedule and your settings stay saved on your device."
+  ]
+}

@@ -1,0 +1,300 @@
+{
+ "pairs": [
+  {
+   "fr": "<title>Rien ne tient tout seul</title>",
+   "en": "<title>Nothing stands on its own</title>"
+  },
+  {
+   "fr": "content=\"Rien ne tient tout seul - Brann Etienne\"",
+   "en": "content=\"Nothing stands on its own - Brann Etienne\""
+  },
+  {
+   "fr": "\"headline\": \"Rien ne tient tout seul\"",
+   "en": "\"headline\": \"Nothing stands on its own\""
+  },
+  {
+   "fr": "Ce qui tient n'est jamais la chose, c'est ce qui circule à travers elle. La généalogie d'un angle mort que le design a mis un siècle à ne pas voir.",
+   "en": "What holds is never the thing, it is what circulates through it. The genealogy of a blind spot that design took a century not to see."
+  },
+  {
+   "fr": ">Rien ne tient tout seul. Ce qui tient, circule.<",
+   "en": ">Nothing stands on its own. What holds, circulates.<"
+  },
+  {
+   "fr": "On croit vivre parmi des choses isolées. Un corps, une amitié, une entreprise : chacun semble exister pour soi, comme une unité close sur elle-même. Pourtant, rien ne tient seul. Tout tient parce que quelque chose y passe, une parole, une attention, une confiance, une obligation, un geste.",
+   "en": "We think we live among isolated things. A body, a friendship, a company: each seems to exist for itself, like a unit closed in on itself. Yet nothing stands alone. Everything holds because something passes through it, a word, an attention, a trust, an obligation, a gesture."
+  },
+  {
+   "fr": "Le design a longtemps conçu les choses. Il a moins souvent conçu ce qui circule entre elles.",
+   "en": "Design has long designed things. It has less often designed what circulates between them."
+  },
+  {
+   "fr": ">8 min de lecture<",
+   "en": ">8 min read<"
+  },
+  {
+   "fr": ">Prenez n'importe quoi qui vous semble stable. Une &eacute;quipe qui fonctionne. Une institution. Une relation ancienne. Un &eacute;cosyst&egrave;me. Regardez-le assez longtemps et la stabilit&eacute; se dissout. Ce que vous preniez pour une chose isolée, une unité close, est en réalité un flux.<",
+   "en": ">Take anything that seems stable to you. A team that works. An institution. A long-standing relationship. An ecosystem. Look at it long enough and the stability dissolves. What you took for an isolated thing, a closed unit, is in reality a flow.<"
+  },
+  {
+   "fr": ">L'&eacute;quipe tient parce que de l'information, de la reconnaissance, de la confiance y circulent en permanence&nbsp;; qu'on coupe ces flux et il ne reste, en quelques mois, qu'un organigramme et des gens qui ne se parlent plus.<",
+   "en": ">The team holds because information, recognition and trust circulate in it permanently; cut those flows and, within a few months, all that remains is an org chart and people who no longer talk to each other.<"
+  },
+  {
+   "fr": ">C’est le constat le plus banal qui soit, et pourtant le design l’a longtemps traité comme un arrière-plan. Moi y compris. Pendant des années, j’ai conçu des interfaces, des services, des systèmes ; j’ai fait circuler des informations, des usagers, des demandes, des contenus, des décisions. Je travaillais déjà dans ces passages, sans nécessairement les regarder comme l’objet même de la conception. Il a fallu aller lire ailleurs, dans des disciplines qui n’étaient pas les miennes, pour comprendre ce que mon travail faisait apparaître depuis longtemps : qu’une interface, un service ou une organisation ne tient pas d’abord par ce qu’il contient, mais par ce qui y circule.<",
+   "en": ">It is the most banal observation there is, and yet design long treated it as a backdrop. Myself included. For years, I designed interfaces, services, systems; I made information, users, requests, content and decisions circulate. I was already working in these passages, without necessarily looking at them as the very object of design. I had to go and read elsewhere, in disciplines that weren't mine, to understand what my work had long been bringing to light: that an interface, a service or an organization does not hold first by what it contains, but by what circulates in it.<"
+  },
+  {
+   "fr": ">Ce texte, et les 5 qui le suivent, partent de cette évidence, non comme une découverte de laquelle s’enorgueillir, mais comme un point de départ :<",
+   "en": ">This text, and the five that follow it, start from this self-evidence, not as a discovery to be proud of, but as a starting point:<"
+  },
+  {
+   "fr": ">Ce qui tient n'est pas la chose seule. C'est ce qui circule &agrave; travers elle.<",
+   "en": ">What holds is not the thing alone. It is what circulates through it.<"
+  },
+  {
+   "fr": ">Une relation vivante n'est pas un &eacute;tat acquis&nbsp;: c'est un d&eacute;bit. Le vivant se reconna&icirc;t &agrave; ce qui y entre, en sort et s'y transforme. Ce qui ne circule plus est mort, qu'il s'agisse d'un organisme, d'une coop&eacute;ration ou d'un lien entre deux personnes. Concevoir, d&egrave;s lors, ce n'est pas fabriquer de meilleurs objets. C'est prendre soin de ce qui passe.<",
+   "en": ">A living relationship is not an acquired state: it is a flow rate. The living is recognized by what enters it, leaves it and transforms within it. What no longer circulates is dead, whether it is an organism, a cooperation or a bond between two people. To design, from then on, is not to make better objects. It is to take care of what passes.<"
+  },
+  {
+   "fr": ">Pour comprendre pourquoi cette &eacute;vidence a &eacute;t&eacute; si longtemps invisible au design, il faut retracer comment il a pens&eacute; l'humain. Ce n'est pas un proc&egrave;s, c'est une g&eacute;n&eacute;alogie. Elle ne raconte pas une succession d'&eacute;poques qui s'annulent, mais des mani&egrave;res de penser l'humain qui se sont superpos&eacute;es et dont nous portons encore les traces. Chaque paradigme a saisi quelque chose de r&eacute;el. Et chaque fois, il l'a saisi comme une <em>chose isol&eacute;e</em>, en laissant filer ce qui circulait entre.<",
+   "en": ">To understand why this self-evidence was invisible to design for so long, we have to retrace how it has thought about the human. This is not a trial, it is a genealogy. It doesn't tell of a succession of eras that cancel each other out, but of ways of thinking about the human that have layered on top of each other and whose traces we still carry. Each paradigm grasped something real. And each time, it grasped it as an <em>isolated thing</em>, letting slip what circulated in between.<"
+  },
+  {
+   "fr": ">La longue marche vers l'humain, et ce qu'elle a manqu&eacute;<",
+   "en": ">The long march toward the human, and what it missed<"
+  },
+  {
+   "fr": ">Taylorisme &middot; Bauhaus &middot; premi&egrave;re moiti&eacute; du XX<sup>e</sup><",
+   "en": ">Taylorism &middot; Bauhaus &middot; first half of the 20<sup>th</sup> century<"
+  },
+  {
+   "fr": ">L'humain comme <b>op&eacute;rateur</b><",
+   "en": ">The human as <b>operator</b><"
+  },
+  {
+   "fr": ">On con&ccedil;oit pour l'efficacit&eacute; du geste&nbsp;: ergonomie, fonction, utilit&eacute;. L'humain est un corps qui produit. Ce paradigme a donn&eacute; des objets admirablement pens&eacute;s, et des &ecirc;tres r&eacute;duits &agrave; leurs mouvements. Ce qui circulait entre les op&eacute;rateurs, la coordination tacite, le savoir d'atelier, n'&eacute;tait pas un objet de conception&nbsp;: c'&eacute;tait du frottement &agrave; supprimer.<",
+   "en": ">We design for the efficiency of the gesture: ergonomics, function, utility. The human is a body that produces. This paradigm gave admirably thought-out objects, and beings reduced to their movements. What circulated between operators, tacit coordination, workshop know-how, was not an object of design: it was friction to be removed.<"
+  },
+  {
+   "fr": ">Design industriel &middot; 1950&ndash;1980<",
+   "en": ">Industrial design &middot; 1950&ndash;1980<"
+  },
+  {
+   "fr": ">L'humain comme <b>consommateur</b><",
+   "en": ">The human as <b>consumer</b><"
+  },
+  {
+   "fr": ">On con&ccedil;oit pour le d&eacute;sir&nbsp;: style, identit&eacute; de marque, obsolescence. L'humain a des &eacute;motions &agrave; d&eacute;clencher et un portefeuille &agrave; ouvrir. Culture visuelle magnifique, relation &agrave; l'objet profond&eacute;ment asym&eacute;trique, un sens unique, du produit vers l'acheteur, o&ugrave; rien n'est cens&eacute; revenir que le paiement.<",
+   "en": ">We design for desire: style, brand identity, obsolescence. The human has emotions to trigger and a wallet to open. A magnificent visual culture, a deeply asymmetrical relationship to the object, one-way, from product to buyer, where nothing is supposed to come back except payment.<"
+  },
+  {
+   "fr": ">UX &middot; design centr&eacute; utilisateur &middot; 1990&ndash;2010<",
+   "en": ">UX &middot; user-centered design &middot; 1990&ndash;2010<"
+  },
+  {
+   "fr": ">L'humain comme <b>utilisateur</b><",
+   "en": ">The human as <b>user</b><"
+  },
+  {
+   "fr": ">On con&ccedil;oit pour l'exp&eacute;rience sans friction&nbsp;: personas, parcours, points de contact. C'est ici qu'&laquo;&nbsp;utilisateur&nbsp;&raquo; remplace &laquo;&nbsp;personne&nbsp;&raquo;. L'humain devient une somme de comportements observables et de besoins &agrave; satisfaire. On mod&eacute;lise, on teste, on optimise le tunnel. L'utilisateur est au centre du parcours, mais il reste l'unit&eacute; de d&eacute;part. On le rencontre par ses comportements, ses besoins et ses verbatims&nbsp;; plus rarement &agrave; l'endroit o&ugrave; il est pris dans une relation avec d'autres. Ce que deux personnes se donnent, se doivent, taisent ou reconnaissent ne devient presque jamais l'objet m&ecirc;me de la conception.<",
+   "en": ">We design for frictionless experience: personas, journeys, touchpoints. This is where “user” replaces “person”. The human becomes a sum of observable behaviors and needs to satisfy. We model, we test, we optimize the funnel. The user is at the center of the journey, but remains the starting unit. We meet them through their behaviors, their needs and their verbatims; more rarely at the place where they are caught in a relationship with others. What two people give each other, owe each other, keep silent about or acknowledge almost never becomes the very object of design.<"
+  },
+  {
+   "fr": ">Design syst&eacute;mique &middot; design de services &middot; depuis 2010<",
+   "en": ">Systemic design &middot; service design &middot; since 2010<"
+  },
+  {
+   "fr": ">L'humain comme <b>n&oelig;ud d'un syst&egrave;me</b><",
+   "en": ">The human as <b>node of a system</b><"
+  },
+  {
+   "fr": ">On con&ccedil;oit enfin pour l'interd&eacute;pendance&nbsp;: &eacute;cosyst&egrave;mes, parties prenantes, effets de bord. C'est plus riche, plus honn&ecirc;te. Mais le syst&egrave;me reste le sujet. Les relations deviennent des interd&eacute;pendances &agrave; cartographier&nbsp;; or une interd&eacute;pendance n'est pas encore une relation habit&eacute;e. La carte dit qui est reli&eacute;, parfois ce qui passe&nbsp;; elle ne dit pas encore ce que ce passage engage pour ceux qui le portent, ce qu'il leur co&ucirc;te, ni &agrave; quelles conditions il peut durer.<",
+   "en": ">We finally design for interdependence: ecosystems, stakeholders, side effects. It is richer, more honest. But the system remains the subject. Relationships become interdependencies to map; yet an interdependence is not yet a lived-in relationship. The map says who is connected, sometimes what passes; it doesn't yet say what that passage commits for those who carry it, what it costs them, or under what conditions it can last.<"
+  },
+  {
+   "fr": ">Ce que ces textes proposent<",
+   "en": ">What these texts propose<"
+  },
+  {
+   "fr": ">L'humain comme <b>&ecirc;tre qui fait circuler</b><",
+   "en": ">The human as <b>being who makes things circulate</b><"
+  },
+  {
+   "fr": ">On con&ccedil;oit pour ce qui passe entre les personnes, pas pour la personne isol&eacute;e, pas pour le syst&egrave;me abstrait, mais pour la circulation elle-m&ecirc;me&nbsp;: ce qui entre, ce qui revient, ce qui se transforme dans le lien. C'est un paradigme qui prend pour unit&eacute; non une chose, mais un mouvement.<",
+   "en": ">We design for what passes between people, not for the isolated person, not for the abstract system, but for circulation itself: what comes in, what comes back, what transforms in the bond. It is a paradigm whose unit is not a thing, but a movement.<"
+  },
+  {
+   "fr": "Aucun de ces paradigmes n’était faux. Chacun saisissait une part réelle de la réponse : le geste, le désir, le besoin, le nœud. Mais chacun, seul, tendait à faire de cette part le tout, et laissait de côté ce qui reliait ces choses entre elles.",
+   "en": "None of these paradigms was false. Each grasped a real part of the answer: the gesture, the desire, the need, the node. But each, alone, tended to make that part the whole, and left aside what connected these things to each other."
+  },
+  {
+   "fr": "Ce que ces paradigmes avaient en commun n’était pas une cécité, mais une réduction. Elle a un nom, et elle traverse tout le siècle : l’utilitarisme, au sens où le M.A.U.S.S le combat, c’est-à-dire la réduction des rapports humains à l’intérêt, à l’équivalence et à la valeur calculable.",
+   "en": "What these paradigms had in common was not blindness, but a reduction. It has a name, and it runs through the whole century: utilitarianism, in the sense in which the M.A.U.S.S. fights it, that is, the reduction of human relations to interest, equivalence and calculable value."
+  },
+  {
+   "fr": "Or ce qui circule dans un lien - valeur de tous types, reconnaissance, confiance, obligation, attention - ne se laisse ni réduire à l’utilité, ni régler comme un compte. L’utilitarisme n’a pas nié cette circulation : il a moins su la voir qu’il n’a su la traduire. Nous retrouverons ce point dans le cinquième texte de la série, car c’est là qu’il devient politique.",
+   "en": "Yet what circulates in a bond - value of every kind, recognition, trust, obligation, attention - can neither be reduced to utility nor settled like an account. Utilitarianism did not deny this circulation: it was less able to see it than to translate it. We will come back to this point in the fifth text of the series, because that is where it becomes political."
+  },
+  {
+   "fr": ">Une relation n'est pas un flux entre deux n&oelig;uds<",
+   "en": ">A relationship is not a flow between two nodes<"
+  },
+  {
+   "fr": ">Il faut &ecirc;tre pr&eacute;cis, parce qu'on pourrait croire que le design syst&eacute;mique dit d&eacute;j&agrave; tout cela. Il en approche, mais s'arr&ecirc;te au seuil. Cartographier des flux entre des acteurs, ce n'est pas encore travailler la circulation. Une fl&egrave;che sur une carte d'acteurs indique qu'un &eacute;change existe&nbsp;; elle ne dit rien de ce qui s'y joue.<",
+   "en": ">We have to be precise, because one might think systemic design already says all this. It comes close, but stops at the threshold. Mapping flows between actors is not yet working on circulation. An arrow on an actor map indicates that an exchange exists; it says nothing about what is at stake in it.<"
+  },
+  {
+   "fr": ">Une relation est un espace vivant, charg&eacute; d'implicites, de contributions invisibles, d'attentes jamais formul&eacute;es, de ce que chacun apporte sans le nommer et de ce qui lui co&ucirc;te sans qu'il le dise. C'est l&agrave; que les coop&eacute;rations naissent, tiennent, ou se d&eacute;font. Et elles ne se d&eacute;font presque jamais par manque de moyens ou de bonne volont&eacute;.<",
+   "en": ">A relationship is a living space, loaded with implicit understandings, invisible contributions, expectations never voiced, with what each person brings without naming it and what it costs them without their saying so. That is where cooperations are born, hold, or come undone. And they almost never come undone for lack of means or goodwill.<"
+  },
+  {
+   "fr": ">Les coop&eacute;rations &eacute;chouent rarement sur le probl&egrave;me pos&eacute;. Elles &eacute;chouent parce que personne n'a pris soin de ce qui circulait, ou avait cess&eacute; de circuler, entre les gens.<",
+   "en": ">Cooperations rarely fail on the problem posed. They fail because nobody took care of what circulated, or had stopped circulating, between people.<"
+  },
+  {
+   "fr": ">C'est une observation de terrain, r&eacute;p&eacute;t&eacute;e jusqu'&agrave; devenir une r&egrave;gle. Deux organisations qui partagent les m&ecirc;mes valeurs, les m&ecirc;mes objectifs, les m&ecirc;mes ressources, et qui n'arrivent pas &agrave; coop&eacute;rer. Parce que quelqu'un n'a pas os&eacute; dire ce qui lui co&ucirc;tait. Parce qu'une contribution essentielle restait invisible et non reconnue. Parce qu'un engagement avait &eacute;t&eacute; compris diff&eacute;remment de part et d'autre, et que l'&eacute;cart n'a jamais circul&eacute; jusqu'&agrave; devenir dicible. Le syst&egrave;me &eacute;tait bien con&ccedil;u. La circulation, elle, ne l'&eacute;tait pas, personne ne l'avait jamais prise pour objet.<",
+   "en": ">This is a field observation, repeated until it became a rule. Two organizations that share the same values, the same goals, the same resources, and that fail to cooperate. Because someone didn't dare say what it cost them. Because an essential contribution remained invisible and unrecognized. Because a commitment had been understood differently on each side, and the gap never circulated far enough to become sayable. The system was well designed. The circulation was not, nobody had ever taken it as an object.<"
+  },
+  {
+   "fr": ">M&ecirc;me l'innovation ob&eacute;it &agrave; cette loi<",
+   "en": ">Even innovation obeys this law<"
+  },
+  {
+   "fr": ">On pourrait croire que tout cela vaut pour le lien humain et s'arr&ecirc;te aux portes de l'&eacute;conomie mesurable, celle qui produit et qui invente. C'est l'inverse. L&agrave; o&ugrave; l'on a le plus &eacute;tudi&eacute; la naissance des choses neuves, on retrouve exactement la m&ecirc;me loi de circulation.<",
+   "en": ">One might think all this holds for the human bond and stops at the gates of the measurable economy, the one that produces and invents. It's the opposite. Where the birth of new things has been studied most, we find exactly the same law of circulation.<"
+  },
+  {
+   "fr": ">Roberto Verganti, en cherchant d'o&ugrave; vient l'innovation qui compte, montre qu'elle ne vient ni du march&eacute; ni de la technologie seuls, mais d'un changement de <em>sens</em>, et que ce changement ne s'obtient pas en scrutant l'utilisateur &agrave; la loupe, mais en s'ins&eacute;rant dans un r&eacute;seau d'interpr&egrave;tes o&ugrave; des visions se confrontent et circulent. L'innovation radicale n'est pas une propri&eacute;t&eacute; d'un objet&nbsp;: c'est ce qui &eacute;merge quand du sens circule dans un tissu de relations.<",
+   "en": ">Roberto Verganti, looking for where innovation that matters comes from, shows that it comes neither from the market nor from technology alone, but from a change of <em>meaning</em>, and that this change is obtained not by scrutinizing the user under a magnifying glass, but by inserting oneself into a network of interpreters where visions confront each other and circulate. Radical innovation is not a property of an object: it is what emerges when meaning circulates in a fabric of relationships.<"
+  },
+  {
+   "fr": ">David Epstein, en cherchant d'o&ugrave; viennent les d&eacute;couvertes, aboutit au m&ecirc;me endroit par un autre chemin&nbsp;: ce ne sont pas les hyper-sp&eacute;cialistes qui les font le plus souvent, mais ceux qui font circuler des savoirs entre des domaines &eacute;loign&eacute;s. Ce qui passe d'un champ &agrave; l'autre produit ce qu'aucun champ ne produit seul. La d&eacute;couverte est un effet de circulation.<",
+   "en": ">David Epstein, looking for where discoveries come from, ends up at the same place by another path: it is not the hyper-specialists who make them most often, but those who make knowledge circulate between distant fields. What passes from one field to another produces what no field produces alone. Discovery is an effect of circulation.<"
+  },
+  {
+   "fr": ">Deux enqu&ecirc;tes sur l'invention, men&eacute;es loin de toute anthropologie, et une m&ecirc;me conclusion&nbsp;: <strong>ce qui est f&eacute;cond n'est pas la chose, c'est le passage entre les choses.</strong> Ce n'est pas une jolie id&eacute;e relationnelle. C'est ce qu'on observe partout o&ugrave; l'on regarde comment le neuf advient.<",
+   "en": ">Two inquiries into invention, conducted far from any anthropology, and one conclusion: <strong>what is fertile is not the thing, it is the passage between things.</strong> It is not a pretty relational idea. It is what we observe everywhere we look at how the new comes about.<"
+  },
+  {
+   "fr": ">Et si la relation commen&ccedil;ait en soi<",
+   "en": ">And what if the relationship began within oneself<"
+  },
+  {
+   "fr": ">Reste une derni&egrave;re cons&eacute;quence, plus int&eacute;rieure, et elle renverse une intuition courante. On croit volontiers que s'occuper de la relation, c'est s'occuper de l'autre&nbsp;: aller vers lui, comprendre ses besoins, s'y adapter. C'est ce que le design a fait, de mieux en mieux, pendant des d&eacute;cennies.<",
+   "en": ">One last consequence remains, more inward, and it overturns a common intuition. We readily believe that taking care of the relationship means taking care of the other: going toward them, understanding their needs, adapting to them. This is what design has done, better and better, for decades.<"
+  },
+  {
+   "fr": ">Mais la circulation ne commence pas dans l'espace entre deux personnes. Elle commence dans ce que chacun y met en jeu&nbsp;: ce qu'il apporte sans le nommer, ce qu'il attend sans le formuler, ce qui lui co&ucirc;te et qu'il tait. Avant de rencontrer l'autre, on arrive avec une histoire, des habitudes de pens&eacute;e, des contributions jamais mises en mots. Se voir soi-m&ecirc;me dans le lien, avant d'y entrer, reconna&icirc;tre ce qu'on y fait circuler &agrave; son insu&nbsp;: c'est un travail que le design a rarement pris pour objet, et qu'il m'a fallu apprendre autrement.<",
+   "en": ">But circulation doesn't begin in the space between two people. It begins in what each puts at stake in it: what they bring without naming it, what they expect without formulating it, what it costs them and they keep quiet about. Before meeting the other, we arrive with a history, habits of thought, contributions never put into words. Seeing yourself in the bond, before entering it, recognizing what you make circulate without knowing: this is work that design has rarely taken as its object, and that I had to learn otherwise.<"
+  },
+  {
+   "fr": ">S'occuper de la relation, c'est d'abord s'occuper de soi&nbsp;: de ce qu'on met en circulation sans le savoir.<",
+   "en": ">Taking care of the relationship means first taking care of yourself: of what you put into circulation without knowing it.<"
+  },
+  {
+   "fr": ">Ce n'est pas un outil de plus dans la bo&icirc;te du designer. C'est un changement de ce qu'on prend pour l'objet m&ecirc;me du design. On ne con&ccedil;oit plus la chose&nbsp;; on con&ccedil;oit les conditions qui permettent &agrave; quelque chose de circuler, et de continuer &agrave; circuler sans se trahir.<",
+   "en": ">This is not one more tool in the designer's box. It is a change in what we take to be the very object of design. We no longer design the thing; we design the conditions that allow something to circulate, and to keep circulating without betraying itself.<"
+  },
+  {
+   "fr": ">Mais poser cela ouvre aussit&ocirc;t une difficult&eacute;. Si tout tient par de la circulation, encore faut-il la voir, et la circulation, par nature, ne se voit pas d'un seul endroit. C'est l'objet du texte suivant.<",
+   "en": ">But stating this immediately opens a difficulty. If everything holds through circulation, you still have to see it, and circulation, by nature, cannot be seen from a single place. That is the subject of the next text.<"
+  },
+  {
+   "fr": "Mobilis&eacute; sur la th&egrave;se de l'innovation de sens&nbsp;: l'innovation radicale ne vient ni du march&eacute; ni de la technologie, mais d'un changement de signification qui &eacute;merge d'un r&eacute;seau d'&laquo;&nbsp;interpr&egrave;tes&nbsp;&raquo;, une circulation de visions, non l'&eacute;coute de l'utilisateur.",
+   "en": "Drawn on for the thesis of innovation of meaning: radical innovation comes neither from the market nor from technology, but from a change in meaning that emerges from a network of “interpreters”, a circulation of visions, not from listening to the user."
+  },
+  {
+   "fr": "<span class=\"pub\">New York, Riverhead Books, 2019</span>&nbsp;; trad. fr. <span class=\"ti\">Range. Pourquoi les g&eacute;n&eacute;ralistes triomphent dans un monde sp&eacute;cialis&eacute;</span>, <span class=\"pub\">Les Ar&egrave;nes, 2020.</span>",
+   "en": "<span class=\"pub\">New York, Riverhead Books, 2019.</span>"
+  },
+  {
+   "fr": "Mobilis&eacute; sur la d&eacute;couverte comme effet de circulation&nbsp;: ce sont les profils capables de faire passer des savoirs entre domaines &eacute;loign&eacute;s qui produisent le plus d'avanc&eacute;es, non les hyper-sp&eacute;cialistes.",
+   "en": "Drawn on for discovery as an effect of circulation: it is the profiles able to carry knowledge between distant domains that produce the most advances, not the hyper-specialists."
+  },
+  {
+   "fr": ">G&eacute;n&eacute;alogie des paradigmes du design<",
+   "en": ">Genealogy of design paradigms<"
+  },
+  {
+   "fr": "<span class=\"a\">Cadre construit par l'auteur</span>, la succession op&eacute;rateur (taylorisme, Bauhaus) / consommateur (design industriel) / utilisateur (UX, design centr&eacute; utilisateur) / n&oelig;ud syst&eacute;mique (design de services), et sa relecture sous l'angle de ce que chaque paradigme a manqu&eacute;&nbsp;: la circulation entre les termes qu'il isolait.",
+   "en": "<span class=\"a\">Framework built by the author</span>, the succession operator (Taylorism, Bauhaus) / consumer (industrial design) / user (UX, user-centered design) / systemic node (service design), and its rereading in terms of what each paradigm missed: the circulation between the terms it isolated."
+  },
+  {
+   "fr": "La critique de l'angle mort du design syst&eacute;mique, les personnes trait&eacute;es comme n&oelig;uds d'un r&eacute;seau, les relations cartographi&eacute;es mais jamais habit&eacute;es, prolonge et d&eacute;place ce cadre.",
+   "en": "The critique of the blind spot of systemic design, people treated as nodes in a network, relationships mapped but never inhabited, extends and shifts this framework."
+  },
+  {
+   "fr": ">Les fondations anthropologiques de cette th&egrave;se, le don comme circulation (Mauss, Caill&eacute;), l'encastrement de l'&eacute;conomie (Polanyi), sont d&eacute;velopp&eacute;es dans les textes 4 et 5 de la s&eacute;rie, o&ugrave; elles sont r&eacute;f&eacute;renc&eacute;es en d&eacute;tail.<",
+   "en": ">The anthropological foundations of this thesis, the gift as circulation (Mauss, Caillé), the embeddedness of the economy (Polanyi), are developed in texts 4 and 5 of the series, where they are referenced in detail.<"
+  },
+  {
+   "fr": ">Texte suivant<",
+   "en": ">Next text<"
+  },
+  {
+   "fr": ">La s&eacute;rie compl&egrave;te<",
+   "en": ">The complete series<"
+  },
+  {
+   "fr": ">Rien ne tient tout seul<",
+   "en": ">Nothing stands on its own<"
+  },
+  {
+   "fr": ">Les relations ne se voient que d'un certain endroit<",
+   "en": ">Relationships can only be seen from a certain place<"
+  },
+  {
+   "fr": ">La m&eacute;taliminalit&eacute;<",
+   "en": ">Metaliminality<"
+  },
+  {
+   "fr": ">Le lien importe plus que le bien<",
+   "en": ">The bond matters more than the good<"
+  },
+  {
+   "fr": ">Ce qui ne circule plus casse<",
+   "en": ">What no longer circulates breaks<"
+  },
+  {
+   "fr": ">Ce qui fait circuler<",
+   "en": ">What makes things circulate<"
+  },
+  {
+   "fr": ">Ce qui tient, circule, g&eacute;n&eacute;alogie d'un angle mort du design<",
+   "en": ">What holds, circulates, genealogy of a blind spot in design<"
+  },
+  {
+   "fr": ">Trois disciplines qui s'ignorent partagent un m&ecirc;me seuil&nbsp;: la liminalit&eacute;<",
+   "en": ">Three disciplines that ignore each other share the same threshold: liminality<"
+  },
+  {
+   "fr": ">Voir ensemble, et pouvoir agir<",
+   "en": ">Seeing together, and being able to act<"
+  },
+  {
+   "fr": ">Le don comme circulation<",
+   "en": ">The gift as circulation<"
+  },
+  {
+   "fr": ">Ce qui arrive quand la circulation s'arr&ecirc;te<",
+   "en": ">What happens when circulation stops<"
+  },
+  {
+   "fr": ">La circulation a toujours un support<",
+   "en": ">Circulation always has a medium<"
+  },
+  {
+   "fr": ">R&eacute;f&eacute;rences<",
+   "en": ">References<"
+  },
+  {
+   "fr": ">Les sources mobilis&eacute;es dans ce texte, et le point pr&eacute;cis sur lequel chacune est convoqu&eacute;e.<",
+   "en": ">The sources drawn on in this text, and the precise point on which each is called upon.<"
+  },
+  {
+   "fr": "\"name\": \"La circulation, paradigme du design\"",
+   "en": "\"name\": \"Circulation, a paradigm of design\""
+  }
+ ]
+}

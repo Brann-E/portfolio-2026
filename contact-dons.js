@@ -4,6 +4,8 @@
 (function () {
   "use strict";
 
+  var tr = window.t || function (s) { return s; };   // les textes de l'interface, dans la langue de la page (voir i18n.js)
+
   var G =
     '<svg viewBox="0 0 48 48" fill="none" stroke="url(#donGrad)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">';
   var Gd = 'fill="url(#donGrad)" stroke="none"';
@@ -396,6 +398,12 @@
     }
   ];
 
+  // en anglais, les cartes lisent leur texte dans le dictionnaire (clé : le nom français de la carte)
+  if (window.I18N_DONS) dons.forEach(function (d) {
+    var e = window.I18N_DONS[d.nom];
+    if (e) { d.origine = e.origine; d.savoir = e.savoir; d.lecon = e.lecon; d.lien = e.lien; d.nom = e.nom; }
+  });
+
   // symbole du dos, propre à chaque famille (trait fin holographique, statique)
   var svgOpen =
     '<svg viewBox="0 0 48 48" fill="none" stroke="url(#donGrad)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">';
@@ -459,14 +467,14 @@
       cell.style.setProperty("--bd", (6 + Math.random() * 3.5).toFixed(2) + "s");
       cell.style.setProperty("--bdelay", (-Math.random() * 9).toFixed(2) + "s");
       cell.innerHTML =
-        '<div class="don-flip" role="button" tabindex="0" aria-label="Retourner la carte">' +
+        '<div class="don-flip" role="button" tabindex="0" aria-label="' + tr("Retourner la carte") + '">' +
         '<div class="don-flip-inner">' +
         '<div class="don-face don-face--back don-holo"><span class="don-seal"></span></div>' +
         '<div class="don-face don-face--front don-holo">' +
         '<div class="don-fglyph" aria-hidden="true"></div>' +
         '<div class="don-fnom"></div>' +
         '<div class="don-flecon"></div>' +
-        '<button class="don-plus" type="button" tabindex="-1" aria-label="En savoir plus"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7 V17 M7 12 H17"/></svg></button>' +
+        '<button class="don-plus" type="button" tabindex="-1" aria-label="' + tr("En savoir plus") + '"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7 V17 M7 12 H17"/></svg></button>' +
         "</div></div></div>";
       grid.appendChild(cell);
       var rec = {
@@ -512,7 +520,7 @@
 function revealNote() {
     if (!note || !note.hidden) return;
     note.textContent =
-      "Vous avez reçu. Le don n'appelle pas un dû, mais il ouvre quelque chose. Si vous voulez rendre, c'est plus haut.";
+      tr("Vous avez reçu. Le don n'appelle pas un dû, mais il ouvre quelque chose. Si vous voulez rendre, c'est plus haut.");
     note.hidden = false;
     // laisse le navigateur enregistrer l'état avant de déclencher la transition
     requestAnimationFrame(function () {
@@ -680,7 +688,7 @@ function revealNote() {
     var nom = (form.nom.value || "").trim();
     var email = (form.email.value || "").trim();
     var msg = (form.message.value || "").trim();
-    var sujet = "Un message" + (nom ? " · " + nom : "");
+    var sujet = tr("Un message") + (nom ? " · " + nom : "");
     var corps =
       (msg || "") + "\n\n" + (nom || "") + (email ? " (" + email + ")" : "");
     window.location.href =
@@ -705,7 +713,7 @@ function revealNote() {
       if (!nomV || !emailV || !msgV || !form.checkValidity()) {
         if (typeof form.reportValidity === "function") form.reportValidity();
         setStatus(
-          "Merci de renseigner votre nom, un email valide et un message.",
+          tr("Merci de renseigner votre nom, un email valide et un message."),
           true
         );
         return;
@@ -720,7 +728,7 @@ function revealNote() {
       var labelEl = btn.querySelector(".don-submit-t") || btn;
       var label = labelEl.textContent;
       btn.disabled = true;
-      labelEl.textContent = "Envoi…";
+      labelEl.textContent = tr("Envoi…");
       setStatus("", false);
       fetch(endpoint, {
         method: "POST",
@@ -731,7 +739,7 @@ function revealNote() {
           if (r.ok) {
             form.reset();
             setStatus(
-              "Merci, votre message est parti. Je vous réponds vite.",
+              tr("Merci, votre message est parti. Je vous réponds vite."),
               false
             );
           } else {
@@ -740,7 +748,7 @@ function revealNote() {
         })
         .catch(function () {
           setStatus(
-            "L'envoi a échoué. Écrivez-moi directement à aloha@brannetienne.com.",
+            tr("L'envoi a échoué. Écrivez-moi directement à aloha@brannetienne.com."),
             true
           );
         })

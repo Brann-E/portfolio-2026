@@ -7,6 +7,7 @@ import { createShowCard } from "../ui/show-card.js";
 import { createEmptyState, createDemoFill } from "../ui/empty-state.js";
 import { dayOf, startOf, conflictFor } from "../planning-rules.js";
 
+import { tr } from "../i18n.js";
 /** Créneaux ajoutés par le raccourci « Remplir la page » : [spectacle, index de représentation]. */
 // Les deux premiers se chevauchent (vendredi 24/07, 20h20) : de quoi voir l'avertissement.
 const DEMO_PLANNING = [
@@ -30,15 +31,15 @@ export async function renderPlanning() {
   if (planned.length === 0) {
     const screen = createScreen({
       id: "planning",
-      title: "Planning",
+      title: tr("Planning"),
       softLine: true,
       bodyClass: "screen__body--empty",
       body: createEmptyState({
-        title: "Ah !?",
-        lead: "Il semblerait que vous n’avez pas encore mis de spectacle de côté.",
+        title: tr("Ah !?"),
+        lead: tr("Il semblerait que vous n’avez pas encore mis de spectacle de côté."),
         art: "assets/chapeau.png",
         // Retour à la ligne voulu par la maquette, après « en ».
-        hint: ["Remplissez vite votre planning en", h("br"), "cliquant sur l’icône “épingle” d’un spectacle."],
+        hint: [tr("Remplissez vite votre planning en"), h("br"), tr("cliquant sur l’icône “épingle” d’un spectacle.")],
         shortHint: true,
         narrowHighlight: true,
       }),
@@ -55,7 +56,7 @@ export async function renderPlanning() {
   const entries = planned.map(({ showId, index }) => ({ show: byId.get(showId), index })).sort(chronological);
   const cards = entries.map((entry) => ({ entry, el: createShowCard(entry.show, { plannedIndex: entry.index }) }));
   const list = h("div", { class: "cards" }, cards.map(({ el }) => el));
-  const empty = h("p", { class: "empty-results", hidden: true }, "Rien de prévu ce jour-là.");
+  const empty = h("p", { class: "empty-results", hidden: true }, tr("Rien de prévu ce jour-là."));
 
   // Avertissement de chevauchement, recalculé à chaque changement d'épingle.
   const refreshConflicts = () => {
@@ -63,7 +64,7 @@ export async function renderPlanning() {
     cards.forEach(({ el }, i) => {
       el.querySelector(".conflict")?.remove();
       const title = conflictFor(live[i], live);
-      if (title) el.querySelector(".change-slot").after(h("p", { class: "conflict" }, `Chevauche « ${title} »`));
+      if (title) el.querySelector(".change-slot").after(h("p", { class: "conflict" }, tr("Chevauche « {title} »", { title })));
     });
   };
   refreshConflicts();
@@ -103,13 +104,13 @@ export async function renderPlanning() {
   const daybar = h(
     "div",
     { class: "daybar" },
-    h("div", { class: "daybar__main" }, h("h2", { class: "daybar__label" }, "Date"), h("div", { class: "daybar__chips" }, chips)),
+    h("div", { class: "daybar__main" }, h("h2", { class: "daybar__label" }, tr("Date")), h("div", { class: "daybar__chips" }, chips)),
     h("hr", { class: "rule" })
   );
 
   const screen = createScreen({
     id: "planning",
-    title: "Planning",
+    title: tr("Planning"),
     softLine: true,
     above: daybar,
     bodyClass: "screen__body--lists",
@@ -120,7 +121,7 @@ export async function renderPlanning() {
     createDemoFill(() => {
       store.clearPlanning();
       screen.dispatchEvent(new CustomEvent("navigate", { bubbles: true, detail: { to: "planning" } }));
-    }, "Vider la page")
+    }, tr("Vider la page"))
   );
   return screen;
 }

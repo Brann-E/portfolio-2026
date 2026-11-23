@@ -1,0 +1,160 @@
+{
+ "pairs": [
+  {
+   "fr": "<title>Parcours interactif - Brann Etienne</title>",
+   "en": "<title>Interactive journey - Brann Etienne</title>"
+  },
+  {
+   "fr": "Trois situations ordinaires, vues depuis chaque place. Un parcours interactif de quinze minutes pour voir ce qui circule entre les gens.",
+   "en": "Three ordinary situations, seen from each place. A fifteen-minute interactive journey to see what circulates between people."
+  },
+  {
+   "fr": "aria-label=\"Étapes du parcours\"",
+   "en": "aria-label=\"Journey steps\""
+  },
+  {
+   "fr": "&larr; Les situations",
+   "en": "&larr; The situations"
+  },
+  {
+   "fr": ">Une situation, <em>plusieurs interprétations.</em><",
+   "en": ">One situation, <em>several interpretations.</em><"
+  },
+  {
+   "fr": ">3 situations ordinaires. Vous allez les traverser par les yeux de ceux qui les vivent&#8239;: chacun sa place, chacun sa part de v&eacute;rit&eacute;.<",
+   "en": ">3 ordinary situations. You will go through them through the eyes of those who live them&#8239;: each their own place, each their own share of truth.<"
+  },
+  {
+   "fr": "Entre un produit<br>et ses usagers",
+   "en": "Between a product<br>and its users"
+  },
+  {
+   "fr": ">Une plateforme et ceux qui la font tourner<",
+   "en": ">A platform and the people who keep it running<"
+  },
+  {
+   "fr": "Tout va bien&#8239;: les voyants au vert, les co&ucirc;ts au plus bas, une &eacute;quipe fi&egrave;re de ses r&eacute;sultats. C'est exactement l&agrave; que quelque chose peut vous &eacute;chapper.",
+   "en": "Everything is fine: the lights are green, costs at their lowest, a team proud of its results. This is exactly where something can slip past you."
+  },
+  {
+   "fr": "Au sein d'une &eacute;quipe <br>et ses m&eacute;tiers",
+   "en": "Within a team <br>and its trades"
+  },
+  {
+   "fr": ">Un atelier et un bureau d'&eacute;tudes<",
+   "en": ">A workshop and an engineering office<"
+  },
+  {
+   "fr": "2 ans que les d&eacute;lais sont tenus et que personne ne se plaint. Pourtant, chaque semaine, quelque chose se dit que personne n'entend.",
+   "en": "For 2 years deadlines have been met and nobody complains. Yet every week, something is said that nobody hears."
+  },
+  {
+   "fr": "Autour d'un parcours <br>et ses moments",
+   "en": "Around a journey <br>and its moments"
+  },
+  {
+   "fr": ">6 rendez-vous depuis janvier<",
+   "en": ">6 appointments since January<"
+  },
+  {
+   "fr": "En face de vous, une personne qui r&eacute;pond &agrave; peine et regarde la porte. Vous allez la croire ferm&eacute;e. C'est peut-être autre chose qui se joue.",
+   "en": "Facing you, a person who hardly answers and looks at the door. You will think they are closed. Something else may be going on."
+  },
+  {
+   "fr": "Vous avez travers&eacute; les 3&#8239;: c'&eacute;tait chaque fois la m&ecirc;me m&eacute;canique. Pour aller plus loin&#8239;:",
+   "en": "You went through all 3: it was the same mechanism each time. To go further:"
+  },
+  {
+   "fr": ">&Agrave; propos<",
+   "en": ">About<"
+  },
+  {
+   "fr": ">mon parcours et ma mani&egrave;re de travailler<",
+   "en": ">my background and my way of working<"
+  },
+  {
+   "fr": ">La th&eacute;orie<",
+   "en": ">The theory<"
+  },
+  {
+   "fr": ">ce qui fait tenir, en 6 essais<",
+   "en": ">what holds things together, in 6 essays<"
+  },
+  {
+   "fr": "Ces 3 situations sont des <b>arch&eacute;types</b>, volontairement &eacute;pur&eacute;s.<br>La r&eacute;alit&eacute; est toujours plus emm&ecirc;l&eacute;e.",
+   "en": "These 3 situations are <b>archetypes</b>, deliberately simplified.<br>Reality is always more tangled."
+  },
+  {
+   "fr": ">Voir plus tard<",
+   "en": ">See it later<"
+  },
+  {
+   "fr": ">Regarder d'ailleurs<",
+   "en": ">Look from elsewhere<"
+  },
+  {
+   "fr": "<h2>Regardez ce que chacun voit.</h2>",
+   "en": "<h2>Look at what each person sees.</h2>"
+  },
+  {
+   "fr": ">3 places dans un m&ecirc;me syst&egrave;me, et entre elles, plus rien qui circule.<",
+   "en": ">3 places in the same system, and between them, nothing circulating anymore.<"
+  },
+  {
+   "fr": ">Ce qui appara&icirc;t<",
+   "en": ">What emerges<"
+  },
+  {
+   "fr": ">Revenir aux places<",
+   "en": ">Back to the places<"
+  },
+  {
+   "fr": "<h2>Une piste. <em>Pas une solution.</em></h2>",
+   "en": "<h2>A direction. <em>Not a solution.</em></h2>"
+  },
+  {
+   "fr": ">La m&ecirc;me chose se produit ailleurs.<",
+   "en": ">The same thing happens elsewhere.<"
+  },
+  {
+   "fr": "<h1>3 fois la m&ecirc;me chose. <em>Un seul m&eacute;canisme.</em></h1>",
+   "en": "<h1>3 times the same thing. <em>One single mechanism.</em></h1>"
+  },
+  {
+   "fr": "4 personnes donnent quelque chose qui n'a jamais eu de nom. <br>43 remont&eacute;es &eacute;crites sans personne au bout. <br>Une femme qui donne 6 fois sans que rien ne soit repris.",
+   "en": "4 people give something that never had a name. <br>43 reports written with nobody at the other end. <br>A woman who gives 6 times without anything being taken up."
+  },
+  {
+   "fr": ">&Agrave; chaque fois, quelque chose circulait. &Agrave; chaque fois, personne ne le recevait.<",
+   "en": ">Every time, something was circulating. Every time, nobody was receiving it.<"
+  },
+  {
+   "fr": ">Et &agrave; chaque fois, ce qui a suffi &eacute;tait minuscule&nbsp;: un message mensuel, un quart d'heure, une demi-page.<",
+   "en": ">And every time, what was enough was tiny: a monthly message, a quarter of an hour, half a page.<"
+  },
+  {
+   "fr": ">Ce qui manquait n'&eacute;tait jamais la bonne volont&eacute;. C'&eacute;tait un endroit o&ugrave; ce qui circule puisse arriver.<",
+   "en": ">What was missing was never goodwill. It was a place where what circulates can arrive.<"
+  },
+  {
+   "fr": ">C'est ce que je fais dans les produits que je conçois. Je rends visible ce qui circule déjà, je répare l'endroit où ça n'arrive pas, et je conçois l'outil qui le fait tenir.<",
+   "en": ">This is what I do in the products I design. I make visible what already circulates, I repair the place where it doesn't arrive, and I design the tool that makes it hold.<"
+  },
+  {
+   "fr": ">Voir les études de cas<",
+   "en": ">See the case studies<"
+  },
+  {
+   "fr": ">Écrivez-moi<",
+   "en": ">Write to me<"
+  },
+  {
+   "fr": ">Revoir les situations<",
+   "en": ">Review the situations<"
+  },
+  {
+   "fr": "src=\"parcours-interactif.js\"",
+   "en": "src=\"en/parcours-interactif.js\""
+  }
+ ]
+}

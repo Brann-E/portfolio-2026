@@ -4,6 +4,7 @@
    modifié : le script enveloppe chaque <img> d'un .figure dans un bouton. */
 (function () {
   "use strict";
+  var tr = window.t || function (s) { return s; };   // les textes de l'interface, dans la langue de la page (voir i18n.js)
 
   var reduce =
     window.matchMedia &&
@@ -19,7 +20,7 @@
     var backdrop = document.createElement("button");
     backdrop.type = "button";
     backdrop.className = "fig-lb-backdrop";
-    backdrop.setAttribute("aria-label", "Fermer");
+    backdrop.setAttribute("aria-label", tr("Fermer"));
 
     imgEl = document.createElement("img");
     imgEl.className = "fig-lb-img";
@@ -28,7 +29,7 @@
     closeBtn = document.createElement("button");
     closeBtn.type = "button";
     closeBtn.className = "don-close-btn fig-lb-close";
-    closeBtn.setAttribute("aria-label", "Fermer");
+    closeBtn.setAttribute("aria-label", tr("Fermer"));
     closeBtn.innerHTML =
       '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7 L17 17 M17 7 L7 17"/></svg>';
 
@@ -90,7 +91,7 @@
       var btn = document.createElement("button");
       btn.type = "button";
       btn.className = "fig-btn";
-      btn.setAttribute("aria-label", "Agrandir l'image");
+      btn.setAttribute("aria-label", tr("Agrandir l'image"));
       img.parentNode.insertBefore(btn, img);
       btn.appendChild(img);
       btn.addEventListener("click", function () {

@@ -1,5 +1,6 @@
 import { h, img } from "../dom.js";
 
+import { tr } from "../i18n.js";
 /**
  * Barre du bas flottante (composant « Menu » de Figma).
  * @param {{id: string, label: string, icon: string}[]} tabs
@@ -8,7 +9,7 @@ import { h, img } from "../dom.js";
 export function createTabbar(tabs, onSelect) {
   const el = h(
     "nav",
-    { class: "tabbar", "aria-label": "Navigation principale" },
+    { class: "tabbar", "aria-label": tr("Navigation principale") },
     h("div", { class: "tabbar__clip" }, h("span", { class: "tabbar__active" })),
     tabs.map((tab) =>
       h(

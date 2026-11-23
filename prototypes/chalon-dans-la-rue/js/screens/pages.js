@@ -6,6 +6,7 @@ import { inZone } from "../filtering.js";
 import { createScreen } from "../ui/screen.js";
 import { createBlocks } from "../ui/blocks.js";
 
+import { tr } from "../i18n.js";
 /**
  * Sous-pages du Menu. `renderPage({ id })` fabrique la page demandée :
  * textes du site (histoire, soutiens, mentions…), listes (lieux, lieux de convivialité, zones),
@@ -48,9 +49,9 @@ const note = (text) => h("p", { class: "prose__p prose__p--note" }, text);
 
 // ---- Pages de texte --------------------------------------------------------------------
 const TEXT_PAGES = {
-  histoire: { title: "Le festival", sources: ["histoire", "selection-in", "selection-off", "tandem"] },
-  soutiens: { title: "Ils nous soutiennent", sources: ["soutiens", "commercants"] },
-  mentions: { title: "Mentions légales", sources: ["mentions"] },
+  histoire: { title: tr("Le festival"), sources: ["histoire", "selection-in", "selection-off", "tandem"] },
+  soutiens: { title: tr("Ils nous soutiennent"), sources: ["soutiens", "commercants"] },
+  mentions: { title: tr("Mentions légales"), sources: ["mentions"] },
 };
 
 async function renderText(id) {
@@ -66,10 +67,10 @@ async function renderVenues() {
   for (const show of shows) for (const spot of new Set(show.reps.map((rep) => rep.spot))) counts.set(spot, (counts.get(spot) ?? 0) + 1);
 
   const list = h("div", { class: "list" });
-  const empty = h("p", { class: "empty-results", hidden: true }, "Aucun lieu ne correspond à votre recherche.");
+  const empty = h("p", { class: "empty-results", hidden: true }, tr("Aucun lieu ne correspond à votre recherche."));
   const rows = venues.map((venue) => {
     const count = counts.get(venue.spot) ?? 0;
-    const sub = count ? `${count} spectacle${count > 1 ? "s" : ""}` : "Aucun spectacle";
+    const sub = count ? tr(count > 1 ? "{n} spectacles" : "{n} spectacle", { n: count }) : tr("Aucun spectacle");
     return {
       venue,
       el: listRow({
@@ -83,7 +84,7 @@ async function renderVenues() {
   });
   list.append(...rows.map(({ el }) => el));
 
-  const input = h("input", { class: "search__input", type: "search", placeholder: "Rechercher un lieu…", "aria-label": "Rechercher un lieu", autocomplete: "off" });
+  const input = h("input", { class: "search__input", type: "search", placeholder: tr("Rechercher un lieu…"), "aria-label": tr("Rechercher un lieu"), autocomplete: "off" });
   input.addEventListener("input", () => {
     const query = normalize(input.value.trim());
     let visible = 0;
@@ -94,7 +95,7 @@ async function renderVenues() {
     empty.hidden = visible > 0;
   });
 
-  return page("lieux", "Lieux du festival", [list, empty], { above: h("div", { class: "page-search" }, h("div", { class: "search" }, img("assets/icon-search.svg", { class: "search__icon" }), input)) });
+  return page("lieux", tr("Lieux du festival"), [list, empty], { above: h("div", { class: "page-search" }, h("div", { class: "search" }, img("assets/icon-search.svg", { class: "search__icon" }), input)) });
 }
 
 // ---- Lieux de convivialité -------------------------------------------------------------
@@ -120,7 +121,7 @@ async function renderConvivialite() {
       onClick: (event) => emit(event.currentTarget, "navigate", { to: "page", params: { id: key } }),
     });
   });
-  return page("convivialite", "Lieux de convivialité", h("div", { class: "list" }, rows));
+  return page("convivialite", tr("Lieux de convivialité"), h("div", { class: "list" }, rows));
 }
 
 async function renderConvivialiteDetail(id) {
@@ -129,7 +130,7 @@ async function renderConvivialiteDetail(id) {
   const [name, tagline] = heading(blocks);
   const place = placeOf(blocks);
   const showOnMap = place.spot
-    ? h("button", { class: "button-outline page-action", type: "button", onclick: (event) => emit(event.currentTarget, "show-on-map", { spot: place.spot }) }, "Voir sur la carte")
+    ? h("button", { class: "button-outline page-action", type: "button", onclick: (event) => emit(event.currentTarget, "show-on-map", { spot: place.spot }) }, tr("Voir sur la carte"))
     : null;
   return page(id, name, [card(tagline && h("p", { class: "prose__p prose__p--note" }, tagline), createBlocks(blocks, { skipFirstH1: true }), showOnMap)], {
     back: { to: "page", params: { id: "convivialite" } },
@@ -143,7 +144,7 @@ async function renderZones() {
     const count = shows.filter((show) => inZone(show, zone)).length;
     return listRow({
       title: zone,
-      sub: count ? `${count} spectacle${count > 1 ? "s" : ""}` : "Aucun spectacle",
+      sub: count ? tr(count > 1 ? "{n} spectacles" : "{n} spectacle", { n: count }) : tr("Aucun spectacle"),
       onClick: (event) => {
         store.resetFilters();
         store.setFilters({ zones: [zone] });
@@ -151,7 +152,7 @@ async function renderZones() {
       },
     });
   });
-  return page("zones", "Zones du festival", [h("p", { class: "prose__p prose__p--note" }, "Touchez une zone pour voir les spectacles qui s’y jouent."), h("div", { class: "list" }, rows)]);
+  return page("zones", tr("Zones du festival"), [h("p", { class: "prose__p prose__p--note" }, tr("Touchez une zone pour voir les spectacles qui s’y jouent.")), h("div", { class: "list" }, rows)]);
 }
 
 // ---- Réglages --------------------------------------------------------------------------
@@ -159,23 +160,23 @@ const SWITCH_PAGES = {
   notifications: {
     title: "Notifications",
     items: [
-      { key: "notifyReminder", label: "Rappel avant un spectacle de mon planning", fallback: true },
-      { key: "notifyNews", label: "Actualités du festival", fallback: false },
+      { key: "notifyReminder", label: tr("Rappel avant un spectacle de mon planning"), fallback: true },
+      { key: "notifyNews", label: tr("Actualités du festival"), fallback: false },
     ],
-    note: "Dans ce prototype, les notifications ne sont pas envoyées : le réglage est seulement mémorisé.",
+    note: tr("Dans ce prototype, les notifications ne sont pas envoyées : le réglage est seulement mémorisé."),
   },
   accessibilite: {
-    title: "Accessibilité",
+    title: tr("Accessibilité"),
     items: [
-      { key: "reduceMotion", label: "Réduire les animations", fallback: false },
-      { key: "highContrast", label: "Renforcer le contraste", fallback: false },
+      { key: "reduceMotion", label: tr("Réduire les animations"), fallback: false },
+      { key: "highContrast", label: tr("Renforcer le contraste"), fallback: false },
     ],
   },
   preferences: {
-    title: "Préférences",
+    title: tr("Préférences"),
     items: [
-      { key: "startOnMap", label: "Ouvrir l’appli sur la carte", fallback: true },
-      { key: "keepFilters", label: "Garder mes filtres entre deux visites", fallback: true },
+      { key: "startOnMap", label: tr("Ouvrir l’appli sur la carte"), fallback: true },
+      { key: "keepFilters", label: tr("Garder mes filtres entre deux visites"), fallback: true },
     ],
   },
 };
@@ -202,27 +203,27 @@ async function renderAvatar() {
   };
   const unsubscribe = store.subscribe(() => (grid.isConnected ? sync() : unsubscribe()));
   const grid = h("div", { class: "avatar-grid" }, buttons);
-  return page("avatar", "Changer d’avatar", [note("Votre avatar marque votre position sur la carte."), grid]);
+  return page("avatar", tr("Changer d’avatar"), [note(tr("Votre avatar marque votre position sur la carte.")), grid]);
 }
 
 // ---- Aide, conditions, commentaires ----------------------------------------------------
 async function renderHelp() {
   const [help, pages] = await Promise.all([loadJSON("data/help.json"), loadJSON("data/pages.json")]);
   const faq = help.aide.map((item) => h("details", { class: "faq" }, h("summary", { class: "faq__q" }, item.q), h("p", { class: "prose__p" }, item.a)));
-  return page("aide", "Aide", [card(faq), card(h("h2", { class: "prose__h2" }, "Une question sur le festival ?"), createBlocks(pages.contact.blocks))]);
+  return page("aide", tr("Aide"), [card(faq), card(h("h2", { class: "prose__h2" }, tr("Une question sur le festival ?")), createBlocks(pages.contact.blocks))]);
 }
 
 async function renderTerms() {
   const [help, pages] = await Promise.all([loadJSON("data/help.json"), loadJSON("data/pages.json")]);
-  return page("cgu", "Conditions d’utilisation", [
+  return page("cgu", tr("Conditions d’utilisation"), [
     card(h("div", { class: "prose" }, help.cgu.map((text) => h("p", { class: "prose__p" }, text)))),
-    card(h("h2", { class: "prose__h2" }, "Politique de confidentialité du festival"), createBlocks(pages.confidentialite.blocks)),
+    card(h("h2", { class: "prose__h2" }, tr("Politique de confidentialité du festival")), createBlocks(pages.confidentialite.blocks)),
   ]);
 }
 
 function renderFeedback() {
-  const field = h("textarea", { class: "field", rows: "6", placeholder: "Votre message", "aria-label": "Votre message" });
-  const thanks = h("p", { class: "prose__p prose__p--note", hidden: true, role: "status" }, "Merci ! Votre message a été enregistré sur cet appareil.");
+  const field = h("textarea", { class: "field", rows: "6", placeholder: tr("Votre message"), "aria-label": tr("Votre message") });
+  const thanks = h("p", { class: "prose__p prose__p--note", hidden: true, role: "status" }, tr("Merci ! Votre message a été enregistré sur cet appareil."));
   const send = h(
     "button",
     {
@@ -238,9 +239,9 @@ function renderFeedback() {
         thanks.hidden = false;
       },
     },
-    "Envoyer"
+    tr("Envoyer")
   );
-  return page("commentaires", "Vos commentaires", [note("Une idée, un souci, une envie ? Dites-nous tout."), field, send, thanks]);
+  return page("commentaires", tr("Vos commentaires"), [note(tr("Une idée, un souci, une envie ? Dites-nous tout.")), field, send, thanks]);
 }
 
 // ---- Entrée ----------------------------------------------------------------------------
@@ -259,5 +260,5 @@ export async function renderPage({ id }) {
   if (id in SWITCH_PAGES) return renderSwitches(id);
   if (id in RENDERERS) return RENDERERS[id]();
   if (id.startsWith("conv-")) return renderConvivialiteDetail(id);
-  return page(id, "Page introuvable", note("Cette page n’existe pas."));
+  return page(id, tr("Page introuvable"), note(tr("Cette page n’existe pas.")));
 }

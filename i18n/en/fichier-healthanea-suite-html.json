@@ -1,0 +1,14 @@
+{
+ "source": "prototypes/healthanea-suite/index.html",
+ "output": "prototypes/healthanea-suite/index.en.html",
+ "pairs": [
+  {
+   "fr": "<title>Healthanea, la suite</title>",
+   "en": "<title>Healthanea, the next step</title>"
+  },
+  {
+   "fr": "src=\"./assets/index-CimnhAHC.js\"",
+   "en": "src=\"./assets/index-CimnhAHC.en.js\""
+  }
+ ]
+}

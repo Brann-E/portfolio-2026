@@ -1,5 +1,6 @@
 import { h, img } from "../dom.js";
 
+import { tr } from "../i18n.js";
 const go = (el, to) => el.dispatchEvent(new CustomEvent("navigate", { bubbles: true, detail: { to } }));
 
 /**
@@ -19,16 +20,16 @@ export function createEmptyState({ title, lead, art, hint, shortHint = false, na
       "button",
       { class: "cta cta--centered", type: "button", onclick: (event) => go(event.currentTarget, "carte") },
       img("assets/binoculars.png", { class: "cta__icon--large" }),
-      "Retourner sur la carte"
+      tr("Retourner sur la carte")
     ),
     h(
       "button",
       { class: "cta", type: "button", onclick: (event) => go(event.currentTarget, "decouvrir") },
       img("assets/megaphone.png", { class: "cta__icon--small" }),
-      "Découvrir des spectacles"
+      tr("Découvrir des spectacles")
     )
   );
 }
 
 /** Bouton de démonstration en bas à droite : « Remplir la page » (maquette) ou « Vider la page » pour revenir à l'état vide. */
-export const createDemoFill = (onClick, label = "Remplir la page") => h("button", { class: "demo-fill", type: "button", onclick: onClick }, label);
+export const createDemoFill = (onClick, label = tr("Remplir la page")) => h("button", { class: "demo-fill", type: "button", onclick: onClick }, label);

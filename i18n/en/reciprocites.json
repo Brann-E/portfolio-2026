@@ -1,0 +1,720 @@
+{
+ "pairs": [
+  {
+   "fr": "content=\"Réciprocités - Brann Etienne\"",
+   "en": "content=\"Reciprocities - Brann Etienne\""
+  },
+  {
+   "fr": "<title>Réciprocités - Brann Etienne</title>",
+   "en": "<title>Reciprocities - Brann Etienne</title>"
+  },
+  {
+   "fr": "Le cercle des réciprocités : comment la valeur, l'attention et la reconnaissance circulent et font tenir un collectif.",
+   "en": "The circle of reciprocities: how value, attention and recognition circulate and hold a collective together."
+  },
+  {
+   "fr": ">Ce qui use une relation est rarement ce qu'on regarde.<",
+   "en": ">What wears down a relationship is rarely what we look at.<"
+  },
+  {
+   "fr": ">Cette page présente une méthode pour les coopérations entre personnes et entre structures. Elle prolonge, hors du produit, la lecture que j'applique dans mes projets : regarder ce qui circule entre les gens, et ce qui a cessé de circuler.<",
+   "en": ">This page presents a method for cooperation between people and between organizations. It extends, beyond the product, the reading I apply in my projects: looking at what circulates between people, and what has stopped circulating.<"
+  },
+  {
+   "fr": ">On a appris aux gens à se coordonner, pas à se rencontrer. À produire des dispositifs, pas à concevoir des relations. À mesurer des résultats, pas à prendre soin de ce qui les rend possibles.<",
+   "en": ">People have been taught to coordinate, not to meet. To produce arrangements, not to design relationships. To measure results, not to take care of what makes them possible.<"
+  },
+  {
+   "fr": ">Ce n'est pas une fatalité. C'est un mécanisme, et un mécanisme, ça se répare.<",
+   "en": ">This is not inevitable. It is a mechanism, and a mechanism can be repaired.<"
+  },
+  {
+   "fr": ">Bienvenue sur un de mes terrains de recherche. Ici, je n'ai rien à vendre : je vous montre ce que j'explore, avec d'autres, quand je pousse ma pratique aussi loin qu'elle peut aller. Les Réciprocités en sont le cœur - une manière de faire circuler ce qui compte dans un collectif,  en train de construire ou de se construire. C'est sérieux, mais vivant. Prenez-le comme un chantier, pas comme une vitrine.<",
+   "en": ">Welcome to one of my research fields. Here, I have nothing to sell: I show you what I explore, with others, when I push my practice as far as it can go. The Reciprocities are its heart - a way of making circulate what matters in a collective, in the making or in the process of building itself. It is serious, but alive. Take it as a worksite, not as a showcase.<"
+  },
+  {
+   "fr": ">~&#8239;10 min de lecture<",
+   "en": ">~&#8239;10 min read<"
+  },
+  {
+   "fr": ">Un lien rompu entre le geste et sa valeur<",
+   "en": ">A broken link between the gesture and its value<"
+  },
+  {
+   "fr": ">Depuis la révolution industrielle, les systèmes de travail ont découpé l'humain en unités fonctionnelles. On ne demande plus qui tu es, on demande ce que tu produis. Ta valeur est mesurable, ton humanité ne l'est pas, donc elle disparaît du système.<",
+   "en": ">Since the industrial revolution, work systems have cut the human into functional units. We no longer ask who you are, we ask what you produce. Your value is measurable, your humanity is not, so it disappears from the system.<"
+  },
+  {
+   "fr": ">On a construit des systèmes extraordinaires pour travailler ensemble. Des outils, des méthodes, des réunions, des chartes, des contrats, des indicateurs d'impact, et tant d'autres. Et pourtant. La confiance se dissipe. Les partenariats s'épuisent. Le travail s'accumule sans être reconnu. On se coordonne mais on ne se rencontre plus. On livre mais on ne se comprend plus.<",
+   "en": ">We have built extraordinary systems for working together. Tools, methods, meetings, charters, contracts, impact indicators, and so many others. And yet. Trust dissipates. Partnerships wear out. Work piles up without being recognized. We coordinate but no longer meet. We deliver but no longer understand each other.<"
+  },
+  {
+   "fr": ">Et pourtant, chacun sait que ce n'est pas comme ça qu'il veut travailler.<",
+   "en": ">And yet, everyone knows this is not how they want to work.<"
+  },
+  {
+   "fr": ">Les trois échelles de l'usure<",
+   "en": ">The three scales of wear<"
+  },
+  {
+   "fr": ">La personne s'efface<",
+   "en": ">The person fades<"
+  },
+  {
+   "fr": ">Invisibilité. Incapacité à montrer qui on est, ce qu'on vaut, ce qui nous pèse.<",
+   "en": ">Invisibility. Inability to show who we are, what we are worth, what weighs on us.<"
+  },
+  {
+   "fr": ">Le collectif se dégrade<",
+   "en": ">The collective degrades<"
+  },
+  {
+   "fr": ">Méfiance, déséquilibres, malentendus, pouvoir qu'on n'ose pas nommer.<",
+   "en": ">Mistrust, imbalances, misunderstandings, power we don't dare name.<"
+  },
+  {
+   "fr": ">Les structures s'épuisent<",
+   "en": ">Structures wear out<"
+  },
+  {
+   "fr": ">Coopérations sans cadre, surcharge, engagements-pièges, mémoire perdue.<",
+   "en": ">Cooperation without a framework, overload, commitments that are traps, lost memory.<"
+  },
+  {
+   "fr": ">Et la boucle se referme&#8239;: <b>l'écosystème épuisé renforce le paradigme</b>, qui rétrécit encore les personnes, qui abîment encore les collectifs. Une spirale descendante qui se nourrit d'elle-même.<",
+   "en": ">And the loop closes: <b>the exhausted ecosystem reinforces the paradigm</b>, which shrinks people even more, who damage collectives even more. A downward spiral that feeds on itself.<"
+  },
+  {
+   "fr": ">Le vertige vient de leur nombre, <em>pas de leur difficulté.</em><",
+   "en": ">The vertigo comes from their number, <em>not from their difficulty.</em><"
+  },
+  {
+   "fr": ">Ils s'entremêlent, et chacun semble appeler sa propre réponse. C'est cette impression d'enchevêtrement qui décourage, on ne sait par où commencer, alors on ne commence pas. Pourtant, chacun de ces lieux appelle un geste de soin. Et aucun n'est une procédure&#8239;: ce sont des gestes que n'importe qui peut tenir dès demain.<",
+   "en": ">They intertwine, and each seems to call for its own answer. It is this impression of entanglement that discourages, we don't know where to start, so we don't start. Yet each of these places calls for a gesture of care. And none is a procedure: these are gestures that anyone can hold starting tomorrow.<"
+  },
+  {
+   "fr": ">La cause racine<",
+   "en": ">The root cause<"
+  },
+  {
+   "fr": ">Sélectionnez un lieu pour voir <b>ce que ça produit, ce que ça fait aux personnes</b>, et le geste qui le soigne.<",
+   "en": ">Select a place to see <b>what it produces, what it does to people</b>, and the gesture that heals it.<"
+  },
+  {
+   "fr": ">Dix-huit gestes de soin, <em>un seul mouvement.</em><",
+   "en": ">Eighteen gestures of care, <em>one single movement.</em><"
+  },
+  {
+   "fr": ">Regardez les dix-huit gestes. Aucun ne demande un outil. Tous demandent la même chose&#8239;: voir ce qui est là, et le nommer.<",
+   "en": ">Look at the eighteen gestures. None calls for a tool. All ask for the same thing: seeing what is there, and naming it.<"
+  },
+  {
+   "fr": ">Devenir attentif et sensible à ce qui circule ou doit circuler en nous et autour de nous.<",
+   "en": ">Becoming attentive and sensitive to what circulates or must circulate within us and around us.<"
+  },
+  {
+   "fr": ">Une praxis est une manière d'envisager le monde et d'agir dessus. Pas une méthode qu'on applique&#8239;: une façon d'être qu'on tient. Elle s'injecte dans les gestes ordinaires : la façon d'ouvrir une réunion, de nommer un désaccord, de reconnaître ce que quelqu'un apporte. Rien ne change dans le programme&#8239;; tout change dans ce qui s'y passe.<",
+   "en": ">A praxis is a way of envisioning the world and acting on it. Not a method one applies: a way of being one holds. It is injected into ordinary gestures: the way of opening a meeting, naming a disagreement, recognizing what someone brings. Nothing changes in the program; everything changes in what happens in it.<"
+  },
+  {
+   "fr": ">Les quatre principes : ce qu'on fait passer avant<",
+   "en": ">The four principles: what we put first<"
+  },
+  {
+   "fr": ">On valorise ce qui est nommé en premier, sans nier la valeur de ce qui vient après.<",
+   "en": ">We value what is named first, without denying the value of what comes after.<"
+  },
+  {
+   "fr": "<span>La personne</span> avant le rôle",
+   "en": "<span>The person</span> before the role"
+  },
+  {
+   "fr": "Pas les fonctions et les titres - ce qu'on est et ce qu'on apporte vraiment.",
+   "en": "Not functions and titles - what we are and what we truly bring."
+  },
+  {
+   "fr": "<span>La relation</span> avant les outils",
+   "en": "<span>The relationship</span> before the tools"
+  },
+  {
+   "fr": "Pas les process et les contrats - la confiance construite, nommée, entretenue.",
+   "en": "Not processes and contracts - trust that is built, named, maintained."
+  },
+  {
+   "fr": "<span>L'émergence</span> avant la prescription",
+   "en": "<span>Emergence</span> before prescription"
+  },
+  {
+   "fr": "Pas les méthodes imposées - les formes qui naissent du terrain.",
+   "en": "Not imposed methods - the forms that are born from the field."
+  },
+  {
+   "fr": "<span>La durée</span> avant l'intensité",
+   "en": "<span>Duration</span> before intensity"
+  },
+  {
+   "fr": "Pas les coups d'éclat - les coopérations qui tiennent dans le temps.",
+   "en": "Not feats - cooperations that hold over time."
+  },
+  {
+   "fr": ">Un geste ne laisse pas de trace. <em>Il faut des espaces pour le faire exister et perdurer.</em><",
+   "en": ">A gesture leaves no trace. <em>We need spaces to make it exist and endure.</em><"
+  },
+  {
+   "fr": ">Un geste se tient dans l'instant. Mais dès qu'une situation implique plusieurs personnes, s'étale dans le temps ou dépasse ce qu'une conversation peut porter, il faut autre chose&#8239;: de quoi garder trace, rendre visible, partager, discuter. C'est ce que la méthode apporte, non pas des étapes à suivre, mais un terreau où la praxis peut prendre.<",
+   "en": ">A gesture holds in the moment. But as soon as a situation involves several people, spreads over time or exceeds what a conversation can carry, something else is needed: a way to keep a trace, make visible, share, discuss. This is what the method brings, not steps to follow, but a soil where praxis can take root.<"
+  },
+  {
+   "fr": ">La méthode produit aujourd'hui un objet&#8239;: la <strong>convention de réciprocité</strong>. Elle n'est ni la finalité ni le passage obligé, c'est le premier support qu'on a su construire pour qu'une réciprocité laisse une trace.<",
+   "en": ">The method today produces one object: the <strong>reciprocity agreement</strong>. It is neither the purpose nor the mandatory step, it is the first medium we knew how to build so that a reciprocity leaves a trace.<"
+  },
+  {
+   "fr": ">Les rôles<",
+   "en": ">Roles<"
+  },
+  {
+   "fr": ">Le relieur<",
+   "en": ">The Binder<"
+  },
+  {
+   "fr": ">Gardien du processus. Il ne porte aucun projet et ne décide rien à la place des autres&#8239;: il crée les conditions pour que ce qui existe déjà puisse se voir, se dire et se tenir.<",
+   "en": ">Guardian of the process. They carry no project and decide nothing in place of others: they create the conditions so that what already exists can be seen, said and held.<"
+  },
+  {
+   "fr": ">Le récipreneur<",
+   "en": ">The Recipreneur<"
+  },
+  {
+   "fr": ">Celui qui prend l'initiative. Il s'empare d'une réciprocité, réunit les personnes concernées, porte l'intention de départ sans être garant du processus.<",
+   "en": ">The one who takes the initiative. They seize a reciprocity, gather the people concerned, carry the initial intention without being the guarantor of the process.<"
+  },
+  {
+   "fr": ">Le réciprenant<",
+   "en": ">The Reciprocant<"
+  },
+  {
+   "fr": ">Celui qui entre dans la réciprocité. Il apporte ce qu'il a, reçoit ce qui circule, et s'engage avec les autres.<",
+   "en": ">The one who enters the reciprocity. They bring what they have, receive what circulates, and commit with others.<"
+  },
+  {
+   "fr": ">Ces rôles ne sont pas des statuts. Un réciprenant peut devenir récipreneur ailleurs&#8239;; un récipreneur peut apprendre à relier. C'est un parcours, pas une hiérarchie.<",
+   "en": ">These roles are not statuses. A reciprocant can become a recipreneur elsewhere; a recipreneur can learn to bind. It is a path, not a hierarchy.<"
+  },
+  {
+   "fr": ">Avant de s'engager : dimensionner<",
+   "en": ">Before committing: sizing up<"
+  },
+  {
+   "fr": ">Toute cette étape se mène à deux&#8239;: le récipreneur, qui porte l'intention, et le relieur, qui tient le processus. Les réciprenants n'entrent qu'après. La praxis commence ici, pas en promettant une transformation, mais en regardant honnêtement ce qui est faisable, et à quelle hauteur. Trois questions&#8239;: <strong>ce qu'on veut accomplir</strong>, <strong>ce que ça pèse</strong>, <strong>ce qu'on peut porter</strong>. Tant qu'on n'y a pas répondu, on ne s'engage pas.<",
+   "en": ">This whole stage is carried out by two: the recipreneur, who carries the intention, and the binder, who holds the process. The reciprocants only come in afterward. Praxis starts here, not by promising a transformation, but by honestly looking at what is feasible, and at what height. Three questions: <strong>what we want to accomplish</strong>, <strong>what it weighs</strong>, <strong>what we can carry</strong>. As long as we haven't answered them, we don't commit.<"
+  },
+  {
+   "fr": ">Outil<",
+   "en": ">Tool<"
+  },
+  {
+   "fr": ">Arpentage des Réciprocités<",
+   "en": ">Reciprocity Survey<"
+  },
+  {
+   "fr": ">Ce qui apparaît<",
+   "en": ">What emerges<"
+  },
+  {
+   "fr": ">La forme de réciprocité qu'on peut réellement engager, et à quelle hauteur<",
+   "en": ">The form of reciprocity we can truly engage in, and at what height<"
+  },
+  {
+   "fr": ">Avoir conscience de ce qu'une réciprocité peut accomplir, du plus accessible au plus exigeant<",
+   "en": ">Being aware of what a reciprocity can accomplish, from the most accessible to the most demanding<"
+  },
+  {
+   "fr": ">Facile<",
+   "en": ">Easy<"
+  },
+  {
+   "fr": ">Complexe<",
+   "en": ">Complex<"
+  },
+  {
+   "fr": ">Instaurer la confiance<",
+   "en": ">Establish trust<"
+  },
+  {
+   "fr": ">Développer un climat sûr pour collaborer efficacement, réduire les malentendus et faciliter les échanges futurs.<",
+   "en": ">Develop a safe climate to collaborate effectively, reduce misunderstandings and ease future exchanges.<"
+  },
+  {
+   "fr": ">Reconnaître l'engagement<",
+   "en": ">Recognize commitment<"
+  },
+  {
+   "fr": ">Motiver les acteurs et légitimer leur contribution en donnant visibilité et crédit à leurs efforts.<",
+   "en": ">Motivate actors and legitimize their contribution by giving visibility and credit to their efforts.<"
+  },
+  {
+   "fr": ">Tisser des liens<",
+   "en": ">Weave bonds<"
+  },
+  {
+   "fr": ">Renforcer les réseaux, la solidarité et la coopération sur le long terme.<",
+   "en": ">Strengthen networks, solidarity and cooperation over the long term.<"
+  },
+  {
+   "fr": ">Échanger ressources et compétences<",
+   "en": ">Exchange resources and skills<"
+  },
+  {
+   "fr": ">Optimiser l'utilisation des savoir-faire, outils, temps ou réseaux disponibles pour créer de la valeur collective.<",
+   "en": ">Make the best use of available know-how, tools, time or networks to create collective value.<"
+  },
+  {
+   "fr": ">Mutualiser les savoirs<",
+   "en": ">Pool knowledge<"
+  },
+  {
+   "fr": ">Capitaliser sur les expériences passées et faciliter l'apprentissage collectif.<",
+   "en": ">Build on past experience and ease collective learning.<"
+  },
+  {
+   "fr": ">Coopérer vers un but commun<",
+   "en": ">Cooperate toward a common goal<"
+  },
+  {
+   "fr": ">Assurer que tous les acteurs travaillent dans la même direction pour maximiser l'impact et l'efficacité du projet.<",
+   "en": ">Ensure all actors work in the same direction to maximize the project's impact and effectiveness.<"
+  },
+  {
+   "fr": ">Honorer un engagement<",
+   "en": ">Honor a commitment<"
+  },
+  {
+   "fr": ">S'assurer que les engagements formels ou informels sont respectés et que la coopération est légitime.<",
+   "en": ">Make sure formal or informal commitments are respected and that the cooperation is legitimate.<"
+  },
+  {
+   "fr": ">Sécuriser le projet<",
+   "en": ">Secure the project<"
+  },
+  {
+   "fr": ">Partager responsabilités et informations pour diminuer les incertitudes et protéger les parties prenantes.<",
+   "en": ">Share responsibilities and information to reduce uncertainty and protect stakeholders.<"
+  },
+  {
+   "fr": ">Inclure et faire participer<",
+   "en": ">Include and involve<"
+  },
+  {
+   "fr": ">Impliquer activement toutes les parties concernées, renforcer le sentiment d'appartenance et diversifier les perspectives.<",
+   "en": ">Actively involve all parties concerned, strengthen the sense of belonging and diversify perspectives.<"
+  },
+  {
+   "fr": ">Faire émerger des projets collectifs<",
+   "en": ">Bring collective projects into being<"
+  },
+  {
+   "fr": ">Favoriser l'émergence d'idées nouvelles et d'initiatives que personne ne pourrait réaliser seul.<",
+   "en": ">Foster the emergence of new ideas and initiatives that no one could achieve alone.<"
+  },
+  {
+   "fr": ">Questionner le dimensionnement à partir de deux axes<",
+   "en": ">Questioning sizing along two axes<"
+  },
+  {
+   "fr": ">Deux questions suffisent à situer un projet&#8239;: de quels moyens dispose-t-on, et à quel degré de complexité a-t-on affaire. Le croisement des deux ne dit pas si un projet est bon : il dit à quelle hauteur il peut se tenir aujourd'hui.<",
+   "en": ">Two questions are enough to place a project: what means do we have, and what degree of complexity are we dealing with. The crossing of the two doesn't say whether a project is good: it says at what height it can hold today.<"
+  },
+  {
+   "fr": "Capacité <span>- ce qui vient de nous</span>",
+   "en": "Capacity <span>- what comes from us</span>"
+  },
+  {
+   "fr": ">Le temps qu'on peut réellement y consacrer<",
+   "en": ">The time we can truly devote to it<"
+  },
+  {
+   "fr": ">La légitimité reconnue au porteur<",
+   "en": ">The legitimacy recognized in the project lead<"
+  },
+  {
+   "fr": ">Les compétences clés déjà là<",
+   "en": ">The key skills already there<"
+  },
+  {
+   "fr": ">La capacité à piloter et à trancher<",
+   "en": ">The ability to steer and to decide<"
+  },
+  {
+   "fr": ">Les ressources qu'on peut mobiliser<",
+   "en": ">The resources we can mobilize<"
+  },
+  {
+   "fr": ">La résilience face à l'imprévu<",
+   "en": ">Resilience in the face of the unexpected<"
+  },
+  {
+   "fr": ">La continuité au-delà des personnes<",
+   "en": ">Continuity beyond individuals<"
+  },
+  {
+   "fr": "Complexité <span>- ce qui vient de la situation</span>",
+   "en": "Complexity <span>- what comes from the situation</span>"
+  },
+  {
+   "fr": ">Le nombre d'acteurs à embarquer<",
+   "en": ">The number of actors to bring on board<"
+  },
+  {
+   "fr": ">La distance entre leurs mondes<",
+   "en": ">The distance between their worlds<"
+  },
+  {
+   "fr": ">L'écart entre leurs intérêts<",
+   "en": ">The gap between their interests<"
+  },
+  {
+   "fr": ">L'enchevêtrement des échanges<",
+   "en": ">The entanglement of exchanges<"
+  },
+  {
+   "fr": ">Le poids des enjeux juridiques ou politiques<",
+   "en": ">The weight of legal or political stakes<"
+  },
+  {
+   "fr": ">L'étendue de l'horizon temporel<",
+   "en": ">The extent of the time horizon<"
+  },
+  {
+   "fr": ">La difficulté à faire marche arrière<",
+   "en": ">The difficulty of backtracking<"
+  },
+  {
+   "fr": ">Ce que révèle la lecture des deux axes, pour s'engager à la bonne hauteur<",
+   "en": ">What reading the two axes reveals, to commit at the right height<"
+  },
+  {
+   "fr": ">Exister simplement<",
+   "en": ">Simply exist<"
+  },
+  {
+   "fr": ">Quand la complexité est faible et qu'on a de quoi la porter largement. Rien à alourdir&#8239;: on avance à vue, on récolte vite, on garde le geste léger.<",
+   "en": ">When complexity is low and we have more than enough to carry it. Nothing to weigh down: we move as we see, harvest quickly, keep the gesture light.<"
+  },
+  {
+   "fr": ">Phaser<",
+   "en": ">Phase it<"
+  },
+  {
+   "fr": ">Quand la complexité monte mais que la capacité suit à peu près. On n'engage pas tout d'un coup&#8239;: on découpe en jalons, on teste, on ajuste à chaque boucle avant d'aller plus loin.<",
+   "en": ">When complexity rises but capacity roughly keeps up. We don't commit everything at once: we cut into milestones, test, adjust at each loop before going further.<"
+  },
+  {
+   "fr": ">Structurer<",
+   "en": ">Structure<"
+  },
+  {
+   "fr": ">Quand la complexité est réelle et qu'on a les moyens d'y répondre. Le moment de poser le cadre&#8239;: rôles clairs, responsabilités nommées, temporalités et repères fiables pour que ça tienne.<",
+   "en": ">When complexity is real and we have the means to meet it. The time to set the frame: clear roles, named responsibilities, reliable timelines and landmarks so that it holds.<"
+  },
+  {
+   "fr": ">Architecturer<",
+   "en": ">Architect<"
+  },
+  {
+   "fr": ">Quand la complexité est forte et la capacité solide. On ne pilote plus un projet mais un système&#8239;: conventions multiples, engagements distribués, un pilotage explicite qui coordonne l'ensemble.<",
+   "en": ">When complexity is high and capacity solid. We no longer steer a project but a system: multiple agreements, distributed commitments, explicit steering that coordinates the whole.<"
+  },
+  {
+   "fr": ">Recadrer<",
+   "en": ">Reframe<"
+  },
+  {
+   "fr": ">Quand la complexité dépasse ce qu'on peut porter aujourd'hui. Ce n'est pas un échec&#8239;: c'est le signal qu'il faut réduire le périmètre, reporter, ou renforcer la capacité avant de relancer.<",
+   "en": ">When complexity exceeds what we can carry today. It is not a failure: it is the signal that we must reduce the scope, postpone, or strengthen capacity before restarting.<"
+  },
+  {
+   "fr": ">Aucune de ces positions n'est meilleure qu'une autre. Elles disent seulement à quelle hauteur un projet peut se tenir <em>aujourd'hui</em>, et un projet change de position à mesure que la capacité se construit.<",
+   "en": ">None of these positions is better than another. They only say at what height a project can hold <em>today</em>, and a project changes position as capacity is built.<"
+  },
+  {
+   "fr": ">Avec les réciprenants : cinq étapes, cinq gestes, cinq supports.<",
+   "en": ">With the reciprocants: five steps, five gestures, five media.<"
+  },
+  {
+   "fr": ">Rien n'oblige à toutes les parcourir. Chacune existe pour elle-même, et vaut par ce qu'elle fait apparaître.<",
+   "en": ">Nothing requires going through all of them. Each exists for itself, and is worth what it brings to light.<"
+  },
+  {
+   "fr": ">Comprendre<",
+   "en": ">Understand<"
+  },
+  {
+   "fr": "<span>Écouter</span><span>Observer</span><span>Investiguer</span>",
+   "en": "<span>Listen</span><span>Observe</span><span>Investigate</span>"
+  },
+  {
+   "fr": ">Qui veut agir, et à partir de quelles motivations&#8239;?<",
+   "en": ">Who wants to act, and from what motivations?<"
+  },
+  {
+   "fr": ">Donner forme à l'écosystème humain et stratégique&#8239;: identifier les acteurs en présence, leurs intentions explicites ou implicites, leurs besoins, leurs apports, ainsi que les alliances existantes et les tensions latentes.<",
+   "en": ">Give shape to the human and strategic ecosystem: identify the actors present, their explicit or implicit intentions, their needs, their contributions, as well as existing alliances and latent tensions.<"
+  },
+  {
+   "fr": ">Fiche In Situ<",
+   "en": ">In Situ Sheet<"
+  },
+  {
+   "fr": ">Ce que chacun apporte, et ce qui le fragilise<",
+   "en": ">What each person brings, and what makes them fragile<"
+  },
+  {
+   "fr": ">Préparer<",
+   "en": ">Prepare<"
+  },
+  {
+   "fr": "<span>Cadrer</span><span>Imaginer</span><span>Documenter</span>",
+   "en": "<span>Frame</span><span>Imagine</span><span>Document</span>"
+  },
+  {
+   "fr": ">Comment explorer les possibles d'une réciprocité optimale&#8239;?<",
+   "en": ">How to explore the possibilities of an optimal reciprocity?<"
+  },
+  {
+   "fr": ">Mettre en ordre les informations recueillies pour clarifier les enjeux, révéler les points de vigilance, tracer les chemins possibles et définir des priorités partagées avant toute mise en action.<",
+   "en": ">Put the information gathered in order to clarify the stakes, reveal points of vigilance, trace possible paths and define shared priorities before any action.<"
+  },
+  {
+   "fr": ">Carte des Possibles<",
+   "en": ">Map of Possibilities<"
+  },
+  {
+   "fr": ">Les premières intuitions de réciprocité<",
+   "en": ">The first intuitions of reciprocity<"
+  },
+  {
+   "fr": ">Construire<",
+   "en": ">Build<"
+  },
+  {
+   "fr": "<span>Aligner</span><span>Négocier</span><span>Tester</span>",
+   "en": "<span>Align</span><span>Negotiate</span><span>Test</span>"
+  },
+  {
+   "fr": ">Comment connecter les réciprenants et passer à l'action&#8239;?<",
+   "en": ">How to connect the reciprocants and move to action?<"
+  },
+  {
+   "fr": ">Faire émerger un projet concret et des premières actions communes, afin de transformer l'intention en mouvement collectif et de produire une première clarté relationnelle par l'action.<",
+   "en": ">Bring a concrete project and first joint actions into being, in order to turn intention into collective movement and produce a first relational clarity through action.<"
+  },
+  {
+   "fr": ">Canevas Forum<",
+   "en": ">Forum Canvas<"
+  },
+  {
+   "fr": ">L'ébauche de réciprocité, un socle commun, pas encore un engagement<",
+   "en": ">The sketch of a reciprocity, a common ground, not yet a commitment<"
+  },
+  {
+   "fr": ">Rédiger<",
+   "en": ">Draft<"
+  },
+  {
+   "fr": "<span>Clarifier</span><span>Formaliser</span><span>Sécuriser</span>",
+   "en": "<span>Clarify</span><span>Formalize</span><span>Secure</span>"
+  },
+  {
+   "fr": ">Comment traduire la confiance en principes clairs et sécurisants&#8239;?<",
+   "en": ">How to translate trust into clear, reassuring principles?<"
+  },
+  {
+   "fr": ">Transformer les échanges vécus en accords écrits&#8239;: formaliser les engagements, les flux de réciprocité, les rôles et les règles communes qui structurent la relation sans la figer.<",
+   "en": ">Turn lived exchanges into written agreements: formalize the commitments, the flows of reciprocity, the roles and common rules that structure the relationship without freezing it.<"
+  },
+  {
+   "fr": ">Gabarit de Convention<",
+   "en": ">Agreement Template<"
+  },
+  {
+   "fr": ">La convention de réciprocité<",
+   "en": ">The reciprocity agreement<"
+  },
+  {
+   "fr": ">Faire vivre<",
+   "en": ">Keep alive<"
+  },
+  {
+   "fr": "<span>Transmettre</span><span>Nourrir</span><span>Perpétuer</span>",
+   "en": "<span>Pass on</span><span>Nurture</span><span>Perpetuate</span>"
+  },
+  {
+   "fr": ">Comment maintenir le lien et l'engagement dans le temps&#8239;?<",
+   "en": ">How to maintain the bond and the commitment over time?<"
+  },
+  {
+   "fr": ">Suivre l'état réel de la relation par une lecture régulière : onze états, de l'éclaircie à l'orage pour repérer ce qui se tend avant la rupture, et revenir corriger ce qui a bougé.<",
+   "en": ">Follow the real state of the relationship through a regular reading: eleven states, from clearing to storm, to spot what tightens before the break, and to come back and correct what has moved.<"
+  },
+  {
+   "fr": ">SuiVIE des Réciprocités<",
+   "en": ">Reciprocity LifeTrack<"
+  },
+  {
+   "fr": ">Les signaux faibles, avant qu'ils ne deviennent des ruptures<",
+   "en": ">The weak signals, before they become ruptures<"
+  },
+  {
+   "fr": ">La convention est le premier objet issu de la praxis. D'autres viendront, pour d'autres besoins : transmettre la mémoire d'une relation, nommer ce qui déséquilibre, accompagner une sortie. Ce sera peut-être avec vous qu'ils émergeront. Qui sait&#8239;?<",
+   "en": ">The agreement is the first object to come out of the praxis. Others will follow, for other needs: passing on the memory of a relationship, naming what unbalances it, supporting an exit. It may be with you that they emerge. Who knows?<"
+  },
+  {
+   "fr": ">Là où j'interviens.<",
+   "en": ">Where I step in.<"
+  },
+  {
+   "fr": ">J'interviens comme relieur. Je ne porte pas les projets et je ne décide à la place de personne, je crée les conditions pour que des acteurs parviennent à coopérer, et à tenir dans la durée. Mais je ne me contente pas d'un diagnostic à distance ou d'un atelier qui s'oublie après quelques jours. Je conçois, je fabrique, je produis les objets pour construire des réciprocités. Là où d'autres poseraient un contrat - un lien qui oblige, avec sa dette et sa sanction -, je construis une convention&#8239;: un accord qu'on se choisit et qu'on tient, parce que chacun y retrouve une part de lui.<",
+   "en": ">I step in as a binder. I don't carry the projects and I decide nothing in place of anyone, I create the conditions for actors to manage to cooperate, and to hold over time. But I don't settle for a remote diagnosis or a workshop that is forgotten after a few days. I design, I build, I produce the objects to construct reciprocities. Where others would put in place a contract - a bond that obliges, with its debt and its sanction -, I build an agreement: an accord that we choose for ourselves and uphold, because each person finds a part of themselves in it.<"
+  },
+  {
+   "fr": ">Coopération sur les territoires<",
+   "en": ">Cooperation across territories<"
+  },
+  {
+   "fr": ">Créer les conditions pour qu'un dispositif circule au-delà des déjà-convaincus. Collectivités, agences de développement, projets territoriaux.<",
+   "en": ">Create the conditions for an arrangement to circulate beyond the already convinced. Local authorities, development agencies, territorial projects.<"
+  },
+  {
+   "fr": ">Structuration de collectifs<",
+   "en": ">Structuring collectives<"
+  },
+  {
+   "fr": ">Formaliser les engagements mutuels, clarifier rôles et contributions, prévenir l'épuisement. Associations, coopératives, réseaux.<",
+   "en": ">Formalize mutual commitments, clarify roles and contributions, prevent exhaustion. Associations, cooperatives, networks.<"
+  },
+  {
+   "fr": ">Formation à la praxis<",
+   "en": ">Praxis training<"
+  },
+  {
+   "fr": ">Transmission de la posture et des outils, pour les praticiens, facilitateurs et chargés de mission.<",
+   "en": ">Passing on the stance and the tools, for practitioners, facilitators and project officers.<"
+  },
+  {
+   "fr": ">Diplomatie en milieux tendus<",
+   "en": ">Diplomacy in tense environments<"
+  },
+  {
+   "fr": ">Utiliser la réciprocité là où le conflit s'est installé - médiations sensibles, tensions entre communautés.<",
+   "en": ">Use reciprocity where conflict has set in - sensitive mediations, tensions between communities.<"
+  },
+  {
+   "fr": "La bienveillance ne se construit pas. <span class=\"spectrum-word\">La réciprocité, si.</span>",
+   "en": "Kindness can't be built. <span class=\"spectrum-word\">Reciprocity can.</span>"
+  },
+  {
+   "fr": ">C'est la différence entre une posture et un mécanisme. Entre une intention et une infrastructure. Beaucoup d'approches parlent aujourd'hui de relation et de coopération - mais la plupart traitent la relation comme une valeur, quelque chose qu'on encourage et qu'on célèbre. Je la traite comme une matière&#8239;: quelque chose qu'on conçoit, qu'on nomme, qu'on partage, qu'on transmet.<",
+   "en": ">That is the difference between a posture and a mechanism. Between an intention and an infrastructure. Many approaches today speak of relationship and cooperation - but most treat the relationship as a value, something we encourage and celebrate. I treat it as a material: something we design, name, share, pass on.<"
+  },
+  {
+   "fr": ">Et la différence, on la voit après. Quand l'enthousiasme retombe. Quand les premières personnes s'en vont. Quand la rupture arrive.<",
+   "en": ">And the difference shows afterward. When enthusiasm fades. When the first people leave. When the break comes.<"
+  },
+  {
+   "fr": ">La circulation, paradigme unificateur du design.<",
+   "en": ">Circulation, the unifying paradigm of design.<"
+  },
+  {
+   "fr": ">Une série en six temps. Elle part d'une phrase contre-intuitive, traverse la généalogie des paradigmes du design, nomme un concept qui manquait, et montre où tout cela s'incarne concrètement dans l'univers numérique.<",
+   "en": ">A series in six movements. It starts from a counter-intuitive sentence, goes through the genealogy of design paradigms, names a concept that was missing, and shows where all of this is embodied concretely in the digital universe.<"
+  },
+  {
+   "fr": ">Aller plus loin<",
+   "en": ">Go further<"
+  },
+  {
+   "fr": "<div class=\"kicker\">Lieu",
+   "en": "<div class=\"kicker\">Place"
+  },
+  {
+   "fr": "<div class=\"lb\">Le geste de soin</div>",
+   "en": "<div class=\"lb\">The gesture of care</div>"
+  },
+  {
+   "fr": "<div class=\"lb\">Le premier pas</div>",
+   "en": "<div class=\"lb\">The first step</div>"
+  },
+  {
+   "fr": "{g:0,n:1,t:\"Le paradigme de l'accomplisseur de tâches\",s:\"Le système a réduit l'humain à ce qu'il produit. Derrière chaque rôle, une personne a disparu.\",b:\"Les gens jouent un rôle plutôt que d'être présents. La coopération devient de la coordination - on s'organise sans se rencontrer. Les émotions, les doutes, les intuitions sont bannis du travail collectif. Reste une fatigue sourde, le sentiment de n'être jamais vraiment là.\",p:\"La personne avant le rôle - on s'engage avec qui on est, pas avec ce qu'on produit.\",u:\"Nommer ce qu'on apporte au-delà de sa fonction.\"},",
+   "en": "{g:0,n:1,t:\"The task-performer paradigm\",s:\"The system has reduced the human to what they produce. Behind every role, a person has disappeared.\",b:\"People play a role rather than being present. Cooperation becomes coordination - we organize without meeting. Emotions, doubts, intuitions are banished from collective work. What remains is a dull fatigue, the feeling of never really being there.\",p:\"The person before the role - we commit with who we are, not with what we produce.\",u:\"Naming what we bring beyond our function.\"},"
+  },
+  {
+   "fr": "{g:1,n:2,t:\"Les relations désincarnées par les outils\",s:\"Les outils censés faciliter la relation l'ont remplacée.\",b:\"Les réunions sont devenues des comptes-rendus, les accords des contrats, les échanges des tickets. On ne se parle plus, on se coordonne. On ne se fait plus confiance, on se contractualise. Reste un sentiment de solitude au milieu de l'activité collective.\",p:\"Revenir au contact direct - avant tout outil, la relation.\",u:\"Une conversation sans ordre du jour ni compte-rendu prévu. Juste pour voir.\"},",
+   "en": "{g:1,n:2,t:\"Relationships disembodied by tools\",s:\"The tools meant to ease relationship have replaced it.\",b:\"Meetings have become minutes, agreements contracts, exchanges tickets. We no longer talk, we coordinate. We no longer trust each other, we contractualize. What remains is a feeling of loneliness in the midst of collective activity.\",p:\"Return to direct contact - before any tool, the relationship.\",u:\"A conversation with no agenda or planned minutes. Just to see.\"},"
+  },
+  {
+   "fr": "{g:1,n:3,t:\"La difficulté à montrer qui on est\",s:\"On se présente par son rôle. Ce qu'on est vraiment reste invisible.\",b:\"Se montrer tel qu'on est - avec ses forces réelles, ses doutes, ses motivations - est perçu comme un risque. Alors on joue un personnage, et on perd le contact avec ce qui nous rend réellement précieux dans une coopération.\",p:\"Créer les conditions pour qu'on puisse se montrer - sans risque, sans jugement.\",u:\"Poser la question qui dépasse le rôle : « qu'est-ce que vous apportez que personne d'autre ne pourrait apporter ? »\"},",
+   "en": "{g:1,n:3,t:\"Difficulty showing who we are\",s:\"We present ourselves through our role. What we really are remains invisible.\",b:\"Showing ourselves as we are - with our real strengths, our doubts, our motivations - is perceived as a risk. So we play a character, and lose touch with what makes us truly valuable in a cooperation.\",p:\"Create the conditions for people to show themselves - without risk, without judgment.\",u:\"Ask the question that goes beyond the role: ‘what do you bring that nobody else could bring?’\"},"
+  },
+  {
+   "fr": "{g:1,n:4,t:\"La difficulté à montrer sa valeur\",s:\"On contribue sans savoir si ça compte.\",b:\"Les contributions formelles sont visibles - livrables, présences, heures. Mais ce qui fait la différence - les intuitions, les connexions, le soin, la mémoire, l'énergie relationnelle - reste invisible. Alors les personnes cessent d'apporter ce qui n'est pas reconnu.\",p:\"Rendre visible ce qu'on apporte - pas seulement ce qu'on produit.\",u:\"Nommer trois contributions qu'on n'a jamais eu l'occasion de dire.\"},",
+   "en": "{g:1,n:4,t:\"Difficulty showing our value\",s:\"We contribute without knowing whether it counts.\",b:\"Formal contributions are visible - deliverables, attendance, hours. But what makes the difference - intuitions, connections, care, memory, relational energy - remains invisible. So people stop bringing what isn't recognized.\",p:\"Make visible what we bring - not only what we produce.\",u:\"Name three contributions we've never had the chance to speak of.\"},"
+  },
+  {
+   "fr": "{g:1,n:5,t:\"La difficulté à montrer ses faiblesses\",s:\"On fait comme si tout allait. Et la coopération avance en portant des charges invisibles.\",b:\"Montrer ses faiblesses est perçu - à tort - comme un aveu d'incompétence. Alors on compense, on fait semblant, on s'épuise à maintenir une image de maîtrise. Les vraies difficultés ne sont pas partagées, et s'accumulent jusqu'à la rupture.\",p:\"Créer un espace où les faiblesses sont des ressources, pas des risques.\",u:\"Demander « qu'est-ce qui vous coûte vraiment ? » - et attendre la réponse vraie.\"},",
+   "en": "{g:1,n:5,t:\"Difficulty showing our weaknesses\",s:\"We act as if all is well. And the cooperation moves forward carrying invisible loads.\",b:\"Showing weaknesses is perceived - wrongly - as an admission of incompetence. So we compensate, we pretend, we wear ourselves out maintaining an image of mastery. Real difficulties aren't shared, and pile up until the break.\",p:\"Create a space where weaknesses are resources, not risks.\",u:\"Ask ‘what is really costing you?’ - and wait for the true answer.\"},"
+  },
+  {
+   "fr": "{g:1,n:6,t:\"La légitimité à agir non reconnue\",s:\"On sait qu'on peut apporter quelque chose. Mais on ne se sent pas autorisé.\",b:\"Alors on attend - ou on part. L'énergie disponible ne trouve pas d'endroit où se poser, et le collectif se prive de ce que personne ne lui a explicitement demandé.\",p:\"Reconnaître explicitement la légitimité de chacun à contribuer, depuis qui il est.\",u:\"Écrire noir sur blanc ce que chacun est légitime à apporter et à décider.\"},",
+   "en": "{g:1,n:6,t:\"Unrecognized legitimacy to act\",s:\"We know we can bring something. But we don't feel authorized.\",b:\"So we wait - or leave. The available energy finds no place to land, and the collective deprives itself of what nobody explicitly asked of it.\",p:\"Explicitly recognize everyone's legitimacy to contribute, from who they are.\",u:\"Write down in black and white what each person is legitimate to bring and to decide.\"},"
+  },
+  {
+   "fr": "{g:1,n:7,t:\"L'invisibilisation de la contribution\",s:\"Ce qu'on fait en dehors des livrables formels disparaît.\",b:\"La contribution informelle est souvent la plus précieuse - et la moins vue. Un sentiment d'injustice s'installe, rarement nommé, et la motivation se tourne vers ce qui est visible plutôt que vers ce qui est utile.\",p:\"Rendre visible ce qui est informel - non pour le formaliser à l'excès, mais pour le reconnaître.\",u:\"Nommer trois choses qu'on fait et qui n'apparaissent dans aucune description de rôle.\"},",
+   "en": "{g:1,n:7,t:\"The invisibilization of contribution\",s:\"What we do outside formal deliverables disappears.\",b:\"Informal contribution is often the most precious - and the least seen. A feeling of injustice sets in, rarely named, and motivation turns toward what is visible rather than what is useful.\",p:\"Make visible what is informal - not to over-formalize it, but to recognize it.\",u:\"Name three things we do that appear in no role description.\"},"
+  },
+  {
+   "fr": "{g:2,n:8,t:\"La crise de la confiance\",s:\"On vérifie, on se protège, on anticipe le pire. La méfiance devient le réflexe.\",b:\"On ne sait plus à qui se fier. Chaque engagement non tenu, jamais discuté, ajoute une couche de prudence. L'énergie passe dans la protection plutôt que dans le travail commun.\",p:\"Reconstruire la confiance par des actes cohérents, pas par des déclarations d'intention.\",u:\"Nommer les engagements non tenus - explicitement, sans accuser - pour en comprendre les causes.\"},",
+   "en": "{g:2,n:8,t:\"The crisis of trust\",s:\"We check, we protect ourselves, we anticipate the worst. Mistrust becomes the reflex.\",b:\"We no longer know whom to rely on. Each unmet commitment, never discussed, adds a layer of caution. Energy goes into protection rather than common work.\",p:\"Rebuild trust through consistent acts, not statements of intent.\",u:\"Name the unmet commitments - explicitly, without accusing - to understand their causes.\"},"
+  },
+  {
+   "fr": "{g:2,n:9,t:\"Le sentiment d'être seul à porter\",s:\"On porte plus que sa part. Personne ne le dit - jusqu'à ce que ça explose.\",b:\"On voit les autres faire moins, on compense, on s'épuise. Et comme la charge n'est visible nulle part, elle ne peut ni être partagée ni même reconnue.\",p:\"Rendre visible la charge - pour qu'elle puisse être partagée ou reconnue.\",u:\"Nommer ce que chacun porte, explicitement, devant les autres.\"},",
+   "en": "{g:2,n:9,t:\"The feeling of carrying alone\",s:\"We carry more than our share. Nobody says it - until it blows up.\",b:\"We see others do less, we compensate, we wear ourselves out. And since the load is visible nowhere, it can neither be shared nor even recognized.\",p:\"Make the load visible - so that it can be shared or recognized.\",u:\"Name what each person carries, explicitly, in front of the others.\"},"
+  },
+  {
+   "fr": "{g:2,n:10,t:\"Le déséquilibre des efforts\",s:\"Certains donnent plus que d'autres. C'est visible - mais personne ne le dit.\",b:\"Le déséquilibre s'installe dans le silence, et devient une évidence tacite que plus personne n'ose rouvrir. Il finit par déterminer qui reste et qui s'en va.\",p:\"Nommer le déséquilibre - pas pour accuser, mais pour rétablir la symétrie.\",u:\"Écrire ce que chacun s'engage à apporter : en temps, en énergie, en ressources.\"},",
+   "en": "{g:2,n:10,t:\"The imbalance of efforts\",s:\"Some give more than others. It's visible - but nobody says it.\",b:\"The imbalance settles in silence, and becomes a tacit given that nobody dares reopen. It ends up determining who stays and who leaves.\",p:\"Name the imbalance - not to accuse, but to restore symmetry.\",u:\"Write what each person commits to bring: in time, in energy, in resources.\"},"
+  },
+  {
+   "fr": "{g:2,n:11,t:\"Les interprétations divergentes\",s:\"On a dit oui à la même chose. Mais on n'a pas compris la même chose.\",b:\"Et on ne le découvre que trop tard - quand les effets sont déjà là. Chacun a raison depuis sa lecture, personne n'a menti, et pourtant l'engagement ne recouvrait pas la même réalité.\",p:\"Expliciter ce qu'on a compris - avant que les divergences produisent leurs effets.\",u:\"Pour chaque engagement, écrire ce que chaque partie comprend concrètement : action, résultat, temporalité.\"},",
+   "en": "{g:2,n:11,t:\"Diverging interpretations\",s:\"We said yes to the same thing. But we didn't understand the same thing.\",b:\"And we only discover it too late - when the effects are already there. Everyone is right from their reading, nobody lied, and yet the commitment didn't cover the same reality.\",p:\"Make explicit what we understood - before divergences produce their effects.\",u:\"For each commitment, write what each party concretely understands: action, result, timing.\"},"
+  },
+  {
+   "fr": "{g:2,n:12,t:\"Les rôles et responsabilités flous\",s:\"On ne sait pas vraiment qui fait quoi. Ni qui décide.\",b:\"Ça crée des zones mortes dans la coopération : des sujets que tout le monde croit couverts par quelqu'un d'autre, et une énergie considérable dépensée à naviguer le flou.\",p:\"Clarifier - pas pour figer, mais pour libérer l'énergie qui s'épuise dans le flou.\",u:\"Poser la question « qui fait quoi, qui décide quoi, qui est responsable de quoi ? » - et écrire les réponses.\"},",
+   "en": "{g:2,n:12,t:\"Blurred roles and responsibilities\",s:\"We don't really know who does what. Nor who decides.\",b:\"This creates dead zones in cooperation: topics everyone believes someone else has covered, and considerable energy spent navigating the blur.\",p:\"Clarify - not to freeze, but to free the energy that wears out in the blur.\",u:\"Ask ‘who does what, who decides what, who is responsible for what?’ - and write down the answers.\"},"
+  },
+  {
+   "fr": "{g:2,n:13,t:\"Les asymétries de pouvoir non nommées\",s:\"Les rapports de force existent. Tout le monde le sait. Personne n'en parle.\",b:\"Ils structurent tout en silence : ce qui se dit, ce qui se tait, ce qui se décide. Ne pas les nommer ne les fait pas disparaître - ça les rend seulement impossibles à travailler.\",p:\"Nommer les rapports de force - pour qu'ils soient pris en compte, pas ignorés.\",u:\"Demander ouvertement : quels sont les déséquilibres de pouvoir ici, et comment on les compense ?\"},",
+   "en": "{g:2,n:13,t:\"Unnamed power asymmetries\",s:\"Power relations exist. Everyone knows it. Nobody talks about it.\",b:\"They structure everything in silence: what is said, what is left unsaid, what is decided. Not naming them doesn't make them disappear - it only makes them impossible to work on.\",p:\"Name power relations - so that they are taken into account, not ignored.\",u:\"Ask openly: what are the power imbalances here, and how do we compensate for them?\"},"
+  },
+  {
+   "fr": "{g:3,n:14,t:\"La coopération qui s'épuise faute de cadre\",s:\"On coopère dans le flou. Sans règles, sans espace pour renégocier.\",b:\"L'absence de cadre passe pour de la liberté, jusqu'au moment où chacun découvre que rien ne protège personne. Et ça finit par s'effondrer, souvent sur un incident mineur.\",p:\"Construire un cadre minimal - pas pour rigidifier, mais pour libérer l'énergie.\",u:\"Formuler ensemble les règles minimales, avant que les premières tensions arrivent.\"},",
+   "en": "{g:3,n:14,t:\"Cooperation wearing out for lack of a frame\",s:\"We cooperate in a blur. With no rules, no space to renegotiate.\",b:\"The absence of a frame passes for freedom, until the moment everyone discovers that nothing protects anyone. And it ends up collapsing, often over a minor incident.\",p:\"Build a minimal frame - not to stiffen, but to free energy.\",u:\"Formulate the minimal rules together, before the first tensions arrive.\"},"
+  },
+  {
+   "fr": "{g:3,n:15,t:\"La surcharge mentale et cognitive\",s:\"On porte trop. Et on ne le dit pas - parce qu'on ne sait pas comment.\",b:\"Trop de projets, trop de responsabilités, trop d'incertitudes. La surcharge n'a aucun endroit où se déclarer, donc elle se manifeste autrement : irritabilité, retrait, désengagement soudain.\",p:\"Rendre la surcharge visible - pour qu'elle puisse être partagée ou allégée.\",u:\"Demander « où en êtes-vous, vraiment ? » - et créer l'espace pour que la réponse soit honnête.\"},",
+   "en": "{g:3,n:15,t:\"Mental and cognitive overload\",s:\"We carry too much. And we don't say so - because we don't know how.\",b:\"Too many projects, too many responsibilities, too many uncertainties. Overload has nowhere to declare itself, so it shows up otherwise: irritability, withdrawal, sudden disengagement.\",p:\"Make overload visible - so that it can be shared or eased.\",u:\"Ask ‘where are you, really?’ - and create the space for the answer to be honest.\"},"
+  },
+  {
+   "fr": "{g:3,n:16,t:\"L'engagement perçu comme un piège\",s:\"On s'est engagé. Et maintenant on ne peut plus partir sans briser quelque chose.\",b:\"On reste par fidélité. Mais la fidélité s'épuise, et le départ finit par se faire dans la rupture plutôt que dans la conversation.\",p:\"Prévoir dès le début comment on sort - pour que l'engagement soit libre.\",u:\"Écrire dans quelles conditions et de quelle manière on peut réviser ou quitter cet engagement.\"},",
+   "en": "{g:3,n:16,t:\"Commitment perceived as a trap\",s:\"We committed. And now we can't leave without breaking something.\",b:\"We stay out of loyalty. But loyalty wears out, and the departure ends up happening in rupture rather than in conversation.\",p:\"Plan from the start how we get out - so that the commitment is free.\",u:\"Write down under what conditions and in what way this commitment can be revised or left.\"},"
+  },
+  {
+   "fr": "{g:3,n:17,t:\"La perte de mémoire relationnelle\",s:\"Ce qui a été construit ensemble disparaît avec les personnes.\",b:\"Les nouveaux arrivent sans savoir ce qui précède : les tensions déjà traversées, les accords tacites, les raisons derrière les règles. Et tout recommence à zéro.\",p:\"Faire de la relation un objet transmissible.\",u:\"Documenter l'histoire vivante de la relation, pour que quelqu'un qui arrive comprenne ce qui a été construit avant lui.\"},",
+   "en": "{g:3,n:17,t:\"Loss of relational memory\",s:\"What was built together disappears with the people.\",b:\"Newcomers arrive without knowing what came before: the tensions already crossed, the tacit agreements, the reasons behind the rules. And everything starts again from zero.\",p:\"Make the relationship a transmissible object.\",u:\"Document the living history of the relationship, so that someone arriving understands what was built before them.\"},"
+  },
+  {
+   "fr": "{g:3,n:18,t:\"Les contraintes externes qui désengagent\",s:\"Les contextes changent. Et souvent personne ne le dit - jusqu'à ce que ce soit trop tard.\",b:\"Budgets réduits, priorités déplacées, arbitrages subis. Faute d'un endroit pour en parler, le désengagement se fait en silence et passe pour de la mauvaise volonté.\",p:\"Anticiper l'imprévu sans le nier - la flexibilité est une forme de respect.\",u:\"Convenir dès le départ : si les conditions changent, voici comment on en parle.\"}",
+   "en": "{g:3,n:18,t:\"External constraints that disengage\",s:\"Contexts change. And often nobody says so - until it is too late.\",b:\"Reduced budgets, shifted priorities, endured trade-offs. With no place to talk about it, disengagement happens in silence and passes for ill will.\",p:\"Anticipate the unexpected without denying it - flexibility is a form of respect.\",u:\"Agree from the start: if conditions change, here is how we talk about it.\"}"
+  }
+ ]
+}

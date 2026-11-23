@@ -21,10 +21,17 @@ import { createSlotPicker } from "./screens/slot-picker.js";
 import { createNewsPanel } from "./screens/news.js";
 import * as store from "./store.js";
 
+import { tr, LANG } from "./i18n.js";
+
+// Langue du document : la page HTML reste en français, l'anglais est choisi par ?lang=en.
+if (LANG === "en") {
+  document.documentElement.lang = "en";
+  document.title = "Chalon dans la rue - Prototype";
+}
 const app = document.getElementById("app");
 
 // L'indicateur de chargement est posé avant tout, pour qu'on ne voie jamais un écran vide sans explication.
-const loader = h("div", { class: "loader", role: "status", "aria-label": "Chargement" }, h("span", { class: "loader__spinner" }));
+const loader = h("div", { class: "loader", role: "status", "aria-label": tr("Chargement") }, h("span", { class: "loader__spinner" }));
 app.append(loader);
 
 /** Écran affiché quand un contenu n'a pas pu être chargé : on peut réessayer. */
@@ -32,14 +39,14 @@ const renderError = (error, retry) => {
   console.error(error);
   return createScreen({
     id: "erreur",
-    title: "Oups",
+    title: tr("Oups"),
     softLine: true,
     bodyClass: "screen__body--empty",
     body: h(
       "div",
       { class: "empty" },
-      h("p", { class: "empty__lead" }, "Le contenu n’a pas pu se charger. Vérifiez votre connexion puis réessayez."),
-      h("button", { class: "cta cta--centered", type: "button", onclick: retry }, "Réessayer")
+      h("p", { class: "empty__lead" }, tr("Le contenu n’a pas pu se charger. Vérifiez votre connexion puis réessayez.")),
+      h("button", { class: "cta cta--centered", type: "button", onclick: retry }, tr("Réessayer"))
     ),
   });
 };

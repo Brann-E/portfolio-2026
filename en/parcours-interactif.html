@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="/styles.css">
+<script src="/reveal.js"></script>
+<title>Interactive journey - Brann Etienne</title>
+<meta name="description" content="Three ordinary situations, seen from each place. A fifteen-minute interactive journey to see what circulates between people.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500..700&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+</head>
+
+<body class="has-site-nav da pi-page" id="top"><script src="/nav.js"></script>
+<main id="contenu">
+
+<div class="pi-top" id="pi-top" role="group" aria-label="Journey steps" hidden>
+  <button class="pi-back" id="pi-back" type="button" hidden onclick="go('s-home')">&larr; The situations</button>
+  <ol class="pi-steps" id="pi-steps" hidden></ol>
+</div>
+
+<section class="pi-screen pi-on pi-wrap" id="s-home">
+  <h1>One situation, <em>several interpretations.</em></h1>
+  <p class="pi-lead">3 ordinary situations. You will go through them through the eyes of those who live them&#8239;: each their own place, each their own share of truth.</p>
+  <div class="pi-cards" id="home">
+    <button class="pi-card" type="button" data-sit="0">
+      <svg class="pi-ic" viewBox="0 0 40 40" fill="none" stroke-width="1.5"><g stroke="currentColor"><circle cx="11" cy="20" r="3.4"/><circle cx="29" cy="20" r="3.4"/><path d="M14.4 20h11.2"/></g></svg>
+      <span class="pi-card-name">Between a product<br>and its users</span>
+      <span class="pi-card-tag">A platform and the people who keep it running</span>
+      <span class="pi-card-sum">Everything is fine: the lights are green, costs at their lowest, a team proud of its results. This is exactly where something can slip past you.</span></button>
+    <button class="pi-card" type="button" data-sit="1">
+      <svg class="pi-ic" viewBox="0 0 40 40" fill="none" stroke-width="1.5"><g stroke="currentColor"><circle cx="20" cy="12" r="3.4"/><circle cx="11" cy="26" r="3.4"/><circle cx="29" cy="26" r="3.4"/><path d="M20 15.4 13 23M27 23l-7-7.6M14.4 26h11.2"/></g></svg>
+      <span class="pi-card-name">Within a team <br>and its trades</span>
+      <span class="pi-card-tag">A workshop and an engineering office</span>
+      <span class="pi-card-sum">For 2 years deadlines have been met and nobody complains. Yet every week, something is said that nobody hears.</span></button>
+    <button class="pi-card" type="button" data-sit="2">
+      <svg class="pi-ic" viewBox="0 0 40 40" fill="none" stroke-width="1.5"><g stroke="currentColor" fill="none"><circle cx="9" cy="28" r="2.6"/><circle cx="20" cy="14" r="2.6"/><circle cx="31" cy="24" r="2.6"/><path d="M10.6 25.8 18.6 16M21.6 15.8 29.4 22.2"/></g></svg>
+      <span class="pi-card-name">Around a journey <br>and its moments</span>
+      <span class="pi-card-tag">6 appointments since January</span>
+      <span class="pi-card-sum">Facing you, a person who hardly answers and looks at the door. You will think they are closed. Something else may be going on.</span></button>
+  </div>
+  <div class="pi-further" id="pi-further" hidden>
+    <p class="pi-further-lead">You went through all 3: it was the same mechanism each time. To go further:</p>
+    <div class="pi-further-links">
+      <a class="pi-further-link" href="/en/a-propos"><span class="pi-further-k">About</span><span class="pi-further-d">my background and my way of working</span></a>
+      <a class="pi-further-link" href="/en/circulation-paradigme-du-design"><span class="pi-further-k">The theory</span><span class="pi-further-d">what holds things together, in 6 essays</span></a>
+    </div>
+  </div>
+  <p class="pi-note">These 3 situations are <b>archetypes</b>, deliberately simplified.<br>Reality is always more tangled.</p>
+</section>
+
+<section class="pi-screen pi-wrap" id="s-mur">
+  <span class="pi-kicker" id="m-kick"></span>
+  <h2 id="m-title"></h2>
+  <div class="pi-scene" id="m-scene"></div>
+  <div class="pi-q" id="m-q"></div>
+  <div id="m-opts"></div>
+  <button class="pi-btn" id="m-next" type="button" hidden onclick="turn()">See it later</button>
+</section>
+
+<section class="pi-screen pi-wrap" id="s-turn">
+  <span class="pi-kicker" id="t-kick"></span>
+  <h2 id="t-title"></h2>
+  <div class="pi-turn" id="t-body"></div>
+  <div id="t-gate"></div>
+  <button class="pi-btn" id="t-next" onclick="toPlaces()">Look from elsewhere</button>
+</section>
+
+<section class="pi-screen pi-wrap" id="s-places">
+  <span class="pi-kicker" id="p-kick"></span>
+  <h2>Look at what each person sees.</h2>
+  <p class="pi-muted">3 places in the same system, and between them, nothing circulating anymore.</p>
+  <div class="pi-profiles" id="places"></div>
+  <div id="p-gate"></div>
+  <button class="pi-btn" onclick="toEnd()" id="p-next" hidden>What emerges</button>
+</section>
+
+<section class="pi-screen pi-wrap" id="s-vue">
+  <span class="pi-kicker" id="v-kick"></span>
+  <h2 id="v-title"></h2>
+  <div class="pi-scene" id="v-body"></div>
+  <button class="pi-btn" onclick="toPlaces()">Back to the places</button>
+</section>
+
+<section class="pi-screen pi-wrap" id="s-end">
+  <span class="pi-kicker" id="e-kick"></span>
+  <div class="pi-appears"><p id="e-app"></p><p class="pi-app-more" id="e-more" hidden></p></div>
+  <div id="e-gate"></div>
+  <button class="pi-btn" id="e-next"></button>
+</section>
+
+<section class="pi-screen pi-wrap" id="s-piste">
+  <span class="pi-kicker" id="pt-kick"></span>
+  <h2>A direction. <em>Not a solution.</em></h2>
+  <p class="pi-lead" id="pt-lead"></p>
+  <div id="pt-cercle"></div>
+  <div class="pi-piste" id="pt-body"></div>
+  <div id="pt-gate"></div>
+  <p class="pi-elsewhere" id="pt-elsewhere" hidden>The same thing happens elsewhere.</p>
+  <button class="pi-btn" id="pt-next"></button>
+</section>
+
+<section class="pi-screen pi-wrap pi-sy" id="s-synth">
+  <h1>3 times the same thing. <em>One single mechanism.</em></h1>
+  <p class="pi-lead">4 people give something that never had a name. <br>43 reports written with nobody at the other end. <br>A woman who gives 6 times without anything being taken up.</p>
+  <p>Every time, something was circulating. Every time, nobody was receiving it.</p>
+  <p>And every time, what was enough was tiny: a monthly message, a quarter of an hour, half a page.</p>
+  <div class="pi-big">What was missing was never goodwill. It was a place where what circulates can arrive.</div>
+  <div class="pi-offer">
+    <p>This is what I do in the products I design. I make visible what already circulates, I repair the place where it doesn't arrive, and I design the tool that makes it hold.</p>
+  </div>
+  <div class="pi-contact">
+    <a class="pi-btn" href="/en/#cas">See the case studies</a>
+    <a class="pi-btn" href="/en/contact">Write to me</a>
+  </div>
+  <button class="pi-btn" onclick="go('s-home')">Review the situations</button>
+</section>
+
+</main>
+
+<script src="/en/parcours-interactif.js"></script>
+<script src="/site-nav.js"></script>
+<div id="site-footer"></div>
+</body>
+</html>

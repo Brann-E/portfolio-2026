@@ -2,6 +2,7 @@ import { h, img } from "../dom.js";
 import { loadJSON } from "../data.js";
 import * as store from "../store.js";
 
+import { tr } from "../i18n.js";
 /**
  * Cloche des actualités : en haut à droite de chaque écran, avec le nombre d'actualités non lues.
  * Toucher la cloche ouvre le panneau des actualités (événement `open-news`).
@@ -20,7 +21,7 @@ export function createNewsButton({ floating = false } = {}) {
     {
       class: floating ? "bell bell--floating" : "bell",
       type: "button",
-      "aria-label": "Actualités",
+      "aria-label": tr("Actualités"),
       onclick: (event) => event.currentTarget.dispatchEvent(new CustomEvent("open-news", { bubbles: true })),
     },
     img("assets/notification.svg"),
@@ -31,7 +32,7 @@ export function createNewsButton({ floating = false } = {}) {
     const count = await unreadCount();
     badge.hidden = count === 0;
     badge.textContent = String(count);
-    button.setAttribute("aria-label", count ? `Actualités, ${count} non lue${count > 1 ? "s" : ""}` : "Actualités");
+    button.setAttribute("aria-label", count ? tr(count > 1 ? "Actualités, {n} non lues" : "Actualités, {n} non lue", { n: count }) : tr("Actualités"));
   };
   refresh();
 

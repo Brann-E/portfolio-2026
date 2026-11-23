@@ -26,7 +26,7 @@
 (function () {
   "use strict";
   var s = document.createElement("script");
-  s.src = "footer.js";
+  s.src = (document.currentScript ? document.currentScript.src.replace(/[^\/]*$/, "") : "") + "footer.js";   // à côté de reveal.js : les pages de /en/ chargent aussi /footer.js
   (document.head || document.documentElement).appendChild(s);
 })();
 

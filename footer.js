@@ -12,8 +12,9 @@
 
   /* La langue : celle de la page (<html lang="fr"> ou "en"). Les liens de pages pointent vers la version française tant que la page n'est pas traduite. */
   var EN = document.documentElement.lang === "en";
+  var P = EN ? "/en" : "";   // les pages de /en/ pointent vers leurs versions anglaises
   var L = EN
-    ? { resume: "12 years of product, design,<br>and strategy.", lieu: "📍 Lyon, remote and on site", retrouver: "Find me", cv: "My CV", cvLien: "/cv-brann-etienne.pdf", cas: "Case studies", casLien: "/en/#cas", loin: "Going further", situations: "3 situations to explore", circulation: "Circulation, a paradigm for design", reciprocites: "The Reciprocities", mentions: "Legal notice", haut: "Back to top ↑" }
+    ? { resume: "12 years of product, design,<br>and strategy.", lieu: "📍 Lyon, remote and on site", retrouver: "Find me", cv: "My CV", cvLien: "/cv-brann-etienne-en.pdf", cas: "Case studies", casLien: "/en/#cas", loin: "Going further", situations: "3 situations to explore", circulation: "Circulation, a paradigm of design", reciprocites: "The Reciprocities", mentions: "Legal notice", haut: "Back to top ↑" }
     : { resume: "12 ans de produit, de design,<br>et de stratégie.", lieu: "📍 Lyon, à distance et sur site", retrouver: "Me retrouver", cv: "Mon CV", cvLien: "cv-brann-etienne.pdf", cas: "Études de cas", casLien: "/#cas", loin: "Pour aller plus loin", situations: "3 situations à explorer", circulation: "La circulation, paradigme du design", reciprocites: "Les Réciprocités", mentions: "Mentions légales", haut: "Retour en haut ↑" };
 
   var HTML = `<footer class="pied">
@@ -29,30 +30,30 @@
         <ul>
           <li><a href="https://www.linkedin.com/in/brann-etienne" target="_blank" rel="noopener">LinkedIn</a></li>
           <li><a href="https://github.com/Brann-E" target="_blank" rel="noopener">GitHub</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><a href="${P}/contact">Contact</a></li>
           <li><a href="${L.cvLien}">${L.cv}</a></li>
         </ul>
       </div>
       <div>
         <h2><a href="${L.casLien}">${L.cas}</a></h2>
         <ul>
-          <li><a href="/cas-healthanea">Healthanea</a></li>
-          <li><a href="/cas-shift-prime">SHIFT Prime</a></li>
-          <li><a href="/cas-bi-solution">B.I Solution</a></li>
-          <li><a href="/cas-proshop">Proshop</a></li>
-          <li><a href="/cas-chalon-dans-la-rue">Chalon dans la rue</a></li>
+          <li><a href="${P}/cas-healthanea">Healthanea</a></li>
+          <li><a href="${P}/cas-shift-prime">SHIFT Prime</a></li>
+          <li><a href="${P}/cas-bi-solution">B.I Solution</a></li>
+          <li><a href="${P}/cas-proshop">Proshop</a></li>
+          <li><a href="${P}/cas-chalon-dans-la-rue">Chalon dans la rue</a></li>
         </ul>
       </div>
       <div>
         <h2>${L.loin}</h2>
         <ul>
-          <li><a href="/parcours-interactif">${L.situations}</a></li>
-          <li><a href="/circulation-paradigme-du-design">${L.circulation}</a></li>
-          <li><a href="/reciprocites">${L.reciprocites}</a></li>
+          <li><a href="${P}/parcours-interactif">${L.situations}</a></li>
+          <li><a href="${P}/circulation-paradigme-du-design">${L.circulation}</a></li>
+          <li><a href="${P}/reciprocites">${L.reciprocites}</a></li>
         </ul>
       </div>
     </div>
-    <div class="pied-bas c-12 sp-3"><a href="/mentions-legales">${L.mentions}</a><a href="#top">${L.haut}</a><span>© 2026 Brann Etienne</span></div>
+    <div class="pied-bas c-12 sp-3"><a href="${P}/mentions-legales">${L.mentions}</a><a href="#top">${L.haut}</a><span>© 2026 Brann Etienne</span></div>
   </div>
 </footer>`;
 

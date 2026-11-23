@@ -3,6 +3,7 @@ import * as store from "../store.js";
 import { enableDragScroll } from "./drag-scroll.js";
 import { toggleFavorite, togglePin, handleRepAction } from "./actions.js";
 
+import { tr } from "../i18n.js";
 /**
  * Carte spectacle (composant « Découvrir » de Figma) : bannière + photo recadrée,
  * informations, résumé, bouton « Lire plus » et défilé des représentations.
@@ -44,7 +45,7 @@ export function createRep(rep, index, { slot = false } = {}) {
       h("span", { class: "rep__date" }, `${rep.date} - ${rep.time}`),
       h(
         "button",
-        { class: "pin", type: "button", "aria-label": "Ajouter au planning", dataset: { pin: index } },
+        { class: "pin", type: "button", "aria-label": tr("Ajouter au planning"), dataset: { pin: index } },
         img("assets/pin-off.png")
       )
     ),
@@ -53,9 +54,9 @@ export function createRep(rep, index, { slot = false } = {}) {
     h(
       "div",
       { class: "rep__actions" },
-      repAction("map", index, "Carte", `Voir ${rep.venue} sur la carte`),
-      repAction("route", index, "Itinéraire", `Itinéraire à pied vers ${rep.venue}`),
-      repAction("share", index, "Partager", `Partager la représentation du ${rep.date} à ${rep.time}`)
+      repAction("map", index, tr("Carte"), tr("Voir {venue} sur la carte", { venue: rep.venue })),
+      repAction("route", index, tr("Itinéraire"), tr("Itinéraire à pied vers {venue}", { venue: rep.venue })),
+      repAction("share", index, tr("Partager"), tr("Partager la représentation du {date} à {time}", { date: rep.date, time: rep.time }))
     )
   );
 }
@@ -86,7 +87,7 @@ export function createShowCard(show, { compact = false, plannedIndex = null, onl
       "div",
       { class: "show-card__main" },
       planned && createRep(show.reps[plannedIndex], plannedIndex, { slot: true }),
-      planned && h("button", { class: "change-slot", type: "button", dataset: { change: "" } }, "Changer le créneau"),
+      planned && h("button", { class: "change-slot", type: "button", dataset: { change: "" } }, tr("Changer le créneau")),
       h(
         "div",
         { class: "show-card__media" },
@@ -94,7 +95,7 @@ export function createShowCard(show, { compact = false, plannedIndex = null, onl
           "div",
           { class: "show-card__banner" },
           h("h3", { class: "show-card__title" }, show.title),
-          h("button", { class: "like", type: "button", "aria-label": "Ajouter aux favoris", "aria-pressed": "false" }, img("assets/heart-off.png"))
+          h("button", { class: "like", type: "button", "aria-label": tr("Ajouter aux favoris"), "aria-pressed": "false" }, img("assets/heart-off.png"))
         ),
         createPhoto(show)
       ),
@@ -120,10 +121,10 @@ export function createShowCard(show, { compact = false, plannedIndex = null, onl
             "div",
             { class: "show-card__genre" },
             h("span", { class: "show-card__category" }, show.category),
-            !venue && h("span", { class: "meta-item meta-item--programme" }, img("assets/icon-programme.png"), `Programmation ${show.programme}`)
+            !venue && h("span", { class: "meta-item meta-item--programme" }, img("assets/icon-programme.png"), `${tr("Programmation")} ${show.programme}`)
           ),
           h("p", { class: "show-card__summary" }, show.summary),
-          h("button", { class: "pill", type: "button", dataset: { open: "" } }, "Lire plus")
+          h("button", { class: "pill", type: "button", dataset: { open: "" } }, tr("Lire plus"))
         ),
         !compact && !planned && h("hr", { class: "rule rule--medium rule--thin" }),
         !compact &&
@@ -131,12 +132,12 @@ export function createShowCard(show, { compact = false, plannedIndex = null, onl
           h(
             "div",
             { class: "reps" },
-            h("h4", { class: "reps__title" }, "Représentations"),
+            h("h4", { class: "reps__title" }, tr("Représentations")),
             createRepsRow(reps.map(({ rep, index }) => createRep(rep, index)))
           ),
         // Favoris : la prochaine représentation, avec son épingle et ses pastilles (voir le lieu, y aller, partager).
         compact &&
-          h("div", { class: "reps" }, h("h4", { class: "reps__title" }, "Prochaine représentation"), h("div", { class: "reps__single" }, createRep(show.reps[0], 0, { slot: true })))
+          h("div", { class: "reps" }, h("h4", { class: "reps__title" }, tr("Prochaine représentation")), h("div", { class: "reps__single" }, createRep(show.reps[0], 0, { slot: true })))
       )
     )
   );

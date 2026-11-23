@@ -1,0 +1,900 @@
+{
+ "pairs": [
+  {
+   "fr": "Et si le plus grand désaccord était celui que personne n'a jamais pu avoir ? Relier un comité exécutif à ses équipes. Étude de cas.",
+   "en": "What if the biggest disagreement was the one nobody had ever been able to have? Connecting an executive committee to its teams. Case study."
+  },
+  {
+   "fr": "<span>Industrie</span>",
+   "en": "<span>Industry</span>"
+  },
+  {
+   "fr": "Un même langage, du comité exécutif aux équipes",
+   "en": "One shared language, from the executive committee to the teams"
+  },
+  {
+   "fr": "aria-label=\"Nature de la mission\"",
+   "en": "aria-label=\"Nature of the engagement\""
+  },
+  {
+   "fr": "Plateforme B2E",
+   "en": "B2E platform"
+  },
+  {
+   "fr": "Discovery multi-niveaux",
+   "en": "Multi-level discovery"
+  },
+  {
+   "fr": "Alignement organisationnel",
+   "en": "Organizational alignment"
+  },
+  {
+   "fr": "Transformation opérationnelle",
+   "en": "Operational transformation"
+  },
+  {
+   "fr": "Schéma de l'état de départ : l'offre existe côté Marketing, mais pas sur la plateforme ; sur la plateforme, trois projets font office d'offre, et le mot initiative désigne tantôt l'un, tantôt l'autre.",
+   "en": "Diagram of the starting state: the offer exists on the Marketing side, but not on the platform; on the platform, three projects act as the offer, and the word initiative means sometimes one, sometimes the other."
+  },
+  {
+   "fr": "Schéma du nouveau paradigme : dans la plateforme, l'offre, avec son cycle de vie propre, est injectée dans trois projets qui la portent ; le projet devient le véhicule de l'offre.",
+   "en": "Diagram of the new paradigm: within the platform, the offer, with its own life cycle, is injected into three projects that carry it; the project becomes the vehicle of the offer."
+  },
+  {
+   "fr": "Schéma de l'état de départ : dans la plateforme, trois projets côte à côte ; chacun contient une offre en pointillé, qui n'existe pas en tant que telle sur la plateforme ; un terme flottant, initiative, est relié en pointillé aux projets et désigne tantôt l'un, tantôt l'autre.",
+   "en": "Diagram of the starting state: within the platform, three projects side by side; each contains a dotted offer, which doesn't exist as such on the platform; a floating term, initiative, is linked by a dotted line to the projects and means sometimes one, sometimes the other."
+  },
+  {
+   "fr": "Schéma de l'approche actuelle, centrée sur le projet : huit projets dispersés, pilotés un par un, dont trois portent une initiative locale qui contourne l'offre globale.",
+   "en": "Diagram of the current project-centered approach: eight scattered projects, steered one by one, three of which carry a local initiative that bypasses the global offer."
+  },
+  {
+   "fr": "Schéma de l'approche cible, centrée sur l'offre : trois offres, chacune portant plusieurs projets, et une initiative locale qui s'adosse à l'une d'elles.",
+   "en": "Diagram of the target offer-centered approach: three offers, each carrying several projects, and a local initiative that leans on one of them."
+  },
+  {
+   "fr": ">Offre<",
+   "en": ">Offer<"
+  },
+  {
+   "fr": ">Projet<",
+   "en": ">Project<"
+  },
+  {
+   "fr": ">côté Marketing, hors plateforme<",
+   "en": ">on the Marketing side, off the platform<"
+  },
+  {
+   "fr": ">PLATEFORME<",
+   "en": ">PLATFORM<"
+  },
+  {
+   "fr": ">fait office d'offre<",
+   "en": ">acts as the offer<"
+  },
+  {
+   "fr": ">« initiative » : tantôt l'un, tantôt l'autre<",
+   "en": ">“initiative”: sometimes one, sometimes the other<"
+  },
+  {
+   "fr": ">L'offre n'existe que déguisée en projet<",
+   "en": ">The offer only exists disguised as a project<"
+  },
+  {
+   "fr": ">son propre cycle de vie<",
+   "en": ">its own life cycle<"
+  },
+  {
+   "fr": ">injectée<",
+   "en": ">injected<"
+  },
+  {
+   "fr": ">porte l'offre<",
+   "en": ">carries the offer<"
+  },
+  {
+   "fr": ">Le projet devient le véhicule de l'offre<",
+   "en": ">The project becomes the vehicle of the offer<"
+  },
+  {
+   "fr": ">absente de<",
+   "en": ">absent from<"
+  },
+  {
+   "fr": ">la plateforme<",
+   "en": ">the platform<"
+  },
+  {
+   "fr": ">offre ?<",
+   "en": ">offer?<"
+  },
+  {
+   "fr": ">tantôt l'un, tantôt l'autre<",
+   "en": ">sometimes one, sometimes the other<"
+  },
+  {
+   "fr": ">On pilote chaque projet, un par un<",
+   "en": ">We steer each project, one by one<"
+  },
+  {
+   "fr": ">des initiatives locales contournent l'offre globale<",
+   "en": ">local initiatives bypass the global offer<"
+  },
+  {
+   "fr": ">s'adosse à l'offre<",
+   "en": ">leans on the offer<"
+  },
+  {
+   "fr": ">On pilote l'offre, les projets suivent<",
+   "en": ">We steer the offer, the projects follow<"
+  },
+  {
+   "fr": ">condition&#8239;: un Pareto de l'offre<",
+   "en": ">condition: an offer Pareto<"
+  },
+  {
+   "fr": ">Avant<",
+   "en": ">Before<"
+  },
+  {
+   "fr": ">Après<",
+   "en": ">After<"
+  },
+  {
+   "fr": "L'offre n'existe pas sur la plateforme : elle n'y vit que déguisée en projet, et « initiative » désigne tantôt l'un, tantôt l'autre.",
+   "en": "The offer doesn't exist on the platform: it only lives there disguised as a project, and “initiative” means sometimes one, sometimes the other."
+  },
+  {
+   "fr": "L'offre n'existe pas sur la plateforme&#8239;: elle n'y vit que déguisée en projet, et «&nbsp;initiative&nbsp;» désigne tantôt l'un, tantôt l'autre.",
+   "en": "The offer doesn't exist on the platform: it only lives there disguised as a project, and “initiative” means sometimes one, sometimes the other."
+  },
+  {
+   "fr": "Une articulation unique, valable à tous les niveaux. La plateforme accueille les projets, les projets accueillent les offres.",
+   "en": "A single articulation, valid at every level. The platform hosts the projects, the projects host the offers."
+  },
+  {
+   "fr": ">Stack technique<",
+   "en": ">Tech stack<"
+  },
+  {
+   "fr": ">Durée (année)<",
+   "en": ">Duration (year)<"
+  },
+  {
+   "fr": ">3 mois (2023)<",
+   "en": ">3 months (2023)<"
+  },
+  {
+   "fr": "<dt>Rôles</dt>",
+   "en": "<dt>Roles</dt>"
+  },
+  {
+   "fr": "<dt>Équipe</dt>",
+   "en": "<dt>Team</dt>"
+  },
+  {
+   "fr": "<dt>Rencontrés</dt>",
+   "en": "<dt>People met</dt>"
+  },
+  {
+   "fr": "EXCOM, Finance, Design labs, Marketing, Program owners et Project Managers autour du monde : Chili, Liban, Pérou, Australie",
+   "en": "EXCOM, Finance, Design labs, Marketing, Program owners and Project Managers around the world: Chile, Lebanon, Peru, Australia"
+  },
+  {
+   "fr": "<dt>Périmètre</dt>",
+   "en": "<dt>Scope</dt>"
+  },
+  {
+   "fr": ">23 étapes séparées en 4 mouvements :<",
+   "en": ">23 steps split into 4 movements:<"
+  },
+  {
+   "fr": "Écouter → Cartographier → Nommer → Ouvrir et cadrer",
+   "en": "Listen → Map → Name → Open and frame"
+  },
+  {
+   "fr": ">Le produit<",
+   "en": ">The product<"
+  },
+  {
+   "fr": "On m'a demandé de réparer une plateforme. Chacun avait raison depuis là où il se tenait, et c'est exactement ce qui bloquait.",
+   "en": "I was asked to fix a platform. Everyone was right from where they stood, and that is exactly what was blocking."
+  },
+  {
+   "fr": "SHIFT Prime est la plateforme avec laquelle Nexans pilote ses campagnes marketing dans le monde, des équipes locales jusqu'au comité de direction. Elle repose sur Microsoft Project Accelerator, une solution de gestion de portefeuille de projets bâtie sur la Power Platform (Power Apps, Power Automate, Power BI).",
+   "en": "SHIFT Prime is the platform Nexans uses to steer its marketing campaigns worldwide, from local teams up to the executive committee. It is built on Microsoft Project Accelerator, a project portfolio management solution built on the Power Platform (Power Apps, Power Automate, Power BI)."
+  },
+  {
+   "fr": "Elle est en place sur le papier, mais l'adoption ne décolle pas. Je conduis la discovery pour comprendre pourquoi, et cadrer ce qui doit changer.",
+   "en": "It is in place on paper, but adoption isn't taking off. I lead the discovery to understand why, and to frame what needs to change."
+  },
+  {
+   "fr": "Et si le plus grand désaccord était celui que personne n'a jamais pu avoir ?",
+   "en": "What if the biggest disagreement was the one nobody had ever been able to have?"
+  },
+  {
+   "fr": ">+20 M€<",
+   "en": ">+€20M<"
+  },
+  {
+   "fr": "d'EBITDA additionnel sur les solutions à valeur ajoutée (chiffre publié par Nexans)",
+   "en": "of additional EBITDA on value-added solutions (figure published by Nexans)"
+  },
+  {
+   "fr": "d'adoption sur le premier trimestre après le lancement de la v1",
+   "en": "adoption in the first quarter after the v1 launch"
+  },
+  {
+   "fr": "économisées par semaine et par équipe, en moyenne",
+   "en": "saved per week per team, on average"
+  },
+  {
+   "fr": "data-sans-grille>Produit<",
+   "en": "data-sans-grille>Product<"
+  },
+  {
+   "fr": "data-sans-grille>Stratégie<",
+   "en": "data-sans-grille>Strategy<"
+  },
+  {
+   "fr": ">Retenu<",
+   "en": ">Chosen<"
+  },
+  {
+   "fr": ">Écarté<",
+   "en": ">Rejected<"
+  },
+  {
+   "fr": ">Décision et conséquences<",
+   "en": ">Decision and consequences<"
+  },
+  {
+   "fr": "Par où commencer : l'interface de la plateforme, ou l'écoute de ceux qui s'en servent ?",
+   "en": "Where to start: the platform's interface, or listening to the people who use it?"
+  },
+  {
+   "fr": "Écouter à tous les niveaux avant de toucher à l'interface.",
+   "en": "Listen at every level before touching the interface."
+  },
+  {
+   "fr": "Partir de l'interface, puisque c'est l'outil qui ne prend pas.",
+   "en": "Start from the interface, since the tool is what isn't taking."
+  },
+  {
+   "fr": "Le dessin de l'interface attend la fin de l'écoute, mais il repose ensuite sur un langage partagé : un outil ne répare pas un malentendu, il l'industrialise.",
+   "en": "Interface design waits until the end of the listening, but it then rests on a shared language: a tool doesn't fix a misunderstanding, it industrializes it."
+  },
+  {
+   "fr": "Comment faire cesser la confusion entre projet, offre et initiative ?",
+   "en": "How do we end the confusion between project, offer and initiative?"
+  },
+  {
+   "fr": "Fixer trois mots, chacun défini par l'entité qui en est la garante : l'offre au Marketing, le projet aux Program Owners et aux Project Managers.",
+   "en": "Fix three words, each defined by the entity that stands guarantor for it: the offer to Marketing, the project to the Program Owners and Project Managers."
+  },
+  {
+   "fr": "Un glossaire de définitions officielles.",
+   "en": "A glossary of official definitions."
+  },
+  {
+   "fr": "Le Pareto de l'offre : aller au plus efficace plutôt qu'au plus complet. Trois termes concentraient l'essentiel du désordre, il suffisait de fixer ceux-là. Le désaccord devient formulable, et les cycles de vie du projet et de l'offre sont enfin découplés.",
+   "en": "The Pareto of the offer: go for the most effective rather than the most complete. Three terms concentrated most of the disorder, it was enough to fix those. The disagreement becomes formulable, and the project and offer life cycles are finally decoupled."
+  },
+  {
+   "fr": "Quelle unité piloter : chaque projet, ou l'offre qu'ils portent ?",
+   "en": "Which unit to steer: each project, or the offer they carry?"
+  },
+  {
+   "fr": "Piloter par l'offre, seule unité qui fasse sens à tous les niveaux à la fois, du terrain au marché.",
+   "en": "Steer by the offer, the only unit that makes sense at every level at once, from the field to the market."
+  },
+  {
+   "fr": "Continuer à piloter chaque projet seul, un par un.",
+   "en": "Keep steering each project alone, one by one."
+  },
+  {
+   "fr": "Le pilotage bascule du projet vers l'offre. Les deux cycles de vie se découplent, et de nombreux chantiers s'ouvrent : suivi de projet, centralisation de l'information, responsabilité, onboarding.",
+   "en": "Steering shifts from the project to the offer. The two life cycles decouple, and many workstreams open up: project tracking, centralizing information, accountability, onboarding."
+  },
+  {
+   "fr": ">Le résumé<",
+   "en": ">The summary<"
+  },
+  {
+   "fr": ">Le problème posé<",
+   "en": ">The problem as posed<"
+  },
+  {
+   "fr": ">Une plateforme en place, et une adoption qui ne vient pas<",
+   "en": ">A platform in place, and adoption that doesn't come<"
+  },
+  {
+   "fr": "Nexans pilote ses campagnes marketing dans le monde depuis une plateforme construite sur Microsoft Project Accelerator. Les équipes ne s'en emparent pas, et on me demande de la refondre : une interface à revoir, des fonctionnalités à ajuster.",
+   "en": "Nexans steers its marketing campaigns worldwide from a platform built on Microsoft Project Accelerator. Teams aren't taking it up, and I'm asked to redesign it: an interface to rework, features to adjust."
+  },
+  {
+   "fr": ">Le déplacement<",
+   "en": ">The shift<"
+  },
+  {
+   "fr": ">Tout le monde parlait la même langue. Personne ne parlait de la même chose.<",
+   "en": ">Everyone spoke the same language. Nobody was talking about the same thing.<"
+  },
+  {
+   "fr": "J'écoute à tous les niveaux : direction, Program Owners et Project Managers, équipes de terrain, Finance, Design Labs, Marketing. Chacun a raison depuis sa place. Projet, offre et initiative se remplacent, et l'offre n'existe nulle part sur la plateforme : le désaccord était invisible.",
+   "en": "I listen at every level: management, Program Owners and Project Managers, field teams, Finance, Design Labs, Marketing. Everyone is right from their place. Project, offer and initiative replace one another, and the offer exists nowhere on the platform: the disagreement was invisible."
+  },
+  {
+   "fr": ">L'instrument<",
+   "en": ">The instrument<"
+  },
+  {
+   "fr": ">Fixer ce que chaque terme désigne, et poser leur articulation<",
+   "en": ">Fix what each term designates, and set out how they connect<"
+  },
+  {
+   "fr": "Trois mots concentraient l'essentiel du désordre : projet, offre, initiative. Plutôt qu'un glossaire exhaustif, un Pareto de l'offre : fixer ces trois-là, chacun défini par l'entité qui en est la garante. Le désaccord devient formulable, et les cycles de vie de l'offre et du projet se découplent.",
+   "en": "Three words concentrated most of the disorder: project, offer, initiative. Rather than an exhaustive glossary, an offer Pareto: fix these three, each defined by the entity that stands guarantor for it. The disagreement becomes formulable, and the offer and project life cycles decouple."
+  },
+  {
+   "fr": ">Le champ ouvert<",
+   "en": ">The open field<"
+  },
+  {
+   "fr": ">Une fois l'unité de pilotage changée, tout devient concevable<",
+   "en": ">Once the steering unit changes, everything becomes conceivable<"
+  },
+  {
+   "fr": "L'offre devient la colonne vertébrale du pilotage, et cinq chantiers s'ouvrent : un focus sur l'offre, un meilleur suivi de projet, la centralisation de l'information, responsabilité et sécurité, onboarding et usages.",
+   "en": "The offer becomes the backbone of steering, and five workstreams open up: a focus on the offer, better project tracking, centralized information, accountability and security, onboarding and usage."
+  },
+  {
+   "fr": ">La trajectoire<",
+   "en": ">The trajectory<"
+  },
+  {
+   "fr": ">Une colonne vertébrale, et une trajectoire au-delà de la v1<",
+   "en": ">A backbone, and a trajectory beyond v1<"
+  },
+  {
+   "fr": "Le modèle d'offre donne au produit une profondeur : une roadmap en six temps, du comportement des équipes à l'extension à d'autres métiers du groupe (commerce, industrie, supply chain).",
+   "en": "The offer model gives the product depth: a six-stage roadmap, from team behavior to extension to other business lines of the group (sales, industry, supply chain)."
+  },
+  {
+   "fr": ">Résultats<",
+   "en": ">Results<"
+  },
+  {
+   "fr": ">Ce que la refonte a produit<",
+   "en": ">What the redesign produced<"
+  },
+  {
+   "fr": "+75&#8239;% d'adoption sur le premier trimestre après la V1, 8&nbsp;h économisées par semaine et par équipe. Côté Nexans : +20&nbsp;M€ d'EBITDA additionnel sur les solutions à valeur ajoutée, +36&nbsp;M€ au premier semestre 2023 avec SHIFT Prime et Amplify.",
+   "en": "+75% adoption in the first quarter after V1, 8&nbsp;h saved per week per team. On Nexans' side: +€20&nbsp;M additional EBITDA on value-added solutions, +€36&nbsp;M in the first half of 2023 with SHIFT Prime and Amplify."
+  },
+  {
+   "fr": ">Le chemin parcouru<",
+   "en": ">The path taken<"
+  },
+  {
+   "fr": ">Vingt-trois étapes, quatre mouvements, un fil<",
+   "en": ">Twenty-three steps, four movements, one thread<"
+  },
+  {
+   "fr": "De l'écoute à la roadmap : écouter, cartographier, nommer, ouvrir et cadrer. Chaque étape s'ouvre sur un constat et se ferme sur la question que la suivante prend en charge.",
+   "en": "From listening to the roadmap: listen, map, name, open and frame. Each step opens with an observation and closes on the question the next one takes on."
+  },
+  {
+   "fr": ">Ma pratique ?<",
+   "en": ">My practice?<"
+  },
+  {
+   "fr": ">Ce que ce projet a ancré dans ma pratique<",
+   "en": ">What this project anchored in my practice<"
+  },
+  {
+   "fr": "On ne demande pas aux gens de mieux se comprendre : on construit l'endroit où ça devient possible. Un outil ne répare pas un malentendu, il l'industrialise à l'échelle du groupe.",
+   "en": "You don't ask people to understand each other better: you build the place where it becomes possible. A tool doesn't fix a misunderstanding, it industrializes it at group scale."
+  },
+  {
+   "fr": ">Le détail<",
+   "en": ">The detail<"
+  },
+  {
+   "fr": "Nexans déploie la plateforme de SHIFT Prime pour piloter ses campagnes marketing à l'échelle mondiale, construite sur Microsoft Project Accelerator, pensée pour donner de la visibilité sur les initiatives, les budgets et les performances, depuis les équipes locales jusqu'au comité de direction.",
+   "en": "Nexans is deploying the SHIFT Prime platform to steer its marketing campaigns worldwide, built on Microsoft Project Accelerator, designed to give visibility on initiatives, budgets and performance, from local teams up to the executive committee."
+  },
+  {
+   "fr": "Le constat est net : les équipes ne s'en emparent pas. Le pilotage reste flou là où la plateforme devait l'éclairer, et les niveaux de l'organisation ne s'accordent pas sur ce qu'ils regardent.",
+   "en": "The finding is clear: teams aren't taking it up. Steering remains blurry where the platform was supposed to illuminate it, and the levels of the organization don't agree on what they are looking at."
+  },
+  {
+   "fr": "Refondre la plateforme. Améliorer l'expérience. <br>Voilà ce qu'on me demandait de regarder.",
+   "en": "Redesign the platform. Improve the experience. <br>That is what I was asked to look at."
+  },
+  {
+   "fr": "Posé ainsi, c'est un problème de produit : une interface à revoir, des fonctionnalités à ajuster, une conduite du changement à muscler. On cherche du côté de l'outil, puisque c'est l'outil qui ne prend pas.",
+   "en": "Put that way, it's a product problem: an interface to rework, features to adjust, change management to strengthen. We look on the tool's side, since the tool is what isn't taking."
+  },
+  {
+   "fr": "Je commence par écouter, à tous les niveaux. Un sondage auprès des utilisateurs de la plateforme, des interviews de Program Owners et de Project Managers au Chili, au Liban, au Pérou et en Australie, des entretiens avec la direction marketing du groupe et le directeur du programme, puis avec les Design Labs, la Finance et le Marketing. Chacun décrit un problème différent, et chacun a raison.",
+   "en": "I start by listening, at every level. A survey of the platform's users, interviews of Program Owners and Project Managers in Chile, Lebanon, Peru and Australia, conversations with the group's marketing management and the program director, then with the Design Labs, Finance and Marketing. Everyone describes a different problem, and everyone is right."
+  },
+  {
+   "fr": ">Direction<",
+   "en": ">Management<"
+  },
+  {
+   "fr": "«&nbsp;La plateforme est la principale responsable des problèmes, il faut changer ça.&nbsp;» Ce qui manque&#8239;: une vision macro des projets par business unit et par programme, suivre l'avancée d'un coup d'œil, valider, retoquer ou annuler un projet sur des données concrètes.",
+   "en": "“The platform is mainly responsible for the problems, we need to change that.” What's missing: a macro view of projects by business unit and by program, following progress at a glance, validating, rejecting or cancelling a project on concrete data."
+  },
+  {
+   "fr": ">Program Owners et Project Managers<",
+   "en": ">Program Owners and Project Managers<"
+  },
+  {
+   "fr": "Le report des résultats est complexe et peu intuitif. La plateforme manque d'agilité quand un projet évolue, alterne entre trop macro et trop micro, et aucune formation n'aide à la comprendre.",
+   "en": "Reporting results is complex and not very intuitive. The platform lacks agility when a project evolves, alternates between too macro and too micro, and no training helps to understand it."
+  },
+  {
+   "fr": ">Équipes de terrain<",
+   "en": ">Field teams<"
+  },
+  {
+   "fr": "Un engagement de 2 sur 5 sur la plateforme, et de 4 sur 5 en dehors. Un sentiment d'isolement, et un besoin de soutien qui émerge assez nettement.",
+   "en": "An engagement of 2 out of 5 on the platform, and 4 out of 5 outside it. A sense of isolation, and a need for support that emerges quite clearly."
+  },
+  {
+   "fr": "Des besoins précis et des zones d'intervention très claires. La Finance n'a aucune autorité sur les règles de calcul. Les Design Labs peinent à repérer les projets où intervenir. Le Marketing n'a aucun lien concret entre une offre et un projet.",
+   "en": "Precise needs and very clear areas of intervention. Finance has no authority over the calculation rules. The Design Labs struggle to spot the projects to step into. Marketing has no concrete link between an offer and a project."
+  },
+  {
+   "fr": "En réécoutant les interviews, un mot revient. Projet. Puis offre. Puis initiative. Employés tantôt l'un pour l'autre, jamais pour exprimer une idée nouvelle, seulement pour en effacer un peu le sens. L'audit de la plateforme va plus loin&#8239;: le terme «&nbsp;offre&nbsp;» n'y apparaît nulle part, alors que l'offre est la matière même d'un projet. Les offres deviennent des projets, presque par magie, puisqu'il est impossible d'avoir une vue sur autre chose.",
+   "en": "Listening to the interviews again, one word keeps coming back. Project. Then offer. Then initiative. Used sometimes one for the other, never to express a new idea, only to blur the meaning a little. The platform audit goes further: the term “offer” appears nowhere in it, even though the offer is the very substance of a project. Offers become projects, almost by magic, since it is impossible to have a view on anything else."
+  },
+  {
+   "fr": "Le point névralgique tient dans «&nbsp;Local Offer&nbsp;». Une offre locale peut devenir une «&nbsp;Global Offer&nbsp;» si elle remplit les conditions dans un projet. Mais s'agit-il du même projet&#8239;? Les règles ne sont pas claires. Ce ne sont pas deux choses dont il suffirait de fixer la définition&#8239;: ce sont deux termes qui se recoupent assez bien, et c'est l'espace entre eux que rien ne tenait.",
+   "en": "The sore point lies in “Local Offer”. A local offer can become a “Global Offer” if it meets the conditions in a project. But is it the same project? The rules aren't clear. These are not two things whose definition would simply need fixing: they are two terms that overlap fairly well, and it is the space between them that nothing was holding."
+  },
+  {
+   "fr": "Ce qui rend la situation redoutable, c'est que personne n'est en tort. Chacun décide, priorise et rend compte depuis sa propre définition, en croyant de bonne foi partager celle des autres. Aucune position dans l'organisation ne permet de percevoir l'écart : il faudrait être à deux endroits à la fois.",
+   "en": "What makes the situation formidable is that nobody is at fault. Everyone decides, prioritizes and reports from their own definition, believing in good faith that they share the others'. No position in the organization lets you perceive the gap: you would have to be in two places at once."
+  },
+  {
+   "fr": "Pyramide organisationnelle SHIFT Prime : six niveaux du CEO aux team members, séparés par une ligne entre décision et action, avec les flux descendants d'assignation et remontants de reporting.",
+   "en": "SHIFT Prime organizational pyramid: six levels from CEO to team members, separated by a line between decision and action, with the downward flows of assignment and upward flows of reporting."
+  },
+  {
+   "fr": ">Constat<",
+   "en": ">Finding<"
+  },
+  {
+   "fr": "Six niveaux, du comité exécutif aux équipes. Chacun assigne à celui du dessous, rapporte à celui du dessus. Personne n'a tort&#8239;: chacun ne voit que son étage et son voisin immédiat, et raisonne juste à partir d'un fragment.",
+   "en": "Six levels, from the executive committee to the teams. Each assigns to the one below, reports to the one above. Nobody is wrong: each only sees their own floor and their immediate neighbor, and reasons correctly from a fragment."
+  },
+  {
+   "fr": ">Conséquence<",
+   "en": ">Consequence<"
+  },
+  {
+   "fr": "L'information descend ces six niveaux un par un et se reformule à chaque passage. Six étages plus bas, ce n'est plus la même chose, sans que personne n'ait rien décidé.",
+   "en": "Information goes down these six levels one by one and is rephrased at each passage. Six floors down, it is no longer the same thing, without anyone having decided anything."
+  },
+  {
+   "fr": "Un mot mal partagé ne coûte pas un malentendu. Il coûte des budgets, des arbitrages et des mois de travail dans la mauvaise direction.",
+   "en": "A poorly shared word doesn't cost a misunderstanding. It costs budgets, trade-offs and months of work in the wrong direction."
+  },
+  {
+   "fr": "Le désalignement n'était donc pas dans la plateforme. Il était en amont, dans un langage qu'on croyait commun et qui ne l'était pas. Aucune interface ne peut réparer cela. Un outil qui outille un malentendu ne fait que l'industrialiser à l'échelle du groupe.",
+   "en": "The misalignment was therefore not in the platform. It was upstream, in a language believed to be common that wasn't. No interface can fix that. A tool that equips a misunderstanding only industrializes it at group scale."
+  },
+  {
+   "fr": ">Ce qui circulait<",
+   "en": ">What was circulating<"
+  },
+  {
+   "fr": "Un langage commun qui ne l'était pas&#8239;: projet, offre et initiative se remplaçaient les uns les autres.",
+   "en": "A common language that wasn't: project, offer and initiative replaced one another."
+  },
+  {
+   "fr": "L'offre, bien définie côté Marketing, absente de la plateforme&#8239;: elle n'y circulait que déguisée en projet.",
+   "en": "The offer, well defined on the Marketing side, absent from the platform: it only circulated there disguised as a project."
+  },
+  {
+   "fr": "Une vision macro et une vision micro qui ne se rejoignaient nulle part, de la direction aux équipes.",
+   "en": "A macro view and a micro view that met nowhere, from management to the teams."
+  },
+  {
+   "fr": "Le glossaire n'est pas un livrable. C'est l'instrument qui rend le désaccord formulable, un espace où les rationalités de chacun peuvent enfin se rencontrer, au lieu de coexister sans jamais se croiser.",
+   "en": "The glossary is not a deliverable. It is the instrument that makes the disagreement formulable, a space where everyone's rationalities can finally meet, instead of coexisting without ever crossing."
+  },
+  {
+   "fr": "Son intérêt n'est pas de produire des définitions officielles. Il est de faire apparaître, dans la même pièce, que deux personnes qui se comprenaient parfaitement depuis des mois ne parlaient pas de la même chose.",
+   "en": "Its purpose is not to produce official definitions. It is to make it appear, in the same room, that two people who had understood each other perfectly for months weren't talking about the same thing."
+  },
+  {
+   "fr": "Trois termes concentraient l'essentiel du désordre&#8239;: projet, offre, initiative. Personne ne savait dire comment ils s'articulaient, et chacun tenait pour évidente une articulation différente.",
+   "en": "Three terms concentrated most of the disorder: project, offer, initiative. Nobody could say how they connected, and everyone took a different connection to be obvious."
+  },
+  {
+   "fr": "Plutôt qu'un glossaire exhaustif, un Pareto de l'offre&#8239;: aller au plus efficace, en fixant d'abord les trois mots qui portaient l'essentiel de la confusion.",
+   "en": "Rather than an exhaustive glossary, an offer Pareto: go for the most effective, fixing first the three words that carried most of the confusion."
+  },
+  {
+   "fr": "Pour trancher, une règle simple&#8239;: la définition d'un terme revient à l'entité qui en est la garante. L'offre relève du Marketing, le projet des Program Owners et des Project Managers. Quant à «&nbsp;initiative&nbsp;», un mot-valise qui recouvrait les deux autres sans apporter de nuance, c'est lui qui entretenait la confusion.",
+   "en": "To settle it, a simple rule: the definition of a term belongs to the entity that stands guarantor for it. The offer falls under Marketing, the project under the Program Owners and Project Managers. As for “initiative”, a catch-all word that covered both others without adding any nuance, it is what kept the confusion going."
+  },
+  {
+   "fr": "Un produit ou un service défini, conçu ou au moins validé par le Marketing. Une entité autonome, avec son cycle de vie propre, injectée dans les projets qui la portent.",
+   "en": "A defined product or service, designed or at least validated by Marketing. An autonomous entity, with its own life cycle, injected into the projects that carry it."
+  },
+  {
+   "fr": "Un ensemble d'étapes qui concrétise une offre à une échelle géographique précise, rattaché à une business unit et à un client précis. Il a son propre cycle de vie.",
+   "en": "A set of steps that makes an offer concrete at a specific geographic scale, attached to a specific business unit and customer. It has its own life cycle."
+  },
+  {
+   "fr": "Un mot-valise, employé tantôt pour une offre, tantôt pour un projet, sans nuance.",
+   "en": "A catch-all word, used sometimes for an offer, sometimes for a project, with no nuance."
+  },
+  {
+   "fr": "Le gain n'est pas d'avoir rangé trois mots. Il est d'avoir découplé deux cycles de vie qui se confondaient&#8239;: une offre ne naît ni ne meurt avec le projet qui la porte, et un projet peut en accueillir plusieurs. Tant que les deux étaient tenus pour une seule et même chose, aucun pilotage commun n'était possible.",
+   "en": "The gain isn't having sorted three words. It is having decoupled two life cycles that were confused: an offer is neither born nor dies with the project that carries it, and a project can host several. As long as the two were held to be one and the same thing, no common steering was possible."
+  },
+  {
+   "fr": "L'outil compte moins que ce qu'il permet de dire et de faire.",
+   "en": "The tool matters less than what it lets us say and do."
+  },
+  {
+   "fr": "De là découle un second déplacement, plus structurant. Si l'offre a une vie propre, c'est elle, et non le projet, qui doit servir d'unité de pilotage&#8239;: la seule qui fasse sens à tous les niveaux à la fois, parce qu'elle relie le terrain au marché.",
+   "en": "From there follows a second, more structuring shift. If the offer has a life of its own, it, and not the project, must serve as the steering unit: the only one that makes sense at every level at once, because it connects the field to the market."
+  },
+  {
+   "fr": "Cette bascule n'est pas un ajustement de vocabulaire : l'offre devient la colonne vertébrale du pilotage. Dès qu'elle est posée, cinq chantiers s'ouvrent en même temps alors qu'aucun n'était formulable tant que chacun pilotait depuis sa propre définition.",
+   "en": "This shift is not a vocabulary adjustment: the offer becomes the backbone of steering. As soon as it is in place, five workstreams open at the same time, when none was formulable as long as everyone steered from their own definition."
+  },
+  {
+   "fr": "«&nbsp;Passage d'un pilotage &ldquo;Projet&rdquo; à un pilotage &ldquo;Offre&rdquo;&#8239;: harmonisation globale de la gouvernance des campagnes et de la gestion de portefeuille d'offres pour éviter le morcellement régional.&nbsp;»",
+   "en": "“Shift from ‘Project’ steering to ‘Offer’ steering: global harmonization of campaign governance and offer portfolio management to avoid regional fragmentation.”"
+  },
+  {
+   "fr": ">Formulation de Nexans.<",
+   "en": ">Nexans' wording.<"
+  },
+  {
+   "fr": ">Aujourd'hui<",
+   "en": ">Today<"
+  },
+  {
+   "fr": "Une approche centrée sur le projet&#8239;: chacun est piloté seul, et des initiatives locales contournent l'offre globale.",
+   "en": "A project-centered approach: each one is steered alone, and local initiatives bypass the global offer."
+  },
+  {
+   "fr": ">Demain<",
+   "en": ">Tomorrow<"
+  },
+  {
+   "fr": "Une approche centrée sur l'offre&#8239;: l'unité de pilotage change, et les initiatives locales s'y adossent au lieu de la contourner.",
+   "en": "An offer-centered approach: the steering unit changes, and local initiatives lean on it instead of bypassing it."
+  },
+  {
+   "fr": ">Cinq chantiers que cette bascule rend possibles<",
+   "en": ">Five workstreams this shift makes possible<"
+  },
+  {
+   "fr": ">Un focus sur l'offre<",
+   "en": ">A focus on the offer<"
+  },
+  {
+   "fr": "Un template par offre globale pour faciliter sa duplication dans les business units, un système de tags pour la granularité, et des initiatives locales qui s'adossent à l'offre globale plutôt que de la contourner.",
+   "en": "A template per global offer to ease its duplication across business units, a tag system for granularity, and local initiatives that lean on the global offer rather than bypass it."
+  },
+  {
+   "fr": ">Un meilleur suivi de projet<",
+   "en": ">Better project tracking<"
+  },
+  {
+   "fr": "Une vue claire sur les étapes, du market sizing au scale-up. Des tâches simplifiées, des alertes sur les risques et les prévisions, des notifications qui déclenchent l'action.",
+   "en": "A clear view of the stages, from market sizing to scale-up. Simplified tasks, alerts on risks and forecasts, notifications that trigger action."
+  },
+  {
+   "fr": ">Une centralisation de l'information<",
+   "en": ">Centralized information<"
+  },
+  {
+   "fr": "Les documents rassemblés dans l'environnement M365, accessibles depuis la plateforme. Une documentation apprise par l'usage. Et la distinction explicite entre information statique et dynamique, pour rendre le pilotage agile.",
+   "en": "Documents gathered in the M365 environment, accessible from the platform. Documentation learned through use. And an explicit distinction between static and dynamic information, to make steering agile."
+  },
+  {
+   "fr": ">Responsabilité et sécurité<",
+   "en": ">Accountability and security<"
+  },
+  {
+   "fr": "Des rôles définis à chaque étape du projet et de l'offre, un sign-off pour approuver les jalons, et des règles de calcul harmonisées dès le démarrage.",
+   "en": "Roles defined at each stage of the project and the offer, a sign-off to approve milestones, and calculation rules harmonized from the start."
+  },
+  {
+   "fr": ">Onboarding et usages<",
+   "en": ">Onboarding and usage<"
+  },
+  {
+   "fr": "Des formations à l'outil, des program owners et project managers transformés en ambassadeurs auprès des équipes, et des supports partagés pour harmoniser les présentations.",
+   "en": "Tool training, program owners and project managers turned into ambassadors with the teams, and shared materials to harmonize presentations."
+  },
+  {
+   "fr": "Aucun de ces chantiers n'était accessible tant qu'on cherchait le problème dans l'interface. Tous le deviennent ensemble, parce qu'ils procèdent du même déplacement.",
+   "en": "None of these workstreams was reachable as long as we looked for the problem in the interface. All of them become so together, because they come from the same shift."
+  },
+  {
+   "fr": "Le modèle d'offre ne règle pas seulement la v1&#8239;: il donne au produit une profondeur. À partir de cette colonne vertébrale, une roadmap se dessine : le comportement attendu des équipes et la conduite du changement, le reporting et le suivi consolidés, la cascade du modèle vers d'autres types de programmes, l'adaptation continue aux usages qui émergent, l'enrichissement de la vision, et l'extension du processus à d'autres métiers du groupe : commerce, industrie, supply chain.",
+   "en": "The offer model doesn't just settle v1: it gives the product depth. From this backbone, a roadmap takes shape: the expected behavior of the teams and change management, consolidated reporting and tracking, cascading the model to other types of programs, continuous adaptation to emerging usage, enriching the vision, and extending the process to other business lines of the group: sales, industry, supply chain."
+  },
+  {
+   "fr": "Roadmap SHIFT Prime en six temps : comportement des équipes, suivi Power BI, cascade du modèle d'offre, adaptation aux usages émergents, enrichissement de la vision, extension à d'autres métiers.",
+   "en": "SHIFT Prime roadmap in six stages: team behavior, Power BI tracking, cascading the offer model, adapting to emerging usage, enriching the vision, extension to other business lines."
+  },
+  {
+   "fr": "La roadmap : ce que la colonne vertébrale rend possible, bien au-delà du premier lot.",
+   "en": "The roadmap: what the backbone makes possible, well beyond the first batch."
+  },
+  {
+   "fr": "Côté conception, cela s'est traduit par une matrice d'impact pour arbitrer, un cadrage des phases de delivery, les user stories de la v1, et une roadmap qui donne de la profondeur produit au-delà du premier lot.",
+   "en": "On the design side, this translated into an impact matrix to arbitrate, a framing of the delivery phases, the v1 user stories, and a roadmap that gives product depth beyond the first batch."
+  },
+  {
+   "fr": "On ne conçoit pas un outil de pilotage. On conçoit ce sur quoi une organisation accepte de s'accorder.",
+   "en": "You don't design a steering tool. You design what an organization agrees to agree on."
+  },
+  {
+   "fr": "L'adoption se joue en bas de la chaîne. Les Project Managers et les Program Owners, les Shift Leaders, sont ceux qui font vivre la plateforme au quotidien&#8239;: c'est chez eux que l'effet se mesure.",
+   "en": "Adoption plays out at the bottom of the chain. Project Managers and Program Owners, the Shift Leaders, are the ones who keep the platform alive day to day: this is where the effect is measured."
+  },
+  {
+   "fr": "d'adoption sur le premier trimestre après le lancement de la V1",
+   "en": "adoption in the first quarter after the V1 launch"
+  },
+  {
+   "fr": "Avant, une partie des usages vivait ailleurs&#8239;: fichiers Excel, outils tiers, ce qu'on appelle du shadow IT. Les équipes notaient leur engagement 2 sur 5 sur la plateforme, contre 4 sur 5 en dehors. La v1 a été conçue pour rapatrier ces usages&#8239;: documents, notifications, templates et suivi vivent dans l'outil. Les usages se concentrent désormais à l'intérieur, et le shadow IT perd sa raison d'être.",
+   "en": "Before, some usage lived elsewhere: Excel files, third-party tools, what is called shadow IT. Teams rated their engagement 2 out of 5 on the platform, against 4 out of 5 outside it. v1 was designed to bring these usages back: documents, notifications, templates and tracking live in the tool. Usage now concentrates inside, and shadow IT loses its reason to exist."
+  },
+  {
+   "fr": ">Ce que le programme a produit<",
+   "en": ">What the program produced<"
+  },
+  {
+   "fr": "Chiffres publiés par Nexans, dont SHIFT Prime est l'un des deux axes du programme SHIFT&#8239;:",
+   "en": "Figures published by Nexans, of which SHIFT Prime is one of the two pillars of the SHIFT program:"
+  },
+  {
+   "fr": "d'EBITDA additionnel sur les solutions à valeur ajoutée (SHIFT Prime)",
+   "en": "of additional EBITDA on value-added solutions (SHIFT Prime)"
+  },
+  {
+   "fr": ">+36 M€<",
+   "en": ">+€36M<"
+  },
+  {
+   "fr": "d'EBITDA au premier semestre 2023, avec les programmes SHIFT Prime et Amplify",
+   "en": "of EBITDA in the first half of 2023, with the SHIFT Prime and Amplify programs"
+  },
+  {
+   "fr": "Sources&#8239;: nexans.com, «&nbsp;Notre parcours de transformation&nbsp;»&#8239;; communiqué des résultats du premier semestre 2023, Nexans, 26 juillet 2023&#8239;; Boursier.com, 15 février 2024.",
+   "en": "Sources: nexans.com, “Our transformation journey”; Nexans first-half 2023 results release, July 26, 2023; Boursier.com, February 15, 2024."
+  },
+  {
+   "fr": "Chaque étape s'ouvre sur un constat et se ferme sur la question que la suivante prend en charge. De l'écoute à la roadmap&#8239;:",
+   "en": "Each step opens with an observation and closes on the question the next one takes on. From listening to the roadmap:"
+  },
+  {
+   "fr": ">1 · Écouter<",
+   "en": ">1 · Listen<"
+  },
+  {
+   "fr": "Kick-off, atelier 360, sondage, interviews. Chaque niveau décrit un problème différent.",
+   "en": "Kick-off, 360 workshop, survey, interviews. Each level describes a different problem."
+  },
+  {
+   "fr": ">2 · Cartographier<",
+   "en": ">2 · Map<"
+  },
+  {
+   "fr": "L'organisation, ses deux zones, ses mots qui flottent. On cherche d'où chacun regarde.",
+   "en": "The organization, its two zones, its floating words. We look for where each person is looking from."
+  },
+  {
+   "fr": ">3 · Nommer<",
+   "en": ">3 · Name<"
+  },
+  {
+   "fr": "Projet, offre, initiative&#8239;: une règle de définition, un nouveau paradigme, une phrase pour convaincre.",
+   "en": "Project, offer, initiative: a definition rule, a new paradigm, a sentence to convince."
+  },
+  {
+   "fr": ">4 · Ouvrir et cadrer<",
+   "en": ">4 · Open and frame<"
+  },
+  {
+   "fr": "L'offre au centre, tout devient priorisable et livrable&#8239;: cinq axes, une matrice d'impact, un delivery, des user stories.",
+   "en": "With the offer at the center, everything becomes prioritizable and deliverable: five axes, an impact matrix, a delivery, user stories."
+  },
+  {
+   "fr": "Gabarit de l'atelier 360 sur le thème User commitment : quatre cases, ce qui se passe (faible engagement sur la plateforme malgré le besoin), pourquoi (manque de formation, règles qui changent, barrière de la langue, vocabulaire inintelligible, outil trop compliqué), ce qu'il faut accomplir (les utilisateurs veulent organiser leurs tâches et être autonomes) et les idées de réponse (tutoriels, documentation, notifications, formations).",
+   "en": "Template of the 360 workshop on the theme User commitment: four boxes, what is happening (low engagement on the platform despite the need), why (lack of training, changing rules, language barrier, unintelligible vocabulary, overly complicated tool), what needs to be accomplished (users want to organize their tasks and be autonomous) and ideas for response (tutorials, documentation, notifications, training)."
+  },
+  {
+   "fr": "L'atelier 360 avec la Product Owner&#8239;: quatorze thèmes qualifiés dans un même gabarit, ici «&nbsp;User commitment&nbsp;».",
+   "en": "The 360 workshop with the Product Owner: fourteen themes qualified in a single template, here “User commitment”."
+  },
+  {
+   "fr": "Les vingt-trois étapes, une par une",
+   "en": "The twenty-three steps, one by one"
+  },
+  {
+   "fr": "<strong>Kick-off avec l'équipe projet</strong>La plateforme peine à être adoptée par les PM et les PO sur plusieurs continents, et le client veut comprendre comment améliorer l'engagement et aider les exécutifs à décider.",
+   "en": "<strong>Kick-off with the project team</strong>The platform struggles to be adopted by PMs and POs across several continents, and the client wants to understand how to improve engagement and help executives decide."
+  },
+  {
+   "fr": "<strong>Stratégie de discovery</strong>L'environnement est plus vaste que prévu, avec l'intuition qu'on oublie vite la big picture en se concentrant sur les équipes opérationnelles.",
+   "en": "<strong>Discovery strategy</strong>The environment is larger than expected, with the intuition that people quickly forget the big picture when focusing on operational teams."
+  },
+  {
+   "fr": "<strong>Atelier 360 avec la Product Owner</strong>Quatorze thèmes, de l'engagement des utilisateurs à la qualité des données, qualifiés dans un gabarit commun. Le focus est sur les utilisateurs, la vision globale reste à construire.",
+   "en": "<strong>360 workshop with the Product Owner</strong>Fourteen themes, from user engagement to data quality, qualified in a shared template. The focus is on users, the global vision remains to be built."
+  },
+  {
+   "fr": "<strong>Sondage auprès des utilisateurs</strong>De gros écarts d'alignement entre l'exécutif et les équipes de terrain, un sentiment d'isolement, un besoin de soutien qui émerge nettement.",
+   "en": "<strong>User survey</strong>Large alignment gaps between executives and field teams, a sense of isolation, a need for support that clearly emerges."
+  },
+  {
+   "fr": "<strong>Interviews des PO et PM du programme</strong>Quatre interviews, au Chili, au Liban, au Pérou et en Australie. De nouveaux acteurs apparaissent (Marketing, Finance, Design Labs), des process sont inadaptés à l'outil, et des usages vivent hors de la plateforme.",
+   "en": "<strong>Interviews of the program's POs and PMs</strong>Four interviews, in Chile, Lebanon, Peru and Australia. New actors appear (Marketing, Finance, Design Labs), processes are ill-suited to the tool, and usage lives outside the platform."
+  },
+  {
+   "fr": "<strong>Audit du processus de création d'offres</strong>Co-conçu avec la Product Owner. Des incompréhensions sémantiques récurrentes sur l'articulation entre projet et offre, et une participation plurielle des acteurs.",
+   "en": "<strong>Audit of the offer creation process</strong>Co-designed with the Product Owner. Recurring semantic misunderstandings on how project and offer connect, and plural participation of actors."
+  },
+  {
+   "fr": "<strong>Interview de la Direction</strong>Leur vision&#8239;: la plateforme est la principale responsable des problèmes. Leurs besoins&#8239;: une vision macro, suivre l'avancée d'un coup d'œil, valider ou annuler sur des données concrètes.",
+   "en": "<strong>Management interview</strong>Their view: the platform is mainly responsible for the problems. Their needs: a macro view, following progress at a glance, validating or cancelling on concrete data."
+  },
+  {
+   "fr": "<strong>Point de réflexion</strong>Un manque de vision globale, une rupture entre l'EXCOM et la base, un savoir dispersé hors de la plateforme, des termes flous malgré leur importance&#8239;: projet, offre, initiative.",
+   "en": "<strong>Reflection point</strong>A lack of global vision, a break between the EXCOM and the base, knowledge scattered outside the platform, vague terms despite their importance: project, offer, initiative."
+  },
+  {
+   "fr": "<strong>Cartographie de l'organisation</strong>Co-conçue avec la Product Owner. Les interactions se font avec les niveaux directs, et deux zones apparaissent&#8239;: décision et arbitrage, action.",
+   "en": "<strong>Mapping the organization</strong>Co-designed with the Product Owner. Interactions happen with direct levels, and two zones appear: decision and arbitration, action."
+  },
+  {
+   "fr": "<strong>Première réflexion sur le vocabulaire</strong>Projet, offre et initiative sont employés tour à tour, sans jamais exprimer une idée nouvelle.",
+   "en": "<strong>First reflection on vocabulary</strong>Project, offer and initiative are used in turn, without ever expressing a new idea."
+  },
+  {
+   "fr": "<strong>Interviews du deuxième round</strong>Design Labs, Finance et Marketing. Chaque service a des besoins précis, et ce sont eux qui détiennent la connaissance pour faire évoluer la plateforme.",
+   "en": "<strong>Second-round interviews</strong>Design Labs, Finance and Marketing. Each department has precise needs, and they are the ones who hold the knowledge to make the platform evolve."
+  },
+  {
+   "fr": "<strong>Audit de la plateforme</strong>Les fonctionnalités se sont ajoutées les unes après les autres, la base de données est fragile, les informations statiques et dynamiques ne sont pas distinguées, et le terme «&nbsp;offre&nbsp;» n'apparaît nulle part.",
+   "en": "<strong>Platform audit</strong>Features were added one after another, the database is fragile, static and dynamic information aren't distinguished, and the term “offer” appears nowhere."
+  },
+  {
+   "fr": "<strong>Cartographie augmentée</strong>Les nouveaux services interviennent à beaucoup d'endroits des projets. Ils sont le lieu d'adhérence entre la tête et les jambes du programme.",
+   "en": "<strong>Augmented mapping</strong>The new departments step in at many points of the projects. They are the place of adhesion between the head and the legs of the program."
+  },
+  {
+   "fr": "<strong>Réflexions finales sur le vocabulaire</strong>Les définitions sont le principal terrain de dissonance. Règle retenue&#8239;: la définition d'un terme revient à l'entité qui en est la garante.",
+   "en": "<strong>Final reflections on vocabulary</strong>Definitions are the main ground of dissonance. Rule adopted: the definition of a term belongs to the entity that stands guarantor for it."
+  },
+  {
+   "fr": "<strong>Achèvement de la big picture</strong>Beaucoup d'améliorations dépendent de fonctionnalités ou d'un travail d'architecture de l'information. Le problème le plus important est l'absence des offres sur la plateforme.",
+   "en": "<strong>Completing the big picture</strong>Many improvements depend on features or on information architecture work. The most important problem is the absence of offers on the platform."
+  },
+  {
+   "fr": "<strong>Un nouveau paradigme</strong>Une offre encapsulée dans tous les projets&#8239;: plus de simplicité d'accès, des règles harmonisées entre offre et projet, un template de process, un meilleur suivi.",
+   "en": "<strong>A new paradigm</strong>An offer encapsulated in all projects: more ease of access, harmonized rules between offer and project, a process template, better tracking."
+  },
+  {
+   "fr": "<strong>Une bonne accroche pour convaincre</strong>Valoriser et harmoniser&#8239;: le projet devient le véhicule de valorisation de l'offre. Une phrase percutante pour onboarder les décideurs.",
+   "en": "<strong>A good hook to convince</strong>Valorize and harmonize: the project becomes the vehicle for valorizing the offer. A punchy sentence to onboard decision-makers."
+  },
+  {
+   "fr": "<strong>Traitement des thèmes satellites</strong>Quatre questions à traiter&#8239;: gérer les projets, centraliser les usages, rendre les actions signifiantes et sécurisées, faciliter l'utilisation. La boîte à idées, créée dès le début, rend la tâche adressable.",
+   "en": "<strong>Handling the satellite themes</strong>Four questions to address: managing projects, centralizing usage, making actions meaningful and secure, easing use. The idea box, created from the start, makes the task addressable."
+  },
+  {
+   "fr": "<strong>Les cinq axes d'amélioration</strong>Un focus sur l'offre, un meilleur suivi de projet, une centralisation de l'information, responsabilité et sécurité, onboarding et usages.",
+   "en": "<strong>The five areas for improvement</strong>A focus on the offer, better project tracking, centralized information, accountability and security, onboarding and usage."
+  },
+  {
+   "fr": "<strong>Prioriser les chantiers</strong>Une matrice d'impact, réalisée en atelier de co-conception avec la Product Owner.",
+   "en": "<strong>Prioritizing the workstreams</strong>An impact matrix, produced in a co-design workshop with the Product Owner."
+  },
+  {
+   "fr": "<strong>Expliquer le delivery</strong>Une itération en sept étapes, pour rassurer le client&#8239;: prérequis, atelier de co-construction, implémentation, test interne, démo, recette externe, correction.",
+   "en": "<strong>Explaining the delivery</strong>A seven-step iteration, to reassure the client: prerequisites, co-construction workshop, implementation, internal test, demo, external acceptance, fixes."
+  },
+  {
+   "fr": "<strong>Rédaction des user stories de la v1</strong>Un tableau par thématique, avec ses epics et ses features, pour que le client voie concrètement le travail à effectuer.",
+   "en": "<strong>Writing the v1 user stories</strong>A table per theme, with its epics and features, so the client sees concretely the work to be done."
+  },
+  {
+   "fr": "<strong>Roadmap discovery</strong>Six temps au-delà de la v1&#8239;: le comportement des équipes, le suivi Power BI, la cascade du modèle d'offre, les usages émergents, l'enrichissement de la vision, l'extension à d'autres métiers.",
+   "en": "<strong>Roadmap discovery</strong>Six stages beyond v1: team behavior, Power BI tracking, cascading the offer model, emerging usage, enriching the vision, extension to other business lines."
+  },
+  {
+   "fr": "Il est souvent compliqué de voir un système dans son entier. Il faut alors construire l'endroit d'où le regarder ensemble.",
+   "en": "It is often hard to see a system as a whole. You then have to build the place from which to look at it together."
+  },
+  {
+   "fr": "On ne demande pas aux gens de mieux se comprendre&#8239;:<br>on construit l'endroit où ça devient possible.",
+   "en": "You don't ask people to understand each other better:<br>you build the place where it becomes possible."
+  },
+  {
+   "fr": "Personne, dans cette organisation, ne raisonnait mal. Chacun tenait un raisonnement juste à partir de ce qu'il pouvait voir depuis sa place, et c'est précisément ce qui rendait le désaccord introuvable. Un silo n'empêche pas de bien penser&#8239;; il empêche de savoir sur quoi on s'appuie pour penser, et donc de soupçonner que le voisin s'appuie sur autre chose.",
+   "en": "Nobody in this organization was reasoning badly. Everyone held a sound line of reasoning from what they could see from their place, and that is precisely what made the disagreement impossible to find. A silo doesn't prevent good thinking; it prevents knowing what you rely on to think, and therefore suspecting that your neighbor relies on something else."
+  },
+  {
+   "fr": "C'est pour cela que je n'ai pas commencé par l'interface. Un outil ne répare pas un malentendu, il l'industrialise à l'échelle du groupe. Il fallait d'abord fabriquer un lieu - un atelier, un vocabulaire commun, une articulation partagée - où ce que chacun tenait pour évident puisse enfin être posé sur la table et confronté. Avant de concevoir ce qu'un collectif utilise, comprendre ce depuis quoi il regarde.",
+   "en": "That is why I didn't start with the interface. A tool doesn't fix a misunderstanding, it industrializes it at group scale. We first had to build a place - a workshop, a common vocabulary, a shared articulation - where what everyone took to be obvious could finally be put on the table and confronted. Before designing what a collective uses, understand what it looks from."
+  },
+  {
+   "fr": "aria-label=\"Sections du détail\"",
+   "en": "aria-label=\"Detail sections\""
+  },
+  {
+   "fr": "aria-label=\"Un livre qui a nourri ce regard\"",
+   "en": "aria-label=\"A book that fed this perspective\""
+  },
+  {
+   "fr": "Couverture du livre Système 1 / Système 2, de Daniel Kahneman",
+   "en": "Cover of the book Thinking, Fast and Slow, by Daniel Kahneman"
+  },
+  {
+   "fr": ">Ce qui a nourri ce regard<",
+   "en": ">What fed this perspective<"
+  },
+  {
+   "fr": ">Système 1 / Système 2<",
+   "en": ">Thinking, Fast and Slow<"
+  },
+  {
+   "fr": "Cette id&eacute;e que chacun, chez Nexans, raisonnait <em>juste</em> et se trompait quand m&ecirc;me, je la dois en partie &agrave; Daniel Kahneman et &agrave; <em>Syst&egrave;me&nbsp;1 / Syst&egrave;me&nbsp;2</em>. C'est le livre qui m'a appris &agrave; me m&eacute;fier de l'&eacute;vidence, surtout quand elle est partag&eacute;e.",
+   "en": "This idea that everyone at Nexans reasoned <em>correctly</em> and was still wrong, I owe in part to Daniel Kahneman and to <em>Thinking, Fast and Slow</em>. It is the book that taught me to distrust the obvious, especially when it is shared."
+  },
+  {
+   "fr": "Kahneman distingue deux mani&egrave;res de penser&#8239;: un Syst&egrave;me&nbsp;1 rapide, intuitif, qui conclut avant qu'on y r&eacute;fl&eacute;chisse, et un Syst&egrave;me&nbsp;2 lent, co&ucirc;teux, qu'on ne convoque qu'&agrave; l'effort. Chacun, dans l'organisation, lisait le mot &laquo;&nbsp;projet&nbsp;&raquo; ou &laquo;&nbsp;offre&nbsp;&raquo; avec son Syst&egrave;me&nbsp;1&#8239;: une compr&eacute;hension imm&eacute;diate, tenue pour partag&eacute;e, jamais mise &agrave; l'&eacute;preuve. Le d&eacute;saccord &eacute;tait invisible parce que personne n'avait de raison de ralentir.",
+   "en": "Kahneman distinguishes two ways of thinking: a fast, intuitive System&nbsp;1, which concludes before we think, and a slow, costly System&nbsp;2, summoned only with effort. Everyone in the organization read the word “project” or “offer” with their System&nbsp;1: an immediate understanding, held to be shared, never put to the test. The disagreement was invisible because nobody had a reason to slow down."
+  },
+  {
+   "fr": "L&agrave; o&ugrave; Kahneman d&eacute;crit ces m&eacute;canismes chez l'individu, je les retrouve entre les personnes&#8239;: le glossaire n'a fait qu'une chose, forcer le passage au Syst&egrave;me&nbsp;2 → ralentir, expliciter, et d&eacute;couvrir dans la m&ecirc;me pi&egrave;ce que deux personnes qui se comprenaient depuis des mois ne parlaient pas de la m&ecirc;me chose.",
+   "en": "Where Kahneman describes these mechanisms in the individual, I find them between people: the glossary did just one thing, force the switch to System&nbsp;2 → slow down, make explicit, and discover in the same room that two people who had understood each other for months weren't talking about the same thing."
+  },
+  {
+   "fr": "aria-label=\"Autres études de cas\"",
+   "en": "aria-label=\"Other case studies\""
+  },
+  {
+   "fr": "← Cas précédent",
+   "en": "← Previous case"
+  },
+  {
+   "fr": "Cas suivant →",
+   "en": "Next case →"
+  },
+  {
+   "fr": "Santé · 2024",
+   "en": "Health · 2024"
+  },
+  {
+   "fr": "Une situation qui ressemble<br>à la vôtre ?",
+   "en": "A situation that looks<br>like yours?"
+  },
+  {
+   "fr": "Parlons de votre produit.<br>Je m'assure qu'il résolve le vrai problème.",
+   "en": "Let's talk about your product.<br>I make sure it solves the real problem."
+  },
+  {
+   "fr": "On en discute ?",
+   "en": "Shall we talk?"
+  }
+ ]
+}

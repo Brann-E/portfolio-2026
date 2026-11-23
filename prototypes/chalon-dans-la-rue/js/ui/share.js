@@ -1,12 +1,13 @@
 import { showToast } from "./toast.js";
 
+import { tr } from "../i18n.js";
 /**
  * Partage d'une représentation (un spectacle, tel jour, à telle heure, à tel endroit).
  * Sur téléphone, ouvre la feuille de partage du système ; ailleurs, copie le message dans le presse-papiers.
  * Le lien est celui de la fiche du spectacle sur le site officiel du festival.
  */
 export async function shareRep(show, rep) {
-  const text = `« ${show.title} » (${show.company}) : ${rep.date} à ${rep.time}, ${rep.venue}.`;
+  const text = tr("« {title} » ({company}) : {date} à {time}, {venue}.", { title: show.title, company: show.company, date: rep.date, time: rep.time, venue: rep.venue });
   const url = show.detail?.links?.show ?? "https://www.chalondanslarue.com/";
 
   if (navigator.share) {
@@ -19,8 +20,8 @@ export async function shareRep(show, rep) {
   }
   try {
     await navigator.clipboard.writeText(`${text} ${url}`);
-    showToast({ message: "Lien copié : il ne reste plus qu'à le coller." });
+    showToast({ message: tr("Lien copié : il ne reste plus qu'à le coller.") });
   } catch {
-    showToast({ message: "Le partage n'est pas disponible sur cet appareil." });
+    showToast({ message: tr("Le partage n'est pas disponible sur cet appareil.") });
   }
 }

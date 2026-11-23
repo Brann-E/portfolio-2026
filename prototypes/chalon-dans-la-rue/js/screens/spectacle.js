@@ -6,21 +6,22 @@ import { createRep, createRepsRow, syncCard } from "../ui/show-card.js";
 import { enableDragScroll } from "../ui/drag-scroll.js";
 import { toggleFavorite, togglePin, handleRepAction } from "../ui/actions.js";
 
+import { tr } from "../i18n.js";
 /**
  * Fiche d'un spectacle (« Spectacle complet ») : carrousel de photos, bannière avec cœur,
  * informations, texte complet, représentations, liens et rubriques (distribution, technique…).
  * Seuls les spectacles disposant de `detail` dans data/shows.json ont toutes les rubriques.
  */
 function createCarousel(show, photos) {
-  const track = h("div", { class: "carousel__track" }, photos.map((src, index) => h("div", { class: "carousel__slide" }, img(src, { alt: `${show.title} — photo ${index + 1}` }))));
+  const track = h("div", { class: "carousel__track" }, photos.map((src, index) => h("div", { class: "carousel__slide" }, img(src, { alt: tr("{title} — photo {n}", { title: show.title, n: index + 1 }) }))));
   enableDragScroll(track);
   const wrapper = h("div", { class: "carousel" }, track);
   if (photos.length > 1) {
     const counter = h("span", { class: "carousel__counter", "aria-live": "polite" }, `1 / ${photos.length}`);
     // Chevrons à gauche et à droite : on peut aussi changer de photo sans glisser.
     const goTo = (step) => track.scrollBy({ left: step * track.clientWidth, behavior: "smooth" });
-    const previous = h("button", { class: "carousel__nav carousel__nav--previous", type: "button", "aria-label": "Photo précédente", onclick: () => goTo(-1) }, img("assets/chevron.png"));
-    const next = h("button", { class: "carousel__nav carousel__nav--next", type: "button", "aria-label": "Photo suivante", onclick: () => goTo(1) }, img("assets/chevron.png"));
+    const previous = h("button", { class: "carousel__nav carousel__nav--previous", type: "button", "aria-label": tr("Photo précédente"), onclick: () => goTo(-1) }, img("assets/chevron.png"));
+    const next = h("button", { class: "carousel__nav carousel__nav--next", type: "button", "aria-label": tr("Photo suivante"), onclick: () => goTo(1) }, img("assets/chevron.png"));
     const update = () => {
       const width = track.clientWidth || 1; // avant l'affichage, la largeur est nulle : on reste sur la première photo
       const index = Math.min(Math.round(track.scrollLeft / width), photos.length - 1);
@@ -47,16 +48,16 @@ export async function renderSpectacle({ id, from }) {
     "div",
     { class: "show-card__banner spectacle__banner" },
     h("h2", { class: "show-card__title" }, show.title),
-    h("button", { class: "like", type: "button", "aria-label": "Ajouter aux favoris", "aria-pressed": "false" }, img("assets/heart-off.png"))
+    h("button", { class: "like", type: "button", "aria-label": tr("Ajouter aux favoris"), "aria-pressed": "false" }, img("assets/heart-off.png"))
   );
 
   const links = detail.links
     ? h(
         "div",
         { class: "spectacle__links" },
-        h("a", { class: "pill pill--bordered", href: detail.links.show ?? "#", target: "_blank", rel: "noopener", "aria-disabled": detail.links.show ? null : "true" }, "Site du spectacle"),
+        h("a", { class: "pill pill--bordered", href: detail.links.show ?? "#", target: "_blank", rel: "noopener", "aria-disabled": detail.links.show ? null : "true" }, tr("Site du spectacle")),
         detail.links.company &&
-          h("a", { class: "pill pill--bordered pill--outline", href: detail.links.company, target: "_blank", rel: "noopener" }, "Site de la compagnie")
+          h("a", { class: "pill pill--bordered pill--outline", href: detail.links.company, target: "_blank", rel: "noopener" }, tr("Site de la compagnie"))
       )
     : null;
 
@@ -87,14 +88,14 @@ export async function renderSpectacle({ id, from }) {
           "div",
           { class: "show-card__genre" },
           h("span", { class: "show-card__category" }, show.category),
-          h("span", { class: "meta-item meta-item--programme" }, img("assets/icon-programme.png"), `Programmation ${show.programme}`)
+          h("span", { class: "meta-item meta-item--programme" }, img("assets/icon-programme.png"), `${tr("Programmation")} ${show.programme}`)
         ),
         h("div", { class: "spectacle__text" }, paragraphs(detail.description ?? show.summary))
       ),
       h(
         "div",
         { class: "reps" },
-        h("h3", { class: "reps__title" }, "Représentations"),
+        h("h3", { class: "reps__title" }, tr("Représentations")),
         createRepsRow(show.reps.map((rep, index) => createRep(rep, index)))
       ),
       links,

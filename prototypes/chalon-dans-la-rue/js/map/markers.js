@@ -1,5 +1,6 @@
 import { h, img } from "../dom.js";
 
+import { tr } from "../i18n.js";
 /** Pastille numérotée d'un lieu (cercle plein, liseré blanc intérieur, numéro en gras). */
 export function createVenuePin(venue, onSelect) {
   return h(
@@ -7,7 +8,7 @@ export function createVenuePin(venue, onSelect) {
     {
       class: "map-pin",
       type: "button",
-      "aria-label": `${venue.name}, repère ${venue.spot}`,
+      "aria-label": tr("{name}, repère {spot}", { name: venue.name, spot: venue.spot }),
       dataset: { kind: venue.kind, spot: venue.spot },
       onclick: (event) => {
         event.stopPropagation();
@@ -51,5 +52,5 @@ export function createServicePin(service) {
 
 /** Marqueur « Ma position » : le clown de la maquette. */
 export function createUserMarker(onClick) {
-  return h("button", { class: "map-user", type: "button", "aria-label": "Ma position", onclick: onClick }, img("assets/pitre.png"));
+  return h("button", { class: "map-user", type: "button", "aria-label": tr("Ma position"), onclick: onClick }, img("assets/pitre.png"));
 }

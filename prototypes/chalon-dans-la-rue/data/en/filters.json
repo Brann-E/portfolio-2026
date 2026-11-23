@@ -1,0 +1,89 @@
+{
+  "hours": [
+    "9h",
+    "10h",
+    "11h",
+    "12h",
+    "13h",
+    "14h",
+    "15h",
+    "16h",
+    "17h",
+    "18h",
+    "19h",
+    "20h",
+    "21h",
+    "22h"
+  ],
+  "programme": [
+    "IN",
+    "OFF"
+  ],
+  "categories": [
+    {
+      "label": "Musical show",
+      "token": "musical"
+    },
+    {
+      "label": "Clown",
+      "token": "clown"
+    },
+    {
+      "label": "Dance",
+      "token": "danse"
+    },
+    {
+      "label": "Children's theater",
+      "token": "enfants"
+    },
+    {
+      "label": "Performance",
+      "token": "performance"
+    },
+    {
+      "label": "Puppetry",
+      "token": "marionnette"
+    },
+    {
+      "label": "Circus",
+      "token": "cirque"
+    },
+    {
+      "label": "Roaming performance",
+      "token": "deambulation"
+    },
+    {
+      "label": "Street theater",
+      "token": "rue"
+    },
+    {
+      "label": "Cabaret",
+      "token": "cabaret"
+    },
+    {
+      "label": "Concert",
+      "token": "concert"
+    },
+    {
+      "label": "Festival venues",
+      "token": "lieux-festival"
+    },
+    {
+      "label": "Social venues",
+      "token": "lieux-convivialite"
+    }
+  ],
+  "zones": [
+    "Place de l’Hôtel de Ville",
+    "Place du châtelet",
+    "Conservatoire",
+    "Espace des Arts",
+    "École de l’Est",
+    "Terrain Vannier",
+    "Parc Georges Nouelle",
+    "Bastions",
+    "Abattoir",
+    "Place G. de Gaulle",
+    "Place Saint Vincent"
+  ]
+}

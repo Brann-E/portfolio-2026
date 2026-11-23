@@ -5,6 +5,7 @@ import { createScreen } from "../ui/screen.js";
 import { createShowCard } from "../ui/show-card.js";
 import { createEmptyState, createDemoFill } from "../ui/empty-state.js";
 
+import { tr } from "../i18n.js";
 /** Spectacles ajoutés par le raccourci « Remplir la page ». */
 const DEMO_FAVORITES = ["we-want-you", "ce-sera-pire-apres", "madame", "les-romanesques-edmond-rostand"];
 
@@ -19,14 +20,14 @@ export async function renderFavoris() {
   if (ids.length === 0) {
     const screen = createScreen({
       id: "favoris",
-      title: "Favoris",
+      title: tr("Favoris"),
       softLine: true,
       bodyClass: "screen__body--empty",
       body: createEmptyState({
-        title: "Oh non !",
-        lead: "Vous n’avez pas encore de favoris, et ça rend petit coeur tout triste.",
+        title: tr("Oh non !"),
+        lead: tr("Vous n’avez pas encore de favoris, et ça rend petit coeur tout triste."),
         art: "assets/coeur-brise.png",
-        hint: "Cliquez simplement sur le petit coeur de la page d’un spectacle pour le voir apparaître ici.",
+        hint: tr("Cliquez simplement sur le petit coeur de la page d’un spectacle pour le voir apparaître ici."),
       }),
     });
     screen.append(
@@ -42,7 +43,7 @@ export async function renderFavoris() {
   const cards = ids.filter((id) => byId.has(id)).map((id) => createShowCard(byId.get(id), { compact: true }));
   const screen = createScreen({
     id: "favoris",
-    title: "Favoris",
+    title: tr("Favoris"),
     softLine: true,
     bodyClass: "screen__body--lists",
     body: h("div", { class: "cards" }, cards),
@@ -52,7 +53,7 @@ export async function renderFavoris() {
     createDemoFill(() => {
       store.clearFavorites();
       screen.dispatchEvent(new CustomEvent("navigate", { bubbles: true, detail: { to: "favoris" } }));
-    }, "Vider la page")
+    }, tr("Vider la page"))
   );
   return screen;
 }

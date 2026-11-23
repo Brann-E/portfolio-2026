@@ -3,6 +3,7 @@ import { loadJSON } from "../data.js";
 import { loadShows } from "../shows.js";
 import { createShowCard } from "../ui/show-card.js";
 
+import { tr } from "../i18n.js";
 /**
  * Fiche d'un repère de la carte (« Détail pastille ») : nom du lieu, numéro, puis les
  * spectacles programmés à cet endroit avec leurs représentations sur ce lieu.
@@ -20,11 +21,11 @@ export async function createVenuePanel(spot) {
 
   const body = here.length
     ? here.map((show) => createShowCard(show, { onlySpot: venue.spot }))
-    : [h("p", { class: "venue__empty" }, "Aucun spectacle programmé à cet endroit pour le moment.")];
+    : [h("p", { class: "venue__empty" }, tr("Aucun spectacle programmé à cet endroit pour le moment."))];
 
   return h(
     "section",
-    { class: "venue", "aria-label": `Lieu : ${venue.name}` },
+    { class: "venue", "aria-label": `${tr("Lieu")} : ${venue.name}` },
     h("header", { class: "venue__header" }, h("h2", { class: "venue__title" }, venue.name), h("span", { class: "badge badge--large" }, venue.spot)),
     h("div", { class: "venue__body" }, h("div", { class: "cards" }, body)),
     h(
@@ -32,7 +33,7 @@ export async function createVenuePanel(spot) {
       {
         class: "round-close",
         type: "button",
-        "aria-label": "Fermer",
+        "aria-label": tr("Fermer"),
         onclick: (event) => event.currentTarget.dispatchEvent(new CustomEvent("close-overlay", { bubbles: true })),
       },
       img("assets/fermer.png")

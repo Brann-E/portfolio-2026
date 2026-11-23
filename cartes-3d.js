@@ -2,6 +2,7 @@
    Rien ne tourne au repos : une image fixe au chargement, l'animation seulement au survol.
    Sur tactile, l'animation se joue quand la carte arrive à l'écran. Avec « réduire les animations », la scène reste dans son état assemblé. */
 
+const tr = window.t || ((s) => s); // les textes dessinés, dans la langue de la page (voir i18n.js)
 const THREE_URL = new URL('./assets/vendor/three/three.module.min.js', import.meta.url).href;
 const reduit = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const tactile = matchMedia('(hover: none)').matches;
@@ -117,12 +118,12 @@ const FONT_CARTE = '"Familjen Grotesk", system-ui, sans-serif';
 /* six acteurs de la carte : libellé et icône réels. `sens` : 1 vers le patient, -1 depuis lui.
    pos = position assemblée [x, y, z, rotation y] ; repos = [x, y, z, rotation z, rotation y] quand le patient est seul */
 const ACTEURS = [
-  { nom: 'Médecin traitant',  icone: 'physician', sens: 1, pos: [-2.55, 1.85, -0.5, 0.3],  repos: [-3.2, 2.1, -1.8, 0.3, 0.45] },
-  { nom: 'Nutritionniste',    icone: 'nutrition', sens: 1, pos: [-2.65, 0, 0.3, 0.3],      repos: [-3.4, -0.1, -2.2, -0.22, 0.5] },
-  { nom: 'Coach de vie',      icone: 'coach',     sens: 1, pos: [-2.55, -1.85, -0.5, 0.3], repos: [-3.0, -2.2, -1.7, 0.26, 0.35] },
-  { nom: 'Communauté',        icone: 'community', sens: 1, pos: [2.55, 1.85, -0.5, -0.3],  repos: [3.1, 2.2, -2.0, -0.26, -0.45] },
-  { nom: 'Thérapeute',        icone: 'therapist', sens: 1, pos: [2.65, 0, 0.3, -0.3],      repos: [3.4, 0.1, -1.8, 0.2, -0.5] },
-  { nom: 'Objets connectés',  icone: 'wearables', sens: 1, pos: [2.55, -1.85, -0.5, -0.3], repos: [3.0, -2.2, -2.0, -0.3, -0.35] },
+  { nom: tr('Médecin traitant'),  icone: 'physician', sens: 1, pos: [-2.55, 1.85, -0.5, 0.3],  repos: [-3.2, 2.1, -1.8, 0.3, 0.45] },
+  { nom: tr('Nutritionniste'),    icone: 'nutrition', sens: 1, pos: [-2.65, 0, 0.3, 0.3],      repos: [-3.4, -0.1, -2.2, -0.22, 0.5] },
+  { nom: tr('Coach de vie'),      icone: 'coach',     sens: 1, pos: [-2.55, -1.85, -0.5, 0.3], repos: [-3.0, -2.2, -1.7, 0.26, 0.35] },
+  { nom: tr('Communauté'),        icone: 'community', sens: 1, pos: [2.55, 1.85, -0.5, -0.3],  repos: [3.1, 2.2, -2.0, -0.26, -0.45] },
+  { nom: tr('Thérapeute'),        icone: 'therapist', sens: 1, pos: [2.65, 0, 0.3, -0.3],      repos: [3.4, 0.1, -1.8, 0.2, -0.5] },
+  { nom: tr('Objets connectés'),  icone: 'wearables', sens: 1, pos: [2.55, -1.85, -0.5, -0.3], repos: [3.0, -2.2, -2.0, -0.3, -0.35] },
 ];
 const TUILE_COMMUNAUTE = 3; // l'arrivée de la communauté déclenche l'écran « mise en relation avec un pair »
 
@@ -201,7 +202,7 @@ const trace = (c, svg, x, y, couleur) => {
 function dessinerNav(c, actif) {
   c.fillStyle = '#fff'; c.fillRect(9, 535, 268, 56);
   c.fillStyle = '#ebd9d6'; c.fillRect(9, 535, 268, 1);
-  [['home', 'Accueil'], ['circle', 'Mon cercle'], ['chat', 'Messages']].forEach(([ic, l], i) => {
+  [['home', tr('Accueil')], ['circle', tr('Mon cercle')], ['chat', 'Messages']].forEach(([ic, l], i) => {
     const on = i === actif, cx = 9 + 268 / 6 + i * (268 / 3), col = on ? '#ff5f68' : '#6e6470';
     trace(c, NAV[ic], cx - 10, 541, col);
     c.fillStyle = col; c.font = `400 10px ${FONT_UI}`; c.textAlign = 'center'; c.textBaseline = 'alphabetic';
@@ -213,18 +214,18 @@ function dessinerNav(c, actif) {
 /* l'écran « Mon traitement » du prototype : le patient seul face à son ordonnance */
 function ecranTraitement(c) {
   c.fillStyle = '#ff5f68'; c.beginPath(); c.arc(30.5, 62, 3.5, 0, 7); c.fill();
-  c.fillStyle = '#000071'; c.font = `600 13px ${FONT_UI}`; c.textBaseline = 'middle'; c.fillText('Mon traitement', 42, 62);
+  c.fillStyle = '#000071'; c.font = `600 13px ${FONT_UI}`; c.textBaseline = 'middle'; c.fillText(tr('Mon traitement'), 42, 62);
   c.textBaseline = 'alphabetic';
-  c.fillStyle = '#d9434c'; c.font = `600 12px ${FONT_UI}`; c.fillText('Mon traitement', 27, 97);
+  c.fillStyle = '#d9434c'; c.font = `600 12px ${FONT_UI}`; c.fillText(tr('Mon traitement'), 27, 97);
   c.fillStyle = '#000071'; c.font = `400 23px ${FONT_SERIF}`;
-  coupe(c, 'Metformine, matin et soir.', 232).forEach((l, i) => c.fillText(l, 27, 128 + i * 26.5));
+  coupe(c, tr('Metformine, matin et soir.'), 232).forEach((l, i) => c.fillText(l, 27, 128 + i * 26.5));
   c.fillStyle = '#d9434c'; c.font = `400 13px ${FONT_UI}`;
-  c.fillText('Pourquoi ce changement ?', 27, 190);
-  c.fillRect(27, 193, c.measureText('Pourquoi ce changement ?').width, 1);
-  c.fillStyle = '#6e6470'; c.font = `600 12px ${FONT_UI}`; c.fillText("Adapter l'heure de prise", 27, 224);
-  ['Matin', 'Midi', 'Soir'].forEach((m, i) => {
+  c.fillText(tr('Pourquoi ce changement ?'), 27, 190);
+  c.fillRect(27, 193, c.measureText(tr('Pourquoi ce changement ?')).width, 1);
+  c.fillStyle = '#6e6470'; c.font = `600 12px ${FONT_UI}`; c.fillText(tr("Adapter l'heure de prise"), 27, 224);
+  [tr('Matin'), tr('Midi'), tr('Soir')].forEach((m, i) => {
     c.font = `400 13px ${FONT_UI}`;
-    const w = c.measureText(m).width + 24, x = 27 + [0, 1, 2].slice(0, i).reduce((s, j) => s + c.measureText(['Matin', 'Midi', 'Soir'][j]).width + 24 + 7, 0);
+    const w = c.measureText(m).width + 24, x = 27 + [0, 1, 2].slice(0, i).reduce((s, j) => s + c.measureText([tr('Matin'), tr('Midi'), tr('Soir')][j]).width + 24 + 7, 0);
     c.fillStyle = '#fff'; c.strokeStyle = '#ebd9d6'; c.lineWidth = 1;
     c.beginPath(); c.roundRect(x + 0.5, 238.5, w, 38, 12); c.fill(); c.stroke();
     c.fillStyle = '#000071'; c.textBaseline = 'middle'; c.fillText(m, x + 12.5, 257.5); c.textBaseline = 'alphabetic';
@@ -234,22 +235,22 @@ function ecranTraitement(c) {
 
 function ecranPair(c) {
   c.fillStyle = '#ff5f68'; c.beginPath(); c.arc(30.5, 62, 3.5, 0, 7); c.fill();
-  c.fillStyle = '#000071'; c.font = `600 13px ${FONT_UI}`; c.textBaseline = 'middle'; c.fillText('Mon cercle', 42, 62);
+  c.fillStyle = '#000071'; c.font = `600 13px ${FONT_UI}`; c.textBaseline = 'middle'; c.fillText(tr('Mon cercle'), 42, 62);
   c.textBaseline = 'alphabetic';
-  c.fillStyle = '#d9434c'; c.font = `600 12px ${FONT_UI}`; c.fillText('Un relais humain', 27, 97);
+  c.fillStyle = '#d9434c'; c.font = `600 12px ${FONT_UI}`; c.fillText(tr('Un relais humain'), 27, 97);
   c.fillStyle = '#000071'; c.font = `400 23px ${FONT_SERIF}`;
-  coupe(c, "Quelqu'un qui a fait le chemin.", 232).forEach((l, i) => c.fillText(l, 27, 128 + i * 26.5));
+  coupe(c, tr("Quelqu'un qui a fait le chemin."), 232).forEach((l, i) => c.fillText(l, 27, 128 + i * 26.5));
   c.fillStyle = '#fff'; c.strokeStyle = '#ebd9d6'; c.lineWidth = 1;
   c.beginPath(); c.roundRect(27.5, 183.5, 231, 62, 14); c.fill(); c.stroke();
   c.fillStyle = '#ff5f68'; c.beginPath(); c.arc(57, 214.5, 19, 0, 7); c.fill();
   c.fillStyle = '#fff'; c.font = `600 15px ${FONT_UI}`; c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillText('M', 57, 215); c.textAlign = 'left';
   c.textBaseline = 'alphabetic'; c.fillStyle = '#000071'; c.font = `600 14px ${FONT_UI}`; c.fillText('Marc', 87, 211);
-  c.fillStyle = '#6e6470'; c.font = `400 12px ${FONT_UI}`; c.fillText('diabète type 2 depuis 4 ans', 87, 228);
+  c.fillStyle = '#6e6470'; c.font = `400 12px ${FONT_UI}`; c.fillText(tr('diabète type 2 depuis 4 ans'), 87, 228);
   c.fillStyle = '#fdedea'; c.beginPath(); c.roundRect(27, 446, 232, 79, 12); c.fill();
   c.fillStyle = '#000071'; c.font = `400 13px ${FONT_UI}`;
-  coupe(c, "« J'ai mis du temps, mais on s'en sort. Écris-moi quand tu veux. »", 208).forEach((l, i) => c.fillText(l, 39, 468 + i * 19.5));
+  coupe(c, tr("« J'ai mis du temps, mais on s'en sort. Écris-moi quand tu veux. »"), 208).forEach((l, i) => c.fillText(l, 39, 468 + i * 19.5));
   c.fillStyle = '#ff5f68'; c.beginPath(); c.roundRect(27, 396, 232, 40, 20); c.fill();
-  c.fillStyle = '#fff'; c.font = `500 13px ${FONT_UI}`; c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillText('Faire connaissance', 143, 416); c.textAlign = 'left';
+  c.fillStyle = '#fff'; c.font = `500 13px ${FONT_UI}`; c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillText(tr('Faire connaissance'), 143, 416); c.textAlign = 'left';
   dessinerNav(c, 1);
 }
 
@@ -494,7 +495,7 @@ scenes.shift = async ({ accent }) => {
     const e = etiquette({ lignes, w, h: 0.3, px: 28, couleur: TXT, align: 'left' });
     e.position.set(x + decalX, y, 0); e.material.opacity = 0; return e;
   };
-  const decision = mention(['Décision et Arbitrage'], 2.2, P(88, 418), 1.1);
+  const decision = mention([tr('Décision et Arbitrage')], 2.2, P(88, 418), 1.1);
   const action = mention(['Action'], 1.0, P(88, 458), 0.5);
   const marketing = mention(['Marketing'], 1.6, P(207, 150), 0.8);
   const fond = new T.Group();
@@ -584,7 +585,7 @@ function dessinerChiffre(c, { titre, note, valeur, evolution, bon, ligne1, ligne
 }
 
 /* le titre : ce que l'écran explique, en grand et en blanc, aligné à gauche sur le bord des cartes */
-const TITRE_SURVOL = 'Des chiffres structurés pour poser les bonnes questions et décider.';
+const TITRE_SURVOL = tr('Des chiffres structurés pour poser les bonnes questions et décider.');
 function dessinerTitre(c) {
   c.fillStyle = TXT; c.font = `400 31px ${FONT_ITALIQUE}`; c.textAlign = 'left'; c.textBaseline = 'middle';   // Newsreader est plus large que l'ancienne police : 31 px et une ligne plus longue pour rester sur deux lignes
   coupe(c, TITRE_SURVOL, 590).forEach((l, i, a) => c.fillText(l, 11.5, 22 + i * 40));
@@ -596,34 +597,34 @@ const fonteContenu = (c) => { c.fillStyle = TXT; c.font = `600 22px ${FONT_UI}`;
 /* la question concrète que les chiffres tranchent, en deux lignes : on coupe après la virgule */
 function dessinerQuestion(c) {
   fonteContenu(c);
-  c.fillText('Pousser le volume maintenant,', 11.5, 17);
-  c.fillText('ou protéger la marge du contrat\u202f?', 11.5, 47);
+  c.fillText(tr('Pousser le volume maintenant,'), 11.5, 17);
+  c.fillText(tr('ou protéger la marge du contrat\u202f?'), 11.5, 47);
 }
 
 /* la réponse : la règle posée comme une question en gris, puis ce qu'on en fait, alignés à gauche */
 function dessinerAction(c) {
   c.textAlign = 'left'; c.textBaseline = 'middle';
   c.fillStyle = rgba(TXT, 0.74); c.font = `400 16px ${FONT_UI}`;
-  c.fillText("Chiffre d'affaires au-dessus de 100\u202f% et marge sous le plan\u202f?", 11.5, 14);
+  c.fillText(tr("Chiffre d'affaires au-dessus de 100\u202f% et marge sous le plan\u202f?"), 11.5, 14);
   fonteContenu(c);
-  c.fillText('Revoir les prix avant de pousser davantage.', 11.5, 48);
+  c.fillText(tr('Revoir les prix avant de pousser davantage.'), 11.5, 48);
 }
 
 /* le chiffre sans contexte : rouge, avec son contour blanc de papier collé, ce qu'il mesure, et ce qui lui manque */
 function dessinerChiffreRouge(c) {
   c.save(); c.lineJoin = 'round'; c.lineCap = 'round'; c.textAlign = 'center'; c.textBaseline = 'middle';
   c.font = `600 150px ${FONT_UI}`;
-  c.lineWidth = 16; c.strokeStyle = '#fff'; c.strokeText('116 %', 200, 92);
-  c.fillStyle = '#e0201a'; c.fillText('116 %', 200, 92);
+  c.lineWidth = 16; c.strokeStyle = '#fff'; c.strokeText(tr('116 %'), 200, 92);
+  c.fillStyle = '#e0201a'; c.fillText(tr('116 %'), 200, 92);
   /* ce que le chiffre mesure, tel qu'il est */
   c.font = `600 21px ${FONT_UI}`;
-  const mesure = 'CA réel / budget du mois', L = c.measureText(mesure).width + 36;
+  const mesure = tr('CA réel / budget du mois'), L = c.measureText(mesure).width + 36;
   c.fillStyle = 'rgba(255,255,255,0.95)'; c.beginPath(); c.roundRect(200 - L / 2, 164, L, 42, 14); c.fill();
   c.fillStyle = '#222'; c.fillText(mesure, 200, 185.5);
   /* ce qui manque : le contexte, et la décision */
   c.save(); c.translate(200, 258); c.rotate(-0.03);
   c.font = `italic 600 24px ${FONT_UI}`;
-  const q1 = 'Avec quel contexte ?', q2 = 'Pour quelle décision ?', m = Math.max(c.measureText(q1).width, c.measureText(q2).width) + 44;
+  const q1 = tr('Avec quel contexte ?'), q2 = tr('Pour quelle décision ?'), m = Math.max(c.measureText(q1).width, c.measureText(q2).width) + 44;
   c.fillStyle = '#e0201a'; c.beginPath(); c.roundRect(-m / 2, -36, m, 72, 8); c.fill();
   c.fillStyle = '#fff'; c.fillText(q1, 0, -12); c.fillText(q2, 0, 14); c.restore();
   c.restore();
@@ -666,8 +667,8 @@ scenes.bi = async ({ accent }) => {
   /* le chiffre rouge, puis le titre, la question, les deux chiffres et la réponse */
   const rouge = nette(4.2, 4.2 * 300 / 400, 400, 300, dessinerChiffreRouge);
   rouge.renderOrder = 120;
-  const carteA = nette(3.05, 3.05 * 222 / 320, 320, 222, (c) => dessinerChiffre(c, { titre: "Performance du chiffre d'affaires", note: 'Vend-on au rythme du budget ?', valeur: '116 %', evolution: '↓ 8 % vs mois dernier', bon: false, ligne1: ['CA réel', 'CHF 290 k'], ligne2: ['Budget', 'CHF 250 k'] }));
-  const carteB = nette(3.05, 3.05 * 222 / 320, 320, 222, (c) => dessinerChiffre(c, { titre: 'Marge commerciale réelle', note: 'Le CA est-il acheté à coups de baisse de prix ?', valeur: '22 %', evolution: '↑ 12 % vs mois dernier', bon: true, ligne1: ['Marge commerciale', 'CHF 63,8 k'], ligne2: ["Chiffre d'affaires", 'CHF 290 k'] }));
+  const carteA = nette(3.05, 3.05 * 222 / 320, 320, 222, (c) => dessinerChiffre(c, { titre: tr("Performance du chiffre d'affaires"), note: tr('Vend-on au rythme du budget ?'), valeur: tr('116 %'), evolution: tr('↓ 8 % vs mois dernier'), bon: false, ligne1: [tr('CA réel'), tr('CHF 290 k')], ligne2: ['Budget', tr('CHF 250 k')] }));
+  const carteB = nette(3.05, 3.05 * 222 / 320, 320, 222, (c) => dessinerChiffre(c, { titre: tr('Marge commerciale réelle'), note: tr('Le CA est-il acheté à coups de baisse de prix ?'), valeur: tr('22 %'), evolution: tr('↑ 12 % vs mois dernier'), bon: true, ligne1: [tr('Marge commerciale'), tr('CHF 63,8 k')], ligne2: [tr("Chiffre d'affaires"), tr('CHF 290 k')] }));
   const titre = nette(6.4, 6.4 * 84 / 640, 640, 84, dessinerTitre);
   const question = nette(6.4, 6.4 * 64 / 640, 640, 64, dessinerQuestion);
   const action = nette(6.4, 6.4 * 66 / 640, 640, 66, dessinerAction);
@@ -737,7 +738,7 @@ function dessinerBulle(c) {
   c.fillStyle = '#fff'; c.beginPath(); c.roundRect(2, 2, 296, 84, 22); c.fill();
   c.beginPath(); c.moveTo(134, 85); c.lineTo(150, 112); c.lineTo(166, 85); c.closePath(); c.fill();
   c.fillStyle = '#0b0d10'; c.font = `600 24px ${FONT_UI}`; c.textAlign = 'center'; c.textBaseline = 'middle';
-  c.fillText('Pour cette commande,', 150, 31); c.fillText('je choisis lequel ?', 150, 60);
+  c.fillText(tr('Pour cette commande,'), 150, 31); c.fillText(tr('je choisis lequel ?'), 150, 60);
 }
 
 /* les deux épées entre les deux adversaires, sans fond */
@@ -768,12 +769,12 @@ const dessinerLegende = (texte) => (c) => {
 /* le titre, et la liaison tout en bas */
 function dessinerTitreAlliance(c) {
   c.fillStyle = TXT; c.font = `italic 400 46px ${FONT_ITALIQUE}`; c.textAlign = 'center'; c.textBaseline = 'middle';
-  c.fillText('Le meilleur des deux mondes.', 320, 26);
+  c.fillText(tr('Le meilleur des deux mondes.'), 320, 26);
 }
 function dessinerLienAlliance(c) {
   c.fillStyle = TXT; c.font = `500 27px ${FONT_UI}`; c.textAlign = 'center'; c.textBaseline = 'middle';
-  c.fillText('Le commercial et le ProShop', 320, 24);
-  c.fillText('au service du client et de sa satisfaction.', 320, 60);
+  c.fillText(tr('Le commercial et le ProShop'), 320, 24);
+  c.fillText(tr('au service du client et de sa satisfaction.'), 320, 60);
 }
 
 const ROND = (() => { const c = document.createElement('canvas'); c.width = c.height = 64; const x = c.getContext('2d'); const g = x.createRadialGradient(32, 32, 0, 32, 32, 32); g.addColorStop(0, '#fff'); g.addColorStop(0.4, 'rgba(255,255,255,0.7)'); g.addColorStop(1, 'rgba(255,255,255,0)'); x.fillStyle = g; x.fillRect(0, 0, 64, 64); return c; })();
@@ -816,9 +817,9 @@ scenes.proshop = async ({ accent }) => {
   const plan = (w, h, dw, dh, dessiner) => { const m = nette(w, h, dw, dh, dessiner); racine.add(m); return m; };
   const epees = plan(0.95, 0.95, 200, 200, (c) => dessinerEpees(c, iEpees));
   const bulle = plan(2.3, 2.3 * 112 / 300, 300, 112, dessinerBulle);
-  const legCom = plan(1.9, 1.9 * 30 / 200, 200, 30, dessinerLegende('Le commercial'));
-  const legSite = plan(1.9, 1.9 * 30 / 200, 200, 30, dessinerLegende('Le ProShop'));
-  const legCli = plan(1.9, 1.9 * 30 / 200, 200, 30, dessinerLegende('Le client'));
+  const legCom = plan(1.9, 1.9 * 30 / 200, 200, 30, dessinerLegende(tr('Le commercial')));
+  const legSite = plan(1.9, 1.9 * 30 / 200, 200, 30, dessinerLegende(tr('Le ProShop')));
+  const legCli = plan(1.9, 1.9 * 30 / 200, 200, 30, dessinerLegende(tr('Le client')));
   const titre = plan(6.4, 6.4 * 52 / 640, 640, 52, dessinerTitreAlliance);
   const lien = plan(6.4, 6.4 * 84 / 640, 640, 84, dessinerLienAlliance);
   [titre, lien].forEach((m) => { m.material.opacity = 0; m.visible = false; });
@@ -1036,7 +1037,7 @@ scenes.chalon = async () => {
       c.shadowColor = 'transparent';
       c.textAlign = 'left'; c.textBaseline = 'middle'; c.fillStyle = '#000';
       c.font = `700 14px ${FONT_UI}`; c.fillText(`${minutes} min · ${metres} m`, bx + 12, by + 14.5);
-      c.font = `400 12px ${FONT_UI}`; c.fillText(`À pied vers ${DESTINATION.nom}`, bx + 12, by + 30.5);
+      c.font = `400 12px ${FONT_UI}`; c.fillText(`${tr('À pied vers')} ${DESTINATION.nom}`, bx + 12, by + 30.5);
       const cx = bx + bw - 4 - 22; // bouton de 44 px, croix de 22 px : l'image entière, marges comprises, comme dans l'application
       c.drawImage(iFermer.img, cx - 11, by + bh / 2 - 11, 22, 22);
       c.restore();
@@ -1048,7 +1049,7 @@ scenes.chalon = async () => {
     c.strokeStyle = '#c7f3fe'; c.lineWidth = 5; c.beginPath(); c.roundRect(20.5, 18.5, sw2 - 5, 40, 20); c.stroke();
     const lx = 18 + sw2 - 16 - 24, tw = lx - 28 - 34; // le texte s'arrête avant la loupe, comme le champ de l'application
     c.save(); c.beginPath(); c.rect(34, 16, tw, 45); c.clip();
-    c.textAlign = 'left'; c.textBaseline = 'middle'; c.fillStyle = '#2a292b'; c.font = `400 16px ${FONT_UI}`; c.fillText('jeudi soir, tout public, cirque', 34, 39);
+    c.textAlign = 'left'; c.textBaseline = 'middle'; c.fillStyle = '#2a292b'; c.font = `400 16px ${FONT_UI}`; c.fillText(tr('jeudi soir, tout public, cirque'), 34, 39);
     c.restore();
     c.strokeStyle = '#2a292b'; c.lineWidth = 2; c.lineCap = 'round';
     c.beginPath(); c.arc(lx + 11, 38, 7.5, 0, 7); c.stroke();

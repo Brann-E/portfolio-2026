@@ -1,0 +1,62 @@
+[
+  {
+    "key": "position",
+    "label": "My position",
+    "default": true
+  },
+  {
+    "key": "spectacle",
+    "label": "Shows",
+    "default": true
+  },
+  {
+    "key": "restauration",
+    "label": "Food",
+    "default": false
+  },
+  {
+    "key": "buvette",
+    "label": "Refreshment stand",
+    "default": false
+  },
+  {
+    "key": "festival",
+    "label": "Festival venues",
+    "default": false
+  },
+  {
+    "key": "convivialite",
+    "label": "Social venues",
+    "default": false
+  },
+  {
+    "key": "water",
+    "label": "Water points",
+    "default": false
+  },
+  {
+    "key": "wc",
+    "label": "Restrooms",
+    "default": false
+  },
+  {
+    "key": "wc-pmr",
+    "label": "Wheelchair-accessible restrooms",
+    "default": false
+  },
+  {
+    "key": "shower",
+    "label": "Showers",
+    "default": false
+  },
+  {
+    "key": "parking",
+    "label": "Parking",
+    "default": false
+  },
+  {
+    "key": "parking-pmr",
+    "label": "Reserved parking for people with reduced mobility",
+    "default": false
+  }
+]

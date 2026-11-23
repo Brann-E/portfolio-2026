@@ -1,0 +1,27 @@
+[
+  {
+    "id": "planning",
+    "label": "Schedule",
+    "icon": "assets/pin.png"
+  },
+  {
+    "id": "favoris",
+    "label": "Favorites",
+    "icon": "assets/heart.png"
+  },
+  {
+    "id": "carte",
+    "label": "Map",
+    "icon": "assets/binoculars.png"
+  },
+  {
+    "id": "decouvrir",
+    "label": "Discover",
+    "icon": "assets/megaphone.png"
+  },
+  {
+    "id": "menu",
+    "label": "Menu",
+    "icon": "assets/house.png"
+  }
+]

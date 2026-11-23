@@ -1,0 +1,384 @@
+{
+ "pairs": [
+  {
+   "fr": "<link rel=\"stylesheet\" href=\"styles.css\">",
+   "en": "<link rel=\"stylesheet\" href=\"styles.css\">"
+  },
+  {
+   "fr": "<script src=\"revele.js\"></script>",
+   "en": "<script src=\"revele.js\"></script>"
+  },
+  {
+   "fr": "<meta name=\"description\" content=\"Brann Etienne, product design strategist à Lyon. Je conçois des outils pour des organisations complexes, en regardant ce qui circule entre ceux qui les utilisent.\">",
+   "en": "<meta name=\"description\" content=\"Brann Etienne, product design strategist based in Lyon, France. I design tools for complex organizations, by looking at what circulates between the people who use them.\">"
+  },
+  {
+   "fr": "<meta property=\"og:description\" content=\"Brann Etienne, product design strategist à Lyon. Je conçois des outils pour des organisations complexes, en regardant ce qui circule entre ceux qui les utilisent.\">",
+   "en": "<meta property=\"og:description\" content=\"Brann Etienne, product design strategist based in Lyon, France. I design tools for complex organizations, by looking at what circulates between the people who use them.\">"
+  },
+  {
+   "fr": "<meta name=\"twitter:description\" content=\"Brann Etienne, product design strategist à Lyon. Je conçois des outils pour des organisations complexes, en regardant ce qui circule entre ceux qui les utilisent.\">",
+   "en": "<meta name=\"twitter:description\" content=\"Brann Etienne, product design strategist based in Lyon, France. I design tools for complex organizations, by looking at what circulates between the people who use them.\">"
+  },
+  {
+   "fr": "\"description\": \"Concepteur de dispositifs numériques, organisationnels et méthodologiques.\",",
+   "en": "\"description\": \"Designer of digital, organizational and methodological systems.\","
+  },
+  {
+   "fr": "\"url\": \"https://brannetienne.com\",",
+   "en": "\"url\": \"https://brannetienne.com/en/\","
+  },
+  {
+   "fr": "\"Design relationnel\",",
+   "en": "\"Relational design\","
+  },
+  {
+   "fr": "\"Design de service\",",
+   "en": "\"Service design\","
+  },
+  {
+   "fr": "\"Design systémique\",",
+   "en": "\"Systemic design\","
+  },
+  {
+   "fr": "\"url\": \"https://brannetienne.com/\",",
+   "en": "\"url\": \"https://brannetienne.com/en/\","
+  },
+  {
+   "fr": "\"inLanguage\": \"fr-FR\",",
+   "en": "\"inLanguage\": \"en\","
+  },
+  {
+   "fr": "}\n</script>\n<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"ItemList\",\n  \"name\": \"Navigation principale\",\n  \"itemListOrder\": \"https://schema.org/ItemListOrderAscending\",\n  \"itemListElement\": [\n    {\n      \"@type\": \"SiteNavigationElement\",\n      \"position\": 1,\n      \"name\": \"Études de cas\",\n      \"url\": \"https://brannetienne.com/#cas\"\n    },\n    {\n      \"@type\": \"SiteNavigationElement\",\n      \"position\": 2,\n      \"name\": \"Comment je travaille\",\n      \"url\": \"https://brannetienne.com/comment-je-travaille\"\n    },\n    {\n      \"@type\": \"SiteNavigationElement\",\n      \"position\": 3,\n      \"name\": \"À propos\",\n      \"url\": \"https://brannetienne.com/a-propos\"\n    },\n    {\n      \"@type\": \"SiteNavigationElement\",\n      \"position\": 4,\n      \"name\": \"Contact\",\n      \"url\": \"https://brannetienne.com/contact\"\n    }\n  ]",
+   "en": ""
+  },
+  {
+   "fr": "<script src=\"nav.js\"></script>",
+   "en": "<script src=\"nav.js\"></script>"
+  },
+  {
+   "fr": "<h1 id=\"titre\" class=\"t-display\" data-texte>Je conçois des produits <em>et ce qui les fait tenir.</em></h1>",
+   "en": "<h1 id=\"titre\" class=\"t-display\" data-texte>I design products <em>and what holds them together.</em></h1>"
+  },
+  {
+   "fr": "<p class=\"lead t-lede\" data-texte>Depuis 12 ans, je travaille entre produit, design et stratégie, dans des environnements complexes. Je m’intéresse autant aux usages qu’à ce qui se joue entre les personnes, les équipes et les produits : ce qui circule, ce qui se décide, ce qui bloque.</p>",
+   "en": "<p class=\"lead t-lede\" data-texte>For 12 years, I've worked across product, design and strategy, in complex environments. I care as much about how things are used as about what happens between people, teams and the product: what circulates, what gets decided, what gets stuck.</p>"
+  },
+  {
+   "fr": "<a class=\"btn\" href=\"#cas\">Voir les études de cas</a>",
+   "en": "<a class=\"btn\" href=\"#cas\">See the case studies</a>"
+  },
+  {
+   "fr": "<a class=\"lien-sec\" href=\"cv-brann-etienne.pdf\" target=\"_blank\" rel=\"noopener\">Télécharger mon CV</a>",
+   "en": "<a class=\"lien-sec\" href=\"cv-brann-etienne-en.pdf\" target=\"_blank\" rel=\"noopener\">Download my CV</a>"
+  },
+  {
+   "fr": "<img class=\"jour\" src=\"portrait.webp\" alt=\"Portrait de Brann Etienne\" width=\"1071\" height=\"1008\">",
+   "en": "<img class=\"jour\" src=\"portrait.webp\" alt=\"Portrait of Brann Etienne\" width=\"1071\" height=\"1008\">"
+  },
+  {
+   "fr": "<img class=\"nuit\" src=\"portrait-nuit.webp\" alt=\"Portrait de Brann Etienne\" width=\"800\" height=\"752\" loading=\"lazy\" decoding=\"async\">",
+   "en": "<img class=\"nuit\" src=\"portrait-nuit.webp\" alt=\"Portrait of Brann Etienne\" width=\"800\" height=\"752\" loading=\"lazy\" decoding=\"async\">"
+  },
+  {
+   "fr": "<p class=\"portrait-dispo\"><span class=\"voyant\" aria-hidden=\"true\"></span>Disponible</p>",
+   "en": "<p class=\"portrait-dispo\"><span class=\"voyant\" aria-hidden=\"true\"></span>Available</p>"
+  },
+  {
+   "fr": "<div class=\"portrait-lieu portrait-distance\"><p class=\"arrondi cas-pastille\"><span class=\"lieu-icone\">🌍</span>À distance</p></div>",
+   "en": "<div class=\"portrait-lieu portrait-distance\"><p class=\"arrondi cas-pastille\"><span class=\"lieu-icone\">🌍</span>Remote</p></div>"
+  },
+  {
+   "fr": "<p class=\"arrondi portrait-bulle\"><span class=\"jour\">Aloha</span><span class=\"nuit\">Bonsoir</span>, moi c'est Brann !</p>",
+   "en": "<p class=\"arrondi portrait-bulle\"><span class=\"jour\">Aloha</span><span class=\"nuit\">Good evening</span>, I'm Brann!</p>"
+  },
+  {
+   "fr": "<button class=\"figer\" id=\"figer\" type=\"button\" aria-pressed=\"false\">Retenir le fil</button>",
+   "en": "<button class=\"figer\" id=\"figer\" type=\"button\" aria-pressed=\"false\">Hold the thread</button>"
+  },
+  {
+   "fr": "<div class=\"defile\" role=\"region\" aria-label=\"Clients et organisations\" tabindex=\"0\">",
+   "en": "<div class=\"defile\" role=\"region\" aria-label=\"Clients and organizations\" tabindex=\"0\">"
+  },
+  {
+   "fr": "<div class=\"defile-logo\"><img src=\"assets/clients/axa.webp\" alt=\"AXA\"></div>",
+   "en": "<div class=\"defile-logo\"><img src=\"assets/clients/axa.webp\" alt=\"AXA\"></div>"
+  },
+  {
+   "fr": "<div class=\"defile-logo\"><img src=\"assets/clients/microsoft.webp\" alt=\"Microsoft\"></div>",
+   "en": "<div class=\"defile-logo\"><img src=\"assets/clients/microsoft.webp\" alt=\"Microsoft\"></div>"
+  },
+  {
+   "fr": "<div class=\"defile-logo\"><img src=\"assets/clients/novo-nordisk.webp\" alt=\"Novo Nordisk\"></div>",
+   "en": "<div class=\"defile-logo\"><img src=\"assets/clients/novo-nordisk.webp\" alt=\"Novo Nordisk\"></div>"
+  },
+  {
+   "fr": "<div class=\"defile-logo\"><img src=\"assets/clients/cnrs-noir.webp\" alt=\"CNRS\"></div>",
+   "en": "<div class=\"defile-logo\"><img src=\"assets/clients/cnrs-noir.webp\" alt=\"CNRS\"></div>"
+  },
+  {
+   "fr": "<div class=\"defile-logo\"><img src=\"assets/clients/orange.webp\" alt=\"Orange\"></div>",
+   "en": "<div class=\"defile-logo\"><img src=\"assets/clients/orange.webp\" alt=\"Orange\"></div>"
+  },
+  {
+   "fr": "<div class=\"defile-logo\"><img src=\"assets/clients/nexans.webp\" alt=\"Nexans\"></div>",
+   "en": "<div class=\"defile-logo\"><img src=\"assets/clients/nexans.webp\" alt=\"Nexans\"></div>"
+  },
+  {
+   "fr": "<div class=\"defile-logo logo-noir\"><img src=\"assets/clients/nespresso.png\" alt=\"Nespresso\"></div>",
+   "en": "<div class=\"defile-logo logo-noir\"><img src=\"assets/clients/nespresso.png\" alt=\"Nespresso\"></div>"
+  },
+  {
+   "fr": "<div class=\"defile-logo logo-noir\"><img src=\"assets/clients/mylight.webp\" alt=\"MyLight 150\"></div>",
+   "en": "<div class=\"defile-logo logo-noir\"><img src=\"assets/clients/mylight.webp\" alt=\"MyLight 150\"></div>"
+  },
+  {
+   "fr": "<div class=\"defile-logo\"><img src=\"assets/clients/exakis-nelite.png\" alt=\"Exakis Nelite\"></div>",
+   "en": "<div class=\"defile-logo\"><img src=\"assets/clients/exakis-nelite.png\" alt=\"Exakis Nelite\"></div>"
+  },
+  {
+   "fr": "<h2 class=\"t-h2\" id=\"t-sit\">Quand le produit ne suffit pas.</h2>",
+   "en": "<h2 class=\"t-h2\" id=\"t-sit\">When the product isn't enough.</h2>"
+  },
+  {
+   "fr": "<p class=\"intro t-lede\">Quelques situations pour comprendre ce qui ne tient plus entre les personnes, les usages et les produits, et ce qu’on peut concevoir autrement.</p>",
+   "en": "<p class=\"intro t-lede\">A few situations to understand what no longer holds between people, usage and products, and what we can design differently.</p>"
+  },
+  {
+   "fr": "<div class=\"situation hote\" data-hote id=\"situations\" role=\"region\" aria-roledescription=\"carrousel\" aria-labelledby=\"t-sit\">",
+   "en": "<div class=\"situation hote\" data-hote id=\"situations\" role=\"region\" aria-roledescription=\"carousel\" aria-labelledby=\"t-sit\">"
+  },
+  {
+   "fr": "<div class=\"slide is-active\" role=\"group\" aria-roledescription=\"diapositive\" aria-label=\"diapositive 1 sur 5\">",
+   "en": "<div class=\"slide is-active\" role=\"group\" aria-roledescription=\"slide\" aria-label=\"slide 1 of 5\">"
+  },
+  {
+   "fr": "<h3>Des notifications partout, et des équipes qui ne lisent plus rien.</h3>",
+   "en": "<h3>Notifications everywhere, and teams that no longer read anything.</h3>"
+  },
+  {
+   "fr": "<div><dt>On se dit</dt><dd>Il faut mieux cibler les messages.</dd></div>",
+   "en": "<div><dt>We tell ourselves</dt><dd>We need to target messages better.</dd></div>"
+  },
+  {
+   "fr": "<div><dt>Ce qui se joue</dt><dd><button class=\"sit-masque\" type=\"button\" aria-expanded=\"false\">L'outil est conçu pour <span class=\"hypo\">faire passer les messages vite et loin, pas</span> pour que <span class=\"hypo\">ce qui compte reste.</span></button></dd></div>",
+   "en": "<div><dt>What's really going on</dt><dd><button class=\"sit-masque\" type=\"button\" aria-expanded=\"false\">The tool is built to <span class=\"hypo\">push messages out fast and far, not</span> to make sure <span class=\"hypo\">what matters stays.</span></button></dd></div>"
+  },
+  {
+   "fr": "<div class=\"apparait\"><dt>Ce qui fait tenir</dt><dd aria-live=\"polite\"><span class=\"inconnu\">???</span><span class=\"mots\"><strong>L'attention</strong> : ce qu'on accorde à quelqu'un ou à quelque chose. Ici, l'outil la disperse sur tout ce qui arrive, et plus rien ne la retient sur ce qui compte.</span></dd></div>",
+   "en": "<div class=\"apparait\"><dt>What holds it together</dt><dd aria-live=\"polite\"><span class=\"inconnu\">???</span><span class=\"mots\"><strong>Attention</strong>: what we give to someone or something. Here, the tool scatters it across everything that arrives, and nothing keeps it on what matters.</span></dd></div>"
+  },
+  {
+   "fr": "<div class=\"slide\" role=\"group\" aria-roledescription=\"diapositive\" aria-label=\"diapositive 2 sur 5\">",
+   "en": "<div class=\"slide\" role=\"group\" aria-roledescription=\"slide\" aria-label=\"slide 2 of 5\">"
+  },
+  {
+   "fr": "<h3>Les coups de main entre collègues remplacés par un système de tickets.</h3>",
+   "en": "<h3>Favors between colleagues replaced by a ticketing system.</h3>"
+  },
+  {
+   "fr": "<div><dt>On se dit</dt><dd>C'est plus clair, et c'est mesurable.</dd></div>",
+   "en": "<div><dt>We tell ourselves</dt><dd>It's clearer, and it's measurable.</dd></div>"
+  },
+  {
+   "fr": "<div><dt>Ce qui se joue</dt><dd><button class=\"sit-masque\" type=\"button\" aria-expanded=\"false\">Ce qui se faisait <span class=\"hypo\">spontanément est devenu une tâche assignée. Personne n'aide</span> plus au-delà <span class=\"hypo\">de son ticket.</span></button></dd></div>",
+   "en": "<div><dt>What's really going on</dt><dd><button class=\"sit-masque\" type=\"button\" aria-expanded=\"false\">What used to happen <span class=\"hypo\">spontaneously became an assigned task. Nobody helps</span> anymore beyond <span class=\"hypo\">their own ticket.</span></button></dd></div>"
+  },
+  {
+   "fr": "<div class=\"apparait\"><dt>Ce qui fait tenir</dt><dd aria-live=\"polite\"><span class=\"inconnu\">???</span><span class=\"mots\"><strong>La valeur</strong> : tout ce qui se donne sans prix, un conseil, du temps, un coup de main. Ici, en devenant un dû, elle cesse de circuler.</span></dd></div>",
+   "en": "<div class=\"apparait\"><dt>What holds it together</dt><dd aria-live=\"polite\"><span class=\"inconnu\">???</span><span class=\"mots\"><strong>Value</strong>: everything given without a price, advice, time, a helping hand. Here, once it becomes something owed, it stops circulating.</span></dd></div>"
+  },
+  {
+   "fr": "<div class=\"slide\" role=\"group\" aria-roledescription=\"diapositive\" aria-label=\"diapositive 3 sur 5\">",
+   "en": "<div class=\"slide\" role=\"group\" aria-roledescription=\"slide\" aria-label=\"slide 3 of 5\">"
+  },
+  {
+   "fr": "<h3>Un tableau qui mesure qui contribue le plus, et des contributions qui baissent.</h3>",
+   "en": "<h3>A dashboard that measures who contributes the most, and contributions that drop.</h3>"
+  },
+  {
+   "fr": "<div><dt>On se dit</dt><dd>Il faut de meilleurs indicateurs, ou une meilleure récompense.</dd></div>",
+   "en": "<div><dt>We tell ourselves</dt><dd>We need better indicators, or a better reward.</dd></div>"
+  },
+  {
+   "fr": "<div><dt>Ce qui se joue</dt><dd><button class=\"sit-masque\" type=\"button\" aria-expanded=\"false\">Dès qu'on compte ce <span class=\"hypo\">que chacun apporte, chacun surveille son solde et contribue</span> pour le <span class=\"hypo\">score, plus pour le projet.</span></button></dd></div>",
+   "en": "<div><dt>What's really going on</dt><dd><button class=\"sit-masque\" type=\"button\" aria-expanded=\"false\">As soon as we count <span class=\"hypo\">what each person brings, everyone watches their balance and contributes</span> for the <span class=\"hypo\">score, not for the project anymore.</span></button></dd></div>"
+  },
+  {
+   "fr": "<div class=\"apparait\"><dt>Ce qui fait tenir</dt><dd aria-live=\"polite\"><span class=\"inconnu\">???</span><span class=\"mots\"><strong>La reconnaissance</strong> : être vu pour ce qu'on apporte. Ici, le classement la remplace par un score, et chacun ne voit plus que son rang.</span></dd></div>",
+   "en": "<div class=\"apparait\"><dt>What holds it together</dt><dd aria-live=\"polite\"><span class=\"inconnu\">???</span><span class=\"mots\"><strong>Recognition</strong>: being seen for what you bring. Here, the ranking replaces it with a score, and everyone only sees their own rank.</span></dd></div>"
+  },
+  {
+   "fr": "<div class=\"slide\" role=\"group\" aria-roledescription=\"diapositive\" aria-label=\"diapositive 4 sur 5\">",
+   "en": "<div class=\"slide\" role=\"group\" aria-roledescription=\"slide\" aria-label=\"slide 4 of 5\">"
+  },
+  {
+   "fr": "<h3>Une communauté très active au lancement, silencieuse six mois plus tard.</h3>",
+   "en": "<h3>A community very active at launch, silent six months later.</h3>"
+  },
+  {
+   "fr": "<div><dt>On se dit</dt><dd>L'effet de nouveauté est passé.</dd></div>",
+   "en": "<div><dt>We tell ourselves</dt><dd>The novelty has worn off.</dd></div>"
+  },
+  {
+   "fr": "<div><dt>Ce qui se joue</dt><dd><button class=\"sit-masque\" type=\"button\" aria-expanded=\"false\">Les nouveaux venus ont <span class=\"hypo\">reçu des réponses, mais l'outil ne leur a jamais donné</span> l'occasion d'en <span class=\"hypo\">donner à leur tour.</span></button></dd></div>",
+   "en": "<div><dt>What's really going on</dt><dd><button class=\"sit-masque\" type=\"button\" aria-expanded=\"false\">Newcomers <span class=\"hypo\">received answers, but the tool never gave them</span> the chance to <span class=\"hypo\">give back in turn.</span></button></dd></div>"
+  },
+  {
+   "fr": "<div class=\"apparait\"><dt>Ce qui fait tenir</dt><dd aria-live=\"polite\"><span class=\"inconnu\">???</span><span class=\"mots\"><strong>L'obligation</strong> : l'envie de rendre ce qu'on a reçu, qui fait revenir. Ici, rien ne permet de rendre, alors personne ne revient.</span></dd></div>",
+   "en": "<div class=\"apparait\"><dt>What holds it together</dt><dd aria-live=\"polite\"><span class=\"inconnu\">???</span><span class=\"mots\"><strong>Obligation</strong>: the urge to give back what we received, which makes people return. Here, nothing lets them give back, so nobody comes back.</span></dd></div>"
+  },
+  {
+   "fr": "<div class=\"slide\" role=\"group\" aria-roledescription=\"diapositive\" aria-label=\"diapositive 5 sur 5\">",
+   "en": "<div class=\"slide\" role=\"group\" aria-roledescription=\"slide\" aria-label=\"slide 5 of 5\">"
+  },
+  {
+   "fr": "<h3>Tout le monde sait que ça ne va pas, et personne ne le dit.</h3>",
+   "en": "<h3>Everyone knows something is wrong, and nobody says it.</h3>"
+  },
+  {
+   "fr": "<div><dt>On se dit</dt><dd>Les équipes manquent de courage, ou d'implication.</dd></div>",
+   "en": "<div><dt>We tell ourselves</dt><dd>Teams lack courage, or commitment.</dd></div>"
+  },
+  {
+   "fr": "<div><dt>Dans l'angle mort</dt><dd><button class=\"sit-masque\" type=\"button\" aria-expanded=\"false\">Parler le premier, c'est <span class=\"hypo\">s'exposer seul. Alors chacun attend que</span> quelqu'un d'autre <span class=\"hypo\">le dise.</span></button></dd></div>",
+   "en": "<div><dt>In the blind spot</dt><dd><button class=\"sit-masque\" type=\"button\" aria-expanded=\"false\">Speaking first means <span class=\"hypo\">exposing yourself alone. So everyone waits for</span> someone else <span class=\"hypo\">to say it.</span></button></dd></div>"
+  },
+  {
+   "fr": "<div class=\"apparait\"><dt>Ce qui apparaît</dt><dd aria-live=\"polite\"><span class=\"inconnu\">???</span><span class=\"mots\"><strong>La confiance</strong> : pouvoir dire sans craindre d'être seul à le dire. Ici, chacun sait, mais ignore que les autres savent aussi.</span></dd></div>",
+   "en": "<div class=\"apparait\"><dt>What appears</dt><dd aria-live=\"polite\"><span class=\"inconnu\">???</span><span class=\"mots\"><strong>Trust</strong>: being able to speak without fearing you're the only one saying it. Here, everyone knows, but doesn't know that the others know too.</span></dd></div>"
+  },
+  {
+   "fr": "<button class=\"rond\" type=\"button\" data-prev aria-label=\"Situation précédente\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M15 6l-6 6 6 6\"/></svg></button>",
+   "en": "<button class=\"rond\" type=\"button\" data-prev aria-label=\"Previous situation\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M15 6l-6 6 6 6\"/></svg></button>"
+  },
+  {
+   "fr": "<button class=\"rond\" type=\"button\" data-next aria-label=\"Situation suivante\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M9 6l6 6-6 6\"/></svg></button>",
+   "en": "<button class=\"rond\" type=\"button\" data-next aria-label=\"Next situation\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M9 6l6 6-6 6\"/></svg></button>"
+  },
+  {
+   "fr": "<p class=\"fin-lien t-small\"><a href=\"/parcours-interactif\">Explorer 3 situations pour regarder autrement</a></p>",
+   "en": "<p class=\"fin-lien t-small\"><a href=\"parcours-interactif\">Explore 3 situations to look differently (in French)</a></p>"
+  },
+  {
+   "fr": "<h2 class=\"t-h2\" id=\"t-cas\">Cinq études de cas, du terrain à la conception.</h2>",
+   "en": "<h2 class=\"t-h2\" id=\"t-cas\">Five case studies, from the field to the design.</h2>"
+  },
+  {
+   "fr": "<ul class=\"cas-tags\" data-cas=\"0\"><li class=\"arrondi cas-pastille\">B2B2C</li><li class=\"arrondi cas-pastille\">Desk research</li><li class=\"arrondi cas-pastille\">Approche systémique</li><li class=\"arrondi cas-pastille\">Design de service HealthTech</li></ul>",
+   "en": "<ul class=\"cas-tags\" data-cas=\"0\"><li class=\"arrondi cas-pastille\">B2B2C</li><li class=\"arrondi cas-pastille\">Desk research</li><li class=\"arrondi cas-pastille\">Systemic approach</li><li class=\"arrondi cas-pastille\">HealthTech service design</li></ul>"
+  },
+  {
+   "fr": "<ul class=\"cas-tags\" data-cas=\"1\"><li class=\"arrondi cas-pastille\">Plateforme B2E</li><li class=\"arrondi cas-pastille\">Discovery multi-niveaux</li><li class=\"arrondi cas-pastille\">Alignement organisationnel</li><li class=\"arrondi cas-pastille\">Transformation opérationnelle</li></ul>",
+   "en": "<ul class=\"cas-tags\" data-cas=\"1\"><li class=\"arrondi cas-pastille\">B2E platform</li><li class=\"arrondi cas-pastille\">Multi-level discovery</li><li class=\"arrondi cas-pastille\">Organizational alignment</li><li class=\"arrondi cas-pastille\">Operational transformation</li></ul>"
+  },
+  {
+   "fr": "<ul class=\"cas-tags\" data-cas=\"2\"><li class=\"arrondi cas-pastille\">Plateforme B2E</li><li class=\"arrondi cas-pastille\">Business intelligence</li><li class=\"arrondi cas-pastille\">Co-conception en atelier</li><li class=\"arrondi cas-pastille\">Atomic metrics</li></ul>",
+   "en": "<ul class=\"cas-tags\" data-cas=\"2\"><li class=\"arrondi cas-pastille\">B2E platform</li><li class=\"arrondi cas-pastille\">Business intelligence</li><li class=\"arrondi cas-pastille\">Co-design workshops</li><li class=\"arrondi cas-pastille\">Atomic metrics</li></ul>"
+  },
+  {
+   "fr": "<ul class=\"cas-tags\" data-cas=\"3\"><li class=\"arrondi cas-pastille\">E-commerce B2B</li><li class=\"arrondi cas-pastille\">Recherche utilisateur</li><li class=\"arrondi cas-pastille\">Modèle cross-canal</li><li class=\"arrondi cas-pastille\">Taskflows et blueprints</li></ul>",
+   "en": "<ul class=\"cas-tags\" data-cas=\"3\"><li class=\"arrondi cas-pastille\">B2B e-commerce</li><li class=\"arrondi cas-pastille\">User research</li><li class=\"arrondi cas-pastille\">Cross-channel model</li><li class=\"arrondi cas-pastille\">Taskflows and blueprints</li></ul>"
+  },
+  {
+   "fr": "<ul class=\"cas-tags\" data-cas=\"4\"><li class=\"arrondi cas-pastille\">App B2C</li><li class=\"arrondi cas-pastille\">Jobs-to-be-done</li><li class=\"arrondi cas-pastille\">Prototype codé</li></ul>",
+   "en": "<ul class=\"cas-tags\" data-cas=\"4\"><li class=\"arrondi cas-pastille\">B2C app</li><li class=\"arrondi cas-pastille\">Jobs-to-be-done</li><li class=\"arrondi cas-pastille\">Coded prototype</li></ul>"
+  },
+  {
+   "fr": "<div class=\"meta\"><b>Healthanea</b><span>Santé · 2024</span></div>",
+   "en": "<div class=\"meta\"><b>Healthanea</b><span>Health · 2024</span></div>"
+  },
+  {
+   "fr": "<div class=\"q\"><span class=\"clients\"><img src=\"assets/clients/carte/axa.png\" alt=\"AXA\"><img src=\"assets/clients/carte/microsoft.webp\" alt=\"Microsoft\"></span>Repenser comment les patients s'y retrouvent dans des parcours de soin complexes, sans aucun accès direct à eux.</div>",
+   "en": "<div class=\"q\"><span class=\"clients\"><img src=\"assets/clients/carte/axa.png\" alt=\"AXA\"><img src=\"assets/clients/carte/microsoft.webp\" alt=\"Microsoft\"></span>Rethinking how patients find their way through complex care pathways, with no direct access to them.</div>"
+  },
+  {
+   "fr": "<div class=\"carte-visuel\" data-scene=\"healthanea\"><canvas aria-hidden=\"true\"></canvas><img data-src=\"assets/carte-healthanea-900.webp\" data-srcset=\"assets/carte-healthanea-900.webp 900w, assets/carte-healthanea-1600.webp 1600w\" sizes=\"(max-width: 600px) 100vw, 884px\" width=\"1600\" height=\"1422\" alt=\"Carte de l'écosystème Healthanea : le patient, l'application et les acteurs qui l'entourent, reliés par des flux d'argent, de biens et de données\"></div>",
+   "en": "<div class=\"carte-visuel\" data-scene=\"healthanea\"><canvas aria-hidden=\"true\"></canvas><img data-src=\"assets/carte-healthanea-900.webp\" data-srcset=\"assets/carte-healthanea-900.webp 900w, assets/carte-healthanea-1600.webp 1600w\" sizes=\"(max-width: 600px) 100vw, 884px\" width=\"1600\" height=\"1422\" alt=\"Map of the Healthanea ecosystem: the patient, the app and the actors around them, linked by flows of money, goods and data\"></div>"
+  },
+  {
+   "fr": "<div class=\"meta\"><b>SHIFT Prime</b><span>Industrie · 2023</span></div>",
+   "en": "<div class=\"meta\"><b>SHIFT Prime</b><span>Industry · 2023</span></div>"
+  },
+  {
+   "fr": "<div class=\"q\"><span class=\"clients\"><img src=\"assets/clients/carte/nexans.png\" alt=\"Nexans\"></span>Une plateforme de pilotage marketing déployée dans un groupe mondial, et des équipes qui ne s'en emparent pas.</div>",
+   "en": "<div class=\"q\"><span class=\"clients\"><img src=\"assets/clients/carte/nexans.png\" alt=\"Nexans\"></span>A marketing steering platform rolled out across a global group, and teams that don't take it up.</div>"
+  },
+  {
+   "fr": "<div class=\"carte-visuel\" data-scene=\"shift\"><canvas aria-hidden=\"true\"></canvas><img data-src=\"assets/shift-pyramide.png\" width=\"940\" height=\"790\" alt=\"Pyramide organisationnelle SHIFT Prime : six niveaux du CEO aux team members, séparés par une ligne entre décision et action\"></div>",
+   "en": "<div class=\"carte-visuel\" data-scene=\"shift\"><canvas aria-hidden=\"true\"></canvas><img data-src=\"assets/shift-pyramide.png\" width=\"940\" height=\"790\" alt=\"SHIFT Prime organizational pyramid: six levels from CEO to team members, separated by a line between decision and action\"></div>"
+  },
+  {
+   "fr": "<div class=\"q\"><span class=\"clients\"><img src=\"assets/clients/carte/nexans.png\" alt=\"Nexans\"></span>Remplacer un fichier Excel de dix-huit pages, devenu un obstacle, par un outil de pilotage commercial moderne.</div>",
+   "en": "<div class=\"q\"><span class=\"clients\"><img src=\"assets/clients/carte/nexans.png\" alt=\"Nexans\"></span>Replacing an eighteen-page Excel file, now an obstacle, with a modern sales steering tool.</div>"
+  },
+  {
+   "fr": "<div class=\"carte-visuel\" data-scene=\"bi\"><canvas aria-hidden=\"true\"></canvas><img data-src=\"assets/bi-solution/excel-3.jpg\" width=\"900\" height=\"578\" alt=\"L'ancien fichier Excel de pilotage commercial, volontairement flouté : un tableau dense de chiffres mensuels et un graphique\"></div>",
+   "en": "<div class=\"carte-visuel\" data-scene=\"bi\"><canvas aria-hidden=\"true\"></canvas><img data-src=\"assets/bi-solution/excel-3.jpg\" width=\"900\" height=\"578\" alt=\"The old Excel sales steering file, deliberately blurred: a dense table of monthly figures and a chart\"></div>"
+  },
+  {
+   "fr": "<div class=\"meta\"><b>Proshop</b><span>Commerce · 2022</span></div>",
+   "en": "<div class=\"meta\"><b>Proshop</b><span>Retail · 2022</span></div>"
+  },
+  {
+   "fr": "<div class=\"q\"><span class=\"clients\"><img src=\"assets/clients/carte/mylight.png\" alt=\"MyLight 150\"></span>Une plateforme de commande en ligne qui ne représente que 2,5&#8239;% des ventes, malgré une première refonte avortée.</div>",
+   "en": "<div class=\"q\"><span class=\"clients\"><img src=\"assets/clients/carte/mylight.png\" alt=\"MyLight 150\"></span>An online ordering platform that accounts for only 2.5% of sales, despite a first redesign that was abandoned.</div>"
+  },
+  {
+   "fr": "<div class=\"carte-visuel\" data-scene=\"proshop\"><canvas aria-hidden=\"true\"></canvas><img data-src=\"assets/carte-proshop-900.webp\" data-srcset=\"assets/carte-proshop-900.webp 900w, assets/carte-proshop-1600.webp 1600w\" sizes=\"(max-width: 600px) 100vw, 884px\" width=\"1600\" height=\"1422\" alt=\"Value Proposition Canvas à double profil : le commercial et le client, leurs gains, leurs pains et leurs tâches à accomplir\"></div>",
+   "en": "<div class=\"carte-visuel\" data-scene=\"proshop\"><canvas aria-hidden=\"true\"></canvas><img data-src=\"assets/carte-proshop-900.webp\" data-srcset=\"assets/carte-proshop-900.webp 900w, assets/carte-proshop-1600.webp 1600w\" sizes=\"(max-width: 600px) 100vw, 884px\" width=\"1600\" height=\"1422\" alt=\"Dual-profile Value Proposition Canvas: the salesperson and the customer, their gains, pains and jobs to be done\"></div>"
+  },
+  {
+   "fr": "<div class=\"q\"><span class=\"clients\"><img src=\"assets/clients/carte/brann-etienne.svg\" alt=\"Brann Etienne\"></span>Une application pour le festival d'arts de la rue, de la recherche au prototype codé, pour le public et pour les compagnies.</div>",
+   "en": "<div class=\"q\"><span class=\"clients\"><img src=\"assets/clients/carte/brann-etienne.svg\" alt=\"Brann Etienne\"></span>An app for the street arts festival, from research to coded prototype, for the audience and for the companies.</div>"
+  },
+  {
+   "fr": "<div class=\"carte-visuel\" data-scene=\"chalon\"><canvas aria-hidden=\"true\"></canvas><img data-src=\"assets/carte-chalon-900.webp\" data-srcset=\"assets/carte-chalon-900.webp 900w, assets/carte-chalon-1600.webp 1600w\" sizes=\"(max-width: 600px) 100vw, 884px\" width=\"1600\" height=\"1422\" alt=\"Écran Carte de l'application : plan du quartier Saint-Vincent, avec les spectacles repérés par des numéros\"></div>",
+   "en": "<div class=\"carte-visuel\" data-scene=\"chalon\"><canvas aria-hidden=\"true\"></canvas><img data-src=\"assets/carte-chalon-900.webp\" data-srcset=\"assets/carte-chalon-900.webp 900w, assets/carte-chalon-1600.webp 1600w\" sizes=\"(max-width: 600px) 100vw, 884px\" width=\"1600\" height=\"1422\" alt=\"Map screen of the app: plan of the Saint-Vincent district, with shows marked by numbers\"></div>"
+  },
+  {
+   "fr": "<h2 class=\"t-h2\" id=\"t-final\">Produire un outil ne coûte presque plus rien. <span class=\"suite\"><span data-tissu=\"une-fois\">Se tromper de problème n'a jamais coûté aussi cher.</span></span></h2>",
+   "en": "<h2 class=\"t-h2\" id=\"t-final\">Producing a tool costs almost nothing now. <span class=\"suite\"><span data-tissu=\"une-fois\">Solving the wrong problem has never cost so much.</span></span></h2>"
+  },
+  {
+   "fr": "<p class=\"lead t-lede\">Vous m'appelez pour un produit.<br>Je m'assure qu'il résolve le vrai problème.</p>",
+   "en": "<p class=\"lead t-lede\">You call me for a product.<br>I make sure it solves the real problem.</p>"
+  },
+  {
+   "fr": "<a class=\"btn\" href=\"/contact\">On en discute ?</a>",
+   "en": "<a class=\"btn\" href=\"contact\">Shall we talk?</a>"
+  },
+  {
+   "fr": "<script src=\"vivant.js\"></script>",
+   "en": "<script src=\"vivant.js\"></script>"
+  },
+  {
+   "fr": "<script src=\"grille.js\"></script>",
+   "en": "<script src=\"grille.js\"></script>"
+  },
+  {
+   "fr": "<script src=\"accueil.js\"></script>",
+   "en": "<script src=\"accueil.js\"></script>"
+  },
+  {
+   "fr": "<script type=\"module\" src=\"cartes-3d.js\"></script>",
+   "en": "<script type=\"module\" src=\"cartes-3d.js\"></script>"
+  },
+  {
+   "fr": "<script src=\"pile-cas.js\"></script>",
+   "en": "<script src=\"pile-cas.js\"></script>"
+  },
+  {
+   "fr": "<script src=\"tissu.js\"></script>",
+   "en": "<script src=\"tissu.js\"></script>"
+  },
+  {
+   "fr": "<script src=\"footer.js\"></script>",
+   "en": "<script src=\"footer.js\"></script>"
+  },
+  {
+   "fr": "<script src=\"site-nav.js\"></script>",
+   "en": "<script src=\"site-nav.js\"></script>"
+  }
+ ]
+}

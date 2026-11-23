@@ -4,6 +4,7 @@ import * as store from "../store.js";
 import { loadShows } from "../shows.js";
 import { matchesFilters, inZone } from "../filtering.js";
 
+import { tr } from "../i18n.js";
 /**
  * Feuille « Filtres » : horaire, date, programmation IN/OFF, catégorie et zone. Chaque changement met à jour
  * l'état partagé ; la liste Découvrir suit en direct. Seuls les choix qui correspondent à au moins un spectacle
@@ -32,9 +33,9 @@ export async function createFiltersPanel({ section = "", only = false } = {}) {
   // Un seul choix à la fois, toujours un d'actif : « Tous » est l'option qui regroupe les deux. Dans la mémoire de l'appli,
   // « Tous » = aucun filtre de programmation (liste vide), IN et OFF = filtre sur cette valeur.
   const PROGRAMMES = [
-    { key: "all", programme: [], label: "Tous", note: "Tous les spectacles" },
-    { key: "IN", programme: ["IN"], label: "IN", note: "Projets sélectionnés par le festival" },
-    { key: "OFF", programme: ["OFF"], label: "OFF", note: "Projets accueillis par le festival" },
+    { key: "all", programme: [], label: tr("Tous"), note: tr("Tous les spectacles") },
+    { key: "IN", programme: ["IN"], label: "IN", note: tr("Projets sélectionnés par le festival") },
+    { key: "OFF", programme: ["OFF"], label: "OFF", note: tr("Projets accueillis par le festival") },
   ];
   const currentProgrammeKey = () => {
     const current = store.getFilters().programme;
@@ -68,8 +69,8 @@ export async function createFiltersPanel({ section = "", only = false } = {}) {
   const toHour = (value) => (value === "" ? null : parseInt(value, 10));
 
   const rangeInput = (key, label) => h("input", { class: `range__input range__input--${key}`, type: "range", min: MIN_HOUR, max: MAX_HOUR, step: 1, "aria-label": label });
-  const fromInput = rangeInput("from", "Heure de début");
-  const toInput = rangeInput("to", "Heure de fin");
+  const fromInput = rangeInput("from", tr("Heure de début"));
+  const toInput = rangeInput("to", tr("Heure de fin"));
   const rangeReadout = h("output", { class: "range__readout" });
   const range = h(
     "div",
@@ -100,8 +101,8 @@ export async function createFiltersPanel({ section = "", only = false } = {}) {
       "div",
       { class: "range__ends" },
       // Cliquer sur une borne y ramène la poignée correspondante.
-      h("button", { class: "range__end", type: "button", "aria-label": `Début à ${MIN_HOUR}h`, onclick: () => { fromInput.value = MIN_HOUR; onRangeInput("from"); } }, `${MIN_HOUR}h`),
-      h("button", { class: "range__end", type: "button", "aria-label": `Fin à ${MAX_HOUR}h`, onclick: () => { toInput.value = MAX_HOUR; onRangeInput("to"); } }, `${MAX_HOUR}h`)
+      h("button", { class: "range__end", type: "button", "aria-label": tr("Début à {h}h", { h: MIN_HOUR }), onclick: () => { fromInput.value = MIN_HOUR; onRangeInput("from"); } }, `${MIN_HOUR}h`),
+      h("button", { class: "range__end", type: "button", "aria-label": tr("Fin à {h}h", { h: MAX_HOUR }), onclick: () => { toInput.value = MAX_HOUR; onRangeInput("to"); } }, `${MAX_HOUR}h`)
     )
   );
 
@@ -119,18 +120,18 @@ export async function createFiltersPanel({ section = "", only = false } = {}) {
   const zones = config.zones.filter((zone) => shows.some((show) => inZone(show, zone)));
 
   const sections = [
-    section_("hours", "Horaire", hoursBlock),
-    section_("days", "Date", chips("days", event.days.map((day) => ({ value: day.id, label: day.label })))),
-    section_("programme", "Programmation IN/OFF", programmeRows),
-    section_("categories", "Catégorie", chips("categories", categories.map((c) => ({ value: c.label, label: c.label, token: c.token })))),
+    section_("hours", tr("Horaire"), hoursBlock),
+    section_("days", tr("Date"), chips("days", event.days.map((day) => ({ value: day.id, label: day.label })))),
+    section_("programme", tr("Programmation IN/OFF"), programmeRows),
+    section_("categories", tr("Catégorie"), chips("categories", categories.map((c) => ({ value: c.label, label: c.label, token: c.token })))),
     section_(
       "zones",
-      "Zone (autour de)",
+      tr("Zone (autour de)"),
       chips("zones", zones.map((zone) => ({ value: zone, label: zone }))),
       h("button", { class: "filters__link", type: "button", onclick: (event_) => {
         event_.currentTarget.dispatchEvent(new CustomEvent("close-overlay", { bubbles: true }));
         event_.currentTarget.dispatchEvent(new CustomEvent("navigate", { bubbles: true, detail: { to: "page", params: { id: "zones" } } }));
-      } }, "Découvrir les zones")
+      } }, tr("Découvrir les zones"))
     ),
   ];
 
@@ -147,7 +148,7 @@ export async function createFiltersPanel({ section = "", only = false } = {}) {
     "section",
     {
       class: single ? "filters filters--single" : "filters",
-      "aria-label": "Filtres",
+      "aria-label": tr("Filtres"),
       // Feuille basse : toucher le fond assombri la ferme.
       onclick: (event_) => single && event_.target === event_.currentTarget && event_.currentTarget.dispatchEvent(new CustomEvent("close-overlay", { bubbles: true })),
     },
@@ -157,9 +158,9 @@ export async function createFiltersPanel({ section = "", only = false } = {}) {
       h(
         "div",
         { class: "filters__bar" },
-        h("button", { class: "filters__close", type: "button", "aria-label": "Fermer", onclick: close }, img("assets/fermer.png")),
-        h("h2", { class: "filters__title" }, "Filtres"),
-        h("button", { class: "filters__reset", type: "button", onclick: () => store.resetFilters() }, "Réinitialiser")
+        h("button", { class: "filters__close", type: "button", "aria-label": tr("Fermer"), onclick: close }, img("assets/fermer.png")),
+        h("h2", { class: "filters__title" }, tr("Filtres")),
+        h("button", { class: "filters__reset", type: "button", onclick: () => store.resetFilters() }, tr("Réinitialiser"))
       )
     ),
     body,
@@ -187,12 +188,12 @@ export async function createFiltersPanel({ section = "", only = false } = {}) {
     range.style.setProperty("--to", (to - MIN_HOUR) / span);
     // La poignée du dessus est celle qui peut encore bouger quand les deux se rejoignent.
     fromInput.classList.toggle("is-top", from >= (MIN_HOUR + MAX_HOUR) / 2);
-    rangeReadout.textContent = from === MIN_HOUR && to === MAX_HOUR ? "Toute la journée" : `De ${from}h à ${to}h`;
+    rangeReadout.textContent = from === MIN_HOUR && to === MAX_HOUR ? tr("Toute la journée") : tr("De {from}h à {to}h", { from, to });
 
     // Le bouton annonce le nombre de spectacles avant d'y aller.
     const count = shows.filter((show) => matchesFilters(show, filters)).length;
     cta.disabled = count === 0;
-    cta.textContent = count === 0 ? "Aucun résultat" : `Afficher ${count} résultat${count > 1 ? "s" : ""}`;
+    cta.textContent = count === 0 ? tr("Aucun résultat") : tr(count > 1 ? "Afficher {n} résultats" : "Afficher {n} résultat", { n: count });
   };
   sync();
   const unsubscribe = store.subscribe(() => (panel.isConnected || !panel.__opened ? sync() : unsubscribe()));

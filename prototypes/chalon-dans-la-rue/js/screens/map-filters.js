@@ -3,6 +3,7 @@ import { loadJSON } from "../data.js";
 import * as store from "../store.js";
 import { createServicePin } from "../map/markers.js";
 
+import { tr } from "../i18n.js";
 /** Pastille de légende de chaque calque (couleurs = tokens de la carte). */
 const DOTS = {
   spectacle: "--color-brand",
@@ -37,11 +38,11 @@ export async function createMapFiltersPanel() {
 
   return h(
     "section",
-    { class: "mapfilters", "aria-label": "Filtres de la carte" },
+    { class: "mapfilters", "aria-label": tr("Filtres de la carte") },
     h(
       "div",
       { class: "mapfilters__stack" },
-      h("div", { class: "mapfilters__card" }, h("h2", { class: "mapfilters__heading" }, "Filtrez les éléments de la carte"), h("ul", { class: "mapfilters__list" }, rows)),
+      h("div", { class: "mapfilters__card" }, h("h2", { class: "mapfilters__heading" }, tr("Filtrez les éléments de la carte")), h("ul", { class: "mapfilters__list" }, rows)),
       // Le bouton reprend exactement la place et l'aspect du bouton filtre de la carte : son icône « curseurs »
       // pivote et se change en croix à l'ouverture, puis fait le chemin inverse à la fermeture.
       h(
@@ -49,7 +50,7 @@ export async function createMapFiltersPanel() {
         {
           class: "mapfilters__confirm",
           type: "button",
-          "aria-label": "Fermer",
+          "aria-label": tr("Fermer"),
           onclick: (event) => event.currentTarget.dispatchEvent(new CustomEvent("close-overlay", { bubbles: true })),
         },
         img("assets/sliders.png", { class: "mapfilters__morph mapfilters__morph--filter" }),

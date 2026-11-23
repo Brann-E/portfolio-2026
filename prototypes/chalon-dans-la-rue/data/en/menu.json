@@ -1,0 +1,112 @@
+{
+  "title": "Menu",
+  "primary": [
+    {
+      "icon": "assets/chapiteau.png",
+      "label": "Discover the festival venues",
+      "page": "lieux"
+    },
+    {
+      "icon": "assets/decoration.png",
+      "label": "Discover the social venues",
+      "page": "convivialite"
+    },
+    {
+      "icon": "assets/carte-icon.png",
+      "label": "Discover the festival areas",
+      "page": "zones"
+    },
+    {
+      "icon": "assets/pierre-rosette.png",
+      "label": "Read the story of the festival",
+      "page": "histoire"
+    },
+    {
+      "icon": "assets/entente.png",
+      "label": "Our supporters",
+      "page": "soutiens"
+    },
+    {
+      "icon": "assets/internet.png",
+      "label": "Visit the official website",
+      "href": "https://www.chalondanslarue.com/"
+    }
+  ],
+  "settings": {
+    "icon": "assets/parametres.png",
+    "label": "Settings",
+    "items": [
+      {
+        "label": "Notifications",
+        "page": "notifications"
+      },
+      {
+        "label": "Map",
+        "action": "map-filters"
+      },
+      {
+        "label": "Accessibility",
+        "page": "accessibilite"
+      },
+      {
+        "label": "Preferences",
+        "page": "preferences"
+      },
+      {
+        "label": "Change avatar",
+        "page": "avatar"
+      }
+    ]
+  },
+  "secondary": [
+    {
+      "icon": "assets/discuter.png",
+      "label": "Help",
+      "page": "aide"
+    },
+    {
+      "icon": "assets/conditions.png",
+      "label": "Terms of use",
+      "page": "cgu"
+    },
+    {
+      "icon": "assets/doc-legal.png",
+      "label": "Legal notice",
+      "page": "mentions",
+      "variant": "legal"
+    },
+    {
+      "icon": "assets/microphone.png",
+      "label": "Send your feedback",
+      "page": "commentaires"
+    }
+  ],
+  "avatars": [
+    {
+      "id": "pitre",
+      "label": "Le clown",
+      "src": "assets/pitre.png"
+    },
+    {
+      "id": "chapeau",
+      "label": "Le chapeau",
+      "src": "assets/chapeau.png"
+    },
+    {
+      "id": "coeur",
+      "label": "Le cœur",
+      "src": "assets/coeur-brise.png"
+    },
+    {
+      "id": "jumelles",
+      "label": "Les jumelles",
+      "src": "assets/binoculars.png"
+    },
+    {
+      "id": "megaphone",
+      "label": "Le mégaphone",
+      "src": "assets/megaphone.png"
+    }
+  ],
+  "version": "Version 0.0.1-a383.564"
+}

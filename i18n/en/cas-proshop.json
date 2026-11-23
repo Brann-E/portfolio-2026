@@ -1,0 +1,824 @@
+{
+ "pairs": [
+  {
+   "fr": "Et si le meilleur outil de vente était celui qui ne remplace personne ? Relier le commercial au client qu'il connaît. Étude de cas.",
+   "en": "What if the best sales tool was the one that replaces no one? Connecting the salesperson to the customer they know. Case study."
+  },
+  {
+   "fr": "<span>Commerce</span>",
+   "en": "<span>Retail</span>"
+  },
+  {
+   "fr": "L'outil ne remplace pas la relation, il en devient le support",
+   "en": "The tool doesn't replace the relationship, it becomes its support"
+  },
+  {
+   "fr": "aria-label=\"Nature de la mission\"",
+   "en": "aria-label=\"Nature of the engagement\""
+  },
+  {
+   "fr": "E-commerce B2B",
+   "en": "B2B e-commerce"
+  },
+  {
+   "fr": "Recherche utilisateur",
+   "en": "User research"
+  },
+  {
+   "fr": ">Modèle cross-canal<",
+   "en": ">Cross-channel model<"
+  },
+  {
+   "fr": "Taskflows et blueprints",
+   "en": "Taskflows and blueprints"
+  },
+  {
+   "fr": "Schéma de la chaîne commerciale avant le projet : le client est relié au commercial itinérant et au vendeur en magasin par un trait épais, la confiance et le conseil, que la désintermédiation allait couper ; le client commande seul sur le Proshop, qui ne sait pas tout faire ; le Proshop renvoie vers le support, en pointillé, les tickets, c'est-à-dire la charge que l'outil ne sait pas absorber ; rien n'outille les commerciaux ni les vendeurs.",
+   "en": "Diagram of the sales chain before the project: the customer is linked to the field salesperson and the in-store salesperson by a thick line, trust and advice, which disintermediation was about to cut; the customer orders alone on the Proshop, which can't do everything; the Proshop sends back to support, dotted, the tickets, that is, the load the tool can't absorb; nothing equips the salespeople."
+  },
+  {
+   "fr": "Schéma du modèle cross-canal : au centre, le Proshop, plateforme unique ; autour, trois porteurs de la commande qui y passent commande, le client en autonomie pour le réassort, l'article connu et l'urgence, le commercial itinérant pour le conseil, le chantier et le dépannage, et le vendeur en magasin ; un trait pointillé relie le client et le commercial, la relation conservée ; en sortie, une vue unique sur ce qui se vend, quel que soit le chemin.",
+   "en": "Diagram of the cross-channel model: in the center, the Proshop, a single platform; around it, three carriers of the order who place orders on it, the self-serving customer for restocking, the known item and the emergency, the field salesperson for advice, the job site and troubleshooting, and the in-store salesperson; a dotted line links the customer and the salesperson, the preserved relationship; as output, a single view of what sells, whatever the path."
+  },
+  {
+   "fr": "Schéma de l'architecture d'information produit : un même référentiel d'attributs, construit à partir du catalogue par familles (panneaux, onduleurs, gestion de l'énergie, fixations, PAC, climatisation, eau chaude, accessoires), sert deux usages. À gauche, la navigation à double entrée : entrer par marque fait remonter le filtre catégorie, entrer par catégorie fait remonter le filtre marque, le menu choisi remontant d'abord le filtre complémentaire. À droite, la structure de la page produit en quatre niveaux : la catégorie comme filtre primaire, la caractéristique filtrante, la caractéristique affichée sur la fiche, la caractéristique élémentaire, complétées des téléchargements (datasheet, certificats CE et VDE).",
+   "en": "Diagram of the product information architecture: a single attribute reference, built from the catalog by family (panels, inverters, energy management, mounting, heat pumps, air conditioning, hot water, accessories), serves two uses. On the left, navigation with two entry points: entering by brand brings up the category filter, entering by category brings up the brand filter, the chosen menu bringing up the complementary filter first. On the right, the product page structure in four levels: the category as primary filter, the filtering feature, the feature shown on the product sheet, the elementary feature, completed by downloads (datasheet, CE and VDE certificates)."
+  },
+  {
+   "fr": ">confiance,<",
+   "en": ">trust,<"
+  },
+  {
+   "fr": ">conseil<",
+   "en": ">advice<"
+  },
+  {
+   "fr": ">Les clients<",
+   "en": ">Customers<"
+  },
+  {
+   "fr": ">Les commerciaux<",
+   "en": ">Field<"
+  },
+  {
+   "fr": ">itinérants<",
+   "en": ">salespeople<"
+  },
+  {
+   "fr": ">rien ne les outille<",
+   "en": ">nothing equips them<"
+  },
+  {
+   "fr": ">Les vendeurs<",
+   "en": ">In-store<"
+  },
+  {
+   "fr": ">en magasin<",
+   "en": ">sales staff<"
+  },
+  {
+   "fr": ">commande seul<",
+   "en": ">orders alone<"
+  },
+  {
+   "fr": ">Le Proshop<",
+   "en": ">The Proshop<"
+  },
+  {
+   "fr": ">ne sait pas tout faire<",
+   "en": ">can't do everything<"
+  },
+  {
+   "fr": ">des tickets, pour ce que<",
+   "en": ">tickets, for what<"
+  },
+  {
+   "fr": ">l'outil ne sait pas faire<",
+   "en": ">the tool can't do<"
+  },
+  {
+   "fr": ">Le support<",
+   "en": ">Support<"
+  },
+  {
+   "fr": ">absorbe la charge<",
+   "en": ">absorbs the load<"
+  },
+  {
+   "fr": "Ce qui circulait dans la chaîne commerciale. Le trait épais, la confiance et le conseil entre le client et son commercial, est ce que la désintermédiation allait couper ; le pointillé rose, la charge que le support absorbait en tickets.",
+   "en": "What was circulating in the sales chain. The thick line, trust and advice between the customer and their salesperson, is what disintermediation was about to cut; the dotted pink line, the load that support absorbed in tickets."
+  },
+  {
+   "fr": ">Avant<",
+   "en": ">Before<"
+  },
+  {
+   "fr": ">Après<",
+   "en": ">After<"
+  },
+  {
+   "fr": ">la relation, conservée<",
+   "en": ">the relationship, preserved<"
+  },
+  {
+   "fr": ">Le client,<",
+   "en": ">The customer,<"
+  },
+  {
+   "fr": ">en autonomie<",
+   "en": ">self-serving<"
+  },
+  {
+   "fr": ">réassort,<",
+   "en": ">restocking,<"
+  },
+  {
+   "fr": ">article connu,<",
+   "en": ">known item,<"
+  },
+  {
+   "fr": ">urgence<",
+   "en": ">urgency<"
+  },
+  {
+   "fr": ">Le commercial<",
+   "en": ">The field<"
+  },
+  {
+   "fr": ">itinérant<",
+   "en": ">salesperson<"
+  },
+  {
+   "fr": ">Le vendeur<",
+   "en": ">The in-store<"
+  },
+  {
+   "fr": ">conseil,<",
+   "en": ">advice,<"
+  },
+  {
+   "fr": ">chantier,<",
+   "en": ">job site,<"
+  },
+  {
+   "fr": ">dépannage<",
+   "en": ">troubleshooting<"
+  },
+  {
+   "fr": ">passe commande<",
+   "en": ">places an order<"
+  },
+  {
+   "fr": ">Le Proshop,<",
+   "en": ">The Proshop,<"
+  },
+  {
+   "fr": ">plateforme unique<",
+   "en": ">single platform<"
+  },
+  {
+   "fr": ">Une vue unique sur ce qui se vend,<",
+   "en": ">A single view of what sells,<"
+  },
+  {
+   "fr": ">quel que soit le chemin<",
+   "en": ">whatever the path<"
+  },
+  {
+   "fr": "Le modèle cross-canal : une seule plateforme, trois porteurs de la commande.",
+   "en": "The cross-channel model: a single platform, three carriers of the order."
+  },
+  {
+   "fr": ">Stack technique<",
+   "en": ">Tech stack<"
+  },
+  {
+   "fr": ">Durée (année)<",
+   "en": ">Duration (year)<"
+  },
+  {
+   "fr": ">9 mois (2022)<",
+   "en": ">9 months (2022)<"
+  },
+  {
+   "fr": "<dt>Rôles</dt>",
+   "en": "<dt>Roles</dt>"
+  },
+  {
+   "fr": "<dt>Équipe</dt>",
+   "en": "<dt>Team</dt>"
+  },
+  {
+   "fr": "<dt>Rencontrés</dt>",
+   "en": "<dt>People met</dt>"
+  },
+  {
+   "fr": ", et des clients au profil cible (ICP)",
+   "en": ", and customers matching the target profile (ICP)"
+  },
+  {
+   "fr": "<dt>Périmètre</dt>",
+   "en": "<dt>Scope</dt>"
+  },
+  {
+   "fr": ">40 entretiens → Modèle cross-canal → 6 livrables<",
+   "en": ">40 interviews → Cross-channel model → 6 deliverables<"
+  },
+  {
+   "fr": ">Benchmark, taskflows, matrice d'impact, architecture d'information, plan de site, audits<",
+   "en": ">Benchmark, taskflows, impact matrix, information architecture, sitemap, audits<"
+  },
+  {
+   "fr": ">Le produit<",
+   "en": ">The product<"
+  },
+  {
+   "fr": "On m'a demandé de désintermédier la vente. La relation commerciale était justement ce qui faisait tenir l'entreprise.",
+   "en": "I was asked to disintermediate sales. The sales relationship was precisely what held the company together."
+  },
+  {
+   "fr": "Alaska Energies, désormais MyLight150, distribue des fournitures pour le bâtiment à énergie positive. Sa plateforme e-commerce, le Proshop, ne pèse que 2,5 % des ventes malgré des investissements répétés : parcours illisible, paniers abandonnés, catalogue défaillant.",
+   "en": "Alaska Energies, now MyLight150, distributes supplies for positive-energy buildings. Its e-commerce platform, the Proshop, accounts for only 2.5% of sales despite repeated investment: illegible journey, abandoned carts, faulty catalog."
+  },
+  {
+   "fr": "J'interviens comme product designer pour la refondre, avec un accès rare : l'ensemble de la chaîne commerciale, des acheteurs aux magasiniers, et les clients eux-mêmes.",
+   "en": "I come in as product designer to rebuild it, with rare access: the entire sales chain, from buyers to warehouse staff, and the customers themselves."
+  },
+  {
+   "fr": "Et si le meilleur outil de vente était celui qui ne remplace personne ?",
+   "en": "What if the best sales tool was the one that replaces no one?"
+  },
+  {
+   "fr": ">entretiens, dans toute la chaîne commerciale et chez les clients<",
+   "en": ">interviews, across the whole sales chain and among customers<"
+  },
+  {
+   "fr": "livrables qui posent les fondations d'un modèle de vente resté valable",
+   "en": "deliverables that lay the foundations of a sales model that has remained valid"
+  },
+  {
+   "fr": ">Arrêt<",
+   "en": ">Halt<"
+  },
+  {
+   "fr": "du projet, faute d'accord entre les décideurs sur la solution technique",
+   "en": "of the project, for lack of agreement among decision-makers on the technical solution"
+  },
+  {
+   "fr": "data-sans-grille>Produit<",
+   "en": "data-sans-grille>Product<"
+  },
+  {
+   "fr": "data-sans-grille>Stratégie<",
+   "en": "data-sans-grille>Strategy<"
+  },
+  {
+   "fr": ">Retenu<",
+   "en": ">Chosen<"
+  },
+  {
+   "fr": ">Écarté<",
+   "en": ">Rejected<"
+  },
+  {
+   "fr": ">Décision et conséquences<",
+   "en": ">Decision and consequences<"
+  },
+  {
+   "fr": "Faut-il retirer l'humain du parcours de vente, ou outiller la relation ?",
+   "en": "Should we remove the human from the sales journey, or equip the relationship?"
+  },
+  {
+   "fr": "Un modèle cross-canal : une plateforme unique où le client, le commercial itinérant et le vendeur en magasin passent commande.",
+   "en": "A cross-channel model: a single platform where the customer, the field salesperson and the in-store salesperson all place orders."
+  },
+  {
+   "fr": "Désintermédier la vente : retirer l'humain du parcours, comme le fait un e-commerce classique.",
+   "en": "Disintermediate sales: remove the human from the journey, as a classic e-commerce site does."
+  },
+  {
+   "fr": "L'outil cesse de remplacer la relation pour devenir son support. Une fonctionnalité qui affaiblissait la relation commerciale était écartée, même si elle simplifiait le parcours.",
+   "en": "The tool stops replacing the relationship and becomes its support. A feature that weakened the sales relationship was ruled out, even if it simplified the journey."
+  },
+  {
+   "fr": "Faut-il corriger le tunnel de commande, ou écouter toute la chaîne avant de dessiner ?",
+   "en": "Should we fix the order funnel, or listen to the whole chain before drawing anything?"
+  },
+  {
+   "fr": "Écouter toute la chaîne commerciale et des clients au profil cible : quarante entretiens, avant de toucher au parcours.",
+   "en": "Listen to the whole sales chain and to customers matching the target profile: forty interviews, before touching the journey."
+  },
+  {
+   "fr": "Fluidifier le tunnel, assainir le catalogue, refaire l'interface : un problème de e-commerce classique.",
+   "en": "Smooth the funnel, clean up the catalog, redo the interface: a classic e-commerce problem."
+  },
+  {
+   "fr": "Le regard se déplace : les clients ne demandaient pas moins de relation, mais de choisir quand elle sert le plus. Il fallait outiller les commerciaux et donner de l'autonomie au client.",
+   "en": "The perspective shifts: customers weren't asking for less relationship, but to choose when it serves them most. We had to equip the salespeople and give customers autonomy."
+  },
+  {
+   "fr": "Faut-il voir la relation commerciale comme un coût à réduire, ou comme un actif ?",
+   "en": "Should we see the sales relationship as a cost to reduce, or as an asset?"
+  },
+  {
+   "fr": "Défendre le modèle cross-canal : la valeur vient de ce qui se joue entre les commerciaux et leurs clients.",
+   "en": "Defend the cross-channel model: the value comes from what happens between salespeople and their customers."
+  },
+  {
+   "fr": "Voir dans la digitalisation un moyen de réduire la force commerciale, en tenant les ventes pour acquises.",
+   "en": "See digitalization as a way to reduce the sales force, taking sales for granted."
+  },
+  {
+   "fr": "Le modèle demandait à la direction de changer une croyance : la relation commerciale comme coût. La délibération sur la solution technique s'est étirée, le périmètre a glissé vers un portail de services, puis le projet s'est arrêté.",
+   "en": "The model asked management to change a belief: the sales relationship as a cost. The deliberation on the technical solution dragged on, the scope slid toward a services portal, then the project stopped."
+  },
+  {
+   "fr": ">Le résumé<",
+   "en": ">The summary<"
+  },
+  {
+   "fr": ">Le problème posé<",
+   "en": ">The problem as posed<"
+  },
+  {
+   "fr": ">Une plateforme qui coûte cher et ne vend rien<",
+   "en": ">A platform that costs a lot and sells nothing<"
+  },
+  {
+   "fr": "Le Proshop ne représente que 2,5 % des ventes malgré des investissements substantiels et une refonte déjà avortée : parcours illisible, paniers abandonnés, catalogue défaillant. On me demande de refaire le Proshop et de simplifier le parcours d'achat.",
+   "en": "The Proshop accounts for only 2.5% of sales despite substantial investment and an already aborted redesign: illegible journey, abandoned carts, faulty catalog. I'm asked to rebuild the Proshop and simplify the buying journey."
+  },
+  {
+   "fr": ">Le déplacement<",
+   "en": ">The shift<"
+  },
+  {
+   "fr": ">Ce qu'on prenait pour un frein était le principal actif<",
+   "en": ">What was taken for a brake was the main asset<"
+  },
+  {
+   "fr": "Quarante entretiens, dans toute la chaîne commerciale et chez les clients. Ils ne voulaient pas se passer des commerciaux : ils voulaient agir seuls là où le commercial n'apporte rien, et le garder partout ailleurs.",
+   "en": "Forty interviews, across the whole sales chain and among customers. They didn't want to do without salespeople: they wanted to act alone where the salesperson adds nothing, and keep them everywhere else."
+  },
+  {
+   "fr": ">L'instrument<",
+   "en": ">The instrument<"
+  },
+  {
+   "fr": ">Un modèle cross-canal, où l'outil devient le support de la relation<",
+   "en": ">A cross-channel model, where the tool becomes the support of the relationship<"
+  },
+  {
+   "fr": "Une plateforme unique où toutes les commandes sont passées, portées par le client, le commercial itinérant ou le vendeur en magasin. L'outil ne remplace pas la relation : il en devient le support.",
+   "en": "A single platform where all orders are placed, carried by the customer, the field salesperson or the in-store salesperson. The tool doesn't replace the relationship: it becomes its support."
+  },
+  {
+   "fr": ">Le champ ouvert<",
+   "en": ">The open field<"
+  },
+  {
+   "fr": ">Une fois la vente pensée en cross-canal, tout devient formulable<",
+   "en": ">Once sales is thought through cross-channel, everything can be articulated<"
+  },
+  {
+   "fr": "Quatre chantiers s'ouvrent : des règles commerciales explicites, une plateforme interconnectée (CRM, ERP, WMS, TMS, CPQ), des processus sans boucle, le B2B enfin adressable.",
+   "en": "Four workstreams open up: explicit commercial rules, an interconnected platform (CRM, ERP, WMS, TMS, CPQ), loop-free processes, B2B finally addressable."
+  },
+  {
+   "fr": ">Ce qu'il en reste<",
+   "en": ">What remains<"
+  },
+  {
+   "fr": ">Le raisonnement était juste. L'alignement n'a pas suivi.<",
+   "en": ">The reasoning was right. The alignment didn't follow.<"
+  },
+  {
+   "fr": "Le choix de la solution technique n'a pas trouvé d'accord entre les décideurs. Le projet a glissé vers un portail de services, puis s'est arrêté. Les livrables ont posé les fondations d'un modèle de vente qui restait valable.",
+   "en": "The choice of technical solution found no agreement among decision-makers. The project slid toward a services portal, then stopped. The deliverables laid the foundations of a sales model that remained valid."
+  },
+  {
+   "fr": ">Ma pratique ?<",
+   "en": ">My practice?<"
+  },
+  {
+   "fr": ">Ce que ce projet a ancré dans ma pratique<",
+   "en": ">What this project anchored in my practice<"
+  },
+  {
+   "fr": "Un outil ne remplace pas une relation, il lui donne les moyens d'exister. Et un raisonnement juste ne suffit pas : encore faut-il que ceux qui décident puissent voir ce qu'il rend possible.",
+   "en": "A tool doesn't replace a relationship, it gives it the means to exist. And sound reasoning isn't enough: those who decide must also be able to see what it makes possible."
+  },
+  {
+   "fr": ">Le détail<",
+   "en": ">The detail<"
+  },
+  {
+   "fr": "Alaska Energies distribue des fournitures pour le bâtiment à énergie positive. Son Proshop,la plateforme de commande en ligne, accumule les difficultés : parcours de commande incompréhensible, erreurs de transaction, filtres inopérants, stocks obsolètes affichant des ruptures au moment du paiement.",
+   "en": "Alaska Energies distributes supplies for positive-energy buildings. Its Proshop, the online ordering platform, piles up difficulties: an incomprehensible order journey, transaction errors, filters that don't work, obsolete stock showing out-of-stock at payment time."
+  },
+  {
+   "fr": "Le résultat est sans appel : malgré des investissements substantiels et une tentative de refonte déjà avortée, la plateforme ne représente que 2,5% des ventes. Les paniers s'abandonnent, les clients ne reviennent pas, et les équipes support absorbent en tickets ce que l'outil ne sait pas faire.",
+   "en": "The result is damning: despite substantial investment and a redesign attempt already aborted, the platform accounts for only 2.5% of sales. Carts are abandoned, customers don't come back, and support teams absorb in tickets what the tool can't do."
+  },
+  {
+   "fr": "Refaire le Proshop. Simplifier le parcours d'achat.<br>Voilà ce qu'on me demandait de regarder.",
+   "en": "Rebuild the Proshop. Simplify the buying journey.<br>That is what I was asked to look at."
+  },
+  {
+   "fr": "L'urgence est réelle : partout en Europe, des concurrents proposent des parcours où l'on commande en trois clics. Posé ainsi, c'est un problème de e-commerce classique : un tunnel à fluidifier, un catalogue à assainir, une interface à refaire.",
+   "en": "The urgency is real: all over Europe, competitors offer journeys where you order in three clicks. Put that way, it's a classic e-commerce problem: a funnel to smooth, a catalog to clean up, an interface to redo."
+  },
+  {
+   "fr": "La réponse était déjà écrite dans la commande&#8239;: désintermédier la vente, avant même d'avoir regardé qui vendait à qui. C'est le piège de la solution prématurée, une réponse arrêtée avant que la question soit posée.",
+   "en": "The answer was already written into the order: disintermediate sales, before even looking at who sold to whom. It is the trap of the premature solution, an answer settled before the question is posed."
+  },
+  {
+   "fr": "J'ai eu un accès rare : toute la chaîne commerciale disponible pour la recherche - service achats, commerciaux itinérants, administration des ventes, vendeurs en magasin, logistique, finance, marketing, support - et des clients correspondant au profil cible (ICP : Ideal Customer Profile). Quarante entretiens, en interne comme au dehors.",
+   "en": "I had rare access: the whole sales chain available for research - purchasing, field salespeople, sales administration, in-store salespeople, logistics, finance, marketing, support - and customers matching the target profile (ICP: Ideal Customer Profile). Forty interviews, internal and external."
+  },
+  {
+   "fr": "Exemple de profil de client cible (ICP) : une PME de 150 000 à 400 000 € par an, qui réalise 10 à 30 installations par an, une petite structure avec un responsable commercial et un responsable technique, en forte croissance, qui effectue au moins 60 % de ses achats chez nous.",
+   "en": "Example of an ideal customer profile (ICP): a small business with €150,000 to €400,000 in annual revenue, doing 10 to 30 installations a year, a small structure with a sales manager and a technical manager, growing fast, that makes at least 60% of its purchases from us."
+  },
+  {
+   "fr": "Exemples de ICP, pour identifier les clients à prioriser dans notre recherche.",
+   "en": "Examples of ICPs, to identify the customers to prioritize in our research."
+  },
+  {
+   "fr": "Le diagnostic attendu s'est confirmé sans surprise : 40% des paniers abandonnés à cause d'un tunnel de commande trop complexe, des stocks inexacts, des descriptions produits incomplètes, des équipes qui perdent leurs journées à réparer ce que l'outil ne fait pas. Des redondances partout, des processus en boucle, une frustration installée des deux côtés.",
+   "en": "The expected diagnosis was confirmed without surprise: 40% of carts abandoned because of an overly complex order funnel, inaccurate stock, incomplete product descriptions, teams losing their days repairing what the tool doesn't do. Redundancies everywhere, looping processes, frustration settled on both sides."
+  },
+  {
+   "fr": "Mais c'est en écoutant les clients que le regard s'est déplacé. Ce qu'ils décrivaient n'était pas le désir de se passer des commerciaux. C'était l'inverse ! La relation avec les équipes de vente était ce qu'ils valorisaient le plus dans cette entreprise : la connaissance produit, le conseil sur un chantier, le dépannage. Ce qu'ils voulaient, c'était pouvoir agir seuls <em>là où le commercial n'apportait rien</em> : une commande de réassort, un article déjà connu, une urgence de fin de journée.",
+   "en": "But it was by listening to customers that the perspective shifted. What they described was not a wish to do without salespeople. It was the opposite! The relationship with the sales teams was what they valued most about this company: product knowledge, advice on a job, troubleshooting. What they wanted was to be able to act alone <em>where the salesperson added nothing</em>: a restocking order, an already known item, an end-of-day emergency."
+  },
+  {
+   "fr": "Ils ne demandaient pas moins de relation.<br>Ils demandaient de choisir quand elle sert le plus.",
+   "en": "They weren't asking for less relationship.<br>They were asking to choose when it serves them most."
+  },
+  {
+   "fr": "Le brief supposait qu'une bonne plateforme désintermédie la vente, que le progrès consiste à retirer l'humain du parcours. La recherche disait le contraire : dans ce marché, l'humain <em>était</em> l'avantage concurrentiel. Le problème n'était pas qu'il y ait des commerciaux dans le circuit ; c'était que rien ne les outillait, et que le client n'avait aucune autonomie quand il en voulait.",
+   "en": "The brief assumed that a good platform disintermediates sales, that progress consists in removing the human from the journey. The research said the opposite: in this market, the human <em>was</em> the competitive advantage. The problem wasn't that there were salespeople in the loop; it was that nothing equipped them, and that the customer had no autonomy when they wanted it."
+  },
+  {
+   "fr": "Value Proposition Canvas à double profil : au centre, une seule proposition de valeur regroupant produits, services et solutions techniques ; à droite, deux profils reliés à cette même offre, les équipes internes et le client, chacun avec ses gains, ses tâches à accomplir et ses peines, et des scores par critère.",
+   "en": "Dual-profile Value Proposition Canvas: in the center, a single value proposition grouping products, services and technical solutions; on the right, two profiles linked to that same offer, the internal teams and the customer, each with their gains, jobs to be done and pains, and scores by criterion."
+  },
+  {
+   "fr": "La proposition de valeur, à double entrée&#8239;: une seule offre devait répondre en même temps au client et aux équipes internes. C'est cette lecture croisée qui a montré que l'humain n'était pas la friction à retirer, mais l'actif à outiller.",
+   "en": "The value proposition, with two entries: a single offer had to answer the customer and the internal teams at the same time. It is this cross reading that showed the human was not the friction to remove, but the asset to equip."
+  },
+  {
+   "fr": "Ce qui circulait dans la chaîne commerciale. Le trait épais, la confiance et le conseil entre le client et son commercial, est ce que la désintermédiation allait couper&#8239;; le pointillé rose, la charge que le support absorbait en tickets.",
+   "en": "What was circulating in the sales chain. The thick line, trust and advice between the customer and their salesperson, is what disintermediation was about to cut; the dotted pink line, the load that support absorbed in tickets."
+  },
+  {
+   "fr": ">Ce qui circulait<",
+   "en": ">What was circulating<"
+  },
+  {
+   "fr": "La confiance et le conseil, entre chaque client et son commercial&#8239;: c'est ce que la désintermédiation allait couper.",
+   "en": "Trust and advice, between each customer and their salesperson: this is what disintermediation was about to cut."
+  },
+  {
+   "fr": "La connaissance produit et le dépannage, qui ne passaient que par les équipes de vente.",
+   "en": "Product knowledge and troubleshooting, which only went through the sales teams."
+  },
+  {
+   "fr": "Une charge, celle du support, qui absorbait en tickets ce que l'outil ne savait pas faire.",
+   "en": "A load, that of support, which absorbed in tickets what the tool couldn't do."
+  },
+  {
+   "fr": "De ce déplacement découle le modèle qui a structuré tout le projet : une plateforme unique où toutes les commandes sont passées, mais portées par des acteurs différents : le client lui-même, le commercial itinérant, le vendeur en magasin.",
+   "en": "From this shift follows the model that structured the whole project: a single platform where all orders are placed, but carried by different actors: the customer themselves, the field salesperson, the in-store salesperson."
+  },
+  {
+   "fr": "Le renversement est simple à énoncer et change tout. On ne construit plus un canal de vente qui concurrence les commerciaux ; on construit l'outil commun sur lequel ils s'appuient tous. Le client gagne son autonomie sans perdre son interlocuteur. Le commercial cesse de saisir des bons de commande pour redevenir conseil. Et l'entreprise récupère une vue unique sur ce qui se vend, quel que soit le chemin emprunté.",
+   "en": "The reversal is simple to state and changes everything. We no longer build a sales channel that competes with salespeople; we build the common tool they all rely on. The customer gains autonomy without losing their contact. The salesperson stops keying in purchase orders and goes back to advising. And the company gets a single view of what sells, whatever the path taken."
+  },
+  {
+   "fr": "L'outil ne remplace pas la relation.<br>Il en devient le support.",
+   "en": "The tool doesn't replace the relationship.<br>It becomes its support."
+  },
+  {
+   "fr": "Le modèle cross-canal&#8239;: une seule plateforme, trois porteurs de la commande.",
+   "en": "The cross-channel model: a single platform, three carriers of the order."
+  },
+  {
+   "fr": "Une fonctionnalité qui affaiblissait la relation commerciale était écartée, même si elle simplifiait le parcours.",
+   "en": "A feature that weakened the sales relationship was ruled out, even if it simplified the journey."
+  },
+  {
+   "fr": "Ce modèle a servi de test pour chaque arbitrage. Une fonctionnalité qui donnait de l'autonomie sans couper le lien passait en priorité.",
+   "en": "This model served as a test for every trade-off. A feature that gave autonomy without cutting the link took priority."
+  },
+  {
+   "fr": "Schéma : le client veut pouvoir choisir entre autonomie et contact ; le personnel de vente peut ainsi consacrer plus de temps aux nouveaux clients.",
+   "en": "Diagram: the customer wants to be able to choose between autonomy and contact; sales staff can thus spend more time on new customers."
+  },
+  {
+   "fr": "Schéma : le client souhaite un suivi simple et efficace de sa commande et connaître le statut de l'expédition ; les employés peuvent allouer du temps à des tâches autres que la surveillance.",
+   "en": "Diagram: the customer wants simple, effective tracking of their order and to know the shipping status; employees can allocate time to tasks other than monitoring."
+  },
+  {
+   "fr": "Schéma : le client souhaite une gestion et une consultation simplifiées de son historique d'achat ; les commerciaux utilisent ces outils pour échanger des informations avec leurs clients sur une base commune.",
+   "en": "Diagram: the customer wants simplified management and consultation of their purchase history; salespeople use these tools to exchange information with their customers on a common basis."
+  },
+  {
+   "fr": "Exemples de problématiques externes qui apportent de la valeur en interne.",
+   "en": "Examples of external issues that bring value internally."
+  },
+  {
+   "fr": "Le modèle posé, un ensemble de chantiers s'ouvre, dont aucun n'était formulable tant qu'on raisonnait en pensant le tunnel e-commerce comme isolé.",
+   "en": "Once the model is set, a set of workstreams opens up, none of which could be formulated as long as we thought of the e-commerce funnel as isolated."
+  },
+  {
+   "fr": ">Des règles commerciales explicites<",
+   "en": ">Explicit commercial rules<"
+  },
+  {
+   "fr": "Remises simplifiées, conditions de port et barème clarifiés, règles d'encours définies, primes de fin d'année cadrées, et un mécanisme de calcul de marge brute qui valide ou bloque une vente avant qu'elle ne parte.",
+   "en": "Simplified discounts, clarified shipping terms and rate scale, defined credit-limit rules, framed year-end bonuses, and a gross margin calculation mechanism that validates or blocks a sale before it goes out."
+  },
+  {
+   "fr": ">Une plateforme interconnectée<",
+   "en": ">An interconnected platform<"
+  },
+  {
+   "fr": "Le Proshop cesse d'être une île : connexion au CRM, à l'ERP, au WMS, au TMS et au CPQ, pour que la donnée circule au lieu d'être ressaisie à chaque étape.",
+   "en": "The Proshop stops being an island: connection to the CRM, ERP, WMS, TMS and CPQ, so that data flows instead of being re-entered at every step."
+  },
+  {
+   "fr": ">Des processus sans boucle<",
+   "en": ">Loop-free processes<"
+  },
+  {
+   "fr": "Une fonction clé attribuée à une personne identifiée pour casser les allers-retours, et un commercial référent affecté à chaque client pour traiter ses problèmes de bout en bout.",
+   "en": "A key function assigned to an identified person to break the back-and-forth, and a lead salesperson assigned to each customer to handle their problems end to end."
+  },
+  {
+   "fr": ">Le B2B enfin adressable<",
+   "en": ">B2B finally addressable<"
+  },
+  {
+   "fr": "Commandes en volume, parcours d'entrée pour les partenariats importants, et une architecture pensée pour absorber la croissance plutôt que la subir.",
+   "en": "Bulk orders, an entry journey for major partnerships, and an architecture designed to absorb growth rather than endure it."
+  },
+  {
+   "fr": "Ces quatre chantiers dépassent le e-commerce. Dès que l'outil sert la relation, on conçoit un modèle de vente, et plus seulement un tunnel d'achat.",
+   "en": "These four workstreams go beyond e-commerce. As soon as the tool serves the relationship, you are designing a sales model, and no longer just a purchase funnel."
+  },
+  {
+   "fr": "Le travail a produit un ensemble de livrables qui posaient les fondations du nouveau modèle de vente :",
+   "en": "The work produced a set of deliverables that laid the foundations of the new sales model:"
+  },
+  {
+   "fr": "Benchmark des solutions capables d'héberger le Proshop",
+   "en": "Benchmark of the solutions able to host the Proshop"
+  },
+  {
+   "fr": "Taskflows du nouveau modèle de vente pour chaque service, et blueprints là où la stack technique était engagée",
+   "en": "Taskflows of the new sales model for each department, and blueprints where the tech stack was committed"
+  },
+  {
+   "fr": "Matrice d'impact pour prioriser les fonctionnalités",
+   "en": "Impact matrix to prioritize features"
+  },
+  {
+   "fr": "Architecture d'information et wireframes des pages produit",
+   "en": "Information architecture and wireframes of the product pages"
+  },
+  {
+   "fr": "Plan de site intégrant l'ensemble des familles de produits et leurs filtres",
+   "en": "Sitemap covering all product families and their filters"
+  },
+  {
+   "fr": "Audits des solutions et des prestataires au regard des ambitions posées",
+   "en": "Audits of solutions and vendors against the stated ambitions"
+  },
+  {
+   "fr": "Taskflow du scénario « Commercial itinérant avec nouveau lead »&#8239;: le client accueille un commercial pour discuter de ses besoins, puis le parcours se déroule en couloirs par acteur et par système, le client, le rendez-vous accompagné, la relation commerciale, le paiement et la logistique, avec les étapes, les points de décision et les documents échangés.",
+   "en": "Taskflow of the “Field salesperson with a new lead” scenario: the customer welcomes a salesperson to discuss their needs, then the journey unfolds in lanes by actor and by system, the customer, the accompanied meeting, the sales relationship, payment and logistics, with the steps, decision points and documents exchanged."
+  },
+  {
+   "fr": "Le modèle de vente déroulé sur un parcours réel&#8239;: un client reçoit un commercial itinérant pour un nouveau besoin. Chaque acteur et chaque système a son couloir, de la prise de contact à la livraison.",
+   "en": "The sales model played out on a real journey: a customer receives a field salesperson for a new need. Each actor and each system has its own lane, from first contact to delivery."
+  },
+  {
+   "fr": ">LE CATALOGUE, PAR FAMILLES<",
+   "en": ">THE CATALOG, BY FAMILY<"
+  },
+  {
+   "fr": ">Panneaux<",
+   "en": ">Panels<"
+  },
+  {
+   "fr": ">Onduleurs<",
+   "en": ">Inverters<"
+  },
+  {
+   "fr": ">Gestion énergie<",
+   "en": ">Energy management<"
+  },
+  {
+   "fr": ">Fixations<",
+   "en": ">Mounting<"
+  },
+  {
+   "fr": ">PAC<",
+   "en": ">Heat pumps<"
+  },
+  {
+   "fr": ">Climatisation<",
+   "en": ">Air conditioning<"
+  },
+  {
+   "fr": ">Eau chaude<",
+   "en": ">Hot water<"
+  },
+  {
+   "fr": ">Accessoires<",
+   "en": ">Accessories<"
+  },
+  {
+   "fr": ">Un même référentiel d'attributs produit<",
+   "en": ">A single product attribute reference<"
+  },
+  {
+   "fr": ">marque · puissance · type · rendement · cellules · certifications…<",
+   "en": ">brand · power · type · efficiency · cells · certifications…<"
+  },
+  {
+   "fr": ">Naviguer, à double entrée<",
+   "en": ">Navigating, with two entry points<"
+  },
+  {
+   "fr": ">Par marque<",
+   "en": ">By brand<"
+  },
+  {
+   "fr": ">filtre Catégorie<",
+   "en": ">Category filter<"
+  },
+  {
+   "fr": ">Par catégorie<",
+   "en": ">By category<"
+  },
+  {
+   "fr": ">filtre Marque<",
+   "en": ">Brand filter<"
+  },
+  {
+   "fr": ">Le menu choisi fait remonter en premier<",
+   "en": ">The chosen menu brings up first<"
+  },
+  {
+   "fr": ">le filtre complémentaire.<",
+   "en": ">the complementary filter.<"
+  },
+  {
+   "fr": ">Structurer la page produit, en 4 niveaux<",
+   "en": ">Structuring the product page, in 4 levels<"
+  },
+  {
+   "fr": ">Catégorie, le filtre primaire<",
+   "en": ">Category, the primary filter<"
+  },
+  {
+   "fr": ">Caractéristique filtrante<",
+   "en": ">Filtering feature<"
+  },
+  {
+   "fr": ">Caractéristique affichée sur la fiche<",
+   "en": ">Feature shown on the product sheet<"
+  },
+  {
+   "fr": ">Caractéristique élémentaire, le détail<",
+   "en": ">Elementary feature, the detail<"
+  },
+  {
+   "fr": ">Téléchargements&#8239;: datasheet · certificat CE · VDE<",
+   "en": ">Downloads: datasheet · CE certificate · VDE<"
+  },
+  {
+   "fr": "L'architecture d'information produit, distillée&#8239;: un seul référentiel d'attributs sert la navigation (des filtres à double entrée) et la structure de chaque page produit (quatre niveaux, de la catégorie au détail).",
+   "en": "The product information architecture, distilled: a single attribute reference serves navigation (filters with two entry points) and the structure of each product page (four levels, from category to detail)."
+  },
+  {
+   "fr": "Le blocage n'est pas venu du modèle, mais de ce qu'il demandait d'admettre. La direction voyait dans la digitalisation un moyen de réduire la force commerciale, et tenait pour acquis que les ventes suivraient d'elles-mêmes. Le modèle cross-canal disait l'inverse&#8239;: la valeur ne venait pas du canal, elle venait de ce qui se jouait entre les commerciaux et leurs clients; et un outil qui coupe ce lien ne produit pas d'économies, il produit une perte.",
+   "en": "The blockage did not come from the model, but from what it asked people to admit. Management saw in digitalization a way to reduce the sales force, and took for granted that sales would follow on their own. The cross-channel model said the opposite: value didn't come from the channel, it came from what happened between salespeople and their customers; and a tool that cuts that link doesn't produce savings, it produces a loss."
+  },
+  {
+   "fr": "Le modèle demandait à la direction de changer une croyance&#8239;: la relation commerciale comme coût. Donella Meadows range ce niveau, le paradigme, parmi les leviers les plus puissants d'un système, et parmi ceux qui résistent le plus. L'arrêt du projet l'illustre.",
+   "en": "The model asked management to change a belief: the sales relationship as a cost. Donella Meadows ranks this level, the paradigm, among the most powerful leverage points of a system, and among those that resist the most. The halt of the project illustrates it."
+  },
+  {
+   "fr": "C'est une conséquence difficile à se représenter tant qu'on n'a pas vu le système en entier. La délibération sur la solution technique s'est étirée, le périmètre a glissé vers un portail de services - informer le client, laisser la commande aux équipes de vente comme auparavant - puis le projet s'est arrêté.",
+   "en": "This is a consequence that's hard to picture until you've seen the whole system. The deliberation on the technical solution dragged on, the scope slid toward a services portal - informing the customer, leaving the ordering to the sales teams as before - then the project stopped."
+  },
+  {
+   "fr": ">Sur le produit<",
+   "en": ">On the product<"
+  },
+  {
+   "fr": "Un outil ne remplace pas une relation&#8239;;<br>au mieux, il lui donne les moyens d'exister.",
+   "en": "A tool doesn't replace a relationship;<br>at best, it gives it the means to exist."
+  },
+  {
+   "fr": "On m'avait demandé de retirer l'humain du parcours de vente, parce que c'est ce que fait un bon e-commerce. La recherche a montré que dans cette entreprise, l'humain était l'avantage, et que les clients ne réclamaient pas moins de relation, mais le droit de choisir quand elle leur sert. Ce projet est le premier où j'ai formulé ce qui est devenu ma question centrale, quatre ans avant de savoir la nommer.",
+   "en": "I had been asked to remove the human from the sales journey, because that is what good e-commerce does. The research showed that in this company, the human was the advantage, and that customers weren't asking for less relationship, but for the right to choose when it serves them. This project is the first where I formulated what became my central question, four years before I knew how to name it."
+  },
+  {
+   "fr": ">Sur la décision<",
+   "en": ">On decision-making<"
+  },
+  {
+   "fr": "Un raisonnement juste ne suffit pas à faire aboutir un projet&#8239;;<br>il faut que tous ceux qui décident puissent y voir le même avenir.",
+   "en": "Sound reasoning isn't enough to bring a project to completion;<br>everyone who decides must be able to see the same future in it."
+  },
+  {
+   "fr": "Ceux qui décidaient n'avaient pas tort de vouloir des économies&#8239;; ils ne pouvaient simplement pas voir ce que le modèle rendait possible, parce qu'ils regardaient depuis un endroit où la relation commerciale est un coût et non un actif. Depuis, je ne traite plus l'alignement comme une étape de fin de projet, mais comme une matière à travailler dès le premier jour, au même titre que la solution.",
+   "en": "Those who decided weren't wrong to want savings; they simply couldn't see what the model made possible, because they were looking from a place where the sales relationship is a cost and not an asset. Since then, I no longer treat alignment as an end-of-project step, but as material to work on from day one, alongside the solution."
+  },
+  {
+   "fr": "aria-label=\"Sections du détail\"",
+   "en": "aria-label=\"Detail sections\""
+  },
+  {
+   "fr": "aria-label=\"Un livre qui a nourri ce regard\"",
+   "en": "aria-label=\"A book that fed this perspective\""
+  },
+  {
+   "fr": "Couverture du livre The Design of Everyday Things, de Don Norman",
+   "en": "Cover of the book The Design of Everyday Things, by Don Norman"
+  },
+  {
+   "fr": ">Là où je quitte le paradigme de l'objet<",
+   "en": ">Where I leave the object paradigm<"
+  },
+  {
+   "fr": "Celui-l&agrave;, je le cite pour ce qu'il m'a appris autant que pour l'endroit pr&eacute;cis o&ugrave; je m'en s&eacute;pare&#8239;: <em>The Design of Everyday Things</em>, de Don Norman, le livre qui a form&eacute; des g&eacute;n&eacute;rations de designers - moi compris - &agrave; rendre les objets &eacute;vidents &agrave; utiliser.",
+   "en": "This one, I cite for what it taught me as much as for the precise point where I part from it: <em>The Design of Everyday Things</em>, by Don Norman, the book that trained generations of designers - myself included - to make objects obvious to use."
+  },
+  {
+   "fr": "Norman a raison sur l'objet&#8239;: un bon outil se passe de mode d'emploi, il guide la main sans un mot. Mais toute une discipline en a tir&eacute; un dogme&#8239;: le meilleur design est celui qui perfectionne l'<em>objet</em>, jusqu'&agrave; le rendre si autonome qu'il retire l'interm&eacute;diaire et rend l'humain superflu. C'est le paradigme de l'objet, et le brief du Proshop en d&eacute;coulait enti&egrave;rement&#8239;: d&eacute;sinterm&eacute;dier la vente grâce à un produit, effacer le commercial du parcours.",
+   "en": "Norman is right about the object: a good tool needs no manual, it guides the hand without a word. But a whole discipline drew a dogma from it: the best design is the one that perfects the <em>object</em>, until it is so autonomous that it removes the intermediary and makes the human superfluous. This is the object paradigm, and the Proshop brief stemmed entirely from it: disintermediate sales through a product, erase the salesperson from the journey."
+  },
+  {
+   "fr": "<strong>Ce cas est exactement l&agrave; o&ugrave; j'ai cess&eacute; de concevoir des objets pour concevoir des relations.</strong> Le paradigme de l'objet ne voit pas ce que ce terrain criait&#8239;: l'humain n'&eacute;tait pas la friction &agrave; supprimer, il &eacute;tait l'actif &agrave; pr&eacute;server. J'ai gard&eacute; de Norman son exigence d'&eacute;vidence, mais je l'ai d&eacute;plac&eacute;e de l'objet vers le lien&#8239;: concevoir un outil non pour qu'il remplace la relation, mais pour qu'il lui donne les moyens d'exister. Tout mon travail depuis part de cette bascule.",
+   "en": "<strong>This case is exactly where I stopped designing objects to design relationships.</strong> The object paradigm doesn't see what this field was crying out: the human wasn't the friction to remove, they were the asset to preserve. I kept Norman's demand for obviousness, but I moved it from the object toward the bond: designing a tool not so that it replaces the relationship, but so that it gives it the means to exist. All my work since starts from this shift."
+  },
+  {
+   "fr": "aria-label=\"Le livre où Norman revient sur ses positions\"",
+   "en": "aria-label=\"The book where Norman revisits his positions\""
+  },
+  {
+   "fr": "Couverture du livre Emotional Design, de Don Norman",
+   "en": "Cover of the book Emotional Design, by Don Norman"
+  },
+  {
+   "fr": ">La suite - et le pas qu'il n'a pas franchi<",
+   "en": ">The sequel - and the step he didn't take<"
+  },
+  {
+   "fr": "C'est d'ailleurs Norman lui-m&ecirc;me qui va revenir sur ces positions. Vingt ans apr&egrave;s avoir appris &agrave; toute une profession &agrave; rendre les objets simplement <em>utilisables</em>, il &eacute;crit <em>Emotional Design</em> pour reconna&icirc;tre ce que le premier livre laissait de c&ocirc;t&eacute;&#8239;: on n'aime pas un objet parce qu'il fonctionne, et un objet parfaitement fonctionnel peut nous laisser froids, voire nous devenir odieux.",
+   "en": "It is Norman himself who revisits these positions. Twenty years after teaching a whole profession to make objects simply <em>usable</em>, he writes <em>Emotional Design</em> to acknowledge what the first book left aside: we don't love an object because it works, and a perfectly functional object can leave us cold, even become hateful to us."
+  },
+  {
+   "fr": "Il y d&eacute;crit trois niveaux par lesquels un objet nous atteint&#8239;: le <em>visc&eacute;ral</em>, l'&eacute;motion imm&eacute;diate des sens&#8239;; le <em>comportemental</em>, le plaisir de l'usage&#8239;; et le <em>r&eacute;flexif</em>, le plus profond, ce que l'objet raconte de nous, les souvenirs et le sens qu'on y attache. Autrement dit&#8239;: la valeur d'une chose ne tient pas dans la chose, mais dans ce qui se joue entre elle et celui qui la vit. Le ma&icirc;tre de l'objet fonctionnel admettait, &agrave; sa mani&egrave;re, que la fonction ne suffit jamais.",
+   "en": "He describes three levels at which an object reaches us: the <em>visceral</em>, the immediate emotion of the senses; the <em>behavioral</em>, the pleasure of use; and the <em>reflective</em>, the deepest, what the object says about us, the memories and meaning we attach to it. In other words: the value of a thing doesn't lie in the thing, but in what happens between it and the person living with it. The master of the functional object admitted, in his way, that function is never enough."
+  },
+  {
+   "fr": "<strong>Mais Norman s'arr&ecirc;te au seuil que ce cas m'a fait franchir.</strong> Son &eacute;motion reste celle d'une personne face &agrave; un objet&#8239;: la th&eacute;i&egrave;re qu'on ch&eacute;rit, la voiture qu'on aime conduire. Chez Proshop, l'affect ne se logeait pas entre le client et la plateforme - il se logeait entre le client et son commercial. Ce que Norman ouvre vers l'&eacute;motion de l'objet, ce terrain m'a forc&eacute; &agrave; l'ouvrir d'un cran de plus&#8239;: vers l'&eacute;motion du lien, entre les gens. L&agrave; o&ugrave; il conçoit un objet qu'on aime, je conçois l'outil qui prot&egrave;ge la relation qu'on ne veut pas perdre.",
+   "en": "<strong>But Norman stops at the threshold this case made me cross.</strong> His emotion remains that of a person facing an object: the teapot you cherish, the car you love to drive. At Proshop, affect didn't sit between the customer and the platform - it sat between the customer and their salesperson. What Norman opens toward the emotion of the object, this field forced me to open one notch further: toward the emotion of the bond, between people. Where he designs an object you love, I design the tool that protects the relationship you don't want to lose."
+  },
+  {
+   "fr": "Ce cas se prolonge dans le texte «&#8239;<a href=\"/04-le-lien-importe-plus-que-le-bien\">Le lien importe plus que le bien</a>&#8239;».",
+   "en": "This case continues in the text “<a href=\"/04-le-lien-importe-plus-que-le-bien\">The bond matters more than the good</a>”."
+  },
+  {
+   "fr": "aria-label=\"Autres études de cas\"",
+   "en": "aria-label=\"Other case studies\""
+  },
+  {
+   "fr": "← Cas précédent",
+   "en": "← Previous case"
+  },
+  {
+   "fr": "Cas suivant →",
+   "en": "Next case →"
+  },
+  {
+   "fr": "Une situation qui ressemble<br>à la vôtre ?",
+   "en": "A situation that looks<br>like yours?"
+  },
+  {
+   "fr": "Parlons de votre produit.<br>Je m'assure qu'il résolve le vrai problème.",
+   "en": "Let's talk about your product.<br>I make sure it solves the real problem."
+  },
+  {
+   "fr": "On en discute ?",
+   "en": "Shall we talk?"
+  }
+ ]
+}

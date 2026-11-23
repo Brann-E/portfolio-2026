@@ -1,0 +1,24 @@
+{
+ "pairs": [
+  {
+   "fr": "Études de cas - Brann Etienne",
+   "en": "Case studies - Brann Etienne"
+  },
+  {
+   "fr": "<link rel=\"canonical\" href=\"https://brannetienne.com/\">",
+   "en": "<link rel=\"canonical\" href=\"https://brannetienne.com/en/\">"
+  },
+  {
+   "fr": "<meta http-equiv=\"refresh\" content=\"0; url=/#cas\">",
+   "en": "<meta http-equiv=\"refresh\" content=\"0; url=/en/#cas\">"
+  },
+  {
+   "fr": "<script>location.replace(\"/#cas\");</script>",
+   "en": "<script>location.replace(\"/en/#cas\");</script>"
+  },
+  {
+   "fr": "<p>Les études de cas sont désormais sur <a href=\"/#cas\">la page d'accueil</a>.</p>",
+   "en": "<p>The case studies are now on <a href=\"/#cas\">the home page</a>.</p>"
+  }
+ ]
+}

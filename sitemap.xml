@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://brannetienne.com/</loc></url>
+  <url><loc>https://brannetienne.com/en/</loc></url>
   <url><loc>https://brannetienne.com/a-propos</loc></url>
   <url><loc>https://brannetienne.com/contact</loc></url>
   <url><loc>https://brannetienne.com/mentions-legales</loc></url>
@@ -18,4 +19,21 @@
   <url><loc>https://brannetienne.com/04-le-lien-importe-plus-que-le-bien</loc></url>
   <url><loc>https://brannetienne.com/05-ce-qui-ne-circule-plus-casse</loc></url>
   <url><loc>https://brannetienne.com/06-ce-qui-fait-circuler</loc></url>
+  <url><loc>https://brannetienne.com/en/01-rien-ne-tient-tout-seul</loc></url>
+  <url><loc>https://brannetienne.com/en/02-les-relations-ne-se-voient-que-dun-certain-endroit</loc></url>
+  <url><loc>https://brannetienne.com/en/03-la-metaliminalite</loc></url>
+  <url><loc>https://brannetienne.com/en/04-le-lien-importe-plus-que-le-bien</loc></url>
+  <url><loc>https://brannetienne.com/en/05-ce-qui-ne-circule-plus-casse</loc></url>
+  <url><loc>https://brannetienne.com/en/06-ce-qui-fait-circuler</loc></url>
+  <url><loc>https://brannetienne.com/en/a-propos</loc></url>
+  <url><loc>https://brannetienne.com/en/cas-bi-solution</loc></url>
+  <url><loc>https://brannetienne.com/en/cas-chalon-dans-la-rue</loc></url>
+  <url><loc>https://brannetienne.com/en/cas-healthanea</loc></url>
+  <url><loc>https://brannetienne.com/en/cas-proshop</loc></url>
+  <url><loc>https://brannetienne.com/en/cas-shift-prime</loc></url>
+  <url><loc>https://brannetienne.com/en/circulation-paradigme-du-design</loc></url>
+  <url><loc>https://brannetienne.com/en/contact</loc></url>
+  <url><loc>https://brannetienne.com/en/mentions-legales</loc></url>
+  <url><loc>https://brannetienne.com/en/parcours-interactif</loc></url>
+  <url><loc>https://brannetienne.com/en/reciprocites</loc></url>
 </urlset>
