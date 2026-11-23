@@ -107,8 +107,8 @@
         <a href="${P}/contact" data-section="contact">${T.contact}</a>
       </nav>
       <div class="reglages">
-        <div class="theme"><button class="theme-btn" type="button" aria-pressed="false" aria-label="${T.sombre}"><svg class="lune" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg><svg class="soleil" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button></div>
         <div class="langue"><a class="langue-btn" href="${autreLangue()}" hreflang="${EN ? "fr" : "en"}" lang="${EN ? "fr" : "en"}" aria-label="${T.autreLabel}">${T.autre}</a></div>
+        <div class="theme"><button class="theme-btn" type="button" aria-pressed="false" aria-label="${T.sombre}"><svg class="lune" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg><svg class="soleil" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button></div>
         <button class="nav-toggle" type="button" aria-label="${T.ouvrir}" aria-expanded="false" aria-controls="menu-nav"><span class="nav-bars" aria-hidden="true"></span></button>
       </div>
     </div>
